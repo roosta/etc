@@ -1,0 +1,7 @@
+"3.9 (created: 2015/02/15 15:49:05)
+
+source! /home/daniel/.vimperatorrc.local
+
+" vim: set ft=vimperator:
+
+colorscheme zenburn

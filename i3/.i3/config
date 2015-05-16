@@ -1,0 +1,221 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+
+# ------ startup ------ # 
+
+# merge Xresources at login
+exec --no-startup-id xrdb -merge ~/.Xresources
+
+# register screen locker
+exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/cartographer &
+
+# run powerline bar through lemonbar
+# exec --no-startup-id /usr/lib/python3.4/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | bar
+
+# add random background image via qiv
+exec --no-startup-id qiv -yr /usr/local/share/backgrounds/patterns/*
+
+# run powerline daemon on login 
+exec --no-startup-id powerline-daemon
+
+# start urxvt daemon on login
+exec urxvtd -q -f -o
+
+# turn off screen after 10minutes
+exec --no-startup-id xset dpms 600
+
+#exec firefox
+#exec urxvtc
+
+# ------general config ------ #
+
+# set window border size
+new_window 1pixel
+new_float 1pixel
+
+# set modkey (windows key)
+set $mod Mod4
+
+# no focus at mouse pointer since touchpad makes this infuriating
+focus_follows_mouse no
+
+# ------ fonts ------ # 
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+#font pango:monospace 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:DejaVu Sans Mono for Powerline 10
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# ------ colorscheme ------ #
+  
+#class			    border	     backgr.	text
+client.focused              #121212          #101010    #9e8a8e
+client.focused_inactive     #101010          #191919    #999999
+client.unfocused            #101010          #191919    #999999
+client.urgent               #cd989a          #cd989a    #2e3436
+client.background           #1d1d1d
+
+# ------ keybinds ----- #
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec urxvtc
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i" --term="urxvtc"
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# lock screen
+bindsym $mod+Shift+o exec --no-startup-id i3lock -ti /usr/local/share/backgrounds/patterns/cartographer.png
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+# ------ keybind: workspaces ------ #
+
+# switch to workspace
+bindsym Mod4+1 workspace 1: dev
+bindsym Mod4+2 workspace 2: www
+bindsym Mod4+3 workspace 3: terms
+bindsym Mod4+4 workspace 4: media
+bindsym Mod4+5 workspace 5: aux
+bindsym Mod4+6 workspace 6 
+bindsym Mod4+7 workspace 7
+bindsym Mod4+8 workspace 8
+bindsym Mod4+9 workspace 9
+bindsym Mod4+0 workspace 10
+
+# move focused container to workspace
+bindsym Mod4+Shift+1 move workspace 1: dev
+bindsym Mod4+Shift+2 move workspace 2: www
+bindsym Mod4+Shift+3 move workspace 3: terms
+bindsym Mod4+Shift+4 move workspace 4: media
+bindsym Mod4+Shift+5 move workspace 5: aux
+bindsym Mod4+Shift+6 move workspace 6
+bindsym Mod4+Shift+7 move workspace 7
+bindsym Mod4+Shift+8 move workspace 8
+bindsym Mod4+Shift+9 move workspace 9
+bindsym Mod4+Shift+0 move workspace 10
+
+# move to last workspace
+bindsym $mod+b workspace back_and_forth
+
+# ------ application locations ------ #
+
+# assign [class="URxvt"] 1: dev
+assign [class="Firefox"] 2: www
+
+
+# ----- resize windows ------ #
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# ------ i3bar config ------ #
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+}
+

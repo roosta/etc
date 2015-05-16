@@ -1,0 +1,9 @@
+[user]
+	email = roosta042@gmail.com
+	name = Daniel Berg
+[core]
+	editor = vim
+[push]
+	default = simple
+[credential]
+	helper = /usr/lib/git-core/git-credential-gnome-keyring

@@ -1,0 +1,46 @@
+! disable scrollbar
+URxvt.scrollBar: false
+
+! Set patched dejavu font
+URxvt.font: xft:DejaVu Sans Mono for Powerline :pixelsize=12
+
+URxvt.letterSpace: -1
+
+! Color scheme "It's definitely not butter"
+! http://dotshare.it/dots/990/
+! special
+*.foreground:   #747a81
+*.background:   #151515
+*.cursorColor:  #747a81
+
+! black
+*.color0:       #282a2e
+*.color8:       #373b41
+
+! red
+*.color1:       #bd3737
+*.color9:       #d64444
+
+! green
+*.color2:       #98a04b
+*.color10:      #a3aa5e
+
+! yellow
+*.color3:       #e5a458
+*.color11:      #d1aa68
+
+! blue
+*.color4:       #4b7598
+*.color12:      #588fbd
+
+! magenta
+*.color5:       #b890c5
+*.color13:      #d1b7d8
+
+! cyan
+*.color6:       #73ada5
+*.color14:      #8abeb7
+
+! white
+*.color7:       #959595
+*.color15:      #b9b9b9
