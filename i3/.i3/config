@@ -12,7 +12,7 @@
 exec --no-startup-id xset dpms 600
 
 # register screen locker
-exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/cartographer &
+exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/cartographer.png &
 
 # run powerline bar through lemonbar
 # exec --no-startup-id /usr/lib/python3.4/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | bar
