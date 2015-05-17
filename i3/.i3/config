@@ -6,7 +6,10 @@
 # ------ startup ------ # 
 
 # merge Xresources at login
-exec --no-startup-id xrdb -merge ~/.Xresources
+# exec --no-startup-id xrdb -merge ~/.Xresources
+
+# turn off screen after 10minutes
+exec --no-startup-id xset dpms 600
 
 # register screen locker
 exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/cartographer &
@@ -21,13 +24,8 @@ exec --no-startup-id qiv -yr /usr/local/share/backgrounds/patterns/*
 exec --no-startup-id powerline-daemon
 
 # start urxvt daemon on login
-exec urxvtd -q -f -o
+exec --no-startup-id  urxvtd -q -f -o
 
-# turn off screen after 10minutes
-exec --no-startup-id xset dpms 600
-
-#exec firefox
-#exec urxvtc
 
 # ------general config ------ #
 

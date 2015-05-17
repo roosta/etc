@@ -34,13 +34,18 @@ alias grep="grep -i --color=auto"
 # alias sudo for easy access
 alias _="sudo"
 
-# alias vi to vim
+# vim aliases
 alias vi="vim"
+alias svim='sudo vim'
 
-# quick edit conf files 
+# sudo cat
+alias scat='sudo cat'
+
 # utput from a command with xclip when this is piped in
 alias copy='xclip -sel clip'
 
+# quick edit conf files 
+alias gitconf="vim ~/.gitconfig"
 alias i3conf="vim ~/.i3/config"
 alias zshconf="vim ~/.zshrc"
 alias vimconf="vim ~/.vimrc"   

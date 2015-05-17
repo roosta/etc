@@ -7,3 +7,10 @@
 	default = simple
 [credential]
 	helper = /usr/lib/git-core/git-credential-gnome-keyring
+[alias]
+	# colorlize and format log output in short and long versions
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+	# list aliases
+	aliases  = "!git config -l | grep alias | cut -c 7-"

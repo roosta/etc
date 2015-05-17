@@ -1,6 +1,0 @@
-open_with unzip
-delete
-help
-copy
-shell t
-paste
