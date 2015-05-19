@@ -10,4 +10,4 @@ ranger/.config/ranger/tagged
 
 vimperator/.vimperator/info/**
 
-vim/.vim/undo
+vim/.vim/undo/**

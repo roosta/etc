@@ -4,7 +4,7 @@
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory autocd extendedglob nomatch notify
+setopt autocd extendedglob nomatch notify
 unsetopt beep
 # End of lines configured by zsh-newuser-install
 
@@ -15,6 +15,34 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+setopt NO_BG_NICE # don't nice background tasks
+setopt NO_HUP
+setopt NO_LIST_BEEP
+setopt LOCAL_OPTIONS # allow functions to have local options
+setopt LOCAL_TRAPS # allow functions to have local traps
+setopt HIST_VERIFY
+setopt SHARE_HISTORY # share history between sessions ???
+setopt EXTENDED_HISTORY # add timestamps to history
+setopt PROMPT_SUBST
+setopt CORRECT
+setopt COMPLETE_IN_WORD
+setopt IGNORE_EOF
+
+setopt APPEND_HISTORY # adds history
+setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
+setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+setopt HIST_REDUCE_BLANKS
+
+# quick access to work projects
+export WORK=~/xshare/projects
+
+## Completion
+# matches case insensitive for lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# pasting with tabs doesn't perform completion
+zstyle ':completion:*' insert-tab pending
+
 # enable powerline
 . /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
 
@@ -23,10 +51,17 @@ bindkey -v
 
 # ------ Aliases ------ #
 
+alias systemctl="sudo systemctl"
+alias pacman="sudo pacman"
+
 # long format and color ls output with various options. (see "man ls")
 alias dir="ls -lAhpXk --color=auto --group-directories-first"
 
+# outout
 alias less="less -r"
+
+# quit aliases
+alias :q="exit"
 
 # ignore case in grep and color output
 alias grep="grep -i --color=auto"
@@ -36,10 +71,10 @@ alias _="sudo"
 
 # vim aliases
 alias vi="vim"
-alias svim='sudo vim'
+alias svim="sudo vim"
 
 # sudo cat
-alias scat='sudo cat'
+alias scat="sudo cat"
 
 # utput from a command with xclip when this is piped in
 alias copy='xclip -sel clip'
@@ -48,7 +83,8 @@ alias copy='xclip -sel clip'
 alias gitconf="vim ~/.gitconfig"
 alias i3conf="vim ~/.i3/config"
 alias zshconf="vim ~/.zshrc"
-alias vimconf="vim ~/.vimrc"   
+alias vimconf="vim ~/.vimrc"
+alias xrconf="vim ~/.Xresources"   
 
 # create parents as needed, verbose
 alias mkdir='mkdir -pv'
@@ -94,6 +130,7 @@ alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
+alias cd..='cd ..'
 alias 1='cd -'
 alias 2='cd -2'
 alias 3='cd -3'

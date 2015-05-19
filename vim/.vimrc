@@ -12,6 +12,8 @@ Plugin 'gmarik/Vundle.vim'
 " haxe plugin
 Plugin 'jdonaldson/vaxe'
 
+" quick comment plugin
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -53,8 +55,9 @@ set shortmess+=I
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
-
-set laststatus=2
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 " set color scheme
 colorscheme molokai
@@ -108,7 +111,7 @@ if has("autocmd")
   filetype plugin on
 endif
 
-" let mapleader=","
+"let mapleader=","
 vnoremap <silent> <leader>y :w !xsel -i -b<CR>
 nnoremap <silent> <leader>y V:w !xsel -i -b<CR>
 nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>
