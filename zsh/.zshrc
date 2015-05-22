@@ -15,6 +15,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Base16 Shell
+#BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
 setopt NO_LIST_BEEP
@@ -81,10 +85,11 @@ alias copy='xclip -sel clip'
 
 # quick edit conf files 
 alias gitconf="vim ~/.gitconfig"
-alias i3conf="vim ~/.i3/config"
+alias i3conf="vim ~/.config/i3/config"
 alias zshconf="vim ~/.zshrc"
 alias vimconf="vim ~/.vimrc"
 alias xrconf="vim ~/.Xresources"   
+alias hist="cat ~/.histfile | grep"
 
 # create parents as needed, verbose
 alias mkdir='mkdir -pv'

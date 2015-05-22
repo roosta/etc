@@ -15,16 +15,27 @@ Plugin 'jdonaldson/vaxe'
 " quick comment plugin
 Plugin 'scrooloose/nerdcommenter'
 
+" add i3 config syntax to vim
+Plugin 'PotatoesMaster/i3-vim-syntax'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+
+" set colorscheme monokai
+colorscheme molokai
+let g:molokai_original = 1
+"let g:rehash256 = 1
 
 " enable syntax
 syntax on
 
 " paste without auto indentation
 set paste
+
+" keep at least 3 lines above/below
+set scrolloff=3                       
 
 " maintain undo history between sessions
 set undofile
@@ -36,8 +47,8 @@ set wildmode=longest,list,full
 set wildmenu
 
 " case insensitive search
- set ignorecase
- set smartcase
+set ignorecase
+set smartcase
 
 " the /g flag on :s substitutions by default
 set gdefault
@@ -58,10 +69,6 @@ python3 del powerline_setup
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-
-" set color scheme
-colorscheme molokai
-let g:molokai_original = 1
 
 " stop unnecessary rendering
 set lazyredraw

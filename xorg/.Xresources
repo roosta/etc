@@ -1,30 +1,105 @@
-! disable scrollbar
+! vim: set filetype=xdefaults :
+! Set patched dejavu font
+URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
+URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
+URxvt*letterSpace: -1
+!urxvt*font: xft:Sauce Code Powerline Medium:pixelsize=14
+!urxvt*boldFont: xft:Sauce Code Powerline Bold:pixelsize=14
+
+Xft.dpi: 96
+Xft.rgba: rgb
+!Xft.pixelsize: 14
+Xft.hinting: true
+Xft.antialias: true
+!Xft.hintstyle: hintslight
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+
+URxvt*loginShell: true
+URxvt.internalBorder: 0
+URxvt.borderless: true
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.colorUL: #4682B4
 URxvt.scrollBar: false
 
-! Set patched dejavu font
-URxvt.font: xft:DejaVu Sans Mono for Powerline :pixelsize=12
-!urxvt*font: xft:Terminus:pixelsize=10,xft:Inconsolata\ for\ Powerline:pixelsize=10
-!URxvt*font: xft:Source\ Code\ Pro\ Medium:pixelsize=12:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=12:antialias=true:hinting=true
-URxvt.letterSpace: -1
+*foreground: #D7D0C7
+*background: #151515
 
-! Base16 Railscasts
-! Scheme: Ryan Bates (http://railscasts.com)
-!#define base00 #2b2b2b
-!#define base01 #272935
-!#define base02 #3a4055
-!#define base03 #5a647e
-!#define base04 #d4cfc9
-!#define base05 #e6e1dc
-!#define base06 #f4f1ed
-!#define base07 #f9f7f3
-!#define base08 #da4939
-!#define base09 #cc7833
-!#define base0A #ffc66d
-!#define base0B #a5c261
-!#define base0C #519f50
-!#define base0D #6d9cbe
-!#define base0E #b6b3eb
-!#define base0F #bc9458
+!black
+! *color0:     #AF875F
+! *color8:     #AF875F
+*color0:     #101010
+*color8:     #404040
+!red
+*color1:     #E84F4F
+*color9:     #D23D3D
+!green
+*color2:     #B8D68C
+*color10:    #A0CF5D
+!yellow
+*color3:     #E1AA5D
+*color11:    #F39D21
+!blue
+*color4:     #7DC1CF
+*color12:    #4E9FB1
+!magenta
+*color5:     #9B64FB
+*color13:    #8542FF
+!cyan
+*color6:     #6D878D
+*color14:    #42717B
+!white
+*color7:     #dddddd
+*color15:    #dddddd
+
+URxvt*borderColor:        #151515
+URxvt*colorBD:            #ffffff
+URxvt*cursorColor:        #ff8939
+URxvt*cursorColor2:       #151515
+
+! ---- [ unused ] ----!
+
+!urxvt.geometry: 54x15
+!URxvt*scrollBar: false
+!URxvt.scrollBar_right: false
+!URxvt.scrollBar_floating: false
+
+!Xft.dpi:        96
+!Xft.antialias:  true
+!Xft.rgba:       rgb
+!Xft.hinting:    true
+!Xft.hintstyle:  hintslight
+
+!Xft.autohint: 0
+!Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintfull
+!Xft.hinting: 1
+!Xft.antialias: 1
+!Xft.rgba: rgb
+
+
+! Base16 Monokai
+! Scheme: Wimer Hazenberg (http://www.monokai.nl)
+
+!#define base00 #272822
+!#define base01 #383830
+!#define base02 #49483e
+!#define base03 #75715e
+!#define base04 #a59f85
+!#define base05 #f8f8f2
+!#define base06 #f5f4f1
+!#define base07 #f9f8f5
+!#define base08 #f92672
+!#define base09 #fd971f
+!#define base0A #f4bf75
+!#define base0B #a6e22e
+!#define base0C #a1efe4
+!#define base0D #66d9ef
+!#define base0E #ae81ff
+!#define base0F #cc6633
 
 !*.foreground:   base05
 !*.background:   base00
@@ -40,49 +115,19 @@ URxvt.letterSpace: -1
 !*.color7:       base05
 
 !*.color8:       base03
-!*.color9:       base09
-!*.color10:      base01
-!*.color11:      base02
-!*.color12:      base04
-!*.color13:      base06
-!*.color14:      base0F
+!*.color9:       base08
+!*.color10:      base0B
+!*.color11:      base0A
+!*.color12:      base0D
+!*.color13:      base0E
+!*.color14:      base0C
 !*.color15:      base07
 
-! Color scheme "It's definitely not butter"
-! http://dotshare.it/dots/990/
-! special
-*.foreground:   #747a81
-*.background:   #151515
-*.cursorColor:  #747a81
-
-! black
-*.color0:       #282a2e
-*.color8:       #373b41
-
-! red
-*.color1:       #bd3737
-*.color9:       #d64444
-
-! green
-*.color2:       #98a04b
-*.color10:      #a3aa5e
-
-! yellow
-*.color3:       #e5a458
-*.color11:      #d1aa68
-
-! blue
-*.color4:       #4b7598
-*.color12:      #588fbd
-
-! magenta
-*.color5:       #b890c5
-*.color13:      #d1b7d8
-
-! cyan
-*.color6:       #73ada5
-*.color14:      #8abeb7
-
-! white
-*.color7:       #959595
-*.color15:      #b9b9b9
+!! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+!! use 'shell' template to set these if necessary
+!*.color16:      base09
+!*.color17:      base0F
+!*.color18:      base01
+!*.color19:      base02
+!*.color20:      base04
+!*.color21:      base06
