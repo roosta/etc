@@ -148,3 +148,6 @@ alias 9='cd -9'
 
 # end aliases ---/
 
+eval $( dircolors -b $HOME/.dircolors/LS_COLORS )
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
