@@ -1,3 +1,12 @@
 improve i3bar
 install quick window switcher
 improve xorg config (generate a premade and use that as a base)
+
+zsh:
+* split configs
+* fix autocomplete
+
+
+i3:
+* use j4-theme-thingie
+* fix color vars 

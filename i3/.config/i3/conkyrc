@@ -1,0 +1,66 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+# Update interval in seconds
+update_interval 2.0
+total_run_times 0
+override_utf8_locale yes
+
+TEXT
+
+[
+  # Music player daemon
+  #{ 
+    #"full_text": "MPD",
+    #"color" : "\#b72f62"
+  #},
+  #{ 
+    #"full_text": "${if_mpd_playing}${mpd_smart 50} ${mpd_elapsed}/${mpd_length}${else}${mpd_status}${endif}"
+  #},
+  
+  # Hard drive
+  { 
+    "full_text": "HD",
+    "color": "\#7996a9"
+  },
+  {
+    "full_text": "home: ${fs_free /home}/${fs_size /home} root: ${fs_free /}/${fs_size /}" 
+  },
+
+  # Memory 
+  {
+    "full_text": "MEM" , 
+    "color": "\#b492b6" 
+  },
+  {
+    "full_text": "${mem}" 
+  },
+
+  # Network
+  {
+    "full_text": "WIFI",
+    "color": "\#b72f62" 
+  },
+  { 
+    "full_text": "${wireless_essid wlan0}(${wireless_link_qual wlan0}/${wireless_link_qual_max wlan0})" 
+  },
+
+  # Battery
+  {
+    "full_text": "BAT",
+    "color": "\#7996a9" 
+  },
+  { 
+    "full_text": "${battery BAT1}", 
+    "color": ${if_match ${battery_percent BAT1}<20}"\#b95670"${else}"\#5f5f5f"${endif} 
+  },
+  {
+    "full_text": "DATE" , 
+    "color": "\#b492b6"
+  }, 
+  { 
+    "full_text": "${time %Y-%m-%d %H:%M:%S}"
+  }
+],

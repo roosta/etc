@@ -1,4 +1,5 @@
 # i3 config file (v4)
+# vim:filetype=i3
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -6,13 +7,14 @@
 # ------ startup ------ # 
 
 # turn off screen after 5minutes
-exec --no-startup-id xset dpms 300
+exec --no-startup-id xset dpms 450
 
 # run powerline bar through lemonbar
 #exec --no-startup-id /usr/lib/python3.4/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | lemonbar
 
 # add random background image via qiv
-exec --no-startup-id qiv -zr /usr/local/share/backgrounds/minimals/*
+#exec --no-startup-id qiv -zr /usr/local/share/backgrounds/minimals/*
+exec --no-startup-id qiv -z /usr/local/share/backgrounds/minimals/minimal-24.jpg
 
 # run powerline daemon on| login 
 exec --no-startup-id powerline-daemon
@@ -35,25 +37,47 @@ focus_follows_mouse no
 
 # ------ fonts ------ # 
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-#font pango:monospace 8
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono for Powerline 12
 
 # ------ colorscheme ------ #
-  
-#class			    border	     backgr.	text
-client.focused              #121212          #101010    #9e8a8e
-client.focused_inactive     #101010          #191919    #999999
-client.unfocused            #101010          #191919    #999999
-client.urgent               #cd989a          #cd989a    #2e3436
-client.background           #1d1d1d
+
+## class                 border  backgr. text    indicator
+#client.focused          #e84f4f #151515 #dddddd #5f5f5f
+#client.focused_inactive #333333 #5f676a #ffffff #484e50
+#client.unfocused        #333333 #222222 #888888 #292d2e
+#client.urgent           #2f343a #900000 #ffffff #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000
+##client.background
+
+## class			                 border     backgr     text
+#client.focused               $RED2      $BG        $WHT1 
+#client.focused_inactive      #191919    #191919    #999999
+#client.unfocused             #191919    #191919    #999999
+#client.urgent                #cd989a    #cd989a    #2e3436
+#client.background            $BG
+
+## UnaSemana - http://dotshare.it/dots/307/
+##class			                 border     backgr	   text
+#client.focused               #121212    #101010    #9e8a8e
+#client.focused_inactive      #101010    #191919    #999999
+#client.unfocused             #101010    #191919    #999999
+#client.urgent                #cd989a    #cd989a    #2e3436
+#client.background            #1d1d1d
+
+# abi3s - http://dotshare.it/dots/477/
+#class			                 border     backgr     text
+client.focused               #C9B5BD    #C9B5BD    #825969
+client.focused_inactive      #191919    #191919    #999999
+client.unfocused             #191919    #191919    #999999
+client.urgent                #cd989a    #cd989a    #2e3436
+client.background            #121212
+
 
 # ------ keybinds ----- #
 
+# change wallpaper
 bindsym $mod+Shift+b exec --no-startup-id qiv -zr /usr/local/share/backgrounds/minimals/*
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -133,14 +157,20 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 #bindsym Control+Alt+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
-# ------ keybind: workspaces ------ #
+# ------  workspaces ------ #
+
+set $WS1 1:terms
+set $WS2 2:dev
+set $WS3 3:web
+set $WS4 4:media
+set $WS5 5:aux
 
 # switch to workspace
-bindsym Mod4+1 workspace 1: dev
-bindsym Mod4+2 workspace 2: www
-bindsym Mod4+3 workspace 3: terms
-bindsym Mod4+4 workspace 4: media
-bindsym Mod4+5 workspace 5: aux
+bindsym Mod4+1 workspace $WS1
+bindsym Mod4+2 workspace $WS2
+bindsym Mod4+3 workspace $WS3
+bindsym Mod4+4 workspace $WS4 
+bindsym Mod4+5 workspace $WS5
 bindsym Mod4+6 workspace 6 
 bindsym Mod4+7 workspace 7
 bindsym Mod4+8 workspace 8
@@ -148,11 +178,11 @@ bindsym Mod4+9 workspace 9
 bindsym Mod4+0 workspace 10
 
 # move focused container to workspace
-bindsym Mod4+Shift+1 move workspace 1: dev
-bindsym Mod4+Shift+2 move workspace 2: www
-bindsym Mod4+Shift+3 move workspace 3: terms
-bindsym Mod4+Shift+4 move workspace 4: media
-bindsym Mod4+Shift+5 move workspace 5: aux
+bindsym Mod4+Shift+1 move workspace $WS1
+bindsym Mod4+Shift+2 move workspace $WS2
+bindsym Mod4+Shift+3 move workspace $WS3
+bindsym Mod4+Shift+4 move workspace $WS4
+bindsym Mod4+Shift+5 move workspace $WS5
 bindsym Mod4+Shift+6 move workspace 6
 bindsym Mod4+Shift+7 move workspace 7
 bindsym Mod4+Shift+8 move workspace 8
@@ -164,8 +194,8 @@ bindsym $mod+b workspace back_and_forth
 
 # ------ application locations ------ #
 
-# assign [class="URxvt"] 1: dev
-assign [class="Firefox"] 2: www
+#assign [class="URxvt"] $WS1
+assign [class="Firefox"] $WS3
 
 
 # ----- resize windows ------ #
@@ -198,10 +228,68 @@ bindsym $mod+r mode "resize"
 
 # ------ i3bar config ------ #
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+
+
 bar {
-        status_command i3status
+  mode dock
+  position top
+  font pango:DejaVu Sans Mono for Powerline 12
+	#font -*-cure-medium-*-*-*-11-*-*-*-*-*-*-*
+  workspace_buttons yes
+  status_command ~/.config/i3/conky.sh
+  tray_output none
+  colors {
+    background $BG 
+    statusline $WHT2
+    focused_workspace $BG $BG $RED2
+    active_workspace $WHT2 $BG  $BG
+    inactive_workspace $BG $BG $WHT2
+   	urgent_workspace $BLK1 $RED1
+	}
 }
 
-# vim:filetype=i3
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+#bar {
+        #status_command i3status
+#}
+
+
+
+# Foreground / Background
+set $FG #d7d0c7
+set $BG #151515
+
+# Black
+set $BLK1 #101010
+set $BLK2 #404040
+
+# Red
+set $RED1 #e84f4f
+set $RED2 #d23d3d
+
+# Green
+set $GRN1 #b8d68c
+set $GRN2 #a0cf5d
+
+# Yellow
+set $YEL1 #e1aa5d
+set $YEL2 #f39d21
+
+# blue
+set $BLU1 #7dc1cf
+set $BLU2 #4e9fb1
+
+#magenta
+set $MAG1 #9b64fb
+set $MAG2 #8542ff
+
+# Cyan
+set $CYN1 #6d878d
+set $CYN2 #42717b
+
+# White
+set $WHT1 #dddddd
+set $WHT2 #5f5f5f
+
