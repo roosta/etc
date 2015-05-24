@@ -9,20 +9,16 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" haxe plugin
 Plugin 'jdonaldson/vaxe'
-
-" quick comment plugin
 Plugin 'scrooloose/nerdcommenter'
-
-" add i3 config syntax to vim
 Plugin 'PotatoesMaster/i3-vim-syntax'
-
-" st-line multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
-
-" prefer airline instead of powerline due to perfomance issues
-"Plugin 'bling/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -42,6 +38,12 @@ set t_Co=256
 colorscheme molokai
 "let g:molokai_original = 1
 let g:rehash256 = 1
+
+" Multiple-cursor  mapping
+"let g:multi_cursor_next_key='<C-n>'
+"let g:multi_cursor_prev_key='<C-p>'
+"let g:multi_cursor_skip_key='<C-x>'
+"let g:multi_cursor_quit_key='<Esc>'
 
 " enable syntax
 syntax on
