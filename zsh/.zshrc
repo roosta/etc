@@ -55,30 +55,30 @@ bindkey -v
 
 # ------ Aliases ------ #
 
+# always root
 alias systemctl="sudo systemctl"
 alias pacman="sudo pacman"
-
-# long format and color ls output with various options. (see "man ls")
-alias dir="ls -lAhpXk --color=auto --group-directories-first"
-
-# outout
-alias less="less -r"
-
-# quit aliases
-alias :q="exit"
-
-# ignore case in grep and color output
-alias grep="grep -i --color=auto"
+alias svim="sudo vim"
+alias scat="sudo cat"
 
 # alias sudo for easy access
 alias _="sudo"
 
+# long format and color ls output with various options. (see "man ls")
+alias dir="ls -lAhpXk --color=auto --group-directories-first"
+
+# output raw less output 
+alias less="less -r"
+
+# quit aliases
+alias :q="exit"
+alias :Q="exit"
+
+# ignore case in grep and color output
+alias grep="grep -i --color=auto"
+
 # vim aliases
 alias vi="vim"
-alias svim="sudo vim"
-
-# sudo cat
-alias scat="sudo cat"
 
 # utput from a command with xclip when this is piped in
 alias copy='xclip -sel clip'
@@ -115,6 +115,8 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias ln='ln -i'
 
+alias tarx="tar -zxvf"
+
 # Parenting changing perms on / #
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
@@ -123,9 +125,6 @@ alias chgrp='chgrp --preserve-root'
 # get top process eating cpu
 alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
-
-# Get server cpu info
-alias cpuinfo='lscpu'
 
 # get GPU ram on desktop / laptop
 alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'

@@ -6,7 +6,10 @@ export SSH_AUTH_SOCK
 xrdb -merge ~/.Xresources
 
 # register screen locker
-xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/cartographer.png &
+xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimals/minimal-24 &
+
+powerline-daemon
 
 # start WM
 exec i3
+

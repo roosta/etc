@@ -17,7 +17,7 @@ exec --no-startup-id xset dpms 450
 exec --no-startup-id qiv -z /usr/local/share/backgrounds/minimals/minimal-24.jpg
 
 # run powerline daemon on| login 
-exec --no-startup-id powerline-daemon
+#exec --no-startup-id powerline-daemon
 
 # start urxvt daemon on login
 exec --no-startup-id  urxvtd -q -f -o
@@ -28,9 +28,6 @@ exec --no-startup-id  urxvtd -q -f -o
 # set window border size
 new_window 1pixel
 new_float 1pixel
-
-# set modkey (windows key)
-set $mod Mod4
 
 # no focus at mouse pointer since touchpad makes this infuriating
 focus_follows_mouse no
@@ -75,10 +72,17 @@ client.urgent                #cd989a    #cd989a    #2e3436
 client.background            #121212
 
 
-# ------ keybinds ----- #
+# === 1.1 keybinds: functions === 
+
+# set modkey (Super key)
+set $mod Mod4
 
 # change wallpaper
 bindsym $mod+Shift+b exec --no-startup-id qiv -zr /usr/local/share/backgrounds/minimals/*
+
+# lock screen
+#bindsym $mod+Shift+o exec --no-startup-id i3lock -ti /usr/local/share/backgrounds/minimals/minimal-24.jpg
+bindsym $mod+Shift+o exec xset s activate
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -130,10 +134,6 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# lock screen
-bindsym $mod+Shift+o exec --no-startup-id i3lock -ti /usr/local/share/backgrounds/patterns/*
-#bindsym $mod+Shift+o exec xset s activate
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -144,7 +144,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -154,8 +154,6 @@ bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-#bindsym Control+Alt+BackSpace exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 
 # ------  workspaces ------ #
 
