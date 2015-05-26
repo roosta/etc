@@ -6,6 +6,7 @@ zsh:
 * split configs
 * fix autocomplete
 * set autocomplete colors
+* install antigen
 
 i3:
 * use j4-theme-thingie

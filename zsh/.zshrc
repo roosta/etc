@@ -19,6 +19,11 @@ compinit
 #BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
 #[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
+eval "$(fasd --init auto)"
+
+[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
+[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
+
 setopt NO_BG_NICE # don't nice background tasks
 setopt NO_HUP
 setopt NO_LIST_BEEP
@@ -144,6 +149,9 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
+
+# fasd aliases
+alias v='f -e vim' # quick opening files with vim
 
 # end aliases ---/
 

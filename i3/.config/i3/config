@@ -8,8 +8,9 @@
 
 # turn off screen after 5minutes
 exec --no-startup-id xset dpms 450
+
 # register screen locker
-xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimals/minimal-24.jpg &
+exec xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimals/minimal-24.jpg &
 
 
 # run powerline bar through lemonbar

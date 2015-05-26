@@ -1,0 +1,38 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AAAPackageDev",
+		"Autoprefixer",
+		"BracketHighlighter",
+		"Comment-Snippets",
+		"Conky.tmLanguage",
+		"DevDocs",
+		"DocBlockr",
+		"Dotfiles Syntax Highlighting",
+		"Emmet",
+		"Jump Along Indent",
+		"Open URL",
+		"Origami",
+		"Package Control",
+		"PackageResourceViewer",
+		"PlainTasks",
+		"SideBarEnhancements",
+		"sublime-github",
+		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-annotations",
+		"SublimeLinter-csslint",
+		"SublimeLinter-jshint",
+		"SublimeLinter-json",
+		"SublimeLinter-shellcheck",
+		"Theme - Flatland",
+		"Theme - itg.flat",
+		"TodoReview",
+		"Vintageous",
+		"Vintageous - Region To Selection",
+		"VintageousOrigami"
+	]
+}

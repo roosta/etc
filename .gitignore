@@ -12,3 +12,8 @@ vimperator/.vimperator/info/**
 
 vim/.vim/undo/**
 vim/.vim/bundle/**
+
+*cache*
+*.last-run
+SublimeGit.sublime-settings
+*ca-bundle*
