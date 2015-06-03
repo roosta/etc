@@ -13,6 +13,9 @@ exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimal
 # add random background image via qiv
 exec --no-startup-id qiv -z /usr/local/share/backgrounds/minimals/minimal-08.png
 
+# start urxvt daemon on login
+exec --no-startup-id  urxvtd -q -f -o
+
 # ------general config ------ #
 
 # set window border size
