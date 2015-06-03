@@ -1,5 +1,6 @@
 {
 	"bold_folder_labels": true,
+	"close_windows_when_empty": false,
 	"color_scheme": "Packages/User/SublimeLinter/itg.Monokai (SL).tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "DejaVu Sans Mono for Powerline",

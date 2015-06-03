@@ -11,6 +11,9 @@ urxvtd -q -f -o
 # init powerline
 powerline-daemon
 
+setxkbmap -layout no
+xrandr --output VGA1 --right-of LVDS1
+
 # start WM
 exec i3
 

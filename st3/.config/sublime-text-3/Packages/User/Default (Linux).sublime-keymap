@@ -120,4 +120,5 @@
   // Toggle Console
   // { "keys": ["ctrl+shift+\\"], "command": "show_panel", "args": {"panel": "console", "toggle": true} }
 
+  { "keys": ["ctrl+r"], "command": "redo" }
 ]
