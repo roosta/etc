@@ -1,10 +1,14 @@
 ! vim: set filetype=xdefaults :
+
+!-- fonts
 ! Set patched dejavu font
 URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
 URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
 URxvt*letterSpace: -1
 !urxvt*font: xft:Sauce Code Powerline Medium:pixelsize=14
 !urxvt*boldFont: xft:Sauce Code Powerline Bold:pixelsize=14
+!dzen2.font: -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
+!dzen2.font: -*-droidsans-*-r-normal-*-*-100-*-*-*-*-*-*
 
 Xft.dpi: 96
 Xft.rgba: rgb
