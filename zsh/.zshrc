@@ -1,173 +1,175 @@
-# Lines configured by zsh-newuser-install
-#
-#
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt autocd extendedglob nomatch notify
-unsetopt beep
-# End of lines configured by zsh-newuser-install
+for config (~/.zsh/*.zsh) source $config
 
-# The following lines were added by compinstall
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' insert-unambiguous true
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
-zstyle ':completion:*' menu select=5
-zstyle ':completion:*' original true
-zstyle ':completion:*' preserve-prefix '//[^/]##/'
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' squeeze-slashes true
-zstyle ':completion:*' verbose true
-zstyle :compinstall filename '/home/daniel/.zshrc'
+# # Lines configured by zsh-newuser-install
+# #
+# #
+# HISTFILE=~/.histfile
+# HISTSIZE=10000
+# SAVEHIST=10000
+# setopt autocd extendedglob nomatch notify
+# unsetopt beep
+# # End of lines configured by zsh-newuser-install
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# # The following lines were added by compinstall
+# zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+# zstyle ':completion:*' format 'Completing %d'
+# zstyle ':completion:*' group-name ''
+# zstyle ':completion:*' insert-unambiguous true
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+# zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
+# zstyle ':completion:*' menu select=5
+# zstyle ':completion:*' original true
+# zstyle ':completion:*' preserve-prefix '//[^/]##/'
+# zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+# zstyle ':completion:*' squeeze-slashes true
+# zstyle ':completion:*' verbose true
+# zstyle :compinstall filename '/home/daniel/.zshrc'
 
-# Base16 Shell
-#BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
-#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+# autoload -Uz compinit
+# compinit
+# # End of lines added by compinstall
 
-eval "$(fasd --init auto)"
+# # Base16 Shell
+# #BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
+# #[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
-[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
-[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
+# eval "$(fasd --init auto)"
 
-setopt NO_BG_NICE # don't nice background tasks
-setopt NO_HUP
-setopt NO_LIST_BEEP
-setopt LOCAL_OPTIONS # allow functions to have local options
-setopt LOCAL_TRAPS # allow functions to have local traps
-setopt HIST_VERIFY
-setopt SHARE_HISTORY # share history between sessions ???
-setopt EXTENDED_HISTORY # add timestamps to history
-setopt PROMPT_SUBST
-setopt CORRECT
-setopt COMPLETE_IN_WORD
-setopt IGNORE_EOF
+# # [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
+# # [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
 
-setopt APPEND_HISTORY # adds history
-setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
-setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
-setopt HIST_REDUCE_BLANKS
+# setopt NO_BG_NICE # don't nice background tasks
+# setopt NO_HUP
+# setopt NO_LIST_BEEP
+# setopt LOCAL_OPTIONS # allow functions to have local options
+# setopt LOCAL_TRAPS # allow functions to have local traps
+# setopt HIST_VERIFY
+# setopt SHARE_HISTORY # share history between sessions ???
+# setopt EXTENDED_HISTORY # add timestamps to history
+# setopt PROMPT_SUBST
+# setopt CORRECT
+# setopt COMPLETE_IN_WORD
+# setopt IGNORE_EOF
 
-# quick access to work projects
-export WORK=~/xshare/projects
+# setopt APPEND_HISTORY # adds history
+# setopt INC_APPEND_HISTORY SHARE_HISTORY  # adds history incrementally and share it across sessions
+# setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
+# setopt HIST_REDUCE_BLANKS
 
-## Completion
-# matches case insensitive for lowercase
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# # quick access to work projects
+# export WORK=~/xshare/projects
 
-# pasting with tabs doesn't perform completion
-zstyle ':completion:*' insert-tab pending
+# ## Completion
+# # matches case insensitive for lowercase
+# # zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
-# enable powerline
-. /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
+# # pasting with tabs doesn't perform completion
+# zstyle ':completion:*' insert-tab pending
 
-# set key bindings (e = emacs, v = vi)
-bindkey -v
+# # enable powerline
+# . /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
 
-# ------ Aliases ------ #
+# # set key bindings (e = emacs, v = vi)
+# bindkey -v
 
-# always root
-alias systemctl="sudo systemctl"
-alias pacman="sudo pacman"
-alias svim="sudo vim"
-alias scat="sudo cat"
+# # ------ Aliases ------ #
 
-# alias sudo for easy access
-alias _="sudo"
+# # always root
+# alias systemctl="sudo systemctl"
+# alias pacman="sudo pacman"
+# alias svim="sudo vim"
+# alias scat="sudo cat"
 
-# long format and color ls output with various options. (see "man ls")
-alias dir="ls -lAhpXk --color=auto --group-directories-first"
+# # alias sudo for easy access
+# alias _="sudo"
 
-# output raw less output 
-alias less="less -r"
+# # long format and color ls output with various options. (see "man ls")
+# alias dir="ls -lAhpXk --color=auto --group-directories-first"
 
-# quit aliases
-alias :q="exit"
-alias :Q="exit"
+# # output raw less output
+# alias less="less -r"
 
-# ignore case in grep and color output
-alias grep="grep -i --color=auto"
+# # quit aliases
+# alias :q="exit"
+# alias :Q="exit"
 
-# vim aliases
-alias vi="vim"
+# # ignore case in grep and color output
+# alias grep="grep -i --color=auto"
 
-# utput from a command with xclip when this is piped in
-alias copy='xclip -sel clip'
+# # vim aliases
+# alias vi="vim"
 
-# quick edit conf files 
-alias gitconf="vim ~/.gitconfig"
-alias i3conf="vim ~/.config/i3/config"
-alias zshconf="vim ~/.zshrc"
-alias vimconf="vim ~/.vimrc"
-alias xrconf="vim ~/.Xresources"   
-alias hist="cat ~/.histfile | grep"
+# # utput from a command with xclip when this is piped in
+# alias copy='xclip -sel clip'
 
-# create parents as needed, verbose
-alias mkdir='mkdir -pv'
+# # quick edit conf files
+# alias gitconf="vim ~/.gitconfig"
+# alias i3conf="vim ~/.config/i3/config"
+# alias zshconf="vim ~/.zshrc"
+# alias vimconf="vim ~/.vimrc"
+# alias xrconf="vim ~/.Xresources"
+# alias hist="cat ~/.histfile | grep"
 
-# echo path variable
-alias path='echo -e ${PATH//:/\\n}'
+# # create parents as needed, verbose
+# alias mkdir='mkdir -pv'
 
-# output time
-alias now='date +"%T"'
-alias nowtime=now
+# # echo path variable
+# alias path='echo -e ${PATH//:/\\n}'
 
-# output current date
-alias nowdate='date +"%d-%m-%Y"'
+# # output time
+# alias now='date +"%T"'
+# alias nowtime=now
 
-# list open ports
-alias ports='netstat -tulanp'
+# # output current date
+# alias nowdate='date +"%d-%m-%Y"'
 
-# do not delete / or prompt if deleting more than 3 files at a time #
-alias rm='rm -I --preserve-root'
+# # list open ports
+# alias ports='netstat -tulanp'
 
-# confirmation #
-alias mv='mv -i'
-alias cp='cp -i'
-alias ln='ln -i'
+# # do not delete / or prompt if deleting more than 3 files at a time #
+# alias rm='rm -I --preserve-root'
 
-alias tarx="tar -zxvf"
+# # confirmation #
+# alias mv='mv -i'
+# alias cp='cp -i'
+# alias ln='ln -i'
 
-# Parenting changing perms on / #
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
- 
-# get top process eating cpu
-alias pscpu='ps auxf | sort -nr -k 3'
-alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+# alias tarx="tar -zxvf"
 
-# get GPU ram on desktop / laptop
-alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+# # Parenting changing perms on / #
+# alias chown='chown --preserve-root'
+# alias chmod='chmod --preserve-root'
+# alias chgrp='chgrp --preserve-root'
 
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
+# # get top process eating cpu
+# alias pscpu='ps auxf | sort -nr -k 3'
+# alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 
-alias cd..='cd ..'
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
-alias 6='cd -6'
-alias 7='cd -7'
-alias 8='cd -8'
-alias 9='cd -9'
+# # get GPU ram on desktop / laptop
+# alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
-# fasd aliases
-alias v='f -e vim' # quick opening files with vim
+# alias -g ...='../..'
+# alias -g ....='../../..'
+# alias -g .....='../../../..'
+# alias -g ......='../../../../..'
 
-# end aliases ---/
+# alias cd..='cd ..'
+# alias 1='cd -'
+# alias 2='cd -2'
+# alias 3='cd -3'
+# alias 4='cd -4'
+# alias 5='cd -5'
+# alias 6='cd -6'
+# alias 7='cd -7'
+# alias 8='cd -8'
+# alias 9='cd -9'
 
-eval $( dircolors -b $HOME/.dircolors/LS_COLORS )
+# # fasd aliases
+# alias v='f -e vim' # quick opening files with vim
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# # end aliases ---/
+
+# eval $( dircolors -b $HOME/.dircolors/LS_COLORS )
+
+# source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
