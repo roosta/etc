@@ -1,5 +1,3 @@
-# i3 config file (v4)
-# vim:filetype=i3
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -10,22 +8,10 @@
 exec --no-startup-id xset dpms 450
 
 # register screen locker
-exec xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimals/minimal-24.jpg &
-
-
-# run powerline bar through lemonbar
-#exec --no-startup-id /usr/lib/python3.4/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | lemonbar
+exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimals/minimal-08.png &
 
 # add random background image via qiv
-#exec --no-startup-id qiv -zr /usr/local/share/backgrounds/minimals/*
-exec --no-startup-id qiv -z /usr/local/share/backgrounds/minimals/minimal-24.jpg
-
-# run powerline daemon on| login 
-#exec --no-startup-id powerline-daemon
-
-# start urxvt daemon on login
-exec --no-startup-id  urxvtd -q -f -o
-
+exec --no-startup-id qiv -z /usr/local/share/backgrounds/minimals/minimal-08.png
 
 # ------general config ------ #
 
@@ -85,8 +71,7 @@ set $mod Mod4
 bindsym $mod+Shift+b exec --no-startup-id qiv -zr /usr/local/share/backgrounds/minimals/*
 
 # lock screen
-#bindsym $mod+Shift+o exec --no-startup-id i3lock -ti /usr/local/share/backgrounds/minimals/minimal-24.jpg
-bindsym $mod+Shift+o exec xset s activate
+bindsym $mod+Shift+o exec --no-startup-id xset s activate
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -196,9 +181,8 @@ bindsym $mod+b workspace back_and_forth
 
 # ------ application locations ------ #
 
-#assign [class="URxvt"] $WS1
+assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
-
 
 # ----- resize windows ------ #
 
@@ -236,10 +220,9 @@ bar {
   mode dock
   position top
   font pango:DejaVu Sans Mono for Powerline 12
-	#font -*-cure-medium-*-*-*-11-*-*-*-*-*-*-*
   workspace_buttons yes
   status_command ~/.config/i3/conky.sh
-  tray_output none
+  #tray_output none
   colors {
     background $BG 
     statusline $WHT2
@@ -251,8 +234,7 @@ bar {
 }
 
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 #bar {
         #status_command i3status
 #}

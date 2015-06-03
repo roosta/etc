@@ -17,3 +17,4 @@ vim/.vim/bundle/**
 *.last-run
 SublimeGit.sublime-settings
 *ca-bundle*
+base-16
