@@ -10,8 +10,8 @@ exec --no-startup-id xset dpms 450
 # register screen locker
 exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimals/minimal-08.png &
 
-# add random background image via qiv
-exec --no-startup-id qiv -z /usr/local/share/backgrounds/minimals/minimal-08.png
+# set background image via qiv
+exec --no-startup-id qiv -x /usr/local/share/backgrounds/minimals/minimal-08.png
 
 # ------general config ------ #
 
