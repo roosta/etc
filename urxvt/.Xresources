@@ -1,8 +1,8 @@
 ! vim: set filetype=xdefaults :
 
 !-- fonts
-URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=12
-URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:pixelsize=12
+URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=11
+URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:pixelsize=11
 !urxvt*font: xft:Sauce Code Powerline Medium:pixelsize=10
 !urxvt*boldFont: xft:Sauce Code Powerline Bold:pixelsize=10
 !urxvt*font: -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
@@ -25,6 +25,7 @@ Xft.hinting: true
 
 !URxvt*loginShell: true
 URxvt.internalBorder: 8
+URxvt.borderColor: #111113
 URxvt.borderless: true
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
