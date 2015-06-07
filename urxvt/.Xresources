@@ -1,26 +1,30 @@
 ! vim: set filetype=xdefaults :
 
 !-- fonts
-! Set patched dejavu font
-URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
-URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
+URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=11
+URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:pixelsize=11
+!urxvt*font: xft:Sauce Code Powerline Medium:pixelsize=10
+!urxvt*boldFont: xft:Sauce Code Powerline Bold:pixelsize=10
+!urxvt*font: -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
+!URxvt*font: -misc-orp-medium-r-*--*-*-*-*-*-*-iso10646-1
+!URxvt*boldFont: -misc-orp-bold-r-*--*-*-*-*-*-*-iso10646-1
+
 URxvt*letterSpace: -1
-!urxvt*font: xft:Sauce Code Powerline Medium:pixelsize=14
-!urxvt*boldFont: xft:Sauce Code Powerline Bold:pixelsize=14
-!dzen2.font: -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
-!dzen2.font: -*-droidsans-*-r-normal-*-*-100-*-*-*-*-*-*
 
-Xft.dpi: 96
-Xft.rgba: rgb
-!Xft.pixelsize: 14
+!Xft.dpi: 96
+Xft.dpi: 101
+!Xft.rgba: rgb
+Xft.pixelsize: 11
 Xft.hinting: true
-Xft.antialias: true
+!Xft.antialias: false
 !Xft.hintstyle: hintslight
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
+!Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintfull
 
-URxvt*loginShell: true
-URxvt.internalBorder: 0
+!URxvt*geometry: 100x25
+
+!URxvt*loginShell: true
+URxvt.internalBorder: 8
 URxvt.borderless: true
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
@@ -63,75 +67,3 @@ URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
 URxvt*cursorColor:        #ff8939
 URxvt*cursorColor2:       #151515
-
-! ---- [ unused ] ----!
-
-!urxvt.geometry: 54x15
-!URxvt*scrollBar: false
-!URxvt.scrollBar_right: false
-!URxvt.scrollBar_floating: false
-
-!Xft.dpi:        96
-!Xft.antialias:  true
-!Xft.rgba:       rgb
-!Xft.hinting:    true
-!Xft.hintstyle:  hintslight
-
-!Xft.autohint: 0
-!Xft.lcdfilter:  lcddefault
-!Xft.hintstyle:  hintfull
-!Xft.hinting: 1
-!Xft.antialias: 1
-!Xft.rgba: rgb
-
-
-! Base16 Monokai
-! Scheme: Wimer Hazenberg (http://www.monokai.nl)
-
-!#define base00 #272822
-!#define base01 #383830
-!#define base02 #49483e
-!#define base03 #75715e
-!#define base04 #a59f85
-!#define base05 #f8f8f2
-!#define base06 #f5f4f1
-!#define base07 #f9f8f5
-!#define base08 #f92672
-!#define base09 #fd971f
-!#define base0A #f4bf75
-!#define base0B #a6e22e
-!#define base0C #a1efe4
-!#define base0D #66d9ef
-!#define base0E #ae81ff
-!#define base0F #cc6633
-
-!*.foreground:   base05
-!*.background:   base00
-!*.cursorColor:  base05
-
-!*.color0:       base00
-!*.color1:       base08
-!*.color2:       base0B
-!*.color3:       base0A
-!*.color4:       base0D
-!*.color5:       base0E
-!*.color6:       base0C
-!*.color7:       base05
-
-!*.color8:       base03
-!*.color9:       base08
-!*.color10:      base0B
-!*.color11:      base0A
-!*.color12:      base0D
-!*.color13:      base0E
-!*.color14:      base0C
-!*.color15:      base07
-
-!! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
-!! use 'shell' template to set these if necessary
-!*.color16:      base09
-!*.color17:      base0F
-!*.color18:      base01
-!*.color19:      base02
-!*.color20:      base04
-!*.color21:      base06
