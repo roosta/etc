@@ -13,6 +13,7 @@ alias _="sudo"
 
 # long format and color ls output with various options. (see "man ls")
 alias dir="ls -lAhpXk --color=auto --group-directories-first"
+alias ls="ls -lAhpXk --color=auto --group-directories-first"
 
 # output raw less output
 alias less="less -r"
@@ -49,7 +50,7 @@ alias now='date +"%T"'
 alias nowtime=now
 
 # output current date
-alias nowdate='date +"%d-%m-%Y"'
+alias nowdate='date +"%Y-%m-%d"'
 
 # list open ports
 alias ports='netstat -tulanp'
@@ -125,3 +126,10 @@ alias pacinsd='sudo pacman -S --asdeps'            # Install given package(s) as
 alias pacmir='sudo pacman -Syy'                    # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
 alias pip='sudo -H pip'
+
+# git aliases
+alias gs='git status'
+alias gd='git diff'
+alias gca='git commit -a'
+alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
+alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
