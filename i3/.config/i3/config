@@ -1,8 +1,11 @@
+# i3-wm main config
+# author: Daniel A Berg (email here)
 #
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
-
-# ------ startup ------ # 
+# sources:
+# - http://i3wm.org/docs/user-contributed/lzap-config.html
+# - dotshare.it (picked from various i3 confs, color schemes..etc)
+# ------------------------------------------------
+# --- 1.1 - startup 
 
 # turn off screen after 5minutes
 exec --no-startup-id xset dpms 450
@@ -13,7 +16,7 @@ exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimal
 # set background image via qiv
 exec --no-startup-id qiv -x /usr/local/share/backgrounds/minimals/minimal-08.png
 
-# ------general config ------ #
+# --- 1.2 - general config 
 
 # set window border size
 new_window 1pixel
@@ -22,13 +25,12 @@ new_float 1pixel
 # no focus at mouse pointer since touchpad makes this infuriating
 focus_follows_mouse no
 
-# ------ fonts ------ # 
+# --- 1.3 - fonts 
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono for Powerline 12
-
-# ------ colorscheme ------ #
+font pango:DejaVu Sans Mono for Powerline 11
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
+# --- colorscheme
 
 ## class                 border  backgr. text    indicator
 #client.focused          #e84f4f #151515 #dddddd #5f5f5f
@@ -62,7 +64,7 @@ client.urgent                #cd989a    #cd989a    #2e3436
 client.background            #121212
 
 
-# === 1.1 keybinds: functions === 
+# 2 - keybinds 
 
 # set modkey (Super key)
 set $mod Mod4
@@ -144,47 +146,52 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# border changing
+bindsym $mod+b border toggle
+
+# scratchpad
+bindsym $mod+m move scratchpad
+bindsym $mod+o scratchpad show
+
+# move to last workspace
+#bindsym $mod+b workspace back_and_forth
+
 # ------  workspaces ------ #
 
+# assign variables for workspace names for easier access
 set $WS1 1:terms
 set $WS2 2:dev
 set $WS3 3:web
 set $WS4 4:media
 set $WS5 5:aux
+set $WS6 6
+set $WS7 7
+set $WS8 8
 
-# switch to workspace
-bindsym Mod4+1 workspace $WS1
-bindsym Mod4+2 workspace $WS2
-bindsym Mod4+3 workspace $WS3
-bindsym Mod4+4 workspace $WS4 
-bindsym Mod4+5 workspace $WS5
-bindsym Mod4+6 workspace 6 
-bindsym Mod4+7 workspace 7
-bindsym Mod4+8 workspace 8
-bindsym Mod4+9 workspace 9
-bindsym Mod4+0 workspace 10
+bindsym F1 workspace $WS1
+bindsym F2 workspace $WS2
+bindsym F3 workspace $WS3
+bindsym F4 workspace $WS4 
+bindsym F5 workspace $WS5
+bindsym F6 workspace $WS6 
+bindsym F7 workspace $WS7
+bindsym F8 workspace $WS8
 
 # move focused container to workspace
-bindsym Mod4+Shift+1 move workspace $WS1
-bindsym Mod4+Shift+2 move workspace $WS2
-bindsym Mod4+Shift+3 move workspace $WS3
-bindsym Mod4+Shift+4 move workspace $WS4
-bindsym Mod4+Shift+5 move workspace $WS5
-bindsym Mod4+Shift+6 move workspace 6
-bindsym Mod4+Shift+7 move workspace 7
-bindsym Mod4+Shift+8 move workspace 8
-bindsym Mod4+Shift+9 move workspace 9
-bindsym Mod4+Shift+0 move workspace 10
+bindsym $mod+F1 move workspace $WS1
+bindsym $mod+F2 move workspace $WS2
+bindsym $mod+F3 move workspace $WS3
+bindsym $mod+F4 move workspace $WS4
+bindsym $mod+F5 move workspace $WS5
+bindsym $mod+F6 move workspace $WS6
+bindsym $mod+F7 move workspace $WS7
+bindsym $mod+F8 move workspace $WS8
 
-# move to last workspace
-bindsym $mod+b workspace back_and_forth
-
-# ------ application locations ------ #
-
+# application locations 
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
 
-# ----- resize windows ------ #
+# --- resize windows 
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -218,8 +225,11 @@ bindsym $mod+r mode "resize"
 
 bar {
   mode dock
-  position top
-  font pango:DejaVu Sans Mono for Powerline 12
+  position bottom 
+  font pango:DejaVu Sans Mono for Powerline 10
+  #font -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
+  #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+  #font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
   workspace_buttons yes
   status_command ~/.config/i3/conky.sh
   #tray_output none

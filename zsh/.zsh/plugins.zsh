@@ -14,7 +14,8 @@ eval $( dircolors -b $HOME/.dircolors/LS_COLORS )
 #[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # source the plugin https://github.com/zsh-users/zsh-syntax-highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # color overrides
 # ZSH_HIGHLIGHT_STYLES[default]='none'
@@ -40,3 +41,15 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=cyan'
 # ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=cyan'
 # ZSH_HIGHLIGHT_STYLES[assign]='none'
+
+# source and configure history search
+source $HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
