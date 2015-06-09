@@ -1,7 +1,9 @@
 [
   // Commenting
   { "keys": ["alt+q"], "command": "toggle_comment", "args": { "block": false } },
-  { "keys": ["ctrl+q"], "command": "toggle_comment", "args": { "block": true } },
+  { "keys": ["ctrl+alt+q"], "command": "toggle_comment", "args": { "block": true } },
+  // { "keys": [",","c","space"], "command": "toggle_comment", "args": { "block": false } },
+  // { "keys": ["ctrl+q"], "command": "toggle_comment", "args": { "block": true } },
 
   // reset font size
   { "keys": ["ctrl+0"], "command": "reset_font_size" },
@@ -50,36 +52,7 @@
   { "keys": ["ctrl+d"], "command": "find_under_expand" },
   { "keys": ["ctrl+k", "ctrl+d"], "command": "find_under_expand_skip" },
 
-  // { // Expand right pane
-  //   "keys": ["ctrl+super+left"],
-  //   "command": "set_layout",
-  //   "args":
-  //   {
-  //     "cols": [0.0, 0.33, 1.0],
-  //     "rows": [0.0, 1.0],
-  //     "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
-  //   }
-  // },
-  // { // expand left pane
-  //   "keys": ["ctrl+super+right"],
-  //   "command": "set_layout",
-  //   "args":
-  //   {
-  //     "cols": [0.0, 0.66, 1.0],
-  //     "rows": [0.0, 1.0],
-  //     "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
-  //   }
-  // },
-  // { // Reset panes to 50/50
-  //   "keys": ["ctrl+super+up"],
-  //   "command": "set_layout",
-  //   "args":
-  //   {
-  //     "cols": [0.0, 0.5, 1.0],
-  //     "rows": [0.0, 1.0],
-  //     "cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
-  //   }
-  // },
+  { "keys": ["ctrl+shift+r"], "command": "goto_symbol_in_project" },
 
   /* ====== Plugins ====== */
 
@@ -120,5 +93,11 @@
   // Toggle Console
   // { "keys": ["ctrl+shift+\\"], "command": "show_panel", "args": {"panel": "console", "toggle": true} }
 
-  { "keys": ["ctrl+r"], "command": "redo" }
+  // ---- Vintage mode key binds
+  { "keys": ["ctrl+r"], "command": "redo" },
+  { "keys": ["j", "j"], "command": "_enter_normal_mode", "args": {"mode": "mode_insert"}, "context": [{"key": "vi_insert_mode_aware"}] }
+
+  // commenting
+  //{ "keys": [,"c","space"], "command": "toggle_comment", "args": { "block": false } },
+  //{ "keys": ["ctrl+q"], "command": "toggle_comment", "args": { "block": true } }
 ]

@@ -33,6 +33,6 @@
 	"trim_trailing_white_space_on_save": true,
 	"vintageous_use_ctrl_keys": false,
 	"vintageous_use_sys_clipboard": true,
-	"wide_caret": true,
+	// "wide_caret": true,
 	"word_wrap": false
 }
