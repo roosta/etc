@@ -8,7 +8,7 @@
 # --- 1.1 - startup 
 
 # turn off screen after 5minutes
-exec --no-startup-id xset dpms 450
+#exec --no-startup-id xset dpms 450
 
 # register screen locker
 exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimals/minimal-08.png &
