@@ -36,7 +36,7 @@ Xft.pixelsize: 12
 !URxvt*geometry: 100x25
 
 !URxvt*loginShell: true
-URxvt.internalBorder: 8
+URxvt.internalBorder: 4
 URxvt.borderColor: #111113
 URxvt.borderless: true
 URxvt.url-launcher: /usr/bin/firefox
