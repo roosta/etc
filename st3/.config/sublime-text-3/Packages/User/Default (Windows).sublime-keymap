@@ -1,0 +1,119 @@
+[
+	// Commenting
+	{ "keys": ["alt+q"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+q"], "command": "toggle_comment", "args": { "block": true } },
+
+	// reset font size
+	{ "keys": ["ctrl+0"], "command": "reset_font_size" },
+
+	// Step backwards with multi selction
+	{ "keys": ["ctrl+u"], "command": "soft_undo" },
+
+	// Move pane to left or right
+	{ "keys": ["shift+ctrl+alt+left"], "command": "move_to_group", "args": { "group": 0 } },
+	{ "keys": ["shift+ctrl+alt+right"], "command": "move_to_group", "args": { "group": 1 } },
+
+	// Focus group
+	{ "keys": ["ctrl+alt+left"], "command": "focus_group", "args": { "group": 0 } },
+	{ "keys": ["ctrl+alt+right"], "command": "focus_group", "args": { "group": 1 } },
+
+	// go to definition
+	{ "keys": ["ctrl+e"], "command": "goto_definition" },
+
+	// move by "paragraph"
+	{ "keys": ["ctrl+up"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": false} },
+	{ "keys": ["ctrl+down"], "command": "move", "args": {"by": "stops", "empty_line": true, "forward": true} },
+
+	// next, previous view
+	// { "keys": ["ctrl+super+alt+right"], "command": "next_view" },
+	// { "keys": ["ctrl+super+alt+left"], "command": "prev_view" },
+
+	{ "keys": ["ctrl+k", "ctrl+t"], "command": "title_case" },
+
+	// swap these two since im always using paste and indent rather than regular paste
+	{ "keys": ["ctrl+v"], "command": "paste_and_indent" },
+	{ "keys": ["ctrl+shift+v"], "command": "paste" },
+
+	// indent new line
+	{ "keys": ["enter"], "command": "insert_snippet", "args": {"contents": "\n\t$0\n"}, "context":
+	    [
+	        { "key": "setting.auto_indent", "operator": "equal", "operand": true },
+	        { "key": "selector", "operator": "equal", "operand": "meta.scope.between-tag-pair", "match_all": true },
+	        { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true }
+	    ]
+	},
+
+	{ "keys": ["ctrl+d"], "command": "find_under_expand" },
+	{ "keys": ["ctrl+k", "ctrl+d"], "command": "find_under_expand_skip" },
+
+	{ // Expand right pane
+		"keys": ["ctrl+super+left"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 0.33, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+		}
+	},
+	{ // expand left pane
+		"keys": ["ctrl+super+right"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 0.66, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+		}
+	},
+	{ // Reset panes to 50/50
+		"keys": ["ctrl+super+up"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 0.5, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+		}
+	},
+
+	/* ====== Plugins ====== */
+
+	// making sure jshint takes presedence with this shortcut
+	{ "keys": ["ctrl+alt+j"], "command": "sublimelinter_show_all_errors" },
+
+	// Convert single quote string to double quoted string and vice versa
+	// Will handle escaping or unescaping quotes within the string
+	{
+	    "keys": ["ctrl+alt+super+q"],
+	    "command": "bh_key",
+	    "args":
+	    {
+	        "lines" : true,
+	        "plugin":
+	        {
+	            "type": ["single_quote", "double_quote", "py_single_quote", "py_double_quote"],
+	            "command": "bh_modules.swapquotes"
+	        }
+	    }
+	},
+	// Fold contents between brackets
+	{
+	    "keys": ["ctrl+alt+super+f"],
+	    "command": "bh_key",
+	    "args":
+	    {
+	        "plugin": {
+	            "type": ["__all__"],
+	            "command" : "bh_modules.foldbracket"
+	        }
+	    }
+	},
+
+	// mark task as done in PlainTasks
+	{ "keys": ["ctrl+alt+d"], "command": "plain_tasks_complete","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+
+	// Toggle Console
+	{ "keys": ["ctrl+\\"], "command": "show_panel", "args": {"panel": "console", "toggle": true} }
+
+]

@@ -27,12 +27,11 @@
 		80
 	],
 	"shift_tab_unindent": true,
-	"tab_size": 4,
+	"tab_size": 2,
 	"theme": "itg.flat.dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"vintageous_use_ctrl_keys": false,
-	"vintageous_use_sys_clipboard": true,
-	// "wide_caret": true,
+	"vintageous_use_sys_clipboard": false,
 	"word_wrap": false
 }
