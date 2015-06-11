@@ -40,10 +40,10 @@ colorscheme molokai
 let g:rehash256 = 1
 
 " Multiple-cursor  mapping
-"let g:multi_cursor_next_key='<C-n>'
-"let g:multi_cursor_prev_key='<C-p>'
-"let g:multi_cursor_skip_key='<C-x>'
-"let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 " enable syntax
 syntax on
@@ -156,3 +156,10 @@ inoremap <C-Space> <C-x><C-o>
 inoremap <C-@> <C-Space>
 
 
+if has('gui_running')
+  set guioptions-=T  " no toolbar
+  colorscheme molokai
+  set lines=60 columns=108 linespace=0
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+  "set guifont=Inconsolata\ for\ Powerline\ 10
+endif

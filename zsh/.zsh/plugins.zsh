@@ -2,7 +2,7 @@
 eval "$(fasd --init auto)"
 
 alias v='f -e vim' # quick opening files with vim
-
+alias sv='sudo fasd -e vim' # quick svim access
 # enable powerline
 . /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
 
@@ -53,3 +53,8 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 # bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+# use vim for less
+export PAGER=/usr/bin/vimpager
+alias less=$PAGER
+alias zless=$PAGER
