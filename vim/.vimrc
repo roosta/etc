@@ -109,16 +109,16 @@ set foldlevel=99
 set foldminlines=99
 
 " use indents of 2 spaces
-set shiftwidth=4
+set shiftwidth=2
 
 " tabs are spaces, not tabs
 set expandtab
 
 " an indentation every four columns
-set tabstop=4
+set tabstop=2
 
 " let backspace delete indent
-set softtabstop=4
+set softtabstop=2
 
 " remove trailing whitespaces and ^M chars
 "autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))

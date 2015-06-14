@@ -12,7 +12,8 @@ alias scat="sudo cat"
 alias _="sudo"
 
 # long format and color ls output with various options. (see "man ls")
-alias dir="ls -lAhpXk --color=auto --group-directories-first"
+#alias dir="ls -lAhpXk --color=auto --group-directories-first"
+alias dir='ls++ --potsf -lAhpXk'
 alias ls="ls -lAhpXk --color=auto --group-directories-first"
 
 # output raw less output
@@ -33,8 +34,8 @@ alias copy='xclip -sel clip'
 
 # quick edit conf files
 alias gitconf="vim ~/.gitconfig"
-alias i3conf="vim ~/.config/i3/config"
-alias zshconf="vim ~/.zshrc"
+alias i3conf="vim ~/.config/i3/config.base"
+alias aliases="vim ~/.zsh/aliases.zsh"
 alias vimconf="vim ~/.vimrc"
 alias xrconf="vim ~/.Xresources"
 alias hist="cat ~/.histfile | grep"
