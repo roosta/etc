@@ -198,7 +198,7 @@ bindsym $mod+r mode "resize"
 bar {
   mode dock
   position bottom 
-  font pango:DejaVu Sans Mono for Powerline 11
+  font pango:DejaVu Sans Mono for Powerline 12
   #font -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
   #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
   #font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1

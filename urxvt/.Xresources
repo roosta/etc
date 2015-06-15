@@ -1,8 +1,8 @@
 ! vim: set filetype=xdefaults :
 
 !-- fonts
-URxvt.font: xft:DejaVu Sans Mono for Powerline:style=Book:pixelsize=12:dpi=138
-URxvt.boldFont: xft:DejaVu Sans Mono for Powerline:style=Book:pixelsize=12:dpi=138
+URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=12:antialias=true:hinting=true
+URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:pixelsize=12:antialias=true:hinting=true
 
 !URxvt*font: xft:Anonymous Pro for Powerline:pixelsize=12
 !URxvt*boldFont: xft:Anonymous Pro for Powerline:style=bold:pixelsize=12
@@ -24,9 +24,9 @@ URxvt.boldFont: xft:DejaVu Sans Mono for Powerline:style=Book:pixelsize=12:dpi=1
 URxvt*letterSpace: -1
 
 !Xft.dpi: 96
-Xft.dpi: 138
-Xft.rgba: rgb
-Xft.pixelsize: 12
+!Xft.dpi: 138
+!Xft.rgba: rgb
+!Xft.pixelsize: 12
 !Xft.hinting: true
 !Xft.antialias: true
 !Xft.hintstyle: hintslight
@@ -35,48 +35,90 @@ Xft.pixelsize: 12
 
 !URxvt*geometry: 100x25
 
+URxvt*saveLines: 12000
+URxvt*scrollBar: true
+URxvt*scrollBar_right: false
+URxvt*scrollstyle: plain
+
 !URxvt*loginShell: true
 !URxvt*internalBorder: 4
-URxvt.borderColor: #111113
+!URxvt.borderColor: #111113
 URxvt.borderless: true
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.keysym.C-Delete: perl:matcher:last
 URxvt.keysym.M-Delete: perl:matcher:list
 URxvt.colorUL: #4682B4
-URxvt.scrollBar: false
 
-*foreground: #D7D0C7
-*background: #151515
+!*foreground: #D7D0C7
+!*background: #151515
 
-!black
-! *color0:     #AF875F
-! *color8:     #AF875F
-*color0:     #101010
-*color8:     #404040
-!red
-*color1:     #E84F4F
-*color9:     #D23D3D
-!green
-*color2:     #B8D68C
-*color10:    #A0CF5D
-!yellow
-*color3:     #E1AA5D
-*color11:    #F39D21
-!blue
-*color4:     #7DC1CF
-*color12:    #4E9FB1
-!magenta
-*color5:     #9B64FB
-*color13:    #8542FF
-!cyan
-*color6:     #6D878D
-*color14:    #42717B
-!white
-*color7:     #dddddd
-*color15:    #dddddd
+!!black
+!! *color0:     #AF875F
+!! *color8:     #AF875F
+!*color0:     #101010
+!*color8:     #404040
+!!red
+!*color1:     #E84F4F
+!*color9:     #D23D3D
+!!green
+!*color2:     #B8D68C
+!*color10:    #A0CF5D
+!!yellow
+!*color3:     #E1AA5D
+!*color11:    #F39D21
+!!blue
+!*color4:     #7DC1CF
+!*color12:    #4E9FB1
+!!magenta
+!*color5:     #9B64FB
+!*color13:    #8542FF
+!!cyan
+!*color6:     #6D878D
+!*color14:    #42717B
+!!white
+!*color7:     #dddddd
+!*color15:    #dddddd
 
-URxvt*borderColor:        #151515
-URxvt*colorBD:            #ffffff
-URxvt*cursorColor:        #ff8939
-URxvt*cursorColor2:       #151515
+!URxvt*borderColor:        #151515
+!URxvt*colorBD:            #ffffff
+!URxvt*cursorColor:        #ff8939
+!URxvt*cursorColor2:       #151515
+
+
+! special
+*.foreground:   #d7d0c7
+*.background:   #151515
+*.cursorColor:  #d7d0c7
+
+! black
+*.color0:       #101010
+*.color8:       #404040
+
+! red
+*.color1:       #e84f4f
+*.color9:       #d23d3d
+
+! green
+*.color2:       #b8d68c
+*.color10:      #a0cf5d
+
+! yellow
+*.color3:       #e1aa5d
+*.color11:      #f39d21
+
+! blue
+*.color4:       #7dc1cf
+*.color12:      #4e9fb1
+
+! magenta
+*.color5:       #9b64fb
+*.color13:      #8542ff
+
+! cyan
+*.color6:       #6d878d
+*.color14:      #42717b
+
+! white
+*.color7:       #dddddd
+*.color15:      #dddddd

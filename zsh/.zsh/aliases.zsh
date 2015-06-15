@@ -2,7 +2,7 @@
 
 # always root
 alias systemctl="sudo systemctl"
-alias pacman="sudo pacman"
+alias pacman="sudo pacman --color=auto"
 alias svim="sudo vim"
 alias scat="sudo cat"
 
