@@ -1,20 +1,20 @@
 ! vim: set filetype=xdefaults :
 
 !-- fonts
-URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=12:antialias=true:hinting=true
-URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:pixelsize=12:antialias=true:hinting=true
+!URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=12:antialias=true:hinting=true
+!URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:pixelsize=12:antialias=true:hinting=true
 
 !URxvt*font: xft:Anonymous Pro for Powerline:pixelsize=12
 !URxvt*boldFont: xft:Anonymous Pro for Powerline:style=bold:pixelsize=12
 
-!urxvt*font: xft:Source Code Pro for Powerline:style=medium:pixelsize=12
-!urxvt*boldFont: xft:Source Code Pro for Powerline:style=bold:pixelsize=12
+URxvt*font: xft:Source Code Pro for Powerline:pixelsize=12
+URxvt*boldFont: xft:Source Code Pro for Powerline:bold:pixelsize=12
 
-!URxvt.font: xft:Inconsolata for Powerline:style=Medium:pixelsize=12
-!URxvt.boldFont: xft:Inconsolata for Powerline:style=Bold:pixelsize=12
+!URxvt.font: xft:Inconsolata for Powerline::pixelsize=12
+!URxvt.boldFont: xft:Inconsolata for Powerline:bold:pixelsize=12
 
-!URxvt.font: xft:Terminess Powerline:style=Regular:pixelsize=12
-!URxvt.boldFont: xft:Terminess Powerline:style=Bold:pixelsize=12
+!URxvt.font: xft:Terminess Powerline:pixelsize=12
+!URxvt.boldFont: xft:Terminess Powerline:bold:pixelsize=12
 
 !urxvt*font: -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
 
@@ -33,7 +33,7 @@ URxvt*letterSpace: -1
 !Xft.lcdfilter:  lcddefault
 !Xft.hintstyle:  hintfull
 
-!URxvt*geometry: 100x25
+URxvt*geometry: 100x25
 
 URxvt*saveLines: 12000
 URxvt*scrollBar: true

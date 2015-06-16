@@ -28,8 +28,8 @@ focus_follows_mouse no
 
 # --- 1.3 - fonts 
 
-font pango:DejaVu Sans Mono for Powerline 12
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font pango:DejaVu Sans Mono for Powerline 12
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #font -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
 
 # --- colorscheme
@@ -205,10 +205,8 @@ bindsym $mod+r mode "resize"
 bar {
   mode dock
   position bottom 
-  font pango:DejaVu Sans Mono for Powerline 11
-  #font -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
-  #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-  #font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
+  #font pango:DejaVu Sans Mono for Powerline 12
+  font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
   workspace_buttons yes
   status_command ~/.config/i3/conky.sh
   #tray_output none
