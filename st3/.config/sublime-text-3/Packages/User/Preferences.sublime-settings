@@ -5,6 +5,7 @@
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "DejaVu Sans Mono for Powerline",
 	"font_size": 10,
+	"haxe_nme_target": 4,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
