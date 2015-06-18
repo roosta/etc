@@ -1,7 +1,7 @@
 # ------ Aliases ------ #
 
 # always root
-alias systemctl="sudo systemctl"
+#alias systemctl="sudo systemctl"
 alias pacman="sudo pacman --color=auto"
 alias svim="sudo vim"
 alias scat="sudo cat"

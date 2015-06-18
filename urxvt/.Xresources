@@ -7,8 +7,8 @@
 !URxvt*font: xft:Anonymous Pro for Powerline:pixelsize=12
 !URxvt*boldFont: xft:Anonymous Pro for Powerline:style=bold:pixelsize=12
 
-URxvt*font: xft:Source Code Pro for Powerline:pixelsize=12
-URxvt*boldFont: xft:Source Code Pro for Powerline:bold:pixelsize=12
+!URxvt*font: xft:Source Code Pro for Powerline:pixelsize=12
+!URxvt*boldFont: xft:Source Code Pro for Powerline:bold:pixelsize=12
 
 !URxvt.font: xft:Inconsolata for Powerline::pixelsize=12
 !URxvt.boldFont: xft:Inconsolata for Powerline:bold:pixelsize=12
@@ -18,10 +18,10 @@ URxvt*boldFont: xft:Source Code Pro for Powerline:bold:pixelsize=12
 
 !urxvt*font: -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
 
-!URxvt*font: -misc-orp-medium-r-*--*-*-*-*-*-*-iso10646-1
-!URxvt*boldFont: -misc-orp-bold-r-*--*-*-*-*-*-*-iso10646-1
+URxvt*font: -misc-orp-medium-r-*--*-*-*-*-*-*-iso10646-1
+URxvt*boldFont: -misc-orp-bold-r-*--*-*-*-*-*-*-iso10646-1
 
-URxvt*letterSpace: -1
+!URxvt*letterSpace: -1
 
 !Xft.dpi: 96
 !Xft.dpi: 138
@@ -43,12 +43,20 @@ URxvt*scrollstyle: plain
 !URxvt*loginShell: true
 !URxvt*internalBorder: 4
 !URxvt.borderColor: #111113
-URxvt.borderless: true
+!URxvt.borderless: true
+
+! URL matching
+URxvt.perl-ext: default,url-select
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
 URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
-URxvt.keysym.C-Delete: perl:matcher:last
-URxvt.keysym.M-Delete: perl:matcher:list
-URxvt.colorUL: #4682B4
+!URxvt.matcher.button: 1
+!URxvt.keysym.C-Delete: perl:matcher:last
+!URxvt.perl-ext-common: default,matcher
+!URxvt.keysym.M-Delete: perl:matcher:list
+!URxvt.colorUL: #4682B4
+URxvt.matcher.rend.0: Uline Bold fg5
 
 !*foreground: #D7D0C7
 !*background: #151515

@@ -10,6 +10,9 @@
 # turn off screen after 5minutes
 #exec --no-startup-id xset dpms 450
 
+exec firefox
+exec urxvtc --meta8
+
 # register screen locker
 exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimals/minimal-08.png &
 
@@ -29,10 +32,13 @@ focus_follows_mouse no
 # --- 1.3 - fonts 
 
 #font pango:DejaVu Sans Mono for Powerline 12
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #font -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
+font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
 # --- colorscheme
+
+# use j4-make-config to seperate colorscheme from main config. run 'j4-make-config [theme] to generate working i3 config file then reload
 # $i3-theme-window
 
 # 2 - keybinds 
@@ -50,7 +56,7 @@ bindsym $mod+Shift+o exec --no-startup-id xset s activate
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec urxvtc --meta8
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -109,7 +115,8 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Shift+c exec --no-startup-id j4-make-config && reload && echo 'hello'
+bindsym $mod+Shift+c reload 
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -162,7 +169,7 @@ bindsym $mod+F8 move workspace $WS8
 # application locations 
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
-
+assign [class="urxvt"] $WS1
 # --- resize windows 
 
 # resize window (you can also use the mouse for that)
@@ -204,6 +211,7 @@ bar {
   status_command ~/.config/i3/conky.sh
   #tray_output none
 
+  # use j4-make-config to seperate colorscheme from main config. run 'j4-make-config [theme] to generate working i3 config file then reload
   # $i3-theme-bar  
 }
 
