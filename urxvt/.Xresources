@@ -18,10 +18,12 @@
 
 !urxvt*font: -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
 
-URxvt*font: -misc-orp-medium-r-*--*-*-*-*-*-*-iso10646-1
-URxvt*boldFont: -misc-orp-bold-r-*--*-*-*-*-*-*-iso10646-1
+!URxvt*font: -misc-orp-medium-r-*--*-*-*-*-*-*-iso10646-1
+!URxvt*boldFont: -misc-orp-bold-r-*--*-*-*-*-*-*-iso10646-1
 
-!URxvt*font: -*-terminesspowerline-*-*-*-*-*-*-*-*-*-*-*-* 
+URxvt*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1 
+URxvt*boldFont: -xos4-terminesspowerline-bold-r-normal--14-140-72-72-c-80-iso10646-1
+
 !URxvt*letterSpace: -1
 
 !Xft.dpi: 96
