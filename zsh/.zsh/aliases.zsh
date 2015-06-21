@@ -17,7 +17,7 @@ alias dir='ls++ --potsf -lAhpXk'
 alias ls="ls -lAhpXk --color=auto --group-directories-first"
 
 # output raw less output
-alias less="less -r"
+#alias less="less -r"
 
 # quit aliases
 alias :q="exit"

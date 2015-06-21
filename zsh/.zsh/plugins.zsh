@@ -58,3 +58,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 export PAGER=/usr/bin/vimpager
 alias less=$PAGER
 alias zless=$PAGER
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.zsh/plugins/base16-shell/base16-railscast.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
