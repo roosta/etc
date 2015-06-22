@@ -54,12 +54,13 @@ URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.rend.0: Uline Bold fg5
+
 !URxvt.matcher.button: 1
 !URxvt.keysym.C-Delete: perl:matcher:last
 !URxvt.perl-ext-common: default,matcher
 !URxvt.keysym.M-Delete: perl:matcher:list
 !URxvt.colorUL: #4682B4
-URxvt.matcher.rend.0: Uline Bold fg5
 
 URxvt*fading:  30
 
@@ -93,49 +94,10 @@ URxvt*fading:  30
 !*color7:     #dddddd
 !*color15:    #dddddd
 
-!URxvt*borderColor:        #151515
-!URxvt*colorBD:            #ffffff
+URxvt*borderColor:        #151515
+URxvt*colorBD:            #ffffff
 URxvt*cursorColor:        #ff8939
 URxvt*cursorColor2:       #151515
-
-
-!! special
-!*.foreground:   #d7d0c7
-!*.background:   #151515
-!*.cursorColor:  #d7d0c7
-
-!! black
-!*.color0:       #101010
-!*.color8:       #404040
-
-!! red
-!*.color1:       #e84f4f
-!*.color9:       #d23d3d
-
-!! green
-!*.color2:       #b8d68c
-!*.color10:      #a0cf5d
-
-!! yellow
-!*.color3:       #e1aa5d
-!*.color11:      #f39d21
-
-!! blue
-!*.color4:       #7dc1cf
-!*.color12:      #4e9fb1
-
-!! magenta
-!*.color5:       #9b64fb
-!*.color13:      #8542ff
-
-!! cyan
-!*.color6:       #6d878d
-!*.color14:      #42717b
-
-!! white
-!*.color7:       #dddddd
-!*.color15:      #dddddd
-
 
 
 ! Compile xft: Attempt to find a visual with the given bit depth; option -depth.
