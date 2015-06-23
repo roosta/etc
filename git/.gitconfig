@@ -6,7 +6,6 @@
 [push]
 	default = simple
 [credential]
-	;helper = /usr/lib/git-core/git-credential-gnome-keyring
 	helper = cache 
 [alias]
 	# colorlize and format log output in short and long versions
