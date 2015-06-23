@@ -2,7 +2,7 @@
 
 # always root
 #alias systemctl="sudo systemctl"
-alias pacman="sudo pacman --color=auto"
+alias pacman="sudo pacman"
 alias svim="sudo vim"
 alias scat="sudo cat"
 
@@ -17,7 +17,7 @@ alias dir='ls++ --potsf -lAhpXk'
 alias ls="ls -lAhpXk --color=auto --group-directories-first"
 
 # output raw less output
-alias less="less -r"
+#alias less="less -r"
 
 # quit aliases
 alias :q="exit"
