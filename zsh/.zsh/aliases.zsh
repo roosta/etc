@@ -2,7 +2,7 @@
 
 # always root
 #alias systemctl="sudo systemctl"
-alias pacman="sudo pacman --color=auto"
+alias pacman="sudo pacman"
 alias svim="sudo vim"
 alias scat="sudo cat"
 
@@ -137,3 +137,5 @@ alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn
 
 # common typo
 alias claer='clear'
+
+alias ufw='sudo ufw'
