@@ -14,11 +14,12 @@ exec firefox
 exec urxvtc --meta8
 
 # register screen locker
-exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/minimals/minimal-08.png &
+exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/pattern-05.png &
 
 # set background image via qiv
 #exec --no-startup-id qiv -x /usr/local/share/backgrounds/minimals/minimal-08.png
-exec --no-startup-id qiv -x /usr/local/share/backgrounds/minimals/minimal-04.jpg
+#exec --no-startup-id qiv -x /usr/local/share/backgrounds/minimals/minimal-04.jpg
+exec --no-startup-id qiv -x /usr/local/share/backgrounds/patterns/pattern-05.jpg
 
 # --- 1.2 - general config 
 
