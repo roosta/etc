@@ -2,7 +2,7 @@
 
 # always root
 #alias systemctl="sudo systemctl"
-#alias pacman="sudo pacman --color=auto"
+alias pacman="sudo pacman"
 alias svim="sudo vim"
 alias scat="sudo cat"
 
@@ -135,7 +135,9 @@ alias gca='git commit -a'
 alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
 alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
 
+# common typo
 alias claer='clear'
 alias ufw='sudo ufw'
+alias music='ncmpcpp'
 
 alias tunnel='ssh -TND 4711 -vp 39942 daniel@ddns.dab.works'
