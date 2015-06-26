@@ -17,9 +17,7 @@ exec urxvtc --meta8
 exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/pattern-05.png &
 
 # set background image via qiv
-#exec --no-startup-id qiv -x /usr/local/share/backgrounds/minimals/minimal-08.png
-#exec --no-startup-id qiv -x /usr/local/share/backgrounds/minimals/minimal-04.jpg
-exec --no-startup-id qiv -x /usr/local/share/backgrounds/patterns/pattern-05.jpg
+exec --no-startup-id qiv -y /usr/local/share/backgrounds/patterns/pattern-02.jpg
 
 # --- 1.2 - general config 
 
@@ -48,7 +46,7 @@ font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
 set $mod Mod4
 
 # change wallpaper
-bindsym $mod+Shift+b exec --no-startup-id qiv -zr /usr/local/share/backgrounds/minimals/*
+#bindsym $mod+Shift+b exec --no-startup-id qiv -zr /usr/local/share/backgrounds/minimals/*
 
 # lock screen
 bindsym $mod+Shift+o exec --no-startup-id xset s activate
