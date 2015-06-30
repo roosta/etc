@@ -139,5 +139,6 @@ alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn
 alias claer='clear'
 alias sst='svn status'
 alias ufw='sudo ufw'
-
 alias music='ncmpcpp'
+
+alias stow='stow -v'

@@ -1,0 +1,3 @@
+--ignore=/.git*
+--ignore=/share
+--ignore=/lint
