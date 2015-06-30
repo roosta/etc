@@ -58,7 +58,7 @@ bindsym $mod+Shift+o exec --no-startup-id xset s activate
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc --meta8
+bindsym $mod+Return exec urxvtc --meta8 -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill

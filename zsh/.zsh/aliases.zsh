@@ -142,3 +142,7 @@ alias ufw='sudo ufw'
 alias music='ncmpcpp'
 
 alias stow='stow -v'
+
+
+## transform
+alias tmux='tmux -2'

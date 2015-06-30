@@ -73,7 +73,7 @@ bindsym $mod+Shift+o exec --no-startup-id xset s activate
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc --meta8
+bindsym $mod+Return exec urxvtc --meta8 -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -246,7 +246,6 @@ colors {
 
     # <workclass>       <border>    <bg>        <text>
     focused_workspace   #A5C261     #272935     #A5C261
-   #active_workspace    #BC9458     #272935     #BC9458
     active_workspace    #5A647E     #272935     #B6B3EB
     inactive_workspace  #5A647E     #272935     #5A647E
     urgent_workspace    #DA4939     #272935     #DA4939
