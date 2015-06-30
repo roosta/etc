@@ -30,7 +30,7 @@
 	"tab_size": 4,
 	"theme": "itg.flat.dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
+	"trim_trailing_white_space_on_save": false,
 	"vintageous_use_ctrl_keys": false,
 	"vintageous_use_sys_clipboard": true,
 	"word_wrap": false
