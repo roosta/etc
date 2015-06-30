@@ -20,6 +20,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-eunuch'
+Plugin 'jpo/vim-railscasts-theme'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -35,10 +36,12 @@ augroup reload_vimrc " {
 augroup END " }
 
 set t_Co=256
+
 " set colorscheme monokai
-colorscheme molokai
+"colorscheme molokai
+colorscheme railscasts
 "let g:molokai_original = 1
-let g:rehash256 = 1
+"let g:rehash256 = 1
 
 " Multiple-cursor  mapping
 let g:multi_cursor_next_key='<C-n>'
@@ -56,9 +59,9 @@ set paste
 set scrolloff=3                       
 
 " maintain undo history between sessions
-set undofile
-set undodir=~/.vim/undo
-set noswapfile
+"set undofile
+"set undodir=~/.vim/undo
+"set noswapfile
 
 " file name tab completion
 set wildmode=longest,list,full
@@ -159,7 +162,6 @@ inoremap <C-@> <C-Space>
 
 if has('gui_running')
   set guioptions-=T  " no toolbar
-  colorscheme molokai
   set lines=60 columns=108 linespace=0
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
   "set guifont=Inconsolata\ for\ Powerline\ 10
