@@ -1,0 +1,33 @@
+# $i3-theme-window
+# class                <border>  <bg>      <text>    <indicator>
+#client.focused          #A5C261   #151515   #dddddd   #5f5f5f
+#client.focused_inactive #333333   #5f676a   #ffffff   #484e50
+#client.unfocused        #333333   #222222   #888888   #292d2e
+#client.urgent           #2f343a   #900000   #ffffff   #900000
+#client.placeholder      #000000   #0c0c0c   #ffffff   #000000
+#client.background       #151515
+
+#class                  border   backgr.  text
+client.focused          #A5C261 #272935 #825969
+client.focused_inactive #191919 #191919 #999999
+client.unfocused        #191919 #191919 #999999
+client.urgent           #cd989a #cd989a #2e3436
+client.background       #121212
+
+
+# $i3-theme-bar
+colors {
+    # <bar>
+    background  #2B2B2B
+    separator   #D4CFC9
+    statusline  #E6E1DC
+
+    # <workclass>       <border>    <bg>        <text>
+    focused_workspace   #A5C261     #272935     #A5C261
+    active_workspace    #5A647E     #272935     #B6B3EB
+    inactive_workspace  #5A647E     #272935     #5A647E
+    urgent_workspace    #DA4939     #272935     #DA4939
+}
+
+
+# vim:filetype=i3

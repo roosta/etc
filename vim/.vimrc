@@ -19,6 +19,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-eunuch'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
