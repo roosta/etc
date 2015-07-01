@@ -3,9 +3,9 @@
 # │░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█░░│
 # │░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░│
 # └──────────────────────────────┘
-# Author: Roosta <roosta@dab.works>
-# Webpage: http://dotfiles.dab.works
-# Github: https://github.com/roosta
+# Author : Roosta <roosta@dab.works>
+# Site   : http://dotfiles.dab.works
+# Github : https://github.com/roosta
 # -------------------------------
 
 # always root
@@ -35,12 +35,14 @@ alias copy='xclip -sel clip'
 
 # quick edit conf files
 alias gitconf='vim ~/.gitconfig'
-alias i3conf='vim ~/.config/i3/config.base'
+alias i3conf='vim ~/.config/i3/config'
 alias aliases='vim ~/.zsh/aliases.zsh'
 alias vimconf='vim ~/.vimrc'
 alias xrconf='vim ~/.Xresources'
-alias hist='cat ~/.histfile | grep'
 alias muxconf='vim ~/.tmux.conf'
+
+# grep command history quickly
+alias hist="cat ~/.histfile | grep"
 
 # create parents as needed, verbose
 alias mkdir='mkdir -pv'

@@ -1,17 +1,22 @@
-# i3-wm main config
-# author: Daniel A Berg (email here)
-#
-# sources:
-# - http://i3wm.org/docs/user-contributed/lzap-config.html
-# - dotshare.it (picked from various i3 confs, color schemes..etc)
+# ┌──────────────────┐
+# │░▀█▀░▀▀█░█░█░█▄█░░│
+# │░░█░░░▀▄░█▄█░█░█░░│
+# │░▀▀▀░▀▀░░▀░▀░▀░▀░░│
+# └──────────────────┘
+# Author : Roosta <roosta@dab.works>
+# Site   : http://dotfiles.dab.works
+# Github : https://github.com/roosta
+# ----------------------------------
+# Sources:
+# * http://i3wm.org/docs/user-contributed/lzap-config.html
+# * http://dotshare.it (picked from various i3 confs, color schemes..etc)
 # ------------------------------------------------
-# --- 1.1 - startup 
+
+# - startup 
+# -------------------- 
 
 # turn off screen after 5minutes
 #exec --no-startup-id xset dpms 450
-
-exec firefox
-exec urxvtc --meta8
 
 # register screen locker
 exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/pattern-05.png &
@@ -19,7 +24,8 @@ exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/pattern
 # set background image via qiv
 exec --no-startup-id qiv -y /usr/local/share/backgrounds/patterns/pattern-02.jpg
 
-# --- 1.2 - general config 
+# - general config
+# --------------------  
 
 # set window border size
 new_window 1pixel
@@ -28,8 +34,8 @@ new_float 1pixel
 # no focus at mouse pointer since touchpad makes this infuriating
 focus_follows_mouse no
 
-
-# --- 1.3 - fonts 
+# - fonts 
+# -------------------- 
 
 #font pango:DejaVu Sans Mono for Powerline 12
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -38,28 +44,18 @@ focus_follows_mouse no
 #font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 
-# --- colorscheme
+# - applications 
+# -------------------- 
 
-# use j4-make-config to seperate colorscheme from main config. run 'j4-make-config [theme] to generate working i3 config file then reload
+exec firefox
+exec urxvtc --meta8 -e tmux
 
-# class                <border>  <bg>      <text>    <indicator>
-#client.focused          #A5C261   #151515   #dddddd   #5f5f5f
-#client.focused_inactive #333333   #5f676a   #ffffff   #484e50
-#client.unfocused        #333333   #222222   #888888   #292d2e
-#client.urgent           #2f343a   #900000   #ffffff   #900000
-#client.placeholder      #000000   #0c0c0c   #ffffff   #000000
-#client.background       #151515
+assign [class="subl3"] $WS2
+assign [class="Firefox"] $WS3
+assign [class="urxvt"] $WS1
 
-#class                  border   backgr.  text
-client.focused          #A5C261 #272935 #825969
-client.focused_inactive #191919 #191919 #999999
-client.unfocused        #191919 #191919 #999999
-client.urgent           #cd989a #cd989a #2e3436
-client.background       #121212
-
-
-
-# 2 - keybinds 
+# - keybinds 
+# -------------------- 
 
 # set modkey (Super key)
 set $mod Mod4
@@ -162,7 +158,8 @@ workspace_auto_back_and_forth yes
 # move windows back and forth
 bindsym $mod+Shift+z move container to workspace back_and_forth
 
-# ------  workspaces ------ #
+# - workspaces 
+# -------------------- 
 
 # assign variables for workspace names for easier access
 set $WS1 1:terms
@@ -193,11 +190,8 @@ bindsym $mod+F6 move workspace $WS6
 bindsym $mod+F7 move workspace $WS7
 bindsym $mod+F8 move workspace $WS8
 
-# application locations 
-assign [class="subl3"] $WS2
-assign [class="Firefox"] $WS3
-assign [class="urxvt"] $WS1
-# --- resize windows 
+# - resize windows 
+# -------------------- 
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -225,43 +219,30 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# ------ i3bar config ------ #
+# - colorscheme
+# -------------------- 
 
+# class                 border  backgr. text    indicator
+client.focused          #4c7899 #285577 #ffffff #2e9ef4
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused        #333333 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000
 
+# - bar config
+# -------------------- 
 
-#bar {
-  #mode dock
-  #position top 
-  #font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
-  ##font -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
-  #workspace_buttons yes
-  #status_command ~/.config/i3/conky.sh
-  ##tray_output none
-  ##workspace_bar no
-  ## use j4-make-config to seperate colorscheme from main config. run 'j4-make-config [theme] to generate working i3 config file then reload
-colors {
-    # <bar>
-    background  #2B2B2B
-    separator   #D4CFC9
-    statusline  #E6E1DC
-
-    # <workclass>       <border>    <bg>        <text>
-    focused_workspace   #A5C261     #272935     #A5C261
-    active_workspace    #5A647E     #272935     #B6B3EB
-    inactive_workspace  #5A647E     #272935     #5A647E
-    urgent_workspace    #DA4939     #272935     #DA4939
-}
-
-
-# vim:filetype=i3
-#}
-
-
-# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
-  position top
-  status_command i3status
-colors {
+  mode dock
+  position top 
+  tray_output all
+  status_command ~/.config/i3/conky.sh
+  #status_command i3status
+  workspace_buttons yes
+  #font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
+  #font -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
+  colors {
+
     # <bar>
     background  #2B2B2B
     separator   #D4CFC9
@@ -272,11 +253,7 @@ colors {
     active_workspace    #5A647E     #272935     #B6B3EB
     inactive_workspace  #5A647E     #272935     #5A647E
     urgent_workspace    #DA4939     #272935     #DA4939
+  } 
 }
-
-
-# vim:filetype=i3
-}
-
 
 # vim:filetype=i3
