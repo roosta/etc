@@ -21,7 +21,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'Vundle.vim'
 
 "Plugin 'jdonaldson/vaxe'
 Plugin 'scrooloose/nerdcommenter'
@@ -31,10 +31,12 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
-"Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-eunuch'
 Plugin 'jpo/vim-railscasts-theme'
+
+" add static plugins (not tracked)
+Plugin 'conkyrc'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
