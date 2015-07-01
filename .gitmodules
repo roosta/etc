@@ -4,9 +4,6 @@
 [submodule "zsh/.zsh/plugins/zsh-history-substring-search"]
 	path = zsh/.zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
-[submodule "vim/.vim/bundle/Vundle.vim"]
-	path = vim/.vim/bundle/Vundle.vim
-	url = https://github.com/gmarik/Vundle.vim.git
 [submodule "zsh/.zsh/plugins/base16-shell"]
 	path = zsh/.zsh/plugins/base16-shell
 	url = https://github.com/roosta/base16-shell.git
