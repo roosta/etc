@@ -21,13 +21,11 @@
 !URxvt*font: -misc-orp-medium-r-*--*-*-*-*-*-*-iso10646-1
 !URxvt*boldFont: -misc-orp-bold-r-*--*-*-*-*-*-*-iso10646-1
 
-! lintilla font
-!URxvt*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1 
-!URxvt*boldFont: -xos4-terminesspowerline-bold-r-normal--14-140-72-72-c-80-iso10646-1
-
-! allitnil font
-URxvt*font: -xos4-terminesspowerline-medium-r-normal--14-140-72-72-c-80-iso10646-1
+URxvt*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1, xft:Anonymous Pro for Powerline:pixelsize=12
 URxvt*boldFont: -xos4-terminesspowerline-bold-r-normal--14-140-72-72-c-80-iso10646-1
+
+!urxvt*font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
+
 !URxvt*letterSpace: -1
 
 !Xft.dpi: 96
@@ -102,6 +100,8 @@ URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
 URxvt*cursorColor:        #ff8939
 URxvt*cursorColor2:       #151515
+<<<<<<< HEAD
+=======
 
 
 ! Compile xft: Attempt to find a visual with the given bit depth; option -depth.

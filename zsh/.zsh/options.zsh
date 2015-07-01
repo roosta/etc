@@ -16,3 +16,6 @@ setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
 
 unsetopt beep
+
+# rehash automatically
+zstyle ':completion:*' rehash true

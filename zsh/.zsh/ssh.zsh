@@ -7,5 +7,7 @@
 #ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 
 # use keychain as a ssh front-end
-eval $(keychain --eval --nogui --agents ssh -Q --quiet id_rsa)
+#eval $(keychain --eval --nogui --agents ssh -Q --quiet id_rsa)
 
+envoy -t ssh-agent 
+source <(envoy -p)
