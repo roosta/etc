@@ -35,7 +35,7 @@ alias copy='xclip -sel clip'
 
 # quick edit conf files
 alias gitconf='vim ~/.gitconfig'
-alias i3conf='vim ~/.config/i3/config'
+alias i3conf='vim ~/.i3/config'
 alias aliases='vim ~/.zsh/aliases.zsh'
 alias vimconf='vim ~/.vimrc'
 alias xrconf='vim ~/.Xresources'
