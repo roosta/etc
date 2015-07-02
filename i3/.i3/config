@@ -236,7 +236,7 @@ bar {
   mode dock
   position top 
   tray_output all
-  status_command ~/.i3/conky.sh
+  status_command ~/.i3/i3-conky-wrapper.sh
   #status_command i3status
   workspace_buttons yes
   #font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1

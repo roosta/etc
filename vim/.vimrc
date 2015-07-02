@@ -17,11 +17,11 @@ set nocompatible              " be improved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 "Plugin 'jdonaldson/vaxe'
 Plugin 'scrooloose/nerdcommenter'
@@ -34,14 +34,14 @@ Plugin 'tpope/vim-repeat'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-eunuch'
 Plugin 'jpo/vim-railscasts-theme'
-
-" add static plugins (not tracked)
-Plugin 'conkyrc'
+Plugin 'otommod/conky-syntax.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
+
+set rtp+=~/.vim/static
 
 " vim-multiple-cursor config 
 let g:multi_cursor_next_key='<C-d>'
@@ -49,7 +49,7 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-map <leader>b :CtrlPBuffer<CR>
+noremap <leader>b :CtrlPBuffer<CR>
 
 " enable powerline
 python3 from powerline.vim import setup as powerline_setup

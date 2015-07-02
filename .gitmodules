@@ -7,6 +7,3 @@
 [submodule "zsh/.zsh/plugins/base16-shell"]
 	path = zsh/.zsh/plugins/base16-shell
 	url = https://github.com/roosta/base16-shell.git
-[submodule "vim/.vim/vundle"]
-	path = vim/.vim/vundle
-	url = https://github.com/gmarik/Vundle.vim.git

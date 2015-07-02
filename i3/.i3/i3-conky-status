@@ -7,38 +7,40 @@ update_interval 1
 if_up_strictness address
 
 TEXT
-,[{"name": "uptime", "icon":"/home/tema/.i3/xbmicons/ac.xbm", \
+,[{"name": "uptime", "icon":"$HOME/.i3/xbmicons/ac.xbm", \
    "color":"\#808080", "full_text":"${uptime_short} "},\
-  {"name": "cpu", "icon":"/home/tema/.i3/xbmicons/cpu.xbm", \
+  {"name": "cpu", "icon":"$HOME/.i3/xbmicons/cpu.xbm", \
    "color": "\#808080", "full_text": \
    "[${cpu cpu1}%, ${cpu cpu2}%  ${cpu cpu3}%, ${cpu cpu4}%] "},  \
-  {"name": "memory", "icon": "/home/tema/.i3/xbmicons/mem.xbm", \
+  {"name": "memory", "icon": "$HOME/.i3/xbmicons/mem.xbm", \
    "color": "\#808080", "full_text": "${memperc}% "},  \
-  {"name": "disk", "icon":"/home/tema/.i3/xbmicons/fs_01.xbm", \
+  {"name": "disk", "icon":"$HOME/.i3/xbmicons/fs_01.xbm", \
    "color": "\#808080", "full_text": "${fs_used_perc /}% "},  \
   ${if_up wlan0} \
-  {"name":"wifi", "icon":"/home/tema/.i3/xbmicons/wifi_01.xbm", \
+  {"name":"wifi", "icon":"$HOME/.i3/xbmicons/wifi_01.xbm", \
    "icon_color":"\#339966","color": "\#339966", "full_text": "${addr wlan0} "}, \
-        {"name":"download", "icon":"/home/tema/.i3/xbmicons/net_down_03.xbm", \
+        {"name":"download", "icon":"$HOME/.i3/xbmicons/net_down_03.xbm", \
    "color":"\#808080", "full_text": "${downspeed wlan0}"}, \
   ${else} ${if_up eth0}\
-  {"name":"eth0", "icon":"/home/tema/.i3/xbmicons/net_wired.xbm",\
+  {"name":"eth0", "icon":"$HOME/.i3/xbmicons/net_wired.xbm",\
    "icon_color":"\#339966","color": "\#339966", "full_text": "${addr eth0} "}, \
-        {"name":"download", "icon":"/home/tema/.i3/xbmicons/net_down_03.xbm", \
+        {"name":"download", "icon":"$HOME/.i3/xbmicons/net_down_03.xbm", \
    "color":"\#808080", "full_text": "${downspeed eth0}"}, \
   ${else}
-  {"name":"nonet", "icon_color": "\#EE6633", "full_text": "", "icon": "/home/tema/.i3/xbmicons/net_down_01.xbm"}, \
+  {"name":"nonet", "icon_color": "\#EE6633", "full_text": "", "icon": "$HOME/.i3/xbmicons/net_down_01.xbm"}, \
   ${endif}\
   ${endif}  \
-  {"name": "volume", "icon":"/home/tema/.i3/xbmicons/spkr_01.xbm", \
+  {"name": "volume", "icon":"$HOME/.i3/xbmicons/spkr_01.xbm", \
    "color": "\#808080", "full_text": \
    "${exec amixer sget Master | grep Mono: | sed -e 's/[ \t]*Mono: Playback [0-9]* \[\([0-9]*%\)\].*/\1/'} "},  \
   ${if_empty ${battery BAT1} } ${else}\
-        {"name": "battery", "icon":"/home/tema/.i3/xbmicons/bat_full_01.xbm", \
+        {"name": "battery", "icon":"$HOME/.i3/xbmicons/bat_full_01.xbm", \
          "color": "\#808080", "full_text": "${battery_percent BAT1}% "},  \
   ${endif} \
-  {"name": "time", "icon":"/home/tema/.i3/xbmicons/clock.xbm", \
+  {"name": "time", "icon":"$HOME/.i3/xbmicons/clock.xbm", \
    "icon_color": "\#CFCFCF", "color": "\#CFCFCF", \
    "full_text": "${time %d/%m/%y} ${time %H:%M}"}\
 ]
+
+# vim:filetype=conkyrc
 
