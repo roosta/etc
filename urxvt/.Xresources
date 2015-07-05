@@ -21,20 +21,22 @@
 !URxvt*font: -misc-orp-medium-r-*--*-*-*-*-*-*-iso10646-1
 !URxvt*boldFont: -misc-orp-bold-r-*--*-*-*-*-*-*-iso10646-1
 
-URxvt*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1, xft:Anonymous Pro for Powerline:pixelsize=12
-URxvt*boldFont: -xos4-terminesspowerline-bold-r-normal--14-140-72-72-c-80-iso10646-1
+!URxvt*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1, xft:Anonymous Pro for Powerline:pixelsize=12
+!URxvt*boldFont: -xos4-terminesspowerline-bold-r-normal--14-140-72-72-c-80-iso10646-1
 
 !urxvt*font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
 
-!URxvt*letterSpace: -1
+URxvt*font:xft:Essential PragmataPro:style=Regular:pixelsize=12, xft:Anonymous Pro for Powerline:pixelsize=12
+URxvt*boldFont: xft:Essential PragmataPro:style=Bold:pixelsize=12, xft:Anonymous Pro for Powerline:style=Bold:pixelsize=12
+
+URxvt*letterSpace: -1
 
 !Xft.dpi: 96
-!Xft.dpi: 138
 !Xft.rgba: rgb
 !Xft.pixelsize: 12
 !Xft.hinting: true
-!Xft.antialias: true
-!Xft.hintstyle: hintslight
+!Xft.antialias: false
+!!Xft.hintstyle: hintslight
 !Xft.lcdfilter:  lcddefault
 !Xft.hintstyle:  hintfull
 
@@ -100,9 +102,6 @@ URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
 URxvt*cursorColor:        #ff8939
 URxvt*cursorColor2:       #151515
-<<<<<<< HEAD
-=======
-
 
 ! Compile xft: Attempt to find a visual with the given bit depth; option -depth.
 ! URxvt*depth: bitdepth

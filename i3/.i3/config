@@ -38,11 +38,12 @@ focus_follows_mouse no
 # -------------------- 
 
 #font pango:DejaVu Sans Mono for Powerline 12
+font pango:Essential PragmataPro 8
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #font 6x12
 #font -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
 #font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+#font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 
 # - applications 
 # -------------------- 
@@ -153,7 +154,7 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/touchpad-toggle.sh
 bindsym $mod+z workspace back_and_forth
 
 # jump to previous workspace by hitting first ws button again
-workspace_auto_back_and_forth yes
+#workspace_auto_back_and_forth yes
 
 # move windows back and forth
 bindsym $mod+Shift+z move container to workspace back_and_forth
@@ -223,11 +224,11 @@ bindsym $mod+r mode "resize"
 # -------------------- 
 
 # class                 border  backgr. text    indicator
-client.focused          #4c7899 #285577 #ffffff #2e9ef4
-client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused        #333333 #222222 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000
+client.focused          #5A647E #3A4055 #F9F7F3 #E6E1DC
+client.focused_inactive #333333 #3A4055 #ffffff #484e50
+client.unfocused        #5A647E #2B2B2B #5A647E #292d2e
+client.urgent           #3A4055 #DA4939 #ffffff #900000
+client.placeholder      #000000 #272935 #ffffff #000000
 
 # - bar config
 # -------------------- 
@@ -249,8 +250,8 @@ bar {
     statusline  #E6E1DC
 
     # <workclass>       <border>    <bg>        <text>
-    focused_workspace   #A5C261     #272935     #A5C261
-    active_workspace    #5A647E     #272935     #B6B3EB
+    focused_workspace   #5A647E     #3A4055     #F9F7F3
+    active_workspace    #5A647E     #2B2B2B     #D4CFC9
     inactive_workspace  #5A647E     #272935     #5A647E
     urgent_workspace    #DA4939     #272935     #DA4939
   } 
