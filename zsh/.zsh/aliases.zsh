@@ -152,7 +152,7 @@ alias music='ncmpcpp'
 # stow is always verbose
 alias stow='stow -v'
 
-alias xmerge="xrdb -merge ~/.Xresources"
+alias xrmerge="xrdb -merge ~/.Xresources"
 
 ## transform
 alias sst='svn status'

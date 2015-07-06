@@ -3,7 +3,7 @@
 	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "-misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1",
+	"font_face": "Essential PragmataPro",
 	"font_size": 10,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
