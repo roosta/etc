@@ -153,7 +153,7 @@ bindsym $mod+p exec --no-startup-id /usr/local/bin/touchpad-toggle.sh
 bindsym $mod+z workspace back_and_forth
 
 # jump to previous workspace by hitting first ws button again
-workspace_auto_back_and_forth yes
+#workspace_auto_back_and_forth yes
 
 # move windows back and forth
 bindsym $mod+Shift+z move container to workspace back_and_forth

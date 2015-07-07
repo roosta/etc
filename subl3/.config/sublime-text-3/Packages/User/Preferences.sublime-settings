@@ -1,11 +1,11 @@
 {
 	"bold_folder_labels": true,
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"ensure_newline_at_eof_on_save": true,
-	// "font_face": "DejaVu Sans Mono for Powerline",
-	"font_face": "-misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1",
+	"font_face": "font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1",
 	"font_size": 10,
+	// "font_options": ["no_antialias"],
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -34,6 +34,6 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": false,
 	"vintageous_use_ctrl_keys": false,
-	"vintageous_use_sys_clipboard": true,
+	"vintageous_use_sys_clipboard": false,
 	"word_wrap": false
 }
