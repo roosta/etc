@@ -10,7 +10,7 @@
 
 # always root
 alias pacman="sudo pacman"
-alias svim="sudo vim"
+#alias svim="sudo vim"
 alias scat="sudo cat"
 
 # alias sudo for easy access
@@ -152,6 +152,7 @@ alias music='ncmpcpp'
 # stow is always verbose
 alias stow='stow -v'
 
+alias xrmerge="xrdb -merge ~/.Xresources"
 
 ## transform
 alias sst='svn status'

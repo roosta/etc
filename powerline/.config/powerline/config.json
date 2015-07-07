@@ -17,8 +17,8 @@
 			"theme": "default"
 		},
 		"shell": {
-			"colorscheme": "default",
-			"theme": "dab",
+			"colorscheme": "rcast",
+			"theme": "default",
 			"local_themes": {
 				"continuation": "continuation",
 				"select": "select"

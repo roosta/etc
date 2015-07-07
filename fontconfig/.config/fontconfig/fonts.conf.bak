@@ -2,7 +2,7 @@
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
 <fontconfig>
     <match target="font">
-        <edit mode="assign" name="antialias"><bool>true</bool></edit>
+        <edit mode="assign" name="antialias"><bool>false</bool></edit>
         <edit mode="assign" name="autohint"><bool>false</bool></edit>
         <edit mode="assign" name="embeddedbitmap"><bool>false</bool></edit>
         <edit mode="assign" name="hinting"><bool>true</bool></edit>
@@ -22,6 +22,10 @@
     <match target="pattern">
         <test qual="any" name="family"><string>monospace</string></test>
         <edit name="family" mode="assign" binding="same"><string>Liberation Mono</string></edit>
+    </match>
+
+    <match target="pattern">
+        <edit name="dpi" mode="assign"><double>96</double></edit>
     </match>
 </fontconfig>
 

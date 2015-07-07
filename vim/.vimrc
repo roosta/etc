@@ -41,20 +41,24 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
-set rtp+=~/.vim/static
-
-" vim-multiple-cursor config 
-let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
-
-noremap <leader>b :CtrlPBuffer<CR>
-
 " enable powerline
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
+
+" vim-multiple-cursor config 
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+map <leader>b :CtrlPBuffer<CR>
+map <leader>t :NERDTreeToggle<CR>
+
+let NERDTreeShowHidden=1
+
+" close vim if nerdtree is only window remaining
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Set theme
 colorscheme railscasts
@@ -93,9 +97,9 @@ set undofile
 set undodir=~/.vim/undo
 set noswapfile
 
-" file name tab completion
-set wildmode=longest,list,full
+" command line completion
 set wildmenu
+set wildmode=longest:full,full
 
 " case insensitive search
 set ignorecase
@@ -120,7 +124,7 @@ set timeoutlen=1000 ttimeoutlen=0
 set laststatus=2 
 
 " Always display the tabline, even if there is only one tab
-set showtabline=2
+set showtabline=1
 
 " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set noshowmode 
