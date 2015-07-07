@@ -2,10 +2,9 @@
 	"bold_folder_labels": true,
 	"close_windows_when_empty": false,
 	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
-	"ensure_newline_at_eof_on_save": true,
+	"ensure_newline_at_eof_on_save": false,
 	"font_face": "Essential PragmataPro",
 	"font_size": 10,
-	// "font_options": ["no_antialias"],
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":

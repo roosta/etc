@@ -37,10 +37,17 @@
                 "args": [],
                 "excludes": [],
                 "strict": true
+            },
+            "shellcheck": {
+                "@disable": false,
+                "args": [],
+                "exclude": "",
+                "excludes": []
             }
         },
         "mark_style": "stippled underline",
         "no_column_highlights_line": false,
+        "passive_warnings": false,
         "paths": {
             "linux": [],
             "osx": [],
