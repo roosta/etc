@@ -21,8 +21,8 @@
 # register screen locker
 exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/pattern-05.png &
 
-# set background image via qiv
-exec --no-startup-id feh --bg-tile /usr/local/share/backgrounds/patterns/pattern-01.png
+# set background image 
+exec --no-startup-id feh --bg-center /usr/local/share/backgrounds/patterns/minimal-56.png
 
 # - general config
 # --------------------  
@@ -38,9 +38,8 @@ focus_follows_mouse no
 # -------------------- 
 
 #font pango:DejaVu Sans Mono for Powerline 12
-font pango:Essential PragmataPro 8
+font pango:Essential\ PragmataPro 9
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#font 6x12
 #font -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
 #font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
@@ -61,17 +60,14 @@ assign [class="urxvt"] $WS1
 # set modkey (Super key)
 set $mod Mod4
 
-# change wallpaper
-#bindsym $mod+Shift+b exec --no-startup-id qiv -zr /usr/local/share/backgrounds/minimals/*
-
-# lock screen
+# manual screen lock
 bindsym $mod+Shift+o exec --no-startup-id xset s activate
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc --meta8 -e tmux
+bindsym $mod+Return exec urxvtc -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -245,7 +241,7 @@ bar {
   colors {
 
     # <bar>
-    background  #2B2B2B
+    background  #272935
     separator   #D4CFC9
     statusline  #E6E1DC
 

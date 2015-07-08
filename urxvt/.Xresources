@@ -7,24 +7,11 @@
 !URxvt*font: xft:Anonymous Pro for Powerline:pixelsize=12
 !URxvt*boldFont: xft:Anonymous Pro for Powerline:style=bold:pixelsize=12
 
-!URxvt*font: xft:Source Code Pro for Powerline:pixelsize=12
-!URxvt*boldFont: xft:Source Code Pro for Powerline:bold:pixelsize=12
-
-!URxvt.font: xft:Inconsolata for Powerline::pixelsize=12
-!URxvt.boldFont: xft:Inconsolata for Powerline:bold:pixelsize=12
-
-!URxvt.font: xft:Terminess Powerline:pixelsize=12
-!URxvt.boldFont: xft:Terminess Powerline:bold:pixelsize=12
-
-!urxvt*font: -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
-
 !URxvt*font: -misc-orp-medium-r-*--*-*-*-*-*-*-iso10646-1
 !URxvt*boldFont: -misc-orp-bold-r-*--*-*-*-*-*-*-iso10646-1
 
-!URxvt*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1, xft:Anonymous Pro for Powerline:pixelsize=12
+!URxvt*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1 
 !URxvt*boldFont: -xos4-terminesspowerline-bold-r-normal--14-140-72-72-c-80-iso10646-1
-
-!urxvt*font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
 
 URxvt*font:xft:Essential\ PragmataPro:size=10,xft:DejaVu\ Sans\ Mono\ for\ Powerline:size=10
 !URxvt*boldFont: xft:Essential\ PragmataPro:size=9:antialias=true:hinting=true,xft:DejaVu\ Sans\ Mono\ for\ Powerline:size=10:antialias=true:hinting=true
@@ -50,7 +37,7 @@ URxvt*scrollBar: false
 URxvt*internalBorder: 0
 !URxvt.borderColor: #111113
 URxvt*externalBorder: 0
-URxvt.borderless: true
+!URxvt.borderless: true
 
 !URL matching
 URxvt.perl-ext: default,url-select
