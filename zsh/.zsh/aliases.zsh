@@ -36,10 +36,11 @@ alias copy='xclip -sel clip'
 # quick edit conf files
 alias gitconf='vim ~/.gitconfig'
 alias i3conf='vim ~/.i3/config'
-alias aliases='vim ~/.zsh/aliases.zsh'
+alias aliasconf='vim ~/.zsh/aliases.zsh'
 alias vimconf='vim ~/.vimrc'
 alias xrconf='vim ~/.Xresources'
 alias muxconf='vim ~/.tmux.conf'
+alias initconf='vim ~/.xinitrc'
 
 # grep command history quickly
 alias hist="cat ~/.histfile | grep"
@@ -152,7 +153,11 @@ alias music='ncmpcpp'
 # stow is always verbose
 alias stow='stow -v'
 
+# merge new xresources config
 alias xrmerge="xrdb -merge ~/.Xresources"
+
+# refresh zsh config files
+alias zrefresh="source $HOME/.zshrc"
 
 ## transform
 alias sst='svn status'

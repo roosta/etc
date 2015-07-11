@@ -55,7 +55,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # use vim for less
-export PAGER=/usr/bin/vimpager
+#export PAGER=/usr/bin/vimpager
 #alias less=$PAGER
 #alias zless=$PAGER
 

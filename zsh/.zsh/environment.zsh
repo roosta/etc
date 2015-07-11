@@ -19,4 +19,3 @@ export LESS_TERMCAP_mb=$(printf '\e[1;32m')
 export LESS_TERMCAP_md=$(printf '\e[1;34m')
 export LESS_TERMCAP_us=$(printf '\e[1;32m')
 
-#export PENTADACTYL_RUNTIME=~/.pentadactyl
