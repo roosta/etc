@@ -6,7 +6,7 @@
 # Author : Roosta <roosta@dab.works>
 # Site   : http://dotfiles.dab.works
 # Github : https://github.com/roosta
-# ----------------------------------
+# ------
 # Sources:
 # * http://i3wm.org/docs/user-contributed/lzap-config.html
 # * http://dotshare.it (picked from various i3 confs, color schemes..etc)
@@ -31,7 +31,7 @@ focus_follows_mouse no
 # - fonts 
 # -------------------- 
 
-font pango:Essential\ PragmataPro 9
+font pango:Essential\ PragmataPro 8
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 

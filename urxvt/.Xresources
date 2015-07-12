@@ -4,7 +4,7 @@
 !URxvt*font: -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1 
 !URxvt*boldFont: -xos4-terminesspowerline-bold-r-normal--14-140-72-72-c-80-iso10646-1
 
-URxvt*font:xft:Essential\ PragmataPro:size=10,xft:DejaVu\ Sans\ Mono\ for\ Powerline:size=10
+URxvt*font:xft:Essential\ PragmataPro:size=9,xft:DejaVu\ Sans\ Mono\ for\ Powerline:size=9
 URxvt*letterSpace: -1
 
 URxvt*saveLines: 12000
@@ -28,6 +28,8 @@ URxvt*meta8: true
 ! Base16 Railscasts
 ! Scheme: Ryan Bates (http://railscasts.com)
 
+#define hana00 #151515
+
 #define base00 #2b2b2b
 #define base01 #272935
 #define base02 #3a4055
@@ -45,11 +47,9 @@ URxvt*meta8: true
 #define base0E #b6b3eb
 #define base0F #bc9458
 
-#define esab00 #121212
-
 *.foreground:   base05
-*.background:   esab00
-*.cursorColor:  base05
+*.background:   hana00
+*.cursorColor:  base0A
 
 *.color0:       base00
 *.color1:       base08
@@ -61,13 +61,22 @@ URxvt*meta8: true
 *.color7:       base05
 
 *.color8:       base03
-*.color9:       base09
-*.color10:      base01
-*.color11:      base02
-*.color12:      base04
-*.color13:      base06
-*.color14:      base0F
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
 *.color15:      base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06
 
 ! Compile xft: Attempt to find a visual with the given bit depth; option -depth.
 ! URxvt*depth: bitdepth

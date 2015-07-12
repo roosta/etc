@@ -6,6 +6,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export RANGER_LOAD_DEFAULT_RC="false"
 
 export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 export TERM=rxvt-unicode-256color
 
 export EDITOR=vim
