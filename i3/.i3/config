@@ -1,8 +1,8 @@
-# ┌──────────────────┐
-# │░▀█▀░▀▀█░█░█░█▄█░░│
-# │░░█░░░▀▄░█▄█░█░█░░│
-# │░▀▀▀░▀▀░░▀░▀░▀░▀░░│
-# └──────────────────┘
+# ┌─────────────────┐
+# │░▀█▀░▀▀█░█░█░█▄█░│
+# │░░█░░░▀▄░█▄█░█░█░│
+# │░▀▀▀░▀▀░░▀░▀░▀░▀░│
+# └─────────────────┘
 # Author : Roosta <roosta@dab.works>
 # Site   : http://dotfiles.dab.works
 # Github : https://github.com/roosta
@@ -39,7 +39,7 @@ font pango:Essential\ PragmataPro 8
 # -------------------- 
 
 exec firefox
-exec urxvtc --meta8 -e tmux
+#exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"  
 
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
@@ -58,14 +58,16 @@ floating_modifier $mod
 bindsym $mod+Shift+o exec --no-startup-id xset s activate
 
 # start a terminal
-bindsym $mod+Return exec urxvtc -e tmux
+#bindsym $mod+Return exec urxvtc -e tmux attach-session -d 
+bindsym $mod+Return exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
+
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu that only lists .desktop entries. 
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i' --term="urxvtc"
-## uncomment this to list all
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential\ PragmataPro:size=9" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i' --term="urxvtc"
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i' --term="urxvtc"
 #bindsym $mod+d exec dmenu_run -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i
 
 # change focus

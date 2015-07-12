@@ -39,7 +39,7 @@ alias i3conf='vim ~/.i3/config'
 alias aliasconf='vim ~/.zsh/aliases.zsh'
 alias vimconf='vim ~/.vimrc'
 alias xrconf='vim ~/.Xresources'
-alias muxconf='vim ~/.tmux.conf'
+alias tmuxconf='vim ~/.tmux.conf'
 alias initconf='vim ~/.xinitrc'
 
 # grep command history quickly
