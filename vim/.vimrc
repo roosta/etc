@@ -177,8 +177,10 @@ nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>
 " --------------------
 
 if has('gui_running')
-  set guioptions-=T  " no toolbar
+  set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+  set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=L  "remove left-hand scroll bar
   set lines=60 columns=108 linespace=0
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
-  "set guifont=Inconsolata\ for\ Powerline\ 10
+  set guifont=Essential\ PragmataPro\ 9
 endif

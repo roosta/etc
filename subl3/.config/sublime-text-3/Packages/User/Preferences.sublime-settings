@@ -9,7 +9,9 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
+		"PlainTasks",
+		"Theme - itg.flat"
 	],
 	"indent_guide_options":
 	[

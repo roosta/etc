@@ -39,7 +39,7 @@ font pango:Essential\ PragmataPro 8
 # -------------------- 
 
 exec firefox
-#exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"  
+exec urxvtc -e zsh -c "tmux -q has-session && tmux split-window -d || exec tmux new-session"  
 
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
@@ -58,9 +58,7 @@ floating_modifier $mod
 bindsym $mod+Shift+o exec --no-startup-id xset s activate
 
 # start a terminal
-#bindsym $mod+Return exec urxvtc -e tmux attach-session -d 
 bindsym $mod+Return exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
-
 
 # kill focused window
 bindsym $mod+Shift+q kill
