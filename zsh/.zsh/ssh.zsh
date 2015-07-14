@@ -1,3 +1,3 @@
 
-envoy -t gpg-agent 
+envoy -t ssh-agent 
 source <(envoy -p)
