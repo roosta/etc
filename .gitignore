@@ -23,3 +23,6 @@ base-16
 gtk/.config/*/bookmarks
 gtk/.config/*/gtkfilechooser.ini
 todo
+
+fonts/*PragmataPro*
+fonts/Envy*
