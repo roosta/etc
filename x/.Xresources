@@ -5,15 +5,18 @@
 !URxvt*boldFont: -xos4-terminesspowerline-bold-r-normal--14-140-72-72-c-80-iso10646-1
 
 !URxvt*font:xft:Essential\ PragmataPro:size=9,xft:DejaVu\ Sans\ Mono\ for\ Powerline:size=9
-URxvt*font: -uw-ttyp0-*-*-*--16-150-75-75-c-80-iso10646-1
+!URxvt*font:-uw-ttyp0-*-*-*--16-150-75-75-c-80-iso10646-1
+URxvt*font:-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
+URxvt*boldFont: -gohu-gohufont-bold-r-normal--14-100-100-100-c-80-iso10646-1
+!URxvt*italicFont:-uw-ttyp0-medium-i-normal--15-140-75-75-c-80-iso10646-1 
 !URxvt*letterSpace: -1
 
 URxvt*saveLines: 12000
 URxvt*scrollBar: false
 
-URxvt*internalBorder: 0
+!URxvt*internalBorder: 0
 !URxvt.borderColor: #111113
-URxvt*externalBorder: 0
+!URxvt*externalBorder: 0
 
 !URL matching
 URxvt.perl-ext: default,url-select
@@ -26,11 +29,8 @@ URxvt.matcher.rend.0: Uline Bold fg5
 URxvt*fading:  30
 URxvt*meta8: true
 
-! Base16 Railscasts
-! Scheme: Ryan Bates (http://railscasts.com)
 
-#define hana00 #151515
-
+!define railscast bases
 #define base00 #2b2b2b
 #define base01 #272935
 #define base02 #3a4055
@@ -48,36 +48,88 @@ URxvt*meta8: true
 #define base0E #b6b3eb
 #define base0F #bc9458
 
-*.foreground:   base05
-*.background:   hana00
-*.cursorColor:  base0A
 
-*.color0:       base00
-*.color1:       base08
-*.color2:       base0B
-*.color3:       base0A
-*.color4:       base0D
-*.color5:       base0E
-*.color6:       base0C
-*.color7:       base05
+! special
+*.foreground:   #e6e1dc
+*.background:   #151515
+*.cursorColor:  #e6e1dc
 
-*.color8:       base03
-*.color9:       base08
-*.color10:      base0B
-*.color11:      base0A
-*.color12:      base0D
-*.color13:      base0E
-*.color14:      base0C
-*.color15:      base07
+! black
+*.color0:       #2b2b2b
+*.color8:       #473444
+
+! red
+*.color1:       #a8334d
+*.color9:       #c55d66
+
+! green
+*.color2:       #a5c261
+*.color10:      #8fb977
+
+! yellow
+*.color3:       #e7a83f
+*.color11:      #e4d849
+
+! blue
+*.color4:       #5a647e
+*.color12:      #57839f
+
+! magenta
+*.color5:       #6f5b94
+*.color13:      #b6b3eb
+
+! cyan
+*.color6:       #468656
+*.color14:      #519f50
+
+! white
+*.color7:       #e0d4c9
+*.color15:      #f9f7f3
+
 
 ! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
-! use 'shell' template to set these if necessary
 *.color16:      base09
 *.color17:      base0F
 *.color18:      base01
 *.color19:      base02
 *.color20:      base04
 *.color21:      base06
+
+!! Base16 Railscasts
+!! Scheme: Ryan Bates (http://railscasts.com)
+
+!*.foreground:   base05
+!*.background:   base00
+!*.cursorColor:  base0A
+
+!*.color0:       base00
+!*.color1:       base08
+!*.color2:       base0B
+!*.color3:       base0A
+!*.color4:       base0D
+!*.color5:       base0E
+!*.color6:       base0C
+!*.color7:       base05
+
+!*.color8:       base03
+!*.color9:       base08
+!*.color10:      base0B
+!*.color11:      base0A
+!*.color12:      base0D
+!*.color13:      base0E
+!*.color14:      base0C
+!*.color15:      base07
+
+
+
+
+
+
+
+
+
+
+
 
 ! Compile xft: Attempt to find a visual with the given bit depth; option -depth.
 ! URxvt*depth: bitdepth

@@ -41,6 +41,7 @@ alias vimconf='vim ~/.vimrc'
 alias xrconf='vim ~/.Xresources'
 alias tmuxconf='vim ~/.tmux.conf'
 alias initconf='vim ~/.xinitrc'
+alias fontconf='vim ~/.config/fontconfig/fonts.conf'
 
 # grep command history quickly
 alias hist="cat ~/.histfile | grep"
