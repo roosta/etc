@@ -31,7 +31,9 @@ focus_follows_mouse no
 # - fonts 
 # -------------------- 
 
-font pango:Essential\ PragmataPro 8
+font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
+#font -uw-ttyp0-medium-r-normal--12-110-75-75-c-60-iso10646-1
+#font pango:Essential\ PragmataPro 8
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 

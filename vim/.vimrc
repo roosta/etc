@@ -1,76 +1,19 @@
-" ┌──────────────┐
-" │░█░█░▀█▀░█▄█░░│
-" │░▀▄▀░░█░░█░█░░│
-" │░░▀░░▀▀▀░▀░▀░░│
-" └──────────────┘
+" ┌─────────────┐
+" │░█░█░▀█▀░█▄█░│
+" │░▀▄▀░░█░░█░█░│
+" │░░▀░░▀▀▀░▀░▀░│
+" └─────────────┘
 " Author : Roosta <roosta@dab.works>
 " Site   : http://dotfiles.dab.works
 " Github : https://github.com/roosta
 " -------------------------------
 
-" -------------------- 
-" - Plugins
-" -------------------- 
-
-" vundle setup
-set nocompatible              " be improved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-"Plugin 'jdonaldson/vaxe'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'PotatoesMaster/i3-vim-syntax'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-eunuch'
-Plugin 'jpo/vim-railscasts-theme'
-Plugin 'otommod/conky-syntax.vim'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-
-" enable powerline
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
-
-" vim-multiple-cursor config 
-let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
-
-map <leader>b :CtrlPBuffer<CR>
-map <leader>t :NERDTreeToggle<CR>
-
-let NERDTreeShowHidden=1
-
-" close vim if nerdtree is only window remaining
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Set theme
-colorscheme railscasts
-
-" molokai options
-"colorscheme molokai
-"let g:molokai_original = 1
-"let g:rehash256 = 1
-
+" use vim settings, rather than vi settings
+" must be first, because it changes other options as a side effect
+set nocompatible
 
 " -------------------- 
-" - scripts
+" - functions
 " -------------------- 
 
 " reload conf on save
@@ -85,6 +28,7 @@ augroup END " }
 
 " enable syntax
 syntax on
+filetype off
 
 " paste without auto indentation
 set paste
@@ -99,7 +43,9 @@ set noswapfile
 
 " command line completion
 set wildmenu
-set wildmode=longest:full,full
+set wildmode=longest,list,full
+"set wildmode=longest:full,full
+set wildignorecase
 
 " case insensitive search
 set ignorecase
@@ -136,7 +82,10 @@ set lazyredraw
 set number
 
 " line wrapping
-set wrap
+"set wrap
+
+" show linebreak
+"set showbreak=↪
 
 " use indents of 2 spaces
 set shiftwidth=2
@@ -150,8 +99,15 @@ set tabstop=2
 " let backspace delete indent
 set softtabstop=2
 
-" remove trailing whitespaces and ^M chars
-"autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+" searching
+"set hlsearch
+set incsearch
+
+" the /g flag on :s substitutions by default
+set gdefault
+
+" highlight column
+"set cursorcolumn
 
 " --------------------
 " - Keybinds
@@ -160,20 +116,77 @@ set softtabstop=2
 " change mapleader
 let mapleader = ","
 
-
-" make ; work like : for commands. lazy shifting
-"nnoremap ; :
-
-" show linebreak
-set showbreak=↪
-
 " access x clipboard with leader+p/y
 vnoremap <silent> <leader>y :w !xsel -i -b<CR>
 nnoremap <silent> <leader>y V:w !xsel -i -b<CR>
-nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>
+nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>u
 
 " -------------------- 
-" - gvim options
+" - Plugins
+" -------------------- 
+
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-eunuch'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'kien/ctrlp.vim'
+Plugin 'jpo/vim-railscasts-theme'
+Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'otommod/conky-syntax.vim'
+Plugin 'scrooloose/syntastic'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'jdonaldson/vaxe'
+
+call vundle#end()
+filetype plugin indent on
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" enable powerline
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
+
+" vim-multiple-cursor config 
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+map <leader>b :CtrlPBuffer<CR>
+map <leader>t :NERDTreeToggle<CR>
+
+" show hidden files in nerdtree
+let NERDTreeShowHidden=1
+
+" close vim if nerdtree is only window remaining
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" -------------------- 
+" - colors / visual
+" -------------------- 
+" Set theme
+colorscheme railscasts
+
+" -------------------- 
+" - GUI options
 " --------------------
 
 if has('gui_running')
