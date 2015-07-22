@@ -1,5 +1,5 @@
 {
-	"name": "Rcast",
+	"name": "Default",
 	"groups": {
 		"information:additional":    { "fg": "gray9", "bg": "gray4", "attrs": [] },
 		"information:regular":       { "fg": "gray10", "bg": "gray4", "attrs": ["bold"] },

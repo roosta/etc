@@ -38,13 +38,22 @@ keystate_numlock = enable
 #keystate_scrolllock= enable
 
 
-"pactl set-sink-volume @DEFAULT_SINK@ +2%"
+#"pactl set-sink-volume @DEFAULT_SINK@ +2%"
+  #XF86AudioRaiseVolume
+
+#"pactl set-sink-volume @DEFAULT_SINK@ -2%"
+  #XF86AudioLowerVolume
+
+#"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  #XF86AudioMute
+
+"ponymix --notify increase 2"
   XF86AudioRaiseVolume
 
-"pactl set-sink-volume @DEFAULT_SINK@ -2%"
+"ponymix --notify decrease 2"
   XF86AudioLowerVolume
 
-"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+"ponymix toggle"
   XF86AudioMute
 
 # Examples of commands:

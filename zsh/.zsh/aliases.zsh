@@ -10,7 +10,7 @@
 
 # always root
 alias pacman="sudo pacman"
-#alias svim="sudo vim"
+alias svim="sudo vim"
 alias scat="sudo cat"
 
 # alias sudo for easy access
@@ -45,6 +45,9 @@ alias fontconf='vim ~/.config/fontconfig/fonts.conf'
 
 # grep command history quickly
 alias hist="cat ~/.histfile | grep"
+
+# locate an alias quickly
+alias aliasgrep="alias | grep"
 
 # create parents as needed, verbose
 alias mkdir='mkdir -pv'
@@ -107,10 +110,10 @@ alias v='f -e vim' # quick opening files with vim
 
 # Security aliases
 alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"
-alias checkvirus="clamscan --log=~/.logs/clamav/log --recursive=yes --infected /home"
-alias updateantivirus="sudo freshclam"
+alias scanhome="sudo freshclam; clamscan  --recursive=yes --infected /home"
+alias scanroot="sudo freshclam; sudo clamscan  --recursive=yes --infected /"
 
-# Pacman alias examples
+# Pacman aliases grabbed from here: https://wiki.archlinux.org/index.php/Pacman_tips
 alias pacupg='sudo pacman -Syu'	                # Synchronize with repositories and then upgrade packages that are out of date on the local system.
 alias pacdl='pacman -Sw'		                    # Download specified package(s) as .tar.xz ball
 alias pacin='sudo pacman -S'		                # Install specific package(s) from the repositories
@@ -149,7 +152,7 @@ alias claer='clear'
 # MISC
 alias tmux='tmux -2'
 alias ufw='sudo ufw'
-alias music='ncmpcpp'
+alias music='urxvt -e ncmpcpp'
 
 # stow is always verbose
 alias stow='stow -v'
@@ -159,6 +162,8 @@ alias xrmerge="xrdb -merge ~/.Xresources"
 
 # refresh zsh config files
 alias zrefresh="source $HOME/.zshrc"
+
+alias sinklist="pacmd list-sinks|egrep -i 'index:|name:'"
 
 ## transform
 alias sst='svn status'

@@ -3,8 +3,8 @@
 " │░▀▄▀░░█░░█░█░│
 " │░░▀░░▀▀▀░▀░▀░│
 " └─────────────┘
-" Author : Roosta <roosta@dab.works>
-" Site   : http://dotfiles.dab.works
+" Author : Roosta <contact@roosta.sh>
+" Site   : http://dotfiles.roosta.sh
 " Github : https://github.com/roosta
 " -------------------------------
 
@@ -16,7 +16,7 @@ set nocompatible
 " - functions
 " -------------------- 
 
-" reload conf on save
+" source conf on save
 augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -49,10 +49,17 @@ set wildignorecase
 
 " case insensitive search
 set ignorecase
+
+" set dem smarts
 set smartcase
+set smartindent         
+set smarttab
 
 " show matching brackets/parenthesis
 set showmatch
+
+" show matching bracket for 0.2 seconds
+set matchtime=2         
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -75,16 +82,20 @@ set showtabline=1
 " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set noshowmode 
 
+" change the way backslashes are used in search patterns
+set magic               
+
 " stop unnecessary rendering
 set lazyredraw
+
+" show typed command in status bar
+set showcmd             
 
 " show line numbers
 set number
 
 " line wrapping
-"set wrap
-
-" show linebreak
+set nowrap
 "set showbreak=↪
 
 " use indents of 2 spaces
@@ -117,9 +128,13 @@ set gdefault
 let mapleader = ","
 
 " access x clipboard with leader+p/y
-vnoremap <silent> <leader>y :w !xsel -i -b<CR>
-nnoremap <silent> <leader>y V:w !xsel -i -b<CR>
-nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>u
+nnoremap <leader>y "+y
+nnoremap <leader>yy "+yy
+vnoremap <leader>y "+y
+vnoremap <leader>yy "+yy
+vnoremap <leader>p "+p
+nnoremap <leader>p "+p
+nnoremap <leader>pp "+pp
 
 " -------------------- 
 " - Plugins

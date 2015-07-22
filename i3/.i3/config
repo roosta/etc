@@ -42,7 +42,8 @@ font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
 
 exec firefox
 #exec urxvtc -e zsh -c "tmux -q has-session && tmux split-window -d || exec tmux new-session"  
-exec urxvtc -e tmux
+#exec urxvtc -e tmux
+exec urxvtc
 
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
@@ -62,7 +63,8 @@ bindsym $mod+Shift+o exec --no-startup-id xset s activate
 
 # start a terminal
 #bindsym $mod+Return exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
-bindsym $mod+Return exec urxvtc -e tmux
+#bindsym $mod+Return exec urxvtc -e tmux
+bindsym $mod+Return exec urxvtc
 
 # kill focused window
 bindsym $mod+Shift+q kill
