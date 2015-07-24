@@ -1,4 +1,3 @@
-
 icons/
 mpd/.config/mpd/mpd.log
 ncmpcpp/.ncmpcpp/error.log
@@ -27,3 +26,21 @@ todo
 
 fonts/*PragmataPro*
 fonts/Envy*
+
+.*.swp
+.DS_Store
+backup/*
+ssh/id*
+ssh/known_hosts
+vim/.*
+vim/backup/*
+subversion/README.txt
+subversion/auth/*
+gnupg/secring.gpg
+gnupg/random*
+gnupg/*~
+centerim/*/
+centerim/pid
+mutt/cache/*
+mutt/smime/cetificates/*
+mutt/smime/keys/*
