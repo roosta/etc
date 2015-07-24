@@ -3,8 +3,8 @@
 # │░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█░░│
 # │░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░│
 # └──────────────────────────────┘
-# Author : Roosta <roosta@dab.works>
-# Site   : http://dotfiles.dab.works
+# Author : Roosta <contact@roosta.sh>
+# Site   : http://dotfiles.roosta.sh
 # Github : https://github.com/roosta
 # -------------------------------
 
@@ -95,6 +95,7 @@ alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
 # dirstack control
+alias stack='dirs -v'
 alias 1='cd -'
 alias 2='cd -2'
 alias 3='cd -3'
