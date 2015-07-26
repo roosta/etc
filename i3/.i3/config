@@ -32,6 +32,7 @@ focus_follows_mouse no
 # -------------------- 
 
 font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
+#font Envy\ Type\ R 9
 #font -uw-ttyp0-medium-r-normal--12-110-75-75-c-60-iso10646-1
 #font pango:Essential\ PragmataPro 8
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -159,8 +160,8 @@ bindsym $mod+Shift+z move container to workspace back_and_forth
 set $WS1 1:terms
 set $WS2 2:dev
 set $WS3 3:web
-set $WS4 4:media
-set $WS5 5:aux
+set $WS4 4:aux
+set $WS5 5:media
 set $WS6 6
 set $WS7 7
 set $WS8 8

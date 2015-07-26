@@ -211,4 +211,5 @@ if has('gui_running')
   set guioptions-=L  "remove left-hand scroll bar
   set lines=60 columns=108 linespace=0
   set guifont=Essential\ PragmataPro\ 9
+  set guiheadroom=0
 endif
