@@ -47,14 +47,23 @@ keystate_numlock = enable
 #"pactl set-sink-mute @DEFAULT_SINK@ toggle"
   #XF86AudioMute
 
-"ponymix --notify increase 2"
+"ponymix --notify increase 5"
   XF86AudioRaiseVolume
 
-"ponymix --notify decrease 2"
+"ponymix --notify decrease 5"
   XF86AudioLowerVolume
 
 "ponymix toggle"
   XF86AudioMute
+
+"playerctl play-pause"
+  XF86AudioPlay
+
+"playerctl next"
+  XF86AudioNext
+
+"playerctl previous"
+  XF86AudioPrev
 
 # Examples of commands:
 

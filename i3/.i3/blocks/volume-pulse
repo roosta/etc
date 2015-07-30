@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+#
+# Pulseaudio volume control using ponymix, designed to be used with
+# i3blocks (https://github.com/vivien/i3blocks/).
+#
+# Copyright (C) 2015  Tomasz Kramkowski <tk@the-tk.com>
+#
+# This program is free software. It is licensed under version 3 of the
+# GNU General Public License.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see [http://www.gnu.org/licenses/].
+#
+# BLOCK_INSTANCE is passed in the format <max-volume>#<step>
+# <max-volume> is passed with --max-volume and <step> is used as the
+# volume increase/decrease step.
+#
+# Right Click toggles mute, Scroll Up increases volume, and Scroll Down
+# decreases volume.
+
+CEILING="${BLOCK_INSTANCE%/*}"
+CEILING="${CEILING:-100}"
+
+STEP="${BLOCK_INSTANCE#*/}"
+STEP="${STEP:-5}"
+
+case $BLOCK_BUTTON in # Ponymix auto-prints volume so >/dev/null
+  3) ponymix toggle >/dev/null;;        # Right Click
+  4) ponymix --max-volume $CEILING increase $STEP >/dev/null;;  # Scroll Up
+  5) ponymix --max-volume $CEILING decrease $STEP >/dev/null;;  # Scroll Down
+esac
+
+if ponymix is-muted; then
+  STATE="MUTE"
+else
+  STATE="$(ponymix get-volume)%"
+fi
+
+echo "$STATE" # full_text
+echo "$STATE" # short_text
+echo "#FFFFFF"  # color

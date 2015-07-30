@@ -28,7 +28,7 @@ augroup END " }
 
 " enable syntax
 syntax on
-filetype off
+"filetype off
 
 " paste without auto indentation
 set paste
@@ -210,6 +210,6 @@ if has('gui_running')
   set guioptions-=r  "remove right-hand scroll bar
   set guioptions-=L  "remove left-hand scroll bar
   set lines=60 columns=108 linespace=0
-  set guifont=Essential\ PragmataPro\ 9
+  set guifont=Essential\ PragmataPro\ 10
   set guiheadroom=0
 endif

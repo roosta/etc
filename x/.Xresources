@@ -11,14 +11,19 @@
 !--------------------
 !---- Fontselect ----
 !--------------------
-!URxvt.font:xft:Envy\ Code\ R:size=10
 URxvt.font:-gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
-URxvt.italicFont:xft:Envy\ Code\ R:size=10:style=italic
+URxvt.imFont:-gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
+URxvt.boldFont:-gohu-gohufont-bold-r-*--14-100-*-*-*-*-iso10646-1
+URxvt.italicFont:xft:DejaVu\ Sans\ Mono\ for\ Powerline:oblique:pixelsize=14
+URxvt.boldItalicFont:xft:DejaVu\ Sans\ Mono\ for\ Powerline:oblique:pixelsize=14
+!URxvt.font:xft:Envy\ Code\ R:regular:pixelsize=14
+!URxvt.imfont:xft:Envy\ Code\ R:regular:pixelsize=14
+!URxvt.boldFont:xft:Envy\ Code\ R:bold:pixelsize=14
+!URxvt.font:xft:Envy\ Code\ R:size=10
+!URxvt.italicFont:-*-ttyp0-*-i-*-*-15-*-*-*-*-*-*-iso10646-1
 !URxvt*font:-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1 
 !URxvt*font:xft:Essential\ PragmataPro:size=9,xft:DejaVu\ Sans\ Mono\ for\ Powerline:size=9
 !URxvt.boldFont:-gohu-gohufont-bold-r-*--14-100-*-*-*-*-iso10646-1
-!URxvt.italicFont:-*-ttyp0-*-i-*-*-15-*-*-*-*-*-*-iso10646-1
-
 !URxvt*letterSpace: -1
 
 URxvt*saveLines: 12000
@@ -37,6 +42,16 @@ URxvt*fading:  30
 
 ! enable utf-8
 URxvt*meta8: true
+
+! scroll single lines with shift+up/down
+! http://unix.stackexchange.com/questions/44756/urxvt-scroll-just-one-line
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+
+! fix pager scrolling issue
+! https://wiki.archlinux.org/index.php/Rxvt-unicode#Scrollback_buffer_in_secondary_screen
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
 
 !---------------------
 !---- Colorscheme ----

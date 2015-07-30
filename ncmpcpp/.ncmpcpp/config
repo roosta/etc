@@ -23,6 +23,11 @@ mpd_connection_timeout = 5
 
 ### general settings ### 
 
+# fix spotify lag issue
+#https://github.com/mopidy/mopidy/issues/727
+#media_library_display_date = "no"
+#fancy_scrolling = "no"
+
 jump_to_now_playing_song_at_start = yes
 
 #mpd_crossfade_time = 5

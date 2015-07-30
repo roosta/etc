@@ -10,14 +10,14 @@
 
 # ======= Quick edits ======= 
 # ---------------------------
-alias gitconf='vim ~/.gitconfig'
-alias i3conf='vim ~/.i3/config'
-alias aliasconf='vim ~/.zsh/aliases.zsh'
-alias vimconf='vim ~/.vimrc'
-alias xrconf='vim ~/.Xresources'
-alias tmuxconf='vim ~/.tmux.conf'
-alias initconf='vim ~/.xinitrc'
-alias fontconf='vim ~/.config/fontconfig/fonts.conf'
+alias vigit='vim ~/.gitconfig'
+alias vii3='vim ~/.i3/config'
+alias vialias='vim ~/.zsh/aliases.zsh'
+alias vivim='vim ~/.vimrc'
+alias vixres='vim ~/.Xresources'
+alias vitmux='vim ~/.tmux.conf'
+alias vixinit='vim ~/.xinitrc'
+alias vifont='vim ~/.config/fontconfig/fonts.conf'
 
 # vim 
 alias vi="vim"
@@ -28,6 +28,7 @@ alias copy='xclip -sel clip'
 # output time
 alias now='date +"%T"'
 alias nowtime=now
+alias bakdate='date +%Y%m%d.%H%M'
 
 # output current date
 alias nowdate='date +"%Y-%m-%d"'
@@ -36,7 +37,7 @@ alias nowdate='date +"%Y-%m-%d"'
 # --------------------------
 
 # locate an alias quickly
-alias aliasgrep="alias | grep"
+alias galias="alias | grep"
 
 # grep command history quickly
 alias hist="cat ~/.histfile | grep"
@@ -96,67 +97,67 @@ alias dir='ls++ --potsf -lAhpXk'
 
 # ======= Security =======
 # -------------------
-alias checkrootkits="sudo rkhunter --update; sudo rkhunter --propupd; sudo rkhunter --check"
-alias scanhome="sudo freshclam; clamscan  --recursive=yes --infected /home"
-alias scanroot="sudo freshclam; sudo clamscan  --recursive=yes --infected /"
+alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd; sudo rkhunter --check"
+alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
+alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
 
 # ======= Pacman =======
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
 # ----------------------
 
 # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupg='sudo pacman -Syu'
+alias pacupdate='sudo pacman -Syu'
 
 # Download specified package(s) as .tar.xz ball
 alias pacdl='pacman -Sw'
 
 # Install specific package(s) from the repositories
-alias pacin='sudo pacman -S'
+alias pacinst='sudo pacman -S'
 
 # Install specific package not from the repositories but from a file 
 alias pacins='sudo pacman -U'
 
 # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacre='sudo pacman -R'
+alias pacrm='sudo pacman -R'
 
 # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrem='sudo pacman -Rns'
+alias pacrmf='sudo pacman -Rns'
 
 # Display information about a given package in the repositories
-alias pacrep='pacman -Si'
+alias pacinfo='pacman -Si'
 
 # Search for package(s) in the repositories
-alias pacreps='pacman -Ss'
+alias paclook='pacman -Ss'
 
 # Display information about a given package in the local database
-alias pacloc='pacman -Qi'
+alias paclinfo='pacman -Qi'
 
 # Search for package(s) in the local database
-alias paclocs='pacman -Qs'
+alias paclsearch='pacman -Qs'
 
 # List all packages which are orphaned
-alias paclo="pacman -Qdt"
+alias pacorph="pacman -Qdt"
 
 # Clean cache - delete all the package files in the cache
 alias pacc="sudo pacman -Scc"
 
 # List all files installed by a given package
-alias paclf="pacman -Ql"
+alias pacls="pacman -Ql"
 
 # Show package(s) owning the specified file(s)
 alias pacown="pacman -Qo"
 
 # Mark one or more installed packages as explicitly installed 
-alias pacexpl="pacman -D --asexp"	
+#alias pacexpl="pacman -D --asexp"	
 
 # Mark one or more installed packages as non explicitly installed
-alias pacimpl="pacman -D --asdep"
+#alias pacimpl="pacman -D --asdep"
 
 # Additional pacman alias examples
 # --------------------------------
 
 # Update and refresh the local package and ABS databases against repositories
-alias pacupd='sudo pacman -Sy && sudo abs'
+alias pacupre='sudo pacman -Sy && sudo abs'
 
 # Install given package(s) as dependencies
 alias pacinsd='sudo pacman -S --asdeps'
@@ -164,10 +165,11 @@ alias pacinsd='sudo pacman -S --asdeps'
 # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 alias pacmir='sudo pacman -Syy'
 
-# Pacaur
+# AUR
 # ------
 
 alias pacaur4='pacaur --domain aur4.archlinux.org'
+alias yaourt='pacaur'
 
 # ======= Utils =======
 # -----------------
@@ -228,3 +230,6 @@ alias grep="grep -i --color=auto"
 
 # common typo
 alias claer='clear'
+
+# keep forgetting what this app is called. 
+alias keypress='xev'
