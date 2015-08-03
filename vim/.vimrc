@@ -3,7 +3,7 @@
 " │░▀▄▀░░█░░█░█░│
 " │░░▀░░▀▀▀░▀░▀░│
 " └─────────────┘
-" Author : Roosta <contact@roosta.sh>
+" Author : Roosta <mail@roosta.sh>
 " Site   : http://dotfiles.roosta.sh
 " Github : https://github.com/roosta
 " -------------------------------

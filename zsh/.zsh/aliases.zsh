@@ -18,20 +18,8 @@ alias vixres='vim ~/.Xresources'
 alias vitmux='vim ~/.tmux.conf'
 alias vixinit='vim ~/.xinitrc'
 alias vifont='vim ~/.config/fontconfig/fonts.conf'
+alias vikeys='vim ~/.xbindkeysrc'
 
-# vim 
-alias vi="vim"
-
-# utput from a command with xclip when this is piped in
-alias copy='xclip -sel clip'
-
-# output time
-alias now='date +"%T"'
-alias nowtime=now
-alias bakdate='date +%Y%m%d.%H%M'
-
-# output current date
-alias nowdate='date +"%Y-%m-%d"'
 
 # ======= Quick grep =======
 # --------------------------
@@ -40,7 +28,7 @@ alias nowdate='date +"%Y-%m-%d"'
 alias galias="alias | grep"
 
 # grep command history quickly
-alias hist="cat ~/.histfile | grep"
+alias ghist="cat ~/.histfile | grep"
 
 # create parents as needed, verbose
 alias mkdir='mkdir -pv'
@@ -105,23 +93,26 @@ alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
 # ----------------------
 
+# use pacaur as a pacman extension
+alias pacman='pacaur'
+
 # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupdate='sudo pacman -Syu'
+alias pacupdate='pacman -Syu'
 
 # Download specified package(s) as .tar.xz ball
 alias pacdl='pacman -Sw'
 
 # Install specific package(s) from the repositories
-alias pacinst='sudo pacman -S'
+alias pacinst='pacman -S'
 
 # Install specific package not from the repositories but from a file 
-alias pacins='sudo pacman -U'
+alias pacins='pacman -U'
 
 # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrm='sudo pacman -R'
+alias pacrm='pacman -R'
 
 # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrmf='sudo pacman -Rns'
+alias pacrmf='pacman -Rns'
 
 # Display information about a given package in the repositories
 alias pacinfo='pacman -Si'
@@ -139,7 +130,7 @@ alias paclsearch='pacman -Qs'
 alias pacorph="pacman -Qdt"
 
 # Clean cache - delete all the package files in the cache
-alias pacc="sudo pacman -Scc"
+alias pacc="pacman -Scc"
 
 # List all files installed by a given package
 alias pacls="pacman -Ql"
@@ -157,13 +148,13 @@ alias pacown="pacman -Qo"
 # --------------------------------
 
 # Update and refresh the local package and ABS databases against repositories
-alias pacupre='sudo pacman -Sy && sudo abs'
+alias pacupre='pacman -Sy && sudo abs'
 
 # Install given package(s) as dependencies
-alias pacinsd='sudo pacman -S --asdeps'
+alias pacinsd='pacman -S --asdeps'
 
 # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
-alias pacmir='sudo pacman -Syy'
+alias pacmir='pacman -Syy'
 
 # AUR
 # ------
@@ -211,10 +202,9 @@ alias xrmerge="xrdb -merge ~/.Xresources"
 # refresh zsh config files
 alias zrefresh="source $HOME/.zshrc"
 
-alias sinklist="pacmd list-sinks|egrep -i 'index:|name:'"
+alias sinkls="pacmd list-sinks|egrep -i 'index:|name:'"
 
 # always root
-alias pacman="sudo pacman"
 alias svim="sudo vim"
 alias scat="sudo cat"
 
@@ -233,3 +223,16 @@ alias claer='clear'
 
 # keep forgetting what this app is called. 
 alias keypress='xev'
+
+# vi to vim 
+alias vi="vim"
+
+# utput from a command with xclip when this is piped in
+alias copy='xclip -sel clip'
+
+# output time
+alias gettime='date +"%T"'
+alias fdate='date +%Y-%m-%d_%H-%M-%S'
+
+# output current date
+alias getdate='date +"%Y-%m-%d"'

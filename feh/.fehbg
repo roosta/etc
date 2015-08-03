@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --image-bg black --bg-center '/usr/local/share/backgrounds/minimals/minimal-56.png' 
+feh  --image-bg black --bg-center '/usr/share/backgrounds/simple-53.png' 

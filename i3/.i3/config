@@ -3,8 +3,8 @@
 # │░░█░░░▀▄░█▄█░█░█░│
 # │░▀▀▀░▀▀░░▀░▀░▀░▀░│
 # └─────────────────┘
-# Author : Roosta <roosta@dab.works>
-# Site   : http://dotfiles.dab.works
+# Author : Roosta <mail@roosta.sh>
+# Site   : http://dotfiles.roosta.sh
 # Github : https://github.com/roosta
 # ------
 # Sources:
@@ -22,8 +22,8 @@ exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/pattern
 # --------------------  
 
 # set window border size
-new_window 1pixel
-new_float 1pixel
+#new_window 1pixel
+#new_float 1pixel
 
 # no focus at mouse pointer since touchpad makes this infuriating
 focus_follows_mouse no
@@ -31,11 +31,11 @@ focus_follows_mouse no
 # - fonts 
 # -------------------- 
 
-font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
-#font Envy\ Type\ R 9
-#font -uw-ttyp0-medium-r-normal--12-110-75-75-c-60-iso10646-1
+#font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
+#font pango: GoHuFont 8 
+#font pango:Envy\ Type\ R 9
+font -uw-ttyp0-medium-r-normal--12-130-75-75-c-70-iso10646-1 
 #font pango:Essential\ PragmataPro 8
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 #font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 
 # - applications 
@@ -50,8 +50,8 @@ assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
 assign [class="urxvt"] $WS1
 
-# - keybinds 
-# -------------------- 
+# ==== keybinds ==== 
+# ------------------ 
 
 # set modkey (Super key)
 set $mod Mod4
@@ -68,7 +68,7 @@ bindsym $mod+Shift+o exec --no-startup-id xset s activate
 bindsym $mod+Return exec urxvtc
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu that only lists .desktop entries. 
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential\ PragmataPro:size=9" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i' --term="urxvtc"
@@ -119,12 +119,6 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-bindsym $mod+c focus child
-
 # reload the configuration file
 bindsym $mod+Shift+c reload 
 
@@ -153,8 +147,19 @@ bindsym $mod+z workspace back_and_forth
 # move windows back and forth
 bindsym $mod+Shift+z move container to workspace back_and_forth
 
-# - workspaces 
-# -------------------- 
+bindsym $mod+Control+Shift+Prior move container to output left
+bindsym $mod+Control+Shift+Next move container to output right
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+# screenshot
+bindsym --release Print exec scrot $HOME/Pictures/screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym --release Shift+Print exec scrot -s $HOME/Pictures/screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+
+# ------------------
+# --- workspaces ---
+# ------------------ 
 
 # assign variables for workspace names for easier access
 set $WS1 1:terms
@@ -242,13 +247,24 @@ client.unfocused        $base03 $base00 $base03 #292d2e
 client.urgent           $base02 $base08 #ffffff #900000
 client.placeholder      #000000 $base01 #ffffff #000000
 
-# - bar config
-# -------------------- 
+# ==== Windows ====
+# ----------------
+
+# fix graphics glitch
+new_window none
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+# ------------------
+# --- bar config ---
+# ------------------ 
 
 bar {
   position top 
   tray_output primary
-  #status_command ~/.i3/i3-conky-wrapper.sh
   #status_command i3status
   status_command i3blocks -c ~/.i3/i3blocks.conf 
   colors {
@@ -264,6 +280,59 @@ bar {
     inactive_workspace  $base03     $base01     $base03
     urgent_workspace    $base08     $base01     $base08
   } 
+}
+
+# ==================== i3-gaps config =====================
+# i3-gaps is a fork of i3, which includes some extra options
+# source: https://github.com/Airblader/i3/tree/gaps
+# ---------------------------------------------------------
+
+for_window [class="^.*"] border pixel 0
+smart_borders no_gaps
+smart_gaps on
+
+gaps inner 5
+#gaps outer 5
+
+# Press $mod+Shift+g to enter the gaps mode. Then choose between o and i for modifying outer / inner gaps. 
+# In this mode, you can press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace).
+# If you also press Shift with these keys, the change will be global for all workspaces.
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
 
 # vim:filetype=i3
