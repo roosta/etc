@@ -11,21 +11,26 @@
 !--------------------
 !---- Fontselect ----
 !--------------------
-URxvt.font:-gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
-URxvt.imFont:-gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
-URxvt.boldFont:-gohu-gohufont-bold-r-*--14-100-*-*-*-*-iso10646-1
-URxvt.italicFont:xft:DejaVu\ Sans\ Mono\ for\ Powerline:oblique:pixelsize=14
-URxvt.boldItalicFont:xft:DejaVu\ Sans\ Mono\ for\ Powerline:oblique:pixelsize=14
-!URxvt.font:xft:Envy\ Code\ R:regular:pixelsize=14
-!URxvt.imfont:xft:Envy\ Code\ R:regular:pixelsize=14
-!URxvt.boldFont:xft:Envy\ Code\ R:bold:pixelsize=14
-!URxvt.font:xft:Envy\ Code\ R:size=10
-!URxvt.italicFont:-*-ttyp0-*-i-*-*-15-*-*-*-*-*-*-iso10646-1
-!URxvt*font:-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1 
-!URxvt*font:xft:Essential\ PragmataPro:size=9,xft:DejaVu\ Sans\ Mono\ for\ Powerline:size=9
-!URxvt.boldFont:-gohu-gohufont-bold-r-*--14-100-*-*-*-*-iso10646-1
-!URxvt*letterSpace: -1
 
+! gohu 
+!URxvt.font:-gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
+!URxvt.imFont:-gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
+!URxvt.boldFont:-gohu-gohufont-bold-r-*--14-100-*-*-*-*-iso10646-1
+
+! tty0p
+URxvt.font:-uw-ttyp0-medium-r-normal--14-130-75-75-c-70-iso10646-1
+URxvt.imFont:-uw-ttyp0-medium-r-normal--15-130-75-75-c-70-iso10646-1
+URxvt.boldFont:-uw-ttyp0-bold-r-normal--14-130-75-75-c-70-iso10646-1
+
+! italic
+URxvt.italicFont:-uw-ttyp0-medium-i-normal--15-140-75-75-c-80-iso10646-1
+URxvt.boldItalicFont:xft:Essential\ PragmataPro:Bold\ Italic:pixelsize=14
+
+! dejavu italic
+!URxvt.italicFont:xft:DejaVu\ Sans\ Mono\ for\ Powerline:oblique:pixelsize=14
+!URxvt.boldItalicFont:xft:DejaVu\ Sans\ Mono\ for\ Powerline:oblique:pixelsize=14
+
+!URxvt*letterSpace: -1
 URxvt*saveLines: 12000
 URxvt*scrollBar: false
 
@@ -42,6 +47,9 @@ URxvt*fading:  30
 
 ! enable utf-8
 URxvt*meta8: true
+
+backspacekey: "^?"
+deletekey: "^D"
 
 ! scroll single lines with shift+up/down
 ! http://unix.stackexchange.com/questions/44756/urxvt-scroll-just-one-line
