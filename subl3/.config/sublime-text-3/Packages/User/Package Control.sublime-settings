@@ -1,6 +1,8 @@
 {
 	"in_process_packages":
 	[
+		"PlainTasks",
+		"Theme - itg.flat"
 	],
 	"installed_packages":
 	[

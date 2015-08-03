@@ -1,0 +1,79 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 2.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address. 
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# Stuff after 'TEXT' will be formatted on screen
+TEXT
+
+# JSON for i3bar
+
+# Network interface must have an ip address to be considered up
+if_up_strictness address
+
+TEXT
+,[{"name": "uptime", "icon":"$HOME/.i3/xbmicons/ac.xbm", \
+   "color":"\#808080", "full_text":"${uptime_short} "},\
+  {"name": "cpu", "icon":"$HOME/.i3/xbmicons/cpu.xbm", \
+   "color": "\#808080", "full_text": \
+   "[${cpu cpu1}%, ${cpu cpu2}%  ${cpu cpu3}%, ${cpu cpu4}%] "},  \
+  {"name": "memory", "icon": "$HOME/.i3/xbmicons/mem.xbm", \
+   "color": "\#808080", "full_text": "${memperc}% "},  \
+  {"name": "disk", "icon":"$HOME/.i3/xbmicons/fs_01.xbm", \
+   "color": "\#808080", "full_text": "${fs_used_perc /}% "},  \
+  ${if_up wlan0} \
+  {"name":"wifi", "icon":"$HOME/.i3/xbmicons/wifi_01.xbm", \
+   "icon_color":"\#339966","color": "\#339966", "full_text": "${addr wlan0} "}, \
+        {"name":"download", "icon":"$HOME/.i3/xbmicons/net_down_03.xbm", \
+   "color":"\#808080", "full_text": "${downspeed wlan0}"}, \
+  ${else} ${if_up eth0}\
+  {"name":"eth0", "icon":"$HOME/.i3/xbmicons/net_wired.xbm",\
+   "icon_color":"\#339966","color": "\#339966", "full_text": "${addr eth0} "}, \
+        {"name":"download", "icon":"$HOME/.i3/xbmicons/net_down_03.xbm", \
+   "color":"\#808080", "full_text": "${downspeed eth0}"}, \
+  ${else}
+  {"name":"nonet", "icon_color": "\#EE6633", "full_text": "", "icon": "$HOME/.i3/xbmicons/net_down_01.xbm"}, \
+  ${endif}\
+  ${endif}  \
+  {"name": "volume", "icon":"$HOME/.i3/xbmicons/spkr_01.xbm", \
+   "color": "\#808080", "full_text": \
+   "${exec amixer sget Master | grep Mono: | sed -e 's/[ \t]*Mono: Playback [0-9]* \[\([0-9]*%\)\].*/\1/'} "},  \
+  ${if_empty ${battery BAT1} } ${else}\
+        {"name": "battery", "icon":"$HOME/.i3/xbmicons/bat_full_01.xbm", \
+         "color": "\#808080", "full_text": "${battery_percent BAT1}% "},  \
+  ${endif} \
+  {"name": "time", "icon":"$HOME/.i3/xbmicons/clock.xbm", \
+   "icon_color": "\#CFCFCF", "color": "\#CFCFCF", \
+   "full_text": "${time %d/%m/%y} ${time %H:%M}"}\
+]
+
+# vim:filetype=conkyrc
+

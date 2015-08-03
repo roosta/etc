@@ -1,8 +1,9 @@
 "3.9 (created: 2015/02/15 15:49:05)
-
+colorscheme zenburn
+set complete=lSt
+set focuscontent
+set hintmatching=fuzzy
+set status=ssl,input,location,bookmark,history,tabcount,position
 source! /home/daniel/.vimperatorrc.local
 
-" vim: set ft=vimperator:
-
-colorscheme zenburn
-set status "input,location,bookmark,history,tabcount,position"
+" vim:filetype=vim

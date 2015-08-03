@@ -1,0 +1,338 @@
+# ┌─────────────────┐
+# │░▀█▀░▀▀█░█░█░█▄█░│
+# │░░█░░░▀▄░█▄█░█░█░│
+# │░▀▀▀░▀▀░░▀░▀░▀░▀░│
+# └─────────────────┘
+# Author : Roosta <mail@roosta.sh>
+# Site   : http://dotfiles.roosta.sh
+# Github : https://github.com/roosta
+# ------
+# Sources:
+# * http://i3wm.org/docs/user-contributed/lzap-config.html
+# * http://dotshare.it (picked from various i3 confs, color schemes..etc)
+# ------------------------------------------------
+
+# - startup 
+# -------------------- 
+
+# register screen locker
+exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/pattern-05.png &
+
+# - general config
+# --------------------  
+
+# set window border size
+#new_window 1pixel
+#new_float 1pixel
+
+# no focus at mouse pointer since touchpad makes this infuriating
+focus_follows_mouse no
+
+# - fonts 
+# -------------------- 
+
+#font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
+#font pango: GoHuFont 8 
+#font pango:Envy\ Type\ R 9
+font -uw-ttyp0-medium-r-normal--12-130-75-75-c-70-iso10646-1 
+#font pango:Essential\ PragmataPro 8
+#font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+
+# - applications 
+# -------------------- 
+
+exec firefox
+#exec urxvtc -e zsh -c "tmux -q has-session && tmux split-window -d || exec tmux new-session"  
+#exec urxvtc -e tmux
+exec urxvtc
+
+assign [class="subl3"] $WS2
+assign [class="Firefox"] $WS3
+assign [class="urxvt"] $WS1
+
+# ==== keybinds ==== 
+# ------------------ 
+
+# set modkey (Super key)
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# manual screen lock
+bindsym $mod+Shift+o exec --no-startup-id xset s activate
+
+# start a terminal
+#bindsym $mod+Return exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
+#bindsym $mod+Return exec urxvtc -e tmux
+bindsym $mod+Return exec urxvtc
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu that only lists .desktop entries. 
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential\ PragmataPro:size=9" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i' --term="urxvtc"
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i' --term="urxvtc"
+#bindsym $mod+d exec dmenu_run -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# reload the configuration file
+bindsym $mod+Shift+c reload 
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# border changing
+bindsym $mod+b border toggle
+
+# scratchpad
+bindsym $mod+m move scratchpad
+bindsym $mod+o scratchpad show
+
+# toggle touchpad (not in dotfiles repo)
+bindsym $mod+p exec --no-startup-id /usr/local/bin/touchpad-toggle.sh
+
+# move to last workspace
+bindsym $mod+z workspace back_and_forth
+
+# jump to previous workspace by hitting first ws button again
+#workspace_auto_back_and_forth yes
+
+# move windows back and forth
+bindsym $mod+Shift+z move container to workspace back_and_forth
+
+bindsym $mod+Control+Shift+Prior move container to output left
+bindsym $mod+Control+Shift+Next move container to output right
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+# screenshot
+bindsym --release Print exec scrot $HOME/Pictures/screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym --release Shift+Print exec scrot -s $HOME/Pictures/screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+
+# ------------------
+# --- workspaces ---
+# ------------------ 
+
+# assign variables for workspace names for easier access
+set $WS1 1:terms
+set $WS2 2:dev
+set $WS3 3:web
+set $WS4 4:aux
+set $WS5 5:media
+set $WS6 6
+set $WS7 7
+set $WS8 8
+
+bindsym F1 workspace $WS1
+bindsym F2 workspace $WS2
+bindsym F3 workspace $WS3
+bindsym F4 workspace $WS4 
+bindsym F5 workspace $WS5
+bindsym F6 workspace $WS6 
+bindsym F7 workspace $WS7
+bindsym F8 workspace $WS8
+
+# move focused container to workspace
+bindsym $mod+F1 move workspace $WS1
+bindsym $mod+F2 move workspace $WS2
+bindsym $mod+F3 move workspace $WS3
+bindsym $mod+F4 move workspace $WS4
+bindsym $mod+F5 move workspace $WS5
+bindsym $mod+F6 move workspace $WS6
+bindsym $mod+F7 move workspace $WS7
+bindsym $mod+F8 move workspace $WS8
+
+# - resize windows 
+# -------------------- 
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+  # These bindings trigger as soon as you enter the resize mode
+
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
+
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# - colorscheme
+# -------------------- 
+
+set $hana00 #121212
+set $base00 #2b2b2b
+set $base01 #272935
+set $base02 #3a4055
+set $base03 #5a647e
+set $base04 #d4cfc9
+set $base05 #e6e1dc
+set $base06 #f4f1ed
+set $base07 #f9f7f3
+set $base08 #da4939
+set $base09 #cc7833
+set $base0A #ffc66d
+set $base0B #a5c261
+set $base0C #519f50
+set $base0D #6d9cbe
+set $base0E #b6b3eb
+set $base0F #bc9458
+
+# class                 border  backgr. text    indicator
+client.focused          $base03 $base02 $base07 $base05
+client.focused_inactive #333333 $base02 #ffffff #484e50
+client.unfocused        $base03 $base00 $base03 #292d2e
+client.urgent           $base02 $base08 #ffffff #900000
+client.placeholder      #000000 $base01 #ffffff #000000
+
+# ==== Windows ====
+# ----------------
+
+# fix graphics glitch
+new_window none
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+# ------------------
+# --- bar config ---
+# ------------------ 
+
+bar {
+  position top 
+  tray_output primary
+  #status_command i3status
+  status_command i3blocks -c ~/.i3/i3blocks.conf 
+  colors {
+
+    # <bar>
+    background  $base01
+    separator   $base04
+    statusline  $base05
+
+    # <workclass>       <border>    <bg>        <text>
+    focused_workspace   $base03     $base02     $base07
+    active_workspace    $base03     $base00     $base04
+    inactive_workspace  $base03     $base01     $base03
+    urgent_workspace    $base08     $base01     $base08
+  } 
+}
+
+# ==================== i3-gaps config =====================
+# i3-gaps is a fork of i3, which includes some extra options
+# source: https://github.com/Airblader/i3/tree/gaps
+# ---------------------------------------------------------
+
+for_window [class="^.*"] border pixel 0
+smart_borders no_gaps
+smart_gaps on
+
+gaps inner 5
+#gaps outer 5
+
+# Press $mod+Shift+g to enter the gaps mode. Then choose between o and i for modifying outer / inner gaps. 
+# In this mode, you can press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace).
+# If you also press Shift with these keys, the change will be global for all workspaces.
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# vim:filetype=i3

@@ -1,4 +1,3 @@
-
 icons/
 mpd/.config/mpd/mpd.log
 ncmpcpp/.ncmpcpp/error.log
@@ -12,6 +11,8 @@ vimperator/.vimperator/info/**
 
 vim/.vim/undo/**
 vim/.vim/bundle/**
+!vim/.vim/bundle/Vundle.vim
+vim/.vim/static/**
 
 *cache*
 *.last-run
@@ -22,3 +23,24 @@ base-16
 gtk/.config/*/bookmarks
 gtk/.config/*/gtkfilechooser.ini
 todo
+
+fonts/*PragmataPro*
+fonts/Envy*
+
+.*.swp
+.DS_Store
+backup/*
+ssh/id*
+ssh/known_hosts
+vim/.*
+vim/backup/*
+subversion/README.txt
+subversion/auth/*
+gnupg/secring.gpg
+gnupg/random*
+gnupg/*~
+centerim/*/
+centerim/pid
+mutt/cache/*
+mutt/smime/cetificates/*
+mutt/smime/keys/*
