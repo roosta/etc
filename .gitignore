@@ -14,6 +14,8 @@ vim/.vim/bundle/**
 !vim/.vim/bundle/Vundle.vim
 vim/.vim/static/**
 
+*tmp*
+*temp*
 *cache*
 *.last-run
 SublimeGit.sublime-settings

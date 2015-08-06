@@ -1,23 +1,23 @@
 {
-	"name": "Railscast color scheme",
+	"name": "Sweetlove color scheme for vim",
 	"groups": {
 		"information:unimportant":  { "fg": "gray8", "bg": "gray2", "attrs": [] },
 		"information:additional":   { "fg": "gray9", "bg": "gray4", "attrs": [] },
 		"background":               { "fg": "white", "bg": "gray2", "attrs": [] },
 		"background:divider":       { "fg": "gray6", "bg": "gray2", "attrs": [] },
-		"mode":                     { "fg": "railscast:4", "bg": "railscast:6", "attrs": ["bold"] },
+		"mode":                     { "fg": "sweetlove:8", "bg": "sweetlove:10", "attrs": ["bold"] },
 		"visual_range":             { "fg": "brightestorange", "bg": "darkorange", "attrs": ["bold"] },
 		"modified_indicator":       { "fg": "brightyellow", "bg": "gray4", "attrs": ["bold"] },
-		"paste_indicator":          { "fg": "white", "bg": "mediumorange", "attrs": ["bold"] },
-		"readonly_indicator":       { "fg": "brightestred", "bg": "gray4", "attrs": [] },
-		"branch_dirty":             { "fg": "brightyellow", "bg": "gray4", "attrs": [] },
+		"paste_indicator":          { "fg": "brightorange", "bg": "sweetlove:9", "attrs": ["bold"] },
+		"readonly_indicator":       { "fg": "brightestred", "bg": "sweetlove:4", "attrs": [] },
+		"branch_dirty":             { "fg": "brightyellow", "bg": "sweetlove:4", "attrs": [] },
 		"branch:divider":           { "fg": "gray7", "bg": "gray4", "attrs": [] },
 		"file_name":                { "fg": "white", "bg": "gray4", "attrs": ["bold"] },
 		"window_title":             { "fg": "white", "bg": "gray4", "attrs": [] },
 		"file_name_no_file":        { "fg": "gray9", "bg": "gray4", "attrs": ["bold"] },
-		"file_vcs_status":          { "fg": "brightestred", "bg": "gray4", "attrs": [] },
-		"file_vcs_status_M":        { "fg": "brightyellow", "bg": "gray4", "attrs": [] },
-		"file_vcs_status_A":        { "fg": "brightgreen", "bg": "gray4", "attrs": [] },
+		"file_vcs_status":          { "fg": "red", "bg": "gray4", "attrs": [] },
+		"file_vcs_status_M":        { "fg": "brightyellow", "bg": "sweetlove:4", "attrs": [] },
+		"file_vcs_status_A":        { "fg": "brightgreen", "bg": "sweetlove:4", "attrs": [] },
 		"line_percent":             { "fg": "gray9", "bg": "gray4", "attrs": [] },
 		"line_percent_gradient":    { "fg": "dark_green_gray", "bg": "gray4", "attrs": [] },
 		"position":                 { "fg": "gray9", "bg": "gray4", "attrs": [] },
@@ -39,16 +39,16 @@
 			"colors": {
 				"brightyellow": "darkorange",
 				"brightestred": "darkred",
-				"gray0": "gray0",
-				"gray1": "gray0",
-				"gray2": "gray0",
-				"gray3": "gray1",
-				"gray4": "gray1",
-				"gray5": "gray1",
-				"gray6": "gray1",
-				"gray7": "gray4",
-				"gray8": "gray4",
-				"gray9": "gray4",
+				"gray0": "sweetlove:12",
+				"gray1": "sweetlove:12",
+				"gray2": "sweetlove:12",
+				"gray3": "sweetlove:12",
+				"gray4": "sweetlove:12",
+				"gray5": "sweetlove:12",
+				"gray6": "sweetlove:12",
+				"gray7": "sweetlove:4",
+				"gray8": "sweetlove:4",
+				"gray9": "sweetlove:4",
 				"gray10": "gray5",
 				"white": "gray6",
 				"dark_green_gray": "gray5"
@@ -56,44 +56,44 @@
 		},
 		"i": {
 			"colors": {
-				"gray0": "darkestblue",
-				"gray1": "darkestblue",
-				"gray2": "darkestblue",
-				"gray3": "darkblue",
-				"gray4": "darkblue",
-				"gray5": "darkestcyan",
-				"gray6": "darkestcyan",
-				"gray7": "darkestcyan",
-				"gray8": "mediumcyan",
-				"gray9": "mediumcyan",
-				"gray10": "mediumcyan",
-				"green_yellow_red": "gray5",
+				"gray0": "sweetlove:13",
+				"gray1": "sweetlove:13",
+				"gray2": "sweetlove:13",
+				"gray3": "sweetlove:5",
+				"gray4": "sweetlove:5",
+				"gray5": "sweetlove:5",
+				"gray6": "sweetlove:5",
+				"gray7": "sweetlove:5",
+				"gray8": "sweetlove:7",
+				"gray9": "sweetlove:7",
+				"gray10": "sweetlove:7",
+				"green_yellow_red": "sweetlove:0",
 				"dark_green_gray": "light_green_gray"
 			},
 			"groups": {
-				"mode":               { "fg": "darkestcyan", "bg": "white", "attrs": ["bold"] },
-				"background:divider": { "fg": "darkcyan", "bg": "darkestblue", "attrs": [] },
-				"branch:divider":     { "fg": "darkcyan", "bg": "darkblue", "attrs": [] }
+				"mode":               { "fg": "sweetlove:12", "bg": "sweetlove:7", "attrs": ["bold"] },
+				"background:divider": { "fg": "sweetlove:7", "bg": "sweetlove:13", "attrs": [] },
+				"branch:divider":     { "fg": "sweetlove:7", "bg": "sweetlove:5", "attrs": [] }
 			}
 		},
 		"v": {
 			"groups": {
-				"mode": { "fg": "darkorange", "bg": "brightestorange", "attrs": ["bold"] }
+				"mode": { "fg": "sweetlove:8", "bg": "sweetlove:11", "attrs": ["bold"] }
 			}
 		},
 		"V": {
 			"groups": {
-				"mode": { "fg": "darkorange", "bg": "brightestorange", "attrs": ["bold"] }
+				"mode": { "fg": "sweetlove:8", "bg": "sweetlove:11", "attrs": ["bold"] }
 			}
 		},
 		"^V": {
 			"groups": {
-				"mode": { "fg": "darkorange", "bg": "brightestorange", "attrs": ["bold"] }
+				"mode": { "fg": "sweetlove:8", "bg": "sweetlove:11", "attrs": ["bold"] }
 			}
 		},
 		"R": {
 			"groups": {
-				"mode": { "fg": "white", "bg": "brightred", "attrs": ["bold"] }
+				"mode": { "fg": "sweetlove:7", "bg": "sweetlove:0", "attrs": ["bold"] }
 			}
 		}
 	}

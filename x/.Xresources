@@ -11,26 +11,37 @@
 ! ==== Fontselect ====
 ! --------------------
 
-! tty0p regular
-URxvt.font:-uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1
-URxvt.imFont:-uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1
-URxvt.boldFont:-uw-ttyp0-bold-r-normal--15-140-75-75-c-80-iso10646-1
+! Ttyp0
+#define FONT_NORMAL -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1
+#define FONT_BOLD -uw-ttyp0-bold-r-normal--15-140-75-75-c-80-iso10646-1 
+#define FONT_ITALIC -uw-ttyp0-medium-i-normal--15-140-75-75-c-80-iso10646-1
 
-! ttyp0 italic
-URxvt.italicFont:-uw-ttyp0-medium-i-normal--15-140-75-75-c-80-iso10646-1
-URxvt.boldItalicFont:-uw-ttyp0-medium-i-normal--15-140-75-75-c-80-iso10646-1
+! Bold italic fonts...
+!#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono:style=Book:pixelsize=10:antialias=1:hinting=1:hintstyle=3
+#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=10:antialias=1:hinting=1:hintstyle=3
 
-! PragmataPro Bold
-!URxvt.boldItalicFont:xft:Essential\ PragmataPro:Bold\ Italic:pixelsize=14
+! PragmataPro
+!#define FONT_NORMAL: xft:Essential\ PragmataPro:italic:pixelsize=10
+!#define FONT_BOLDITALIC xft:Essential\ PragmataPro:Bold\ Italic:pixelsize=10
 
-! dejavu italic
-!URxvt.italicFont:xft:DejaVu\ Sans\ Mono\ for\ Powerline:oblique:pixelsize=14
-!URxvt.boldItalicFont:xft:DejaVu\ Sans\ Mono\ for\ Powerline:oblique:pixelsize=14
+! gohu
+!#define FONT_NORMAL -gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
+!#define FONT_BOLD -gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1 
+!#define FONT_ITALIC -gohu-gohufont-bold-r-*--14-100-*-*-*-*-iso10646-1
 
-! gohu regular 
-!URxvt.font:-gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
-!URxvt.imFont:-gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
-!URxvt.boldFont:-gohu-gohufont-bold-r-*--14-100-*-*-*-*-iso10646-1
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+URxvt.font: FONT_NORMAL
+URxvt.imFont: FONT_NORMAL
+URxvt.boldFont: FONT_BOLD
+URxvt.italicFont: FONT_ITALIC
+URxvt.boldItalicFont: FONT_BOLDITALIC
 
 !URxvt*letterSpace: -1
 URxvt*saveLines: 12000
