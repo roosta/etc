@@ -24,8 +24,8 @@ gtk/.config/*/bookmarks
 gtk/.config/*/gtkfilechooser.ini
 todo
 
-fonts/*PragmataPro*
-fonts/Envy*
+fonts/*/*PragmataPro*
+fonts/*/Envy*
 
 .*.swp
 .DS_Store
