@@ -1,9 +1,13 @@
 "3.9 (created: 2015/02/15 15:49:05)
-colorscheme zenburn
+colorscheme hana
 set complete=lSt
 set focuscontent
 set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position
 source! /home/daniel/.vimperatorrc.local
+
+" map l and h to tab movement
+noremap l gt
+noremap h gT
 
 " vim:filetype=vim

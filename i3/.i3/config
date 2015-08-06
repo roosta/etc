@@ -16,7 +16,7 @@
 # -------------------- 
 
 # register screen locker
-exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/pattern-05.png &
+exec --no-startup-id xss-lock -- i3lock -edti /usr/share/backgrounds/simple-55.png &
 
 # - general config
 # --------------------  
@@ -222,6 +222,7 @@ bindsym $mod+r mode "resize"
 # - colorscheme
 # -------------------- 
 
+# define railscast bases
 set $hana00 #121212
 set $base00 #2b2b2b
 set $base01 #272935
@@ -248,7 +249,7 @@ client.urgent           $base02 $base08 #ffffff #900000
 client.placeholder      #000000 $base01 #ffffff #000000
 
 # ==== Windows ====
-# ----------------
+# -----------------
 
 # fix graphics glitch
 new_window none
@@ -258,12 +259,14 @@ for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 
-# ------------------
-# --- bar config ---
-# ------------------ 
+# set float for spesific apps
+for_window [class="(?i)Jitsi"] floating enable
+
+# ==== bar config ====
+# -------------------- 
 
 bar {
-  position top 
+  #position top 
   tray_output primary
   #status_command i3status
   status_command i3blocks -c ~/.i3/i3blocks.conf 
