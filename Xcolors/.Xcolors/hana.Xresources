@@ -1,0 +1,47 @@
+!-- Hana colorscheme 
+!-- Made using http://terminal.sexy/ 
+*.foreground:   #e6e1dc
+*.background:   #151515
+*.cursorColor:  #FFC66D
+
+! black
+*.color0:       #2b2b2b
+*.color8:       #473444
+
+! red
+*.color1:       #a8334d
+*.color9:       #c55d66
+
+! green
+*.color2:       #a5c261
+*.color10:      #8fb977
+
+! yellow
+*.color3:       #e7a83f
+*.color11:      #e4d849
+
+! blue
+*.color4:       #3c589e
+*.color12:      #57839f
+
+! magenta
+*.color5:       #6f5b94
+*.color13:      #b6b3eb
+
+! cyan
+*.color6:       #2f8b46
+*.color14:      #519f50
+
+! white
+*.color7:       #e0d4c9
+*.color15:      #f9f7f3
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+*.color16:      #cc7833
+*.color17:      #bc9458
+*.color18:      #272935
+*.color19:      #3a4055
+*.color20:      #d4cfc9
+*.color21:      #f4f1ed
+
+

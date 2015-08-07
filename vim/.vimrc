@@ -50,7 +50,7 @@ set wildignorecase
 " case insensitive search
 set ignorecase
 
-" set dem smarts
+" set  
 set smartcase
 set smartindent         
 set smarttab
@@ -134,7 +134,7 @@ vnoremap <leader>y "+y
 vnoremap <leader>yy "+yy
 vnoremap <leader>p "+p
 nnoremap <leader>p "+p
-nnoremap <leader>pp "+pp
+nnoremap <leader>P "+p
 
 " -------------------- 
 " - Plugins
@@ -156,8 +156,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kien/ctrlp.vim'
 Plugin 'jpo/vim-railscasts-theme'
-Plugin 'PotatoesMaster/i3-vim-syntax'
-Plugin 'otommod/conky-syntax.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/syntastic'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'jdonaldson/vaxe'
@@ -198,18 +197,20 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " - colors / visual
 " -------------------- 
 " Set theme
-colorscheme railscasts
+"colorscheme railscasts
+colorscheme gruvbox
+set background=dark    " Setting dark mode
 
 " -------------------- 
 " - GUI options
 " --------------------
 
 if has('gui_running')
-  set guioptions-=m  "remove menu bar
+  "set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=r  "remove right-hand scroll bar
   set guioptions-=L  "remove left-hand scroll bar
-  set lines=60 columns=108 linespace=0
+  "set lines=60 columns=108 linespace=0
   set guifont=Essential\ PragmataPro\ 10
   set guiheadroom=0
 endif

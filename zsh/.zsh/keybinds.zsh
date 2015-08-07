@@ -4,6 +4,10 @@ bindkey -v
 # 10ms for key sequences
 KEYTIMEOUT=1
 
+# working delete key
+bindkey "^[[3~" delete-char
+bindkey "^[3;5~" delete-char
+
 #======= Vi mode =======
 #-----------------------
 
