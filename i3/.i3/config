@@ -241,6 +241,34 @@ set $base0D #6d9cbe
 set $base0E #b6b3eb
 set $base0F #bc9458
 
+# define sweetlove colors
+set $sweetloveFG #c0b18b
+set $sweetloveBG #1f1f1f
+set $sweetlove0 #4a3637
+set $sweetlove8 #402e2e
+set $sweetlove1 #d17b49
+set $sweetlove9 #ac5d2f
+set $sweetlove2 #7b8748
+set $sweetlove10 #647035
+set $sweetlove3 #af865a
+set $sweetlove11#8f6840
+set $sweetlove4 #535c5c
+set $sweetlove12 #444b4b
+set $sweetlove5 #775759
+set $sweetlove13 #614445
+set $sweetlove6 #6d715e
+set $sweetlove14 #585c49
+set $sweetlove7 #c0b18b
+set $sweetlove15 #978965
+set $sweetlove16 #cc7833
+set $sweetlove17 #bc9458
+set $sweetlove18 #272935
+set $sweetlove19 #3a4055
+set $sweetlove20 #d4cfc9
+set $sweetlove21 #f4f1ed
+
+
+
 # class                 border  backgr. text    indicator
 client.focused          $base03 $base02 $base07 $base05
 client.focused_inactive #333333 $base02 #ffffff #484e50
@@ -254,8 +282,7 @@ client.placeholder      #000000 $base01 #ffffff #000000
 # fix graphics glitch
 new_window none
 
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
+for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 
@@ -273,8 +300,8 @@ bar {
   colors {
 
     # <bar>
-    background  $base01
-    separator   $base04
+    background  $sweetlove8
+    separator   $sweetlove7
     statusline  $base05
 
     # <workclass>       <border>    <bg>        <text>
