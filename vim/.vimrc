@@ -156,6 +156,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kien/ctrlp.vim'
 Plugin 'jpo/vim-railscasts-theme'
+Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/syntastic'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'jdonaldson/vaxe'
@@ -196,7 +197,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " - colors / visual
 " -------------------- 
 " Set theme
-colorscheme railscasts
+"colorscheme railscasts
+colorscheme gruvbox
+set background=dark    " Setting dark mode
 
 " -------------------- 
 " - GUI options
