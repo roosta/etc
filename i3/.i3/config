@@ -6,20 +6,20 @@
 # Author : Roosta <mail@roosta.sh>
 # Site   : http://dotfiles.roosta.sh
 # Github : https://github.com/roosta
-# ------
+# ----------------------------------
 # Sources:
 # * http://i3wm.org/docs/user-contributed/lzap-config.html
 # * http://dotshare.it (picked from various i3 confs, color schemes..etc)
-# ------------------------------------------------
+# -----------------------------------------------------------------------
 
-# - startup 
-# -------------------- 
+# ==== startup ====  
+# ----------------- 
 
 # register screen locker
 exec --no-startup-id xss-lock -- i3lock -edti /usr/share/backgrounds/simple-55.png &
 
-# - general config
-# --------------------  
+# ==== general config ==== 
+# ------------------------  
 
 # set window border size
 #new_window 1pixel
@@ -28,27 +28,38 @@ exec --no-startup-id xss-lock -- i3lock -edti /usr/share/backgrounds/simple-55.p
 # no focus at mouse pointer since touchpad makes this infuriating
 focus_follows_mouse no
 
-# - fonts 
-# -------------------- 
+# ==== fonts ==== 
+# --------------- 
 
-#font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
-#font pango: GoHuFont 8 
-#font pango:Envy\ Type\ R 9
-font -uw-ttyp0-medium-r-normal--12-130-75-75-c-70-iso10646-1 
-#font pango:Essential\ PragmataPro 8
+set $font_lintilla -uw-ttyp0-medium-r-normal--12-130-75-75-c-70-iso10646-1 
+set $font_allitnil -uw-ttyp0-medium-r-normal--16-150-75-75-c-80-iso10646-1  
+
 #font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
+#font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
+#font pango:Envy\ Type\ R 9
+#font pango:Essential\ PragmataPro 8
 
-# - applications 
-# -------------------- 
+font $font_allitnil 
+
+# ==== applications ==== 
+# ---------------------- 
+
+# fix graphics glitch
+new_window none
 
 exec firefox
-#exec urxvtc -e zsh -c "tmux -q has-session && tmux split-window -d || exec tmux new-session"  
-#exec urxvtc -e tmux
 exec urxvtc
 
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
 assign [class="urxvt"] $WS1
+
+for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+# set float for spesific apps
+for_window [class="(?i)Jitsi"] floating enable
 
 # ==== keybinds ==== 
 # ------------------ 
@@ -71,7 +82,7 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+q kill
 
 # start dmenu that only lists .desktop entries. 
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "-uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -i' --term="urxvtc"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1 -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -i' --term="urxvtc"
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i' --term="urxvtc"
 #bindsym $mod+d exec dmenu_run -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i
 
@@ -136,7 +147,7 @@ bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
 # toggle touchpad (not in dotfiles repo)
-bindsym $mod+p exec --no-startup-id /usr/local/bin/touchpad-toggle.sh
+bindsym $mod+p exec --no-startup-id ~/bin/touchpad-toggle
 
 # move to last workspace
 bindsym $mod+z workspace back_and_forth
@@ -222,7 +233,7 @@ bindsym $mod+r mode "resize"
 # - colorscheme
 # -------------------- 
 
-# define railscast bases
+# define railscast colors
 set $hana00 #121212
 set $base00 #2b2b2b
 set $base01 #272935
@@ -242,52 +253,31 @@ set $base0E #b6b3eb
 set $base0F #bc9458
 
 # define sweetlove colors
-set $sweetloveFG #c0b18b
-set $sweetloveBG #1f1f1f
-set $sweetlove0 #4a3637
-set $sweetlove8 #402e2e
-set $sweetlove1 #d17b49
-set $sweetlove9 #ac5d2f
-set $sweetlove2 #7b8748
-set $sweetlove10 #647035
-set $sweetlove3 #af865a
-set $sweetlove11#8f6840
-set $sweetlove4 #535c5c
-set $sweetlove12 #444b4b
-set $sweetlove5 #775759
-set $sweetlove13 #614445
-set $sweetlove6 #6d715e
-set $sweetlove14 #585c49
-set $sweetlove7 #c0b18b
-set $sweetlove15 #978965
-set $sweetlove16 #cc7833
-set $sweetlove17 #bc9458
-set $sweetlove18 #272935
-set $sweetlove19 #3a4055
-set $sweetlove20 #d4cfc9
-set $sweetlove21 #f4f1ed
+set $slFG #c0b18b
+set $slBG #1f1f1f
+set $sl00 #4a3637
+set $sl08 #402e2e
+set $sl01 #d17b49
+set $sl09 #ac5d2f
+set $sl02 #7b8748
+set $sl10 #647035
+set $sl03 #af865a
+set $sl11 #8f6840
+set $sl04 #535c5c
+set $sl12 #444b4b
+set $sl05 #775759
+set $sl13 #614445
+set $sl06 #6d715e
+set $sl14 #585c49
+set $sl07 #c0b18b
+set $sl15 #978965
 
-
-
-# class                 border  backgr. text    indicator
-client.focused          $base03 $base02 $base07 $base05
-client.focused_inactive #333333 $base02 #ffffff #484e50
-client.unfocused        $base03 $base00 $base03 #292d2e
-client.urgent           $base02 $base08 #ffffff #900000
-client.placeholder      #000000 $base01 #ffffff #000000
-
-# ==== Windows ====
-# -----------------
-
-# fix graphics glitch
-new_window none
-
-for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-
-# set float for spesific apps
-for_window [class="(?i)Jitsi"] floating enable
+# class                 <border>   <bg>      <fg>    <indicator>
+client.focused          $sl13      $sl13     $sl07   $base05
+client.focused_inactive #333333    $base02   #ffffff #484e50
+client.unfocused        $sl08      $sl08     $sl15   #292d2e
+client.urgent           $base02    $base08   #ffffff #900000
+client.placeholder      #000000    $base01   #ffffff #000000
 
 # ==== bar config ====
 # -------------------- 
@@ -296,19 +286,21 @@ bar {
   #position top 
   tray_output primary
   #status_command i3status
-  status_command i3blocks -c ~/.i3/i3blocks.conf 
+  font pango:Ttyp0 14
+  status_command i3blocks -c ~/.i3/i3blocks@allitnil.conf 
+  separator_symbol " "
   colors {
 
     # <bar>
-    background  $sweetlove8
-    separator   $sweetlove7
+    background  $sl08
+    separator   $sl07
     statusline  $base05
 
-    # <workclass>       <border>    <bg>        <text>
-    focused_workspace   $base03     $base02     $base07
-    active_workspace    $base03     $base00     $base04
-    inactive_workspace  $base03     $base01     $base03
-    urgent_workspace    $base08     $base01     $base08
+    # <workclass>       <border>  <bg>     <text>
+    focused_workspace   $sl13     $sl13    $sl07
+    active_workspace    $sl08     $sl08    $sl07
+    inactive_workspace  $sl08     $sl08    $sl15
+    urgent_workspace    $sl09     $sl09    $sl08
   } 
 }
 

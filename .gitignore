@@ -12,6 +12,7 @@ vimperator/.vimperator/info/**
 vim/.vim/undo/**
 vim/.vim/bundle/**
 !vim/.vim/bundle/Vundle.vim
+!vim/.vim/filetype.vim
 vim/.vim/static/**
 
 *tmp*

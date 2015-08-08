@@ -1,8 +1,8 @@
-# ┌──────────────────────────────────────────────┐
-# │░█▀▀░█░█░█▀█░▀█▀░█▀█░█░█░░░█▀▀░█░█░▀█▀░█▀▄░█▀█│
-# │░▀▀█░░█░░█░█░░█░░█▀█░▄▀▄░░░█▀▀░▄▀▄░░█░░█▀▄░█▀█│
-# │░▀▀▀░░▀░░▀░▀░░▀░░▀░▀░▀░▀░░░▀▀▀░▀░▀░░▀░░▀░▀░▀░▀│
-# └──────────────────────────────────────────────┘
+# ┌───────────────────────────────────────────────┐
+# │░█▀▀░█░█░█▀█░▀█▀░█▀█░█░█░░░█▀▀░█░█░▀█▀░█▀▄░█▀█░│
+# │░▀▀█░░█░░█░█░░█░░█▀█░▄▀▄░░░█▀▀░▄▀▄░░█░░█▀▄░█▀█░│
+# │░▀▀▀░░▀░░▀░▀░░▀░░▀░▀░▀░▀░░░▀▀▀░▀░▀░░▀░░▀░▀░▀░▀░│
+# └───────────────────────────────────────────────┘
 # add some extra syntax highlighting 
 # source: http://dotshare.it/dots/100/
 
@@ -36,8 +36,8 @@ ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]="fg=green"
 
 # PATTERNS
 # rm -rf
-ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=black,bold,bg=red')
 
 # Sudo
-ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=white,bold,bg=red')
+ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=black,bold,bg=red')
 
