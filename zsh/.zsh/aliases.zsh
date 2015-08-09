@@ -160,7 +160,7 @@ alias pacmir='pacman -Syy'
 # ------
 
 alias pacaur4='pacaur --domain aur4.archlinux.org'
-alias yaourt='pacaur'
+#alias yaourt='pacaur'
 
 # ======= Utils =======
 # -----------------

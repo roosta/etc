@@ -6,25 +6,25 @@
 # │░▀░▀░▀░▀░▀░▀░▀░▀░░░░▀░░░▀░░░▀░░│
 # └───────────────────────────────┘
 
-# add color scheme "hana" for linux console
+# add color scheme "sweetlove" for linux console
 if [ "$TERM" = "linux" ]; then
   /bin/echo -e "
-  \e]P02b2b2b
-  \e]P1a8334d
-  \e]P2a5c261
-  \e]P3e7a83f
-  \e]P43c589e
-  \e]P56f5b94
-  \e]P62f8b46
-  \e]P7e0d4c9
-  \e]P8473444
-  \e]P9c55d66
-  \e]PA8fb977
-  \e]PBe4d849
-  \e]PC57839f
-  \e]PDb6b3eb
-  \e]PE519f50
-  \e]PFf9f7f3
+  \e]P04a3637
+  \e]P1d17b49
+  \e]P27b8748
+  \e]P3af865a
+  \e]P4535c5c
+  \e]P5775759
+  \e]P66d715e
+  \e]P7c0b18b
+  \e]P8402e2e
+  \e]P9ac5d2f
+  \e]PA647035
+  \e]PB8f6840
+  \e]PC444b4b
+  \e]PD614445
+  \e]PE585c49
+  \e]PF978965
   "
   # get rid of artifacts
   clear

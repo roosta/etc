@@ -286,7 +286,7 @@ bar {
   #position top 
   tray_output primary
   #status_command i3status
-  font pango:Ttyp0 14
+  font pango:Ttyp0 14, FontAwesome 10
   status_command i3blocks -c ~/.i3/i3blocks@allitnil.conf 
   separator_symbol " "
   colors {
