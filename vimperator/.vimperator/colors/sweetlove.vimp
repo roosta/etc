@@ -19,27 +19,27 @@
 " Reset all styles first
 hi clear
 
-hi CompDesc					color: #999; width: 50%;
-hi CompItem[selected]		background: #666;
+hi CompDesc					color: #978965; width: 50%;
+hi CompItem[selected]	background: #535c5c;
 
 " Used in Command Line
 " Entire bottom line
-hi CmdLine                  color: #aaa; background: #333; font-family: Ttyp0; font-size: 12px; padding: 0px; vertical-align: middle; border: none;
+hi CmdLine                  color: #c0b18b; background: #444b4b; font-family: Ttyp0; font-size: 12px; padding: 0px; vertical-align: middle; border: none;
 
 " Used in the URL column of `bmarks`
-hi CompResult				color: #aaa; width: 45%; overflow: hidden;
-hi CompTitle				color: #ddc; background: #333; font-weight: bold;
-hi CompTitle>*				color: #aaa; font-weight: bold; border-top: 1px solid gray; border-bottom: 1px solid #BBB; padding: 1px 0.5ex;
+hi CompResult				color: #978965; width: 45%; overflow: hidden;
+hi CompTitle				color: #c0b18b; background: #444b4b; font-weight: bold;
+hi CompTitle>*				color: #c0b18b; font-weight: bold; padding: 1px 0.5ex;
 
 " Hints!
-hi Hint						color: white; background-color: #800; border-color: ButtonShadow; font-family: Ttyp0; font-size: 12px; border-width: 0px; border-style: solid; padding 0 1px;
+hi Hint						color: white; background-color: #402e2e; border-color: ButtonShadow; font-family: Ttyp0; font-size: 12px; border-width: 0px; border-style: solid; padding 0 1px;
 hi Hint::after				content: attr(number);
-hi HintActive				color: black; background: #480;
-hi HintElem					color: black; background-color: #880; 
+hi HintActive				color: black; background: #7b8748;
+hi HintElem					color: black; background-color: #d17b49; 
 hi HintImage				opacity: .5;
 
 " Used also in wrapping error messages as the background, simple speaking
-hi InfoMsg					color: #ddc; background: #333;
+hi InfoMsg					color: #c0b18b; background: #333;
 
 " Used when error on syntax error in vimperatorrc, etc.
 hi LineNr					color: orange; background-color: #333;
@@ -47,11 +47,11 @@ hi LineNr					color: orange; background-color: #333;
 hi ErrorMsg					color: #c22; background-color: #333; font-weight: bold; 
 
 " Used in CARET or COMMAND modes
-hi ModeMsg					color: #ddc; background: #333;
+hi ModeMsg					color: #c0b18b; background: #333;
 
 hi MoreMsg					color: #080; background: #222; font-weight: bold; -moz-border-radius: 5px; padding-left: 5px;
 
-hi Normal					color: #ddc; background: #333;
+hi Normal					color: #c0b18b; background: #402e2e;
 
 " Used in :`js tr<TAB>`
 hi Boolean					color: #f00;
@@ -66,19 +66,19 @@ hi Question					color: #080; background: #222; font-weight: bold; -moz-border-ra
 
 " hi Search					color: #333; background-color: #cc0; font-size: inherit; padding: 0; padding: 0;
 
-hi StatusLine				color: #ddc; background: #333; font-family: Ttyp0; font-size: 12; margin-top: 1px;
+hi StatusLine				color: #c0b18b; background: #402e2e; font-family: Ttyp0; font-size: 12; margin-top: 1px;
 
 " Firefox's tabs
-hi TabNumber				color: #ddc; font-weight: bold; margin: 0; padding-right: .3ex; text-shadow: #000 -1px 0 0, #000 0 1px 0, #000 1px 0 0, #000 0 -1px 0;
+hi TabNumber				color: #c0b18b; font-weight: bold; margin: 0; padding-right: .3ex; text-shadow: #000 -1px 0 0, #000 0 1px 0, #000 1px 0 0, #000 0 -1px 0;
 
 " Used in `pageinfo` or `jumps`
-hi Title					color: #ddc; background: #333; font-weight: bold;
+hi Title					color: #c0b18b; background: #333; font-weight: bold;
 
 " Used in items of Info field of `bmarks`
 hi Keyword					color: #CC0;
 hi Tag						color: #0CC;
-hi URL						color: #080; text-decoration: none; padding: 0 2px;
-hi URL:hover				color: #880; background-color: #222; -moz-border-radius: 5px; cursor: pointer;
+hi URL						color: #647035; text-decoration: none; padding: 0 2px;
+hi URL:hover				color: #7b8748; background-color: #222; -moz-border-radius: 5px; cursor: pointer;
 
 hi ContentSeparator			border:none;
 

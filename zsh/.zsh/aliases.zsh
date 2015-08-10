@@ -13,7 +13,7 @@
 alias vigit='vim ~/.gitconfig'
 alias vii3='vim ~/.i3/config'
 alias vialias='vim ~/.zsh/aliases.zsh'
-alias vivim='vim ~/.vimrc'
+alias vivi='vim ~/.vimrc'
 alias vixr='vim ~/.Xresources'
 alias vitmux='vim ~/.tmux.conf'
 alias vixinit='vim ~/.xinitrc'

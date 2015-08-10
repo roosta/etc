@@ -39,7 +39,7 @@ set $font_allitnil -uw-ttyp0-medium-r-normal--16-150-75-75-c-80-iso10646-1
 #font pango:Envy\ Type\ R 9
 #font pango:Essential\ PragmataPro 8
 
-font $font_allitnil 
+font $font_lintilla 
 
 # ==== applications ==== 
 # ---------------------- 
@@ -286,9 +286,10 @@ bar {
   #position top 
   tray_output primary
   #status_command i3status
-  font pango:Ttyp0 14, FontAwesome 10
-  status_command i3blocks -c ~/.i3/i3blocks@allitnil.conf 
+  font pango:Ttyp0 13, FontAwesome 9
+  status_command i3blocks -c ~/.i3/i3blocks@lintilla.conf 
   separator_symbol " "
+  #height 15
   colors {
 
     # <bar>

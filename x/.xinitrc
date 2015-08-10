@@ -28,7 +28,7 @@ sh ~/.fehbg &
 setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp &
 
 # lanch mopidy (MPD)
-#mopidy &
+mopidy &
 
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
 #xset dpms 600 1200 2000 &

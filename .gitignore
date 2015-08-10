@@ -9,11 +9,11 @@ ranger/.config/ranger/tagged
 
 vimperator/.vimperator/info/**
 
-vim/.vim/undo/**
-vim/.vim/bundle/**
+vim/.vim/undo/*
+vim/.vim/bundle/*
 !vim/.vim/bundle/Vundle.vim
 !vim/.vim/filetype.vim
-vim/.vim/static/**
+vim/.vim/static/*
 
 *tmp*
 *temp*
