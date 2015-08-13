@@ -21,9 +21,6 @@ exec --no-startup-id xss-lock -- i3lock -edti /usr/share/backgrounds/simple-55.p
 # ==== general config ==== 
 # ------------------------  
 
-# set window border size
-#new_window 1pixel
-#new_float 1pixel
 
 # no focus at mouse pointer since touchpad makes this infuriating
 focus_follows_mouse no
@@ -31,8 +28,10 @@ focus_follows_mouse no
 # ==== fonts ==== 
 # --------------- 
 
-set $font_lintilla -uw-ttyp0-medium-r-normal--12-130-75-75-c-70-iso10646-1 
-set $font_allitnil -uw-ttyp0-medium-r-normal--16-150-75-75-c-80-iso10646-1  
+#set $font_lintilla -uw-ttyp0-medium-r-normal--12-130-75-75-c-70-iso10646-1 
+set $font_lintilla pango: Essential PragmataPro 12px 
+#set $font_allitnil -uw-ttyp0-medium-r-normal--16-150-75-75-c-80-iso10646-1  
+set $font_allitnil pango: Essential PragmataPro 12px 
 
 #font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 #font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
@@ -273,10 +272,10 @@ set $sl07 #c0b18b
 set $sl15 #978965
 
 # class                 <border>   <bg>      <fg>    <indicator>
-client.focused          $sl13      $sl13     $sl07   $base05
-client.focused_inactive #333333    $base02   #ffffff #484e50
-client.unfocused        $sl08      $sl08     $sl15   #292d2e
-client.urgent           $base02    $base08   #ffffff #900000
+client.focused          $sl12      $sl12     $sl07   $sl4
+client.focused_inactive #333333    $base02   #ffffff $sl4
+client.unfocused        $sl08      $sl08     $sl15   $sl4
+client.urgent           $base02    $base08   #ffffff $sl4
 client.placeholder      #000000    $base01   #ffffff #000000
 
 # ==== bar config ====
@@ -284,23 +283,22 @@ client.placeholder      #000000    $base01   #ffffff #000000
 
 bar {
   #position top 
-  tray_output primary
-  #status_command i3status
-  font pango:Ttyp0 13, FontAwesome 9
+  #tray_output primary
+  tray_output DVI-D-0
+  font pango:Essential PragmataPro, FontAwesome 9
   status_command i3blocks -c ~/.i3/i3blocks@lintilla.conf 
   separator_symbol " "
-  #height 15
   colors {
 
     # <bar>
-    background  $sl08
+    background  $slBG
     separator   $sl07
     statusline  $base05
 
     # <workclass>       <border>  <bg>     <text>
-    focused_workspace   $sl13     $sl13    $sl07
+    focused_workspace   $sl08     $sl08    $sl07
     active_workspace    $sl08     $sl08    $sl07
-    inactive_workspace  $sl08     $sl08    $sl15
+    inactive_workspace  $slBG     $slBG    $sl15
     urgent_workspace    $sl09     $sl09    $sl08
   } 
 }
@@ -311,7 +309,7 @@ bar {
 # ---------------------------------------------------------
 
 for_window [class="^.*"] border pixel 0
-smart_borders no_gaps
+smart_borders on
 smart_gaps on
 
 gaps inner 5

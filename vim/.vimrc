@@ -104,7 +104,7 @@ set shiftwidth=2
 " tabs are spaces, not tabs
 set expandtab
 
-" an indentation every four columns
+" an indentation every two columns
 set tabstop=2
 
 " let backspace delete indent
@@ -160,6 +160,7 @@ Plugin 'jpo/vim-railscasts-theme'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/syntastic'
 Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'sheerun/vim-polyglot'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'jdonaldson/vaxe'
 

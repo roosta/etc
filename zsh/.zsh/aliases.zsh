@@ -20,6 +20,12 @@ alias vixinit='vim ~/.xinitrc'
 alias vifont='vim ~/.config/fontconfig/fonts.conf'
 alias vikeys='vim ~/.xbindkeysrc'
 
+# ======= todo ======= 
+# placeholder. write/find script
+# --------------------
+alias todo='vim ~/.todo'
+alias lstodo='cat ~/.todo'
+
 
 # ======= Quick grep =======
 # --------------------------
@@ -202,7 +208,7 @@ alias xrmerge="xrdb -merge ~/.Xresources"
 # refresh zsh config files
 alias zrefresh="source $HOME/.zshrc"
 
-alias sinkls="pacmd list-sinks|egrep -i 'index:|name:'"
+alias lssinks="pacmd list-sinks|egrep -i 'index:|name:'"
 
 # always root
 alias svim="sudo vim"
@@ -230,9 +236,10 @@ alias vi="vim"
 # utput from a command with xclip when this is piped in
 alias copy='xclip -sel clip'
 
-# output time
+# print date in various formats 
 alias gettime='date +"%T"'
 alias fdate='date +%Y-%m-%d_%H-%M-%S'
-
-# output current date
 alias getdate='date +"%Y-%m-%d"'
+
+# locate file at .
+alias gfile='lsa|grep'

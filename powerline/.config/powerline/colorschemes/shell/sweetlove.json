@@ -9,7 +9,7 @@
 	"mode_translations": {
 		"vicmd": {
 			"groups": {
-				"mode": {"fg": "sweetlove:8", "bg": "sweetlove:10", "attrs": ["bold"]}
+				"mode": {"fg": "sweetlove:7", "bg": "sweetlove:14", "attrs": ["bold"]}
 			}
 		}
 	}
