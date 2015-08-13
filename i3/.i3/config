@@ -291,14 +291,14 @@ bar {
   colors {
 
     # <bar>
-    background  $slBG
+    background  $sl08
     separator   $sl07
     statusline  $base05
 
     # <workclass>       <border>  <bg>     <text>
-    focused_workspace   $sl08     $sl08    $sl07
+    focused_workspace   $sl12     $sl12    $sl07
     active_workspace    $sl08     $sl08    $sl07
-    inactive_workspace  $slBG     $slBG    $sl15
+    inactive_workspace  $sl08     $sl08    $sl15
     urgent_workspace    $sl09     $sl09    $sl08
   } 
 }
