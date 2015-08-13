@@ -51,6 +51,7 @@ hi ModeMsg				color: #c0b18b; background: #333;
 
 hi MoreMsg				color: #080; background: #222; font-weight: bold; -moz-border-radius: 5px; padding-left: 5px;
 
+"hi Normal					color: #c0b18b; background: #1f1f1f; border-bottom: 2px solid #402e2e;
 hi Normal					color: #c0b18b; background: #1f1f1f; border-bottom: 2px solid #402e2e;
 
 " Used in :`js tr<TAB>`
