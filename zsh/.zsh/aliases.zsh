@@ -183,11 +183,12 @@ alias pip='sudo -H pip'
 # -------------------
 
 # git
-alias gs='git status'
-alias gd='git diff'
-alias gca='git commit -a'
+alias gstat='git status'
+alias gdiff='git diff'
+alias gcheck='git checkout'
+alias gcoma='git commit -a'
 alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
-alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+alias glsa='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
 
 ## transform
 alias sst='svn status'
