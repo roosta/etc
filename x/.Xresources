@@ -16,7 +16,7 @@
 #define FONT_BOLD -uw-ttyp0-bold-r-normal--15-140-75-75-c-80-iso10646-1 
 #define FONT_ITALIC -uw-ttyp0-medium-i-normal--15-140-75-75-c-80-iso10646-1
 #define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=10:antialias=1:hinting=1:hintstyle=3
-#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono:style=Book:pixelsize=10:antialias=1:hinting=1:hintstyle=3
+!#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono:style=Book:pixelsize=10:antialias=1:hinting=1:hintstyle=3
 
 ! Ttyp0 laptop sizes [allitnil, 1600x900]
 !#define FONT_NORMAL -uw-ttyp0-medium-r-normal--16-150-75-75-c-80-iso10646-1
@@ -75,6 +75,12 @@ URxvt.keysym.Shift-Down: command:\033]721;1\007
 ! https://wiki.archlinux.org/index.php/Rxvt-unicode#Scrollback_buffer_in_secondary_screen
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
+
+URxvt*externalBorder: 0
+URxvt*internalBorder: 0 
+
+!URxvt*borderLess: true
+!URxvt*loginShell: true 
 
 #include "/home/daniel/.Xcolors/sweetlove.Xresources"
 

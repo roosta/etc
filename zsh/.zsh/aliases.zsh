@@ -31,25 +31,23 @@ alias lstodo='cat ~/.todo'
 # --------------------------
 
 # locate an alias quickly
-alias galias="alias | grep"
+alias gralias="alias | grep"
 
 # grep command history quickly
-alias ghist="cat ~/.histfile | grep"
+alias grhist="cat ~/.histfile | grep"
 
-# create parents as needed, verbose
+# create parents, be verbose
 alias mkdir='mkdir -pv'
 
 # echo path variable
-alias path='echo -e ${PATH//:/\\n}'
+alias lspath='echo -e ${PATH//:/\\n}'
 
 # ======= safety =======
 # ----------------------
-alias mv='mv -i'
+alias mv=' timeout 8 mv -iv'
+alias rm=' timeout 3 rm -Iv --one-file-system'
 alias cp='cp -i'
 alias ln='ln -i'
-
-# do not delete / or prompt if deleting more than 3 files at a time #
-alias rm='rm -I --preserve-root'
 
 # Parenting changing perms on / #
 alias chown='chown --preserve-root'
@@ -183,15 +181,15 @@ alias pip='sudo -H pip'
 # -------------------
 
 # git
-alias gstat='git status'
-alias gdiff='git diff'
-alias gcheck='git checkout'
-alias gcoma='git commit -a'
+alias gs='git status'
+alias gd='git diff'
+alias gc='git checkout'
+alias gca='git commit -a'
 alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
-alias glsa='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
-alias gadda'git add -A'
+alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+alias gaa'git add -A'
 
-## transform
+# svn
 alias sst='svn status'
 
 # ======= MISC =======
@@ -230,7 +228,7 @@ alias grep="grep -i --color=auto"
 alias claer='clear'
 
 # keep forgetting what these are called. 
-alias keypress='xev'
+alias getkey='xev'
 alias getclass='xprop'
 
 # vi to vim 
@@ -241,8 +239,8 @@ alias copy='xclip -sel clip'
 
 # print date in various formats 
 alias gettime='date +"%T"'
-alias fdate='date +%Y-%m-%d_%H-%M-%S'
+alias getdatef='date +%Y-%m-%d_%H-%M-%S'
 alias getdate='date +"%Y-%m-%d"'
 
 # locate file at .
-alias gfile='lsa|grep'
+alias grfile='lsa|grep'

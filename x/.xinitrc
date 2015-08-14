@@ -30,11 +30,14 @@ setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:c
 xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --off --output DVI-I-1 --mode 1920x1080 --pos 1920x0 --rotate normal 
 
 # lanch mopidy (MPD)
-#mopidy &
+mopidy &
 
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
 xset dpms 600 1200 2000 &
 #xset dpms 1200 & 
+
+# enable numlock at startup
+numlockx &
 
 # start WM
 exec i3

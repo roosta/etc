@@ -217,3 +217,4 @@ if has('gui_running')
   set guifont=Essential\ PragmataPro\ 10
   set guiheadroom=0
 endif
+

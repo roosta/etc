@@ -81,9 +81,9 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+q kill
 
 # start dmenu that only lists .desktop entries. 
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1 -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -i' --term="urxvtc"
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential PragmataPro-10" -nb "#402e2e" -nf "#c0b18b" -sb "#4a3637" -sf "#7b8748" -b -i' --term="urxvtc"
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1 -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -i' --term="urxvtc"
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i' --term="urxvtc"
-#bindsym $mod+d exec dmenu_run -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i
 
 # change focus
 bindsym $mod+j focus left
