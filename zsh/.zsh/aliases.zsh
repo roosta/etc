@@ -189,6 +189,7 @@ alias gcheck='git checkout'
 alias gcoma='git commit -a'
 alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
 alias glsa='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+alias gadda'git add -A'
 
 ## transform
 alias sst='svn status'
@@ -228,8 +229,9 @@ alias grep="grep -i --color=auto"
 # common typo
 alias claer='clear'
 
-# keep forgetting what this app is called. 
+# keep forgetting what these are called. 
 alias keypress='xev'
+alias getclass='xprop'
 
 # vi to vim 
 alias vi="vim"

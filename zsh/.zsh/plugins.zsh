@@ -60,9 +60,4 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-# use vim for less
-export PAGER=/usr/bin/vimpager
-alias less=$PAGER
-alias zless=$PAGER
-
 for plugin (~/.zsh/plugins/*.zsh) source $plugin
