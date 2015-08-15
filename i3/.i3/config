@@ -38,7 +38,7 @@ set $font_allitnil pango: Essential PragmataPro 12px
 #font pango:Envy\ Type\ R 9
 #font pango:Essential\ PragmataPro 8
 
-font $font_lintilla 
+font $font_allitnil 
 
 # ==== applications ==== 
 # ---------------------- 

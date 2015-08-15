@@ -161,6 +161,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/syntastic'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'easymotion/vim-easymotion'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'jdonaldson/vaxe'
 
