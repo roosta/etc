@@ -27,7 +27,8 @@ sh ~/.fehbg &
 # set layout at x startup since logitech keyboard for some reason won't accept the xorg.conf...
 setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp
 
-xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --off --output DVI-I-1 --mode 1920x1080 --pos 1920x0 --rotate normal 
+#xrandr --output DVI-D-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-0 --off --output DVI-I-1 --mode 1920x1080 --pos 1920x0 --rotate normal 
+xrandr --output DVI-I-1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DVI-D-1 --mode 1920x1080 --pos 0x0 --rotate normal &
 
 # lanch mopidy (MPD)
 mopidy &

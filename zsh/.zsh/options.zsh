@@ -14,17 +14,13 @@ setopt notify
 # setopt LOCAL_OPTIONS # allow functions to have local options
 # setopt LOCAL_TRAPS # allow functions to have local traps
 setopt HIST_VERIFY
-# setopt SHARE_HISTORY # share history between sessions ???
-# setopt EXTENDED_HISTORY # add timestamps to history
 setopt PROMPT_SUBST
 setopt CORRECT
 setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
-
 unsetopt beep
 
-# rehash automatically
-zstyle ':completion:*' rehash true
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # ======= History =======
 # -----------------------
