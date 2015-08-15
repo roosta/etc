@@ -39,7 +39,7 @@ xset dpms 600 1200 2000 &
 # start WM
 exec i3
 
-# 
-home/daniel/bin/touchpad-toggle 
+# initially diable touchpad on laptop
+#home/daniel/.scripts/touchpad-toggle.sh
 
 # vim:filetype=sh
