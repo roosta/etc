@@ -12,11 +12,58 @@
 # * http://dotshare.it (picked from various i3 confs, color schemes..etc)
 # -----------------------------------------------------------------------
 
-# ==== startup ====  
-# ----------------- 
+# ==== variables ====  
+# ------------------- 
 
-# register screen locker
-exec --no-startup-id xss-lock -- i3lock -edti /usr/share/backgrounds/simple-55.png &
+# assign variables for workspace names for easier access
+set $WS1 1:terms
+set $WS2 2:dev
+set $WS3 3:web
+set $WS4 4:aux
+set $WS5 5:media
+set $WS6 6:games
+set $WS7 7
+set $WS8 8
+
+# define railscast colors
+set $hana00 #121212
+set $base00 #2b2b2b
+set $base01 #272935
+set $base02 #3a4055
+set $base03 #5a647e
+set $base04 #d4cfc9
+set $base05 #e6e1dc
+set $base06 #f4f1ed
+set $base07 #f9f7f3
+set $base08 #da4939
+set $base09 #cc7833
+set $base0A #ffc66d
+set $base0B #a5c261
+set $base0C #519f50
+set $base0D #6d9cbe
+set $base0E #b6b3eb
+set $base0F #bc9458
+
+# define sweetlove colors
+set $sweetfg #c0b18b
+set $sweetbg #1f1f1f
+set $sweet0  #4a3637
+set $sweet1  #d17b49
+set $sweet2  #7b8748
+set $sweet3  #af865a
+set $sweet4  #535c5c
+set $sweet5  #775759
+set $sweet6  #6d715e
+set $sweet7  #c0b18b
+set $sweet8  #402e2e
+set $sweet9  #ac5d2f
+set $sweet10 #647035
+set $sweet11 #8f6840
+set $sweet12 #444b4b
+set $sweet13 #614445
+set $sweet14 #585c49
+set $sweet15 #978965
+
 
 # ==== general config ==== 
 # ------------------------  
@@ -30,6 +77,7 @@ focus_follows_mouse no
 
 #set $font_lintilla -uw-ttyp0-medium-r-normal--12-130-75-75-c-70-iso10646-1 
 set $font_lintilla pango: Essential PragmataPro 12px 
+
 #set $font_allitnil -uw-ttyp0-medium-r-normal--16-150-75-75-c-80-iso10646-1  
 set $font_allitnil pango: Essential PragmataPro 12px 
 
@@ -40,25 +88,6 @@ set $font_allitnil pango: Essential PragmataPro 12px
 
 font $font_lintilla 
 
-# ==== applications ==== 
-# ---------------------- 
-
-# fix graphics glitch
-new_window none
-
-exec firefox
-exec urxvtc
-
-assign [class="subl3"] $WS2
-assign [class="Firefox"] $WS3
-assign [class="urxvt"] $WS1
-
-for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-
-# set float for spesific apps
-for_window [class="(?i)Jitsi"] floating enable
 
 # ==== keybinds ==== 
 # ------------------ 
@@ -81,9 +110,8 @@ bindsym $mod+Return exec urxvtc
 bindsym $mod+q kill
 
 # start dmenu that only lists .desktop entries. 
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential PragmataPro-10" -nb "#402e2e" -nf "#c0b18b" -sb "#4a3637" -sf "#7b8748" -b -i' --term="urxvtc"
-#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1 -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -i' --term="urxvtc"
-#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i' --term="urxvtc"
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i' --term="urxvtc"
+bindsym $mod+d exec --no-startup-id dmenu_run -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i
 
 # change focus
 bindsym $mod+j focus left
@@ -167,19 +195,10 @@ bindsym $mod+Shift+a focus child
 bindsym --release Print exec scrot $HOME/Pictures/screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
 bindsym --release Shift+Print exec scrot -s $HOME/Pictures/screenshots/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
 
-# ------------------
+# send a signal to i3blocks on caps
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # --- workspaces ---
 # ------------------ 
-
-# assign variables for workspace names for easier access
-set $WS1 1:terms
-set $WS2 2:dev
-set $WS3 3:web
-set $WS4 4:aux
-set $WS5 5:media
-set $WS6 6:games
-set $WS7 7
-set $WS8 8
 
 bindsym F1 workspace $WS1
 bindsym F2 workspace $WS2
@@ -199,6 +218,26 @@ bindsym $mod+F5 move workspace $WS5
 bindsym $mod+F6 move workspace $WS6
 bindsym $mod+F7 move workspace $WS7
 bindsym $mod+F8 move workspace $WS8
+
+# ==== applications ==== 
+# ---------------------- 
+
+# fix graphics glitch
+new_window none
+
+exec firefox
+exec urxvtc
+
+assign [class="subl3"] $WS2
+assign [class="Firefox"] $WS3
+assign [class="urxvt"] $WS1
+
+for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+# set float for spesific apps
+for_window [class="(?i)Jitsi"] floating enable
 
 # - resize windows 
 # -------------------- 
@@ -229,52 +268,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# - colorscheme
-# -------------------- 
-
-# define railscast colors
-set $hana00 #121212
-set $base00 #2b2b2b
-set $base01 #272935
-set $base02 #3a4055
-set $base03 #5a647e
-set $base04 #d4cfc9
-set $base05 #e6e1dc
-set $base06 #f4f1ed
-set $base07 #f9f7f3
-set $base08 #da4939
-set $base09 #cc7833
-set $base0A #ffc66d
-set $base0B #a5c261
-set $base0C #519f50
-set $base0D #6d9cbe
-set $base0E #b6b3eb
-set $base0F #bc9458
-
-# define sweetlove colors
-set $slFG #c0b18b
-set $slBG #1f1f1f
-set $sl00 #4a3637
-set $sl08 #402e2e
-set $sl01 #d17b49
-set $sl09 #ac5d2f
-set $sl02 #7b8748
-set $sl10 #647035
-set $sl03 #af865a
-set $sl11 #8f6840
-set $sl04 #535c5c
-set $sl12 #444b4b
-set $sl05 #775759
-set $sl13 #614445
-set $sl06 #6d715e
-set $sl14 #585c49
-set $sl07 #c0b18b
-set $sl15 #978965
+# --- colorscheme ---
+# ------------------- 
 
 # class                 <border>   <bg>      <fg>    <indicator>
-client.focused          $sl12      $sl12     $sl07   $sl4
+client.focused          $sweet12      $sweet12     $sweet7   $sl4
 client.focused_inactive #333333    $base02   #ffffff $sl4
-client.unfocused        $sl08      $sl08     $sl15   $sl4
+client.unfocused        $sweet8      $sweet8     $sweet15   $sl4
 client.urgent           $base02    $base08   #ffffff $sl4
 client.placeholder      #000000    $base01   #ffffff #000000
 
@@ -287,19 +287,19 @@ bar {
   tray_output DVI-D-0
   font pango:Essential PragmataPro, FontAwesome 9
   status_command i3blocks -c ~/.i3/i3blocks@lintilla.conf 
-  separator_symbol " "
+  separator_symbol "  "
   colors {
 
     # <bar>
-    background  $sl08
-    separator   $sl07
+    background  $sweet8
+    separator   $sweet7
     statusline  $base05
 
     # <workclass>       <border>  <bg>     <text>
-    focused_workspace   $sl12     $sl12    $sl07
-    active_workspace    $sl08     $sl08    $sl07
-    inactive_workspace  $sl08     $sl08    $sl15
-    urgent_workspace    $sl09     $sl09    $sl08
+    focused_workspace   $sweet12     $sweet12    $sweet7
+    active_workspace    $sweet8     $sweet8    $sweet7
+    inactive_workspace  $sweet8     $sweet8    $sweet15
+    urgent_workspace    $sweet9     $sweet9    $sweet8
   } 
 }
 
