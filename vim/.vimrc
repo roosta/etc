@@ -12,9 +12,8 @@
 " must be first, because it changes other options as a side effect
 set nocompatible
 
-" -------------------- 
-" - functions
-" -------------------- 
+" ==== functions ====
+" ------------------- 
 
 " source conf on save
 augroup reload_vimrc " {
@@ -22,15 +21,13 @@ augroup reload_vimrc " {
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
-" -------------------- 
-" - Options
-" -------------------- 
+" ==== Options =====
+" ------------------ 
 
 " enable syntax
 syntax on
 "filetype off
 
-" paste without auto indentation
 set paste
 
 " keep at least 3 lines above/below
@@ -48,7 +45,7 @@ set wildmode=longest,list,full
 set wildignorecase
 
 " case insensitive search
-set ignorecase
+"set ignorecase
 
 " set  
 set smartcase
@@ -94,9 +91,21 @@ set showcmd
 " show line numbers
 set number
 
+"set cc=80
+
+" highlight cursor line
+set cursorline
+
 " line wrapping
-set nowrap
+set wrap
+
+" line up soft-wrap prefix with the line numbers
+"set showbreak=------>\  
 "set showbreak=↪
+set showbreak=\ \ \ \ \ \ ↳\ 
+
+" start soft-wrap lines (and any prefix) in the line-number area
+set cpoptions+=n
 
 " use indents of 2 spaces
 set shiftwidth=2
@@ -120,9 +129,8 @@ set gdefault
 " highlight column
 "set cursorcolumn
 
-" --------------------
-" - Keybinds
-" -------------------- 
+" ==== Keybinds ====
+" ------------------ 
 
 " change mapleader
 let mapleader = ","
@@ -136,10 +144,8 @@ vnoremap <leader>p "+p
 nnoremap <leader>p "+p
 nnoremap <leader>P "+p
 
-" -------------------- 
-" - Plugins
-" -------------------- 
-
+" ==== Plugins ====
+" ----------------- 
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -161,12 +167,15 @@ Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/syntastic'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'easymotion/vim-easymotion'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'jdonaldson/vaxe'
 
 call vundle#end()
 filetype plugin indent on
 
+" ... Syntastic ...
+" -----------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -181,13 +190,19 @@ python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
 
-" vim-multiple-cursor config 
+" ... vim-multiple-cursor config ...
+" ----------------------------------
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
+" ... ctrl-p ...
+" --------------
 map <leader>b :CtrlPBuffer<CR>
+
+" ... nerd tree ...
+" -----------------
 map <leader>t :NERDTreeToggle<CR>
 
 " show hidden files in nerdtree
@@ -196,17 +211,36 @@ let NERDTreeShowHidden=1
 " close vim if nerdtree is only window remaining
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" -------------------- 
-" - colors / visual
-" -------------------- 
+" ............... easymotion .................
+" https://github.com/easymotion/vim-easymotion 
+" --------------------------------------------
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-s)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" ... color theme ... 
+" ------------------- 
 " Set theme
 "colorscheme railscasts
 colorscheme gruvbox
 set background=dark    " Setting dark mode
 
-" -------------------- 
-" - GUI options
-" --------------------
+" ... GUI options ...
+" -------------------
 
 if has('gui_running')
   "set guioptions-=m  "remove menu bar

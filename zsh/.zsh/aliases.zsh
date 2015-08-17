@@ -26,9 +26,8 @@ alias vikeys='vim ~/.xbindkeysrc'
 alias todo='vim ~/.todo'
 alias lstodo='cat ~/.todo'
 
-
-# ======= Quick grep =======
-# --------------------------
+# ======= Quick list/find  =======
+# --------------------------------
 
 # locate an alias quickly
 alias gralias="alias | grep"
@@ -36,11 +35,14 @@ alias gralias="alias | grep"
 # grep command history quickly
 alias grhist="cat ~/.histfile | grep"
 
-# create parents, be verbose
-alias mkdir='mkdir -pv'
-
 # echo path variable
 alias lspath='echo -e ${PATH//:/\\n}'
+
+# locate file at working dir
+alias grfile='lsa|grep'
+
+# list pulseaudio sinks
+alias sinkls="pacmd list-sinks|egrep -i 'index:|name:'"
 
 # ======= safety =======
 # ----------------------
@@ -60,6 +62,9 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 
 # get GPU ram on desktop / laptop
 alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+
+# create parents, be verbose
+alias mkdir='mkdir -pv'
 
 # ======= Movement ========
 # dirstack needs some extra config, see dirstack.sh
@@ -92,6 +97,7 @@ alias dir='ls++ --potsf -lAhpXk'
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd; sudo rkhunter --check"
 alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
 alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
+alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --indected ."
 
 # ======= Pacman =======
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
@@ -101,16 +107,16 @@ alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
 alias pacman='pacaur'
 
 # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupdate='pacman -Syu'
+alias pacupd='pacman -Syu'
 
 # Download specified package(s) as .tar.xz ball
 alias pacdl='pacman -Sw'
 
 # Install specific package(s) from the repositories
-alias pacinst='pacman -S'
+alias pacs='pacman -S'
 
 # Install specific package not from the repositories but from a file 
-alias pacins='pacman -U'
+alias pacu='pacman -U'
 
 # Remove the specified package(s), retaining its configuration(s) and required dependencies
 alias pacrm='pacman -R'
@@ -119,22 +125,22 @@ alias pacrm='pacman -R'
 alias pacrmf='pacman -Rns'
 
 # Display information about a given package in the repositories
-alias pacinfo='pacman -Si'
+alias paci='pacman -Si'
 
 # Search for package(s) in the repositories
-alias paclook='pacman -Ss'
+alias pacss='pacman -Ss'
 
 # Display information about a given package in the local database
-alias paclinfo='pacman -Qi'
+alias pacqi='pacman -Qi'
 
 # Search for package(s) in the local database
-alias paclsearch='pacman -Qs'
+alias pacqs='pacman -Qs'
 
 # List all packages which are orphaned
 alias pacorph="pacman -Qdt"
 
 # Clean cache - delete all the package files in the cache
-alias pacc="pacman -Scc"
+alias pacclean="pacman -Scc"
 
 # List all files installed by a given package
 alias pacls="pacman -Ql"
@@ -152,10 +158,10 @@ alias pacown="pacman -Qo"
 # --------------------------------
 
 # Update and refresh the local package and ABS databases against repositories
-alias pacupre='pacman -Sy && sudo abs'
+#alias pacupre='pacman -Sy && sudo abs'
 
 # Install given package(s) as dependencies
-alias pacinsd='pacman -S --asdeps'
+#alias pacinsd='pacman -S --asdeps'
 
 # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 alias pacmir='pacman -Syy'
@@ -163,12 +169,17 @@ alias pacmir='pacman -Syy'
 # AUR
 # ------
 
-alias pacaur4='pacaur --domain aur4.archlinux.org'
+#alias pacaur4='pacaur --domain aur4.archlinux.org'
 #alias yaourt='pacaur'
 
 # ======= Utils =======
-# -----------------
-alias tarx="tar -zxvf"
+# ---------------------
+
+# ignore case in grep and color output
+alias grep="grep -i --color=auto"
+
+# extract tar to directory same as filename
+alias tarx="tar --one-top-level -zxvf"
 
 # list open ports
 alias ports='netstat -tulanp'
@@ -176,56 +187,11 @@ alias ports='netstat -tulanp'
 # set home variable when running pip
 alias pip='sudo -H pip'
 
-
-# ======= VCS =======
-# -------------------
-
-# git
-alias gs='git status'
-alias gd='git diff'
-alias gc='git checkout'
-alias gca='git commit -a'
-alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
-alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
-alias gaa'git add -A'
-
-# svn
-alias sst='svn status'
-
-# ======= MISC =======
-# --------------------
-
 alias tmux='tmux -2'
 alias ufw='sudo ufw'
-alias music='urxvt -e ncmpcpp'
 
 # stow is always verbose
 alias stow='stow -v'
-
-# merge new xresources config
-alias xrmerge="xrdb -merge ~/.Xresources"
-
-# refresh zsh config files
-alias zrefresh="source $HOME/.zshrc"
-
-alias lssinks="pacmd list-sinks|egrep -i 'index:|name:'"
-
-# always root
-alias svim="sudo vim"
-alias scat="sudo cat"
-
-# alias sudo for easy access
-alias _="sudo"
-
-# quit aliases
-alias :q="exit"
-alias :Q="exit"
-
-# ignore case in grep and color output
-alias grep="grep -i --color=auto"
-
-# common typo
-alias claer='clear'
 
 # keep forgetting what these are called. 
 alias getkey='xev'
@@ -242,5 +208,38 @@ alias gettime='date +"%T"'
 alias getdatef='date +%Y-%m-%d_%H-%M-%S'
 alias getdate='date +"%Y-%m-%d"'
 
-# locate file at .
-alias grfile='lsa|grep'
+# ======= VCS =======
+# -------------------
+
+# git
+alias gs='git status'
+alias gd='git diff'
+alias gc='git checkout'
+alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
+alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+alias gaa='git add -A'
+alias commit='git commit'
+#alias gca='git commit -a'
+
+# svn
+alias sst='svn status'
+
+# ======= MISC =======
+# --------------------
+
+# merge new xresources config
+alias xrmerge="xrdb -merge ~/.Xresources"
+alias xrload="xrdb -load ~/.Xresources"
+
+# re-source zsh config files
+alias zrefresh="source $HOME/.zshrc"
+
+alias _="sudo"
+
+# quit aliases
+alias :q="exit"
+alias :Q="exit"
+
+# common typo
+alias claer='clear'
+

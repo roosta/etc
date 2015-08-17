@@ -12,70 +12,70 @@ zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character t
 #zstyle ':completion:*' menu select=5
 zstyle ':completion:*' original true
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' squeeze-slashes true
-zstyle ':completion:*' verbose true
+#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+#zstyle ':completion:*' squeeze-slashes true
+#zstyle ':completion:*' verbose true
 zstyle ':completion:*' insert-tab pending
 
 # rehash automatically
 zstyle ':completion:*' rehash true
 
 # source: https://github.com/xero/dotfiles/blob/master/zsh/.zsh/autocompletion.zsh
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
+#zstyle ':completion:*' auto-description 'specify: %d'
+#zstyle ':completion:*' completer _expand _complete _correct _approximate
 #zstyle ':completion:*' format 'Completing %d'
 #zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
+#zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
+#zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+#zstyle ':completion:*' list-colors ''
 #zstyle ':completion:*' list-prompt %SAt %p: hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
+#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+#zstyle ':completion:*' menu select=long
 #zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
+#zstyle ':completion:*' use-compctl false
 #zstyle ':completion:*' verbose true
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+#zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # source:  http://dotshare.it/dots/100/
 ## ignore completion to commands we don't have
 zstyle ':completion:*:functions'          ignored-patterns '_*'
 
 ## format autocompletion style
-#zstyle ':completion:*:descriptions'       format "%{$c1%}%d%{$reset_color%}"
-#zstyle ':completion:*:corrections'        format "%{$c3%}%d%{$reset_color%}"
-#zstyle ':completion:*:messages'           format "%{$c1%}%d%{$reset_color%}"
-#zstyle ':completion:*:warnings'           format "%{$c1%}%d%{$reset_color%}"
+zstyle ':completion:*:descriptions'       format "%{$c1%}%d%{$reset_color%}"
+zstyle ':completion:*:corrections'        format "%{$c3%}%d%{$reset_color%}"
+zstyle ':completion:*:messages'           format "%{$c1%}%d%{$reset_color%}"
+zstyle ':completion:*:warnings'           format "%{$c1%}%d%{$reset_color%}"
 
 ## zstyle show completion menu if 2 or more items to select
-#zstyle ':completion:*'                    menu select=2
+zstyle ':completion:*'                    menu select=2
 
 ## zstyle kill menu
 zstyle ':completion:*:*:kill:*'           menu yes select
-#zstyle ':completion:*:kill:*'             force-list always
-#zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
+zstyle ':completion:*:kill:*'             force-list always
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 
-#zstyle ':completion:*'                       accept-exact '*(N)'
-#zstyle ':completion:*'                       separate-sections 'yes'
+zstyle ':completion:*'                       accept-exact '*(N)'
+zstyle ':completion:*'                       separate-sections 'yes'
 zstyle ':completion:*'                       list-dirs-first true
-#zstyle ':completion:*:default'               list-colors ${(s.:.)LS_COLORS}
-#zstyle ':completion:*'                       menu select=200
-#zstyle ':completion:*'                       use-perl=1
+zstyle ':completion:*:default'               list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*'                       menu select=200
+zstyle ':completion:*'                       use-perl=1
 
-#zstyle ':completion:*'                       squeeze-slashes true
+zstyle ':completion:*'                       squeeze-slashes true
 ##zstyle ':completion:*:cd:*'                  ignore-parents parent pwd
 ##zstyle ':completion:*:cd:*'                  tag-order 'named-directories'
 
 zstyle ':completion:*:(all-|)files'          ignored-patterns '*.un~'
-#zstyle ':completion:*:*:kill:*:processes' \
-  #list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:*:kill:*:processes' \
+  list-colors '=(#b) #([0-9]#)*=0=01;31'
 
 zstyle ':completion::complete:*'             use-cache on
 zstyle ':completion::complete:*'             cache-path ~/etc/cache/$HOST
-#zstyle ':completion:*:processes'             command 'ps -axw'
-#zstyle ':completion:*:processes-names'       command 'ps -awxho command'
-#zstyle ':completion:*'                       matcher-list 'm:{a-z}={A-Z}'
-#zstyle ':completion:*:functions'             ignored-patterns '_*'
+zstyle ':completion:*:processes'             command 'ps -axw'
+zstyle ':completion:*:processes-names'       command 'ps -awxho command'
+zstyle ':completion:*'                       matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*:functions'             ignored-patterns '_*'
 
 #zstyle ':completion:*' group-name            ''
 zstyle ':completion:*:*:mplayer:*'           tag-order files
@@ -103,13 +103,13 @@ zstyle ':completion:*:*:(cd):*'        completer _history
 zstyle ':completion:*:*:perl:*'        file-patterns '*'
 
 
-#zstyle ':completion:*:descriptions' \
-  #format $'%{- \e[38;5;137;1m\e[48;5;234m%}%B%d%b%{\e[m%}'
-#zstyle ':completion:*:warnings' \
-  #format $'%{No match for \e[38;5;240;1m%}%d%{\e[m%}'
+zstyle ':completion:*:descriptions' \
+  format $'%{- \e[38;5;137;1m\e[48;5;234m%}%B%d%b%{\e[m%}'
+zstyle ':completion:*:warnings' \
+  format $'%{No match for \e[38;5;240;1m%}%d%{\e[m%}'
 
-#zstyle ':completion:*:*:apvlv:*'             tag-order files
-#zstyle ':completion:*:*:apvlv:*'             file-patterns '*.pdf'
+zstyle ':completion:*:*:apvlv:*'             tag-order files
+zstyle ':completion:*:*:apvlv:*'             file-patterns '*.pdf'
 
 zstyle ':completion:most-accessed-file:*' match-original both
 zstyle ':completion:most-accessed-file:*' file-sort access
@@ -143,13 +143,13 @@ zstyle ':completion:*:(ssh|scp):*:users' ignored-patterns \
   #'crshd@shellmix.com' 'mobile@192.168.0.112' 'mobile@192.168.1.49'
 
 
-#zstyle ':completion:*:*:*:users' ignored-patterns \
-        #adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
-        #dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
-        #hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
-        #mailman mailnull mldonkey mysql nagios \
-        #named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
-        #operator pcap postfix postgres privoxy pulse pvm quagga radvd \
-        #rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs
-#zstyle '*' single-ignored show
+zstyle ':completion:*:*:*:users' ignored-patterns \
+        adm amanda apache avahi beaglidx bin cacti canna clamav daemon \
+        dbus distcache dovecot fax ftp games gdm gkrellmd gopher \
+        hacluster haldaemon halt hsqldb ident junkbust ldap lp mail \
+        mailman mailnull mldonkey mysql nagios \
+        named netdump news nfsnobody nobody nscd ntp nut nx openvpn \
+        operator pcap postfix postgres privoxy pulse pvm quagga radvd \
+        rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs
+zstyle '*' single-ignored show
 
