@@ -25,6 +25,10 @@ set $WS6 6:games
 set $WS7 7
 set $WS8 8
 
+set $primary_monitor DVI-I-1
+set $secondary_monitor DVI-D-1
+set $TV HDMI-1 
+
 # define railscast colors
 set $hana00 #121212
 set $base00 #2b2b2b
@@ -219,8 +223,13 @@ bindsym $mod+F6 move workspace $WS6
 bindsym $mod+F7 move workspace $WS7
 bindsym $mod+F8 move workspace $WS8
 
-# ==== applications ==== 
-# ---------------------- 
+workspace $WS1 output DVI-I-1
+workspace $WS2 output DVI-I-1
+workspace $WS3 output DVI-I-1
+workspace $WS4 output DVI-D-1
+
+# ==== app/window rules ==== 
+# -------------------------- 
 
 # fix graphics glitch
 new_window none
@@ -231,6 +240,7 @@ exec urxvtc
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
 assign [class="urxvt"] $WS1
+assign [class="chrome"] $WS5
 
 for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -287,7 +297,7 @@ bar {
   tray_output DVI-D-0
   font pango:Essential PragmataPro, FontAwesome 9
   status_command i3blocks -c ~/.i3/i3blocks@lintilla.conf 
-  separator_symbol "  "
+  #separator_symbol "  "
   colors {
 
     # <bar>
