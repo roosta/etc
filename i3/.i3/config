@@ -72,7 +72,6 @@ set $sweet15 #978965
 # ==== general config ==== 
 # ------------------------  
 
-
 # no focus at mouse pointer since touchpad makes this infuriating
 focus_follows_mouse no
 
@@ -85,13 +84,7 @@ set $font_lintilla pango: Essential PragmataPro 12px
 #set $font_allitnil -uw-ttyp0-medium-r-normal--16-150-75-75-c-80-iso10646-1  
 set $font_allitnil pango: Essential PragmataPro 15px 
 
-#font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
-#font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
-#font pango:Envy\ Type\ R 9
-#font pango:Essential\ PragmataPro 8
-
 font $font_lintilla 
-
 
 # ==== keybinds ==== 
 # ------------------ 
@@ -234,13 +227,13 @@ workspace $WS4 output DVI-D-1
 # fix graphics glitch
 new_window none
 
-exec firefox
-exec urxvtc
-
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
 assign [class="urxvt"] $WS1
 assign [class="chrome"] $WS5
+
+exec firefox
+exec urxvtc
 
 for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -293,10 +286,9 @@ client.placeholder      #000000    $base01   #ffffff #000000
 
 bar {
   #position top 
-  #tray_output primary
-  tray_output DVI-D-0
+  tray_output primary
   font pango:Essential PragmataPro, FontAwesome 9
-  status_command i3blocks -c ~/.i3/i3blocks@lintilla.conf 
+  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf 
   #separator_symbol "  "
   colors {
 
