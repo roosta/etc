@@ -6,18 +6,9 @@
 # │░░▀░░░▀░░░▀░░│
 # └─────────────┘
 
-# reuse colors defined in .Xresources
 if [ "$TERM" = "linux" ]; then
-    _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
-    for i in $(sed -n "$_SEDCMD" $HOME/.Xresources | \
-               awk '$1 < 16 {printf "\\e]P%X%s", $1, $2}'); do
-        echo -en "$i"
-    done
-    clear
-fi
-
-# add color scheme "sweetlove" for linux console
-#if [ "$TERM" = "linux" ]; then
+  
+  ## change colors to sweetlove
   #/bin/echo -e "
   #\e]P04a3637
   #\e]P1d17b49
@@ -38,4 +29,18 @@ fi
   #"
   ## get rid of artifacts
   #clear
+  
+  # lanch tmux
+  exec tmux 
+fi
+
+# reuse colors defined in .Xresources
+#if [ "$TERM" = "linux" ]; then
+    #_SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
+    #for i in $(sed -n "$_SEDCMD" $HOME/.Xresources | \
+               #awk '$1 < 16 {printf "\\e]P%X%s", $1, $2}'); do
+        #echo -en "$i"
+    #done
+    #clear
 #fi
+

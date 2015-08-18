@@ -1,5 +1,8 @@
 #!/bin/bash
-layout=$(setxkbmap -query | awk '/layout/{print $2}')
-variant=$(setxkbmap -query | awk '/variant/{print $2}')
-
-echo "$layout:$variant"
+# source: http://unix.stackexchange.com/a/27688
+case "$(xset -q|grep LED| awk '{ print $10 }')" in
+  "00000002") KBD="US" ;;
+  "00001002") KBD="NO" ;;
+  *) KBD="unknown" ;;
+esac
+echo $KBD

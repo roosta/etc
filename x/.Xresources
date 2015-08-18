@@ -80,5 +80,11 @@ URxvt.keysym.Shift-Down: command:\033]721;1\007
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
+URxvt*externalBorder: 0
+URxvt*internalBorder: 0 
+
+!URxvt*borderLess: true
+!URxvt*loginShell: true 
+
 #include "/home/daniel/.Xcolors/sweetlove.Xresources"
 
