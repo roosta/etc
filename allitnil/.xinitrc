@@ -40,6 +40,6 @@ xset dpms 600 1200 2000 &
 exec i3
 
 # initially diable touchpad on laptop
-$HOME/bin/touchpad-toggle.sh
+~/bin/touchpad-toggle.sh
 
 # vim:filetype=sh

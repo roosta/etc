@@ -30,8 +30,9 @@ focus_follows_mouse no
 
 #set $font_lintilla -uw-ttyp0-medium-r-normal--12-130-75-75-c-70-iso10646-1 
 set $font_lintilla pango: Essential PragmataPro 12px 
+
 #set $font_allitnil -uw-ttyp0-medium-r-normal--16-150-75-75-c-80-iso10646-1  
-set $font_allitnil pango: Essential PragmataPro 12px 
+set $font_allitnil pango: Essential PragmataPro 15px 
 
 #font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
 #font -gohu-gohufont-medium-r-normal--11-80-100-100-c-60-iso10646-1
@@ -285,8 +286,9 @@ bar {
   #position top 
   #tray_output primary
   tray_output DVI-D-0
-  font pango:Essential PragmataPro, FontAwesome 9
-  status_command i3blocks -c ~/.i3/i3blocks@lintilla.conf 
+  font pango:Essential PragmataPro, FontAwesome 15px
+  #status_command i3blocks -c ~/.i3/i3blocks@lintilla.conf 
+  status_command i3blocks -c ~/.i3/i3blocks@allitnil.conf 
   separator_symbol " "
   colors {
 
