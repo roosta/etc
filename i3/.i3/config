@@ -296,7 +296,7 @@ bar {
   #tray_output primary
   tray_output DVI-D-0
   font pango:Essential PragmataPro, FontAwesome 9
-  status_command i3blocks -c ~/.i3/i3blocks@lintilla.conf 
+  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf 
   #separator_symbol "  "
   colors {
 

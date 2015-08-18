@@ -97,7 +97,7 @@ alias dir='ls++ --potsf -lAhpXk'
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd; sudo rkhunter --check"
 alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
 alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
-alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --indected ."
+alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."
 
 # ======= Pacman =======
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
