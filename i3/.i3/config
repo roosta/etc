@@ -98,13 +98,13 @@ focus_follows_mouse no
 # ==== fonts ==== 
 # --------------- 
 
-#set $font_lintilla -uw-ttyp0-medium-r-normal--12-130-75-75-c-70-iso10646-1 
 set $font_lintilla pango: Essential PragmataPro 12px 
+set $font_status_lintilla  font pango:Essential PragmataPro, FontAwesome 9
 
-#set $font_allitnil -uw-ttyp0-medium-r-normal--16-150-75-75-c-80-iso10646-1  
-set $font_allitnil pango: Essential PragmataPro 12px 
+set $font_allitnil pango: Essential PragmataPro 15px 
+set $font_status_allitnil pango: Essential PragmataPro 14px
 
-font $font_lintilla 
+font $font_allitnil 
 
 # ==== keybinds ==== 
 # ------------------ 
@@ -287,8 +287,8 @@ client.placeholder      #000000    $base01   #ffffff #000000
 bar {
   #position top 
   tray_output primary
-  font pango:Essential PragmataPro, FontAwesome 9
-  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf 
+  font $font_status_allitnil 
+  status_command i3blocks -c ~/.i3/i3blocks/allitnil.conf 
   #separator_symbol "  "
   colors {
 

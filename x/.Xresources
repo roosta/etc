@@ -12,10 +12,10 @@
 ! --------------------
 
 ! Ttyp0 regular [lintilla, 1920x1080]
-#define FONT_NORMAL -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1
-#define FONT_BOLD -uw-ttyp0-bold-r-normal--15-140-75-75-c-80-iso10646-1 
-#define FONT_ITALIC -uw-ttyp0-medium-i-normal--15-140-75-75-c-80-iso10646-1
-#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=10:antialias=0:hinting=1:hintstyle=3
+!#define FONT_NORMAL -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1
+!#define FONT_BOLD -uw-ttyp0-bold-r-normal--15-140-75-75-c-80-iso10646-1 
+!#define FONT_ITALIC -uw-ttyp0-medium-i-normal--15-140-75-75-c-80-iso10646-1
+!#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=10:antialias=1:hinting=1:hintstyle=3
 !#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono:style=Book:pixelsize=10:antialias=1:hinting=1:hintstyle=3
 
 ! Ttyp0 laptop sizes [allitnil, 1600x900]
@@ -23,6 +23,10 @@
 !#define FONT_BOLD -uw-ttyp0-bold-r-normal--16-150-75-75-c-80-iso10646-1 
 !#define FONT_ITALIC -uw-ttyp0-medium-i-normal--16-150-75-75-c-80-iso10646-1
 !#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=12:antialias=1:hinting=1:hintstyle=3
+#define FONT_NORMAL -uw-ttyp0-medium-r-normal--17-160-75-75-c-90-iso10646-1
+#define FONT_BOLD -uw-ttyp0-bold-r-normal--17-160-75-75-c-90-iso10646-1
+#define FONT_ITALIC -uw-ttyp0-medium-i-normal--17-160-75-75-c-90-iso10646-1
+#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=14:antialias=1:hinting=1:hintstyle=3
 
 ! PragmataPro
 !#define FONT_NORMAL: xft:Essential\ PragmataPro:italic:pixelsize=10

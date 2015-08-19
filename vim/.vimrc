@@ -45,7 +45,7 @@ set wildmode=longest,list,full
 set wildignorecase
 
 " case insensitive search
-"set ignorecase
+set ignorecase
 
 " set  
 set smartcase
