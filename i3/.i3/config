@@ -68,6 +68,26 @@ set $sweet13 #614445
 set $sweet14 #585c49
 set $sweet15 #978965
 
+# ==== app/window rules ==== 
+# -------------------------- 
+
+# fix graphics glitch
+new_window none
+
+assign [class="urxvt"] $WS1
+assign [class="subl3"] $WS2
+assign [class="Firefox"] $WS3
+assign [class="chrome"] $WS5
+
+exec firefox
+exec urxvtc
+
+for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+
+# set float for spesific apps
+for_window [class="(?i)Jitsi"] floating enable
 
 # ==== general config ==== 
 # ------------------------  
@@ -221,26 +241,6 @@ workspace $WS2 output DVI-I-1
 workspace $WS3 output DVI-I-1
 workspace $WS4 output DVI-D-1
 
-# ==== app/window rules ==== 
-# -------------------------- 
-
-# fix graphics glitch
-new_window none
-
-assign [class="subl3"] $WS2
-assign [class="Firefox"] $WS3
-assign [class="urxvt"] $WS1
-assign [class="chrome"] $WS5
-
-exec firefox
-exec urxvtc
-
-for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-
-# set float for spesific apps
-for_window [class="(?i)Jitsi"] floating enable
 
 # - resize windows 
 # -------------------- 
