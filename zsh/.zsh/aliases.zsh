@@ -126,7 +126,7 @@ alias pacrm='pacman -R'
 alias pacrmf='pacman -Rns'
 
 # Display information about a given package in the repositories
-alias paci='pacman -Si'
+alias pacsi='pacman -Si'
 
 # Search for package(s) in the repositories
 alias pacss='pacman -Ss'

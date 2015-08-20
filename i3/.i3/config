@@ -12,18 +12,28 @@
 # * http://dotshare.it (picked from various i3 confs, color schemes..etc)
 # -----------------------------------------------------------------------
 
+# autostart
+exec firefox
+exec --no-startup-id urxvtc
+
 # ==== variables ====  
 # ------------------- 
 
+# assign various fonts
+set $font_lintilla pango: Essential PragmataPro 12px 
+set $font_status_lintilla  pango: Essential PragmataPro, FontAwesome 9
+
+set $font_allitnil pango: Essential PragmataPro 15px 
+set $font_status_allitnil pango: Essential PragmataPro 14px
+
 # assign variables for workspace names for easier access
-set $WS1 1:terms
-set $WS2 2:dev
-set $WS3 3:web
-set $WS4 4:aux
-set $WS5 5:media
-set $WS6 6:games
-set $WS7 7
-set $WS8 8
+set $WS1 1:TRM
+set $WS2 2:DEV
+set $WS3 3:WEB
+set $WS4 4:AUX
+set $WS5 6:MED
+set $WS6 7:GAM
+set $WS7 8:MSC
 
 set $primary_monitor DVI-I-1
 set $secondary_monitor DVI-D-1
@@ -72,15 +82,12 @@ set $sweet15 #978965
 # -------------------------- 
 
 # fix graphics glitch
-new_window none
+new_window pixel 2
 
-assign [class="urxvt"] $WS1
+assign [class="URxvt"] $WS1 
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
 assign [class="chrome"] $WS5
-
-exec firefox
-exec urxvtc
 
 for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -92,19 +99,13 @@ for_window [class="(?i)Jitsi"] floating enable
 # ==== general config ==== 
 # ------------------------  
 
-# no focus at mouse pointer since touchpad makes this infuriating
 focus_follows_mouse no
 
 # ==== fonts ==== 
 # --------------- 
 
-set $font_lintilla pango: Essential PragmataPro 12px 
-set $font_status_lintilla  font pango:Essential PragmataPro, FontAwesome 9
 
-set $font_allitnil pango: Essential PragmataPro 15px 
-set $font_status_allitnil pango: Essential PragmataPro 14px
-
-font $font_allitnil 
+font $font_lintilla 
 
 # ==== keybinds ==== 
 # ------------------ 
@@ -121,7 +122,7 @@ bindsym $mod+Shift+o exec --no-startup-id xset s activate
 # start a terminal
 #bindsym $mod+Return exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
 #bindsym $mod+Return exec urxvtc -e tmux
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec --no-startup-id urxvtc
 
 # kill focused window
 bindsym $mod+q kill
@@ -181,7 +182,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # border changing
 bindsym $mod+b border toggle
@@ -220,9 +221,9 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym F1 workspace $WS1
 bindsym F2 workspace $WS2
 bindsym F3 workspace $WS3
-bindsym F4 workspace $WS4 
+bindsym F4 workspace $WS4
 bindsym F5 workspace $WS5
-bindsym F6 workspace $WS6 
+bindsym F6 workspace $WS6
 bindsym F7 workspace $WS7
 bindsym F8 workspace $WS8
 
@@ -236,10 +237,10 @@ bindsym $mod+F6 move workspace $WS6
 bindsym $mod+F7 move workspace $WS7
 bindsym $mod+F8 move workspace $WS8
 
-workspace $WS1 output DVI-I-1
-workspace $WS2 output DVI-I-1
-workspace $WS3 output DVI-I-1
-workspace $WS4 output DVI-D-1
+workspace $WS1 output $primary_monitor
+workspace $WS2 output $primary_monitor
+workspace $WS3 output $primary_monitor
+workspace $WS4 output $secondart_monitor
 
 
 # - resize windows 
@@ -287,9 +288,10 @@ client.placeholder      #000000    $base01   #ffffff #000000
 bar {
   #position top 
   tray_output primary
-  font $font_status_allitnil 
-  status_command i3blocks -c ~/.i3/i3blocks/allitnil.conf 
+  font $font_status_lintilla 
+  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf 
   #separator_symbol "  "
+  #separator_symbol " "
   colors {
 
     # <bar>
@@ -303,59 +305,6 @@ bar {
     inactive_workspace  $sweet8     $sweet8    $sweet15
     urgent_workspace    $sweet9     $sweet9    $sweet8
   } 
-}
-
-# ==================== i3-gaps config =====================
-# i3-gaps is a fork of i3, which includes some extra options
-# source: https://github.com/Airblader/i3/tree/gaps
-# ---------------------------------------------------------
-
-for_window [class="^.*"] border pixel 0
-smart_borders on
-smart_gaps on
-
-gaps inner 5
-#gaps outer 5
-
-# Press $mod+Shift+g to enter the gaps mode. Then choose between o and i for modifying outer / inner gaps. 
-# In this mode, you can press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace).
-# If you also press Shift with these keys, the change will be global for all workspaces.
-
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
 }
 
 # vim:filetype=i3
