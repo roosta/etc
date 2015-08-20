@@ -7,7 +7,7 @@ set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position
 source! /home/daniel/.vimperatorrc.local
 
-let mapleader = ","
+"let mapleader = ","
 
 " map l and h to tab movement
 noremap l gt

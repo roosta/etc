@@ -133,7 +133,7 @@ set gdefault
 " ------------------ 
 
 " change mapleader
-let mapleader = ","
+"let mapleader = ","
 
 " access x clipboard with leader+p/y
 nnoremap <leader>y "+y
@@ -214,23 +214,26 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " ............... easymotion .................
 " https://github.com/easymotion/vim-easymotion 
 " --------------------------------------------
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
+"let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
-" Bi-directional find motion
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-s)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-s2)
+map , <Plug>(easymotion-prefix)
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
 
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+"nmap s <Plug>(easymotion-s)
+
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+"nmap s <Plug>(easymotion-s2)
+
+
 " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+"map <Leader>j <Plug>(easymotion-j)
+"map <Leader>k <Plug>(easymotion-k)
 
 " ... color theme ... 
 " ------------------- 
@@ -248,7 +251,7 @@ if has('gui_running')
   set guioptions-=r  "remove right-hand scroll bar
   set guioptions-=L  "remove left-hand scroll bar
   "set lines=60 columns=108 linespace=0
-  set guifont=Essential\ PragmataPro\ 10
+  set guifont=Essential\ PragmataPro\ 12px
   set guiheadroom=0
 endif
 
