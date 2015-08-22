@@ -22,40 +22,43 @@ set $WS1 "1:TRM"
 set $WS2 "2:DEV"
 set $WS3 "3:WEB"
 set $WS4 "4:AUX"
-set $WS5 "6:MED"
-set $WS6 "7:GAM"
-set $WS7 "8:MSC"
+set $WS5 "5:MED"
+set $WS6 "6:GAM"
+set $WS7 "7:MSC"
+set $WS8 "8:MSC"
 
-bindsym F1 workspace $WS1
-bindsym F2 workspace $WS2
-bindsym F3 workspace $WS3
-bindsym F4 workspace $WS4
-bindsym F5 workspace $WS5
-bindsym F6 workspace $WS6
-bindsym F7 workspace $WS7
-bindsym F8 workspace $WS8
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
 
-bindsym $mod+F1 move workspace number $WS1
-bindsym $mod+F2 move workspace number $WS2
-bindsym $mod+F3 move workspace number $WS3
-bindsym $mod+F4 move workspace number $WS4
-bindsym $mod+F5 move workspace number $WS5
-bindsym $mod+F6 move workspace number $WS6
-bindsym $mod+F7 move workspace number $WS7
-bindsym $mod+F8 move workspace number $WS8
+bindsym $mod+Shift+1 move workspace number $WS1
+bindsym $mod+Shift+2 move workspace number $WS2
+bindsym $mod+Shift+3 move workspace number $WS3
+bindsym $mod+Shift+4 move workspace number $WS4
+bindsym $mod+Shift+5 move workspace number $WS5
+bindsym $mod+Shift+6 move workspace number $WS6
+bindsym $mod+Shift+7 move workspace number $WS7
+bindsym $mod+Shift+8 move workspace number $WS8
 
 workspace $WS1 output $primary_monitor
 workspace $WS2 output $primary_monitor
 workspace $WS3 output $primary_monitor
 workspace $WS4 output $secondary_monitor
 
-# fix graphics glitch
 new_window pixel 2
+hide_edge_borders both
 
+# fix graphics glitch
 assign [class="URxvt"] $WS1 
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
 assign [class="chrome"] $WS5
+assign [class="Steam"] $WS6
 
 for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -68,7 +71,8 @@ for_window [class="(?i)Jitsi"] floating enable
 # ─────────────────────────────────────────
 # assign various fonts
 set $font_lintilla pango: Essential PragmataPro 12px 
-set $font_status_lintilla  pango: Essential PragmataPro, FontAwesome 9
+#set $font_status_lintilla  pango: Essential PragmataPro, FontAwesome 9
+set $font_status_lintilla  pango: Terminess Powerline, TerminusIcons2Mono
 
 set $font_allitnil pango: Essential PragmataPro 15px 
 set $font_status_allitnil pango: Essential PragmataPro 14px
@@ -108,7 +112,7 @@ bar {
   font $font_status_lintilla 
   status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf 
   #separator_symbol "  "
-  #separator_symbol " "
+  separator_symbol " | "
   colors {
 
     # <bar>
@@ -148,7 +152,9 @@ bindsym $mod+q kill
 
 # start dmenu that only lists .desktop entries. 
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i' --term="urxvtc"
-bindsym $mod+d exec --no-startup-id dmenu_run -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i
+#bindsym $mod+d exec --no-startup-id dmenu_run -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i
+bindsym $mod+space exec --no-startup-id rofi -show run
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+j focus left
@@ -189,10 +195,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+d floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+d focus mode_toggle
 
 # reload the configuration file
 bindsym $mod+Shift+c reload 

@@ -168,6 +168,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'unblevable/quick-scope' 
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'jdonaldson/vaxe'
 
@@ -184,6 +185,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_ignore_files = ['sweetline.css']
 
 " enable powerline
 python3 from powerline.vim import setup as powerline_setup
@@ -228,12 +231,22 @@ let g:EasyMotion_smartcase = 1
 
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-"nmap s <Plug>(easymotion-s2)
+nmap <Plug>(easymotion-prefix)s <Plug>(easymotion-s2)
 
 
 " JK motions: Line motions
 "map <Leader>j <Plug>(easymotion-j)
 "map <Leader>k <Plug>(easymotion-k)
+
+" ....Quick-Scope....
+let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
+let g:qs_first_occurrence_highlight_color = 155       " terminal vim
+
+let g:qs_second_occurrence_highlight_color = '#5fffff'  " gui vim
+let g:qs_second_occurrence_highlight_color = 81         " terminal vim
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+"let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " ... color theme ... 
 " ------------------- 

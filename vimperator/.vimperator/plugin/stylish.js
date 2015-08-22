@@ -1,164 +1,156 @@
-// PLUGIN_INFO//{{{
-var PLUGIN_INFO = xml`
-<VimperatorPlugin>
-    <name>{NAME}</name>
-    <description>stylish</description>
-    <author mail="konbu.komuro@gmail.com" homepage="http://d.hatena.ne.jp/hogelog/">hogelog</author>
-    <version>0.0.1</version>
-    <minVersion>2.2pre</minVersion>
-    <maxVersion>2.2pre</maxVersion>
-    <updateURL>https://github.com/vimpr/vimperator-plugins/raw/master/stylish.js</updateURL>
-    <license>public domain</license>
-    <detail><![CDATA[
-]]></detail>
-</VimperatorPlugin>`;
-//}}}
+/**
+ * Integration plugin for the stylish extension.
+ *
+ * Usage:
+ *   :stylish popup   opens the stylish menu popup.
+ *   :stylish sidebar open the stylish sidebar.
+ *   :stylish toggle  toggles styles on the current page.
+ *
+ * Note: when the stylish popup is open, you can scroll through the items
+ * using the following standard vimperator key bindings:
+ *   j  move down one
+ *   k  move up one
+ *   l  open the sub-menu
+ *   h  close the sub-menu
+ * For implementation simplicity, only single character bindings are supported,
+ * so you cannot supply counts to any of the above.
+ *
+ * TODO:
+ *   - :stylish manage        open the manage popup
+ *   - :stylish edit <style>  edit the specified style (enable completion)
+ *   - enable editing via &editor
+ *
+ * @author Eric Van Dewoestine (ervandew@gmail.com)
+ * @version 0.2
+ */
 
-(function(){
-let stylishService = stylishOverlay.service;
-let control = plugins.stylish = {
-    COMMAND_DESCRIPTION: 0,
-    COMMAND_FUNCTION: 1,
-    COMMAND_COMPLETER: 2,
-    commands: {
-        edit: {
-            description: "Edit style",
-            fun: function(args){
-                let [cmd, name] = args;
-                return control.editStyle(name);
-            },
-            completer: function(args){
-                let title = ["style"];
-                let completions = [[s.name,""] for each(s in control.listStyle())];
-                return [title, completions];
-            },
-        },
-        new: {
-            description: "Write new style",
-            fun: function(args){
-                let [cmd, rule] = args;
-                let code = "@namespace url(http://www.w3.org/1999/xhtml);\n\n";
-                if(rule) {
-                    code += "@-moz-document " + rule + " {\n}\n";
-                }
-                return stylishOverlay.addCode(code);
-                //return control.newStyle();
-            },
-            completer: function(args){
-                let title = ["rule"];
-                let completions = [];
-                control.getDomains().forEach(function(x) completions.push(["domain("+x+")", "domain"]));
-                if(content&&content.document&&content.document.location){
-                    completions.push(["url("+content.document.location+")", "url"]);
-                }
-                control.getDirectories().forEach(function(x) completions.push(["url-prefix("+x+")", "url-prefix"]));
-                return [title, completions];
-            },
-        },
-        dialog: {
-            description: "Open stylish dialog",
-            fun: function(){
-                return stylishOverlay.openManage();
-            },
-        },
-        find: {
-            description: "Find styles for this site",
-            fun: function(){
-                return stylishOverlay.findStyle();
-            },
-        },
-        turnall: {
-            description: "Turn all styles",
-            fun: function(args){
-                let turn = gPrefService.getBoolPref("extensions.stylish.styleRegistrationEnabled");
-                let on = false;
-                if (args[1]) {
-                    if (args[1] == "on")
-                      on = true;
-                    else if (args[1] != "off")
-                        liberator.echoerr("Not a stylish turncommand: " + args[1]);
-                } else {
-                    on = !turn;
-                }
-                if (turn != on)
-                    gPrefService.setBoolPref("extensions.stylish.styleRegistrationEnabled", on);
-                return on;
-            },
-            completer: function(args)
-            [
-                ["turnall", "description"],
-                [["on","Turn all styles on"], ["off","Turn all styles off"]]
-            ],
-        },
-    },
-    listStyle: function()
-        [s for each(s in stylishService.list(0, {}))],
-    getStyle: function(name)
-    {
-        let styles = [s for each(s in control.listStyle()) if(s.name==name)];
-        if(styles.length == 0) return false
-        return styles[0];
-    },
-    editStyle: function(name)
-    {
-        if(!name) return control.newStyle();
-        let style = control.getStyle(name);
-        if(!style) return false;
-        return stylishCommon.openEditForStyle(style);
-    },
-    newStyle: function() {
-        var style = Components.classes["@userstyles.org/style;1"].createInstance(Components.interfaces.stylishStyle);
-        style.mode = style.CALCULATE_META | style.REGISTER_STYLE_ON_CHANGE;
-        style.init(null, null, null, null, "", false, null);
-        stylishCommon.openEdit(stylishCommon.getWindowName("stylishEdit"), {style: style});
-    },
-    getDomains: function()
-    {
-        let domains = [];
-        if(content&&content.document&&content.document.domain){
-            stylishOverlay.getDomainList(content.document.domain, domains);
-        }
-        return domains;
-    },
-    getDirectories: function()
-    {
-        let uri = buffer.URI;
-        let dirs = [];
-        while (uri.match(/^(.*?:\/)(.*?)(\/+[^\/]+)\/?$/))
-        {
-            uri = RegExp.$1 + RegExp.$2 + "/";
-            dirs.push(uri);
-        }
-        return dirs;
-    },
-    execute: function(args)
-    {
-        let command = control.commands[args[0]];
-        if(command&&command.fun)
-            return command.fun(args);
-        return false;
-    },
-    complete: function(args)
-    {
-        if (args.completeArg == 0){
-            let title = ["command", "description"];
-            let completions = [[c, control.commands[c].description] for(c in control.commands)];
-            return [title, completions];
-        }
-        let command = control.commands[args[0]];
-        if(command&&command.completer)
-            return command.completer(args);
-        return [];
+/**
+ * Class which provides support for stylish commands and hooks into the
+ * stylish popup to provide vimperator scrolling bindings (j,k,l,h,g,G).
+ *
+ * Note: There appears to be a bug in firefox's menupopup key bindings, where
+ * if you navigate to a sub popup (l or right arrow), and navigate back to the
+ * main popup (h or left arrow), then the menupopup seems to lose the ability
+ * to navigate back to the sub menu, and loses the ability to close the main
+ * popup via esc (an alt-tab should still close it).  This behavior is
+ * reproducable with or without this plugin.
+ */
+function StylishVimperator() {
+  var popup = document.getElementById("stylish-popup");
+  if (!popup){ // < stylish 1.0
+    popup = document.getElementById("stylish-status-popup");
+  }
+
+  popup.addEventListener('popupshown', popupshown, true);
+  popup.addEventListener('popuphidden', popuphidden, true);
+
+  function popupshown(event){
+    if (event.target == popup){
+      window.addEventListener("keypress", keypress, true);
     }
-};
-commands.addUserCommand(["stylish"], "stylish command",
-    function(args){
-        return control.execute(args);
-    }, {
-        completer: function(context, args){
-            [context.title, context.completions] = control.complete(args);
-        },
-        literal: 1,
-    });
-})();
-// vim: fdm=marker sw=4 ts=4 et:
+  }
+
+  function popuphidden(event){
+    if (event.target == popup){
+      window.removeEventListener("keypress", keypress, true);
+    }
+  }
+
+  function keypress(event){
+    var keyCode = null;
+    switch(String.fromCharCode(event.which)){
+      case "j":
+        keyCode = 40;
+        break;
+      case "k":
+        keyCode = 38;
+        break;
+      case "l":
+        keyCode = 39;
+        break;
+      case "h":
+        keyCode = 37;
+        break;
+      default:
+        break;
+    }
+
+    if (keyCode){
+      var newEvent = window.document.createEvent('KeyboardEvent');
+      newEvent.initKeyEvent(
+        "keypress", true, true, null, false, false, false, false, keyCode, 0);
+      popup.dispatchEvent(newEvent);
+    }
+  }
+
+  return {
+    popup: function(){
+      popup.openPopup();
+    },
+
+    sidebar: function(){
+      if (typeof(stylishBrowserOverlay) != 'undefined'){ // < stylish 1.0
+        stylishBrowserOverlay.openSidebar();
+      }else{
+        var em = Components.classes["@mozilla.org/appshell/window-mediator;1"]
+          .getService(Components.interfaces.nsIWindowMediator)
+          .getMostRecentWindow(name);
+        if (em) {
+          em.toggleSidebar('viewStylishSidebar');
+        }
+      }
+    },
+
+    toggle: function(){
+      var applicableStyles;
+      if (typeof(stylishBrowserOverlay) != 'undefined'){ // < stylish 1.0
+        applicableStyles = stylishBrowserOverlay.getApplicableStyles();
+      }else{
+        applicableStyles = stylishOverlay.service.findForUrl(
+          content.location.href, false, 0, {});
+      }
+
+      if (applicableStyles.length > 0) {
+        for each (style in applicableStyles){
+          style.enabled = !style.enabled;
+          if (typeof(StylishStyle) == 'undefined'){ // >= stylish 1.0
+            style.save();
+          }
+        }
+        if (typeof(StylishStyle) != 'undefined'){ // < stylish 1.0
+          StylishStyle.prototype.ds.save();
+          stylishCommon.reloadManage();
+        }
+      }
+    },
+
+    _execute: function(args){
+      var name = args.shift();
+      var cmd = sv[name];
+      if (!cmd){
+        liberator.echoerr('Unsupported stylish command: ' + name);
+        return false;
+      }
+      return cmd(args);
+    },
+
+    _completer: function(context){
+      var commands = [];
+      for (var name in sv){
+        if (name.indexOf('_') !== 0 && sv.hasOwnProperty(name)){
+          commands.push(name);
+        }
+      }
+      context.completions = [[c, ''] for each (c in commands)];
+    }
+  };
+}
+
+var sv = StylishVimperator();
+
+commands.addUserCommand(["stylish"],
+  "Execute stylish commands",
+  function(args) { sv._execute(args); },
+  { argCount: '1', completer: sv._completer }
+);
+

@@ -16,30 +16,23 @@
        I simply changed a few variables to match my preferences and colorscheme
     Raw original: http://twily.info/s/firefox/stylish/firefox-css
     Website: dotfiles.roosta.sh
-  
-    # sweetlove colors
-    --bg-light: #4a3637; --bg-dark: #1f1f1f;
-    --fg-light: #c0b18b; --fg-dark: #c0b18b;
 */
 
 :root {
-    /* TAB VARIABLES */
+/* TAB VARIABLES */
     --bg-light: #4a3637; --bg-dark: #1f1f1f;
     --fg-light: #c0b18b; --fg-dark: #c0b18b;
-    /*--tab-triangle-correction: -1px;*/
-    --tab-height: 20px; --tab-icon-size: 15px; --tab-strip-margin: -12px; --tab-overlap: -5px;
-    --tab-fonts: "Essential PragmataPro", "Source Sans Pro", "Lemon",monospace,"Dejavu Sans"; --tab-font-size: 10px;
-    --tab-text-align: left; /* left | center | right */
-    --tab-triangle: none;  /* block | none */
+    --tab-triangle-correction: -1px;
+    --tab-height: 20px; --tab-icon-size: 10px; --tab-strip-margin: -11px; --tab-overlap: -5px;
+    --tab-fonts: "Essential PragmataPro","Dejavu Sans","monospace"; --tab-font-size: 12px;
+    --tab-triangle: none; /* block | none */
 
     /* URL VARIABLES */
-    --url-background: var(--bg-light); --url-color: var(--fg-dark);
+    --url-background: var(--bg-light); --url-color: var(--fg-light);
     --url-height: 20px; --url-right-margin: 5px;
-    --url-fonts: "Essential PragmataPro", "Source Sans Pro", "Lemon",monospace,"Dejavu Sans"; --url-font-size: 10px;
+    --url-fonts: "Essential PragmataPro","Dejavu Sans","monospace";; --url-font-size: 12px;
     --url-text-align: center; /* left | center | right */
     --url-position: absolute; /* absolute == top (under tabs) || fixed == bottom of browser */
-    
-    margin-bottom: 0 /* var(--url-height) */ !important;
 }
 
 @-moz-document url(chrome://browser/content/browser.xul) {
