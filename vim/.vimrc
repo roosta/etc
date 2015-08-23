@@ -161,35 +161,35 @@ nnoremap <leader>P "+p
 " -----------------
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-"Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fireplace'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'kien/ctrlp.vim'
-Plugin 'jpo/vim-railscasts-theme'
-Plugin 'morhetz/gruvbox'
-Plugin 'scrooloose/syntastic'
-Plugin 'PotatoesMaster/i3-vim-syntax'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'unblevable/quick-scope'
-Plugin 'bling/vim-airline'
-Plugin 'edkolev/promptline.vim'
-Plugin 'ntpeters/vim-better-whitespace'
-"Plugin 'bling/vim-bufferline'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'jdonaldson/vaxe'
+Plug 'gmarik/Vundle.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fireplace'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'kien/ctrlp.vim'
+Plug 'jpo/vim-railscasts-theme'
+Plug 'morhetz/gruvbox'
+Plug 'scrooloose/syntastic'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'easymotion/vim-easymotion'
+Plug 'unblevable/quick-scope'
+Plug 'bling/vim-airline'
+Plug 'edkolev/promptline.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'bling/vim-bufferline'
+"Plug 'Valloric/YouCompleteMe'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'jdonaldson/vaxe'
 
-call vundle#end()
+call plug#end()
+
 filetype plugin indent on
 
 " ... Syntastic ...
