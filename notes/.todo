@@ -1,4 +1,6 @@
 * update emails!
 * tty colors
 * change username
-* fix bakc so it doesn't append an extra '/'
+
+* fix gvim
+* fix color vi mode prompt

@@ -144,6 +144,32 @@
 ##  - set_volume
 ##  - filter_playlist_on_priorities
 ##
+
+def_key "h"
+  show_help
+
+def_command "help" [deferred]
+  show_help
+
+def_command "w" [deferred]
+  save_playlist
+
+def_key "n"
+  next_found_item
+
+def_key "N"
+  previous_found_item
+
+def_key "m"
+  move_sort_order_up
+
+def_key "k"
+  move_selected_items_up
+
+def_key "j"
+  move_selected_items_down
+
+
 #
 #def_key "mouse"
 #  mouse_event
@@ -226,8 +252,8 @@
 #def_key "shift_tab"
 #  previous_screen
 #
-def_key "h"
-  show_help
+#def_key "h"
+#  show_help
 #
 #def_key "1"
 #  show_playlist
@@ -451,13 +477,13 @@ def_key "h"
 #def_key "n"
 #  move_selected_items_down
 #
-#def_key "M"
+#def_key "m"
 #  move_selected_items_to
 #
-#def_key "A"
+#def_key "a"
 #  add
 #
-#def_key "S"
+#def_key "s"
 #  save_playlist
 #
 #def_key "o"
@@ -513,4 +539,28 @@ def_key "h"
 #
 #def_key "q"
 #  quit
+#def_key "M"
+#  move_selected_items_to
+
+#def_key "s"
+#  save_playlist
+#
+#def_key "M"
+#  move_selected_items_to
+
+#def_key "s"
+#  save_playlist
+#
+#def_key "M"
+#  move_selected_items_to
+
+#def_key "s"
+#  save_playlist
+#
+#def_key "M"
+#  move_selected_items_to
+
+#def_key "s"
+#  save_playlist
+#
 #

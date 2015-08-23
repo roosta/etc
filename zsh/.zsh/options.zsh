@@ -43,3 +43,6 @@ autoload run-help-svn
 autoload run-help-svk
 #unalias run-help
 alias help=run-help
+
+# remove empty whitespace on righthand side of prompt
+ZLE_RPROMPT_INDENT=0

@@ -13,7 +13,7 @@
 set nocompatible
 
 " ==== functions ====
-" ------------------- 
+" -------------------
 
 " source conf on save
 augroup reload_vimrc " {
@@ -22,7 +22,7 @@ augroup reload_vimrc " {
 augroup END " }
 
 " ==== Options =====
-" ------------------ 
+" ------------------
 
 " enable syntax
 syntax on
@@ -47,16 +47,16 @@ set wildignorecase
 " case insensitive search
 set ignorecase
 
-" set  
+" set
 set smartcase
-set smartindent         
+set smartindent
 set smarttab
 
 " show matching brackets/parenthesis
 set showmatch
 
 " show matching bracket for 0.2 seconds
-set matchtime=2         
+set matchtime=2
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -71,22 +71,22 @@ set t_Co=256
 set timeoutlen=1000 ttimeoutlen=0
 
 " Always display the statusline in all windows
-set laststatus=2 
+set laststatus=2
 
 " Always display the tabline, even if there is only one tab
 set showtabline=1
 
 " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set noshowmode 
+set noshowmode
 
 " change the way backslashes are used in search patterns
-set magic               
+set magic
 
 " stop unnecessary rendering
 set lazyredraw
 
 " show typed command in status bar
-set showcmd             
+set showcmd
 
 " show line numbers
 set number
@@ -100,9 +100,9 @@ set cursorline
 set wrap
 
 " line up soft-wrap prefix with the line numbers
-"set showbreak=------>\  
+"set showbreak=------>\
 "set showbreak=↪
-set showbreak=\ \ \ \ \ \ ↳\ 
+set showbreak=\ \ \ \ \ \ ↳\
 
 " start soft-wrap lines (and any prefix) in the line-number area
 set cpoptions+=n
@@ -129,8 +129,21 @@ set gdefault
 " highlight column
 "set cursorcolumn
 
+" ... GUI options ...
+" -------------------
+
+if has('gui_running')
+  set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+  set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=L  "remove left-hand scroll bar
+  set lines=60 columns=108 linespace=0
+  set guifont=Essential\ PragmataPro\ 14px
+  set guiheadroom=0
+endif
+
 " ==== Keybinds ====
-" ------------------ 
+" ------------------
 
 " change mapleader
 "let mapleader = ","
@@ -145,7 +158,7 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+p
 
 " ==== Plugins ====
-" ----------------- 
+" -----------------
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -155,7 +168,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-eunuch'
@@ -168,7 +181,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'unblevable/quick-scope' 
+Plugin 'unblevable/quick-scope'
+Plugin 'bling/vim-airline'
+Plugin 'edkolev/promptline.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+"Plugin 'bling/vim-bufferline'
 "Plugin 'Valloric/YouCompleteMe'
 "Plugin 'jdonaldson/vaxe'
 
@@ -189,9 +206,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_ignore_files = ['sweetline.css']
 
 " enable powerline
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+"python3 from powerline.vim import setup as powerline_setup
+"python3 powerline_setup()
+"python3 del powerline_setup
 
 " ... vim-multiple-cursor config ...
 " ----------------------------------
@@ -215,7 +232,7 @@ let NERDTreeShowHidden=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " ............... easymotion .................
-" https://github.com/easymotion/vim-easymotion 
+" https://github.com/easymotion/vim-easymotion
 " --------------------------------------------
 "let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
@@ -248,23 +265,20 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" ... color theme ... 
-" ------------------- 
+let g:airline_powerline_fonts = 1
+
+" ... color theme ...
+" -------------------
 " Set theme
 "colorscheme railscasts
+let g:gruvbox_italicize_comments = 1
+let g:gruvbox_italic = 1
 colorscheme gruvbox
 set background=dark    " Setting dark mode
 
-" ... GUI options ...
-" -------------------
-
-if has('gui_running')
-  "set guioptions-=m  "remove menu bar
-  set guioptions-=T  "remove toolbar
-  set guioptions-=r  "remove right-hand scroll bar
-  set guioptions-=L  "remove left-hand scroll bar
-  "set lines=60 columns=108 linespace=0
-  set guifont=Essential\ PragmataPro\ 12px
-  set guiheadroom=0
-endif
-
+" add vi mode support for promptline
+let g:promptline_preset = {
+        \'a' : [ '$vim_mode' ],
+        \'b' : [ promptline#slices#cwd() ],
+        \'c' : [ promptline#slices#vcs_branch(), promptline#slices#git_status(), promptline#slices#jobs() ],
+        \'warn' : [ promptline#slices#last_exit_code() ]}

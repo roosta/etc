@@ -9,8 +9,8 @@ ranger/.config/ranger/tagged
 
 vimperator/.vimperator/info/**
 
-vim/.vim/undo/**
-vim/.vim/bundle/**
+vim/.vim/undo/*
+vim/.vim/bundle/*
 
 *tmp*
 *temp*
@@ -32,7 +32,6 @@ fonts/*/Envy*
 backup/*
 ssh/id*
 ssh/known_hosts
-vim/.*
 vim/backup/*
 subversion/README.txt
 subversion/auth/*

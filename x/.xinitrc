@@ -3,45 +3,46 @@
 #│░░░░░░░░░░▄▀▄░░█░░█░█░░█░░░█░░░░░░░░░│
 #│░░░░░░░░░░▀░▀░▀▀▀░▀░▀░▀▀▀░░▀░░░░░░░░░│
 #├─────────────────────────────────────┤
-#│ Author : Roosta <contact@roosta.sh> │
+#│ Author : Roosta <mail@roosta.sh>    │
 #│ Site   : http://dotfiles.roosta.sh  │
 #│ Github : https://github.com/roosta  │
 #└─────────────────────────────────────┘
 
-# ───────────── Autostart ────────────── 
+# ───────────── Autostart ──────────────
 # ──────────────────────────────────────
 
 urxvtd -q -f -o &
-powerline-daemon &
 mopidy &
 
 # set extra font dir incase the various X font systems dont pick it up
-xset +fp /usr/share/fonts/roosta 
-xset fp rehash
+xset +fp /usr/share/fonts/roosta &
+xset fp rehash &
 
 # set background with feh
-sh ~/.fehbg &
+$HOME/.fehbg &
 
 # merge new resources
-xrdb -merge ~/.Xresources &
+xrdb -merge $HOME/.Xresources &
 
-# ─────────────── Inputs ─────────────── 
+# ─────────────── Inputs ───────────────
 # ──────────────────────────────────────
 
-# Set keyboard layouts and options. 
-# Switch layout with caps and terminate x session with ctrl alt backspace 
+# Set keyboard layouts and options.
+# Switch layout with caps and terminate x session with ctrl alt backspace
 setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp
 
 # enable numlock at startup
 numlockx &
 
-# bind various custom keys. see .xbindkeysrx 
-xbindkeys 
+# bind various custom keys. see .xbindkeysrx
+xbindkeys
+
+#xboxdrv -D --config $HOME/.xboxdrv
 
 # initially diable touchpad on laptop
-#~/bin/touchpad-toggle
+#$HOME/.scripts/touchpad-toggle.sh
 
-# ────────────── Displays ────────────── 
+# ────────────── Displays ──────────────
 # ──────────────────────────────────────
 
 # set display layout
@@ -55,7 +56,7 @@ xset dpms 600 1200 2000 &
 # screen locker
 xss-lock -- i3lock -n -e -d -t -i /usr/share/backgrounds/simple-55.png &
 
-# ─────────── Window Manager ─────────── 
+# ─────────── Window Manager ───────────
 # ──────────────────────────────────────
 exec i3
 
