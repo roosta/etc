@@ -11,6 +11,7 @@ vimperator/.vimperator/info/**
 
 vim/.vim/undo/*
 vim/.vim/plugged/*
+vim/.vim/.netrwhist
 
 *tmp*
 *temp*

@@ -153,17 +153,19 @@ nnoremap <leader>P "+p
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plug 'gmarik/Vundle.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+" on demand plugins
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
+
+" no special logic
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fireplace'
+Plug 'svermeulen/vim-easyclip'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'kien/ctrlp.vim'
-Plug 'jpo/vim-railscasts-theme'
+Plug 'scrooloose/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'scrooloose/syntastic'
 Plug 'PotatoesMaster/i3-vim-syntax'
@@ -171,12 +173,14 @@ Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 Plug 'bling/vim-airline'
-"Plug 'edkolev/promptline.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'bling/vim-bufferline'
+
+" needs config
 "Plug 'Valloric/YouCompleteMe'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'jdonaldson/vaxe'
+
+" used rarely
+"Plug 'edkolev/promptline.vim'
 
 call plug#end()
 
@@ -245,10 +249,10 @@ set background=dark    " Setting dark mode
 " ───────────── Promptline ──────────────
 "let g:promptline_preset = {
   "\'a' : [ '$vim_mode' ],
-  "\'b' : [ promptline#slices#vcs_branch(), promptline#slices#cwd() ],
+  "\'b' : [ promptline#slices#cwd() ],
   "\'c' : [ promptline#slices#jobs() ],
   "\'warn' : [ promptline#slices#last_exit_code() ],
-  "\'x' : [ promptline#slices#git_status() ],
+  "\'x' : [ promptline#slices#vcs_branch(), promptline#slices#git_status() ],
   "\'y' : [ promptline#slices#host() ],
   "\'z' : [ '$(date +%H:%M:%S)' ]}
 
