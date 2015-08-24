@@ -1,29 +1,25 @@
-" ┌─────────────┐
-" │░█░█░▀█▀░█▄█░│
-" │░▀▄▀░░█░░█░█░│
-" │░░▀░░▀▀▀░▀░▀░│
-" └─────────────┘
-" Author : Roosta <mail@roosta.sh>
-" Site   : http://dotfiles.roosta.sh
-" Github : https://github.com/roosta
-" -------------------------------
+" ┌────────────────────────────────────┐
+" │░░░░░░░░░░░░░█░█░▀█▀░█▄█░░░░░░░░░░░░│
+" │░░░░░░░░░░░░░▀▄▀░░█░░█░█░░░░░░░░░░░░│
+" │░░░░░░░░░░░░░░▀░░▀▀▀░▀░▀░░░░░░░░░░░░│
+" ├────────────────────────────────────┤
+" │ Author : Roosta <mail@roosta.sh>   │
+" │ Site   : http://dotfiles.roosta.sh │
+" │ Github : https://github.com/roosta │
+" └────────────────────────────────────┘
 
 " use vim settings, rather than vi settings
 " must be first, because it changes other options as a side effect
 set nocompatible
 
-" ==== functions ====
-" -------------------
-
+" ────── Reload vim conf on save ───────
 " source conf on save
 augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
-" ==== Options =====
-" ------------------
-
+" ───────────── Options ──────────────
 " enable syntax
 syntax on
 "filetype off
@@ -129,9 +125,7 @@ set gdefault
 " highlight column
 "set cursorcolumn
 
-" ... GUI options ...
-" -------------------
-
+" ───────────── GUI only ──────────────
 if has('gui_running')
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -142,9 +136,7 @@ if has('gui_running')
   set guiheadroom=0
 endif
 
-" ==== Keybinds ====
-" ------------------
-
+" ───────────── Keybinds ──────────────
 " change mapleader
 "let mapleader = ","
 
@@ -157,9 +149,7 @@ vnoremap <leader>p "+p
 nnoremap <leader>p "+p
 nnoremap <leader>P "+p
 
-" ==== Plugins ====
-" -----------------
-
+" ───────────── Plugins ──────────────
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.vim/plugged')
 
@@ -181,7 +171,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 Plug 'bling/vim-airline'
-Plug 'edkolev/promptline.vim'
+"Plug 'edkolev/promptline.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'bling/vim-bufferline'
 "Plug 'Valloric/YouCompleteMe'
@@ -192,8 +182,7 @@ call plug#end()
 
 filetype plugin indent on
 
-" ... Syntastic ...
-" -----------------
+" ───────────── Syntastic ──────────────
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -205,57 +194,35 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ignore_files = ['sweetline.css']
 
-" enable powerline
-"python3 from powerline.vim import setup as powerline_setup
-"python3 powerline_setup()
-"python3 del powerline_setup
-
-" ... vim-multiple-cursor config ...
-" ----------------------------------
+"───────── vim-multiple-cursor ─────────
 let g:multi_cursor_next_key='<C-n>'
-let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" ... ctrl-p ...
-" --------------
+" ─────────────── Ctrl-P ───────────────
 map <leader>b :CtrlPBuffer<CR>
 
-" ... nerd tree ...
-" -----------------
+" ───────────── NERDTree ───────────────
 map <leader>t :NERDTreeToggle<CR>
 
 " show hidden files in nerdtree
 let NERDTreeShowHidden=1
-
+let NERDTreeShowBookmarks=1
 " close vim if nerdtree is only window remaining
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" ............... easymotion .................
-" https://github.com/easymotion/vim-easymotion
-" --------------------------------------------
+" ───────────── Easymotion ──────────────
 "let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
 map , <Plug>(easymotion-prefix)
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
 
-" Bi-directional find motion
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-"nmap s <Plug>(easymotion-s)
-
-" `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
 nmap <Plug>(easymotion-prefix)s <Plug>(easymotion-s2)
 
-
-" JK motions: Line motions
-"map <Leader>j <Plug>(easymotion-j)
-"map <Leader>k <Plug>(easymotion-k)
-
-" ....Quick-Scope....
+" ───────────── Quickscope ─────────────
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
 let g:qs_first_occurrence_highlight_color = 155       " terminal vim
 
@@ -267,8 +234,7 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 
 let g:airline_powerline_fonts = 1
 
-" ... color theme ...
-" -------------------
+" ─────────────── Colors ────────────────
 " Set theme
 "colorscheme railscasts
 let g:gruvbox_italicize_comments = 1
@@ -276,9 +242,14 @@ let g:gruvbox_italic = 1
 colorscheme gruvbox
 set background=dark    " Setting dark mode
 
-" add vi mode support for promptline
-let g:promptline_preset = {
-        \'a' : [ '$vim_mode' ],
-        \'b' : [ promptline#slices#cwd() ],
-        \'c' : [ promptline#slices#vcs_branch(), promptline#slices#git_status(), promptline#slices#jobs() ],
-        \'warn' : [ promptline#slices#last_exit_code() ]}
+" ───────────── Promptline ──────────────
+"let g:promptline_preset = {
+  "\'a' : [ '$vim_mode' ],
+  "\'b' : [ promptline#slices#vcs_branch(), promptline#slices#cwd() ],
+  "\'c' : [ promptline#slices#jobs() ],
+  "\'warn' : [ promptline#slices#last_exit_code() ],
+  "\'x' : [ promptline#slices#git_status() ],
+  "\'y' : [ promptline#slices#host() ],
+  "\'z' : [ '$(date +%H:%M:%S)' ]}
+
+": PromptlineSnapshot ~/.zsh/plugins/promptline.zsh airline_insert
