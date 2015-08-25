@@ -1,0 +1,6 @@
+" -------------------- 
+" - Vimpager options
+" --------------------
+let g:vimpager_disable_x11 = 1
+let g:vimpager_less_mode = 0
+

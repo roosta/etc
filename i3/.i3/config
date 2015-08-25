@@ -1,84 +1,160 @@
-# ┌──────────────────┐
-# │░▀█▀░▀▀█░█░█░█▄█░░│
-# │░░█░░░▀▄░█▄█░█░█░░│
-# │░▀▀▀░▀▀░░▀░▀░▀░▀░░│
-# └──────────────────┘
-# Author : Roosta <roosta@dab.works>
-# Site   : http://dotfiles.dab.works
-# Github : https://github.com/roosta
-# ----------------------------------
-# Sources:
-# * http://i3wm.org/docs/user-contributed/lzap-config.html
-# * http://dotshare.it (picked from various i3 confs, color schemes..etc)
-# ------------------------------------------------
+# ┌────────────────────────────────────┐
+# │░░░░░░░░░░░▀█▀░▀▀█░█░█░█▄█░░░░░░░░░░│
+# │░░░░░░░░░░░░█░░░▀▄░█▄█░█░█░░░░░░░░░░│
+# │░░░░░░░░░░░▀▀▀░▀▀░░▀░▀░▀░▀░░░░░░░░░░│
+# ├────────────────────────────────────┤
+# │ Author : Roosta <mail@roosta.sh>   │
+# │ Site   : http://dotfiles.roosta.sh │
+# │ Github : https://github.com/roosta │
+# └────────────────────────────────────┘
+# - Sources:
+# - http://i3wm.org/docs/user-contributed/lzap-config.html
+# - http://dotshare.it (picked from various i3 confs, color schemes..etc)
+# ───────────────────────────────────────────────────────────────────────
 
-# - startup 
-# -------------------- 
+# ─────────────  Layout  ────────────── 
+# ─────────────────────────────────────
+set $primary_monitor DVI-I-1
+set $secondary_monitor DVI-D-1
+set $TV HDMI-1 
 
-# turn off screen after 5minutes
-#exec --no-startup-id xset dpms 450
+set $WS1 "1:TRM"
+set $WS2 "2:DEV"
+set $WS3 "3:WEB"
+set $WS4 "4:AUX"
+set $WS5 "5:MED"
+set $WS6 "6:GAM"
+set $WS7 "7:MSC"
+set $WS8 "8:MSC"
 
-# register screen locker
-exec --no-startup-id xss-lock -- i3lock -ti /usr/local/share/backgrounds/patterns/pattern-05.png &
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
 
-# set background image via qiv
-exec --no-startup-id feh --bg-tile /usr/local/share/backgrounds/patterns/pattern-01.png
+bindsym $mod+Shift+1 move workspace number $WS1
+bindsym $mod+Shift+2 move workspace number $WS2
+bindsym $mod+Shift+3 move workspace number $WS3
+bindsym $mod+Shift+4 move workspace number $WS4
+bindsym $mod+Shift+5 move workspace number $WS5
+bindsym $mod+Shift+6 move workspace number $WS6
+bindsym $mod+Shift+7 move workspace number $WS7
+bindsym $mod+Shift+8 move workspace number $WS8
 
-# - general config
-# --------------------  
+workspace $WS1 output $primary_monitor
+workspace $WS2 output $primary_monitor
+workspace $WS3 output $primary_monitor
+workspace $WS4 output $secondary_monitor
 
-# set window border size
-new_window 1pixel
-new_float 1pixel
+new_window pixel 2
+hide_edge_borders none
 
-# no focus at mouse pointer since touchpad makes this infuriating
-focus_follows_mouse no
-
-# - fonts 
-# -------------------- 
-
-#font pango:DejaVu Sans Mono for Powerline 12
-font pango:Essential PragmataPro 8
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#font 6x12
-#font -*-lemon-*-r-normal-*-*-100-*-*-*-*-*-*
-#font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
-#font -xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1
-
-# - applications 
-# -------------------- 
-
-exec firefox
-exec urxvtc --meta8 -e tmux
-
+# fix graphics glitch
+assign [class="URxvt"] $WS1 
 assign [class="subl3"] $WS2
 assign [class="Firefox"] $WS3
-assign [class="urxvt"] $WS1
+assign [class="chrome"] $WS5
+assign [class="Steam"] $WS6
 
-# - keybinds 
-# -------------------- 
+for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
 
+# set float for spesific apps
+for_window [class="(?i)Jitsi"] floating enable
+
+# ─────────────  Appearance  ────────────── 
+# ─────────────────────────────────────────
+# assign various fonts
+set $font_lintilla pango: Terminuss Powerline 12px 
+#set $font_status_lintilla  pango: Essential PragmataPro, FontAwesome 9
+set $font_status_lintilla pango: Terminusicons2
+
+set $font_allitnil pango: Essential PragmataPro 15px 
+set $font_status_allitnil pango: Essential PragmataPro 14px
+
+font $font_lintilla 
+
+# define sweetlove colors
+set $sweetfg #c0b18b
+set $sweetbg #1f1f1f
+set $sweet00 #4a3637
+set $sweet01 #d17b49
+set $sweet02 #7b8748
+set $sweet03 #af865a
+set $sweet04 #535c5c
+set $sweet05 #775759
+set $sweet06 #6d715e
+set $sweet07 #c0b18b
+set $sweet08 #402e2e
+set $sweet09 #ac5d2f
+set $sweet10 #647035
+set $sweet11 #8f6840
+set $sweet12 #444b4b
+set $sweet13 #614445
+set $sweet14 #585c49
+set $sweet15 #978965
+
+# class                 <border>   <bg>      <fg>      <indicator>
+client.focused          $sweet12   $sweet12  $sweet07  $sweet04
+client.focused_inactive #00ffFF    #00ffFF   #00ffFF   $sweet04
+client.unfocused        $sweet08   $sweet08  $sweet15  $sweet04
+client.urgent           $sweet04   #00ffFF  #00ffFF   $sweet04
+client.placeholder      #00ffFF    #00ffFF  #00ffFF   #00ffFF
+
+bar {
+  #position top 
+  tray_output primary
+  font $font_status_lintilla 
+  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf 
+  #separator_symbol "  "
+  separator_symbol "Ý"
+  colors {
+
+    # <bar>
+    background  $sweet08
+    separator   $sweet07
+    statusline  #00ffFF
+
+    # <workclass>       <border>    <bg>       <text>
+    focused_workspace   $sweet12    $sweet12    $sweet07
+    active_workspace    $sweet08    $sweet08    $sweet07
+    inactive_workspace  $sweet08    $sweet08    $sweet15
+    urgent_workspace    $sweet09    $sweet09    $sweet08
+  } 
+}
+# ──────────────── Misc ──────────────── 
+# ──────────────────────────────────────
+focus_follows_mouse no
+
+# ────────────── Keybinds ────────────── 
+# ──────────────────────────────────────
 # set modkey (Super key)
 set $mod Mod4
-
-# change wallpaper
-#bindsym $mod+Shift+b exec --no-startup-id qiv -zr /usr/local/share/backgrounds/minimals/*
-
-# lock screen
-bindsym $mod+Shift+o exec --no-startup-id xset s activate
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# manual screen lock
+bindsym $mod+Shift+o exec --no-startup-id xset s activate
+
 # start a terminal
-bindsym $mod+Return exec urxvtc --meta8 -e tmux
+#bindsym $mod+Return exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
+#bindsym $mod+Return exec urxvtc -e tmux
+bindsym $mod+Return exec --no-startup-id urxvtc
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i' --term="urxvtc"
-#bindsym $mod+d exec dmenu_run -fn "-xos4-terminesspowerline-medium-r-normal--12-120-72-72-c-60-iso10646-1" -nb "#222222" -nf "#F9F7F3" -sb "#2B2B2B" -sf "#519F50" -b -i
+# start dmenu that only lists .desktop entries. 
+#bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i' --term="urxvtc"
+#bindsym $mod+d exec --no-startup-id dmenu_run -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i
+bindsym $mod+space exec --no-startup-id rofi -show run
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+j focus left
@@ -119,19 +195,12 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+d floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-bindsym $mod+c focus child
+bindsym $mod+d focus mode_toggle
 
 # reload the configuration file
-#bindsym $mod+Shift+c exec --no-startup-id j4-make-config && reload && echo 'hello'
 bindsym $mod+Shift+c reload 
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -148,7 +217,7 @@ bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
 # toggle touchpad (not in dotfiles repo)
-bindsym $mod+p exec --no-startup-id /usr/local/bin/touchpad-toggle.sh
+bindsym $mod+p exec --no-startup-id ~/bin/touchpad-toggle
 
 # move to last workspace
 bindsym $mod+z workspace back_and_forth
@@ -159,40 +228,18 @@ bindsym $mod+z workspace back_and_forth
 # move windows back and forth
 bindsym $mod+Shift+z move container to workspace back_and_forth
 
-# - workspaces 
-# -------------------- 
+bindsym $mod+Control+Shift+Prior move container to output left
+bindsym $mod+Control+Shift+Next move container to output right
 
-# assign variables for workspace names for easier access
-set $WS1 1:terms
-set $WS2 2:dev
-set $WS3 3:web
-set $WS4 4:media
-set $WS5 5:aux
-set $WS6 6
-set $WS7 7
-set $WS8 8
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
 
-bindsym F1 workspace $WS1
-bindsym F2 workspace $WS2
-bindsym F3 workspace $WS3
-bindsym F4 workspace $WS4 
-bindsym F5 workspace $WS5
-bindsym F6 workspace $WS6 
-bindsym F7 workspace $WS7
-bindsym F8 workspace $WS8
+# screenshot
+bindsym --release Print exec scrot $HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym --release Shift+Print exec scrot -s $HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
 
-# move focused container to workspace
-bindsym $mod+F1 move workspace $WS1
-bindsym $mod+F2 move workspace $WS2
-bindsym $mod+F3 move workspace $WS3
-bindsym $mod+F4 move workspace $WS4
-bindsym $mod+F5 move workspace $WS5
-bindsym $mod+F6 move workspace $WS6
-bindsym $mod+F7 move workspace $WS7
-bindsym $mod+F8 move workspace $WS8
-
-# - resize windows 
-# -------------------- 
+# send a signal to i3blocks on caps
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -220,41 +267,10 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# - colorscheme
-# -------------------- 
+# ────────────── Autostart ────────────── 
+# ───────────────────────────────────────
+exec firefox
+exec --no-startup-id urxvtc
 
-# class                 border  backgr. text    indicator
-client.focused          #5A647E #3A4055 #F9F7F3 #E6E1DC
-client.focused_inactive #333333 #3A4055 #ffffff #484e50
-client.unfocused        #5A647E #2B2B2B #5A647E #292d2e
-client.urgent           #3A4055 #DA4939 #ffffff #900000
-client.placeholder      #000000 #272935 #ffffff #000000
-
-# - bar config
-# -------------------- 
-
-bar {
-  #mode dock
-  position top 
-  #tray_output all
-  status_command ~/.i3/i3-conky-wrapper.sh
-  #status_command i3status
-  #workspace_buttons yes
-  #font -misc-orp-medium-r-normal--13-120-75-75-C-70-iso10646-1
-  #font -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1
-  colors {
-
-    # <bar>
-    background  #2B2B2B
-    separator   #D4CFC9
-    statusline  #E6E1DC
-
-    # <workclass>       <border>    <bg>        <text>
-    focused_workspace   #5A647E     #3A4055     #F9F7F3
-    active_workspace    #5A647E     #2B2B2B     #D4CFC9
-    inactive_workspace  #5A647E     #272935     #5A647E
-    urgent_workspace    #DA4939     #272935     #DA4939
-  } 
-}
 
 # vim:filetype=i3

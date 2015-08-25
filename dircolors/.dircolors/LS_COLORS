@@ -36,10 +36,10 @@
 BLK                   38;5;68
 CAPABILITY            38;5;17
 CHR                   38;5;113;1
-DIR                   38;5;30
+DIR                   38;5;35;1
 DOOR                  38;5;127
 EXEC                  38;5;208;1
-FIFO                  38;5;126
+FIFO                  38;5;12;6
 FILE                  38;5;253
 LINK                  target
 MULTIHARDLINK         38;5;222;1

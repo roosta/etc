@@ -1,8 +1,28 @@
 "3.9 (created: 2015/02/15 15:49:05)
-
+colorscheme sweetlove
+set loadplugins
+set complete=lSt
+set focuscontent
+set hintmatching=fuzzy
+set status=ssl,input,location,bookmark,history,tabcount,position
 source! /home/daniel/.vimperatorrc.local
 
-" vim: set ft=vimperator:
+"let mapleader = ","
 
-colorscheme zenburn
-set status "input,location,bookmark,history,tabcount,position"
+" map l and h to tab movement
+noremap l gt
+noremap h gT
+
+" some quick movement maps
+nnoremap j       8j
+nnoremap k       8k
+nnoremap J       16j
+nnoremap K       16k
+nnoremap <C-j>   24j
+nnoremap <C-k>   24k
+nnoremap <C-S-j> 40j
+nnoremap <C-S-k> 40k
+
+nnoremap <leader>s :noscript popup<CR>
+nnoremap <leader>S :noscript popup<CR>
+" vim:filetype=vimperator
