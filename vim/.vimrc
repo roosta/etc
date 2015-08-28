@@ -14,20 +14,17 @@ set nocompatible
 
 " ────── Reload vim conf on save ───────
 " source conf on save
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+"augroup reload_vimrc " {
+    "autocmd!
+    "autocmd BufWritePost $MYVIMRC source $MYVIMRC
+"augroup END " }
 
 " ───────────── Options ──────────────
-" enable syntax
 syntax on
 "filetype off
 
-set paste
-
-" keep at least 3 lines above/below
-set scrolloff=3
+set clipboard=unnamed " set same clipboard for vim and X
+"set paste
 
 " maintain undo history between sessions
 set undofile
@@ -39,91 +36,44 @@ set wildmenu
 set wildmode=longest,list,full
 "set wildmode=longest:full,full
 set wildignorecase
-
-" case insensitive search
 set ignorecase
-
-" set
 set smartcase
 set smartindent
 set smarttab
-
-" show matching brackets/parenthesis
-set showmatch
-
-" show matching bracket for 0.2 seconds
-set matchtime=2
-
-" make backspace behave in a sane manner
-set backspace=indent,eol,start
-
-" disable startup message
-set shortmess+=I
-
-" set 256 colors
-set t_Co=256
-
-" remove delay on escape press, but still works with key combinations
-set timeoutlen=1000 ttimeoutlen=0
-
-" Always display the statusline in all windows
-set laststatus=2
-
-" Always display the tabline, even if there is only one tab
-set showtabline=1
-
-" Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set noshowmode
-
-" change the way backslashes are used in search patterns
-set magic
-
-" stop unnecessary rendering
-set lazyredraw
-
-" show typed command in status bar
-set showcmd
-
-" show line numbers
-set number
-
+set scrolloff=3
+set showmatch " show matching brackets/parenthesis
+set matchtime=2 " show matching brackets/parenthesis
+set backspace=indent,eol,start " show matching brackets/parenthesis
+set shortmess+=I " show matching brackets/parenthesis
+set t_Co=256 " show matching brackets/parenthesis
+set timeoutlen=1000 ttimeoutlen=0 " show matching brackets/parenthesis
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=1 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set magic " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set lazyredraw " stop unnecessary rendering
+set showcmd " stop unnecessary rendering
+set number " show line numbers
 "set cc=80
+set cursorline " highlight current line
+set wrap " show line numbers
 
-" highlight cursor line
-set cursorline
-
-" line wrapping
-set wrap
 
 " line up soft-wrap prefix with the line numbers
 "set showbreak=------>\
 "set showbreak=↪
 set showbreak=\ \ \ \ \ \ ↳\
-
-" start soft-wrap lines (and any prefix) in the line-number area
-set cpoptions+=n
-
-" use indents of 2 spaces
-set shiftwidth=2
-
-" tabs are spaces, not tabs
-set expandtab
-
-" an indentation every two columns
-set tabstop=2
-
-" let backspace delete indent
-set softtabstop=2
+set cpoptions+=n " show line numbers
+set shiftwidth=2 " use indents of 2 spaces
+set expandtab " tabs are spaces
+set tabstop=2 " use indents of 2 spaces
+set softtabstop=2 " let backspace delete indent
 
 " searching
 "set hlsearch
 set incsearch
-
-" the /g flag on :s substitutions by default
-set gdefault
-
-" highlight column
-"set cursorcolumn
+set gdefault " the /g flag on :s substitutions by default
+" highlight column "set cursorcolumn
 
 " ───────────── GUI only ──────────────
 if has('gui_running')
@@ -141,46 +91,45 @@ endif
 "let mapleader = ","
 
 " access x clipboard with leader+p/y
-nnoremap <leader>y "+y
-nnoremap <leader>yy "+yy
-vnoremap <leader>y "+y
-vnoremap <leader>yy "+yy
-vnoremap <leader>p "+p
-nnoremap <leader>p "+p
-nnoremap <leader>P "+p
+"nnoremap <leader>y "+y
+"nnoremap <leader>yy "+yy
+"vnoremap <leader>y "+y
+"vnoremap <leader>yy "+yy
+"vnoremap <leader>p "+p
+"nnoremap <leader>p "+p
+"nnoremap <leader>P "+p
 
 " ───────────── Plugins ──────────────
 " set the runtime path to include Vundle and initialize
 call plug#begin('~/.vim/plugged')
 
 " on demand plugins
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'jdonaldson/vaxe', { 'for': 'haxe' }
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " filetree in vim
+Plug 'majutsushi/tagbar' " generate a sidebar with ctags
 
-" no special logic
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-eunuch'
-Plug 'svermeulen/vim-easyclip'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'morhetz/gruvbox'
-Plug 'scrooloose/syntastic'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'sheerun/vim-polyglot'
-Plug 'easymotion/vim-easymotion'
-Plug 'unblevable/quick-scope'
-Plug 'bling/vim-airline'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'bling/vim-bufferline'
+" always load
+Plug 'jdonaldson/vaxe' " vim support for haxe projects
+Plug 'tpope/vim-surround' " Quickly surround text
+Plug 'tpope/vim-repeat' " Quickly surround text
+Plug 'tpope/vim-eunuch' " add sudo access in vim.
+Plug 'svermeulen/vim-easyclip' " simplyfy yank and paste
+Plug 'terryma/vim-multiple-cursors' " the one feature in st I really missed
+Plug 'kien/ctrlp.vim' " well, maybe this one too...
+Plug 'scrooloose/nerdcommenter' " commend code qickly with syntax support
+Plug 'morhetz/gruvbox' " awesome colorscheme
+Plug 'scrooloose/syntastic' " lint and error checking
+Plug 'PotatoesMaster/i3-vim-syntax' " some extra syntax
+Plug 'sheerun/vim-polyglot' " lots more syntax
+Plug 'easymotion/vim-easymotion' " move around text with new motions
+Plug 'unblevable/quick-scope' " add visuals to fFtT movements
+Plug 'bling/vim-airline' " statusbar
+Plug 'ntpeters/vim-better-whitespace' " highlight and strip unneeded whitespace
+Plug 'bling/vim-bufferline' " list buffers in statusbar
 
-" needs config
-"Plug 'Valloric/YouCompleteMe'
-
-" used rarely
-"Plug 'edkolev/promptline.vim'
+" ajshdkjahsd
+"Plug 'edkolev/promptline.vim' " a airline prompt generator for shell
+Plug 'Valloric/YouCompleteMe' " autocompletion. Conf needed
 
 call plug#end()
 
@@ -205,14 +154,19 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " ─────────────── Ctrl-P ───────────────
-map <leader>b :CtrlPBuffer<CR>
+map <c-b> :CtrlPBuffer<CR>
+let g:ctrlp_root_markers = ['project.xml']
+let g:ctrlp_by_filename = 1
+let g:ctrlp_use_caching = 1
+let g:ctrlp_follow_symlinks = 1
 
 " ───────────── NERDTree ───────────────
-map <leader>t :NERDTreeToggle<CR>
+map <c-t> :NERDTreeToggle<CR>
 
 " show hidden files in nerdtree
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
+let NERDTreeQuitOnOpen=1
 " close vim if nerdtree is only window remaining
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -236,15 +190,48 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
+" ────────────── Airline ────────────────
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#bufferline#overwrite_variables=0
+" ────────────── Easyclip ───────────────
 
-" ─────────────── Colors ────────────────
+" remap mark to gm since EasyClip cut shadows m key
+nnoremap gm m
+
+imap <c-v> <plug>EasyClipInsertModePaste
+cmap <c-v> <plug>EasyClipCommandModePaste
+let g:EasyClipShareYanks = 1
+
+nmap <c-f> <plug>EasyClipSwapPasteForward
+nmap <c-d> <plug>EasyClipSwapPasteBackwards
+"
+" ─────────────── Gruvbox ────────────────
 " Set theme
 "colorscheme railscasts
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italic = 1
 colorscheme gruvbox
 set background=dark    " Setting dark mode
+
+" ───────────── Bufferline ──────────────
+
+"let g:bufferline_active_buffer_left = '['
+"let g:bufferline_active_buffer_right = ']'
+"let g:bufferline_modified = '+'
+let g:bufferline_active_highlight = 'StatusLine'
+let g:bufferline_show_bufnr = 0
+"let g:bufferline_echo = 0
+autocmd VimEnter *
+  \ let &statusline='%{bufferline#refresh_status()}'
+    \ .bufferline#get_status_string()
+
+" ──────────────── Vaxe ─────────────────
+let g:vaxe_cache_server = 1
+let g:vaxe_prefer_openfl = 1
+"let g:vaxe_cache_server_autostart = 0
+
+" ─────────────── Tagbar ────────────────
+nmap <leader>t :TagbarToggle<CR>
 
 " ───────────── Promptline ──────────────
 "let g:promptline_preset = {
