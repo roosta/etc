@@ -9,3 +9,4 @@ case "$(xset -q|grep LED| awk '{ print $10 }')" in
   *) KBD="unknown" ;;
 esac
 echo $KBD
+echo "#305D5F"

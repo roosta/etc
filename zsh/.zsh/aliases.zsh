@@ -43,7 +43,7 @@ alias lspath='echo -e ${PATH//:/\\n}'
 alias grfile='lsa|grep'
 
 # list pulseaudio sinks
-alias sinkls="pacmd list-sinks|egrep -i 'index:|name:'"
+alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
 alias hxgrep='grep -r --include="*.hx"'
 
@@ -268,3 +268,4 @@ alias :Q="exit"
 # common typo
 alias claer='clear'
 
+alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'

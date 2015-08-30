@@ -21,7 +21,7 @@ mpd_host = localhost
 mpd_port = 6600
 mpd_connection_timeout = 5
 
-### general settings ### 
+### general settings ###
 
 # fix spotify lag issue
 #https://github.com/mopidy/mopidy/issues/727
@@ -51,14 +51,15 @@ use_console_editor = yes
 # Visualizer
 #visualizer_fifo_path = "/tmp/mpd.fifo"
 #visualizer_output_name = "my_fifo"
-#visualizer_sync_interval = "30" 
+#visualizer_sync_interval = "30"
 #visualizer_in_stereo = "yes"
 #visualizer_type = "wave" (spectrum/wave)
 #visualizer_type = "spectrum" (spectrum/wave)
 
 # Playlist
-song_columns_list_format = "(3f)[black]{n} (40)[default]{t|f} (25)[red]{a} (30)[blue]{b} (4f)[black]{l}"
-#"$L(9)[black]{l} (20)[red]{a} (30)[blue]{b} $L(20)[default]{t}"
+#song_columns_list_format = "(3f)[white]{n} (40)[default]{t|f} (25)[magenta]{a} (30)[blue]{b} (4f)[white]{l}"
+song_columns_list_format = "$L(9)[white]{l} (20)[red]{a} (30)[green]{b}$R(20)[cyan]{t}"
+#song_columns_list_format = "$L(9)[black]{l} (20)[red]{a} (30)[blue]{b} $L(20)[default]{t}"
 now_playing_prefix = "$b"
 now_playing_suffix = "$/b"
 playlist_display_mode = "columns" (classic/columns)
@@ -66,8 +67,9 @@ autocenter_mode = "yes"
 centered_cursor = "no"
 cyclic_scrolling = "no"
 mouse_list_scroll_whole_page = "no"
-#song_list_format = "{$8$9}{[%l] >> }{%t }$R{%a - %b}"
-song_list_format = "$1$9%l$1$9 $1¦$9 $2%a$9 $1¦$9 $5%b$9 $R$1$9%t$1$9 $1¦$9 $1%n$9"
+song_list_format = "{$8$9}{[%l] >> }{%t }$R{%a - %b}"
+#song_list_format = "$1$9%l$1$9 $1¦$9 $2%a$9 $1¦$9 $5%b$9 $R$1$9%t$1$9 $1¦$9 $1%n$9"
+#song_list_format = " $8{%l} $1| $7{%a} $1| $6{%t} $R $1{%b}"
 # $0$8$8%l$0$8 $1¦$7 $7%a$7 $1¦$7 $6%t$1 $R $1%b$1"
 song_library_format = "{%n > }{%t}|{%f}"
 
@@ -93,7 +95,7 @@ state_flags_color = "default"
 main_window_color = "default"
 color1 = "default"
 color2 = "default"
-main_window_highlight_color = "red"
+main_window_highlight_color = "cyan"
 progressbar_color = "yellow"
 statusbar_color = "blue"
 active_column_color = "red"
