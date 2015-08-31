@@ -57,6 +57,7 @@ hide_edge_borders none
 # fix graphics glitch
 assign [class="URxvt"] $WS1
 assign [class="subl3"] $WS2
+assign [class="Atom"] $WS2
 assign [class="Firefox"] $WS3
 assign [class="chrome"] $WS5
 assign [class="Steam"] $WS6
@@ -75,9 +76,11 @@ for_window [title="Friends"]  floating enable
 # ─────────────  Appearance  ──────────────
 # ─────────────────────────────────────────
 # assign various fonts
-set $font_lintilla pango: Terminuss Powerline 12px
-#set $font_status_lintilla  pango: Essential PragmataPro, FontAwesome 9
-set $font_status_lintilla pango: Terminusicons2
+#set $font_lintilla -*-terminalpants-*-*-*-*-12-*-*-*-*-*-iso8859-*
+set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
+
+set $font_lintilla pango: Essential PragmataPro 14px
+#set $font_status_lintilla pango: FontAwesome 14px
 
 set $font_allitnil pango: Essential PragmataPro 15px
 set $font_status_allitnil pango: Essential PragmataPro 14px
@@ -189,8 +192,9 @@ bindsym $mod+q kill
 # start dmenu that only lists .desktop entries.
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i' --term="urxvtc"
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i
-bindsym $mod+space exec --no-startup-id rofi -show run
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+#bindsym $mod+space exec --no-startup-id rofi -show run
+#bindsym $mod+space exec --no-startup-id rofi -show combi
+#bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+j focus left
@@ -307,6 +311,7 @@ bindsym $mod+r mode "resize"
 # ───────────────────────────────────────
 exec firefox
 exec --no-startup-id urxvtc
+exec --no-startup-id rofi
 
 
 # vim:filetype=i3

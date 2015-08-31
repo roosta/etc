@@ -42,11 +42,11 @@ set smartindent
 set smarttab
 set scrolloff=3
 set showmatch " show matching brackets/parenthesis
-set matchtime=2 " show matching brackets/parenthesis
-set backspace=indent,eol,start " show matching brackets/parenthesis
-set shortmess+=I " show matching brackets/parenthesis
-set t_Co=256 " show matching brackets/parenthesis
-set timeoutlen=1000 ttimeoutlen=0 " show matching brackets/parenthesis
+set matchtime=2 " time to display matching brackets
+set backspace=indent,eol,start " fix backspace behaviour
+set shortmess+=I " dont display startup message
+set t_Co=256 " force 256colors
+set timeoutlen=1000 ttimeoutlen=0 " adjust timeouts for escaping normal mode.
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=1 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
@@ -57,7 +57,7 @@ set number " show line numbers
 "set cc=80
 set cursorline " highlight current line
 set wrap " show line numbers
-
+set autowrite
 
 " line up soft-wrap prefix with the line numbers
 "set showbreak=------>\
@@ -77,7 +77,7 @@ set gdefault " the /g flag on :s substitutions by default
 
 " ───────────── GUI only ──────────────
 if has('gui_running')
-  set guioptions-=m  "remove menu bar
+  "set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=r  "remove right-hand scroll bar
   set guioptions-=L  "remove left-hand scroll bar
@@ -89,6 +89,8 @@ endif
 " ───────────── Keybinds ──────────────
 " change mapleader
 "let mapleader = ","
+
+nnoremap <c-q> :bd<CR>
 
 " access x clipboard with leader+p/y
 "nnoremap <leader>y "+y
@@ -155,13 +157,14 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " ─────────────── Ctrl-P ───────────────
 map <c-b> :CtrlPBuffer<CR>
-let g:ctrlp_root_markers = ['project.xml']
+map <leader>p :CtrlPTag<CR>
+let g:ctrlp_root_markers = ['project.xml', '.project', '*.hxml']
 let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 1
 let g:ctrlp_follow_symlinks = 1
 
 " ───────────── NERDTree ───────────────
-map <c-t> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " show hidden files in nerdtree
 let NERDTreeShowHidden=1

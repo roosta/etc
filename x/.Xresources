@@ -12,19 +12,22 @@
 ! --------------------
 
 ! Ttyp0 regular [lintilla, 1920x1080]
-#define FONT_NORMAL -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1
-#define FONT_BOLD -uw-ttyp0-bold-r-normal--15-140-75-75-c-80-iso10646-1
-#define FONT_ITALIC -uw-ttyp0-medium-i-normal--15-140-75-75-c-80-iso10646-1
-#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=10:antialias=1:hinting=1:hintstyle=3
+!#define FONT_NORMAL -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1
+!#define FONT_BOLD -uw-ttyp0-bold-r-normal--15-140-75-75-c-80-iso10646-1
+!#define FONT_ITALIC -uw-ttyp0-medium-i-normal--15-140-75-75-c-80-iso10646-1
+!#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=10:antialias=1:hinting=1:hintstyle=3
 
+! PragmataPro <lintilla: 1920x1080>
+#define FONT_NORMAL xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Regular
+#define FONT_BOLD xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Bold
+#define FONT_ITALIC xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Italic
+#define FONT_BOLDITALIC xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Bold\ Italic
+
+! Ttyp0 <allitnil: 1600x900>
 !#define FONT_NORMAL -uw-ttyp0-medium-r-normal--17-160-75-75-c-90-iso10646-1
 !#define FONT_BOLD -uw-ttyp0-bold-r-normal--17-160-75-75-c-90-iso10646-1
 !#define FONT_ITALIC -uw-ttyp0-medium-i-normal--17-160-75-75-c-90-iso10646-1
 !#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=14:antialias=1:hinting=1:hintstyle=3
-
-! PragmataPro
-!#define FONT_NORMAL xft:Essential\ PragmataPro:pixelsize=14
-!#define FONT_BOLDITALIC xft:Essential\ PragmataPro:Bold\ Italic:pixelsize=10
 
 ! gohu
 !#define FONT_NORMAL -gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1

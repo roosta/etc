@@ -1,18 +1,18 @@
 ! rofi config, merged with .Xresources
 rofi.modi:                           window,run,ssh
 rofi.opacity:                        100
-rofi.width:                          20
-rofi.lines:                          30
-rofi.columns:                        1
+rofi.width:                          100
+rofi.lines:                          5
+rofi.columns:                        3
 rofi.font:                           Essential\ PragmataPro 12
-rofi.fg:                             #c0b18b
-rofi.bg:                             #1f1f1f
+rofi.bg:                             #282828
+rofi.fg:                             #EBDBB2
 rofi.color-enabled:                  false
 rofi.color-normal:                   #fdf6e3,#002b36,#eee8d5,#586e75,#eee8d5
 rofi.color-urgent:                   #fdf6e3,#dc322f,#eee8d5,#dc322f,#fdf6e3
 rofi.color-active:                   #fdf6e3,#268bd2,#eee8d5,#268bd2,#fdf6e3
 rofi.color-window:                   #fdf6e3,#002b36
-rofi.fg-active:                      #268BD2
+rofi.fg-active:                      #458588
 rofi.fg-urgent:                      #DC322F
 rofi.hlfg-active:                    #FDF6E3
 rofi.hlfg-urgent:                    #FDF6E3
@@ -20,17 +20,17 @@ rofi.bg-active:                      #FDF6E3
 rofi.bg-urgent:                      #FDF6E3
 rofi.hlbg-active:                    #268BD2
 rofi.hlbg-urgent:                    #DC322F
-rofi.bgalt:                          #1f1f1f
-rofi.hlfg:                           #EEE8D5
-rofi.hlbg:                           #586E75
-rofi.bc:                             #002B36
+rofi.bgalt:                          #2D2D2D
+rofi.hlfg:                           #282828
+rofi.hlbg:                           #B16286
+rofi.bc:                             #D3869B
 rofi.bw:                             1
 rofi.location:                       1
 rofi.padding:                        5
 rofi.yoffset:                        0
 rofi.xoffset:                        0
-rofi.fixed-num-lines:                true
-rofi.terminal:                       rofi-sensible-terminal
+rofi.fixed-num-lines:                false
+rofi.terminal:                       urxvtc
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
 rofi.run-command:                    {cmd}
@@ -39,12 +39,12 @@ rofi.run-shell-command:              {terminal} -e {cmd}
 rofi.disable-history:                false
 rofi.levenshtein-sort:               true
 rofi.case-sensitive:                 false
-rofi.sidebar-mode:                   true
+rofi.sidebar-mode:                   false
 rofi.lazy-filter-limit:              5000
 rofi.eh:                             1
 rofi.auto-select:                    false
 rofi.parse-hosts:                    false
-rofi.combi-modi:                     window,run
+rofi.combi-modi:                     window,run,ssh
 rofi.fuzzy:                          true
 rofi.m:                              -1
 rofi.line-margin:                    3
@@ -83,7 +83,7 @@ rofi.kb-row-left:                    Control+Page_Up
 rofi.kb-row-right:                   Control+Page_Down
 rofi.kb-row-up:                      Up,Control+p,Shift+Tab
 rofi.kb-row-down:                    Down,Control+n
-rofi.kb-row-tab:                     Tab
+rofi.kb-row-tab:                     Shift+Tab
 rofi.kb-page-prev:                   Page_Up
 rofi.kb-page-next:                   Page_Down
 rofi.kb-row-first:                   Home,KP_Home
