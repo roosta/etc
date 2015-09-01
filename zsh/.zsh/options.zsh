@@ -33,8 +33,8 @@ setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
 
 HISTFILE=~/.histfile
-HISTSIZE=1200
-SAVEHIST=1000
+HISTSIZE=12000
+SAVEHIST=10000
 
 #  enable a built in help command
 autoload -U run-help

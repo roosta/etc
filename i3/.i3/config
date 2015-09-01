@@ -12,11 +12,11 @@
 # - http://dotshare.it (picked from various i3 confs, color schemes..etc)
 # ───────────────────────────────────────────────────────────────────────
 
-# ─────────────  Layout  ────────────── 
+# ─────────────  Layout  ──────────────
 # ─────────────────────────────────────
 set $primary_monitor DVI-I-1
-set $secondary_monitor DVI-D-1
-set $TV HDMI-1 
+set $secondary_monitor DVI-D-0
+set $TV HDMI-1
 
 set $WS1 "1:TRM"
 set $WS2 "2:DEV"
@@ -50,12 +50,14 @@ workspace $WS2 output $primary_monitor
 workspace $WS3 output $primary_monitor
 workspace $WS4 output $secondary_monitor
 
-new_window pixel 2
+# set border size
+new_window 1pixel
 hide_edge_borders none
 
 # fix graphics glitch
-assign [class="URxvt"] $WS1 
+assign [class="URxvt"] $WS1
 assign [class="subl3"] $WS2
+assign [class="Atom"] $WS2
 assign [class="Firefox"] $WS3
 assign [class="chrome"] $WS5
 assign [class="Steam"] $WS6
@@ -66,18 +68,24 @@ for_window [window_role="Preferences"] floating enable
 
 # set float for spesific apps
 for_window [class="(?i)Jitsi"] floating enable
+for_window [class="SessionManager"] floating enable
+for_window [class="Firefox"]  new_window pixel 0
+for_window [title="Steam - Update News(.*)"]  floating enable
+for_window [title="Friends"]  floating enable
 
-# ─────────────  Appearance  ────────────── 
+# ─────────────  Appearance  ──────────────
 # ─────────────────────────────────────────
 # assign various fonts
-set $font_lintilla pango: Terminuss Powerline 12px 
-#set $font_status_lintilla  pango: Essential PragmataPro, FontAwesome 9
-set $font_status_lintilla pango: Terminusicons2
+#set $font_lintilla -*-terminalpants-*-*-*-*-12-*-*-*-*-*-iso8859-*
+set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
 
-set $font_allitnil pango: Essential PragmataPro 15px 
+set $font_lintilla pango: Essential PragmataPro 14px
+#set $font_status_lintilla pango: FontAwesome 14px
+
+set $font_allitnil pango: Essential PragmataPro 15px
 set $font_status_allitnil pango: Essential PragmataPro 14px
 
-font $font_lintilla 
+font $font_lintilla
 
 # define sweetlove colors
 set $sweetfg #c0b18b
@@ -99,39 +107,70 @@ set $sweet13 #614445
 set $sweet14 #585c49
 set $sweet15 #978965
 
-# class                 <border>   <bg>      <fg>      <indicator>
-client.focused          $sweet12   $sweet12  $sweet07  $sweet04
-client.focused_inactive #00ffFF    #00ffFF   #00ffFF   $sweet04
-client.unfocused        $sweet08   $sweet08  $sweet15  $sweet04
-client.urgent           $sweet04   #00ffFF  #00ffFF   $sweet04
-client.placeholder      #00ffFF    #00ffFF  #00ffFF   #00ffFF
+# define gruvbox colors
+# background  + forground
+set $gruvboxbg #282828
+set $gruvboxfg #ebdbb2
+# Black + DarkGrey
+set $gruvbox0 #282828
+set $gruvbox8 #928374
+# DarkRed + Red
+set $gruvbox1 #cc241d
+set $gruvbox9 #fb4934
+# DarkGreen + Green
+set $gruvbox2 #98971a
+set $gruvbox10 #b8bb26
+# DarkYellow + Yellow
+set $gruvbox3 #d79921
+set $gruvbox11 #fabd2f
+# DarkBlue + Blue
+set $gruvbox4 #458588
+set $gruvbox12 #83a598
+# DarkMagenta + Magenta
+set $gruvbox5 #b16286
+set $gruvbox13 #d3869b
+# DarkCyan + Cyan
+set $gruvbox6 #689d6a
+set $gruvbox14 #8ec07c
+# LightGrey + White
+set $gruvbox7 #a89984
+set $gruvbox15 #ebdbb2
+
+# soft + hard contrast backgrounds
+set $gruvboxbgSoft #32302f
+set $gruvboxbgHard #1d2021
+
+# class                 <border>        <bg>            <fg>            <indicator>
+client.focused          $gruvbox8       $gruvbox8       $gruvbox0       $gruvbox13
+client.focused_inactive $gruvbox8       $gruvboxbgsoft  $gruvboxfg      $gruvboxbgsoft
+client.unfocused        $gruvboxbghard  $gruvboxbghard  $gruvbox8       $gruvboxbghard
+client.urgent           $gruvbox5       $gruvbox5       $gruvboxbg      $gruvbox5
+client.placeholder      $gruvboxbgsoft  $gruvboxbgsoft  $gruvboxbgsoft  $gruvbox13
 
 bar {
-  #position top 
   tray_output primary
-  font $font_status_lintilla 
-  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf 
-  #separator_symbol "  "
+  font $font_status_lintilla
+  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf
   separator_symbol "Ý"
   colors {
 
     # <bar>
-    background  $sweet08
-    separator   $sweet07
-    statusline  #00ffFF
+    background  $gruvboxbgsoft
+    separator   $gruvboxfg
+    #statusline  #ffffff
 
-    # <workclass>       <border>    <bg>       <text>
-    focused_workspace   $sweet12    $sweet12    $sweet07
-    active_workspace    $sweet08    $sweet08    $sweet07
-    inactive_workspace  $sweet08    $sweet08    $sweet15
-    urgent_workspace    $sweet09    $sweet09    $sweet08
-  } 
+    # <workclass>         <border>      <bg>            <text>
+    focused_workspace   $gruvbox8       $gruvbox8       $gruvbox0
+    active_workspace    $gruvbox8       $gruvboxbgsoft  $gruvboxfg
+    inactive_workspace  $gruvboxbgsoft  $gruvboxbgsoft  $gruvbox8
+    urgent_workspace    $gruvbox5       $gruvbox5       $gruvboxbg
+  }
 }
-# ──────────────── Misc ──────────────── 
+# ──────────────── Misc ────────────────
 # ──────────────────────────────────────
 focus_follows_mouse no
 
-# ────────────── Keybinds ────────────── 
+# ────────────── Keybinds ──────────────
 # ──────────────────────────────────────
 # set modkey (Super key)
 set $mod Mod4
@@ -150,11 +189,12 @@ bindsym $mod+Return exec --no-startup-id urxvtc
 # kill focused window
 bindsym $mod+q kill
 
-# start dmenu that only lists .desktop entries. 
+# start dmenu that only lists .desktop entries.
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i' --term="urxvtc"
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i
-bindsym $mod+space exec --no-startup-id rofi -show run
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+#bindsym $mod+space exec --no-startup-id rofi -show run
+#bindsym $mod+space exec --no-startup-id rofi -show combi
+#bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+j focus left
@@ -201,7 +241,7 @@ bindsym $mod+Shift+d floating toggle
 bindsym $mod+d focus mode_toggle
 
 # reload the configuration file
-bindsym $mod+Shift+c reload 
+bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -267,10 +307,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# ────────────── Autostart ────────────── 
+# ────────────── Autostart ──────────────
 # ───────────────────────────────────────
 exec firefox
 exec --no-startup-id urxvtc
+exec --no-startup-id rofi
 
 
 # vim:filetype=i3

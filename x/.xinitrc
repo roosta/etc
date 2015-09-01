@@ -32,7 +32,7 @@ xrdb -merge $HOME/.Xresources &
 setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp
 
 # enable numlock at startup
-numlockx &
+numlockx
 
 # bind various custom keys. see .xbindkeysrx
 xbindkeys
@@ -59,4 +59,14 @@ xss-lock -- i3lock -n -e -d -t -i /usr/share/backgrounds/simple-55.png &
 # ──────────────────────────────────────
 exec i3
 
+
+# ─────────── Functions ───────────
+# ─────────────────────────────────
+#singleInstance() {
+  #PID=$(pgrep $1)
+  #if [[ -z "$PID" ]]; then
+    #$(which $1)
+  #fi
+  #unset PID
+#}
 # vim:filetype=sh

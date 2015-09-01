@@ -8,7 +8,7 @@
 # Github : https://github.com/roosta
 # -------------------------------
 
-# ======= Quick edits ======= 
+# ======= Quick edits =======
 # ---------------------------
 alias vigit='vim ~/.gitconfig'
 alias vii3='vim ~/.i3/config'
@@ -21,7 +21,7 @@ alias vixinit='vim ~/.xinitrc'
 alias vifont='vim ~/.config/fontconfig/fonts.conf'
 alias vikeys='vim ~/.xbindkeysrc'
 
-# ======= todo ======= 
+# ======= todo =======
 # placeholder. write/find script
 # --------------------
 alias todo='vim ~/.todo'
@@ -43,7 +43,9 @@ alias lspath='echo -e ${PATH//:/\\n}'
 alias grfile='lsa|grep'
 
 # list pulseaudio sinks
-alias sinkls="pacmd list-sinks|egrep -i 'index:|name:'"
+alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
+
+alias hxgrep='grep -r --include="*.hx"'
 
 # ======= safety =======
 # ----------------------
@@ -69,7 +71,7 @@ alias mkdir='mkdir -pv'
 
 # ======= Movement ========
 # dirstack needs some extra config, see dirstack.sh
-#-------------------------- 
+#--------------------------
 alias cd..='cd ..'
 
 alias -g ...='../..'
@@ -88,6 +90,16 @@ alias 6='cd -6'
 alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
+alias 10='cd -10'
+alias 11='cd -11'
+alias 12='cd -12'
+alias 13='cd -13'
+alias 14='cd -14'
+alias 15='cd -15'
+alias 16='cd -16'
+alias 17='cd -17'
+alias 18='cd -18'
+alias 19='cd -19'
 
 # long format and color ls output with various options. (see "man ls")
 alias lsa="ls -lAhpXk --color=auto --group-directories-first"
@@ -116,7 +128,7 @@ alias pacdl='pacman -Sw'
 # Install specific package(s) from the repositories
 alias pacs='pacman -S'
 
-# Install specific package not from the repositories but from a file 
+# Install specific package not from the repositories but from a file
 alias pacu='pacman -U'
 
 # Remove the specified package(s), retaining its configuration(s) and required dependencies
@@ -149,8 +161,8 @@ alias pacls="pacman -Ql"
 # Show package(s) owning the specified file(s)
 alias pacown="pacman -Qo"
 
-# Mark one or more installed packages as explicitly installed 
-#alias pacexpl="pacman -D --asexp"	
+# Mark one or more installed packages as explicitly installed
+#alias pacexpl="pacman -D --asexp"
 
 # Mark one or more installed packages as non explicitly installed
 #alias pacimpl="pacman -D --asdep"
@@ -194,25 +206,27 @@ alias ufw='sudo ufw'
 # stow is always verbose
 alias stow='stow -v'
 
-# keep forgetting what these are called. 
+# keep forgetting what these are called.
 alias getkey='xev'
 alias getclass='xprop'
 
-# vi to vim 
+# vi to vim
 alias vi="vim"
 
 # utput from a command with xclip when this is piped in
 alias copy='xclip -sel clip'
 
-# print date in various formats 
+# print date in various formats
 alias gettime='date +"%T"'
 alias getdatef='date +%Y-%m-%d_%H-%M-%S'
 alias getdate='date +"%Y-%m-%d"'
 
+alias locate='locate -i'
+
 # ======= VCS =======
 # -------------------
 
-# git
+# --- git ---
 alias gs='git status'
 alias gd='git diff'
 alias gc='git checkout'
@@ -220,10 +234,20 @@ alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn
 alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
 alias gaa='git add -A'
 alias commit='git commit'
-#alias gca='git commit -a'
+alias gca='git commit -a'
 
-# svn
+# --- svn ---
 alias sst='svn status'
+
+# get last commit diff
+alias slastdiff='svn log -r COMMITTED --diff'
+
+# get a given rev's commit diff
+alias srevdiff='svn log --diff -r'
+alias sup='svn update'
+
+alias slogs='svn log --limit 30|less'
+alias slogl='svn log --diff --limit 30|less'
 
 # ======= MISC =======
 # --------------------
@@ -244,3 +268,4 @@ alias :Q="exit"
 # common typo
 alias claer='clear'
 
+alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
