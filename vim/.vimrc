@@ -14,10 +14,10 @@ set nocompatible
 
 " ────── Reload vim conf on save ───────
 " source conf on save
-"augroup reload_vimrc " {
-    "autocmd!
-    "autocmd BufWritePost $MYVIMRC source $MYVIMRC
-"augroup END " }
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
 
 " ───────────── Options ──────────────
 syntax on
@@ -121,7 +121,7 @@ Plug 'kien/ctrlp.vim' " well, maybe this one too...
 Plug 'scrooloose/nerdcommenter' " commend code qickly with syntax support
 Plug 'morhetz/gruvbox' " awesome colorscheme
 Plug 'scrooloose/syntastic' " lint and error checking
-Plug 'PotatoesMaster/i3-vim-syntax' " some extra syntax
+"Plug 'PotatoesMaster/i3-vim-syntax' " some extra syntax
 Plug 'sheerun/vim-polyglot' " lots more syntax
 Plug 'easymotion/vim-easymotion' " move around text with new motions
 Plug 'unblevable/quick-scope' " add visuals to fFtT movements
@@ -158,10 +158,11 @@ let g:multi_cursor_quit_key='<Esc>'
 " ─────────────── Ctrl-P ───────────────
 map <c-b> :CtrlPBuffer<CR>
 map <leader>p :CtrlPTag<CR>
-let g:ctrlp_root_markers = ['project.xml', '.project', '*.hxml']
+let g:ctrlp_root_markers = ['project.xml', '.project' ]
 let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 1
-let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_working_path_mode = 'r'
+"let g:ctrlp_follow_symlinks = 1
 
 " ───────────── NERDTree ───────────────
 map <leader>n :NERDTreeToggle<CR>
@@ -231,7 +232,9 @@ autocmd VimEnter *
 " ──────────────── Vaxe ─────────────────
 let g:vaxe_cache_server = 1
 let g:vaxe_prefer_openfl = 1
-"let g:vaxe_cache_server_autostart = 0
+let g:vaxe_lime_target = 'html5'
+let g:vaxe_openfl_target = 'html5'
+let g:vaxe_cache_server_autostart = 1
 
 " ─────────────── Tagbar ────────────────
 nmap <leader>t :TagbarToggle<CR>
