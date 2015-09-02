@@ -14,10 +14,10 @@ set nocompatible
 
 " ────── Reload vim conf on save ───────
 " source conf on save
-"augroup reload_vimrc " {
-    "autocmd!
-    "autocmd BufWritePost $MYVIMRC source $MYVIMRC
-"augroup END " }
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
 
 " ───────────── Options ──────────────
 syntax on
@@ -57,7 +57,7 @@ set number " show line numbers
 "set cc=80
 set cursorline " highlight current line
 set wrap " show line numbers
-set autowrite
+"set autowrite
 
 " line up soft-wrap prefix with the line numbers
 "set showbreak=------>\
@@ -90,7 +90,7 @@ endif
 " change mapleader
 "let mapleader = ","
 
-nnoremap <c-q> :bd<CR>
+nnoremap <C-q> :bd<CR>
 
 " access x clipboard with leader+p/y
 "nnoremap <leader>y "+y
@@ -158,10 +158,12 @@ let g:multi_cursor_quit_key='<Esc>'
 " ─────────────── Ctrl-P ───────────────
 map <c-b> :CtrlPBuffer<CR>
 map <leader>p :CtrlPTag<CR>
-let g:ctrlp_root_markers = ['project.xml', '.project', '*.hxml']
+let g:ctrlp_root_markers = ['project.xml', '.project' ]
 let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 1
-let g:ctrlp_follow_symlinks = 1
+"let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'r'
 
 " ───────────── NERDTree ───────────────
 map <leader>n :NERDTreeToggle<CR>
@@ -231,7 +233,6 @@ autocmd VimEnter *
 " ──────────────── Vaxe ─────────────────
 let g:vaxe_cache_server = 1
 let g:vaxe_prefer_openfl = 1
-"let g:vaxe_cache_server_autostart = 0
 
 " ─────────────── Tagbar ────────────────
 nmap <leader>t :TagbarToggle<CR>
