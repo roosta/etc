@@ -1,8 +1,8 @@
 {
 	"bold_folder_labels": true,
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Theme - Afterglow/Afterglow.tmTheme",
-	"ensure_newline_at_eof_on_save": true,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"ensure_newline_at_eof_on_save": false,
 	"font_face": "Essential PragmataPro",
 	"font_size": 10,
 	"highlight_line": true,
@@ -35,6 +35,6 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": false,
 	"vintageous_use_ctrl_keys": false,
-	"vintageous_use_sys_clipboard": true,
+	"vintageous_use_sys_clipboard": false,
 	"word_wrap": false
 }
