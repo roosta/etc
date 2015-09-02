@@ -55,7 +55,7 @@ xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
 xset dpms 600 1200 2000 &
 
 # screen locker
-xss-lock -- i3lock -n -e -d -t -i /usr/share/backgrounds/simple-55.png &
+xss-lock -- i3lock -n -e -d -t -i /usr/share/backgrounds/pattern-01.png &
 
 # ─────────── Window Manager ───────────
 # ──────────────────────────────────────
