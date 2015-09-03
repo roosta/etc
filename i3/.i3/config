@@ -14,9 +14,9 @@
 
 # ─────────────  Layout  ──────────────
 # ─────────────────────────────────────
-set $primary_monitor DVI-I-1
-set $secondary_monitor DVI-D-0
-set $TV HDMI-1
+set $primary_monitor VGA1
+set $secondary_monitor LVDS1
+#set $TV HDMI-1
 
 set $WS1 "1:TRM"
 set $WS2 "2:DEV"
@@ -150,7 +150,7 @@ client.placeholder      $gruvboxbgsoft  $gruvboxbgsoft  $gruvboxbgsoft  $gruvbox
 bar {
   tray_output primary
   font $font_status_lintilla
-  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf
+  status_command i3blocks -c ~/.i3/i3blocks/transform.conf
   separator_symbol "Ý"
   colors {
 
@@ -192,9 +192,8 @@ bindsym $mod+q kill
 # start dmenu that only lists .desktop entries.
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i' --term="urxvtc"
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i
-#bindsym $mod+space exec --no-startup-id rofi -show run
-#bindsym $mod+space exec --no-startup-id rofi -show combi
-#bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+space exec rofi -key-run
+bindsym $mod+Tab exec rofi -key-window
 
 # change focus
 bindsym $mod+j focus left
