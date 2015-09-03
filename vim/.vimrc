@@ -57,7 +57,7 @@ set number " show line numbers
 "set cc=80
 set cursorline " highlight current line
 set wrap " show line numbers
-set autowrite
+"set autowrite
 
 " line up soft-wrap prefix with the line numbers
 "set showbreak=------>\
@@ -90,7 +90,7 @@ endif
 " change mapleader
 "let mapleader = ","
 
-nnoremap <c-q> :bd<CR>
+nnoremap <C-q> :bd<CR>
 
 " access x clipboard with leader+p/y
 "nnoremap <leader>y "+y
@@ -161,8 +161,9 @@ map <leader>p :CtrlPTag<CR>
 let g:ctrlp_root_markers = ['project.xml', '.project' ]
 let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 1
-let g:ctrlp_working_path_mode = 'r'
 "let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'r'
 
 " ───────────── NERDTree ───────────────
 map <leader>n :NERDTreeToggle<CR>

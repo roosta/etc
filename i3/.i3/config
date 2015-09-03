@@ -192,8 +192,8 @@ bindsym $mod+q kill
 # start dmenu that only lists .desktop entries.
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i' --term="urxvtc"
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i
-bindsym $mod+space exec rofi -key-run
-bindsym $mod+Tab exec rofi -key-window
+bindsym $mod+space exec --no-startup-id rofi -show run
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
 bindsym $mod+j focus left
@@ -310,7 +310,5 @@ bindsym $mod+r mode "resize"
 # ───────────────────────────────────────
 exec firefox
 exec --no-startup-id urxvtc
-exec --no-startup-id rofi
-
 
 # vim:filetype=i3
