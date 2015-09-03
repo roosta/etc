@@ -249,6 +249,8 @@ alias sup='svn update'
 alias slogs='svn log --limit 30|less'
 alias slogl='svn log --diff --limit 30|less'
 
+alias sldiff='svn diff|colordiff'
+
 # ======= MISC =======
 # --------------------
 
