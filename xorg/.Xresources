@@ -18,7 +18,7 @@
 !#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=10:antialias=1:hinting=1:hintstyle=3
 
 ! PragmataPro <lintilla: 1920x1080>
-#define FONT_NORMAL xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Regular
+#define FONT_NORMAL xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Regular, -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1
 #define FONT_BOLD xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Bold
 #define FONT_ITALIC xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Italic
 #define FONT_BOLDITALIC xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Bold\ Italic
