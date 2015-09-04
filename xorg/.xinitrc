@@ -12,8 +12,7 @@
 # ──────────────────────────────────────
 
 urxvtd -q -f -o &
-mopidy &
-#singleInstance(mopidy)
+# mopidy &
 
 # set extra font dir incase the various X font systems dont pick it up
 xset +fp /usr/share/fonts/roosta &
@@ -47,9 +46,8 @@ xbindkeys
 # ──────────────────────────────────────
 
 # set display layout
-xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
-       --output DVI-D-0 --auto --left-of DVI-I-1 \
-       --output HDMI-0 --off
+xrandr --output VGA1 --primary --auto --pos 0x0 \
+       --output LVDS1 --auto --left-of VGA1
 
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
 xset dpms 600 1200 2000 &

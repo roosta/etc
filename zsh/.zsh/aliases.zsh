@@ -249,6 +249,8 @@ alias sup='svn update'
 alias slogs='svn log --limit 30|less'
 alias slogl='svn log --diff --limit 30|less'
 
+alias sldiff='svn diff|colordiff'
+
 # ======= MISC =======
 # --------------------
 
@@ -269,3 +271,5 @@ alias :Q="exit"
 alias claer='clear'
 
 alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
+
+alias repl='haxelib run ihx'

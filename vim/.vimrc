@@ -121,7 +121,7 @@ Plug 'kien/ctrlp.vim' " well, maybe this one too...
 Plug 'scrooloose/nerdcommenter' " commend code qickly with syntax support
 Plug 'morhetz/gruvbox' " awesome colorscheme
 Plug 'scrooloose/syntastic' " lint and error checking
-Plug 'PotatoesMaster/i3-vim-syntax' " some extra syntax
+"Plug 'PotatoesMaster/i3-vim-syntax' " some extra syntax
 Plug 'sheerun/vim-polyglot' " lots more syntax
 Plug 'easymotion/vim-easymotion' " move around text with new motions
 Plug 'unblevable/quick-scope' " add visuals to fFtT movements
@@ -158,11 +158,11 @@ let g:multi_cursor_quit_key='<Esc>'
 " ─────────────── Ctrl-P ───────────────
 map <c-b> :CtrlPBuffer<CR>
 map <leader>p :CtrlPTag<CR>
-let g:ctrlp_root_markers = ['project.xml', '.project' ]
+let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project']
 let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 1
 "let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_show_hidden = 1
+"let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'r'
 
 " ───────────── NERDTree ───────────────
@@ -206,6 +206,7 @@ nnoremap gm m
 imap <c-v> <plug>EasyClipInsertModePaste
 cmap <c-v> <plug>EasyClipCommandModePaste
 let g:EasyClipShareYanks = 1
+set clipboard=unnamed,unnamedplus
 
 nmap <c-f> <plug>EasyClipSwapPasteForward
 nmap <c-d> <plug>EasyClipSwapPasteBackwards
@@ -231,8 +232,13 @@ autocmd VimEnter *
     \ .bufferline#get_status_string()
 
 " ──────────────── Vaxe ─────────────────
-let g:vaxe_cache_server = 1
-let g:vaxe_prefer_openfl = 1
+"let g:vaxe_cache_server = 1
+"let g:vaxe_prefer_lime = 1
+let g:vaxe_lime_target = 'html5'
+"let g:vaxe_openfl_target = 'html5'
+"let g:vaxe_cache_server_autostart = 1
+let g:vaxe_completion_prevent_bufwrite_events = 1
+"let g:vaxe_completion_disable_optimizations = 0
 
 " ─────────────── Tagbar ────────────────
 nmap <leader>t :TagbarToggle<CR>
