@@ -3,7 +3,7 @@
 ! │░▄▀▄░█▀▄░█▀▀░▀▀█░█░█░█░█░█▀▄░█░░░█▀▀░▀▀█░│
 ! │░▀░▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░│
 ! └─────────────────────────────────────────┘
-! Author : Roosta <contact@roosta.sh>
+! Author : Roosta <mail@roosta.sh>
 ! Site   : http://dotfiles.roosta.sh
 ! Github : https://github.com/roosta
 ! ----------------------------------------
@@ -89,5 +89,5 @@ URxvt*internalBorder: 0
 #include "/home/daniel/.Xcolors/gruvbox-dark.xresources"
 #include "/home/daniel/.Xcolors/gruvbox-urxvt256.xresources"
 
-#include "/home/daniel/.rofirc"
+#include "/home/daniel/.rofi.xresources"
 

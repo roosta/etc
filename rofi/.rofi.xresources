@@ -34,7 +34,7 @@ rofi.terminal:                       urxvtc
 rofi.ssh-client:                     ssh
 rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
 rofi.run-command:                    {cmd}
-rofi.run-list-command:               
+rofi.run-list-command:
 rofi.run-shell-command:              {terminal} -e {cmd}
 rofi.disable-history:                false
 rofi.levenshtein-sort:               true
@@ -48,7 +48,7 @@ rofi.combi-modi:                     window,run,ssh
 rofi.fuzzy:                          true
 rofi.m:                              -1
 rofi.line-margin:                    3
-rofi.filter:                         
+rofi.filter:
 rofi.pid:                            /run/user/1000/rofi.pid
 rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
 rofi.kb-secondary-paste:             Control+v,Insert
@@ -57,8 +57,8 @@ rofi.kb-move-front:                  Control+a
 rofi.kb-move-end:                    Control+e
 rofi.kb-move-word-back:              Alt+b
 rofi.kb-move-word-forward:           Alt+f
-rofi.kb-move-char-back:              Left,Control+b
-rofi.kb-move-char-forward:           Right,Control+f
+rofi.kb-move-char-back:              Control+Left,Control+b
+rofi.kb-move-char-forward:           Control+Right,Control+f
 rofi.kb-remove-word-back:            Control+Alt+h
 rofi.kb-remove-word-forward:         Control+Alt+d
 rofi.kb-remove-char-forward:         Delete,Control+d
@@ -79,8 +79,8 @@ rofi.kb-custom-6:                    Alt+6
 rofi.kb-custom-7:                    Alt+7
 rofi.kb-custom-8:                    Alt+8
 rofi.kb-custom-9:                    Alt+9
-rofi.kb-row-left:                    Control+Page_Up
-rofi.kb-row-right:                   Control+Page_Down
+rofi.kb-row-left:                    Left
+rofi.kb-row-right:                   Right
 rofi.kb-row-up:                      Up,Control+p,Shift+Tab
 rofi.kb-row-down:                    Down,Control+n
 rofi.kb-row-tab:                     Shift+Tab
@@ -90,7 +90,7 @@ rofi.kb-row-first:                   Home,KP_Home
 rofi.kb-row-last:                    End,KP_End
 rofi.kb-row-select:                  Control+space
 rofi.kb-cancel:                      Escape
-rofi.key-window:                     
-rofi.key-run:                        
-rofi.key-ssh:                        
+rofi.key-window:
+rofi.key-run:
+rofi.key-ssh:
 

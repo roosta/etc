@@ -7,16 +7,15 @@
 # │ Site   : http://dotfiles.roosta.sh │
 # │ Github : https://github.com/roosta │
 # └────────────────────────────────────┘
-# - Sources:
-# - http://i3wm.org/docs/user-contributed/lzap-config.html
-# - http://dotshare.it (picked from various i3 confs, color schemes..etc)
+# Sources:
+# * http://i3wm.org/docs/user-contributed/lzap-config.html
+# * http://dotshare.it (picked from various i3 confs, color schemes..etc)
 # ───────────────────────────────────────────────────────────────────────
 
 # ─────────────  Layout  ──────────────
-# ─────────────────────────────────────
-set $primary_monitor VGA1
-set $secondary_monitor LVDS1
-#set $TV HDMI-1
+set $primary_monitor DVI-I-1
+set $secondary_monitor DVI-D-0
+set $television HDMI-1
 
 set $WS1 "1:TRM"
 set $WS2 "2:DEV"
@@ -74,7 +73,6 @@ for_window [title="Steam - Update News(.*)"]  floating enable
 for_window [title="Friends"]  floating enable
 
 # ─────────────  Appearance  ──────────────
-# ─────────────────────────────────────────
 # assign various fonts
 #set $font_lintilla -*-terminalpants-*-*-*-*-12-*-*-*-*-*-iso8859-*
 set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
@@ -87,91 +85,73 @@ set $font_status_allitnil pango: Essential PragmataPro 14px
 
 font $font_lintilla
 
-# define sweetlove colors
-set $sweetfg #c0b18b
-set $sweetbg #1f1f1f
-set $sweet00 #4a3637
-set $sweet01 #d17b49
-set $sweet02 #7b8748
-set $sweet03 #af865a
-set $sweet04 #535c5c
-set $sweet05 #775759
-set $sweet06 #6d715e
-set $sweet07 #c0b18b
-set $sweet08 #402e2e
-set $sweet09 #ac5d2f
-set $sweet10 #647035
-set $sweet11 #8f6840
-set $sweet12 #444b4b
-set $sweet13 #614445
-set $sweet14 #585c49
-set $sweet15 #978965
+# define gruv colors
+set $gruvbg #282828
+set $gruvfg #ebdbb2
+set $gruvbgSoft #32302f
+set $gruvbgHard #1d2021
+set $gruvBlack #282828
+set $gruvDarkGray #928374
+set $gruvDarkRed #cc241d
+set $gruvRed #fb4934
+set $gruvDarkGreen #98971a
+set $gruvGreen #b8bb26
+set $gruvDarkYellow #d79921
+set $gruvYelllow #fabd2f
+set $gruvDarkBlue #458588
+set $gruvBlue #83a598
+set $gruvDarkMagenta #b16286
+set $gruvMagenta #d3869b
+set $gruvDarkCyan #689d6a
+set $gruvCyan #8ec07c
+set $gruvLightGray #a89984
+set $gruvWhite #ebdbb2
+set $gruvDarkOrange #D55C0D
+set $gruvOrange #FC7F18
+set $gruvbg0_h #1C1F20
+set $gruvbg0_s #312F2E
+set $gruvbg0 #272727
+set $gruvbg1 #3B3735
+set $gruvbg2 #4F4844
+set $gruvbg3 #655B53
+set $gruvbg4 #7B6E63
+set $gruvGray #918273
+set $gruvfg4 #A79883
+set $gruvfg3 #BCAD92
+set $gruvfg2 #D4C3A0
+set $gruvfg1 #E9DAB1
+set $gruvfg0 #F9EFC6
 
-# define gruvbox colors
-# background  + forground
-set $gruvboxbg #282828
-set $gruvboxfg #ebdbb2
-# Black + DarkGrey
-set $gruvbox0 #282828
-set $gruvbox8 #928374
-# DarkRed + Red
-set $gruvbox1 #cc241d
-set $gruvbox9 #fb4934
-# DarkGreen + Green
-set $gruvbox2 #98971a
-set $gruvbox10 #b8bb26
-# DarkYellow + Yellow
-set $gruvbox3 #d79921
-set $gruvbox11 #fabd2f
-# DarkBlue + Blue
-set $gruvbox4 #458588
-set $gruvbox12 #83a598
-# DarkMagenta + Magenta
-set $gruvbox5 #b16286
-set $gruvbox13 #d3869b
-# DarkCyan + Cyan
-set $gruvbox6 #689d6a
-set $gruvbox14 #8ec07c
-# LightGrey + White
-set $gruvbox7 #a89984
-set $gruvbox15 #ebdbb2
-
-# soft + hard contrast backgrounds
-set $gruvboxbgSoft #32302f
-set $gruvboxbgHard #1d2021
-
-# class                 <border>        <bg>            <fg>            <indicator>
-client.focused          $gruvbox8       $gruvbox8       $gruvbox0       $gruvbox13
-client.focused_inactive $gruvbox8       $gruvboxbgsoft  $gruvboxfg      $gruvboxbgsoft
-client.unfocused        $gruvboxbghard  $gruvboxbghard  $gruvbox8       $gruvboxbghard
-client.urgent           $gruvbox5       $gruvbox5       $gruvboxbg      $gruvbox5
-client.placeholder      $gruvboxbgsoft  $gruvboxbgsoft  $gruvboxbgsoft  $gruvbox13
+# class                 <border>            <bg>              <fg>             <indicator>
+client.focused          $gruvDarkGray       $gruvDarkGray     $gruvBlack       $gruvDarkMagenta
+client.focused_inactive $gruvDarkGray       $gruvbgsoft       $gruvfg          $gruvbgsoft
+client.unfocused        $gruvbghard         $gruvbghard       $gruvDarkGray    $gruvbghard
+client.urgent           $gruvDarkMagenta    $gruvDarkMagenta  $gruvbg          $gruvDarkMagenta
+client.placeholder      $gruvbgsoft         $gruvbgsoft       $gruvbgsoft      $gruvMagenta
 
 bar {
   tray_output primary
   font $font_status_lintilla
-  status_command i3blocks -c ~/.i3/i3blocks/transform.conf
+  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf
   separator_symbol "Ý"
   colors {
 
     # <bar>
-    background  $gruvboxbgsoft
-    separator   $gruvboxfg
+    background  $gruvbgsoft
+    separator   $gruvfg
     #statusline  #ffffff
 
-    # <workclass>         <border>      <bg>            <text>
-    focused_workspace   $gruvbox8       $gruvbox8       $gruvbox0
-    active_workspace    $gruvbox8       $gruvboxbgsoft  $gruvboxfg
-    inactive_workspace  $gruvboxbgsoft  $gruvboxbgsoft  $gruvbox8
-    urgent_workspace    $gruvbox5       $gruvbox5       $gruvboxbg
+    # <workclass>       <border>            <bg>                <text>
+    focused_workspace   $gruvDarkGray       $gruvDarkGray       $gruvBlack
+    active_workspace    $gruvDarkGray       $gruvbgsoft         $gruvfg
+    inactive_workspace  $gruvbgsoft         $gruvbgsoft         $gruvDarkGray
+    urgent_workspace    $gruvDarkMagenta    $gruvDarkMagenta    $gruvbg
   }
 }
 # ──────────────── Misc ────────────────
-# ──────────────────────────────────────
 focus_follows_mouse no
 
 # ────────────── Keybinds ──────────────
-# ──────────────────────────────────────
 # set modkey (Super key)
 set $mod Mod4
 
@@ -179,7 +159,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # manual screen lock
-bindsym $mod+Shift+o exec --no-startup-id xset s activate
+# bindsym $mod+Shift+o exec --no-startup-id xset s activate
 
 # start a terminal
 #bindsym $mod+Return exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
@@ -280,14 +260,9 @@ bindsym --release Shift+Print exec scrot -s $HOME/Pictures/screenshots/screensho
 # send a signal to i3blocks on caps
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 
-# resize window (you can also use the mouse for that)
+# ────────────── Resize menu ──────────────
 mode "resize" {
-  # These bindings trigger as soon as you enter the resize mode
-
-  # Pressing left will shrink the window’s width.
-  # Pressing right will grow the window’s width.
-  # Pressing up will shrink the window’s height.
-  # Pressing down will grow the window’s height.
+  # vi movement
   bindsym j resize shrink width 10 px or 10 ppt
   bindsym k resize grow height 10 px or 10 ppt
   bindsym l resize shrink height 10 px or 10 ppt
@@ -303,12 +278,44 @@ mode "resize" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # ────────────── Autostart ──────────────
-# ───────────────────────────────────────
 exec firefox
 exec --no-startup-id urxvtc
+
+# ───────────── System Menu ─────────────
+# https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
+set $Locker i3lock --image=/usr/share/backgrounds/pattern-01.png -t && sleep 1
+
+set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+  bindsym l exec --no-startup-id $Locker, mode "default"
+  bindsym e exec --no-startup-id i3-msg exit, mode "default"
+  bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+  bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+# bind FN sleep key to menu
+bindsym XF86Sleep mode "$mode_system"
+
+# ───────────── output menu ─────────────
+set $changeto ~/bin/chmon
+set $mode_chmon Layout: (d) desk, (t) TV, (a) all
+mode "$mode_chmon" {
+  bindsym d exec --no-startup-id $changeto desk, mode "default"
+  bindsym t exec --no-startup-id $changeto tv, mode "default"
+  bindsym a exec --no-startup-id $changeto all, mode "default"
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+# bind FN home key to menu
+bindsym XF86HomePage mode "$mode_chmon"
 
 # vim:filetype=i3

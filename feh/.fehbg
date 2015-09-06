@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --image-bg black --bg-center '/usr/share/backgrounds/Vortex.png' 
+feh --bg-tile '/usr/share/backgrounds/Vortex.png' 

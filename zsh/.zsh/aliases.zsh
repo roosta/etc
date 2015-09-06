@@ -9,9 +9,8 @@
 # -------------------------------
 
 # ======= Quick edits =======
-# ---------------------------
 alias vigit='vim ~/.gitconfig'
-alias vii3='vim ~/.i3/config'
+alias vii3='vim ~/.i3/config.i3'
 alias vialias='vim ~/.zsh/aliases.zsh'
 alias vivi='vim ~/.vimrc'
 alias vivim='vim ~/.vimrc'
@@ -23,13 +22,10 @@ alias vikeys='vim ~/.xbindkeysrc'
 
 # ======= todo =======
 # placeholder. write/find script
-# --------------------
 alias todo='vim ~/.todo'
 alias lstodo='cat ~/.todo'
 
 # ======= Quick list/find  =======
-# --------------------------------
-
 # locate an alias quickly
 alias gralias="alias | grep"
 
@@ -48,7 +44,6 @@ alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 alias hxgrep='grep -r --include="*.hx"'
 
 # ======= safety =======
-# ----------------------
 alias mv=' timeout 8 mv -iv'
 alias rm=' timeout 3 rm -Iv --one-file-system'
 alias cp='cp -i'
@@ -71,9 +66,7 @@ alias mkdir='mkdir -pv'
 
 # ======= Movement ========
 # dirstack needs some extra config, see dirstack.sh
-#--------------------------
 alias cd..='cd ..'
-
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
@@ -106,7 +99,6 @@ alias lsa="ls -lAhpXk --color=auto --group-directories-first"
 alias dir='ls++ --potsf -lAhpXk'
 
 # ======= Security =======
-# -------------------
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd; sudo rkhunter --check"
 alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
 alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
@@ -114,71 +106,29 @@ alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."
 
 # ======= Pacman =======
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
-# ----------------------
+alias pacman='pacaur' # use pacaur as a pacman extension
+alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacdl='pacman -Sw' # Download specified package(s) as .tar.xz ball
+alias pacs='pacman -S' # Install specific package(s) from the repositories
+alias pacu='pacman -U' # Install specific package not from the repositories but from a file
+alias pacrm='pacman -R' # Remove the specified package(s), retaining its configuration(s) and required dependencies
+alias pacrmf='pacman -Rns' # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias pacsi='pacman -Si' # Display information about a given package in the repositories
+alias pacss='pacman -Ss' # Search for package(s) in the repositories
+alias pacqi='pacman -Qi' # Display information about a given package in the local database
+alias pacqs='pacman -Qs' # Search for package(s) in the local database
+alias pacorph="pacman -Qdt" # List all packages which are orphaned
+alias pacclean="pacman -Scc" # Clean cache - delete all the package files in the cache
+alias pacls="pacman -Ql" # List all files installed by a given package
+alias pacown="pacman -Qo" # Show package(s) owning the specified file(s)
+alias pacmir='pacman -Syy' # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
+alias pacexp='pacman -Qet' # list all packages explicitly installed and not required as dependencies
+#alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
+#alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
+#alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package and ABS databases against repositories
+#alias pacinsd='pacman -S --asdeps' # Install given package(s) as dependencies
 
-# use pacaur as a pacman extension
-alias pacman='pacaur'
-
-# Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupd='pacman -Syu'
-
-# Download specified package(s) as .tar.xz ball
-alias pacdl='pacman -Sw'
-
-# Install specific package(s) from the repositories
-alias pacs='pacman -S'
-
-# Install specific package not from the repositories but from a file
-alias pacu='pacman -U'
-
-# Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrm='pacman -R'
-
-# Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrmf='pacman -Rns'
-
-# Display information about a given package in the repositories
-alias pacsi='pacman -Si'
-
-# Search for package(s) in the repositories
-alias pacss='pacman -Ss'
-
-# Display information about a given package in the local database
-alias pacqi='pacman -Qi'
-
-# Search for package(s) in the local database
-alias pacqs='pacman -Qs'
-
-# List all packages which are orphaned
-alias pacorph="pacman -Qdt"
-
-# Clean cache - delete all the package files in the cache
-alias pacclean="pacman -Scc"
-
-# List all files installed by a given package
-alias pacls="pacman -Ql"
-
-# Show package(s) owning the specified file(s)
-alias pacown="pacman -Qo"
-
-# Mark one or more installed packages as explicitly installed
-#alias pacexpl="pacman -D --asexp"
-
-# Mark one or more installed packages as non explicitly installed
-#alias pacimpl="pacman -D --asdep"
-
-# Additional pacman alias examples
-# --------------------------------
-
-# Update and refresh the local package and ABS databases against repositories
-#alias pacupre='pacman -Sy && sudo abs'
-
-# Install given package(s) as dependencies
-#alias pacinsd='pacman -S --asdeps'
-
-# Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
-alias pacmir='pacman -Syy'
-
+#
 # AUR
 # ------
 
@@ -186,20 +136,10 @@ alias pacmir='pacman -Syy'
 #alias yaourt='pacaur'
 
 # ======= Utils =======
-# ---------------------
-
-# ignore case in grep and color output
-alias grep="grep -i --color=auto"
-
-# extract tar to directory same as filename
-alias tarx="tar --one-top-level -zxvf"
-
-# list open ports
-alias ports='netstat -tulanp'
-
-# set home variable when running pip
-alias pip='sudo -H pip'
-
+alias grep="grep -i --color=auto" # ignore case in grep and color output
+alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
+alias ports='netstat -tulanp' # list open ports
+alias pip='sudo -H pip' # set home variable when running pip
 alias tmux='tmux -2'
 alias ufw='sudo ufw'
 
@@ -223,37 +163,38 @@ alias getdate='date +"%Y-%m-%d"'
 
 alias locate='locate -i'
 
-# ======= VCS =======
-# -------------------
+alias du='du -h'
+alias df='df -h'
+alias dut='du -ht'
 
+alias logcolor='ccze'
+
+# ======= VCS =======
 # --- git ---
-alias gs='git status'
-alias gd='git diff'
-alias gc='git checkout'
-alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
-alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
-alias gaa='git add -A'
-alias commit='git commit'
-alias gca='git commit -a'
+alias gits='git status'
+alias gitd='git diff'
+alias gitout='git checkout'
+alias gitls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
+alias gitll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+alias gita='git add'
+alias gitaa='git add -A'
+alias gitc='git commit'
+alias gitca='git commit -a'
 
 # --- svn ---
-alias sst='svn status'
+alias svns='svn status'
 
 # get last commit diff
-alias slastdiff='svn log -r COMMITTED --diff'
+alias svnlastdiff='svn log -r COMMITTED --diff'
 
 # get a given rev's commit diff
-alias srevdiff='svn log --diff -r'
-alias sup='svn update'
+alias svnrevdiff='svn log --diff -r'
+alias svnup='svn update'
 
-alias slogs='svn log --limit 30|less'
-alias slogl='svn log --diff --limit 30|less'
-
-alias sldiff='svn diff|colordiff'
+alias svnlogs='svn log --limit 30|less'
+alias svnlogl='svn log --diff --limit 30|less'
 
 # ======= MISC =======
-# --------------------
-
 # merge new xresources config
 alias xrmerge="xrdb -merge ~/.Xresources"
 alias xrload="xrdb -load ~/.Xresources"

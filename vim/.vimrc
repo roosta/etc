@@ -12,6 +12,9 @@
 " must be first, because it changes other options as a side effect
 set nocompatible
 
+filetype plugin indent on
+syntax on
+
 " ────── Reload vim conf on save ───────
 " source conf on save
 augroup reload_vimrc " {
@@ -20,9 +23,6 @@ augroup reload_vimrc " {
 augroup END " }
 
 " ───────────── Options ──────────────
-syntax on
-"filetype off
-
 set clipboard=unnamed " set same clipboard for vim and X
 "set paste
 
@@ -135,8 +135,6 @@ Plug 'Valloric/YouCompleteMe' " autocompletion. Conf needed
 
 call plug#end()
 
-filetype plugin indent on
-
 " ───────────── Syntastic ──────────────
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -217,7 +215,7 @@ nmap <c-d> <plug>EasyClipSwapPasteBackwards
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italic = 1
 colorscheme gruvbox
-set background=dark    " Setting dark mode
+set background=dark " Setting dark mode
 
 " ───────────── Bufferline ──────────────
 
