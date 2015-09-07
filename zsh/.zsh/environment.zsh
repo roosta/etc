@@ -17,4 +17,7 @@ export PAGER=/usr/bin/vimpager
 alias less=$PAGER
 alias zless=$PAGER
 
+# fix display variable not beeing accessible with tty login...?
+systemctl --user import-environment DISPLAY XAUTHORITY
+
 #export LESS=-R

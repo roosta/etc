@@ -60,4 +60,4 @@ mutt/cache/*
 mutt/smime/cetificates/*
 mutt/smime/keys/*
 
-irssi/.irssi/config
+irssi/.irssi/*.pem

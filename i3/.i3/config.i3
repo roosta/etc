@@ -130,6 +130,7 @@ client.urgent           $gruvDarkMagenta    $gruvDarkMagenta  $gruvbg          $
 client.placeholder      $gruvbgsoft         $gruvbgsoft       $gruvbgsoft      $gruvMagenta
 
 bar {
+  position top
   tray_output primary
   font $font_status_lintilla
   status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf

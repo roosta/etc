@@ -102,15 +102,14 @@ nnoremap <C-q> :bd<CR>
 "nnoremap <leader>P "+p
 
 " ───────────── Plugins ──────────────
-" set the runtime path to include Vundle and initialize
 call plug#begin('~/.vim/plugged')
 
 " on demand plugins
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " filetree in vim
-Plug 'majutsushi/tagbar' " generate a sidebar with ctags
 
 " always load
+Plug 'majutsushi/tagbar' " generate a sidebar with ctags
 Plug 'jdonaldson/vaxe' " vim support for haxe projects
 Plug 'tpope/vim-surround' " Quickly surround text
 Plug 'tpope/vim-repeat' " Quickly surround text
@@ -121,17 +120,17 @@ Plug 'kien/ctrlp.vim' " well, maybe this one too...
 Plug 'scrooloose/nerdcommenter' " commend code qickly with syntax support
 Plug 'morhetz/gruvbox' " awesome colorscheme
 Plug 'scrooloose/syntastic' " lint and error checking
-"Plug 'PotatoesMaster/i3-vim-syntax' " some extra syntax
 Plug 'sheerun/vim-polyglot' " lots more syntax
 Plug 'easymotion/vim-easymotion' " move around text with new motions
 Plug 'unblevable/quick-scope' " add visuals to fFtT movements
 Plug 'bling/vim-airline' " statusbar
 Plug 'ntpeters/vim-better-whitespace' " highlight and strip unneeded whitespace
 Plug 'bling/vim-bufferline' " list buffers in statusbar
-
-" ajshdkjahsd
-"Plug 'edkolev/promptline.vim' " a airline prompt generator for shell
 Plug 'Valloric/YouCompleteMe' " autocompletion. Conf needed
+
+" some ..line generators
+"Plug 'edkolev/promptline.vim' " a airline prompt generator for shell
+Plug 'edkolev/tmuxline.vim' " an airline tmux statusbar generator
 
 call plug#end()
 
