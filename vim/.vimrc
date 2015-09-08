@@ -12,18 +12,16 @@
 " must be first, because it changes other options as a side effect
 set nocompatible
 
-filetype plugin indent on
-syntax on
-
 " ────── Reload vim conf on save ───────
 " source conf on save
-augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END " }
+"augroup reload_vimrc " {
+    "autocmd!
+    "autocmd BufWritePost $MYVIMRC source $MYVIMRC
+"augroup END " }
 
 " ───────────── Options ──────────────
-set clipboard=unnamed " set same clipboard for vim and X
+" using EasyClip. See Plugins
+"set clipboard=unnamed " set same clipboard for vim and X
 "set paste
 
 " maintain undo history between sessions
@@ -31,46 +29,53 @@ set undofile
 set undodir=~/.vim/undo
 set noswapfile
 
-" command line completion
-set wildmenu
+" wildmenu
+set wildmenu " command line completion
 set wildmode=longest,list,full
 "set wildmode=longest:full,full
 set wildignorecase
-set ignorecase
-set smartcase
-set smartindent
-set smarttab
-set scrolloff=3
-set showmatch " show matching brackets/parenthesis
-set matchtime=2 " time to display matching brackets
+
 set backspace=indent,eol,start " fix backspace behaviour
-set shortmess+=I " dont display startup message
-set t_Co=256 " force 256colors
+
+" interface
 set timeoutlen=1000 ttimeoutlen=0 " adjust timeouts for escaping normal mode.
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=1 " Always display the tabline, even if there is only one tab
+set showcmd " show partial command in last line of screen
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set magic " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set shortmess+=I " dont display startup message
+set scrolloff=3
+set t_Co=256 " force 256colors
 set lazyredraw " stop unnecessary rendering
-set showcmd " stop unnecessary rendering
-set number " show line numbers
+
+" Highlights
 "set cc=80
 set cursorline " highlight current line
 set wrap " show line numbers
-"set autowrite
-
-" line up soft-wrap prefix with the line numbers
-"set showbreak=------>\
-"set showbreak=↪
-set showbreak=\ \ \ \ \ \ ↳\
-set cpoptions+=n " show line numbers
-set shiftwidth=2 " use indents of 2 spaces
-set expandtab " tabs are spaces
-set tabstop=2 " use indents of 2 spaces
-set softtabstop=2 " let backspace delete indent
+set number " show line numbers
+set matchtime=2 " time to display matching brackets
+set showmatch " show matching brackets/parenthesis
 
 " searching
-"set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set magic
+
+" line up soft-wrap prefix with the line numbers
+set showbreak=\ \ \ \ \ \ ↳\
+set cpoptions+=n " show line numbers
+
+" Indentation
+set expandtab " tabs are spaces
+set shiftwidth=2 " use indents of 2 spaces
+set tabstop=2 " use indents of 2 spaces
+set softtabstop=2 " let backspace delete indent
+set smartindent
+set smarttab
+
+" searching
+set hlsearch
 set incsearch
 set gdefault " the /g flag on :s substitutions by default
 " highlight column "set cursorcolumn
@@ -90,7 +95,11 @@ endif
 " change mapleader
 "let mapleader = ","
 
+" quickly quit a buffer.
 nnoremap <C-q> :bd<CR>
+
+" press enter to exit search highlight
+nnoremap <CR> :nohlsearch<CR><CR>
 
 " access x clipboard with leader+p/y
 "nnoremap <leader>y "+y
@@ -134,6 +143,9 @@ Plug 'edkolev/tmuxline.vim' " an airline tmux statusbar generator
 
 call plug#end()
 
+filetype plugin indent on
+syntax on
+
 " ───────────── Syntastic ──────────────
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -159,7 +171,7 @@ let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project']
 let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 1
 "let g:ctrlp_follow_symlinks = 1
-"let g:ctrlp_show_hidden = 1
+let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'r'
 
 " ───────────── NERDTree ───────────────
@@ -194,7 +206,7 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 
 " ────────────── Airline ────────────────
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#bufferline#overwrite_variables=0
+
 " ────────────── Easyclip ───────────────
 
 " remap mark to gm since EasyClip cut shadows m key
@@ -217,13 +229,13 @@ colorscheme gruvbox
 set background=dark " Setting dark mode
 
 " ───────────── Bufferline ──────────────
-
-"let g:bufferline_active_buffer_left = '['
-"let g:bufferline_active_buffer_right = ']'
-"let g:bufferline_modified = '+'
+let g:bufferline_active_buffer_left = ''
+let g:bufferline_active_buffer_right = ''
+let g:bufferline_modified = '+'
+let g:airline#extensions#bufferline#overwrite_variables=0
 let g:bufferline_active_highlight = 'StatusLine'
 let g:bufferline_show_bufnr = 0
-"let g:bufferline_echo = 0
+let g:bufferline_echo = 0
 autocmd VimEnter *
   \ let &statusline='%{bufferline#refresh_status()}'
     \ .bufferline#get_status_string()

@@ -27,7 +27,7 @@ alias lstodo='cat ~/.todo'
 
 # ======= Quick list/find  =======
 # locate an alias quickly
-alias gralias="alias | grep"
+alias gra="alias | grep"
 
 # grep command history quickly
 alias grhist="cat ~/.histfile | grep"
