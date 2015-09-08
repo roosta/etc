@@ -59,3 +59,5 @@ centerim/pid
 mutt/cache/*
 mutt/smime/cetificates/*
 mutt/smime/keys/*
+
+irssi/.irssi/*.pem

@@ -58,7 +58,7 @@ use_console_editor = yes
 
 # Playlist
 #song_columns_list_format = "(3f)[white]{n} (40)[default]{t|f} (25)[magenta]{a} (30)[blue]{b} (4f)[white]{l}"
-song_columns_list_format = "$L(9)[white]{l} (20)[red]{a} (30)[green]{b}$R(20)[cyan]{t}"
+song_columns_list_format = "$L(9)[white]{l} (20)[blue]{a} (30)[green]{b}$R(20)[cyan]{t}"
 #song_columns_list_format = "$L(9)[black]{l} (20)[red]{a} (30)[blue]{b} $L(20)[default]{t}"
 now_playing_prefix = "$b"
 now_playing_suffix = "$/b"

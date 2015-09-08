@@ -1,6 +1,6 @@
 
 #export MANPATH=/usr/local/man:$MANPATH
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:/usr/local/bin:$PATH
 
 # set env to tell ranger not to use default config
 export RANGER_LOAD_DEFAULT_RC="false"
@@ -16,5 +16,8 @@ export VISUAL=vim
 export PAGER=/usr/bin/vimpager
 alias less=$PAGER
 alias zless=$PAGER
+
+# fix display variable not beeing accessible with tty login...?
+systemctl --user import-environment DISPLAY XAUTHORITY
 
 #export LESS=-R
