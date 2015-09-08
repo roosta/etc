@@ -107,7 +107,7 @@ alias dir='ls++ --potsf -lAhpXk'
 
 # ======= Security =======
 # -------------------
-alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd; sudo rkhunter --check"
+alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
 alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
 alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
 alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."

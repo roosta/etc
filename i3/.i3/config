@@ -61,6 +61,7 @@ assign [class="Atom"] $WS2
 assign [class="Firefox"] $WS3
 assign [class="chrome"] $WS5
 assign [class="Steam"] $WS6
+assign [class="Spotify"] $WS5
 
 for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -76,15 +77,12 @@ for_window [title="Friends"]  floating enable
 # ─────────────  Appearance  ──────────────
 # ─────────────────────────────────────────
 # assign various fonts
-#set $font_lintilla -*-terminalpants-*-*-*-*-12-*-*-*-*-*-iso8859-*
-set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
-
 set $font_lintilla pango: Essential PragmataPro 14px
-#set $font_status_lintilla pango: FontAwesome 14px
-
 set $font_allitnil pango: Essential PragmataPro 15px
 set $font_status_allitnil pango: Essential PragmataPro 14px
+set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
 
+# set used font
 font $font_lintilla
 
 # define sweetlove colors
