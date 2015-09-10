@@ -13,12 +13,13 @@
 # ───────────────────────────────────────────────────────────────────────
 
 # ─────────────  Layout  ──────────────
-#set $primary_monitor DVI-I-1
-#set $secondary_monitor DVI-D-0
-#set $television HDMI-1
+set $primary_monitor DVI-I-1
+set $secondary_monitor DVI-D-0
+set $television HDMI-1
 
-set $primary_monitor VGA1
-set $secondary_monitor LVDS1
+# --> transform
+#set $primary_monitor VGA1
+#set $secondary_monitor LVDS1
 
 set $WS1 "1:TRM"
 set $WS2 "2:DEV"
@@ -87,9 +88,9 @@ set $font_lintilla pango: Essential PragmataPro 14px
 
 set $font_allitnil pango: Essential PragmataPro 15px
 set $font_status_allitnil pango: Essential PragmataPro 14px
-set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
+set $font_status_lintilla -*-ohsnap-medium-*-*-*-14-*-*-*-*-*-*-*
 
-#set $font_icons pango: FontAwesome 12px
+set $font_icons -*-ohsnap.icons-medium-*-*-*-14-*-*-*-*-*-*-*
 
 font $font_lintilla
 
@@ -143,10 +144,9 @@ bar {
   position top
   tray_output primary
   font $font_status_lintilla
+  font $font_icons
   status_command i3blocks -c ~/.i3/i3blocks/lint_primary.conf
-  #font $font_icons
   separator_symbol " - "
-  #separator_symbol "Ý"
   colors {
     # <bar>
     background $gruvbgsoft
@@ -165,11 +165,9 @@ bar {
   output $secondary_monitor
   status_command i3blocks -c ~/.i3/i3blocks/lint_secondary.conf
   font $font_status_lintilla
-  #font $font_icons
+  font $font_icons
   position top
   tray_output primary
-  #font $font_status_lintilla
-  #separator_symbol "] ["
   separator_symbol " - "
   colors {
     # <bar>

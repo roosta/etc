@@ -94,9 +94,8 @@ diff3-cmd = /usr/bin/diff3
 ### which Subversion will ignore in its 'status' output, and
 ### while importing or adding files and directories.
 ### '*' matches leading dots, e.g. '*.rej' matches '.foo.rej'.
-# global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo __pycache__
-#   *.rej *~ #*# .#* .*.swp .DS_Store
-global-ignores = *.tmp *.old *.bak build tags node_modules dist *.hxml
+global-ignores = *.o *.lo *.la *.al .libs *.so *.so.[0-9]* *.a *.pyc *.pyo __pycache__ *.tmp *.old *.bak build tags node_modules dist *.hxml *.rej *~ #*# .#* .*.swp .DS_Store
+#global-ignores = *.tmp *.old *.bak build tags node_modules dist *.hxml
 ### Set log-encoding to the default encoding for log messages
 # log-encoding = latin1
 ### Set use-commit-times to make checkout/update/switch/revert
@@ -146,7 +145,8 @@ enable-auto-props = yes
 *.png = svn:mime-type=image/png
 *.jpg = svn:mime-type=image/jpeg
 Makefile = svn:eol-style=native
-#*.xml = svn:
+*.xml = svn:mime-type=text/xml;charset=utf-8;svn:eol-style=native
+*.lime = svn:mime-type=text/xml;charset=utf-8;svn:eol-style=native
 
 ### Section for configuring working copies.
 [working-copy]

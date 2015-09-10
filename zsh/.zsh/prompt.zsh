@@ -29,8 +29,12 @@ function __promptline_host {
   local only_if_ssh="0"
 
   if [ ! $only_if_ssh -o -n "${SSH_CLIENT}" ]; then
-    if [[ -n ${ZSH_VERSION-} ]]; then print %m; elif [[ -n ${FISH_VERSION-} ]]; then hostname -s; else printf "%s" \\h; fi
+    print %m
   fi
+
+  #if [ ! $only_if_ssh -o -n "${SSH_CLIENT}" ]; then
+    #if [[ -n ${ZSH_VERSION-} ]]; then print %m; elif [[ -n ${FISH_VERSION-} ]]; then hostname -s; else printf "%s" \\h; fi
+  #fi
 }
 
 function __promptline_last_exit_code {
@@ -59,7 +63,8 @@ function __promptline_cwd {
   local first_char
   local part_count=0
   local formatted_cwd=""
-  local dir_sep="  "
+  #local dir_sep="  "
+  local dir_sep="/"
   local tilde="~"
 
   local cwd="${PWD/#$HOME/$tilde}"
@@ -81,16 +86,24 @@ function __promptline_cwd {
     [[ $part_count -eq $dir_limit ]] && first_char="$truncation" && break
   done
 
-  printf "%s" "$first_char$formatted_cwd"
+  # if dir_sep is a '/' remove leading slash when root is visble
+  if [[ $first_char = $dir_sep && $cwd != "/" ]]; then
+    printf "%s" "$formatted_cwd"
+  else
+    printf "%s" "$first_char$formatted_cwd"
+  fi
 }
+
 function __promptline_left_prompt {
   local slice_prefix slice_empty_prefix slice_joiner slice_suffix is_prompt_empty=1
 
   # section "a" header
   if [[ "$vim_mode" == "$vim_cmd_mode" ]]; then
-    slice_prefix="${a_cmd_bg}${sep}${a_cmd_fg}${a_cmd_bg}${space}" slice_suffix="$space${a_cmd_sep_fg}" slice_joiner="${a_cmd_fg}${a_cmd_bg}${alt_sep}${space}" slice_empty_prefix="${a_cmd_fg}${a_cmd_bg}${space}"
+    #slice_prefix="${a_cmd_bg}${sep}${a_cmd_fg}${a_cmd_bg}${space}" slice_suffix="$space${a_cmd_sep_fg}" slice_joiner="${a_cmd_fg}${a_cmd_bg}${alt_sep}${space}" slice_empty_prefix="${a_cmd_fg}${a_cmd_bg}${space}"
+    slice_prefix="${a_cmd_bg}${a_cmd_fg}${a_cmd_bg}${space}" slice_suffix="$space${a_cmd_sep_fg}" slice_joiner="${a_cmd_fg}${a_cmd_bg}${alt_sep}${space}" slice_empty_prefix="${a_cmd_fg}${a_cmd_bg}${space}"
   else
-    slice_prefix="${a_bg}${sep}${a_fg}${a_bg}${space}" slice_suffix="$space${a_sep_fg}" slice_joiner="${a_fg}${a_bg}${alt_sep}${space}" slice_empty_prefix="${a_fg}${a_bg}${space}"
+    #slice_prefix="${a_bg}${sep}${a_fg}${a_bg}${space}" slice_suffix="$space${a_sep_fg}" slice_joiner="${a_fg}${a_bg}${alt_sep}${space}" slice_empty_prefix="${a_fg}${a_bg}${space}"
+    slice_prefix="${a_bg}${a_fg}${a_bg}${space}" slice_suffix="$space${a_sep_fg}" slice_joiner="${a_fg}${a_bg}${alt_sep}${space}" slice_empty_prefix="${a_fg}${a_bg}${space}"
   fi
   # section "a" slices
   __promptline_wrapper "$vim_mode" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
@@ -213,13 +226,7 @@ function __promptline {
   local last_exit_code="${PROMPTLINE_LAST_EXIT_CODE:-$?}"
 
   local esc=$'[' end_esc=m
-  if [[ -n ${ZSH_VERSION-} ]]; then
-    local noprint='%{' end_noprint='%}'
-  elif [[ -n ${FISH_VERSION-} ]]; then
-    local noprint='' end_noprint=''
-  else
-    local noprint='\[' end_noprint='\]'
-  fi
+  local noprint='%{' end_noprint='%}'
   local wrap="$noprint$esc" end_wrap="$end_esc$end_noprint"
   local space=" "
   local sep=""
@@ -228,62 +235,45 @@ function __promptline {
   local alt_rsep=""
   local reset="${wrap}0${end_wrap}"
   local reset_bg="${wrap}49${end_wrap}"
+
   local a_fg="${wrap}38;5;235${end_wrap}"
   local a_bg="${wrap}48;5;109${end_wrap}"
   local a_sep_fg="${wrap}38;5;109${end_wrap}"
-  local b_fg="${wrap}38;5;246${end_wrap}"
-  local b_bg="${wrap}48;5;239${end_wrap}"
-  local b_sep_fg="${wrap}38;5;239${end_wrap}"
-  #local c_fg="${wrap}38;5;223${end_wrap}"
-  #local c_bg="${wrap}48;5;239${end_wrap}"
-  #local c_sep_fg="${wrap}38;5;239${end_wrap}"
-  local warn_fg="${wrap}38;5;235${end_wrap}"
-  local warn_bg="${wrap}48;5;208${end_wrap}"
-  local warn_sep_fg="${wrap}38;5;208${end_wrap}"
-  local x_fg="${wrap}38;5;223${end_wrap}"
-  local x_bg="${wrap}48;5;239${end_wrap}"
-  local x_sep_fg="${wrap}38;5;239${end_wrap}"
-  local y_fg="${wrap}38;5;246${end_wrap}"
-  local y_bg="${wrap}48;5;239${end_wrap}"
-  local y_sep_fg="${wrap}38;5;239${end_wrap}"
-  local z_fg="${wrap}38;5;235${end_wrap}"
-  local z_bg="${wrap}48;5;246${end_wrap}"
-  local z_sep_fg="${wrap}38;5;246${end_wrap}"
-
-  local c_fg="${wrap}38;5;0${end_wrap}"
-  local c_bg="${wrap}48;5;5${end_wrap}"
-  local c_sep_fg="${wrap}38;5;5${end_wrap}"
 
   local a_cmd_fg="${wrap}38;5;235${end_wrap}"
   local a_cmd_bg="${wrap}48;5;246${end_wrap}"
   local a_cmd_sep_fg="${wrap}38;5;246${end_wrap}"
 
+  local b_fg="${wrap}38;5;246${end_wrap}"
+  local b_bg="${wrap}48;5;239${end_wrap}"
+  local b_sep_fg="${wrap}38;5;239${end_wrap}"
+
+  local c_fg="${wrap}38;5;0${end_wrap}"
+  local c_bg="${wrap}48;5;5${end_wrap}"
+  local c_sep_fg="${wrap}38;5;5${end_wrap}"
+
+  local warn_fg="${wrap}38;5;235${end_wrap}"
+  local warn_bg="${wrap}48;5;208${end_wrap}"
+  local warn_sep_fg="${wrap}38;5;208${end_wrap}"
+
+  local x_fg="${wrap}38;5;223${end_wrap}"
+  local x_bg="${wrap}48;5;239${end_wrap}"
+  local x_sep_fg="${wrap}38;5;239${end_wrap}"
+
+  local y_fg="${wrap}38;5;246${end_wrap}"
+  local y_bg="${wrap}48;5;239${end_wrap}"
+  local y_sep_fg="${wrap}38;5;239${end_wrap}"
+
+  local z_fg="${wrap}38;5;235${end_wrap}"
+  local z_bg="${wrap}48;5;246${end_wrap}"
+  local z_sep_fg="${wrap}38;5;246${end_wrap}"
+
   #local a_fg="${wrap}38;5;235${end_wrap}"
   #local a_bg="${wrap}48;5;246${end_wrap}"
   #local a_sep_fg="${wrap}38;5;246${end_wrap}"
 
-  if [[ -n ${ZSH_VERSION-} ]]; then
-    PROMPT="$(__promptline_left_prompt)"
-    RPROMPT="$(__promptline_right_prompt)"
-  elif [[ -n ${FISH_VERSION-} ]]; then
-    if [[ -n "$1" ]]; then
-      [[ "$1" = "left" ]] && __promptline_left_prompt || __promptline_right_prompt
-    else
-      __promptline_ps1
-    fi
-  else
-    PS1="$(__promptline_ps1)"
-  fi
+  PROMPT="$(__promptline_left_prompt)"
+  RPROMPT="$(__promptline_right_prompt)"
 }
 
-if [[ -n ${ZSH_VERSION-} ]]; then
-  if [[ ! ${precmd_functions[(r)__promptline]} == __promptline ]]; then
-    precmd_functions+=(__promptline)
-  fi
-elif [[ -n ${FISH_VERSION-} ]]; then
-  __promptline "$1"
-else
-  if [[ ! "$PROMPT_COMMAND" == *__promptline* ]]; then
-    PROMPT_COMMAND='__promptline;'$'\n'"$PROMPT_COMMAND"
-  fi
-fi
+precmd_functions+=(__promptline)
