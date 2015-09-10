@@ -30,18 +30,18 @@ alias lstodo='cat ~/.todo'
 alias gra="alias | grep"
 
 # grep command history quickly
-alias grhist="cat ~/.histfile | grep"
+alias greh="cat ~/.histfile | grep"
 
 # echo path variable
 alias lspath='echo -e ${PATH//:/\\n}'
 
 # locate file at working dir
-alias grfile='lsa|grep'
+alias gref='lsa -R|grep'
 
 # list pulseaudio sinks
 alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
-alias hxgrep='grep -r --include="*.hx"'
+alias grehx='grep -R --include="*.hx"'
 
 # ======= safety =======
 alias mv=' timeout 8 mv -iv'
@@ -99,7 +99,8 @@ alias lsa="ls -lAhpXk --color=auto --group-directories-first"
 alias dir='ls++ --potsf -lAhpXk'
 
 # ======= Security =======
-alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd; sudo rkhunter --check"
+# -------------------
+alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
 alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
 alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
 alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."
@@ -193,6 +194,7 @@ alias svnup='svn update'
 
 alias svnlogs='svn log --limit 30|less'
 alias svnlogl='svn log --diff --limit 30|less'
+alias svnd='svn diff'
 
 # ======= MISC =======
 # merge new xresources config
@@ -214,3 +216,7 @@ alias claer='clear'
 alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
 
 alias repl='haxelib run ihx'
+
+
+# ======= Paths =======
+alias tl='/home/transform'

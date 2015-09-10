@@ -39,9 +39,12 @@ xbindkeys
 
 # ────────────── Displays ──────────────
 # set display layout
-xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
-       --output DVI-D-0 --auto --left-of DVI-I-1 \
-       --output HDMI-0 --off
+#xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
+       #--output DVI-D-0 --auto --left-of DVI-I-1 \
+       #--output HDMI-0 --off
+
+xrandr --output VGA1 --primary --auto --pos 0x0 \
+       --output LVDS1 --auto --left-of VGA1
 
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
 #xset dpms 600 1200 2000 &

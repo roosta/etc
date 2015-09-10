@@ -61,3 +61,7 @@ mutt/smime/cetificates/*
 mutt/smime/keys/*
 
 irssi/.irssi/*.pem
+
+svn/.subversion/auth/**
+
+svn/*/README.txt

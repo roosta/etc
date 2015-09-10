@@ -13,9 +13,12 @@
 # ───────────────────────────────────────────────────────────────────────
 
 # ─────────────  Layout  ──────────────
-set $primary_monitor DVI-I-1
-set $secondary_monitor DVI-D-0
-set $television HDMI-0
+#set $primary_monitor DVI-I-1
+#set $secondary_monitor DVI-D-0
+#set $television HDMI-1
+
+set $primary_monitor VGA1
+set $secondary_monitor LVDS1
 
 set $WS1 "1:TRM"
 set $WS2 "2:DEV"
@@ -54,12 +57,13 @@ new_window 1pixel
 hide_edge_borders none
 
 # fix graphics glitch
-assign [class="URxvt"] $WS1
+#assign [class="URxvt"] $WS1
 assign [class="subl3"] $WS2
 assign [class="Atom"] $WS2
 assign [class="Firefox"] $WS3
 assign [class="chrome"] $WS5
 assign [class="Steam"] $WS6
+assign [class="Spotify"] $WS5
 
 for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -83,6 +87,7 @@ set $font_lintilla pango: Essential PragmataPro 14px
 
 set $font_allitnil pango: Essential PragmataPro 15px
 set $font_status_allitnil pango: Essential PragmataPro 14px
+set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
 
 #set $font_icons pango: FontAwesome 12px
 
