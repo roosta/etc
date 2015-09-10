@@ -8,5 +8,10 @@ case "$(xset -q|grep LED| awk '{ print $10 }')" in
   "00001002") KBD="NO" ;;
   *) KBD="unknown" ;;
 esac
+
 echo $KBD
-echo "#305D5F"
+if [[ $KBD = "US" ]]; then
+  echo "#448487"
+else
+  echo "#FA4833"
+fi

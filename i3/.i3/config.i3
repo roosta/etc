@@ -15,7 +15,7 @@
 # ─────────────  Layout  ──────────────
 set $primary_monitor DVI-I-1
 set $secondary_monitor DVI-D-0
-set $television HDMI-1
+set $television HDMI-0
 
 set $WS1 "1:TRM"
 set $WS2 "2:DEV"
@@ -75,13 +75,16 @@ for_window [title="Friends"]  floating enable
 # ─────────────  Appearance  ──────────────
 # assign various fonts
 #set $font_lintilla -*-terminalpants-*-*-*-*-12-*-*-*-*-*-iso8859-*
-set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
+#set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
+set $font_status_lintilla pango: Essential PragmataPro 12px
 
 set $font_lintilla pango: Essential PragmataPro 14px
 #set $font_status_lintilla pango: FontAwesome 14px
 
 set $font_allitnil pango: Essential PragmataPro 15px
 set $font_status_allitnil pango: Essential PragmataPro 14px
+
+#set $font_icons pango: FontAwesome 12px
 
 font $font_lintilla
 
@@ -122,33 +125,61 @@ set $gruvfg2 #D4C3A0
 set $gruvfg1 #E9DAB1
 set $gruvfg0 #F9EFC6
 
-# class                 <border>            <bg>              <fg>             <indicator>
-client.focused          $gruvDarkGray       $gruvDarkGray     $gruvBlack       $gruvDarkMagenta
-client.focused_inactive $gruvDarkGray       $gruvbgsoft       $gruvfg          $gruvbgsoft
-client.unfocused        $gruvbghard         $gruvbghard       $gruvDarkGray    $gruvbghard
-client.urgent           $gruvDarkMagenta    $gruvDarkMagenta  $gruvbg          $gruvDarkMagenta
-client.placeholder      $gruvbgsoft         $gruvbgsoft       $gruvbgsoft      $gruvMagenta
+# <class> <border> <bg> <fg> <indicator>
+client.focused $gruvDarkGray $gruvDarkGray $gruvBlack $gruvDarkMagenta
+client.focused_inactive $gruvDarkGray $gruvbgsoft $gruvfg $gruvbgsoft
+client.unfocused $gruvbghard $gruvbghard $gruvDarkGray $gruvbghard
+client.urgent $gruvDarkMagenta $gruvDarkMagenta $gruvbg $gruvDarkMagenta
+client.placeholder $gruvbgsoft $gruvbgsoft $gruvbgsoft $gruvMagenta
 
 bar {
+  output $primary_monitor
+  output $television
   position top
   tray_output primary
   font $font_status_lintilla
-  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf
-  separator_symbol "Ý"
+  status_command i3blocks -c ~/.i3/i3blocks/lint_primary.conf
+  #font $font_icons
+  separator_symbol " - "
+  #separator_symbol "Ý"
   colors {
-
     # <bar>
-    background  $gruvbgsoft
-    separator   $gruvfg
-    #statusline  #ffffff
+    background $gruvbgsoft
+    separator $gruvbg2
+    #statusline #ffffff
 
-    # <workclass>       <border>            <bg>                <text>
-    focused_workspace   $gruvDarkGray       $gruvDarkGray       $gruvBlack
-    active_workspace    $gruvDarkGray       $gruvbgsoft         $gruvfg
-    inactive_workspace  $gruvbgsoft         $gruvbgsoft         $gruvDarkGray
-    urgent_workspace    $gruvDarkMagenta    $gruvDarkMagenta    $gruvbg
+    # <workclass> <border> <bg> <text>
+    focused_workspace $gruvMagenta $gruvMagenta $gruvBlack
+    active_workspace $gruvfg2 $gruvfg2 $gruvBlack
+    inactive_workspace $gruvbgSoft $gruvbgSoft $gruvfg2
+    urgent_workspace $gruvDarkOrange $gruvDarkOrange $gruvBlack
   }
 }
+
+bar {
+  output $secondary_monitor
+  status_command i3blocks -c ~/.i3/i3blocks/lint_secondary.conf
+  font $font_status_lintilla
+  #font $font_icons
+  position top
+  tray_output primary
+  #font $font_status_lintilla
+  #separator_symbol "] ["
+  separator_symbol " - "
+  colors {
+    # <bar>
+    background  $gruvbgsoft
+    separator   $gruvbg2
+    statusline  #123123
+
+    # <workclass> <border> <bg> <text>
+    focused_workspace $gruvMagenta $gruvMagenta $gruvBlack
+    active_workspace $gruvfg2 $gruvfg2 $gruvBlack
+    inactive_workspace $gruvbgSoft $gruvbgSoft $gruvfg2
+    urgent_workspace $gruvDarkOrange $gruvDarkOrange $gruvBlack
+  }
+}
+
 # ──────────────── Misc ────────────────
 focus_follows_mouse no
 

@@ -38,4 +38,4 @@ fi
 
 echo "$STATE" # full_text
 echo "$STATE" # short_text
-echo "#FFFFFF"  # color
+echo "#c0b18b"  # color
