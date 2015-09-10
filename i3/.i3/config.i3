@@ -13,9 +13,12 @@
 # ───────────────────────────────────────────────────────────────────────
 
 # ─────────────  Layout  ──────────────
-set $primary_monitor DVI-I-1
-set $secondary_monitor DVI-D-0
-set $television HDMI-1
+#set $primary_monitor DVI-I-1
+#set $secondary_monitor DVI-D-0
+#set $television HDMI-1
+
+set $primary_monitor VGA1
+set $secondary_monitor LVDS1
 
 set $WS1 "1:TRM"
 set $WS2 "2:DEV"
@@ -54,7 +57,7 @@ new_window 1pixel
 hide_edge_borders none
 
 # fix graphics glitch
-assign [class="URxvt"] $WS1
+#assign [class="URxvt"] $WS1
 assign [class="subl3"] $WS2
 assign [class="Atom"] $WS2
 assign [class="Firefox"] $WS3
@@ -120,31 +123,32 @@ set $gruvfg2 #D4C3A0
 set $gruvfg1 #E9DAB1
 set $gruvfg0 #F9EFC6
 
-# class                 <border>            <bg>              <fg>             <indicator>
-client.focused          $gruvDarkGray       $gruvDarkGray     $gruvBlack       $gruvDarkMagenta
-client.focused_inactive $gruvDarkGray       $gruvbgsoft       $gruvfg          $gruvbgsoft
-client.unfocused        $gruvbghard         $gruvbghard       $gruvDarkGray    $gruvbghard
-client.urgent           $gruvDarkMagenta    $gruvDarkMagenta  $gruvbg          $gruvDarkMagenta
-client.placeholder      $gruvbgsoft         $gruvbgsoft       $gruvbgsoft      $gruvMagenta
+# <class>, <border>, <bg>, <fg>, <indicator>
+client.focused $gruvDarkMagenta $gruvbgSoft $gruvfg $gruvDarkMagenta
+client.focused_inactive $gruvDarkGray $gruvDarkGray $gruvfg $gruvbgsoft
+client.unfocused $gruvfg4 $gruvbgsoft $gruvfg4 $gruvbghard
+client.urgent $gruvDarkOrange $gruvDarkOrange $gruvbg $gruvDarkOrange
+client.placeholder $gruvbgsoft $gruvbgsoft $gruvbgsoft $gruvMagenta
 
 bar {
   position top
   tray_output primary
   font $font_status_lintilla
-  status_command i3blocks -c ~/.i3/i3blocks/lintilla.conf
-  separator_symbol "Ý"
+  status_command i3blocks -c ~/.i3/i3blocks/transform.conf
+  #separator_symbol "Ý"
+  separator_symbol " - "
   colors {
 
     # <bar>
-    background  $gruvbgsoft
-    separator   $gruvfg
+    background $gruvbgsoft
+    separator $gruvGray
     #statusline  #ffffff
 
-    # <workclass>       <border>            <bg>                <text>
-    focused_workspace   $gruvDarkGray       $gruvDarkGray       $gruvBlack
-    active_workspace    $gruvDarkGray       $gruvbgsoft         $gruvfg
-    inactive_workspace  $gruvbgsoft         $gruvbgsoft         $gruvDarkGray
-    urgent_workspace    $gruvDarkMagenta    $gruvDarkMagenta    $gruvbg
+    # <class>, <border>, <bg>, <text>
+    focused_workspace $gruvDarkMagenta $gruvbgsoft $gruvfg
+    active_workspace $gruvDarkGray $gruvbgsoft $gruvfg
+    inactive_workspace $gruvbgsoft $gruvbgsoft $gruvDarkGray
+    urgent_workspace $gruvDarkOrange $gruvDarkOrange $gruvbg
   }
 }
 # ──────────────── Misc ────────────────

@@ -24,6 +24,8 @@ set nocompatible
 "set clipboard=unnamed " set same clipboard for vim and X
 "set paste
 
+set autowrite
+
 " maintain undo history between sessions
 set undofile
 set undodir=~/.vim/undo
@@ -139,7 +141,7 @@ Plug 'Valloric/YouCompleteMe' " autocompletion. Conf needed
 
 " some ..line generators
 "Plug 'edkolev/promptline.vim' " a airline prompt generator for shell
-Plug 'edkolev/tmuxline.vim' " an airline tmux statusbar generator
+"Plug 'edkolev/tmuxline.vim' " an airline tmux statusbar generator
 
 call plug#end()
 
@@ -165,14 +167,13 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " ─────────────── Ctrl-P ───────────────
-map <c-b> :CtrlPBuffer<CR>
-map <leader>p :CtrlPTag<CR>
 let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project']
 let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 1
-"let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'r'
+map <C-b> :CtrlPBuffer<CR>
 
 " ───────────── NERDTree ───────────────
 map <leader>n :NERDTreeToggle<CR>
@@ -241,13 +242,12 @@ autocmd VimEnter *
     \ .bufferline#get_status_string()
 
 " ──────────────── Vaxe ─────────────────
-"let g:vaxe_cache_server = 1
-"let g:vaxe_prefer_lime = 1
-let g:vaxe_lime_target = 'html5'
-"let g:vaxe_openfl_target = 'html5'
-"let g:vaxe_cache_server_autostart = 1
+let g:vaxe_cache_server = 1
+let g:vaxe_prefer_lime = 1
+let g:vaxe_lime_target = 'html5 -debug'
+let g:vaxe_cache_server_autostart = 1
 let g:vaxe_completion_prevent_bufwrite_events = 1
-"let g:vaxe_completion_disable_optimizations = 0
+let g:vaxe_completion_disable_optimizations = 0
 
 " ─────────────── Tagbar ────────────────
 nmap <leader>t :TagbarToggle<CR>

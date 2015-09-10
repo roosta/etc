@@ -151,10 +151,10 @@
     #icon_folders = /usr/share/icons/Flattr/status/scalable/:/usr/share/icons/Flattr/devices/scalable/
 
 [frame]
-    #width = 3
+    width = 1
     #color = "#aaaaaa"
     width = 0
-    color = "#111113"
+    color = "#b16286"
 
 [shortcuts]
 
@@ -180,20 +180,20 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#26282B"
-    foreground = "#CECFD1"
+    background = "#32302f"
+    foreground = "#ebdbb2"
     timeout = 5
 
 [urgency_normal]
     #background = "#285577"
     #foreground = "#CECFD1"
-    background = "#26282B"
-    foreground = "#CECFD1"
+    background = "#32302f"
+    foreground = "#ebdbb2"
     timeout = 5
 
 [urgency_critical]
-    background = "#26282B"
-    foreground = "#CECFD1"
+    background = "#D55C0D"
+    foreground = "#252525"
     timeout = 0
 
 
