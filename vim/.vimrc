@@ -58,12 +58,6 @@ set number " show line numbers
 set matchtime=2 " time to display matching brackets
 set showmatch " show matching brackets/parenthesis
 
-" searching
-set incsearch
-set ignorecase
-set smartcase
-set magic
-
 " line up soft-wrap prefix with the line numbers
 set showbreak=\ \ \ \ \ \ ↳\
 set cpoptions+=n " show line numbers
@@ -73,12 +67,16 @@ set expandtab " tabs are spaces
 set shiftwidth=2 " use indents of 2 spaces
 set tabstop=2 " use indents of 2 spaces
 set softtabstop=2 " let backspace delete indent
-set smartindent
-set smarttab
+"set smartindent
+"set smarttab
 
 " searching
-set hlsearch
+"set hlsearch
 set incsearch
+set ignorecase
+set smartcase
+set magic
+"set incsearch
 set gdefault " the /g flag on :s substitutions by default
 " highlight column "set cursorcolumn
 
@@ -98,10 +96,10 @@ endif
 "let mapleader = ","
 
 " quickly quit a buffer.
-nnoremap <C-q> :bd<CR>
+"nnoremap <c-q> :bd<CR>
 
 " press enter to exit search highlight
-nnoremap <CR> :nohlsearch<CR><CR>
+"nnoremap <CR> :nohlsearch<CR><CR>
 
 " access x clipboard with leader+p/y
 "nnoremap <leader>y "+y
@@ -111,19 +109,22 @@ nnoremap <CR> :nohlsearch<CR><CR>
 "vnoremap <leader>p "+p
 "nnoremap <leader>p "+p
 "nnoremap <leader>P "+p
+" Move across wrapped lines like regular lines
+noremap 0 ^ " Go to the first non-blank character of a line
+noremap ^ 0 " Just in case you need to go to the very beginning of a line
 
 " ───────────── Plugins ──────────────
 call plug#begin('~/.vim/plugged')
 
 " on demand plugins
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " filetree in vim
 
 " always load
 Plug 'majutsushi/tagbar' " generate a sidebar with ctags
 Plug 'jdonaldson/vaxe' " vim support for haxe projects
 Plug 'tpope/vim-surround' " Quickly surround text
-Plug 'tpope/vim-repeat' " Quickly surround text
+Plug 'tpope/vim-repeat' " add more support for command repeat
 Plug 'tpope/vim-eunuch' " add sudo access in vim.
 Plug 'svermeulen/vim-easyclip' " simplyfy yank and paste
 Plug 'terryma/vim-multiple-cursors' " the one feature in st I really missed
@@ -136,7 +137,7 @@ Plug 'easymotion/vim-easymotion' " move around text with new motions
 Plug 'unblevable/quick-scope' " add visuals to fFtT movements
 Plug 'bling/vim-airline' " statusbar
 Plug 'ntpeters/vim-better-whitespace' " highlight and strip unneeded whitespace
-Plug 'bling/vim-bufferline' " list buffers in statusbar
+"Plug 'bling/vim-bufferline' " list buffers in statusbar
 Plug 'Valloric/YouCompleteMe' " autocompletion. Conf needed
 
 " some ..line generators
@@ -173,27 +174,35 @@ let g:ctrlp_use_caching = 1
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'r'
-map <C-b> :CtrlPBuffer<CR>
-
-" ───────────── NERDTree ───────────────
-map <leader>n :NERDTreeToggle<CR>
-
-" show hidden files in nerdtree
-let NERDTreeShowHidden=1
-let NERDTreeShowBookmarks=1
-let NERDTreeQuitOnOpen=1
-" close vim if nerdtree is only window remaining
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+noremap <leader>p :CtrlPBufTag<CR>
+noremap <leader>P :CtrlPBufTagAll<CR>
 
 " ───────────── Easymotion ──────────────
-"let g:EasyMotion_do_mapping = 0 " Disable default mappings
-map , <Plug>(easymotion-prefix)
+" easymotion is generally <leader-x2> <key>
+" but in some cases map single leader to most used functions
 
-" Turn on case insensitive feature
+"let g:EasyMotion_do_mapping = 0 " Disable default mappings
+"map , <Plug>(easymotion-prefix)
+
 let g:EasyMotion_smartcase = 1
 
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap <Plug>(easymotion-prefix)s <Plug>(easymotion-s2)
+" map two letter motion to s
+nmap <leader>s <Plug>(easymotion-s2)
+
+" use easymotion searching
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+" line movement
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 " ───────────── Quickscope ─────────────
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
@@ -209,13 +218,14 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 let g:airline_powerline_fonts = 1
 
 " ────────────── Easyclip ───────────────
-
 " remap mark to gm since EasyClip cut shadows m key
 nnoremap gm m
 
 imap <c-v> <plug>EasyClipInsertModePaste
 cmap <c-v> <plug>EasyClipCommandModePaste
 let g:EasyClipShareYanks = 1
+
+" set common register in vim+x
 set clipboard=unnamed,unnamedplus
 
 nmap <c-f> <plug>EasyClipSwapPasteForward
@@ -229,18 +239,6 @@ let g:gruvbox_italic = 1
 colorscheme gruvbox
 set background=dark " Setting dark mode
 
-" ───────────── Bufferline ──────────────
-let g:bufferline_active_buffer_left = ''
-let g:bufferline_active_buffer_right = ''
-let g:bufferline_modified = '+'
-let g:airline#extensions#bufferline#overwrite_variables=0
-let g:bufferline_active_highlight = 'StatusLine'
-let g:bufferline_show_bufnr = 0
-let g:bufferline_echo = 0
-autocmd VimEnter *
-  \ let &statusline='%{bufferline#refresh_status()}'
-    \ .bufferline#get_status_string()
-
 " ──────────────── Vaxe ─────────────────
 let g:vaxe_cache_server = 1
 let g:vaxe_prefer_lime = 1
@@ -251,6 +249,28 @@ let g:vaxe_completion_disable_optimizations = 0
 
 " ─────────────── Tagbar ────────────────
 nmap <leader>t :TagbarToggle<CR>
+
+" ───────────── Bufferline ──────────────
+"let g:bufferline_active_buffer_left = ''
+"let g:bufferline_active_buffer_right = ''
+"let g:bufferline_modified = '+'
+"let g:airline#extensions#bufferline#overwrite_variables=0
+"let g:bufferline_active_highlight = 'StatusLine'
+"let g:bufferline_show_bufnr = 0
+"let g:bufferline_echo = 0
+"autocmd VimEnter *
+  "\ let &statusline='%{bufferline#refresh_status()}'
+    "\ .bufferline#get_status_string()
+
+" ───────────── NERDTree ───────────────
+"map <leader>n :NERDTreeToggle<CR>
+
+"" show hidden files in nerdtree
+"let NERDTreeShowHidden=1
+"let NERDTreeShowBookmarks=1
+"let NERDTreeQuitOnOpen=1
+"" close vim if nerdtree is only window remaining
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " ───────────── Promptline ──────────────
 "let g:promptline_preset = {
@@ -263,3 +283,23 @@ nmap <leader>t :TagbarToggle<CR>
   "\'z' : [ '$(date +%H:%M:%S)' ]}
 
 ": PromptlineSnapshot ~/.zsh/plugins/promptline.zsh airline_insert
+
+" ───────────── Keybinds ──────────────
+" change mapleader
+"let mapleader = ","
+
+" quickly quit a buffer.
+"nnoremap <c-q> :bd<CR>
+
+" press enter to exit search highlight
+"nnoremap <CR> :nohlsearch<CR><CR>
+
+" access x clipboard with leader+p/y
+"nnoremap <leader>y "+y
+"nnoremap <leader>yy "+yy
+"vnoremap <leader>y "+y
+"vnoremap <leader>yy "+yy
+"vnoremap <leader>p "+p
+"nnoremap <leader>p "+p
+"nnoremap <leader>P "+p
+" Move across wrapped lines like regular lines
