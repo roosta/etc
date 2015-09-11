@@ -59,7 +59,8 @@ function __promptline_vcs_branch {
 }
 function __promptline_cwd {
   local dir_limit="3"
-  local truncation="⋯"
+  #local truncation="⋯"
+  local truncation="..."
   local first_char
   local part_count=0
   local formatted_cwd=""
