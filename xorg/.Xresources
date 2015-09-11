@@ -62,7 +62,8 @@ URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.rend.0: Uline Bold fg5
 
 ! fade unfocused term
-URxvt*fading: 30
+URxvt.fading: 30
+!URxvt.fadeColor: #448487
 
 ! Meta (Alt) + keypress to set the 8th bit
 URxvt*meta8: true
@@ -83,7 +84,8 @@ URxvt*internalBorder: 0
 !URxvt*borderLess: true
 !URxvt*loginShell: true
 
-!#include "/home/daniel/.Xcolors/sweetlove.xresources"
+!URxvt.cursorColor: #82A497
+!URxvt.cursorColor2: #918273
 
 ! include gruvbox 256 color script in an attempt to improve terminal vim colors
 #include "/home/daniel/.Xcolors/gruvbox-dark.xresources"

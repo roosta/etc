@@ -80,6 +80,11 @@ set magic
 set gdefault " the /g flag on :s substitutions by default
 " highlight column "set cursorcolumn
 
+" change cursor depending on mode (VTE compatible terminals)
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
 " ───────────── GUI only ──────────────
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
