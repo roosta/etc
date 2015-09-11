@@ -15,7 +15,7 @@
 # ─────────────  Layout  ──────────────
 set $primary_monitor DVI-I-1
 set $secondary_monitor DVI-D-0
-set $television HDMI-1
+set $television HDMI-0
 
 # --> transform
 #set $primary_monitor VGA1
@@ -81,16 +81,17 @@ for_window [title="Friends"]  floating enable
 # assign various fonts
 #set $font_lintilla -*-terminalpants-*-*-*-*-12-*-*-*-*-*-iso8859-*
 #set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
-set $font_status_lintilla pango: Essential PragmataPro 12px
+#set $font_status_lintilla pango: Essential PragmataPro 12px
 
-set $font_lintilla pango: Essential PragmataPro 14px
+#set $font_lintilla pango: Essential PragmataPro 14px
+set $font_lintilla -*-terminesspowerline-*-*-normal-*-12-*-*-*-*-*-*-*
 #set $font_status_lintilla pango: FontAwesome 14px
 
 set $font_allitnil pango: Essential PragmataPro 15px
 set $font_status_allitnil pango: Essential PragmataPro 14px
-set $font_status_lintilla -*-ohsnap-medium-*-*-*-14-*-*-*-*-*-*-*
+set $font_status_lintilla -*-terminesspowerline-*-*-normal-*-12-*-*-*-*-*-*-*
 
-set $font_icons -*-ohsnap.icons-medium-*-*-*-14-*-*-*-*-*-*-*
+set $font_icons -*-terminusicons2mono-*-*-*-*-12-*-*-*-*-*-*-*
 
 font $font_lintilla
 
@@ -135,7 +136,7 @@ set $gruvfg0 #F9EFC6
 client.focused $gruvDarkGray $gruvDarkGray $gruvBlack $gruvDarkMagenta
 client.focused_inactive $gruvDarkGray $gruvbgsoft $gruvfg $gruvbgsoft
 client.unfocused $gruvbghard $gruvbghard $gruvDarkGray $gruvbghard
-client.urgent $gruvDarkMagenta $gruvDarkMagenta $gruvbg $gruvDarkMagenta
+client.urgent $gruvDarkOrange $gruvDarkOrange $gruvbg $gruvDarkOrange
 client.placeholder $gruvbgsoft $gruvbgsoft $gruvbgsoft $gruvMagenta
 
 bar {
@@ -146,7 +147,8 @@ bar {
   font $font_status_lintilla
   font $font_icons
   status_command i3blocks -c ~/.i3/i3blocks/lint_primary.conf
-  separator_symbol " - "
+  #separator_symbol " - "
+  separator_symbol "|"
   colors {
     # <bar>
     background $gruvbgsoft
@@ -154,7 +156,7 @@ bar {
     #statusline #ffffff
 
     # <workclass> <border> <bg> <text>
-    focused_workspace $gruvMagenta $gruvMagenta $gruvBlack
+    focused_workspace $gruvBlue $gruvBlue $gruvBlack
     active_workspace $gruvfg2 $gruvfg2 $gruvBlack
     inactive_workspace $gruvbgSoft $gruvbgSoft $gruvfg2
     urgent_workspace $gruvDarkOrange $gruvDarkOrange $gruvBlack
@@ -168,7 +170,7 @@ bar {
   font $font_icons
   position top
   tray_output primary
-  separator_symbol " - "
+  separator_symbol "|"
   colors {
     # <bar>
     background  $gruvbgsoft
@@ -176,7 +178,7 @@ bar {
     statusline  #123123
 
     # <workclass> <border> <bg> <text>
-    focused_workspace $gruvMagenta $gruvMagenta $gruvBlack
+    focused_workspace $gruvBlue $gruvBlue $gruvBlack
     active_workspace $gruvfg2 $gruvfg2 $gruvBlack
     inactive_workspace $gruvbgSoft $gruvbgSoft $gruvfg2
     urgent_workspace $gruvDarkOrange $gruvDarkOrange $gruvBlack
