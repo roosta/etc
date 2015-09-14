@@ -36,12 +36,15 @@ alias greh="cat ~/.histfile | grep"
 alias lspath='echo -e ${PATH//:/\\n}'
 
 # locate file at working dir
-alias gref='lsa -R|grep'
+alias gref='lsa|grep'
+alias grefr='lsa -R|grep'
 
 # list pulseaudio sinks
 alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
 alias grehx='grep -R --include="*.hx"'
+
+alias awk='gawk'
 
 # ======= safety =======
 alias mv=' timeout 8 mv -iv'
@@ -194,8 +197,9 @@ alias svnup='svn update'
 
 alias svnlogs='svn log --limit 30|less'
 alias svnlogl='svn log --diff --limit 30|less'
-alias svnd='svn diff'
-
+alias svndl='svn diff --git'
+alias svnds='svn diff --summarize'
+alias svnd='svn diff --no-diff-added -x -w'
 # ======= MISC =======
 # merge new xresources config
 alias xrmerge="xrdb -merge ~/.Xresources"
@@ -204,7 +208,7 @@ alias xrload="xrdb -load ~/.Xresources"
 # re-source zsh config files
 alias zrefresh="source $HOME/.zshrc"
 
-alias _="sudo"
+#alias _="sudo"
 
 # quit aliases
 alias :q="exit"
@@ -220,3 +224,7 @@ alias repl='haxelib run ihx'
 
 # ======= Paths =======
 alias tl='/home/transform'
+# find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
+#
+
+alias gentags='ctags -R'

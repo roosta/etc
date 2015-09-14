@@ -18,11 +18,11 @@
 
 :root {
   /* TAB VARIABLES */
-  --bg-light: #82A497;
-  --bg-dark: #32302f;
-  --fg-light: #272727;
-  --fg-dark: #EBDBB2;
-  /*--tab-triangle-correction: -1px;/**/
+  --bg-light: #32302F;
+  --bg-dark: #272727;
+  --fg-light: #82A497;
+  --fg-dark: #918273;
+  /*--tab-triangle-correction: -1px;*/
   --tab-height: 18px;
   --tab-icon-size: 10px;
   --tab-strip-margin: -11px;
@@ -112,12 +112,16 @@
 
 
   /* TABS */
-  .tabbrowser-tab[fadein]:not([pinned]) { min-width: 100px !important; max-width: /*180px*/ 100% !important; }
+  .tabbrowser-tab[fadein]:not([pinned]) {
+    min-width: 100px !important; max-width: /*180px*/ 100% !important;
+  }
+
   tab {
     font-family: var(--tab-fonts) !important;
     height: var(--tab-height) !important; min-height: var(--tab-height) !important;
     background: var(--bg-dark) !important; color: var(--fg-dark) !important;
     font-size: var(--tab-font-size); text-shadow: none !important; text-align: var(--tab-text-align) !important;
+    border: 1px solid #1C1C1C !important;
   }
 
   .tabbrowser-tab label { padding: 0 22px 0 22px !important; }
@@ -156,7 +160,10 @@
   .tabbrowser-tab[selected="true"] .tab-stack {
     background: var(--bg-light) !important; color: var(--fg-light) !important;
     border-radius: 0px !important; position: relative !important;
-    /*border-top: 1px solid #dc52a5 !important;/**/
+    /*border: 1px solid #1C1C1C !important;*/
+    /*border-right: 1px solid #1C1C1C !important;*/
+    /*border-bottom: 1px solid #1C1C1C !important;*/
+    /*border-top: none;*/
   }
   .tabbrowser-tab[selected="true"]:before { /* Left Triangle (of selected tab) */
     content: '' !important; display: var(--tab-triangle);
@@ -340,7 +347,7 @@
   scrollbar > scrollbarbutton { -moz-appearance: none !important; border: none !important; background: none !important; }
   scrollbar[orient='vertical'] > scrollbarbutton { min-height: 0 !important; }
   scrollbar[orient='horizontal'] > scrollbarbutton { min-width: 0 !important; }
-  /**/
+  */
 }
 
 

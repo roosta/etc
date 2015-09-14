@@ -21,14 +21,20 @@ set $television HDMI-0
 #set $primary_monitor VGA1
 #set $secondary_monitor LVDS1
 
+# Primary workspaces
 set $WS1 "1:TRM"
 set $WS2 "2:DEV"
 set $WS3 "3:WEB"
-set $WS4 "4:AUX"
-set $WS5 "5:MED"
-set $WS6 "6:GAM"
-set $WS7 "7:MSC"
-set $WS8 "8:MSC"
+
+# Secondary workspaces
+set $WS4 "4:DBG"
+set $WS5 "5:SOC"
+set $WS6 "6:AUX"
+
+# Entertainment workspaces
+set $WS7 "7:MED"
+set $WS8 "8:GAM"
+set $WS9 "9:MSC"
 
 bindsym $mod+1 workspace $WS1
 bindsym $mod+2 workspace $WS2
@@ -38,6 +44,7 @@ bindsym $mod+5 workspace $WS5
 bindsym $mod+6 workspace $WS6
 bindsym $mod+7 workspace $WS7
 bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
 
 bindsym $mod+Shift+1 move workspace number $WS1
 bindsym $mod+Shift+2 move workspace number $WS2
@@ -47,11 +54,19 @@ bindsym $mod+Shift+5 move workspace number $WS5
 bindsym $mod+Shift+6 move workspace number $WS6
 bindsym $mod+Shift+7 move workspace number $WS7
 bindsym $mod+Shift+8 move workspace number $WS8
+bindsym $mod+Shift+9 move workspace number $WS9
 
 workspace $WS1 output $primary_monitor
 workspace $WS2 output $primary_monitor
 workspace $WS3 output $primary_monitor
+
 workspace $WS4 output $secondary_monitor
+workspace $WS5 output $secondary_monitor
+workspace $WS6 output $secondary_monitor
+
+workspace $WS7 output $primary_monitor
+workspace $WS8 output $primary_monitor
+workspace $WS9 output $primary_monitor
 
 # set border size
 new_window 1pixel
@@ -59,12 +74,14 @@ hide_edge_borders none
 
 # fix graphics glitch
 #assign [class="URxvt"] $WS1
-assign [class="subl3"] $WS2
-assign [class="Atom"] $WS2
-assign [class="Firefox"] $WS3
-assign [class="chrome"] $WS5
-assign [class="Steam"] $WS6
-assign [class="Spotify"] $WS5
+assign [class="(?i)subl3"] $WS2
+assign [class="(?i)atom"] $WS2
+assign [class="(?i)firefox"] $WS3
+assign [class="(?i)chrome"] $WS7
+assign [class="(?i)steam"] $WS8
+assign [class="(?i)spotify"] $WS7
+assign [class="(?i)pidgin"] $WS5
+assign [class="(?i)linphone"] $WS5
 
 for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -72,27 +89,25 @@ for_window [window_role="Preferences"] floating enable
 
 # set float for spesific apps
 for_window [class="(?i)Jitsi"] floating enable
-for_window [class="SessionManager"] floating enable
-for_window [class="Firefox"]  new_window pixel 0
-for_window [title="Steam - Update News(.*)"]  floating enable
-for_window [title="Friends"]  floating enable
+for_window [class="(?i)SessionManager"] floating enable
+for_window [class="(?i)firefox"]  new_window pixel 0
+for_window [title="(?i)Steam - Update News(.*)"]  floating enable
+for_window [title="(?i)Friends"]  floating enable
+for_window [class="(?i)Pidgin"] floating enable
+for_window [class="(?i)Pidgin"] floating_maximum_size 50 x 75
+for_window [class="(?i)linphone"] floating enable
 
 # ─────────────  Appearance  ──────────────
 # assign various fonts
-#set $font_lintilla -*-terminalpants-*-*-*-*-12-*-*-*-*-*-iso8859-*
-#set $font_status_lintilla -*-terminusicons2-medium-r-normal--12-*-72-72-c-60-iso8859-*
-#set $font_status_lintilla pango: Essential PragmataPro 12px
-
-#set $font_lintilla pango: Essential PragmataPro 14px
 set $font_lintilla -*-terminesspowerline-*-*-normal-*-12-*-*-*-*-*-*-*
+#set $font_lintilla pango: Essential PragmataPro 14px
 #set $font_status_lintilla pango: FontAwesome 14px
 
 set $font_allitnil pango: Essential PragmataPro 15px
 set $font_status_allitnil pango: Essential PragmataPro 14px
-set $font_status_lintilla -*-terminesspowerline-*-*-normal-*-12-*-*-*-*-*-*-*
+set $font_status_lintilla -*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*
 
-set $font_icons -*-terminusicons2mono-*-*-*-*-12-*-*-*-*-*-*-*
-
+# Assign Actual font here:
 font $font_lintilla
 
 # define gruv colors
@@ -100,6 +115,7 @@ set $gruvbg #282828
 set $gruvfg #ebdbb2
 set $gruvbgSoft #32302f
 set $gruvbgHard #1d2021
+set $gruvbgUnfocused #1C1C1C
 set $gruvBlack #282828
 set $gruvDarkGray #928374
 set $gruvDarkRed #cc241d
@@ -133,21 +149,26 @@ set $gruvfg1 #E9DAB1
 set $gruvfg0 #F9EFC6
 
 # <class> <border> <bg> <fg> <indicator>
-client.focused $gruvDarkGray $gruvDarkGray $gruvBlack $gruvDarkMagenta
-client.focused_inactive $gruvDarkGray $gruvbgsoft $gruvfg $gruvbgsoft
-client.unfocused $gruvbghard $gruvbghard $gruvDarkGray $gruvbghard
+client.focused $gruvbgHard $gruvbgsoft $gruvBlue $gruvDarkMagenta
+client.focused_inactive $gruvbgHard $gruvbgsoft $gruvfg $gruvbgSoft
+client.unfocused $gruvbghard $gruvbg $gruvDarkGray $gruvDarkMagenta
 client.urgent $gruvDarkOrange $gruvDarkOrange $gruvbg $gruvDarkOrange
 client.placeholder $gruvbgsoft $gruvbgsoft $gruvbgsoft $gruvMagenta
+
+#client.focused $gruvBlue $gruvBlue $gruvBlack $gruvDarkMagenta
+#client.focused_inactive $gruvDarkGray $gruvbgsoft $gruvfg $gruvbgsoft
+#client.unfocused $gruvbghard $gruvbgsoft $gruvfg $gruvDarkMagenta
+#client.urgent $gruvDarkOrange $gruvDarkOrange $gruvbg $gruvDarkOrange
+#client.placeholder $gruvbgsoft $gruvbgsoft $gruvbgsoft $gruvMagenta
 
 bar {
   output $primary_monitor
   output $television
+  tray_output $secondary_monitor
+  tray_output $television
   position top
-  tray_output primary
   font $font_status_lintilla
-  font $font_icons
   status_command i3blocks -c ~/.i3/i3blocks/lint_primary.conf
-  #separator_symbol " - "
   separator_symbol "|"
   colors {
     # <bar>
@@ -167,9 +188,7 @@ bar {
   output $secondary_monitor
   status_command i3blocks -c ~/.i3/i3blocks/lint_secondary.conf
   font $font_status_lintilla
-  font $font_icons
   position top
-  tray_output primary
   separator_symbol "|"
   colors {
     # <bar>

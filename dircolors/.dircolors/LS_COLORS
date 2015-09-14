@@ -162,6 +162,7 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .sql                  38;5;222
 #   Tool Command Language
 .tcl                  38;5;64;1
+*tags                  38;5;64
 
 # compiled {{{2
 #
