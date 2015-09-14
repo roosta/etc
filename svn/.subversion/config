@@ -145,8 +145,10 @@ enable-auto-props = yes
 *.png = svn:mime-type=image/png
 *.jpg = svn:mime-type=image/jpeg
 Makefile = svn:eol-style=native
-*.xml = svn:mime-type=text/xml;charset=utf-8;svn:eol-style=native
-*.lime = svn:mime-type=text/xml;charset=utf-8;svn:eol-style=native
+*.xml = svn:mime-type=text/xml;svn:eol-style=native
+*.lime = svn:mime-type=text/xml;svn:eol-style=native
+#*.xml = svn:mime-type=text/xml;charset=utf-8;svn:eol-style=native
+#*.lime = svn:mime-type=text/xml;svn:charset=utf-8;svn:eol-style=native
 
 ### Section for configuring working copies.
 [working-copy]

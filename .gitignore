@@ -62,6 +62,9 @@ mutt/smime/keys/*
 
 irssi/.irssi/*.pem
 
+# svn
 svn/.subversion/auth/**
-
 svn/*/README.txt
+
+# ctags
+**/tags
