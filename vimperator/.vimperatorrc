@@ -1,5 +1,6 @@
 "3.9 (created: 2015/02/15 15:49:05)
 colorscheme sweetlove
+set noscrollbars
 set loadplugins
 set complete=lSt
 set focuscontent

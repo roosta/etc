@@ -7,19 +7,18 @@
 " │ Site   : http://dotfiles.roosta.sh │
 " │ Github : https://github.com/roosta │
 " └────────────────────────────────────┘
+" souces:
+" - http://amix.dk/vim/vimrc.html
+" - https://github.com/xero/dotfiles/tree/master/vim
+" - https://github.com/trapd00r/configs/tree/master/vim
+" ──────────────────────────────────────
 
 " use vim settings, rather than vi settings
 " must be first, because it changes other options as a side effect
 set nocompatible
 
-" ────── Reload vim conf on save ───────
-" source conf on save
-"augroup reload_vimrc " {
-    "autocmd!
-    "autocmd BufWritePost $MYVIMRC source $MYVIMRC
-"augroup END " }
-
-" ───────────── Options ──────────────
+" ───────────── OPTIONS ──────────────
+" ────────────────────────────────────
 " using EasyClip. See Plugins
 "set clipboard=unnamed " set same clipboard for vim and X
 "set paste
@@ -37,7 +36,8 @@ set wildmode=longest,list,full
 "set wildmode=longest:full,full
 set wildignorecase
 
-set backspace=indent,eol,start " fix backspace behaviour
+" fix backspace behaviour
+set backspace=indent,eol,start
 
 " interface
 set timeoutlen=1000 ttimeoutlen=0 " adjust timeouts for escaping normal mode.
@@ -46,12 +46,13 @@ set showtabline=1 " Always display the tabline, even if there is only one tab
 set showcmd " show partial command in last line of screen
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set shortmess+=I " dont display startup message
-set scrolloff=3
+set scrolloff=7
 set t_Co=256 " force 256colors
 set lazyredraw " stop unnecessary rendering
 
 " Highlights
-"set cc=80
+"set cc=80 " column hightlighting
+" highlight column "set cursorcolumn
 set cursorline " highlight current line
 set wrap " show line numbers
 set number " show line numbers
@@ -76,16 +77,30 @@ set incsearch
 set ignorecase
 set smartcase
 set magic
-"set incsearch
 set gdefault " the /g flag on :s substitutions by default
-" highlight column "set cursorcolumn
+
+" Tags
+"set tags+=tags " look for tag file at ./[here]
 
 " change cursor depending on mode (VTE compatible terminals)
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
-" ───────────── GUI only ──────────────
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
+" Remember info about open buffers on close
+set viminfo^=%
+
+" When you press gv you vimgrep after the selected text
+vnoremap <silent> gv :call VisualSelection('gv')<CR>
+
+" ───────────── GUI ONLY ──────────────
+" ─────────────────────────────────────
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -96,29 +111,34 @@ if has('gui_running')
   set guiheadroom=0
 endif
 
-" ───────────── Keybinds ──────────────
-" change mapleader
-"let mapleader = ","
+" ───────────── KEYBINDS ──────────────
+" ────────────────────────────────────
 
-" quickly quit a buffer.
-"nnoremap <c-q> :bd<CR>
+" change mapleade" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
+vnoremap <silent> * :call VisualSelection('f')<CR>
+vnoremap <silent> # :call VisualSelection('b')<CR>r
 
-" press enter to exit search highlight
-"nnoremap <CR> :nohlsearch<CR><CR>
-
-" access x clipboard with leader+p/y
-"nnoremap <leader>y "+y
-"nnoremap <leader>yy "+yy
-"vnoremap <leader>y "+y
-"vnoremap <leader>yy "+yy
-"vnoremap <leader>p "+p
-"nnoremap <leader>p "+p
-"nnoremap <leader>P "+p
 " Move across wrapped lines like regular lines
 noremap 0 ^ " Go to the first non-blank character of a line
 noremap ^ 0 " Just in case you need to go to the very beginning of a line
 
-" ───────────── Plugins ──────────────
+noremap <c-w>r :source $MYVIMRC<CR>
+
+" Close the current buffer
+map <leader>bd :Bclose<cr>
+
+" Close all the buffers
+map <leader>ba :1,1000 bd!<cr>
+
+" Useful mappings for managing tabs
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+
+" ───────────── PLUGINS ──────────────
+" ────────────────────────────────────
 call plug#begin('~/.vim/plugged')
 
 " on demand plugins
@@ -164,8 +184,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_ignore_files = ['sweetline.css']
-
 "───────── vim-multiple-cursor ─────────
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-l>'
@@ -183,12 +201,16 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 noremap <leader>p :CtrlPBufTag<CR>
 noremap <leader>P :CtrlPBufTagAll<CR>
+noremap <c-b> :CtrlPBuffer<CR>
 
 " ───────────── Easymotion ──────────────
-" easymotion is generally <leader-x2> <key>
+" easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
+" resoning is that EM takes up such a huge amount of binds I wanted it to have
+" its own 'space' so that single leader leaves room for other stuff
 
 "let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" define my own prefix (default <leader><leader>
 "map , <Plug>(easymotion-prefix)
 
 let g:EasyMotion_smartcase = 1
@@ -233,9 +255,9 @@ let g:EasyClipShareYanks = 1
 " set common register in vim+x
 set clipboard=unnamed,unnamedplus
 
-nmap <c-f> <plug>EasyClipSwapPasteForward
-nmap <c-d> <plug>EasyClipSwapPasteBackwards
-"
+nmap ]y <plug>EasyClipSwapPasteForward
+nmap [y <plug>EasyClipSwapPasteBackwards
+let g:EasyClipShareYanks = 1
 " ─────────────── Gruvbox ────────────────
 " Set theme
 "colorscheme railscasts
@@ -254,6 +276,36 @@ let g:vaxe_completion_disable_optimizations = 0
 
 " ─────────────── Tagbar ────────────────
 nmap <leader>t :TagbarToggle<CR>
+
+" ─────────────── Functions ────────────────
+" ──────────────────────────────────────────
+" Don't close window, when deleting a buffer
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+   let l:currentBufNum = bufnr("%")
+   let l:alternateBufNum = bufnr("#")
+
+   if buflisted(l:alternateBufNum)
+     buffer #
+   else
+     bnext
+   endif
+
+   if bufnr("%") == l:currentBufNum
+     new
+   endif
+
+   if buflisted(l:currentBufNum)
+     execute("bdelete! ".l:currentBufNum)
+   endif
+endfunction
+
+" ────── Reload vim conf on save ───────
+" source conf on save
+"augroup reload_vimrc " {
+    "autocmd!
+    "autocmd BufWritePost $MYVIMRC source $MYVIMRC
+"augroup END " }
 
 " ───────────── Bufferline ──────────────
 "let g:bufferline_active_buffer_left = ''
