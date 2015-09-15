@@ -7,7 +7,7 @@
 # └─────────────┘
 
 if [ "$TERM" = "linux" ]; then
-  
+
   # change colors to sweetlove
 /bin/echo -e "
   \e]P01f1f1f
@@ -29,9 +29,9 @@ if [ "$TERM" = "linux" ]; then
   "
   # get rid of artifacts
   clear
-  
+
   # lanch tmux
-  exec tmux 
+  exec tmux
 fi
 
 # reuse colors defined in .Xresources

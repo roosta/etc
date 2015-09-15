@@ -1,6 +1,16 @@
-* update emails!
+General
+---------------
 * change username
 * Test wol/ setup script
 * fix usb key
-* fix archive
 * save keys
+* setup backup NFS drive (dm-crypt)
+
+Allitnil
+---------------
+* add boot sec. Grub pass and lock bios
+* encrypt home partition
+
+<Lintilla>
+---------------
+* fix X error

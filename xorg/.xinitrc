@@ -8,8 +8,7 @@
 #│ Github : https://github.com/roosta  │
 #└─────────────────────────────────────┘
 
-# ───────────── Autostart ──────────────
-urxvtd -q -f -o &
+# ───────────── Init conf ──────────────
 
 # set extra font dir incase the various X font systems dont pick it up
 xset +fp /usr/share/fonts/roosta &
@@ -24,10 +23,10 @@ xrdb -merge $HOME/.Xresources &
 # ─────────────── Inputs ───────────────
 # Set keyboard layouts and options.
 # Switch layout with caps and terminate x session with ctrl alt backspace
-setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp
+setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp &
 
 # enable numlock at startup
-numlockx
+numlockx &
 
 # bind various custom keys. see .xbindkeysrx
 xbindkeys
@@ -53,15 +52,12 @@ xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
 #xss-lock -- i3lock -n -e -d -t -i /usr/share/backgrounds/pattern-01.png &
 xautolock -time 30 -locker "i3lock --dpms --ignore-empty-password --image=/usr/share/backgrounds/pattern-01.png --tiling" &
 
+# ───────────── Daemons ──────────────
+exec urxvtd -q -f -o &
+exec seaf-cli start &
+exec compton --config ~/.config/compton/compton.conf -b &
+
 # ─────────── Window Manager ───────────
 exec i3 -c $HOME/.i3/config.i3
 
-# ─────────── Functions ───────────
-#singleInstance() {
-  #PID=$(pgrep $1)
-  #if [[ -z "$PID" ]]; then
-    #$(which $1)
-  #fi
-  #unset PID
-#}
 # vim:filetype=sh

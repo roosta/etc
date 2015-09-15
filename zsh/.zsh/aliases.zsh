@@ -127,6 +127,7 @@ alias pacls="pacman -Ql" # List all files installed by a given package
 alias pacown="pacman -Qo" # Show package(s) owning the specified file(s)
 alias pacmir='pacman -Syy' # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 alias pacexp='pacman -Qet' # list all packages explicitly installed and not required as dependencies
+alias pacorphrm='pacman -Rns $(pacman -Qtdq)'
 #alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
 #alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
 #alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package and ABS databases against repositories
@@ -225,6 +226,7 @@ alias repl='haxelib run ihx'
 # ======= Paths =======
 alias tl='/home/transform'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
-#
 
 alias gentags='ctags -R'
+
+alias updatedb='sudo updatedb'
