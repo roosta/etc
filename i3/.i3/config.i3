@@ -13,13 +13,15 @@
 # ───────────────────────────────────────────────────────────────────────
 
 # ─────────────  Layout  ──────────────
-set $primary_monitor DVI-I-1
-set $secondary_monitor DVI-D-0
+
+#outputs
+set $primary DVI-I-1
+set $secondary DVI-D-0
 set $television HDMI-0
 
 # --> transform
-#set $primary_monitor VGA1
-#set $secondary_monitor LVDS1
+#set $primary VGA1
+#set $secondary LVDS1
 
 # Primary workspaces
 set $WS1 "1:TRM"
@@ -27,9 +29,9 @@ set $WS2 "2:DEV"
 set $WS3 "3:WEB"
 
 # Secondary workspaces
-set $WS4 "4:DBG"
-set $WS5 "5:SOC"
-set $WS6 "6:AUX"
+set $WS4 "4:AUX"
+set $WS5 "5:DBG"
+set $WS6 "6:COM"
 
 # Entertainment workspaces
 set $WS7 "7:MED"
@@ -56,23 +58,23 @@ bindsym $mod+Shift+7 move workspace number $WS7
 bindsym $mod+Shift+8 move workspace number $WS8
 bindsym $mod+Shift+9 move workspace number $WS9
 
-workspace $WS1 output $primary_monitor
-workspace $WS2 output $primary_monitor
-workspace $WS3 output $primary_monitor
+workspace $WS1 output $primary
+workspace $WS2 output $primary
+workspace $WS3 output $primary
 
-workspace $WS4 output $secondary_monitor
-workspace $WS5 output $secondary_monitor
-workspace $WS6 output $secondary_monitor
+workspace $WS4 output $secondary
+workspace $WS5 output $secondary
+workspace $WS6 output $secondary
 
-workspace $WS7 output $primary_monitor
-workspace $WS8 output $primary_monitor
-workspace $WS9 output $primary_monitor
+workspace $WS7 output $primary
+workspace $WS8 output $primary
+workspace $WS9 output $primary
 
 # set border size
 new_window 1pixel
 hide_edge_borders none
 
-# fix graphics glitch
+# assign apps to workspaces
 #assign [class="URxvt"] $WS1
 assign [class="(?i)subl3"] $WS2
 assign [class="(?i)atom"] $WS2
@@ -83,11 +85,14 @@ assign [class="(?i)spotify"] $WS7
 assign [class="(?i)pidgin"] $WS5
 assign [class="(?i)linphone"] $WS5
 
-for_window [window_role="pop-up"] floating enableor_window [window_role="bubble"] floating enable
+# general rules
+for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
+for_window [window_role="bubble"] floating enable
 for_window [window_role="Preferences"] floating enable
+for_window [title="Preferences$"] floating enable
 
-# set float for spesific apps
+# spesific rules
 for_window [class="(?i)Jitsi"] floating enable
 for_window [class="(?i)SessionManager"] floating enable
 for_window [class="(?i)firefox"]  new_window pixel 0
@@ -98,14 +103,14 @@ for_window [class="(?i)Pidgin"] floating_maximum_size 50 x 75
 for_window [class="(?i)linphone"] floating enable
 
 # ─────────────  Appearance  ──────────────
-# assign various fonts
 set $font_lintilla -*-terminesspowerline-*-*-normal-*-12-*-*-*-*-*-*-*
-#set $font_lintilla pango: Essential PragmataPro 14px
-#set $font_status_lintilla pango: FontAwesome 14px
-
 set $font_allitnil pango: Essential PragmataPro 15px
 set $font_status_allitnil pango: Essential PragmataPro 14px
 set $font_status_lintilla -*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*
+
+# assign various fonts
+#set $font_lintilla pango: Essential PragmataPro 14px
+#set $font_status_lintilla pango: FontAwesome 14px
 
 # Assign Actual font here:
 font $font_lintilla
@@ -162,9 +167,9 @@ client.placeholder $gruvbgsoft $gruvbgsoft $gruvbgsoft $gruvMagenta
 #client.placeholder $gruvbgsoft $gruvbgsoft $gruvbgsoft $gruvMagenta
 
 bar {
-  output $primary_monitor
+  output $primary
   output $television
-  tray_output $secondary_monitor
+  tray_output $primary
   tray_output $television
   position top
   font $font_status_lintilla
@@ -184,8 +189,9 @@ bar {
   }
 }
 
+
 bar {
-  output $secondary_monitor
+  output $secondary
   status_command i3blocks -c ~/.i3/i3blocks/lint_secondary.conf
   font $font_status_lintilla
   position top

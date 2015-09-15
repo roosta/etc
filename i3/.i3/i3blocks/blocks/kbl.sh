@@ -10,8 +10,9 @@ case "$(xset -q|grep LED| awk '{ print $10 }')" in
 esac
 
 echo $KBD
+echo
 if [[ $KBD = "US" ]]; then
-  echo "#448487"
+  echo \#448487
 else
-  echo "#FA4833"
+  echo \#FA4833
 fi
