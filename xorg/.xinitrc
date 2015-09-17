@@ -10,6 +10,8 @@
 
 # ───────────── Init conf ──────────────
 
+urxvtd -q -f -o &
+
 # set extra font dir incase the various X font systems dont pick it up
 xset +fp /usr/share/fonts/roosta &
 xset fp rehash &
@@ -38,12 +40,12 @@ xbindkeys
 
 # ────────────── Displays ──────────────
 # set display layout
-xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
-       --output DVI-D-0 --auto --left-of DVI-I-1 \
-       --output HDMI-0 --off
+#xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
+       #--output DVI-D-0 --auto --left-of DVI-I-1 \
+       #--output HDMI-0 --off
 
-#xrandr --output VGA1 --primary --auto --pos 0x0 \
-       #--output LVDS1 --auto --left-of VGA1
+xrandr --output VGA1 --primary --auto --pos 0x0 \
+       --output LVDS1 --auto --left-of VGA1
 
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
 #xset dpms 600 1200 2000 &
@@ -53,9 +55,8 @@ xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
 xautolock -time 30 -locker "i3lock --dpms --ignore-empty-password --image=/usr/share/backgrounds/pattern-01.png --tiling" &
 
 # ───────────── Daemons ──────────────
-exec urxvtd -q -f -o &
-exec seaf-cli start &
-exec compton --config ~/.config/compton/compton.conf -b &
+#exec seaf-cli start &
+#exec compton --config ~/.config/compton/compton.conf -b &
 
 # ─────────── Window Manager ───────────
 exec i3 -c $HOME/.i3/config.i3

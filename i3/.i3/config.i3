@@ -15,13 +15,13 @@
 # ─────────────  Layout  ──────────────
 
 #outputs
-set $primary DVI-I-1
-set $secondary DVI-D-0
-set $television HDMI-0
+#set $primary DVI-I-1
+#set $secondary DVI-D-0
+#set $television HDMI-0
 
 # --> transform
-#set $primary VGA1
-#set $secondary LVDS1
+set $primary VGA1
+set $secondary LVDS1
 
 # Primary workspaces
 set $WS1 "1:TRM"
@@ -192,7 +192,7 @@ bar {
 
 bar {
   output $secondary
-  status_command i3blocks -c ~/.i3/i3blocks/lint_secondary.conf
+  status_command i3blocks -c ~/.i3/i3blocks/trans_secondary.conf
   font $font_status_lintilla
   position top
   separator_symbol "|"

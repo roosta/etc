@@ -110,7 +110,7 @@ alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."
 
 # ======= Pacman =======
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
-alias pacman='pacaur' # use pacaur as a pacman extension
+alias pacman='pacaur --color=auto' # use pacaur as a pacman extension
 alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
 alias pacdl='pacman -Sw' # Download specified package(s) as .tar.xz ball
 alias pacs='pacman -S' # Install specific package(s) from the repositories
@@ -127,16 +127,15 @@ alias pacls="pacman -Ql" # List all files installed by a given package
 alias pacown="pacman -Qo" # Show package(s) owning the specified file(s)
 alias pacmir='pacman -Syy' # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 alias pacexp='pacman -Qet' # list all packages explicitly installed and not required as dependencies
-alias pacorphrm='pacman -Rns $(pacman -Qtdq)'
+alias pacorphrm='pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
+alias pacupdfull='pacman -Syu --devel' # update all packages including development packages
 #alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
 #alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
 #alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package and ABS databases against repositories
 #alias pacinsd='pacman -S --asdeps' # Install given package(s) as dependencies
 
-#
 # AUR
 # ------
-
 #alias pacaur4='pacaur --domain aur4.archlinux.org'
 #alias yaourt='pacaur'
 
@@ -196,8 +195,8 @@ alias svnlastdiff='svn log -r COMMITTED --diff'
 alias svnrevdiff='svn log --diff -r'
 alias svnup='svn update'
 
-alias svnlogs='svn log --limit 30|less'
-alias svnlogl='svn log --diff --limit 30|less'
+alias svnls='svn log --limit 30|less'
+alias svnll='svn log --diff --limit 30|less'
 alias svndl='svn diff --git'
 alias svnds='svn diff --summarize'
 alias svnd='svn diff --no-diff-added -x -w'
