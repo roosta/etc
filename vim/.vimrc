@@ -108,9 +108,6 @@ noremap ^ 0 " Just in case you need to go to the very beginning of a line
 " source config on deman
 noremap <c-w>r :source $MYVIMRC<CR>
 
-" Close the current buffer
-map <leader>bd :Bclose<cr>
-
 " Close all the buffers
 map <leader>ba :%bdelete<cr>
 
@@ -176,12 +173,13 @@ let g:multi_cursor_quit_key='<Esc>'
 " ─────────────── Ctrl-P ───────────────
 let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project']
 let g:ctrlp_by_filename = 1
+let g:ctrlp_reuse_window = 1
 let g:ctrlp_use_caching = 1
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
 noremap <leader>p :CtrlPBufTag<CR>
 noremap <leader>P :CtrlPBufTagAll<CR>
 noremap <c-b> :CtrlPBuffer<CR>
