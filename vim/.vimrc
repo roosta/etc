@@ -179,11 +179,12 @@ let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
 noremap <leader>p :CtrlPBufTag<CR>
 noremap <leader>P :CtrlPBufTagAll<CR>
 noremap <c-b> :CtrlPBuffer<CR>
-
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
+                          \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 " ───────────── Easymotion ──────────────
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
@@ -254,7 +255,7 @@ let g:vaxe_lime_target = 'html5 -debug'
 let g:vaxe_cache_server_autostart = 1
 let g:vaxe_completion_prevent_bufwrite_events = 1
 let g:vaxe_completion_disable_optimizations = 0
-
+"autocmd BufNewFile,BufRead /project/* vaxe#ProjectLime("/project/project.lime")
 map <leader>vi :call vaxe#ImportClass()<CR>
 " ─────────────── Tagbar ────────────────
 nmap <leader>t :TagbarToggle<CR>

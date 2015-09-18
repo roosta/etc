@@ -49,6 +49,7 @@ alias awk='gawk'
 # ======= safety =======
 alias mv=' timeout 8 mv -iv'
 alias rm=' timeout 3 rm -Iv --one-file-system'
+alias rmr='rm -r'
 alias cp='cp -i'
 alias ln='ln -i'
 
@@ -174,6 +175,9 @@ alias dut='du -ht'
 alias logcolor='ccze'
 
 # ======= VCS =======
+
+alias diff='colordiff'
+
 # --- git ---
 alias gits='git status'
 alias gitd='git diff'
@@ -193,13 +197,15 @@ alias svnlastdiff='svn log -r COMMITTED --diff'
 
 # get a given rev's commit diff
 alias svnrevdiff='svn log --diff -r'
-alias svnup='svn update'
+alias svnupd='svn update'
 
 alias svnls='svn log --limit 30|less'
 alias svnll='svn log --diff --limit 30|less'
 alias svndl='svn diff --git'
 alias svnds='svn diff --summarize'
 alias svnd='svn diff --no-diff-added -x -w'
+alias svnundo='svn revert --recursive .'
+
 # ======= MISC =======
 # merge new xresources config
 alias xrmerge="xrdb -merge ~/.Xresources"
