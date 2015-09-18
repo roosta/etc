@@ -10,6 +10,8 @@
 
 # ───────────── Init conf ──────────────
 
+urxvtd -q -f -o &
+
 # set extra font dir incase the various X font systems dont pick it up
 xset +fp /usr/share/fonts/roosta &
 xset fp rehash &

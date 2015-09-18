@@ -29,10 +29,11 @@
 !#define FONT_ITALIC -uw-ttyp0-medium-i-normal--17-160-75-75-c-90-iso10646-1
 !#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=14:antialias=1:hinting=1:hintstyle=3
 
-! gohu
-!#define FONT_NORMAL -gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
-!#define FONT_BOLD -gohu-gohufont-medium-r-*--14-100-*-*-*-*-iso10646-1
-!#define FONT_ITALIC -gohu-gohufont-bold-r-*--14-100-*-*-*-*-iso10646-1
+! PragmataPro <allitnil: 1600x900>
+#define FONT_NORMAL xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Regular, -uw-ttyp0-medium-r-normal--15-140-75-75-c-80-iso10646-1
+#define FONT_BOLD xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Bold
+#define FONT_ITALIC xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Italic
+#define FONT_BOLDITALIC xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Bold\ Italic
 
 ! define xft fallbacks
 Xft.antialias: 1
@@ -81,15 +82,10 @@ URxvt.secondaryScroll: 0
 URxvt*externalBorder: 0
 URxvt*internalBorder: 0
 
-!URxvt*borderLess: true
-!URxvt*loginShell: true
-
-!URxvt.cursorColor: #82A497
-!URxvt.cursorColor2: #918273
-
-! include gruvbox 256 color script in an attempt to improve terminal vim colors
+! include colors. Keep separated to change easily
 #include "/home/daniel/.Xcolors/gruvbox-dark.xresources"
 #include "/home/daniel/.Xcolors/gruvbox-urxvt256.xresources"
 
+! Include rofi separatly
 #include "/home/daniel/.rofi.xresources"
 

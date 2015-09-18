@@ -87,45 +87,6 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
-" Return to last edit position when opening files (You want this!)
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-
-" Remember info about open buffers on close
-set viminfo^=%
-"
-" => vimgrep searching and cope displaying
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" When you press gv you vimgrep after the selected text
-vnoremap <silent> gv :call VisualSelection('gv')<CR>
-
-" Open vimgrep and put the cursor in the right position
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
-
-" Vimgreps in the current file
-map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
-
-" When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
-
-" Do :help cope if you are unsure what cope is. It's super useful!
-"
-" When you search with vimgrep, display your results in cope by doing:
-"   <leader>cc
-"
-" To go to the next search result do:
-"   <leader>n
-"
-" To go to the previous search results do:
-"   <leader>p
-"
-map <leader>cc :botright cope<cr>
-map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
-
 " ───────────── GUI ONLY ──────────────
 " ─────────────────────────────────────
 if has('gui_running')
@@ -140,23 +101,15 @@ endif
 
 " ───────────── KEYBINDS ──────────────
 " ────────────────────────────────────
-
-" change mapleade" Visual mode pressing * or # searches for the current selection
-" Super useful! From an idea by Michael Naumann
-vnoremap <silent> * :call VisualSelection('f')<CR>
-vnoremap <silent> # :call VisualSelection('b')<CR>r
-
 " Move across wrapped lines like regular lines
 noremap 0 ^ " Go to the first non-blank character of a line
 noremap ^ 0 " Just in case you need to go to the very beginning of a line
 
+" source config on deman
 noremap <c-w>r :source $MYVIMRC<CR>
 
-" Close the current buffer
-map <leader>bd :Bclose<cr>
-
 " Close all the buffers
-map <leader>ba :1,1000 bd!<cr>
+map <leader>ba :%bdelete<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -220,6 +173,7 @@ let g:multi_cursor_quit_key='<Esc>'
 " ─────────────── Ctrl-P ───────────────
 let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project']
 let g:ctrlp_by_filename = 1
+let g:ctrlp_reuse_window = 1
 let g:ctrlp_use_caching = 1
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_show_hidden = 1
@@ -229,7 +183,8 @@ let g:ctrlp_cmd = 'CtrlP'
 noremap <leader>p :CtrlPBufTag<CR>
 noremap <leader>P :CtrlPBufTagAll<CR>
 noremap <c-b> :CtrlPBuffer<CR>
-
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
+                          \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 " ───────────── Easymotion ──────────────
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
@@ -300,59 +255,11 @@ let g:vaxe_lime_target = 'html5 -debug'
 let g:vaxe_cache_server_autostart = 1
 let g:vaxe_completion_prevent_bufwrite_events = 1
 let g:vaxe_completion_disable_optimizations = 0
-
+"autocmd BufNewFile,BufRead /project/* vaxe#ProjectLime("/project/project.lime")
+map <leader>vi :call vaxe#ImportClass()<CR>
 " ─────────────── Tagbar ────────────────
 nmap <leader>t :TagbarToggle<CR>
 
-" ─────────────── Functions ────────────────
-" ──────────────────────────────────────────
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction" Don't close window, when deleting a buffer
-
-command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
-   let l:currentBufNum = bufnr("%")
-   let l:alternateBufNum = bufnr("#")
-
-   if buflisted(l:alternateBufNum)
-     buffer #
-   else
-     bnext
-   endif
-
-   if bufnr("%") == l:currentBufNum
-     new
-   endif
-
-   if buflisted(l:currentBufNum)
-     execute("bdelete! ".l:currentBufNum)
-   endif
-endfunction
-
-" called when using 'gv' in visual selection
-function! VisualSelection(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
-
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
-
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
-    elseif a:direction == 'replace'
-        call CmdLine("%s" . '/'. l:pattern . '/')
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
-
-    let @/ = l:pattern
-    let @" = l:saved_reg
-endfunction
 " ────── Reload vim conf on save ───────
 " source conf on save
 "augroup reload_vimrc " {
