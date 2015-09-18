@@ -53,9 +53,9 @@ xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
 xautolock -time 30 -locker "i3lock --dpms --ignore-empty-password --image=/usr/share/backgrounds/pattern-01.png --tiling" &
 
 # ───────────── Daemons ──────────────
-exec urxvtd -q -f -o &
-exec seaf-cli start &
-exec compton --config ~/.config/compton/compton.conf -b &
+urxvtd -q -f -o &
+seaf-cli start &
+compton --config ~/.config/compton/compton.conf -b &
 
 # ─────────── Window Manager ───────────
 exec i3 -c $HOME/.i3/config.i3

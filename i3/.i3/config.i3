@@ -82,8 +82,9 @@ assign [class="(?i)firefox"] $WS3
 assign [class="(?i)chrome"] $WS7
 assign [class="(?i)steam"] $WS8
 assign [class="(?i)spotify"] $WS7
-assign [class="(?i)pidgin"] $WS5
+assign [class="(?i)pidgin"] $WS6
 assign [class="(?i)linphone"] $WS5
+assign [class="(?i)gimp"] $WS2
 
 # general rules
 for_window [window_role="pop-up"] floating enable
@@ -170,7 +171,6 @@ bar {
   output $primary
   output $television
   tray_output $primary
-  tray_output $television
   position top
   font $font_status_lintilla
   status_command i3blocks -c ~/.i3/i3blocks/lint_primary.conf
@@ -192,6 +192,7 @@ bar {
 
 bar {
   output $secondary
+  #tray_output $secondary
   status_command i3blocks -c ~/.i3/i3blocks/lint_secondary.conf
   font $font_status_lintilla
   position top
