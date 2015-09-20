@@ -9,9 +9,6 @@
 #└─────────────────────────────────────┘
 
 # ───────────── Init conf ──────────────
-
-urxvtd -q -f -o &
-
 # set extra font dir incase the various X font systems dont pick it up
 xset +fp /usr/share/fonts/roosta &
 xset fp rehash &
@@ -31,7 +28,7 @@ setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:c
 numlockx &
 
 # bind various custom keys. see .xbindkeysrx
-xbindkeys
+xbindkeys &
 
 #xboxdrv -D --config $HOME/.xboxdrv
 
@@ -42,7 +39,7 @@ xbindkeys
 # set display layout
 xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
        --output DVI-D-0 --auto --left-of DVI-I-1 \
-       --output HDMI-0 --off
+       --output HDMI-0 --off &
 
 #xrandr --output VGA1 --primary --auto --pos 0x0 \
        #--output LVDS1 --auto --left-of VGA1
