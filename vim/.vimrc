@@ -15,7 +15,9 @@
 
 " use vim settings, rather than vi settings
 " must be first, because it changes other options as a side effect
-set nocompatible
+if &compatible
+  set nocompatible
+endif
 
 " ───────────── OPTIONS ──────────────
 " ────────────────────────────────────
@@ -87,6 +89,14 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
+" Always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside
+" an event handler (happens when dropping a file on gvim).
+autocmd BufReadPost *
+      \ if line("'\"") > 0 && line("'\"") <= line("$") |
+      \   exe "normal g`\"" |
+      \ endif
+
 " ───────────── GUI ONLY ──────────────
 " ─────────────────────────────────────
 if has('gui_running')
@@ -117,6 +127,16 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 
+" Switch between Vim window splits
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+nnoremap <silent> <Leader><Up> :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader><Down> :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <Leader><Left> :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Leader><Right> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 " ───────────── PLUGINS ──────────────
 " ────────────────────────────────────
 call plug#begin('~/.vim/plugged')
@@ -260,6 +280,26 @@ map <leader>vi :call vaxe#ImportClass()<CR>
 " ─────────────── Tagbar ────────────────
 nmap <leader>t :TagbarToggle<CR>
 
+
+
+"
+"
+"
+"
+"
+"
+"
+"
+"
+"
+"
+"
+"
+"
+"
+" ─────────────── Deprecated ────────────────
+" ───────────────────────────────────────────
+"
 " ────── Reload vim conf on save ───────
 " source conf on save
 "augroup reload_vimrc " {
@@ -302,12 +342,6 @@ nmap <leader>t :TagbarToggle<CR>
 ": PromptlineSnapshot ~/.zsh/plugins/promptline.zsh airline_insert
 
 " ───────────── Keybinds ──────────────
-" change mapleader
-"let mapleader = ","
-
-" quickly quit a buffer.
-"nnoremap <c-q> :bd<CR>
-
 " press enter to exit search highlight
 "nnoremap <CR> :nohlsearch<CR><CR>
 
