@@ -1,8 +1,8 @@
-# ┌──────────────────────────────┐
-# │░█▀█░█░░░▀█▀░█▀█░█▀▀░█▀▀░█▀▀░░│
-# │░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█░░│
-# │░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░│
-# └──────────────────────────────┘
+# ┌─────────────────────────────┐
+# │░█▀█░█░░░▀█▀░█▀█░█▀▀░█▀▀░█▀▀░│
+# │░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█░│
+# │░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░│
+# └─────────────────────────────┘
 # Author : Roosta <contact@roosta.sh>
 # Site   : http://dotfiles.roosta.sh
 # Github : https://github.com/roosta
@@ -103,7 +103,6 @@ alias lsa="ls -lAhpXk --color=auto --group-directories-first"
 alias dir='ls++ --potsf -lAhpXk'
 
 # ======= Security =======
-# -------------------
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
 alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
 alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
@@ -182,12 +181,17 @@ alias diff='colordiff'
 alias gits='git status'
 alias gitd='git diff'
 alias gitout='git checkout'
+
+# show short log
 alias gitls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
+# show long log
 alias gitll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+
 alias gita='git add'
 alias gitaa='git add -A'
 alias gitc='git commit'
 alias gitca='git commit -a'
+alias gitsubupd='git submodule foreach git pull origin master'
 
 # --- svn ---
 alias svns='svn status'
@@ -199,12 +203,23 @@ alias svnlastdiff='svn log -r COMMITTED --diff'
 alias svnrevdiff='svn log --diff -r'
 alias svnupd='svn update'
 
+#show last 30 log entries in pager
 alias svnls='svn log --limit 30|less'
-alias svnll='svn log --diff --limit 30|less'
+
+# show last ten commited difs in pager
+alias svnll='svn log --diff --limit 10|less'
+
+# git formatted diff
 alias svndl='svn diff --git'
+
+# diff short
 alias svnds='svn diff --summarize'
+
+# dont display added files and modified whitespace
 alias svnd='svn diff --no-diff-added -x -w'
-alias svnundo='svn revert --recursive .'
+
+# revert entire tree from here [Dangerous!]
+alias svnundo='svn revert --force-interactive --recursive .'
 
 # ======= MISC =======
 # merge new xresources config
@@ -222,6 +237,7 @@ alias :Q="exit"
 
 # common typo
 alias claer='clear'
+alias c='clear'
 
 alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
 

@@ -79,6 +79,7 @@ hide_edge_borders none
 assign [class="(?i)subl3"] $WS2
 assign [class="(?i)atom"] $WS2
 assign [class="(?i)firefox"] $WS3
+assign [class="(?i)thunderbird"] $WS3
 assign [class="(?i)chrome"] $WS7
 assign [class="(?i)steam"] $WS8
 assign [class="(?i)spotify"] $WS7

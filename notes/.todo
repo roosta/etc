@@ -2,9 +2,12 @@ General
 ---------------
 * change username
 * Test wol/ setup script
-* fix usb key
+* fix usb ke
 * save keys
 * setup backup NFS drive (dm-crypt)
+* webpage
+* server arch install
+* make subkey for email
 
 Allitnil
 ---------------
