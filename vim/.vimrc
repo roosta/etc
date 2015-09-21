@@ -133,10 +133,10 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
-nnoremap <silent> <Leader><Up> :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader><Down> :exe "resize " . (winheight(0) * 2/3)<CR>
-nnoremap <silent> <Leader><Left> :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-nnoremap <silent> <Leader><Right> :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+nnoremap <silent> <Leader><Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader><Leader>-:exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 " ───────────── PLUGINS ──────────────
 " ────────────────────────────────────
 call plug#begin('~/.vim/plugged')
@@ -280,7 +280,14 @@ map <leader>vi :call vaxe#ImportClass()<CR>
 " ─────────────── Tagbar ────────────────
 nmap <leader>t :TagbarToggle<CR>
 
-
+" ─────────────── augroups ────────────────
+augroup BgHighlight
+    autocmd!
+    "autocmd WinEnter * set number
+    "autocmd WinLeave * set nonumber
+    autocmd WinEnter * set cursorline
+    autocmd WinLeave * set nocursorline
+augroup END
 
 "
 "

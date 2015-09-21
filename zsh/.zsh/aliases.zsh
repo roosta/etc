@@ -151,7 +151,8 @@ alias ufw='sudo ufw'
 alias stow='stow -v'
 
 # keep forgetting what these are called.
-alias getkey='xev'
+alias getkey='xev -event keyboard'
+#alias getkeycode=xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 alias getclass='xprop'
 
 # vi to vim
