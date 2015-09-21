@@ -79,7 +79,7 @@ hide_edge_borders none
 assign [class="(?i)subl3"] $WS2
 assign [class="(?i)atom"] $WS2
 assign [class="(?i)firefox"] $WS3
-assign [class="(?i)thunderbird"] $WS3
+assign [class="(?i)thunderbird"] $WS6
 assign [class="(?i)chrome"] $WS7
 assign [class="(?i)steam"] $WS8
 assign [class="(?i)spotify"] $WS7
@@ -103,6 +103,7 @@ for_window [title="(?i)Friends"]  floating enable
 for_window [class="(?i)Pidgin"] floating enable
 for_window [class="(?i)Pidgin"] floating_maximum_size 50 x 75
 for_window [class="(?i)linphone"] floating enable
+for_window [class="(?i)thunderbird"] floating enable
 
 # ─────────────  Appearance  ──────────────
 set $font_lintilla -*-terminesspowerline-*-*-normal-*-12-*-*-*-*-*-*-*
@@ -323,6 +324,10 @@ bindsym --release Shift+Print exec scrot -s $HOME/Pictures/screenshots/screensho
 
 # send a signal to i3blocks on caps
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+
+bindsym 123 exec  pkill -SIGRTMIN+12 i3blocks
+bindsym 122 exec pkill -SIGRTMIN+12 i3blocks
+bindsym 121 exec pkill -SIGRTMIN+12 i3blocks
 
 # ────────────── Resize menu ──────────────
 mode "resize" {
