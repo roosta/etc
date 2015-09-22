@@ -25,7 +25,7 @@ endif
 "set clipboard=unnamed " set same clipboard for vim and X
 "set paste
 
-set autowrite
+"set autowrite
 
 " maintain undo history between sessions
 set undofile
@@ -205,6 +205,12 @@ noremap <leader>P :CtrlPBufTagAll<CR>
 noremap <c-b> :CtrlPBuffer<CR>
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
                           \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|build)$',
+  \ 'file': '\v\.(exe|so|dll)$'
+  \ }
+
 " ───────────── Easymotion ──────────────
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
