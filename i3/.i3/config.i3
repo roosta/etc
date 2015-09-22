@@ -80,7 +80,8 @@ assign [class="(?i)subl3"] $WS2
 assign [class="(?i)atom"] $WS2
 assign [class="(?i)firefox"] $WS3
 assign [class="(?i)thunderbird"] $WS6
-assign [class="(?i)chrome"] $WS7
+assign [class="(?i)google-chrome$"] $WS7
+assign [class="(?i)google-chrome-unstable$"] $WS5
 assign [class="(?i)steam"] $WS8
 assign [class="(?i)spotify"] $WS7
 assign [class="(?i)pidgin"] $WS6
@@ -264,11 +265,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
+# choose split direction.
+# Swapped the modes here since I couln't make senso of the orientation as is.
+bindsym $mod+h split v
+bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
