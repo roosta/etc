@@ -25,7 +25,7 @@ endif
 "set clipboard=unnamed " set same clipboard for vim and X
 "set paste
 
-"set autowrite
+set autowrite
 
 " maintain undo history between sessions
 set undofile
@@ -37,6 +37,8 @@ set wildmenu " command line completion
 set wildmode=longest,list,full
 "set wildmode=longest:full,full
 set wildignorecase
+
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,*/dist/*,*/undo/*
 
 " fix backspace behaviour
 set backspace=indent,eol,start
@@ -206,11 +208,6 @@ noremap <c-b> :CtrlPBuffer<CR>
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
                           \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|build)$',
-  \ 'file': '\v\.(exe|so|dll)$'
-  \ }
-
 " ───────────── Easymotion ──────────────
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
@@ -275,12 +272,12 @@ colorscheme gruvbox
 set background=dark " Setting dark mode
 
 " ──────────────── Vaxe ─────────────────
-let g:vaxe_cache_server = 1
-let g:vaxe_prefer_lime = 1
+"let g:vaxe_cache_server = 1
+"let g:vaxe_prefer_lime = 1
 let g:vaxe_lime_target = 'html5 -debug'
-let g:vaxe_cache_server_autostart = 1
-let g:vaxe_completion_prevent_bufwrite_events = 1
-let g:vaxe_completion_disable_optimizations = 0
+"let g:vaxe_cache_server_autostart = 1
+"let g:vaxe_completion_prevent_bufwrite_events = 1
+"let g:vaxe_completion_disable_optimizations = 0
 "autocmd BufNewFile,BufRead /project/* vaxe#ProjectLime("/project/project.lime")
 map <leader>vi :call vaxe#ImportClass()<CR>
 " ─────────────── Tagbar ────────────────

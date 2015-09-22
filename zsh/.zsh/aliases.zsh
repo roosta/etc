@@ -99,8 +99,9 @@ alias 18='cd -18'
 alias 19='cd -19'
 
 # long format and color ls output with various options. (see "man ls")
-alias lsa="ls -lAhpXk --color=auto --group-directories-first"
+alias ls="ls -lAhpXk --color=auto --group-directories-first"
 alias dir='ls++ --potsf -lAhpXk'
+alias dir='ls++ -lAhpXk'
 
 # ======= Security =======
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
@@ -146,6 +147,7 @@ alias ports='netstat -tulanp' # list open ports
 alias pip='sudo -H pip' # set home variable when running pip
 alias tmux='tmux -2'
 alias ufw='sudo ufw'
+alias make='colormake'
 
 # stow is always verbose
 alias stow='stow -v'
@@ -195,6 +197,7 @@ alias gitca='git commit -a'
 alias gitsubupd='git submodule foreach git pull origin master'
 
 # --- svn ---
+alias svn='colorsvn'
 alias svns='svn status'
 
 # get last commit diff
@@ -222,6 +225,8 @@ alias svnd='svn diff --no-diff-added -x -w'
 # revert entire tree from here [Dangerous!]
 alias svnundo='svn revert --force-interactive --recursive .'
 
+alias svnaddall="svn status | grep '?' | sed 's/^.* /svn add /' | bash"
+#alias svnaddall="svn add `svn status . | awk '/^[?]/{print $2}'`"
 # ======= MISC =======
 # merge new xresources config
 alias xrmerge="xrdb -merge ~/.Xresources"
