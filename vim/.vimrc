@@ -182,7 +182,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 "───────── vim-multiple-cursor ─────────
@@ -276,7 +276,8 @@ set background=dark " Setting dark mode
 let g:vaxe_lime_target = 'html5 -debug'
 "let g:vaxe_cache_server_autostart = 1
 "let g:vaxe_completion_prevent_bufwrite_events = 1
-"let g:vaxe_completion_disable_optimizations = 0
+"let g:vaxe_completion_disable_optimizations = 1
+
 "autocmd BufNewFile,BufRead /project/* vaxe#ProjectLime("/project/project.lime")
 map <leader>vi :call vaxe#ImportClass()<CR>
 " ─────────────── Tagbar ────────────────

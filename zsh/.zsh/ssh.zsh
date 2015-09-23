@@ -5,5 +5,5 @@
 # └───────────────────────────────────────┘
 
 # use envoy as a ssh-agent wrapper
-envoy -t ssh-agent 
-source <(envoy -p)
+#envoy -t ssh-agent 
+#source <(envoy -p)
