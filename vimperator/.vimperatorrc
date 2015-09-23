@@ -1,14 +1,13 @@
 "3.9 (created: 2015/02/15 15:49:05)
 colorscheme sweetlove
-set noscrollbars
+set noscrollbar
 set loadplugins
-set complete=lSt
+set complete=ltsS
 set focuscontent
+set defsearch=duckduckgo
 set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position
 source! /home/daniel/.vimperatorrc.local
-
-"let mapleader = ","
 
 " map l and h to tab movement
 noremap l gt

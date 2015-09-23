@@ -32,12 +32,11 @@ set undofile
 set undodir=~/.vim/undo
 set noswapfile
 
-" wildmenu
+" wild*
 set wildmenu " command line completion
 set wildmode=longest,list,full
 "set wildmode=longest:full,full
 set wildignorecase
-
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,*/dist/*,*/undo/*
 
 " fix backspace behaviour
