@@ -19,6 +19,9 @@ $HOME/.fehbg &
 # merge new resources
 xrdb -merge $HOME/.Xresources &
 
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 # ─────────────── Inputs ───────────────
 # Set keyboard layouts and options.
 # Switch layout with caps and terminate x session with ctrl alt backspace

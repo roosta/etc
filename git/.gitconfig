@@ -15,3 +15,4 @@
 
 	# list aliases
 	alias = "!git config -l | grep alias | cut -c 7-"
+	graph = log --graph --oneline --decorate

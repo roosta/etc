@@ -10,6 +10,7 @@
 
 # ======= Quick edits =======
 alias vigit='vim ~/.gitconfig'
+alias vissh='vim ~/.ssh/config'
 alias vii3='vim ~/.i3/config.i3'
 alias vialias='vim ~/.zsh/aliases.zsh'
 alias vivi='vim ~/.vimrc'
@@ -18,7 +19,7 @@ alias vixr='vim ~/.Xresources'
 alias vitmux='vim ~/.tmux.conf'
 alias vixinit='vim ~/.xinitrc'
 alias vifont='vim ~/.config/fontconfig/fonts.conf'
-alias vikeys='vim ~/.xbindkeysrc'
+alias vibinds='vim ~/.xbindkeysrc'
 
 # ======= todo =======
 # placeholder. write/find script
