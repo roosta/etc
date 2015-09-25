@@ -20,7 +20,6 @@ vim/.vim/.netrwhist
 vim/backup/*
 
 *tmp*
-*temp*
 *cache*
 
 # sublime
@@ -68,3 +67,5 @@ svn/*/README.txt
 
 # ctags
 **/tags
+
+zsh/.zsh/plugins/**

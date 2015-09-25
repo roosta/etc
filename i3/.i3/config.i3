@@ -19,74 +19,87 @@ set $primary DVI-I-1
 set $secondary DVI-D-0
 set $television HDMI-0
 
-# --> transform
+### Transform
 #set $primary VGA1
 #set $secondary LVDS1
 
 # Primary workspaces
-set $WS1 "1:TRM"
-set $WS2 "2:DEV"
-set $WS3 "3:WEB"
+set $PWS1_TRM "1Q:TRM"
+set $PWS2_DEV "2W:DEV"
+set $PWS3_WWW "3E:WWW"
 
 # Secondary workspaces
-set $WS4 "4:AUX"
-set $WS5 "5:DBG"
-set $WS6 "6:COM"
+set $SWS1_AUX "1A:AUX"
+set $SWS2_DBG "2S:DBG"
+set $SWS3_COM "3D:COM"
 
-# Entertainment workspaces
-set $WS7 "7:MED"
-set $WS8 "8:GAM"
-set $WS9 "9:MSC"
+# Tertiary workspaces
+set $TWS1_MED "4:1:MED"
+set $TWS2_GAM "5:2:GAM"
+set $TWS3_MSC "6:3:MSC"
 
-bindsym $mod+1 workspace $WS1
-bindsym $mod+2 workspace $WS2
-bindsym $mod+3 workspace $WS3
-bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace $WS5
-bindsym $mod+6 workspace $WS6
-bindsym $mod+7 workspace $WS7
-bindsym $mod+8 workspace $WS8
-bindsym $mod+9 workspace $WS9
+bindsym $mod+q workspace $PWS1_TRM
+bindsym $mod+w workspace $PWS2_DEV
+bindsym $mod+e workspace $PWS3_WWW
 
-bindsym $mod+Shift+1 move workspace number $WS1
-bindsym $mod+Shift+2 move workspace number $WS2
-bindsym $mod+Shift+3 move workspace number $WS3
-bindsym $mod+Shift+4 move workspace number $WS4
-bindsym $mod+Shift+5 move workspace number $WS5
-bindsym $mod+Shift+6 move workspace number $WS6
-bindsym $mod+Shift+7 move workspace number $WS7
-bindsym $mod+Shift+8 move workspace number $WS8
-bindsym $mod+Shift+9 move workspace number $WS9
+bindsym $mod+a workspace $SWS1_AUX
+bindsym $mod+s workspace $SWS2_DBG
+bindsym $mod+d workspace $SWS3_COM
 
-workspace $WS1 output $primary
-workspace $WS2 output $primary
-workspace $WS3 output $primary
+bindsym $mod+1 workspace $TWS1_MED
+bindsym $mod+2 workspace $TWS2_GAM
+bindsym $mod+3 workspace $TWS3_MSC
 
-workspace $WS4 output $secondary
-workspace $WS5 output $secondary
-workspace $WS6 output $secondary
+bindsym $mod+Shift+q move workspace $PWS1_TRM
+bindsym $mod+Shift+w move workspace $PWS2_DEV
+bindsym $mod+Shift+e move workspace $PWS3_WWW
 
-workspace $WS7 output $primary
-workspace $WS8 output $primary
-workspace $WS9 output $primary
+bindsym $mod+Shift+a move workspace $SWS1_AUX
+bindsym $mod+Shift+s move workspace $SWS2_DBG
+bindsym $mod+Shift+d move workspace $SES3_COM
+
+bindsym $mod+Shift+1 move workspace $TWS1_MED
+bindsym $mod+Shift+2 move workspace $TWS2_GAM
+bindsym $mod+Shift+3 move workspace $TWS3_MSC
+
+#set $mode_chmon Move to: (1) Primary, (2) Secondary, (3) Teritiary
+#mode "$mode_workspace" {
+  #bindsym d exec --no-startup-id $changeto desk, mode "default"
+  #bindsym t exec --no-startup-id $changeto tv, mode "default"
+  #bindsym a exec --no-startup-id $changeto all, mode "default"
+
+  ## back to normal: Enter or Escape
+  #bindsym Return mode "default"
+  #bindsym Escape mode "default"
+#}
+## bind FN home key to menu
+#bindsym XF86HomePage mode "$mode_chmon"
+
+workspace $PWS1_TRM output $primary
+workspace $PWS3_WWW output $primary
+workspace $PWS2_DEV output $primary
+
+workspace $SWS1_AUX output $secondary
+workspace $SWS2_DBG output $secondary
+workspace $SWS3_COM output $secondary
 
 # set border size
 new_window 1pixel
 hide_edge_borders none
 
 # assign apps to workspaces
-#assign [class="URxvt"] $WS1
-assign [class="(?i)subl3"] $WS2
-assign [class="(?i)atom"] $WS2
-assign [class="(?i)firefox"] $WS3
-assign [class="(?i)thunderbird"] $WS6
-assign [class="(?i)google-chrome$"] $WS7
-assign [class="(?i)google-chrome-unstable$"] $WS5
-assign [class="(?i)steam"] $WS8
-assign [class="(?i)spotify"] $WS7
-assign [class="(?i)pidgin"] $WS6
-assign [class="(?i)linphone"] $WS5
-assign [class="(?i)gimp"] $WS2
+#assign [class="URxvt"] $PWS1_TRM
+assign [class="(?i)subl3"] $PWS2_DEV
+assign [class="(?i)atom"] $PWS2_DEV
+assign [class="(?i)firefox"] $PWS3_WWW
+assign [class="(?i)thunderbird"] $SWS3_COM
+assign [class="(?i)google-chrome$"] $TWS1_MED
+assign [class="(?i)google-chrome-unstable$"] $SWS2_DBG
+assign [class="(?i)steam"] $TWS2_GAM
+assign [class="(?i)spotify"] $TWS1_MED
+assign [class="(?i)pidgin"] $SWS3_COM
+assign [class="(?i)linphone"] $SWS3_COM
+assign [class="(?i)gimp"] $PWS2_DEV
 
 # general rules
 for_window [window_role="pop-up"] floating enable
@@ -104,7 +117,7 @@ for_window [title="(?i)Friends"]  floating enable
 for_window [class="(?i)Pidgin"] floating enable
 for_window [class="(?i)Pidgin"] floating_maximum_size 50 x 75
 for_window [class="(?i)linphone"] floating enable
-for_window [class="(?i)thunderbird"] floating enable
+#for_window [class="(?i)thunderbird"] floating enable
 
 # ─────────────  Appearance  ──────────────
 set $font_lintilla -*-terminesspowerline-*-*-normal-*-12-*-*-*-*-*-*-*
@@ -174,6 +187,7 @@ bar {
   output $primary
   output $television
   tray_output $primary
+  strip_workspace_numbers yes
   position top
   font $font_status_lintilla
   status_command i3blocks -c ~/.i3/i3blocks/lint_primary.conf
@@ -197,6 +211,7 @@ bar {
   output $secondary
   #tray_output $secondary
   status_command i3blocks -c ~/.i3/i3blocks/lint_secondary.conf
+  strip_workspace_numbers yes
   font $font_status_lintilla
   position top
   separator_symbol "|"
@@ -230,34 +245,34 @@ floating_modifier $mod
 # start a terminal
 #bindsym $mod+Return exec urxvtc -e zsh -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
 #bindsym $mod+Return exec urxvtc -e tmux
-bindsym $mod+Return exec --no-startup-id urxvtc
+bindsym $mod+Return exec urxvtc
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+c kill
 
 # start dmenu that only lists .desktop entries.
 #bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='dmenu -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i' --term="urxvtc"
 #bindsym $mod+d exec --no-startup-id dmenu_run -fn "Essential PragmataPro-10" -nb "#402E2E" -nf "#C0B18B" -sb "#4A3637" -sf "#7B8748" -b -i
-bindsym $mod+space exec --no-startup-id rofi -show run
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+Tab exec --no-startup-id rofi -show run
+bindsym $mod+grave exec --no-startup-id rofi -show window
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+#bindsym $mod+j focus left
+#bindsym $mod+k focus down
+#bindsym $mod+l focus up
+#bindsym $mod+semicolon focus right
 
-# alternatively, you can use the cursor keys:
+# cursor keys to change focus:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+#bindsym $mod+Shift+j move left
+#bindsym $mod+Shift+k move down
+#bindsym $mod+Shift+l move up
+#bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -274,24 +289,21 @@ bindsym $mod+v split h
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Control+Shift+t layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+t layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+d floating toggle
+bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+d focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # border changing
 bindsym $mod+b border toggle
@@ -300,23 +312,23 @@ bindsym $mod+b border toggle
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
-# toggle touchpad (not in dotfiles repo)
-bindsym $mod+p exec --no-startup-id ~/bin/touchpad-toggle
+# toggle touchpad
+bindsym $mod+Shift+o exec --no-startup-id ~/bin/touchpad-toggle
 
 # move to last workspace
 bindsym $mod+z workspace back_and_forth
 
-# jump to previous workspace by hitting first ws button again
-#workspace_auto_back_and_forth yes
-
 # move windows back and forth
 bindsym $mod+Shift+z move container to workspace back_and_forth
 
-bindsym $mod+Control+Shift+Prior move container to output left
-bindsym $mod+Control+Shift+Next move container to output right
+# jump to previous workspace by hitting first ws button again
+#workspace_auto_back_and_forth yes
 
-bindsym $mod+a focus parent
-bindsym $mod+Shift+a focus child
+bindsym $mod+Control+Shift+left move container to output left
+bindsym $mod+Control+Shift+right move container to output right
+
+bindsym $mod+p focus parent
+bindsym $mod+Shift+p focus child
 
 # screenshot
 bindsym --release Print exec scrot $HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
@@ -325,9 +337,9 @@ bindsym --release Shift+Print exec scrot -s $HOME/Pictures/screenshots/screensho
 # send a signal to i3blocks on caps
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 
-bindsym 123 exec  pkill -SIGRTMIN+12 i3blocks
-bindsym 122 exec pkill -SIGRTMIN+12 i3blocks
-bindsym 121 exec pkill -SIGRTMIN+12 i3blocks
+#bindsym 123 exec pkill -SIGRTMIN+12 i3blocks
+#bindsym 122 exec pkill -SIGRTMIN+12 i3blocks
+#bindsym 121 exec pkill -SIGRTMIN+12 i3blocks
 
 # ────────────── Resize menu ──────────────
 mode "resize" {
@@ -371,6 +383,7 @@ mode "$mode_system" {
 }
 # bind FN sleep key to menu
 bindsym XF86Sleep mode "$mode_system"
+#bindsym $mod+End mode "$mode_system"
 
 # ───────────── output menu ─────────────
 set $changeto ~/bin/chmon
@@ -386,5 +399,6 @@ mode "$mode_chmon" {
 }
 # bind FN home key to menu
 bindsym XF86HomePage mode "$mode_chmon"
+#bindsym $mod+Home mode "$mode_chmon"
 
 # vim:filetype=i3
