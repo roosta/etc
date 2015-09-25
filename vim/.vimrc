@@ -138,33 +138,45 @@ nnoremap <silent> <Leader><Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader><Leader>-:exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+
 " ───────────── PLUGINS ──────────────
+" download vim-plug if not present in 'autoload'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
 " ────────────────────────────────────
 call plug#begin('~/.vim/plugged')
 
-" on demand plugins
-"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' } " filetree in vim
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'tpope/vim-salve', { 'for': 'clojure' }
+Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
+Plug 'kien/rainbow_parentheses.vim'
 
-" always load
 Plug 'majutsushi/tagbar' " generate a sidebar with ctags
-Plug 'jdonaldson/vaxe' " vim support for haxe projects
+Plug 'jdonaldson/vaxe', { 'for': ['haxe', 'lime'] } " vim support for haxe projects
 Plug 'tpope/vim-surround' " Quickly surround text
 Plug 'tpope/vim-repeat' " add more support for command repeat
 Plug 'tpope/vim-eunuch' " add sudo access in vim.
 Plug 'svermeulen/vim-easyclip' " simplyfy yank and paste
-Plug 'terryma/vim-multiple-cursors' " the one feature in st I really missed
-Plug 'kien/ctrlp.vim' " well, maybe this one too...
+Plug 'terryma/vim-multiple-cursors' " the one feature in subl I really missed
+Plug 'kien/ctrlp.vim' " quick access to files and other vim features
 Plug 'scrooloose/nerdcommenter' " commend code qickly with syntax support
-Plug 'morhetz/gruvbox' " awesome colorscheme
+Plug 'morhetz/gruvbox' " colorscheme
 Plug 'scrooloose/syntastic' " lint and error checking
-Plug 'sheerun/vim-polyglot' " lots more syntax
+Plug 'sheerun/vim-polyglot' "more syntax
 Plug 'easymotion/vim-easymotion' " move around text with new motions
 Plug 'unblevable/quick-scope' " add visuals to fFtT movements
 Plug 'bling/vim-airline' " statusbar
 Plug 'ntpeters/vim-better-whitespace' " highlight and strip unneeded whitespace
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " autocompletion. Conf needed
+
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
+"Plug 'jgdavey/tslime.vim'
 "Plug 'bling/vim-bufferline' " list buffers in statusbar
-Plug 'Valloric/YouCompleteMe' " autocompletion. Conf needed
 
 " some ..line generators
 "Plug 'edkolev/promptline.vim' " a airline prompt generator for shell
@@ -172,8 +184,8 @@ Plug 'Valloric/YouCompleteMe' " autocompletion. Conf needed
 
 call plug#end()
 
-filetype plugin indent on
 syntax on
+filetype plugin indent on
 
 " ───────────── Syntastic ──────────────
 set statusline+=%#warningmsg#
@@ -182,7 +194,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 "───────── vim-multiple-cursor ─────────
@@ -192,7 +204,7 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " ─────────────── Ctrl-P ───────────────
-let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project']
+let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.git']
 let g:ctrlp_by_filename = 1
 let g:ctrlp_reuse_window = 1
 let g:ctrlp_use_caching = 1
