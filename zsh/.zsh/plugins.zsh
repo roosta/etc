@@ -20,5 +20,7 @@ source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source and configure history search
 source $HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+source $HOME/.zsh/plugins/web-search.zsh
+
 # source the rest
-for plugin (~/.zsh/plugins/*.zsh) source $plugin
+#for plugin (~/.zsh/plugins/*.zsh) source $plugin
