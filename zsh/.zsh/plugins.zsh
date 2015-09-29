@@ -7,8 +7,7 @@
 # fasd ( https://github.com/clvv/fasd )
 eval "$(fasd --init auto)"
 
-alias v='f -e vim' # quick opening files with vim
-alias sv='sudo fasd -e vim' # quick svim access
+#alias sv='sudo fasd -e vim' # quick svim access
 
 # read dir colors
 eval $( dircolors -b $HOME/.dircolors/LS_COLORS )

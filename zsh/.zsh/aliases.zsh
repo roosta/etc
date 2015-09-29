@@ -8,7 +8,11 @@
 # Github : https://github.com/roosta
 # -------------------------------
 
-# ======= Quick edits =======
+# ＶＩＭ
+# ----------------
+alias vi="vim"
+
+# quick edits
 alias vigit='vim ~/.gitconfig'
 alias vissh='vim ~/.ssh/config'
 alias vii3='vim ~/.i3/config.i3'
@@ -21,14 +25,14 @@ alias vixinit='vim ~/.xinitrc'
 alias vifont='vim ~/.config/fontconfig/fonts.conf'
 alias vibinds='vim ~/.xbindkeysrc'
 
-# ======= todo =======
 # placeholder. write/find script
 alias todo='vim ~/.todo'
 alias lstodo='cat ~/.todo'
 
-# ======= Quick list/find  =======
+# Ｑｕｉｃｋｌｉｓｔ／ｆｉｎｄ
+# ----------------------------
 # locate an alias quickly
-alias gra="alias | grep"
+alias grea="alias | grep"
 
 # grep command history quickly
 alias greh="cat ~/.histfile | grep"
@@ -37,17 +41,21 @@ alias greh="cat ~/.histfile | grep"
 alias lspath='echo -e ${PATH//:/\\n}'
 
 # locate file at working dir
-alias gref='lsa|grep'
-alias grefr='lsa -R|grep'
+alias gref='ls|grep'
+alias grefr='ls -R|grep'
 
 # list pulseaudio sinks
 alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
+# recursive grep through filetypes
 alias grehx='grep -R --include="*.hx"'
+alias greclj='grep -R --include="*.clj'
 
+# yes
 alias awk='gawk'
 
-# ======= safety =======
+# Ｓａｆｅｔｙ
+# ------------
 alias mv=' timeout 8 mv -iv'
 alias rm=' timeout 3 rm -Iv --one-file-system'
 alias rmr='rm -r'
@@ -69,7 +77,8 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 # create parents, be verbose
 alias mkdir='mkdir -pv'
 
-# ======= Movement ========
+# Ｍｏｖｅｍｅｎｔ
+#-----------------
 # dirstack needs some extra config, see dirstack.sh
 alias cd..='cd ..'
 alias -g ...='../..'
@@ -101,16 +110,32 @@ alias 19='cd -19'
 
 # long format and color ls output with various options. (see "man ls")
 alias ls="ls -lAhpXk --color=auto --group-directories-first"
-alias dir='ls++ --potsf -lAhpXk'
+#alias dir='ls++ --potsf -lAhpXk'
 alias dir='ls++ -lAhpXk'
+alias dirr='dir -R'
 
-# ======= Security =======
+# fasd plugin aliases (most of these are added by default but I often grep this list)
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias c='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zi='fasd_cd -d -i' # cd with interactive selection
+alias ci='fasd_cd -d -i' # cd with interactive selection
+alias v='f -e vim'       # quick opening files with vim
+
+# Ｓｅｃｕｒｉｔｙ
+# ----------------
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
 alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
 alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
 alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."
 
-# ======= Pacman =======
+# Ｐａｃｍａｎ
+# ------------
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
 alias pacman='pacaur --color=auto' # use pacaur as a pacman extension
 alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
@@ -131,17 +156,18 @@ alias pacmir='pacman -Syy' # Force refresh of all package lists after updating /
 alias pacexp='pacman -Qet' # list all packages explicitly installed and not required as dependencies
 alias pacorphrm='pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
 alias pacupdfull='pacman -Syu --devel' # update all packages including development packages
-#alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
-#alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
-#alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package and ABS databases against repositories
-#alias pacinsd='pacman -S --asdeps' # Install given package(s) as dependencies
+alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
+alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
+alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package and ABS databases against repositories
+alias pacinsd='pacman -S --asdeps' # Install given package(s) as dependencies
 
 # AUR
 # ------
 #alias pacaur4='pacaur --domain aur4.archlinux.org'
 #alias yaourt='pacaur'
 
-# ======= Utils =======
+# Ｕｔｉｌｓ
+# ----------
 alias grep="grep -i --color=auto" # ignore case in grep and color output
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
 alias ports='netstat -tulanp' # list open ports
@@ -154,12 +180,10 @@ alias make='colormake'
 alias stow='stow -v'
 
 # keep forgetting what these are called.
+alias getclass='xprop'
 alias getkey='xev -event keyboard'
 #alias getkeycode=xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
-alias getclass='xprop'
-
-# vi to vim
-alias vi="vim"
+alias logcolor='ccze'
 
 # utput from a command with xclip when this is piped in
 alias copy='xclip -sel clip'
@@ -169,16 +193,41 @@ alias gettime='date +"%T"'
 alias getdatef='date +%Y-%m-%d_%H-%M-%S'
 alias getdate='date +"%Y-%m-%d"'
 
+# ignore case always
 alias locate='locate -i'
 
+# print du/df tallies in human readable
 alias du='du -h'
 alias df='df -h'
 alias dut='du -ht'
 
-alias logcolor='ccze'
+alias updatedb='sudo updatedb'
 
-# ======= VCS =======
+# Ｓｙｓｔｅｍ
+# ------------
+# systemctl query
+alias sysstat='systemctl status'
+alias systype='systemctl --type='
+alias sysstate='systemctl --state='
+alias syslsu='systemctl list-units'
+alias syslsuf='systemctl list-unit-files'
+alias syslssoc='systemctl list-sockets'
+alias syslsser='systemctl list-services'
+alias sysise='systemctl is-enabled'
+alias sysisa='systemctl is-enabled'
+alias sysisf='systemctl is-failed'
+alias syscat='sudo systemctl cat'
 
+# systemctl modify
+alias sysresf='sudo systemctl daemon-reload'
+alias sysstart='sudo systemctl start'
+alias sysstop='sudo systemctl stop'
+alias sysrest='sudo systemctl restart'
+alias syscan='sudo systemctl cancel'
+alias sysedit='sudo systemctl edit'
+
+# ＶＣＳ
+# ------
 alias diff='colordiff'
 
 # --- git ---
@@ -228,12 +277,12 @@ alias svnundo='svn revert --force-interactive --recursive .'
 
 alias svnaddall="svn status | grep '?' | sed 's/^.* /svn add /' | bash"
 #alias svnaddall="svn add `svn status . | awk '/^[?]/{print $2}'`"
-# ======= MISC =======
-# merge new xresources config
+
+# ＭＩＳＣ
+# --------
+# delete and or refresh shell confs
 alias xrmerge="xrdb -merge ~/.Xresources"
 alias xrload="xrdb -load ~/.Xresources"
-
-# re-source zsh config files
 alias zrefresh="source $HOME/.zshrc"
 
 #alias _="sudo"
@@ -244,17 +293,17 @@ alias :Q="exit"
 
 # common typo
 alias claer='clear'
-alias c='clear'
+alias cl='clear'
 
+# quick alias to remove steam runtime and use native
+# see: https://wiki.archlinux.org/index.php/Steam#Using_native_runtime
 alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
+alias hxrepl='haxelib run ihx'
 
-alias repl='haxelib run ihx'
+# Ｐａｔｈｓ
+# ----------
+alias tlwd='cd /home/transform/Projects/Transform/Daniel'
+alias tlproj='cd /home/transform/Projects'
 
-
-# ======= Paths =======
-alias tl='/home/transform'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
 
-alias gentags='ctags -R'
-
-alias updatedb='sudo updatedb'

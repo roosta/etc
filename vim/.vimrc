@@ -7,11 +7,10 @@
 " │ Site   : http://dotfiles.roosta.sh │
 " │ Github : https://github.com/roosta │
 " └────────────────────────────────────┘
-" souces:
-" - http://amix.dk/vim/vimrc.html
+" thanks to:
 " - https://github.com/xero/dotfiles/tree/master/vim
 " - https://github.com/trapd00r/configs/tree/master/vim
-" ──────────────────────────────────────
+" --------------------------------------
 
 " use vim settings, rather than vi settings
 " must be first, because it changes other options as a side effect
@@ -19,8 +18,8 @@ if &compatible
   set nocompatible
 endif
 
-" ───────────── OPTIONS ──────────────
-" ────────────────────────────────────
+"Ｏｐｔｉｏｎｓ
+" -------------
 " using EasyClip. See Plugins
 "set clipboard=unnamed " set same clipboard for vim and X
 "set paste
@@ -37,7 +36,8 @@ set wildmenu " command line completion
 set wildmode=longest,list,full
 "set wildmode=longest:full,full
 set wildignorecase
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,*/dist/*,*/undo/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,*/dist/*,*/undo/*,
+      \*/out/*,*/.repl*
 
 " fix backspace behaviour
 set backspace=indent,eol,start
@@ -98,8 +98,8 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 
-" ───────────── GUI ONLY ──────────────
-" ─────────────────────────────────────
+" Ｇｖｉｍ
+" -----------
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -110,8 +110,8 @@ if has('gui_running')
   set guiheadroom=0
 endif
 
-" ───────────── KEYBINDS ──────────────
-" ────────────────────────────────────
+" Ｋｅｙｂｉｎｄｉｎｇｓ
+" --------------
 " Move across wrapped lines like regular lines
 noremap 0 ^ " Go to the first non-blank character of a line
 noremap ^ 0 " Just in case you need to go to the very beginning of a line
@@ -139,25 +139,29 @@ nnoremap <silent> <Leader><Leader>-:exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
-" ───────────── PLUGINS ──────────────
+" Ｐｌｕｇｉｎ  ｃｏｎｆ
+" ----------------------
+
+" Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
+" -------------------------------------------------------------------
+
 " download vim-plug if not present in 'autoload'
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
-" ────────────────────────────────────
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'tpope/vim-salve', { 'for': 'clojure' }
-Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
+Plug 'tpope/vim-fireplace'
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
+Plug 'tpope/vim-salve'
+Plug 'kovisoft/paredit'
 Plug 'kien/rainbow_parentheses.vim'
-
 Plug 'majutsushi/tagbar' " generate a sidebar with ctags
-Plug 'jdonaldson/vaxe', { 'for': ['haxe', 'lime'] } " vim support for haxe projects
+Plug 'jdonaldson/vaxe' " vim support for haxe projects
 Plug 'tpope/vim-surround' " Quickly surround text
 Plug 'tpope/vim-repeat' " add more support for command repeat
 Plug 'tpope/vim-eunuch' " add sudo access in vim.
@@ -173,21 +177,21 @@ Plug 'unblevable/quick-scope' " add visuals to fFtT movements
 Plug 'bling/vim-airline' " statusbar
 Plug 'ntpeters/vim-better-whitespace' " highlight and strip unneeded whitespace
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " autocompletion. Conf needed
-
-"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
+Plug 'tpope/vim-classpath'
 "Plug 'jgdavey/tslime.vim'
 "Plug 'bling/vim-bufferline' " list buffers in statusbar
 
 " some ..line generators
 "Plug 'edkolev/promptline.vim' " a airline prompt generator for shell
 "Plug 'edkolev/tmuxline.vim' " an airline tmux statusbar generator
-
 call plug#end()
 
 syntax on
 filetype plugin indent on
 
-" ───────────── Syntastic ──────────────
+" Syntastic
+" ---------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -197,14 +201,16 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"───────── vim-multiple-cursor ─────────
+" vim-multiple-cursor
+" -------------------
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" ─────────────── Ctrl-P ───────────────
-let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.git']
+" Ctrl-P
+" ------
+let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
 let g:ctrlp_by_filename = 1
 let g:ctrlp_reuse_window = 1
 let g:ctrlp_use_caching = 1
@@ -219,7 +225,8 @@ noremap <c-b> :CtrlPBuffer<CR>
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
                           \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 
-" ───────────── Easymotion ──────────────
+" Easymotion
+" -----------
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
 " resoning is that EM takes up such a huge amount of binds I wanted it to have
@@ -247,7 +254,8 @@ map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
-" ───────────── Quickscope ─────────────
+" Quickscope
+" ----------
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
 let g:qs_first_occurrence_highlight_color = 155       " terminal vim
 
@@ -257,10 +265,12 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" ────────────── Airline ────────────────
+" Airline
+" --------
 let g:airline_powerline_fonts = 1
 
-" ────────────── Easyclip ───────────────
+" Easyclip
+" --------
 " remap mark to gm since EasyClip cut shadows m key
 nnoremap gm m
 
@@ -274,7 +284,9 @@ set clipboard=unnamed,unnamedplus
 nmap ]y <plug>EasyClipSwapPasteForward
 nmap [y <plug>EasyClipSwapPasteBackwards
 let g:EasyClipShareYanks = 1
-" ─────────────── Gruvbox ────────────────
+
+" Gruvbox
+" --------
 " Set theme
 "colorscheme railscasts
 let g:gruvbox_italicize_comments = 1
@@ -282,7 +294,8 @@ let g:gruvbox_italic = 1
 colorscheme gruvbox
 set background=dark " Setting dark mode
 
-" ──────────────── Vaxe ─────────────────
+" Vaxe
+" ---------
 "let g:vaxe_cache_server = 1
 "let g:vaxe_prefer_lime = 1
 let g:vaxe_lime_target = 'html5 -debug'
@@ -292,10 +305,57 @@ let g:vaxe_lime_target = 'html5 -debug'
 
 "autocmd BufNewFile,BufRead /project/* vaxe#ProjectLime("/project/project.lime")
 map <leader>vi :call vaxe#ImportClass()<CR>
-" ─────────────── Tagbar ────────────────
+
+" Tagbar
+" --------
 nmap <leader>t :TagbarToggle<CR>
 
-" ─────────────── augroups ────────────────
+" Rainbow Parenthesis
+" -------------------
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+"let g:rbpt_loadcmd_toggle = 0
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" NERDTree
+" --------
+"map <leader>n :NERDTreeToggle<CR>
+
+" show hidden files in nerdtree
+let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1
+let NERDTreeQuitOnOpen=1
+" close vim if nerdtree is only window remaining
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Paredit
+" ---------
+let g:paredit_electric_return = 1
+let g:paredit_leader = '\'
+
+" ｆｕｎｃｔｉｏｎｓ／ａｕｇｒｏｕｐｓ
+" ------------------------------------
 augroup BgHighlight
     autocmd!
     "autocmd WinEnter * set number
@@ -319,17 +379,17 @@ augroup END
 "
 "
 "
-" ─────────────── Deprecated ────────────────
-" ───────────────────────────────────────────
+" Deprecated
+" -----------------
 "
-" ────── Reload vim conf on save ───────
+"  Reload vim conf on save
 " source conf on save
 "augroup reload_vimrc " {
     "autocmd!
     "autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "augroup END " }
 
-" ───────────── Bufferline ──────────────
+"  Bufferline
 "let g:bufferline_active_buffer_left = ''
 "let g:bufferline_active_buffer_right = ''
 "let g:bufferline_modified = '+'
@@ -341,17 +401,7 @@ augroup END
   "\ let &statusline='%{bufferline#refresh_status()}'
     "\ .bufferline#get_status_string()
 
-" ───────────── NERDTree ───────────────
-"map <leader>n :NERDTreeToggle<CR>
-
-"" show hidden files in nerdtree
-"let NERDTreeShowHidden=1
-"let NERDTreeShowBookmarks=1
-"let NERDTreeQuitOnOpen=1
-"" close vim if nerdtree is only window remaining
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" ───────────── Promptline ──────────────
+"  Promptline
 "let g:promptline_preset = {
   "\'a' : [ '$vim_mode' ],
   "\'b' : [ promptline#slices#cwd() ],
@@ -363,7 +413,7 @@ augroup END
 
 ": PromptlineSnapshot ~/.zsh/plugins/promptline.zsh airline_insert
 
-" ───────────── Keybinds ──────────────
+"  Keybinds
 " press enter to exit search highlight
 "nnoremap <CR> :nohlsearch<CR><CR>
 

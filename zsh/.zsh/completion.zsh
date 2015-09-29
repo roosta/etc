@@ -1,5 +1,7 @@
 autoload -Uz compinit
 compinit
+autoload -U ~/.zsh/completion/*(:t)
+
 # autoload -U ~/.zsh/completion/*(:t)
 zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
