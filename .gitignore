@@ -21,6 +21,7 @@ vim/backup/*
 
 *tmp*
 *cache*
+*deprecated*
 
 # sublime
 *.last-run
@@ -69,3 +70,5 @@ svn/*/README.txt
 **/tags
 
 zsh/.zsh/plugins/**
+
+*.jar
