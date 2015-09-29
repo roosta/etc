@@ -8,8 +8,8 @@
 # │ Github : https://github.com/roosta │
 # └────────────────────────────────────┘
 # Sources:
-# * http://i3wm.org/docs/user-contributed/lzap-config.html
-# * http://dotshare.it (picked from various i3 confs, color schemes..etc)
+#* http://i3wm.org/docs/user-contributed/lzap-config.html
+#* http://dotshare.it (picked from various i3 confs, color schemes..etc)
 # ───────────────────────────────────────────────────────────────────────
 
 # ─────────────  Layout  ──────────────
@@ -23,28 +23,33 @@ set $television HDMI-0
 #set $primary VGA1
 #set $secondary LVDS1
 
+# Reason I append numbers infront is for sorting reasons. I like the order to make
+# sense according to their bindings. In each bar I strip numbers so whats left is the letter
+# that the workspace is bound to.
+# It also helps when restoring layouts to append to workspace number and not name
+
 # Primary workspaces
-set $PWS1_TRM "1Q:TRM"
-set $PWS2_DEV "2W:DEV"
-set $PWS3_WWW "3E:WWW"
+set $PWS1_TRM "1Q:Term"
+set $PWS2_DEV "2W:Devel"
+set $PWS3_WWW "3E:Web"
 
 # Secondary workspaces
-set $SWS1_AUX "1A:AUX"
-set $SWS2_DBG "2S:DBG"
-set $SWS3_COM "3D:COM"
+set $SWS1_AUX "4A:Aux"
+set $SWS2_COM "5S:Comms"
+set $SWS3_DBG "6D:Debug"
 
 # Tertiary workspaces
-set $TWS1_MED "4:1:MED"
-set $TWS2_GAM "5:2:GAM"
-set $TWS3_MSC "6:3:MSC"
+set $TWS1_MED "7:1:Media"
+set $TWS2_GAM "8:2:Games"
+set $TWS3_MSC "9:3:Misc"
 
 bindsym $mod+q workspace $PWS1_TRM
 bindsym $mod+w workspace $PWS2_DEV
 bindsym $mod+e workspace $PWS3_WWW
 
 bindsym $mod+a workspace $SWS1_AUX
-bindsym $mod+s workspace $SWS2_DBG
-bindsym $mod+d workspace $SWS3_COM
+bindsym $mod+s workspace $SWS2_COM
+bindsym $mod+d workspace $SWS3_DBG
 
 bindsym $mod+1 workspace $TWS1_MED
 bindsym $mod+2 workspace $TWS2_GAM
@@ -55,51 +60,40 @@ bindsym $mod+Shift+w move workspace $PWS2_DEV
 bindsym $mod+Shift+e move workspace $PWS3_WWW
 
 bindsym $mod+Shift+a move workspace $SWS1_AUX
-bindsym $mod+Shift+s move workspace $SWS2_DBG
+bindsym $mod+Shift+s move workspace $SWS3_DBG
 bindsym $mod+Shift+d move workspace $SES3_COM
 
 bindsym $mod+Shift+1 move workspace $TWS1_MED
 bindsym $mod+Shift+2 move workspace $TWS2_GAM
 bindsym $mod+Shift+3 move workspace $TWS3_MSC
 
-#set $mode_chmon Move to: (1) Primary, (2) Secondary, (3) Teritiary
-#mode "$mode_workspace" {
-  #bindsym d exec --no-startup-id $changeto desk, mode "default"
-  #bindsym t exec --no-startup-id $changeto tv, mode "default"
-  #bindsym a exec --no-startup-id $changeto all, mode "default"
-
-  ## back to normal: Enter or Escape
-  #bindsym Return mode "default"
-  #bindsym Escape mode "default"
-#}
-## bind FN home key to menu
-#bindsym XF86HomePage mode "$mode_chmon"
-
 workspace $PWS1_TRM output $primary
 workspace $PWS3_WWW output $primary
 workspace $PWS2_DEV output $primary
 
 workspace $SWS1_AUX output $secondary
-workspace $SWS2_DBG output $secondary
-workspace $SWS3_COM output $secondary
+workspace $SWS3_DBG output $secondary
+workspace $SWS2_COM output $secondary
 
-# set border size
+# Options
+focus_follows_mouse no
 new_window 1pixel
 hide_edge_borders none
 
 # assign apps to workspaces
-#assign [class="URxvt"] $PWS1_TRM
 assign [class="(?i)subl3"] $PWS2_DEV
 assign [class="(?i)atom"] $PWS2_DEV
 assign [class="(?i)firefox"] $PWS3_WWW
-assign [class="(?i)thunderbird"] $SWS3_COM
+assign [class="(?i)devtools$"] $SWS3_DBG
+assign [class="(?i)thunderbird"] $SWS2_COM
 assign [class="(?i)google-chrome$"] $TWS1_MED
-assign [class="(?i)google-chrome-unstable$"] $SWS2_DBG
+assign [class="(?i)google-chrome-beta$"] $SWS3_DBG
 assign [class="(?i)steam"] $TWS2_GAM
 assign [class="(?i)spotify"] $TWS1_MED
-assign [class="(?i)pidgin"] $SWS3_COM
-assign [class="(?i)linphone"] $SWS3_COM
+assign [class="(?i)pidgin"] $SWS2_COM
+assign [class="(?i)linphone"] $SWS2_COM
 assign [class="(?i)gimp"] $PWS2_DEV
+#assign [class="(?i)urxvt"] $PWS1_TRM
 
 # general rules
 for_window [window_role="pop-up"] floating enable
@@ -114,25 +108,34 @@ for_window [class="(?i)SessionManager"] floating enable
 for_window [class="(?i)firefox"]  new_window pixel 0
 for_window [title="(?i)Steam - Update News(.*)"]  floating enable
 for_window [title="(?i)Friends"]  floating enable
-for_window [class="(?i)Pidgin"] floating enable
-for_window [class="(?i)Pidgin"] floating_maximum_size 50 x 75
+#for_window [class="(?i)Pidgin"] floating enable
+#for_window [class="(?i)Pidgin"] floating_maximum_size 50 x 75
 for_window [class="(?i)linphone"] floating enable
 #for_window [class="(?i)thunderbird"] floating enable
 
+# ────────────── Autostart ──────────────
+exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
+exec firefox
+exec thunderbird
+exec pidgin
+exec urxvtc
+
 # ─────────────  Appearance  ──────────────
-set $font_lintilla -*-terminesspowerline-*-*-normal-*-12-*-*-*-*-*-*-*
+
+# define various interchangable fonts
+#set $font_lintilla -*-terminesspowerline-*-*-normal-*-12-*-*-*-*-*-*-*
+set $font_lintilla pango: Essential PragmataPro 12px
 set $font_allitnil pango: Essential PragmataPro 15px
 set $font_status_allitnil pango: Essential PragmataPro 14px
 set $font_status_lintilla -*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*
-
-# assign various fonts
 #set $font_lintilla pango: Essential PragmataPro 14px
+#set $font_status_lintilla pango: PragmataPro for Powerline 10px, pango: FontAwesome 10px
 #set $font_status_lintilla pango: FontAwesome 14px
 
-# Assign Actual font here:
+# Assign defined font variable to i3:
 font $font_lintilla
 
-# define gruv colors
+# define gruvbox colors
 set $gruvbg #282828
 set $gruvfg #ebdbb2
 set $gruvbgSoft #32302f
@@ -171,11 +174,11 @@ set $gruvfg1 #E9DAB1
 set $gruvfg0 #F9EFC6
 
 # <class> <border> <bg> <fg> <indicator>
-client.focused $gruvbgHard $gruvbgsoft $gruvBlue $gruvDarkMagenta
-client.focused_inactive $gruvbgHard $gruvbgsoft $gruvfg $gruvbgSoft
+client.focused $gruvbgHard $gruvbgSoft $gruvMagenta $gruvDarkMagenta
+client.focused_inactive $gruvbgHard $gruvbg0 $gruvfg $gruvbgSoft
 client.unfocused $gruvbghard $gruvbg $gruvDarkGray $gruvDarkMagenta
 client.urgent $gruvDarkOrange $gruvDarkOrange $gruvbg $gruvDarkOrange
-client.placeholder $gruvbgsoft $gruvbgsoft $gruvbgsoft $gruvMagenta
+client.placeholder $gruvCyan $gruvDarkCyan $gruvBlack $gruvMagenta
 
 #client.focused $gruvBlue $gruvBlue $gruvBlack $gruvDarkMagenta
 #client.focused_inactive $gruvDarkGray $gruvbgsoft $gruvfg $gruvbgsoft
@@ -186,7 +189,7 @@ client.placeholder $gruvbgsoft $gruvbgsoft $gruvbgsoft $gruvMagenta
 bar {
   output $primary
   output $television
-  tray_output $primary
+  tray_output primary
   strip_workspace_numbers yes
   position top
   font $font_status_lintilla
@@ -194,14 +197,14 @@ bar {
   separator_symbol "|"
   colors {
     # <bar>
-    background $gruvbgsoft
-    separator $gruvbg2
-    #statusline #ffffff
+    background $gruvbg0
+    separator $gruvbgSoft
+    statusline $gruvfg
 
     # <workclass> <border> <bg> <text>
-    focused_workspace $gruvBlue $gruvBlue $gruvBlack
-    active_workspace $gruvfg2 $gruvfg2 $gruvBlack
-    inactive_workspace $gruvbgSoft $gruvbgSoft $gruvfg2
+    focused_workspace $gruvbgHard $gruvbgSoft $gruvMagenta
+    active_workspace $gruvbgHard $gruvbgSoft $gruvfg
+    inactive_workspace $gruvbgHard $gruvbg $gruvDarkGray
     urgent_workspace $gruvDarkOrange $gruvDarkOrange $gruvBlack
   }
 }
@@ -209,7 +212,7 @@ bar {
 
 bar {
   output $secondary
-  #tray_output $secondary
+  tray_output all
   status_command i3blocks -c ~/.i3/i3blocks/lint_secondary.conf
   strip_workspace_numbers yes
   font $font_status_lintilla
@@ -217,20 +220,17 @@ bar {
   separator_symbol "|"
   colors {
     # <bar>
-    background  $gruvbgsoft
-    separator   $gruvbg2
-    statusline  #123123
+    background $gruvbg
+    separator $gruvbgSoft
+    statusline $gruvfg
 
     # <workclass> <border> <bg> <text>
-    focused_workspace $gruvBlue $gruvBlue $gruvBlack
-    active_workspace $gruvfg2 $gruvfg2 $gruvBlack
-    inactive_workspace $gruvbgSoft $gruvbgSoft $gruvfg2
+    focused_workspace $gruvbgHard $gruvbgSoft $gruvMagenta
+    active_workspace $gruvbgHard $gruvbgSoft $gruvfg
+    inactive_workspace $gruvbgHard $gruvbg $gruvDarkGray
     urgent_workspace $gruvDarkOrange $gruvDarkOrange $gruvBlack
   }
 }
-
-# ──────────────── Misc ────────────────
-focus_follows_mouse no
 
 # ────────────── Keybinds ──────────────
 # set modkey (Super key)
@@ -335,13 +335,18 @@ bindsym --release Print exec scrot $HOME/Pictures/screenshots/screenshot_$(date 
 bindsym --release Shift+Print exec scrot -s $HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
 
 # send a signal to i3blocks on caps
+# This sends a signal to i3blocks script keyboard layout to toggle and display which
+# locale the keyboard currenly uses. See lint_primary.conf
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 
+# send signal to i3blocks on volume change and update volume script.
+# currently unoprable since xbindkeys hijacks these keys for reasons I haven't looked into
 #bindsym 123 exec pkill -SIGRTMIN+12 i3blocks
 #bindsym 122 exec pkill -SIGRTMIN+12 i3blocks
 #bindsym 121 exec pkill -SIGRTMIN+12 i3blocks
 
 # ────────────── Resize menu ──────────────
+
 mode "resize" {
   # vi movement
   bindsym j resize shrink width 10 px or 10 ppt
@@ -361,12 +366,10 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# ────────────── Autostart ──────────────
-exec firefox
-exec --no-startup-id urxvtc
-
 # ───────────── System Menu ─────────────
+
 # https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
+# fast way to reach power settings for system. Requires polkit.
 set $Locker i3lock --image=/usr/share/backgrounds/pattern-01.png -t && sleep 1
 
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
@@ -383,9 +386,13 @@ mode "$mode_system" {
 }
 # bind FN sleep key to menu
 bindsym XF86Sleep mode "$mode_system"
-#bindsym $mod+End mode "$mode_system"
+bindsym $mod+End mode "$mode_system"
 
 # ───────────── output menu ─────────────
+
+# This menu lets me select which output layout I want to use.
+# I often switch between couch and desk and wanted a quick way to swap.
+# Script is in the submodule "scripts". Alternativly http://github.com/roosta/scripts
 set $changeto ~/bin/chmon
 set $mode_chmon Layout: (d) desk, (t) TV, (a) all
 mode "$mode_chmon" {
@@ -399,6 +406,6 @@ mode "$mode_chmon" {
 }
 # bind FN home key to menu
 bindsym XF86HomePage mode "$mode_chmon"
-#bindsym $mod+Home mode "$mode_chmon"
+bindsym $mod+Home mode "$mode_chmon"
 
-# vim:filetype=i3
+# vim:ft=i3:ts=2
