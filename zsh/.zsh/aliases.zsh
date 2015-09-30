@@ -272,11 +272,22 @@ alias svnds='svn diff --summarize'
 # dont display added files and modified whitespace
 alias svnd='svn diff --no-diff-added -x -w'
 
-# revert entire tree from here [Dangerous!]
+# revert entire tree from here WARN: Dangerous
 alias svnundo='svn revert --force-interactive --recursive .'
 
 alias svnaddall="svn status | grep '?' | sed 's/^.* /svn add /' | bash"
 #alias svnaddall="svn add `svn status . | awk '/^[?]/{print $2}'`"
+
+# Ｄｅｖｅｌｏｐ
+# --------------
+alias fig='rlwrap lein figwheel'
+alias hxrepl='haxelib run ihx'
+
+alias tlwd='cd /home/transform/Projects/Transform/Daniel'
+alias tlproj='cd /home/transform/Projects'
+
+# find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
+
 
 # ＭＩＳＣ
 # --------
@@ -285,7 +296,7 @@ alias xrmerge="xrdb -merge ~/.Xresources"
 alias xrload="xrdb -load ~/.Xresources"
 alias zrefresh="source $HOME/.zshrc"
 
-#alias _="sudo"
+alias _="sudo"
 
 # quit aliases
 alias :q="exit"
@@ -298,12 +309,4 @@ alias cl='clear'
 # quick alias to remove steam runtime and use native
 # see: https://wiki.archlinux.org/index.php/Steam#Using_native_runtime
 alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
-alias hxrepl='haxelib run ihx'
-
-# Ｐａｔｈｓ
-# ----------
-alias tlwd='cd /home/transform/Projects/Transform/Daniel'
-alias tlproj='cd /home/transform/Projects'
-
-# find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
 

@@ -84,7 +84,7 @@ hide_edge_borders none
 assign [class="(?i)subl3"] $PWS2_DEV
 assign [class="(?i)atom"] $PWS2_DEV
 assign [class="(?i)firefox"] $PWS3_WWW
-assign [class="(?i)devtools$"] $SWS3_DBG
+assign [instance="^Devtools$$"] $SWS3_DBG
 assign [class="(?i)thunderbird"] $SWS2_COM
 assign [class="(?i)google-chrome$"] $TWS1_MED
 assign [class="(?i)google-chrome-beta$"] $SWS3_DBG
@@ -174,7 +174,7 @@ set $gruvfg1 #E9DAB1
 set $gruvfg0 #F9EFC6
 
 # <class> <border> <bg> <fg> <indicator>
-client.focused $gruvbgHard $gruvbgSoft $gruvMagenta $gruvDarkMagenta
+client.focused $gruvbgHard $gruvGray $gruvBlack $gruvDarkMagenta
 client.focused_inactive $gruvbgHard $gruvbg0 $gruvfg $gruvbgSoft
 client.unfocused $gruvbghard $gruvbg $gruvDarkGray $gruvDarkMagenta
 client.urgent $gruvDarkOrange $gruvDarkOrange $gruvbg $gruvDarkOrange

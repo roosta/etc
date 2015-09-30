@@ -82,6 +82,7 @@ set smartcase
 set magic
 set gdefault " the /g flag on :s substitutions by default
 
+set mouse=a
 " Tags
 "set tags+=tags " look for tag file at ./[here]
 
@@ -353,6 +354,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " ---------
 let g:paredit_electric_return = 1
 let g:paredit_leader = '\'
+let g:paredit_disable_clojure = 1
 
 " ｆｕｎｃｔｉｏｎｓ／ａｕｇｒｏｕｐｓ
 " ------------------------------------
