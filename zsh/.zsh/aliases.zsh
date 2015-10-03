@@ -109,9 +109,9 @@ alias 18='cd -18'
 alias 19='cd -19'
 
 # long format and color ls output with various options. (see "man ls")
-alias ls="ls -lAhpXk --color=auto --group-directories-first"
+alias ls="ls -lAhpk --color=auto --group-directories-first"
 #alias dir='ls++ --potsf -lAhpXk'
-alias dir='ls++ -lAhpXk'
+alias dir='ls++ -lAhpk'
 alias dirr='dir -R'
 
 # fasd plugin aliases (most of these are added by default but I often grep this list)
@@ -155,7 +155,7 @@ alias pacown="pacman -Qo" # Show package(s) owning the specified file(s)
 alias pacmir='pacman -Syy' # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 alias pacexp='pacman -Qet' # list all packages explicitly installed and not required as dependencies
 alias pacorphrm='pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
-alias pacupdfull='pacman -Syu --devel' # update all packages including development packages
+alias pacupdfull='pacman -Syu --devel --noedit' # update all packages including development packages
 alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
 alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
 alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package and ABS databases against repositories
@@ -280,12 +280,13 @@ alias svnaddall="svn status | grep '?' | sed 's/^.* /svn add /' | bash"
 
 # Ｄｅｖｅｌｏｐ
 # --------------
-alias fig='rlwrap lein figwheel'
+alias figwheel='rlwrap lein figwheel'
 alias hxrepl='haxelib run ihx'
 
 alias tlwd='cd /home/transform/Projects/Transform/Daniel'
 alias tlproj='cd /home/transform/Projects'
 
+alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
 
 

@@ -13,6 +13,6 @@
 # use envoy as a ssh-agent wrapper
 #envoy -t ssh-agent
 #source <(envoy -p)
-
-eval $(keychain --eval --quiet id_rsa --noask)
+eval `keychain --noask --quiet --eval --agents ssh id_rsa`
+#eval $(keychain --eval --noask id_rsa)
 

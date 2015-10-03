@@ -114,10 +114,10 @@ for_window [class="(?i)linphone"] floating enable
 #for_window [class="(?i)thunderbird"] floating enable
 
 # ────────────── Autostart ──────────────
-exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
+#exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
 exec firefox
 exec thunderbird
-exec pidgin
+#exec pidgin
 exec urxvtc
 
 # ─────────────  Appearance  ──────────────
@@ -174,9 +174,9 @@ set $gruvfg1 #E9DAB1
 set $gruvfg0 #F9EFC6
 
 # <class> <border> <bg> <fg> <indicator>
-client.focused $gruvbgHard $gruvGray $gruvBlack $gruvDarkMagenta
+client.focused $gruvbgHard $gruvDarkMagenta $gruvfg $gruvDarkCyan
 client.focused_inactive $gruvbgHard $gruvbg0 $gruvfg $gruvbgSoft
-client.unfocused $gruvbghard $gruvbg $gruvDarkGray $gruvDarkMagenta
+client.unfocused $gruvbghard $gruvbg $gruvDarkGray $gruvDarkCyan
 client.urgent $gruvDarkOrange $gruvDarkOrange $gruvbg $gruvDarkOrange
 client.placeholder $gruvCyan $gruvDarkCyan $gruvBlack $gruvMagenta
 
@@ -289,9 +289,9 @@ bindsym $mod+v split h
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Control+Shift+t layout stacking
-bindsym $mod+Shift+t layout tabbed
-bindsym $mod+t layout toggle split
+bindsym $mod+Control+Shift+t layout tabbed
+bindsym $mod+Shift+t layout toggle split
+bindsym $mod+t layout toggle
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -370,7 +370,7 @@ bindsym $mod+r mode "resize"
 
 # https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
 # fast way to reach power settings for system. Requires polkit.
-set $Locker i3lock --image=/usr/share/backgrounds/pattern-01.png -t && sleep 1
+set $Locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
 
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {

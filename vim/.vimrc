@@ -31,13 +31,15 @@ set undofile
 set undodir=~/.vim/undo
 set noswapfile
 
+"set shell=zsh\ -i
+
 " wild*
 set wildmenu " command line completion
 set wildmode=longest,list,full
 "set wildmode=longest:full,full
 set wildignorecase
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,*/dist/*,*/undo/*,
-      \*/out/*,*/.repl*
+      \*/out/*,*/.repl*,*/.cljs_rhino_repl/*
 
 " fix backspace behaviour
 set backspace=indent,eol,start
@@ -140,9 +142,12 @@ nnoremap <silent> <Leader><Leader>-:exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
+" Ｃｏｍｍａｎｄｓ
+" ----------------
+command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
+
 " Ｐｌｕｇｉｎ  ｃｏｎｆ
 " ----------------------
-
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " -------------------------------------------------------------------
 
@@ -161,7 +166,7 @@ Plug 'guns/vim-clojure-highlight'
 Plug 'tpope/vim-salve'
 Plug 'kovisoft/paredit'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'majutsushi/tagbar' " generate a sidebar with ctags
+"Plug 'majutsushi/tagbar' " generate a sidebar with ctags
 Plug 'jdonaldson/vaxe' " vim support for haxe projects
 Plug 'tpope/vim-surround' " Quickly surround text
 Plug 'tpope/vim-repeat' " add more support for command repeat
@@ -179,7 +184,8 @@ Plug 'bling/vim-airline' " statusbar
 Plug 'ntpeters/vim-better-whitespace' " highlight and strip unneeded whitespace
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " autocompletion. Conf needed
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
-Plug 'tpope/vim-classpath'
+"Plug 'tpope/vim-classpath'
+Plug 'venantius/vim-eastwood'
 "Plug 'jgdavey/tslime.vim'
 "Plug 'bling/vim-bufferline' " list buffers in statusbar
 
@@ -323,7 +329,7 @@ let g:rbpt_colorpairs = [
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['brown',       'firebrick3'],
     \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
+    \ ['yellow',       'yellow'],
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['Darkblue',    'firebrick3'],
     \ ['darkgreen',   'RoyalBlue3'],
@@ -354,7 +360,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " ---------
 let g:paredit_electric_return = 1
 let g:paredit_leader = '\'
-let g:paredit_disable_clojure = 1
+"let g:paredit_disable_clojure = 1
 
 " ｆｕｎｃｔｉｏｎｓ／ａｕｇｒｏｕｐｓ
 " ------------------------------------

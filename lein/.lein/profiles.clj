@@ -1,6 +1,8 @@
-{:user {:plugins [[cider/cider-nrepl "0.9.1"]
-                  [venantius/ultra "0.3.4"]]
-        :ultra {:color-scheme :solarized_dark}}}
+{:user {:plugins [[jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]]}}
+
+;[cider/cider-nrepl "0.9.1"]
+;[venantius/ultra "0.3.4"]
+        ;:ultra {:color-scheme :solarized_dark}}}
         ;:ultra {:color-scheme {:delimiter [:red]
                                ;:tag [:red]
                                ;:nil [:cyan]

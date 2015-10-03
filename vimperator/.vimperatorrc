@@ -22,6 +22,7 @@ nnoremap <C-j>   24j
 nnoremap <C-k>   24k
 nnoremap <C-S-j> 40j
 nnoremap <C-S-k> 40k
+nnoremap d :bd -select lastactive<CR>
 
 nnoremap <leader>s :noscript popup<CR>
 nnoremap <leader>S :noscript popup<CR>
