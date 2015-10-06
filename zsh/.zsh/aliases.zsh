@@ -138,7 +138,8 @@ alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."
 # ------------
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
 alias pacman='pacaur --color=auto' # use pacaur as a pacman extension
-alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+#alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacupd='pacman -Syu --devel --noedit --needed' # update all packages including development packages, dont edit conf and only needed packages
 alias pacdl='pacman -Sw' # Download specified package(s) as .tar.xz ball
 alias pacs='pacman -S' # Install specific package(s) from the repositories
 alias pacu='pacman -U' # Install specific package not from the repositories but from a file
@@ -155,7 +156,6 @@ alias pacown="pacman -Qo" # Show package(s) owning the specified file(s)
 alias pacmir='pacman -Syy' # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 alias pacexp='pacman -Qet' # list all packages explicitly installed and not required as dependencies
 alias pacorphrm='pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
-alias pacupdfull='pacman -Syu --devel --noedit' # update all packages including development packages
 alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
 alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
 alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package and ABS databases against repositories
@@ -276,6 +276,7 @@ alias svnd='svn diff --no-diff-added -x -w'
 alias svnundo='svn revert --force-interactive --recursive .'
 
 alias svnaddall="svn status | grep '?' | sed 's/^.* /svn add /' | bash"
+alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 #alias svnaddall="svn add `svn status . | awk '/^[?]/{print $2}'`"
 
 # Ｄｅｖｅｌｏｐ

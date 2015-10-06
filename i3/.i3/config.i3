@@ -116,7 +116,7 @@ for_window [class="(?i)linphone"] floating enable
 # ────────────── Autostart ──────────────
 #exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
 exec firefox
-exec thunderbird
+#exec thunderbird
 #exec pidgin
 exec urxvtc
 
