@@ -220,6 +220,7 @@ alias syscat='sudo systemctl cat'
 
 # systemctl modify
 alias sysresf='sudo systemctl daemon-reload'
+alias sysenable='sudo systemctl enable'
 alias sysstart='sudo systemctl start'
 alias sysstop='sudo systemctl stop'
 alias sysrest='sudo systemctl restart'

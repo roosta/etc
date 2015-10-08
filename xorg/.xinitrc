@@ -52,12 +52,14 @@ xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
 
 # screen locker
 #xss-lock -- i3lock -n -e -d -t -i /usr/share/backgrounds/pattern-01.png &
-xautolock -time 30 -locker "i3lock --dpms --ignore-empty-password --image=$HOME/.backgrounds/pattern-01.png --tiling" &
+xss-lock -- xscreensaver-command -lock &
+#xautolock -time 30 -locker "i3lock --dpms --ignore-empty-password --image=$HOME/.backgrounds/pattern-01.png --tiling" &
 
 # ───────────── Daemons ──────────────
 urxvtd -q -f -o &
 seaf-cli start &
 compton --config $HOME/.config/compton/compton.conf -b &
+xscreensaver -no-splash &
 
 # ─────────── Window Manager ───────────
 exec i3 -c $HOME/.i3/config.i3

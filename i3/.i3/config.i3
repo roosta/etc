@@ -60,8 +60,8 @@ bindsym $mod+Shift+w move workspace $PWS2_DEV
 bindsym $mod+Shift+e move workspace $PWS3_WWW
 
 bindsym $mod+Shift+a move workspace $SWS1_AUX
-bindsym $mod+Shift+s move workspace $SWS3_DBG
-bindsym $mod+Shift+d move workspace $SES3_COM
+bindsym $mod+Shift+s move workspace $SWS2_COM
+bindsym $mod+Shift+d move workspace $SWS3_DGB
 
 bindsym $mod+Shift+1 move workspace $TWS1_MED
 bindsym $mod+Shift+2 move workspace $TWS2_GAM
@@ -370,7 +370,8 @@ bindsym $mod+r mode "resize"
 
 # https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
 # fast way to reach power settings for system. Requires polkit.
-set $Locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
+#set $Locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
+set $Locker xscreensaver-command --lock
 
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {

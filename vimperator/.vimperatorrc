@@ -1,4 +1,5 @@
-"3.9 (created: 2015/02/15 15:49:05)
+" 3.9 (created: 2015/02/15 15:49:05)
+" vim:filetype=vimperator
 colorscheme sweetlove
 set noscrollbars
 set loadplugins
@@ -13,6 +14,10 @@ source! /home/daniel/.vimperatorrc.local
 noremap l gt
 noremap h gT
 
+" go to last active tab.
+noremap L <C-^>
+noremap H <C-^>
+
 " some quick movement maps
 nnoremap j       8j
 nnoremap k       8k
@@ -22,8 +27,10 @@ nnoremap <C-j>   24j
 nnoremap <C-k>   24k
 nnoremap <C-S-j> 40j
 nnoremap <C-S-k> 40k
+
+" when deleting tab, go to last active
 nnoremap d :bd -select lastactive<CR>
 
+" noscript integration
 nnoremap <leader>s :noscript popup<CR>
 nnoremap <leader>S :noscript popup<CR>
-" vim:filetype=vimperator

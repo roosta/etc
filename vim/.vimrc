@@ -184,6 +184,7 @@ Plug 'bling/vim-airline' " statusbar
 Plug 'ntpeters/vim-better-whitespace' " highlight and strip unneeded whitespace
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " autocompletion. Conf needed
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
+Plug 'tpope/vim-dispatch'
 "Plug 'tpope/vim-classpath'
 "Plug 'venantius/vim-eastwood'
 "Plug 'jgdavey/tslime.vim'
