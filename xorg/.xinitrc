@@ -1,3 +1,4 @@
+# vim:ft=sh
 #┌─────────────────────────────────────┐
 #│░░░░░░░░░░█░█░▀█▀░█▀█░▀█▀░▀█▀░░░░░░░░│
 #│░░░░░░░░░░▄▀▄░░█░░█░█░░█░░░█░░░░░░░░░│
@@ -8,8 +9,9 @@
 #│ Github : https://github.com/roosta  │
 #└─────────────────────────────────────┘
 
-# ───────────── Init conf ──────────────
-# set extra font dir incase the various X font systems dont pick it up
+# Ｉｎｉｔ
+# ────────
+# do this on startup for good measure :)
 xset +fp /usr/share/fonts/roosta &
 xset fp rehash &
 
@@ -19,10 +21,8 @@ $HOME/.fehbg &
 # merge new resources
 xrdb -merge $HOME/.Xresources &
 
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
-
-# ─────────────── Inputs ───────────────
+# Ｉｎｐｕｔｓ
+# ────────────
 # Set keyboard layouts and options.
 # Switch layout with caps and terminate x session with ctrl alt backspace
 setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp &
@@ -33,35 +33,39 @@ numlockx &
 # bind various custom keys. see .xbindkeysrx
 xbindkeys &
 
+# xbox controller drivers. Currently using steamos-xpad
 #xboxdrv -D --config $HOME/.xboxdrv
 
 # initially diable touchpad on laptop
 #$HOME/.scripts/touchpad-toggle.sh
 
-# ────────────── Displays ──────────────
+# Ｄｉｓｐｌａｙ
+# ──────────────
 # set display layout
 xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
        --output DVI-D-0 --auto --left-of DVI-I-1 \
        --output HDMI-0 --off &
 
-#xrandr --output VGA1 --primary --auto --pos 0x0 \
-       #--output LVDS1 --auto --left-of VGA1
+# screen locker
+xss-lock -- xscreensaver-command -lock &
+
+# disable screensaver when certain fullscreen apps are active
+# see https://github.com/iye/lightsOn/blob/master/lightsOn.sh
+$home/bin/lightsOn 590 &
 
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
 #xset dpms 600 1200 2000 &
-
-# screen locker
 #xss-lock -- i3lock -n -e -d -t -i /usr/share/backgrounds/pattern-01.png &
-xss-lock -- xscreensaver-command -lock &
 #xautolock -time 30 -locker "i3lock --dpms --ignore-empty-password --image=$HOME/.backgrounds/pattern-01.png --tiling" &
 
-# ───────────── Daemons ──────────────
+# Ｄａｅｍｏｎｓ
+# ──────────────
 urxvtd -q -f -o &
 seaf-cli start &
 compton --config $HOME/.config/compton/compton.conf -b &
 xscreensaver -no-splash &
 
-# ─────────── Window Manager ───────────
+# Ｗｉｎｄｏｗ  ｍａｎａｇｅｒ
+# ────────────────────────────
 exec i3 -c $HOME/.i3/config.i3
 
-# vim:filetype=sh

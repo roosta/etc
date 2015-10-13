@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.33 for daniel on Tue Oct  6 21:02:39 2015.
+# Written by xscreensaver-demo 5.33 for daniel on Mon Oct 12 18:08:46 2015.
 # http://www.jwz.org/xscreensaver/
 
 timeout:	0:10:00
@@ -19,11 +19,11 @@ nice:		10
 memoryLimit:	0
 fade:		True
 unfade:		False
-fadeSeconds:	0:00:03
+fadeSeconds:	0:00:02
 fadeTicks:	20
 captureStderr:	True
 ignoreUninstalledPrograms:False
-font:		*-medium-r-*-140-*-m-*
+font:		6x12
 dpmsEnabled:	True
 dpmsQuickOff:	False
 dpmsStandby:	2:00:00
@@ -34,13 +34,13 @@ grabVideoFrames:    True
 chooseRandomImages: False
 imageDirectory:	
 
-mode:		random
-selected:	108
+mode:		one
+selected:	202
 
-textMode:	file
+textMode:	program
 textLiteral:	XScreenSaver
 textFile:	
-textProgram:	fortune
+textProgram:	dmesg
 textURL:	https://en.wikipedia.org/w/index.php?title=Special:NewPages&feed=rss
 
 programs:								      \
@@ -60,8 +60,8 @@ programs:								      \
 -				rorschach -root				    \n\
 				decayscreen -root			    \n\
 -				flame -root				    \n\
-				halo -root				    \n\
-				slidescreen -root			    \n\
+-				halo -root				    \n\
+-				slidescreen -root			    \n\
 -				pedal -root				    \n\
 -				bouboule -root				    \n\
 -				braid -root				    \n\
@@ -81,7 +81,7 @@ programs:								      \
 - GL: 				morph3d -root				    \n\
 -				mountain -root				    \n\
 -				munch -root				    \n\
-				penrose -root				    \n\
+-				penrose -root				    \n\
 - GL: 				pipes -root				    \n\
 -				rd-bomb -root				    \n\
 - GL: 				rubik -root				    \n\
@@ -89,15 +89,15 @@ programs:								      \
 -				slip -root				    \n\
 - GL: 				sproingies -root			    \n\
 -				starfish -root				    \n\
-				strange -root				    \n\
+-				strange -root				    \n\
 -				swirl -root				    \n\
-				triangle -root				    \n\
+-				triangle -root				    \n\
 -				xjack -root				    \n\
 -				xlyap -root				    \n\
 - GL: 				atlantis -root				    \n\
 				bsod -root				    \n\
 - GL: 				bubble3d -root				    \n\
-  GL: 				cage -root				    \n\
+- GL: 				cage -root				    \n\
 -				crystal -root				    \n\
 -				cynosure -root				    \n\
 -				discrete -root				    \n\
@@ -109,7 +109,7 @@ programs:								      \
 -				kumppa -root				    \n\
 - GL: 				lament -root				    \n\
 -				moire2 -root				    \n\
-  GL: 				sonar -root				    \n\
+- GL: 				sonar -root				    \n\
 - GL: 				stairs -root				    \n\
 -				truchet -root				    \n\
 -				vidwhacker -root			    \n\
@@ -118,13 +118,13 @@ programs:								      \
 -				ccurve -root				    \n\
 -				compass -root				    \n\
 -				deluxe -root				    \n\
-				demon -root				    \n\
+-				demon -root				    \n\
 - GL: 				extrusion -root				    \n\
 -				loop -root				    \n\
 -				penetrate -root				    \n\
 -				petri -root				    \n\
 				phosphor -root				    \n\
-  GL: 				pulsar -root				    \n\
+- GL: 				pulsar -root				    \n\
 -				ripples -root				    \n\
 -				shadebobs -root				    \n\
 - GL: 				sierpinski3d -root			    \n\
@@ -153,12 +153,12 @@ programs:								      \
 -				vermiculate -root			    \n\
 -				whirlwindwarp -root			    \n\
 				zoom -root				    \n\
-				anemone -root				    \n\
+-				anemone -root				    \n\
 -				apollonian -root			    \n\
 - GL: 				boxed -root				    \n\
 - GL: 				cubenetic -root				    \n\
 - GL: 				endgame -root				    \n\
-				euler2d -root				    \n\
+-				euler2d -root				    \n\
 -				fluidballs -root			    \n\
 - GL: 				flurry -root				    \n\
 - GL: 				glblur -root				    \n\
@@ -166,7 +166,7 @@ programs:								      \
 				halftone -root				    \n\
 - GL: 				juggler3d -root				    \n\
 - GL: 				lavalite -root				    \n\
-				polyominoes -root			    \n\
+-				polyominoes -root			    \n\
 - GL: 				queens -root				    \n\
 - GL: 				sballs -root				    \n\
 - GL: 				spheremonics -root			    \n\
@@ -177,7 +177,7 @@ programs:								      \
 - GL: 				atunnel -root				    \n\
 -				barcode -root				    \n\
 - GL: 				blinkbox -root				    \n\
-  GL: 				blocktube -root				    \n\
+- GL: 				blocktube -root				    \n\
 - GL: 				bouncingcow -root			    \n\
 -				cloudlife -root				    \n\
 - GL: 				cubestorm -root				    \n\
@@ -198,7 +198,7 @@ programs:								      \
 -				pong -root				    \n\
 -				popsquares -root			    \n\
 - GL: 				surfaces -root				    \n\
-				xanalogtv -root				    \n\
+-				xanalogtv -root				    \n\
 -				abstractile -root			    \n\
 -				anemotaxis -root			    \n\
 - GL: 				antinspect -root			    \n\
@@ -208,11 +208,11 @@ programs:								      \
 -				intermomentary -root			    \n\
 				memscroller -root			    \n\
 - GL: 				noof -root				    \n\
-				pacman -root				    \n\
+				pacman -root -delay 18939		    \n\
 - GL: 				pinion -root				    \n\
 - GL: 				polyhedra -root				    \n\
 - GL: 				providence -root			    \n\
-				substrate -root				    \n\
+-				substrate -root				    \n\
 -				wormhole -root				    \n\
 - GL: 				antmaze -root				    \n\
 - GL: 				boing -root				    \n\
@@ -228,14 +228,14 @@ programs:								      \
 - GL: 				timetunnel -root			    \n\
 - GL: 				glschool -root				    \n\
 - GL: 				topblock -root				    \n\
-  GL: 				cubicgrid -root				    \n\
+- GL: 				cubicgrid -root				    \n\
 -				cwaves -root				    \n\
 - GL: 				gears -root				    \n\
 - GL: 				glcells -root				    \n\
 - GL: 				lockward -root				    \n\
 -				m6502 -root				    \n\
 - GL: 				moebiusgears -root			    \n\
-  GL: 				voronoi -root				    \n\
+- GL: 				voronoi -root				    \n\
 - GL: 				hypnowheel -root			    \n\
 - GL: 				klein -root				    \n\
 -				lcdscrub -root				    \n\
@@ -250,12 +250,12 @@ programs:								      \
 - GL: 				kaleidocycle -root			    \n\
 - GL: 				quasicrystal -root			    \n\
   GL: 				unknownpleasures -root			    \n\
-				binaryring -root			    \n\
-  GL: 				cityflow -root				    \n\
+-				binaryring -root			    \n\
+- GL: 				cityflow -root				    \n\
 - GL: 				geodesicgears -root			    \n\
 - GL: 				projectiveplane -root			    \n\
 - GL: 				romanboy -root				    \n\
-				tessellimage -root			    \n\
+-				tessellimage -root			    \n\
 - GL: 				winduprobot -root			    \n\
 - GL: 				splitflap -root				    \n\
 

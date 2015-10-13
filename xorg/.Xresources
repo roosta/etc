@@ -56,7 +56,6 @@ URxvt*scrollBar: false
 
 !URL matching, use alt-u to enter select mode
 URxvt.perl-ext-common: default,url-select,selection-to-clipboard,keyboard-select
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
@@ -150,8 +149,8 @@ URxvt.keysym.M-C-S-Left       : \033[1;8D
 URxvt.keysym.M-C-S-Home       : \033[1;8H
 URxvt.keysym.M-C-S-End        : \033[1;8F! include colors. Keep separated to change easily
 
-#include "/home/daniel/.Xcolors/gruvbox-dark.xresources"
-#include "/home/daniel/.Xcolors/gruvbox-urxvt256.xresources"
+#include "/home/daniel/colors/xcolors/gruvbox-dark.xresources"
+#include "/home/daniel/colors/xcolors/gruvbox-urxvt256.xresources"
 
 ! Include rofi separatly
 #include "/home/daniel/.rofi.xresources"
