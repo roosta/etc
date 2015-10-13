@@ -24,7 +24,7 @@ endif
 "set clipboard=unnamed " set same clipboard for vim and X
 "set paste
 
-set autowrite
+" set autowrite
 
 " maintain undo history between sessions
 set undofile
@@ -39,7 +39,7 @@ set wildmode=longest,list,full
 "set wildmode=longest:full,full
 set wildignorecase
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,*/dist/*,*/undo/*,
-      \*/out/*,*/.repl*,*/.cljs_rhino_repl/*
+      \*/out/*,*/.repl*,*/.cljs_rhino_repl/*,*/_site/*
 
 " fix backspace behaviour
 set backspace=indent,eol,start
@@ -166,33 +166,35 @@ Plug 'guns/vim-clojure-highlight'
 Plug 'tpope/vim-salve'
 Plug 'kovisoft/paredit'
 Plug 'kien/rainbow_parentheses.vim'
-"Plug 'majutsushi/tagbar' " generate a sidebar with ctags
-Plug 'jdonaldson/vaxe' " vim support for haxe projects
 Plug 'tpope/vim-surround' " Quickly surround text
 Plug 'tpope/vim-repeat' " add more support for command repeat
 Plug 'tpope/vim-eunuch' " add sudo access in vim.
-Plug 'svermeulen/vim-easyclip' " simplyfy yank and paste
 Plug 'terryma/vim-multiple-cursors' " the one feature in subl I really missed
 Plug 'kien/ctrlp.vim' " quick access to files and other vim features
-Plug 'scrooloose/nerdcommenter' " commend code qickly with syntax support
 Plug 'morhetz/gruvbox' " colorscheme
 Plug 'scrooloose/syntastic' " lint and error checking
 Plug 'sheerun/vim-polyglot' "more syntax
 Plug 'easymotion/vim-easymotion' " move around text with new motions
+Plug 'svermeulen/vim-easyclip' " simplyfy yank and paste
 Plug 'unblevable/quick-scope' " add visuals to fFtT movements
 Plug 'bling/vim-airline' " statusbar
 Plug 'ntpeters/vim-better-whitespace' " highlight and strip unneeded whitespace
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " autocompletion. Conf needed
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } " filetree in vim
+Plug 'scrooloose/nerdtree' " filetree in vim
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/vim-easy-align'
 "Plug 'tpope/vim-classpath'
 "Plug 'venantius/vim-eastwood'
 "Plug 'jgdavey/tslime.vim'
 "Plug 'bling/vim-bufferline' " list buffers in statusbar
+"Plug 'majutsushi/tagbar' " generate a sidebar with ctags
+"Plug 'scrooloose/nerdcommenter' " commend code qickly with syntax support
 
 " some ..line generators
 "Plug 'edkolev/promptline.vim' " a airline prompt generator for shell
 "Plug 'edkolev/tmuxline.vim' " an airline tmux statusbar generator
+
 call plug#end()
 
 syntax on
@@ -219,14 +221,14 @@ let g:multi_cursor_quit_key='<Esc>'
 " Ctrl-P
 " ------
 let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
-let g:ctrlp_by_filename = 1
+" let g:ctrlp_by_filename = 1
 let g:ctrlp_reuse_window = 1
 let g:ctrlp_use_caching = 1
 let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_show_hidden = 0
 noremap <leader>p :CtrlPBufTag<CR>
 noremap <leader>P :CtrlPBufTagAll<CR>
 noremap <c-b> :CtrlPBuffer<CR>
@@ -261,6 +263,9 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+" set ctrl-v to paste in easymotion command line
+" EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
 
 " Quickscope
 " ----------
@@ -306,17 +311,17 @@ set background=dark " Setting dark mode
 " ---------
 "let g:vaxe_cache_server = 1
 "let g:vaxe_prefer_lime = 1
-let g:vaxe_lime_target = 'html5 -debug'
+" let g:vaxe_lime_target = 'html5 -debug'
 "let g:vaxe_cache_server_autostart = 1
 "let g:vaxe_completion_prevent_bufwrite_events = 1
 "let g:vaxe_completion_disable_optimizations = 1
 
 "autocmd BufNewFile,BufRead /project/* vaxe#ProjectLime("/project/project.lime")
-map <leader>vi :call vaxe#ImportClass()<CR>
+" map <leader>vi :call vaxe#ImportClass()<CR>
 
 " Tagbar
 " --------
-nmap <leader>t :TagbarToggle<CR>
+" nmap <leader>t :TagbarToggle<CR>
 
 " Rainbow Parenthesis
 " -------------------
@@ -348,12 +353,11 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " NERDTree
 " --------
-"map <leader>n :NERDTreeToggle<CR>
-
-" show hidden files in nerdtree
+map <leader>t :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=1
+
 " close vim if nerdtree is only window remaining
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
@@ -363,8 +367,19 @@ let g:paredit_electric_return = 1
 let g:paredit_leader = '\'
 "let g:paredit_disable_clojure = 1
 
+" easy-align
+" ----------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 " ｆｕｎｃｔｉｏｎｓ／ａｕｇｒｏｕｐｓ
 " ------------------------------------
+
+" if working with splits, set cursorline only on active window,
+" to give an indication other than airline which split is active
 augroup BgHighlight
     autocmd!
     "autocmd WinEnter * set number
@@ -373,44 +388,7 @@ augroup BgHighlight
     autocmd WinLeave * set nocursorline
 augroup END
 
-"
-"
-"
-"
-"
-"
-"
-"
-"
-"
-"
-"
-"
-"
-"
-" Deprecated
-" -----------------
-"
-"  Reload vim conf on save
-" source conf on save
-"augroup reload_vimrc " {
-    "autocmd!
-    "autocmd BufWritePost $MYVIMRC source $MYVIMRC
-"augroup END " }
-
-"  Bufferline
-"let g:bufferline_active_buffer_left = ''
-"let g:bufferline_active_buffer_right = ''
-"let g:bufferline_modified = '+'
-"let g:airline#extensions#bufferline#overwrite_variables=0
-"let g:bufferline_active_highlight = 'StatusLine'
-"let g:bufferline_show_bufnr = 0
-"let g:bufferline_echo = 0
-"autocmd VimEnter *
-  "\ let &statusline='%{bufferline#refresh_status()}'
-    "\ .bufferline#get_status_string()
-
-"  Promptline
+" Promptline (used to generate a prompt for terminal to match airline.
 "let g:promptline_preset = {
   "\'a' : [ '$vim_mode' ],
   "\'b' : [ promptline#slices#cwd() ],
@@ -419,7 +397,6 @@ augroup END
   "\'x' : [ promptline#slices#vcs_branch(), promptline#slices#git_status() ],
   "\'y' : [ promptline#slices#host() ],
   "\'z' : [ '$(date +%H:%M:%S)' ]}
-
 ": PromptlineSnapshot ~/.zsh/plugins/promptline.zsh airline_insert
 
 "  Keybinds

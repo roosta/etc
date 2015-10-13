@@ -61,7 +61,7 @@ bindsym $mod+Shift+e move workspace $PWS3_WWW
 
 bindsym $mod+Shift+a move workspace $SWS1_AUX
 bindsym $mod+Shift+s move workspace $SWS2_COM
-bindsym $mod+Shift+d move workspace $SWS3_DGB
+bindsym $mod+Shift+d move workspace $SWS3_DBG
 
 bindsym $mod+Shift+1 move workspace $TWS1_MED
 bindsym $mod+Shift+2 move workspace $TWS2_GAM
@@ -92,7 +92,7 @@ assign [class="(?i)steam"] $TWS2_GAM
 assign [class="(?i)spotify"] $TWS1_MED
 assign [class="(?i)pidgin"] $SWS2_COM
 assign [class="(?i)linphone"] $SWS2_COM
-assign [class="(?i)gimp"] $PWS2_DEV
+# assign [class="(?i)gimp"] $PWS2_DEV
 #assign [class="(?i)urxvt"] $PWS1_TRM
 
 # general rules

@@ -49,7 +49,7 @@ alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
 # recursive grep through filetypes
 alias grehx='grep -R --include="*.hx"'
-alias greclj='grep -R --include="*.clj'
+alias greclj='grep -R --include="*.clj*"'
 
 # yes
 alias awk='gawk'
@@ -138,8 +138,8 @@ alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."
 # ------------
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
 alias pacman='pacaur --color=auto' # use pacaur as a pacman extension
-#alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupd='pacman -Syu --devel --noedit --needed' # update all packages including development packages, dont edit conf and only needed packages
+alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacupdf='pacman -Syu --devel --noedit --needed' # update all packages including development packages, dont edit conf and only needed packages
 alias pacdl='pacman -Sw' # Download specified package(s) as .tar.xz ball
 alias pacs='pacman -S' # Install specific package(s) from the repositories
 alias pacu='pacman -U' # Install specific package not from the repositories but from a file

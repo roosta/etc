@@ -57,6 +57,12 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 
 *LS_COLORS 48;5;89;38;5;197;1;3;4;7 # :-)
 # }}}
+
+# roosta {{{1
+.proj                  38;5;240
+*tags                  38;5;64
+#}}}
+
 # documents {{{1
 *README               38;5;220;1
 *LICENSE              38;5;220;1
@@ -162,7 +168,6 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 .sql                  38;5;222
 #   Tool Command Language
 .tcl                  38;5;64;1
-*tags                  38;5;64
 
 # compiled {{{2
 #
