@@ -3,13 +3,13 @@
 " │░░░░░░░░░░░░░▀▄▀░░█░░█░█░░░░░░░░░░░░│
 " │░░░░░░░░░░░░░░▀░░▀▀▀░▀░▀░░░░░░░░░░░░│
 " ├────────────────────────────────────┤
-" │ Author : Roosta <mail@roosta.sh>   │
-" │ Site   : http://dotfiles.roosta.sh │
-" │ Github : https://github.com/roosta │
+" │ author : roosta <mail@roosta.sh>   │
+" │ site   : http://dotfiles.roosta.sh │
+" │ github : https://github.com/roosta │
 " └────────────────────────────────────┘
 " thanks to:
-" - https://github.com/xero/dotfiles/tree/master/vim
-" - https://github.com/trapd00r/configs/tree/master/vim
+"" https://github.com/xero/dotfiles/tree/master/vim
+"" https://github.com/trapd00r/configs/tree/master/vim
 " --------------------------------------
 
 " use vim settings, rather than vi settings
@@ -18,8 +18,10 @@ if &compatible
   set nocompatible
 endif
 
-"Ｏｐｔｉｏｎｓ
-" -------------
+" ────────────────────────────────────
+" Ｏｐｔｉｏｎｓ
+" ────────────────────────────────────
+
 " using EasyClip. See Plugins
 "set clipboard=unnamed " set same clipboard for vim and X
 "set paste
@@ -84,7 +86,9 @@ set smartcase
 set magic
 set gdefault " the /g flag on :s substitutions by default
 
+" Enable mouse
 set mouse=a
+
 " Tags
 "set tags+=tags " look for tag file at ./[here]
 
@@ -101,8 +105,10 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 
-" Ｇｖｉｍ
-" -----------
+" ────────────────────────────────────
+" ＧＵＩ
+" ────────────────────────────────────
+
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -113,8 +119,10 @@ if has('gui_running')
   set guiheadroom=0
 endif
 
+" ────────────────────────────────────
 " Ｋｅｙｂｉｎｄｉｎｇｓ
-" --------------
+" ────────────────────────────────────
+
 " Move across wrapped lines like regular lines
 noremap 0 ^ " Go to the first non-blank character of a line
 noremap ^ 0 " Just in case you need to go to the very beginning of a line
@@ -142,15 +150,11 @@ nnoremap <silent> <Leader><Leader>-:exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
-" Ｃｏｍｍａｎｄｓ
-" ----------------
-command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
-
+" ────────────────────────────────────
 " Ｐｌｕｇｉｎ  ｃｏｎｆ
-" ----------------------
-" Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
-" -------------------------------------------------------------------
+" ────────────────────────────────────
 
+" Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -201,7 +205,7 @@ syntax on
 filetype plugin indent on
 
 " Syntastic
-" ---------
+" ─────────────
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -210,16 +214,17 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_perl_checker = 1
 
 " vim-multiple-cursor
-" -------------------
+" ───────────────────
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " Ctrl-P
-" ------
+" ─────────
 let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
 " let g:ctrlp_by_filename = 1
 let g:ctrlp_reuse_window = 1
@@ -236,7 +241,7 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
                           \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 
 " Easymotion
-" -----------
+" ───────────────────
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
 " resoning is that EM takes up such a huge amount of binds I wanted it to have
@@ -268,7 +273,7 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 " EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
 
 " Quickscope
-" ----------
+" ───────────────────
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
 let g:qs_first_occurrence_highlight_color = 155       " terminal vim
 
@@ -279,11 +284,11 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Airline
-" --------
+" ───────────────────
 let g:airline_powerline_fonts = 1
 
 " Easyclip
-" --------
+" ───────────────────
 " remap mark to gm since EasyClip cut shadows m key
 nnoremap gm m
 
@@ -299,32 +304,15 @@ nmap [y <plug>EasyClipSwapPasteBackwards
 let g:EasyClipShareYanks = 1
 
 " Gruvbox
-" --------
+" ───────────────────
 " Set theme
-"colorscheme railscasts
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italic = 1
 colorscheme gruvbox
 set background=dark " Setting dark mode
 
-" Vaxe
-" ---------
-"let g:vaxe_cache_server = 1
-"let g:vaxe_prefer_lime = 1
-" let g:vaxe_lime_target = 'html5 -debug'
-"let g:vaxe_cache_server_autostart = 1
-"let g:vaxe_completion_prevent_bufwrite_events = 1
-"let g:vaxe_completion_disable_optimizations = 1
-
-"autocmd BufNewFile,BufRead /project/* vaxe#ProjectLime("/project/project.lime")
-" map <leader>vi :call vaxe#ImportClass()<CR>
-
-" Tagbar
-" --------
-" nmap <leader>t :TagbarToggle<CR>
-
 " Rainbow Parenthesis
-" -------------------
+" ───────────────────
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -352,7 +340,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " NERDTree
-" --------
+" ───────────────────
 map <leader>t :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
@@ -362,21 +350,28 @@ let NERDTreeQuitOnOpen=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Paredit
-" ---------
+" ───────────────────
 let g:paredit_electric_return = 1
 let g:paredit_leader = '\'
 "let g:paredit_disable_clojure = 1
 
 " easy-align
-" ----------
+" ───────────────────
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+" ────────────────────────────────────
+" Ｃｏｍｍａｎｄｓ
+" ────────────────────────────────────
+
+command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
+
+" ────────────────────────────────────
 " ｆｕｎｃｔｉｏｎｓ／ａｕｇｒｏｕｐｓ
-" ------------------------------------
+" ────────────────────────────────────
 
 " if working with splits, set cursorline only on active window,
 " to give an indication other than airline which split is active
@@ -388,6 +383,24 @@ augroup BgHighlight
     autocmd WinLeave * set nocursorline
 augroup END
 
+" attempt to close quickfix when deleting buffer
+nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
+cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
+
+
+
+
+
+
+
+
+
+
+
+
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Ｉｎａｃｔｉｖｅ
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Promptline (used to generate a prompt for terminal to match airline.
 "let g:promptline_preset = {
   "\'a' : [ '$vim_mode' ],
@@ -412,3 +425,21 @@ augroup END
 "nnoremap <leader>p "+p
 "nnoremap <leader>P "+p
 " Move across wrapped lines like regular lines
+
+" Vaxe
+" ───────────────────
+"let g:vaxe_cache_server = 1
+"let g:vaxe_prefer_lime = 1
+" let g:vaxe_lime_target = 'html5 -debug'
+"let g:vaxe_cache_server_autostart = 1
+"let g:vaxe_completion_prevent_bufwrite_events = 1
+"let g:vaxe_completion_disable_optimizations = 1
+
+"autocmd BufNewFile,BufRead /project/* vaxe#ProjectLime("/project/project.lime")
+" map <leader>vi :call vaxe#ImportClass()<CR>
+
+" Tagbar
+" --------
+" nmap <leader>t :TagbarToggle<CR>
+
+

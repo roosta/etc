@@ -1,6 +1,11 @@
-#
+# ┌────────────────────────────────┐
+# │░░░█▀█░█▀▄░█▀█░█▄█░█▀█░▀█▀░█░░░░│
+# │░░░█▀▀░█▀▄░█░█░█░█░█▀▀░░█░░▀░░░░│
+# │░░░▀░░░▀░▀░▀▀▀░▀░▀░▀░░░░▀░░▀░░░░│
+# └────────────────────────────────┘
 # This shell prompt config file was created by promptline.vim
-#
+# Then heavily modified to personal preferance and sort some minor bugs
+# https://github.com/edkolev/promptline.vim
 
 # -- configure promptline ---
 # https://github.com/edkolev/promptline.vim/issues/10
@@ -99,14 +104,14 @@ function __promptline_left_prompt {
   local slice_prefix slice_empty_prefix slice_joiner slice_suffix is_prompt_empty=1
 
   # section "a" header
+  # vi mode switch
   if [[ "$vim_mode" == "$vim_cmd_mode" ]]; then
-    #slice_prefix="${a_cmd_bg}${sep}${a_cmd_fg}${a_cmd_bg}${space}" slice_suffix="$space${a_cmd_sep_fg}" slice_joiner="${a_cmd_fg}${a_cmd_bg}${alt_sep}${space}" slice_empty_prefix="${a_cmd_fg}${a_cmd_bg}${space}"
     slice_prefix="${a_cmd_bg}${a_cmd_fg}${a_cmd_bg}${space}" slice_suffix="$space${a_cmd_sep_fg}" slice_joiner="${a_cmd_fg}${a_cmd_bg}${alt_sep}${space}" slice_empty_prefix="${a_cmd_fg}${a_cmd_bg}${space}"
   else
-    #slice_prefix="${a_bg}${sep}${a_fg}${a_bg}${space}" slice_suffix="$space${a_sep_fg}" slice_joiner="${a_fg}${a_bg}${alt_sep}${space}" slice_empty_prefix="${a_fg}${a_bg}${space}"
     slice_prefix="${a_bg}${a_fg}${a_bg}${space}" slice_suffix="$space${a_sep_fg}" slice_joiner="${a_fg}${a_bg}${alt_sep}${space}" slice_empty_prefix="${a_fg}${a_bg}${space}"
   fi
   # section "a" slices
+  # vi mode
   __promptline_wrapper "$vim_mode" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
 
   # section "b" header
@@ -200,10 +205,13 @@ function __promptline_right_prompt {
   # section "y" slices
   __promptline_wrapper "$(__promptline_host)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; }
 
-  # section "z" header
+  ## section "z" header
+  # jobs
   slice_prefix="${z_sep_fg}${rsep}${z_fg}${z_bg}${space}" slice_suffix="$space${z_sep_fg}" slice_joiner="${z_fg}${z_bg}${alt_rsep}${space}" slice_empty_prefix=""
-  # section "z" slices
-  __promptline_wrapper "$(date +%H:%M:%S)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; }
+
+  ## section "z" slices
+  # jobs
+  # __promptline_wrapper "$(date +%H:%M:%S)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; }
 
   # close sections
   printf "%s" "$reset"
@@ -238,12 +246,12 @@ function __promptline {
   local reset_bg="${wrap}49${end_wrap}"
 
   local a_fg="${wrap}38;5;235${end_wrap}"
-  local a_bg="${wrap}48;5;109${end_wrap}"
-  local a_sep_fg="${wrap}38;5;109${end_wrap}"
+  local a_bg="${wrap}48;5;6${end_wrap}"
+  local a_sep_fg="${wrap}38;5;6${end_wrap}"
 
   local a_cmd_fg="${wrap}38;5;235${end_wrap}"
-  local a_cmd_bg="${wrap}48;5;246${end_wrap}"
-  local a_cmd_sep_fg="${wrap}38;5;246${end_wrap}"
+  local a_cmd_bg="${wrap}48;5;4${end_wrap}"
+  local a_cmd_sep_fg="${wrap}38;5;4${end_wrap}"
 
   local b_fg="${wrap}38;5;246${end_wrap}"
   local b_bg="${wrap}48;5;239${end_wrap}"

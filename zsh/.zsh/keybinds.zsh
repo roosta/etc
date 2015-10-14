@@ -1,5 +1,10 @@
+# ┌──────────────────────────────────────┐
+# │░░░█░█░█▀▀░█░█░█▀▄░▀█▀░█▀█░█▀▄░█▀▀░░░░│
+# │░░░█▀▄░█▀▀░░█░░█▀▄░░█░░█░█░█░█░▀▀█░░░░│
+# │░░░▀░▀░▀▀▀░░▀░░▀▀░░▀▀▀░▀░▀░▀▀░░▀▀▀░░░░│
+# └──────────────────────────────────────┘
 # source:
-#* https://github.com/xero/dotfiles/blob/master/zsh/.zsh/keybindings.zsh
+# https://github.com/xero/dotfiles/blob/master/zsh/.zsh/keybindings.zsh
 
 # set key bindings (e = emacs, v = vi)
 bindkey -v

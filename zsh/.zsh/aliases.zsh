@@ -3,13 +3,15 @@
 # │░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█░│
 # │░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░│
 # └─────────────────────────────┘
-# Author : Roosta <contact@roosta.sh>
+# Author : Roosta <mail@roosta.sh>
 # Site   : http://dotfiles.roosta.sh
 # Github : https://github.com/roosta
 # -------------------------------
 
+# ────────────────────────────────────
 # ＶＩＭ
-# ----------------
+# ────────────────────────────────────
+
 alias vi="vim"
 
 # quick edits
@@ -29,8 +31,10 @@ alias vibinds='vim ~/.xbindkeysrc'
 alias todo='vim ~/.todo'
 alias lstodo='cat ~/.todo'
 
+# ────────────────────────────────────
 # Ｑｕｉｃｋｌｉｓｔ／ｆｉｎｄ
-# ----------------------------
+# ────────────────────────────────────
+
 # locate an alias quickly
 alias grea="alias | grep"
 
@@ -54,8 +58,10 @@ alias greclj='grep -R --include="*.clj*"'
 # yes
 alias awk='gawk'
 
+# ────────────────────────────────────
 # Ｓａｆｅｔｙ
-# ------------
+# ────────────────────────────────────
+
 alias mv=' timeout 8 mv -iv'
 alias rm=' timeout 3 rm -Iv --one-file-system'
 alias rmr='rm -r'
@@ -77,8 +83,10 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 # create parents, be verbose
 alias mkdir='mkdir -pv'
 
+# ────────────────────────────────────
 # Ｍｏｖｅｍｅｎｔ
-#-----------------
+# ────────────────────────────────────
+
 # dirstack needs some extra config, see dirstack.sh
 alias cd..='cd ..'
 alias -g ...='../..'
@@ -127,15 +135,19 @@ alias zi='fasd_cd -d -i' # cd with interactive selection
 alias ci='fasd_cd -d -i' # cd with interactive selection
 alias v='f -e vim'       # quick opening files with vim
 
+# ────────────────────────────────────
 # Ｓｅｃｕｒｉｔｙ
-# ----------------
+# ────────────────────────────────────
+
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
 alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
 alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
 alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."
 
+# ────────────────────────────────────
 # Ｐａｃｍａｎ
-# ------------
+# ────────────────────────────────────
+
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
 alias pacman='pacaur --color=auto' # use pacaur as a pacman extension
 alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
@@ -166,8 +178,10 @@ alias pacinsd='pacman -S --asdeps' # Install given package(s) as dependencies
 #alias pacaur4='pacaur --domain aur4.archlinux.org'
 #alias yaourt='pacaur'
 
+# ────────────────────────────────────
 # Ｕｔｉｌｓ
-# ----------
+# ────────────────────────────────────
+
 alias grep="grep -i --color=auto" # ignore case in grep and color output
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
 alias ports='netstat -tulanp' # list open ports
@@ -203,8 +217,10 @@ alias dut='du -ht'
 
 alias updatedb='sudo updatedb'
 
+# ────────────────────────────────────
 # Ｓｙｓｔｅｍ
-# ------------
+# ────────────────────────────────────
+
 # systemctl query
 alias sysstat='systemctl status'
 alias systype='systemctl --type='
@@ -227,8 +243,10 @@ alias sysrest='sudo systemctl restart'
 alias syscan='sudo systemctl cancel'
 alias sysedit='sudo systemctl edit'
 
+# ────────────────────────────────────
 # ＶＣＳ
-# ------
+# ────────────────────────────────────
+
 alias diff='colordiff'
 
 # --- git ---
@@ -280,8 +298,10 @@ alias svnaddall="svn status | grep '?' | sed 's/^.* /svn add /' | bash"
 alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 #alias svnaddall="svn add `svn status . | awk '/^[?]/{print $2}'`"
 
+# ────────────────────────────────────
 # Ｄｅｖｅｌｏｐ
-# --------------
+# ────────────────────────────────────
+
 alias figwheel='rlwrap lein figwheel'
 alias hxrepl='haxelib run ihx'
 
@@ -292,8 +312,10 @@ alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
 
 
+# ────────────────────────────────────
 # ＭＩＳＣ
-# --------
+# ────────────────────────────────────
+
 # delete and or refresh shell confs
 alias xrmerge="xrdb -merge ~/.Xresources"
 alias xrload="xrdb -load ~/.Xresources"
