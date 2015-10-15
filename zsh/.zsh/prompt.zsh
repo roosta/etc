@@ -103,28 +103,29 @@ function __promptline_cwd {
 function __promptline_left_prompt {
   local slice_prefix slice_empty_prefix slice_joiner slice_suffix is_prompt_empty=1
 
-  # section "a" header
-  # vi mode switch
+  # section vi mode header
   if [[ "$vim_mode" == "$vim_cmd_mode" ]]; then
-    slice_prefix="${a_cmd_bg}${a_cmd_fg}${a_cmd_bg}${space}" slice_suffix="$space${a_cmd_sep_fg}" slice_joiner="${a_cmd_fg}${a_cmd_bg}${alt_sep}${space}" slice_empty_prefix="${a_cmd_fg}${a_cmd_bg}${space}"
+    slice_prefix="${vi_cmd_bg}${vi_cmd_fg}${vi_cmd_bg}${space}" slice_suffix="$space${vi_cmd_sep_fg}" slice_joiner="${vi_cmd_fg}${vi_cmd_bg}${alt_sep}${space}" slice_empty_prefix="${vi_cmd_fg}${vi_cmd_bg}${space}"
   else
-    slice_prefix="${a_bg}${a_fg}${a_bg}${space}" slice_suffix="$space${a_sep_fg}" slice_joiner="${a_fg}${a_bg}${alt_sep}${space}" slice_empty_prefix="${a_fg}${a_bg}${space}"
+    slice_prefix="${vi_bg}${vi_fg}${vi_bg}${space}" slice_suffix="$space${vi_sep_fg}" slice_joiner="${vi_fg}${vi_bg}${alt_sep}${space}" slice_empty_prefix="${vi_fg}${vi_bg}${space}"
   fi
-  # section "a" slices
-  # vi mode
+
+  # section vi mode slices
   __promptline_wrapper "$vim_mode" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
 
-  # section "b" header
-  slice_prefix="${b_bg}${sep}${b_fg}${b_bg}${space}" slice_suffix="$space${b_sep_fg}" slice_joiner="${b_fg}${b_bg}${alt_sep}${space}" slice_empty_prefix="${b_fg}${b_bg}${space}"
+  # section jobs header
+  slice_prefix="${jobs_bg}${sep}${jobs_fg}${jobs_bg}${space}" slice_suffix="$space${jobs_sep_fg}" slice_joiner="${jobs_fg}${jobs_bg}${alt_sep}${space}" slice_empty_prefix="${jobs_fg}${jobs_bg}${space}"
   [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
-  # section "b" slices
-  __promptline_wrapper "$(__promptline_cwd)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
 
-  # section "c" header
-  slice_prefix="${c_bg}${sep}${c_fg}${c_bg}${space}" slice_suffix="$space${c_sep_fg}" slice_joiner="${c_fg}${c_bg}${alt_sep}${space}" slice_empty_prefix="${c_fg}${c_bg}${space}"
-  [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
-  # section "c" slices
+  # section jobs slices
   __promptline_wrapper "$(__promptline_jobs)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
+
+  # section cwd  header
+  slice_prefix="${cwd_bg}${sep}${cwd_fg}${cwd_bg}${space}" slice_suffix="$space${cmd_sep_fg}" slice_joiner="${cwd_fg}${cwd_bg}${alt_sep}${space}" slice_empty_prefix="${cwd_fg}${cwd_bg}${space}"
+  [ $is_prompt_empty -eq 1 ] && slice_prefix="$slice_empty_prefix"
+
+  # section cwd  slices
+  __promptline_wrapper "$(__promptline_cwd)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; is_prompt_empty=0; }
 
   # close sections
   printf "%s" "${reset_bg}${sep}$reset$space"
@@ -186,6 +187,7 @@ function __promptline_git_status {
   [[ $is_clean -gt 0 ]]            && { printf "%s" "$leading_whitespace$clean_symbol"; leading_whitespace=" "; }
 }
 
+## Right side prompt composition
 function __promptline_right_prompt {
   local slice_prefix slice_empty_prefix slice_joiner slice_suffix
 
@@ -210,13 +212,14 @@ function __promptline_right_prompt {
   slice_prefix="${z_sep_fg}${rsep}${z_fg}${z_bg}${space}" slice_suffix="$space${z_sep_fg}" slice_joiner="${z_fg}${z_bg}${alt_rsep}${space}" slice_empty_prefix=""
 
   ## section "z" slices
-  # jobs
-  # __promptline_wrapper "$(date +%H:%M:%S)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; }
+  # time
+   __promptline_wrapper "$(date +%H:%M:%S)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; }
 
   # close sections
   printf "%s" "$reset"
 }
 
+# jobs function, print job count if any
 function __promptline_jobs {
   local job_count=0
 
@@ -231,6 +234,8 @@ function __promptline_jobs {
   [[ $job_count -gt 0 ]] || return 1;
   printf "%s" "$job_count"
 }
+
+# compose prompt, define glyphs and colors
 function __promptline {
   local last_exit_code="${PROMPTLINE_LAST_EXIT_CODE:-$?}"
 
@@ -245,21 +250,21 @@ function __promptline {
   local reset="${wrap}0${end_wrap}"
   local reset_bg="${wrap}49${end_wrap}"
 
-  local a_fg="${wrap}38;5;235${end_wrap}"
-  local a_bg="${wrap}48;5;6${end_wrap}"
-  local a_sep_fg="${wrap}38;5;6${end_wrap}"
+  local vi_fg="${wrap}38;5;235${end_wrap}"
+  local vi_bg="${wrap}48;5;6${end_wrap}"
+  local vi_sep_fg="${wrap}38;5;6${end_wrap}"
 
-  local a_cmd_fg="${wrap}38;5;235${end_wrap}"
-  local a_cmd_bg="${wrap}48;5;4${end_wrap}"
-  local a_cmd_sep_fg="${wrap}38;5;4${end_wrap}"
+  local vi_cmd_fg="${wrap}38;5;235${end_wrap}"
+  local vi_cmd_bg="${wrap}48;5;4${end_wrap}"
+  local vi_cmd_sep_fg="${wrap}38;5;4${end_wrap}"
 
-  local b_fg="${wrap}38;5;246${end_wrap}"
-  local b_bg="${wrap}48;5;239${end_wrap}"
-  local b_sep_fg="${wrap}38;5;239${end_wrap}"
+  local cwd_fg="${wrap}38;5;246${end_wrap}"
+  local cwd_bg="${wrap}48;5;239${end_wrap}"
+  local cmd_sep_fg="${wrap}38;5;239${end_wrap}"
 
-  local c_fg="${wrap}38;5;0${end_wrap}"
-  local c_bg="${wrap}48;5;5${end_wrap}"
-  local c_sep_fg="${wrap}38;5;5${end_wrap}"
+  local jobs_fg="${wrap}38;5;0${end_wrap}"
+  local jobs_bg="${wrap}48;5;5${end_wrap}"
+  local jobs_sep_fg="${wrap}38;5;5${end_wrap}"
 
   local warn_fg="${wrap}38;5;235${end_wrap}"
   local warn_bg="${wrap}48;5;208${end_wrap}"
@@ -276,10 +281,6 @@ function __promptline {
   local z_fg="${wrap}38;5;235${end_wrap}"
   local z_bg="${wrap}48;5;246${end_wrap}"
   local z_sep_fg="${wrap}38;5;246${end_wrap}"
-
-  #local a_fg="${wrap}38;5;235${end_wrap}"
-  #local a_bg="${wrap}48;5;246${end_wrap}"
-  #local a_sep_fg="${wrap}38;5;246${end_wrap}"
 
   PROMPT="$(__promptline_left_prompt)"
   RPROMPT="$(__promptline_right_prompt)"
