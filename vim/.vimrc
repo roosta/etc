@@ -18,9 +18,9 @@ if &compatible
   set nocompatible
 endif
 
-" ────────────────────────────────────
-" Ｏｐｔｉｏｎｓ
-" ────────────────────────────────────
+"┌────────────────────────────────────┐
+"│░░░░░░░░░░░Ｏｐｔｉｏｎｓ░░░░░░░░░░░│
+"└────────────────────────────────────┘
 
 " using EasyClip. See Plugins
 "set clipboard=unnamed " set same clipboard for vim and X
@@ -79,15 +79,16 @@ set softtabstop=2 " let backspace delete indent
 "set smarttab
 
 " searching
-"set hlsearch
+"set hlsearch " using easymotion for hl
 set incsearch
 set ignorecase
 set smartcase
 set magic
 set gdefault " the /g flag on :s substitutions by default
 
-" Enable mouse
 set mouse=a
+set formatoptions-=o
+set relativenumber
 
 " Tags
 "set tags+=tags " look for tag file at ./[here]
@@ -127,17 +128,19 @@ endif
 noremap 0 ^ " Go to the first non-blank character of a line
 noremap ^ 0 " Just in case you need to go to the very beginning of a line
 
+noremap <leader>ws :StripWhitespace<CR>
+
 " source config on deman
 noremap <c-w>r :source $MYVIMRC<CR>
 
 " Close all the buffers
-map <leader>ba :%bdelete<cr>
+map <leader>ba :%bdelete<CR>
 
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
+" Tab management
+map <leader>tn :tabnew<CR>
+map <leader>to :tabonly<CR>
+map <leader>tc :tabclose<CR>
+" map <leader>tm :tabmove
 
 " Switch between Vim window splits
 nmap <silent> <A-Up> :wincmd k<CR>
@@ -145,13 +148,14 @@ nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+" resize splits
 nnoremap <silent> <Leader><Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader><Leader>-:exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 " ────────────────────────────────────
-" Ｐｌｕｇｉｎ  ｃｏｎｆ
+" Ｐｌｕｇｉｎｓ
 " ────────────────────────────────────
 
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
@@ -163,42 +167,42 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-
-Plug 'tpope/vim-fireplace'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
-Plug 'tpope/vim-salve'
 Plug 'kovisoft/paredit'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'tpope/vim-surround' " Quickly surround text
-Plug 'tpope/vim-repeat' " add more support for command repeat
-Plug 'tpope/vim-eunuch' " add sudo access in vim.
-Plug 'terryma/vim-multiple-cursors' " the one feature in subl I really missed
-Plug 'kien/ctrlp.vim' " quick access to files and other vim features
-Plug 'morhetz/gruvbox' " colorscheme
-Plug 'scrooloose/syntastic' " lint and error checking
-Plug 'sheerun/vim-polyglot' "more syntax
-Plug 'easymotion/vim-easymotion' " move around text with new motions
-Plug 'svermeulen/vim-easyclip' " simplyfy yank and paste
-Plug 'unblevable/quick-scope' " add visuals to fFtT movements
-Plug 'bling/vim-airline' " statusbar
-Plug 'ntpeters/vim-better-whitespace' " highlight and strip unneeded whitespace
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' } " autocompletion. Conf needed
-Plug 'scrooloose/nerdtree' " filetree in vim
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-salve'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-commentary'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'kien/ctrlp.vim'
+Plug 'morhetz/gruvbox'
+Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
+Plug 'easymotion/vim-easymotion'
+Plug 'unblevable/quick-scope'
+Plug 'bling/vim-airline'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/vim-easy-align'
+Plug 'svermeulen/vim-easyclip'
+Plug 'mileszs/ack.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'scrooloose/nerdcommenter'
+
+"Plug 'tpope/vim-commentary'
+"Plug 'vim-scripts/YankRing.vim'
 "Plug 'tpope/vim-classpath'
 "Plug 'venantius/vim-eastwood'
 "Plug 'jgdavey/tslime.vim'
-"Plug 'bling/vim-bufferline' " list buffers in statusbar
-"Plug 'majutsushi/tagbar' " generate a sidebar with ctags
-"Plug 'scrooloose/nerdcommenter' " commend code qickly with syntax support
-
-" some ..line generators
-"Plug 'edkolev/promptline.vim' " a airline prompt generator for shell
-"Plug 'edkolev/tmuxline.vim' " an airline tmux statusbar generator
-
+"Plug 'bling/vim-bufferline'
+"Plug 'majutsushi/tagbar'
+"Plug 'edkolev/promptline.vim'
+"Plug 'edkolev/tmuxline.vim'
 call plug#end()
 
 syntax on
@@ -290,6 +294,7 @@ let g:airline_powerline_fonts = 1
 " Easyclip
 " ───────────────────
 " remap mark to gm since EasyClip cut shadows m key
+let g:EasyClipUsePasteToggleDefaults = 0
 nnoremap gm m
 
 imap <c-v> <plug>EasyClipInsertModePaste
@@ -314,23 +319,23 @@ set background=dark " Setting dark mode
 " Rainbow Parenthesis
 " ───────────────────
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['yellow',       'yellow'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+  \ ['brown',       'RoyalBlue3'],
+  \ ['Darkblue',    'SeaGreen3'],
+  \ ['darkgray',    'DarkOrchid3'],
+  \ ['darkgreen',   'firebrick3'],
+  \ ['darkcyan',    'RoyalBlue3'],
+  \ ['darkred',     'SeaGreen3'],
+  \ ['darkmagenta', 'DarkOrchid3'],
+  \ ['brown',       'firebrick3'],
+  \ ['gray',        'RoyalBlue3'],
+  \ ['yellow',       'yellow'],
+  \ ['darkmagenta', 'DarkOrchid3'],
+  \ ['Darkblue',    'firebrick3'],
+  \ ['darkgreen',   'RoyalBlue3'],
+  \ ['darkcyan',    'SeaGreen3'],
+  \ ['darkred',     'DarkOrchid3'],
+  \ ['red',         'firebrick3'],
+  \ ]
 
 "let g:rbpt_loadcmd_toggle = 0
 
@@ -349,11 +354,18 @@ let NERDTreeQuitOnOpen=1
 " close vim if nerdtree is only window remaining
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" NERDComment
+" ───────────────────
+" mirrow tpope commentary keys.
+"
+nmap gcc <plug>NERDCommenterToggle
+vmap gc <plug>NERDCommenterToggle
+
 " Paredit
 " ───────────────────
-let g:paredit_electric_return = 1
+let g:paredit_electric_return = 0
 let g:paredit_leader = '\'
-"let g:paredit_disable_clojure = 1
+let g:paredit_disable_clojure = 0
 
 " easy-align
 " ───────────────────
@@ -362,6 +374,11 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" indent guides
+" ───────────────────
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
 
 " ────────────────────────────────────
 " Ｃｏｍｍａｎｄｓ
@@ -376,17 +393,28 @@ command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwhee
 " if working with splits, set cursorline only on active window,
 " to give an indication other than airline which split is active
 augroup BgHighlight
-    autocmd!
-    "autocmd WinEnter * set number
-    "autocmd WinLeave * set nonumber
-    autocmd WinEnter * set cursorline
-    autocmd WinLeave * set nocursorline
+  autocmd!
+  "autocmd WinEnter * set number
+  "autocmd WinLeave * set nonumber
+  autocmd WinEnter * :set relativenumber
+  autocmd WinLeave * :set number
+  autocmd WinEnter * set cursorline
+  autocmd WinLeave * set nocursorline
 augroup END
 
 " attempt to close quickfix when deleting buffer
 nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
 
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <leader><C-n> :call NumberToggle()<cr>
 
 
 
