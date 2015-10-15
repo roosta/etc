@@ -79,7 +79,7 @@ workspace $SWS2_COM output $secondary
 # ┆ Options
 # └── ─ ─
 focus_follows_mouse no
-new_window 1pixel
+new_window pixel 1
 hide_edge_borders none
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┬─┐┬ ┐┬  ┬─┐┐─┐
@@ -116,10 +116,11 @@ for_window [title="Preferences$"] floating enable
 # └── ─ ─
 for_window [class="(?i)Jitsi"] floating enable
 for_window [class="(?i)SessionManager"] floating enable
-for_window [class="(?i)firefox"]  new_window pixel 0
+for_window [class="(?i)firefox"] border none
 for_window [title="(?i)Steam - Update News(.*)"]  floating enable
 for_window [title="(?i)Friends"]  floating enable
 for_window [class="(?i)linphone"] floating enable
+for_window [class="(?i)steam"] floating enable
 #for_window [class="(?i)Pidgin"] floating enable
 #for_window [class="(?i)Pidgin"] floating_maximum_size 50 x 75
 #for_window [class="(?i)thunderbird"] floating enable
@@ -142,6 +143,7 @@ exec urxvtc
 # │─┤│─┘│─┘├─ │─┤│┬┘│─┤││││  ├─
 # ┘ ┆┆  ┆  ┴─┘┘ ┆┆└┘┘ ┆┆└┘└─┘┴─┘
 # └──────────────────────────── ─ ─
+
 
 # ┆ define fonts
 # └── ─ ─
@@ -200,9 +202,9 @@ set $gruvfg0 #F9EFC6
 # ┆ window colors
 # └── ─ ─
 # <class> <border> <bg> <fg> <indicator>
-client.focused $gruvbgHard $gruvDarkMagenta $gruvfg $gruvDarkCyan
-client.focused_inactive $gruvbgHard $gruvbg0 $gruvfg $gruvbgSoft
-client.unfocused $gruvbghard $gruvbg $gruvDarkGray $gruvDarkCyan
+client.focused $gruvDarkBlue $gruvDarkBlue $gruvBlack $gruvDarkCyan
+client.focused_inactive $gruvbg1 $gruvbg0 $gruvfg $gruvbgSoft
+client.unfocused $gruvDarkBlue $gruvbg1 $gruvDarkGray $gruvDarkCyan
 client.urgent $gruvDarkOrange $gruvDarkOrange $gruvbg $gruvDarkOrange
 client.placeholder $gruvCyan $gruvDarkCyan $gruvBlack $gruvMagenta
 
@@ -219,14 +221,15 @@ bar {
   separator_symbol "|"
   colors {
     # <bar>
-    background $gruvbg0
+    #background $gruvbg0
+    background $gruvbg
     separator $gruvbgSoft
     statusline $gruvfg
 
     # <workclass> <border> <bg> <text>
-    focused_workspace $gruvbgHard $gruvbgSoft $gruvMagenta
-    active_workspace $gruvbgHard $gruvbgSoft $gruvfg
-    inactive_workspace $gruvbgHard $gruvbg $gruvDarkGray
+    focused_workspace $gruvbgHard $gruvbg1 $gruvDarkBlue
+    active_workspace $gruvbg1 $gruvbgSoft $gruvfg
+    inactive_workspace $gruvbgHard $gruvbg1 $gruvDarkGray
     urgent_workspace $gruvDarkOrange $gruvDarkOrange $gruvBlack
   }
 }
@@ -248,9 +251,9 @@ bar {
     statusline $gruvfg
 
     # <workclass> <border> <bg> <text>
-    focused_workspace $gruvbgHard $gruvbgSoft $gruvMagenta
-    active_workspace $gruvbgHard $gruvbgSoft $gruvfg
-    inactive_workspace $gruvbgHard $gruvbg $gruvDarkGray
+    focused_workspace $gruvbg1 $gruvbgSoft $gruvMagenta
+    active_workspace $gruvbg1 $gruvbgSoft $gruvfg
+    inactive_workspace $gruvbg1 $gruvbg $gruvDarkGray
     urgent_workspace $gruvDarkOrange $gruvDarkOrange $gruvBlack
   }
 }
@@ -377,8 +380,8 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # ┘ ┆┴─┘┆└┘┆─┘──┘
 # └─────────────── ─ ─
 
-# ┆ Resize
-# └── ─ ─
+# ┆ RESIZE
+# └─── ─ ─
 mode "resize" {
   # vi movement
   bindsym h resize shrink width 10 px or 10 ppt
@@ -410,8 +413,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# ┆ System
-# └── ─ ─
+# ┆ SYSTEM
+# └─── ─ ─
 # https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
 # fast way to reach power settings for system. Requires polkit.
 
@@ -433,8 +436,8 @@ mode "$mode_system" {
 bindsym XF86Sleep mode "$mode_system"
 bindsym $mod+End mode "$mode_system"
 
-# ┆ Output
-# └── ─ ─
+# ┆ OUTPUT
+# └─── ─ ─
 # Quickly switch output based on presets
 # Script is in the submodule "scripts". Alternativly http://github.com/roosta/scripts
 
@@ -453,6 +456,5 @@ mode "$mode_chmon" {
 bindsym XF86HomePage mode "$mode_chmon"
 bindsym $mod+Home mode "$mode_chmon"
 
-#┌────────── ─ ─
 # vim:ft=i3:ts=2
-#└─────────── ─ ─
+# ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀

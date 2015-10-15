@@ -251,24 +251,24 @@ function __promptline {
   local reset_bg="${wrap}49${end_wrap}"
 
   local vi_fg="${wrap}38;5;235${end_wrap}"
-  local vi_bg="${wrap}48;5;6${end_wrap}"
-  local vi_sep_fg="${wrap}38;5;6${end_wrap}"
+  local vi_bg="${wrap}48;5;4${end_wrap}"
+  local vi_sep_fg="${wrap}38;5;4${end_wrap}"
 
   local vi_cmd_fg="${wrap}38;5;235${end_wrap}"
-  local vi_cmd_bg="${wrap}48;5;4${end_wrap}"
-  local vi_cmd_sep_fg="${wrap}38;5;4${end_wrap}"
+  local vi_cmd_bg="${wrap}48;5;5${end_wrap}"
+  local vi_cmd_sep_fg="${wrap}38;5;5${end_wrap}"
 
   local cwd_fg="${wrap}38;5;246${end_wrap}"
   local cwd_bg="${wrap}48;5;239${end_wrap}"
   local cmd_sep_fg="${wrap}38;5;239${end_wrap}"
 
   local jobs_fg="${wrap}38;5;0${end_wrap}"
-  local jobs_bg="${wrap}48;5;5${end_wrap}"
-  local jobs_sep_fg="${wrap}38;5;5${end_wrap}"
+  local jobs_bg="${wrap}48;5;6${end_wrap}"
+  local jobs_sep_fg="${wrap}38;5;6${end_wrap}"
 
   local warn_fg="${wrap}38;5;235${end_wrap}"
-  local warn_bg="${wrap}48;5;208${end_wrap}"
-  local warn_sep_fg="${wrap}38;5;208${end_wrap}"
+  local warn_bg="${wrap}48;5;9${end_wrap}"
+  local warn_sep_fg="${wrap}38;5;9${end_wrap}"
 
   local x_fg="${wrap}38;5;223${end_wrap}"
   local x_bg="${wrap}48;5;239${end_wrap}"
