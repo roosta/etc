@@ -28,9 +28,19 @@ nnoremap <C-k>   24k
 nnoremap <C-S-j> 40j
 nnoremap <C-S-k> 40k
 
-" when deleting tab, go to last active
-nnoremap d :bd -select lastactive<CR>
+" change delete tab behaviour.
+" tried for a while with last active but its very situational
+nnoremap dd :bd -select lastactive<CR>
+nnoremap d<Left> :bd -select left<CR>
+nnoremap d<Right> :bd -select right<CR>
 
 " noscript integration
-nnoremap <leader>s :noscript popup<CR>
-nnoremap <leader>S :noscript popup<CR>
+noremap <leader>s :noscript popup<CR>
+noremap <leader>S :noscript popup<CR>
+
+" toggle bookmark sidebar
+noremap <leader>b :emenu View.Sidebar.Bookmarks<CR>
+
+" source config file
+noremap <c-w>r :source /home/daniel/.vimperatorrc<CR>
+

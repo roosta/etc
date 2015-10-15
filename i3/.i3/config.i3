@@ -124,12 +124,14 @@ for_window [class="(?i)linphone"] floating enable
 # Ａｕｔｏｓｔａｒｔ
 # ────────────────────────────────────────
 
-
 exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
 exec firefox
 exec thunderbird
 exec pidgin
 exec urxvtc
+# exec urxvtc
+exec spotify
+exec steam
 
 # ────────────────────────────────────────
 # Ａｐｐｅａｒａｎｃｅ
@@ -370,16 +372,28 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # ───────────
 mode "resize" {
   # vi movement
-  bindsym j resize shrink width 10 px or 10 ppt
-  bindsym k resize grow height 10 px or 10 ppt
-  bindsym l resize shrink height 10 px or 10 ppt
-  bindsym semicolon resize grow width 10 px or 10 ppt
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
 
   # same bindings, but for the arrow keys
   bindsym Left resize shrink width 10 px or 10 ppt
   bindsym Down resize grow height 10 px or 10 ppt
   bindsym Up resize shrink height 10 px or 10 ppt
   bindsym Right resize grow width 10 px or 10 ppt
+
+  # width
+  #bindsym minus resize shrink width 10 px or 10 ppt
+  #bindsym plus resize grow width 10 px or 10 ppt
+  #bindsym KP_Substract resize shrink width 10 px or 10 ppt
+  #bindsym KP_Add resize grow width 10 px or 10 ppt
+
+  ## height
+  #bindsym $mod+KP_Substract resize grow height 10 px or 10 ppt
+  #bindsym $mod+KP_Add resize shrink height 10 px or 10 ppt
+  #bindsym $mod+minus resize grow height 10 px or 10 ppt
+  #bindsym $mod+plus resize shrink height 10 px or 10 ppt
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"

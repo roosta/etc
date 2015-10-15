@@ -41,6 +41,8 @@ alias grea="alias | grep"
 # grep command history quickly
 alias greh="cat ~/.histfile | grep"
 
+alias greps="ps -aux|grep"
+
 # echo path variable
 alias lspath='echo -e ${PATH//:/\\n}'
 
