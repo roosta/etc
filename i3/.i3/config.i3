@@ -1,27 +1,27 @@
-# vim:ft=i3:ts=2
-# ┌────────────────────────────────────┐
-# │░░░░░░░░░░░▀█▀░▀▀█░█░█░█▄█░░░░░░░░░░│
-# │░░░░░░░░░░░░█░░░▀▄░█▄█░█░█░░░░░░░░░░│
-# │░░░░░░░░░░░▀▀▀░▀▀░░▀░▀░▀░▀░░░░░░░░░░│
-# ├────────────────────────────────────┤
-# │ Author : Roosta <mail@roosta.sh>   │
-# │ Site   : http://dotfiles.roosta.sh │
-# │ Github : https://github.com/roosta │
-# └────────────────────────────────────┘
-# Sources:
-## http://i3wm.org/docs/user-contributed/lzap-config.html
-## http://dotshare.it (picked from various i3 confs, color schemes..etc)
-
-
-# ────────────────────────────────────────
-# Ｌａｙｏｕｔ
-# ────────────────────────────────────────
-
+# ┌───────────────────────────────────┐
+# │▀▀▀░░░░░░░▀█▀░▀▀█░█░█░█▄█░░░░░░░▀▀▀│
+# │▀▀▀▀▀░░░░░░█░░░▀▄░█▄█░█░█░░░░░▀▀▀▀▀│
+# │▀▀▀▀▀▀▀░░░▀▀▀░▀▀░░▀░▀░▀░▀░░░▀▀▀▀▀▀▀│
+# │▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀│
+# │ Author: Roosta <mail@roosta.sh>   │
+# │ Site  : http://dotfiles.roosta.sh │
+# │ Github: https://github.com/roosta │
+# └────────┬──────────────────────────┘
+# Sources: │
+# ┌────────┘
+# │ http://i3wm.org/docs/user-contributed/lzap-config.html
+# │ http://dotshare.it (picked from various i3 confs, color schemes..etc)
+# ┆
+#
+# ┬  ┬─┐┐ ┬┌─┐┬ ┐┌┐┐
+# │  │─┤└┌┘│ ││ │ │
+# ┆─┘┘ ┆ ┆ ┘─┘┆─┘ ┆
+# └─────────────── ─ ─
 # Numbers in front is for sorting order on i3bar.
 # In each bar numbers are stripped. See bar config below.
 
-# Primary workspaces
-# ------------------
+# ┆ Primary workspaces
+# └── ─ ─
 set $PWS1_TRM "1Q:Term"
 set $PWS2_DEV "2W:Devel"
 set $PWS3_WWW "3E:Web"
@@ -34,8 +34,8 @@ bindsym $mod+Shift+q move workspace $PWS1_TRM
 bindsym $mod+Shift+w move workspace $PWS2_DEV
 bindsym $mod+Shift+e move workspace $PWS3_WWW
 
-# Secondary workspaces
-# --------------------
+# ┆ Secondary workspaces
+# └── ─ ─
 set $SWS1_AUX "4A:Aux"
 set $SWS2_COM "5S:Comms"
 set $SWS3_DBG "6D:Debug"
@@ -48,8 +48,8 @@ bindsym $mod+Shift+a move workspace $SWS1_AUX
 bindsym $mod+Shift+s move workspace $SWS2_COM
 bindsym $mod+Shift+d move workspace $SWS3_DBG
 
-# Tertiary workspaces
-#--------------------
+# ┆ Tertiary workspaces
+# └── ─ ─
 set $TWS1_MED "7:1:Media"
 set $TWS2_GAM "8:2:Games"
 set $TWS3_MSC "9:3:Misc"
@@ -62,8 +62,8 @@ bindsym $mod+Shift+1 move workspace $TWS1_MED
 bindsym $mod+Shift+2 move workspace $TWS2_GAM
 bindsym $mod+Shift+3 move workspace $TWS3_MSC
 
-# outputs
-# -------
+# ┆ outputs
+# └── ─ ─
 set $primary DVI-I-1
 set $secondary DVI-D-0
 set $television HDMI-0
@@ -76,17 +76,19 @@ workspace $SWS1_AUX output $secondary
 workspace $SWS3_DBG output $secondary
 workspace $SWS2_COM output $secondary
 
-# Options
-# -------
+# ┆ Options
+# └── ─ ─
 focus_follows_mouse no
 new_window 1pixel
 hide_edge_borders none
 
-# ────────────────────────────────────────
-# Ｗｉｎｄｏｗ ｒｕｌｅｓ
-# ────────────────────────────────────────
+# ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┬─┐┬ ┐┬  ┬─┐┐─┐
+# ││││││││ ││ ││││  │┬┘│ ││  ├─ └─┐
+# └┴┆┆┆└┘┆─┘┘─┘└┴┆  ┆└┘┆─┘┆─┘┴─┘──┘
+# └─────────────── ─ ─
 
-# assignments
+# ┆ assignments
+# └── ─ ─
 assign [class="(?i)subl3"] $PWS2_DEV
 assign [class="(?i)atom"] $PWS2_DEV
 assign [class="(?i)firefox"] $PWS3_WWW
@@ -102,14 +104,16 @@ assign [class="(?i)linphone"] $SWS2_COM
 # assign [class="(?i)gimp"] $PWS2_DEV
 # assign [class="(?i)urxvt"] $PWS1_TRM
 
-# general rules
+# ┆ General rules
+# └── ─ ─
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [title="Preferences$"] floating enable
 
-# spesific rules
+# ┆ spesific rules
+# └── ─ ─
 for_window [class="(?i)Jitsi"] floating enable
 for_window [class="(?i)SessionManager"] floating enable
 for_window [class="(?i)firefox"]  new_window pixel 0
@@ -120,25 +124,27 @@ for_window [class="(?i)linphone"] floating enable
 #for_window [class="(?i)Pidgin"] floating_maximum_size 50 x 75
 #for_window [class="(?i)thunderbird"] floating enable
 
-# ────────────────────────────────────────
-# Ａｕｔｏｓｔａｒｔ
-# ────────────────────────────────────────
+# ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
+# │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
+# ┘ ┆┆─┘ ┆ ┘─┘──┘ ┆ ┘ ┆┆└┘ ┆
+# └───────────────────────── ─ ─
 
-exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
-exec firefox
-exec thunderbird
-exec pidgin
 exec urxvtc
+#exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
+#exec firefox
+#exec thunderbird
+#exec pidgin
 # exec urxvtc
-exec spotify
-exec steam
+#exec spotify
+#exec steam
 
-# ────────────────────────────────────────
-# Ａｐｐｅａｒａｎｃｅ
-# ────────────────────────────────────────
+# ┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┌┐┐┌─┐┬─┐
+# │─┤│─┘│─┘├─ │─┤│┬┘│─┤││││  ├─
+# ┘ ┆┆  ┆  ┴─┘┘ ┆┆└┘┘ ┆┆└┘└─┘┴─┘
+# └──────────────────────────── ─ ─
 
-# define fonts
-# ------------
+# ┆ define fonts
+# └── ─ ─
 #set $font_lintilla -*-terminesspowerline-*-*-normal-*-12-*-*-*-*-*-*-*
 set $font_lintilla pango: Essential PragmataPro 12px
 set $font_allitnil pango: Essential PragmataPro 15px
@@ -148,11 +154,12 @@ set $font_status_lintilla -*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*
 #set $font_status_lintilla pango: PragmataPro for Powerline 10px, pango: FontAwesome 10px
 #set $font_status_lintilla pango: FontAwesome 14px
 
-# set font
+# ┆ set main font
+# └── ─ ─
 font $font_lintilla
 
-# define colors (gruvbox <3)
-# --------------------------
+# ┆ define colors (gruvbox <3)
+# └── ─ ─
 set $gruvbg #282828
 set $gruvfg #ebdbb2
 set $gruvbgSoft #32302f
@@ -190,8 +197,8 @@ set $gruvfg2 #D4C3A0
 set $gruvfg1 #E9DAB1
 set $gruvfg0 #F9EFC6
 
-# window colors
-# -------------
+# ┆ window colors
+# └── ─ ─
 # <class> <border> <bg> <fg> <indicator>
 client.focused $gruvbgHard $gruvDarkMagenta $gruvfg $gruvDarkCyan
 client.focused_inactive $gruvbgHard $gruvbg0 $gruvfg $gruvbgSoft
@@ -199,8 +206,8 @@ client.unfocused $gruvbghard $gruvbg $gruvDarkGray $gruvDarkCyan
 client.urgent $gruvDarkOrange $gruvDarkOrange $gruvbg $gruvDarkOrange
 client.placeholder $gruvCyan $gruvDarkCyan $gruvBlack $gruvMagenta
 
-# bar primary
-# -----------
+# ┆ bar primary
+# └── ─ ─
 bar {
   output $primary
   output $television
@@ -224,8 +231,8 @@ bar {
   }
 }
 
-# Bar secondary
-# -------------
+# ┆ bar secondary
+# └── ─ ─
 bar {
   output $secondary
   tray_output all
@@ -248,9 +255,10 @@ bar {
   }
 }
 
-# ────────────────────────────────────────
-# Ｋｅｙｂｉｎｄｉｎｇｓ
-# ────────────────────────────────────────
+# ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐┐─┐
+# ├┴┐├─ └┌┘│─││││││ │└─┐
+# ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘──┘
+# └───────────────────── ─ ─
 
 # set modkey (Super key)
 set $mod Mod4
@@ -364,12 +372,13 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 #bindsym 122 exec pkill -SIGRTMIN+12 i3blocks
 #bindsym 121 exec pkill -SIGRTMIN+12 i3blocks
 
-# ────────────────────────────────────────
-# Ｍｅｎｕｓ
-# ────────────────────────────────────────
+# ┌┌┐┬─┐┌┐┐┬ ┐┐─┐
+# │││├─ ││││ │└─┐
+# ┘ ┆┴─┘┆└┘┆─┘──┘
+# └─────────────── ─ ─
 
-# Resize Menu
-# ───────────
+# ┆ Resize
+# └── ─ ─
 mode "resize" {
   # vi movement
   bindsym h resize shrink width 10 px or 10 ppt
@@ -401,12 +410,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# System Menu
-# ───────────
+# ┆ System
+# └── ─ ─
 # https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
 # fast way to reach power settings for system. Requires polkit.
-#set $Locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
 
+#set $Locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
 set $Locker xscreensaver-command --lock
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -424,8 +433,8 @@ mode "$mode_system" {
 bindsym XF86Sleep mode "$mode_system"
 bindsym $mod+End mode "$mode_system"
 
-# output menu
-# ───────────
+# ┆ Output
+# └── ─ ─
 # Quickly switch output based on presets
 # Script is in the submodule "scripts". Alternativly http://github.com/roosta/scripts
 
@@ -444,3 +453,6 @@ mode "$mode_chmon" {
 bindsym XF86HomePage mode "$mode_chmon"
 bindsym $mod+Home mode "$mode_chmon"
 
+#┌────────── ─ ─
+# vim:ft=i3:ts=2
+#└─────────── ─ ─
