@@ -63,7 +63,8 @@ URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.rend.0: Uline Bold fg5
 URxvt.keysym.M-s: perl:keyboard-select:search
 
-! fade unfocused term
+!! using compton for this
+!! fade unfocused term
 !URxvt.fading: 30
 !URxvt.fadeColor: #448487
 
@@ -75,8 +76,8 @@ URxvt*meta8: true
 URxvt.keysym.C-Page_Up: command:\033]720;1\007
 URxvt.keysym.C-Page_Down: command:\033]721;1\007
 
-! fix pager scrolling issue
-! https://wiki.archlinux.org/index.php/Rxvt-unicode#Scrollback_buffer_in_secondary_screen
+!! fix pager scrolling issue
+!! https://wiki.archlinux.org/index.php/Rxvt-unicode#Scrollback_buffer_in_secondary_screen
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0
 
@@ -147,11 +148,48 @@ URxvt.keysym.M-C-S-Left       : \033[1;8D
 !URxvt.keysym.M-C-S-Page_Up   : seen as Rxvt.keysym.S-Page_Up
 !URxvt.keysym.M-C-S-Page_Down : seen as Rxvt.keysym.S-Page_Down
 URxvt.keysym.M-C-S-Home       : \033[1;8H
-URxvt.keysym.M-C-S-End        : \033[1;8F! include colors. Keep separated to change easily
+URxvt.keysym.M-C-S-End        : \033[1;8F
 
+!!! includes -------------------------------------------------------------------
+
+!! include colors. Keep separated to change easily
 #include "/home/daniel/colors/xcolors/gruvbox-dark.xresources"
 #include "/home/daniel/colors/xcolors/gruvbox-urxvt256.xresources"
 
-! Include rofi separatly
+!! Include rofi separatly
 #include "/home/daniel/.rofi.xresources"
+
+!!! xscreensaver ---------------------------------------------------------------
+
+!!font settings
+xscreensaver.Dialog.headingFont:        -*-fixed-bold-*-*-*-12-*-*-*-*-*-iso10646-*
+xscreensaver.Dialog.bodyFont:           -*-fixed-medium-*-*-*-12-*-*-*-*-*-iso10646-*
+xscreensaver.Dialog.labelFont:          -*-fixed-medium-*-*-*-12-*-*-*-*-*-iso10646-*
+xscreensaver.Dialog.unameFont:          -*-fixed-medium-*-*-*-12-*-*-*-*-*-iso10646-*
+xscreensaver.Dialog.buttonFont:         -*-fixed-bold-*-*-*-12-*-*-*-*-*-iso10646-*
+xscreensaver.Dialog.dateFont:           -*-fixed-medium-*-*-*-12-*-*-*-*-*-iso10646-*
+xscreensaver.passwd.passwdFont:         -*-fixed-bold-*-*-*-12-*-*-*-*-*-iso10646-*
+
+!!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         #E9DAB1
+xscreensaver.Dialog.background:         #272727
+xscreensaver.Dialog.topShadowColor:     #272727
+xscreensaver.Dialog.bottomShadowColor:  #272727
+xscreensaver.Dialog.Button.foreground:  #82A497
+xscreensaver.Dialog.Button.background:  #448487
+
+!!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    #272727
+xscreensaver.Dialog.text.background:    #E9DAB1
+xscreensaver.Dialog.internalBorderWidth:2
+xscreensaver.Dialog.borderWidth:        0
+xscreensaver.Dialog.shadowThickness:    4
+
+!!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  #448487
+xscreensaver.passwd.thermometer.background:  #448487
+xscreensaver.passwd.thermometer.width:       10
+
+!datestamp format--see the strftime(3) manual page for details
+xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 

@@ -218,6 +218,7 @@ alias df='df -h'
 alias dut='du -ht'
 
 alias updatedb='sudo updatedb'
+alias xfontsel='xfontsel -print|copy'
 
 # ────────────────────────────────────
 # Ｓｙｓｔｅｍ
