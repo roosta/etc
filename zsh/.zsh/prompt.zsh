@@ -282,6 +282,7 @@ function __promptline {
   local z_bg="${wrap}48;5;246${end_wrap}"
   local z_sep_fg="${wrap}38;5;246${end_wrap}"
 
+  #PROMPT="$(__promptline_left_prompt)%K${wrap}48;5;239${end_wrap}"
   PROMPT="$(__promptline_left_prompt)"
   RPROMPT="$(__promptline_right_prompt)"
 }

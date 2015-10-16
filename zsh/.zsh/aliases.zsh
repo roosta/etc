@@ -1,17 +1,19 @@
-# ┌─────────────────────────────┐
-# │░█▀█░█░░░▀█▀░█▀█░█▀▀░█▀▀░█▀▀░│
-# │░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█░│
-# │░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░│
-# └─────────────────────────────┘
-# Author : Roosta <mail@roosta.sh>
-# Site   : http://dotfiles.roosta.sh
-# Github : https://github.com/roosta
-# -------------------------------
+# ┌───────────────────────────────────────────┐
+# │▀▀▀░░░░░█▀█░█░░░▀█▀░█▀█░█▀▀░█▀▀░█▀▀░░░░░▀▀▀│
+# │▀▀▀▀░░░░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█░░░░▀▀▀▀│
+# │█▀▀▀▀▀░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀▀▀▀▀█│
+# │█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█│
+# │█░░  Author : Roosta <mail@roosta.sh>   ░░█│
+# │█░░  Site   : http://dotfiles.roosta.sh ░░█│
+# │█░░  Github : https://github.com/roosta ░░█│
+# └───┬───────────────────────────────────────┘
+# ┌───┘
+# ┆
 
-# ────────────────────────────────────
-# ＶＩＭ
-# ────────────────────────────────────
-
+# ┐ ┬o┌┌┐
+# │┌┘││││
+# └┘ ┆┘ ┆
+# └─────────────── ─ ─
 alias vi="vim"
 
 # quick edits
@@ -28,12 +30,13 @@ alias vifont='vim ~/.config/fontconfig/fonts.conf'
 alias vibinds='vim ~/.xbindkeysrc'
 
 # placeholder. write/find script
-alias todo='vim ~/.todo'
-alias lstodo='cat ~/.todo'
+alias todo='vim ~/todo.md'
+alias lstodo='cat ~/todo.md'
 
-# ────────────────────────────────────
-# Ｑｕｉｃｋｌｉｓｔ／ｆｉｎｄ
-# ────────────────────────────────────
+# ┬─┐o┌┐┐┬─┐
+# ├─ │││││ │
+# ┆  ┆┆└┘┆─┘
+# └─────────────── ─ ─
 
 # locate an alias quickly
 alias grea="alias | grep"
@@ -47,7 +50,7 @@ alias greps="ps -aux|grep"
 alias lspath='echo -e ${PATH//:/\\n}'
 
 # locate file at working dir
-alias gref='ls|grep'
+alias gref='lsp -p|grep'
 alias grefr='ls -R|grep'
 
 # list pulseaudio sinks
@@ -60,9 +63,10 @@ alias greclj='grep -R --include="*.clj*"'
 # yes
 alias awk='gawk'
 
-# ────────────────────────────────────
-# Ｓａｆｅｔｙ
-# ────────────────────────────────────
+# ┐─┐┬─┐┬─┐┬─┐┌┐┐┐ ┬
+# └─┐│─┤├─ ├─  │ └┌┘
+# ──┘┘ ┆┆  ┴─┘ ┆  ┆
+# └─────────────── ─ ─
 
 alias mv=' timeout 8 mv -iv'
 alias rm=' timeout 3 rm -Iv --one-file-system'
@@ -85,9 +89,10 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 # create parents, be verbose
 alias mkdir='mkdir -pv'
 
-# ────────────────────────────────────
-# Ｍｏｖｅｍｅｎｔ
-# ────────────────────────────────────
+# ┌┌┐┌─┐┐ ┬┬─┐┌┌┐┬─┐┌┐┐┌┐┐
+# ││││ ││┌┘├─ │││├─ │││ │
+# ┘ ┆┘─┘└┘ ┴─┘┘ ┆┴─┘┆└┘ ┆
+# └─────────────── ─ ─
 
 # dirstack needs some extra config, see dirstack.sh
 alias cd..='cd ..'
@@ -123,6 +128,7 @@ alias ls="ls -lAhpk --color=auto --group-directories-first"
 #alias dir='ls++ --potsf -lAhpXk'
 alias dir='ls++ -lAhpk'
 alias dirr='dir -R'
+alias lsa='lsp -p'
 
 # fasd plugin aliases (most of these are added by default but I often grep this list)
 alias a='fasd -a'        # any
@@ -137,18 +143,20 @@ alias zi='fasd_cd -d -i' # cd with interactive selection
 alias ci='fasd_cd -d -i' # cd with interactive selection
 alias v='f -e vim'       # quick opening files with vim
 
-# ────────────────────────────────────
-# Ｓｅｃｕｒｉｔｙ
-# ────────────────────────────────────
+# ┐─┐┬─┐┌─┐┬ ┐┬─┐o┌┐┐┐ ┬
+# └─┐├─ │  │ ││┬┘│ │ └┌┘
+# ──┘┴─┘└─┘┆─┘┆└┘┆ ┆  ┆
+# └─────────────── ─ ─
 
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
 alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
 alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
 alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."
 
-# ────────────────────────────────────
-# Ｐａｃｍａｎ
-# ────────────────────────────────────
+# ┬─┐┬─┐┌─┐┌┌┐┬─┐┌┐┐
+# │─┘│─┤│  ││││─┤│││
+# ┆  ┘ ┆└─┘┘ ┆┘ ┆┆└┘
+# └─────────────── ─ ─
 
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
 alias pacman='pacaur --color=auto' # use pacaur as a pacman extension
@@ -175,14 +183,20 @@ alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non e
 alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package and ABS databases against repositories
 alias pacinsd='pacman -S --asdeps' # Install given package(s) as dependencies
 
+# use reflector to sort the 5 fastest mirrows and force update
+# PS: might have to dl a country sorted list: curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/
+alias pacmirupd='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && pacman -Syy'
+
+
 # AUR
 # ------
 #alias pacaur4='pacaur --domain aur4.archlinux.org'
 #alias yaourt='pacaur'
 
-# ────────────────────────────────────
-# Ｕｔｉｌｓ
-# ────────────────────────────────────
+# ┬ ┐┌┐┐o┬  ┐─┐
+# │ │ │ ││  └─┐
+# ┆─┘ ┆ ┆┆─┘──┘
+# └─────────────── ─ ─
 
 alias grep="grep -i --color=auto" # ignore case in grep and color output
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
@@ -220,9 +234,10 @@ alias dut='du -ht'
 alias updatedb='sudo updatedb'
 alias xfontsel='xfontsel -print|copy'
 
-# ────────────────────────────────────
-# Ｓｙｓｔｅｍ
-# ────────────────────────────────────
+# ┐─┐┐ ┬┐─┐┌┐┐┬─┐┌┌┐
+# └─┐└┌┘└─┐ │ ├─ │││
+# ──┘ ┆ ──┘ ┆ ┴─┘┘ ┆
+# └─────────────── ─ ─
 
 # systemctl query
 alias sysstat='systemctl status'
@@ -246,9 +261,10 @@ alias sysrest='sudo systemctl restart'
 alias syscan='sudo systemctl cancel'
 alias sysedit='sudo systemctl edit'
 
-# ────────────────────────────────────
-# ＶＣＳ
-# ────────────────────────────────────
+# ┐ ┬┌─┐┐─┐
+# │┌┘│  └─┐
+# └┘ └─┘──┘
+# └─────────────── ─ ─
 
 alias diff='colordiff'
 
@@ -301,9 +317,10 @@ alias svnaddall="svn status | grep '?' | sed 's/^.* /svn add /' | bash"
 alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 #alias svnaddall="svn add `svn status . | awk '/^[?]/{print $2}'`"
 
-# ────────────────────────────────────
-# Ｄｅｖｅｌｏｐ
-# ────────────────────────────────────
+# ┬─┐┬─┐┐ ┬┬─┐┬  ┌─┐┬─┐
+# │ │├─ │┌┘├─ │  │ ││─┘
+# ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
+# └─────────────── ─ ─
 
 alias figwheel='rlwrap lein figwheel'
 alias hxrepl='haxelib run ihx'
@@ -315,9 +332,10 @@ alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
 
 
-# ────────────────────────────────────
-# ＭＩＳＣ
-# ────────────────────────────────────
+# ┌┌┐o┐─┐┌─┐
+# ││││└─┐│
+# ┘ ┆┆──┘└─┘
+# └─────────────── ─ ─
 
 # delete and or refresh shell confs
 alias xrmerge="xrdb -merge ~/.Xresources"

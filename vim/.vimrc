@@ -1,16 +1,17 @@
-" ┌────────────────────────────────────┐
-" │░░░░░░░░░░░░░█░█░▀█▀░█▄█░░░░░░░░░░░░│
-" │░░░░░░░░░░░░░▀▄▀░░█░░█░█░░░░░░░░░░░░│
-" │░░░░░░░░░░░░░░▀░░▀▀▀░▀░▀░░░░░░░░░░░░│
-" ├────────────────────────────────────┤
-" │ author : roosta <mail@roosta.sh>   │
-" │ site   : http://dotfiles.roosta.sh │
-" │ github : https://github.com/roosta │
-" └────────────────────────────────────┘
-" thanks to:
-"" https://github.com/xero/dotfiles/tree/master/vim
-"" https://github.com/trapd00r/configs/tree/master/vim
-" --------------------------------------
+" ┌──────────────────────────────────────┐
+" │▀▀▀░░░░░░░░░░█░█░▀█▀░█▄█░░░░░░░░░░░▀▀▀│
+" │▀▀▀▀▀▀░░░░░░░▀▄▀░░█░░█░█░░░░░░░▀▀▀▀▀▀▀│
+" │▀▀▀▀▀▀▀▀▀▀░░░░▀░░▀▀▀░▀░▀░░░▀▀▀▀▀▀▀▀▀▀▀│
+" │█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█│
+" │█ author : roosta <mail@roosta.sh>   █│
+" │█ site   : http://dotfiles.roosta.sh █│
+" │█ github : https://github.com/roosta █│
+" └──────────┬───────────────────────────┘
+"  sources:  │
+" ┌──────────┘
+" │https://github.com/xero/dotfiles/tree/master/vim
+" │https://github.com/trapd00r/configs/tree/master/vim
+" ┆
 
 " use vim settings, rather than vi settings
 " must be first, because it changes other options as a side effect
@@ -18,9 +19,10 @@ if &compatible
   set nocompatible
 endif
 
-"┌────────────────────────────────────┐
-"│░░░░░░░░░░░Ｏｐｔｉｏｎｓ░░░░░░░░░░░│
-"└────────────────────────────────────┘
+" ┌─┐┬─┐┌┐┐o┌─┐┌┐┐┐─┐
+" │ ││─┘ │ ││ ││││└─┐
+" ┘─┘┆   ┆ ┆┘─┘┆└┘──┘
+" └─────────────── ─ ─
 
 " using EasyClip. See Plugins
 "set clipboard=unnamed " set same clipboard for vim and X
@@ -87,7 +89,7 @@ set magic
 set gdefault " the /g flag on :s substitutions by default
 
 set mouse=a
-set formatoptions-=o
+set fo-=o
 set relativenumber
 
 " Tags
@@ -106,9 +108,10 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 
-" ────────────────────────────────────
-" ＧＵＩ
-" ────────────────────────────────────
+" ┌─┐┬ ┐o
+" │ ┬│ ││
+" ┆─┘┆─┘┆
+" └─────────────── ─ ─
 
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
@@ -120,9 +123,10 @@ if has('gui_running')
   set guiheadroom=0
 endif
 
-" ────────────────────────────────────
-" Ｋｅｙｂｉｎｄｉｎｇｓ
-" ────────────────────────────────────
+" ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐
+" ├┴┐├─ └┌┘│─││││││ │
+" ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘
+" └─────────────── ─ ─
 
 " Move across wrapped lines like regular lines
 noremap 0 ^ " Go to the first non-blank character of a line
@@ -154,9 +158,10 @@ nnoremap <silent> <Leader><Leader>-:exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
-" ────────────────────────────────────
-" Ｐｌｕｇｉｎｓ
-" ────────────────────────────────────
+" ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
+" │─┘│  │ ││ ┬││││└─┐
+" ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
+" └─────────────── ─ ─
 
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
@@ -208,8 +213,8 @@ call plug#end()
 syntax on
 filetype plugin indent on
 
-" Syntastic
-" ─────────────
+" ┆Syntastic
+" └── ─ ─
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -221,14 +226,14 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
 
 " vim-multiple-cursor
-" ───────────────────
+" -------------------
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " Ctrl-P
-" ─────────
+" ---------
 let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
 " let g:ctrlp_by_filename = 1
 let g:ctrlp_reuse_window = 1
@@ -245,7 +250,8 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
                           \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 
 " Easymotion
-" ───────────────────
+" -------------------
+
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
 " resoning is that EM takes up such a huge amount of binds I wanted it to have
@@ -277,7 +283,7 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 " EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
 
 " Quickscope
-" ───────────────────
+" ----------------
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
 let g:qs_first_occurrence_highlight_color = 155       " terminal vim
 
@@ -288,11 +294,11 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Airline
-" ───────────────────
+" -------------------
 let g:airline_powerline_fonts = 1
 
 " Easyclip
-" ───────────────────
+" -------------------
 " remap mark to gm since EasyClip cut shadows m key
 let g:EasyClipUsePasteToggleDefaults = 0
 nnoremap gm m
@@ -309,7 +315,7 @@ nmap [y <plug>EasyClipSwapPasteBackwards
 let g:EasyClipShareYanks = 1
 
 " Gruvbox
-" ───────────────────
+" -------------------
 " Set theme
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italic = 1
@@ -317,7 +323,7 @@ colorscheme gruvbox
 set background=dark " Setting dark mode
 
 " Rainbow Parenthesis
-" ───────────────────
+" -------------------
 let g:rbpt_colorpairs = [
   \ ['brown',       'RoyalBlue3'],
   \ ['Darkblue',    'SeaGreen3'],
@@ -345,7 +351,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " NERDTree
-" ───────────────────
+" --------------
 map <leader>t :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
@@ -355,20 +361,20 @@ let NERDTreeQuitOnOpen=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " NERDComment
-" ───────────────────
+" -------------------
 " mirrow tpope commentary keys.
 "
 nmap gcc <plug>NERDCommenterToggle
 vmap gc <plug>NERDCommenterToggle
 
 " Paredit
-" ───────────────────
+" -------------------
 let g:paredit_electric_return = 0
 let g:paredit_leader = '\'
 let g:paredit_disable_clojure = 0
 
 " easy-align
-" ───────────────────
+" -------------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
@@ -376,19 +382,21 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " indent guides
-" ───────────────────
+" -------------------
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
-" ────────────────────────────────────
-" Ｃｏｍｍａｎｄｓ
-" ────────────────────────────────────
+" ┌─┐┌─┐┌┌┐┌┌┐┬─┐┌┐┐┬─┐┐─┐
+" │  │ ││││││││─┤││││ │└─┐
+" └─┘┘─┘┘ ┆┘ ┆┘ ┆┆└┘┆─┘──┘
+" └─────────────── ─ ─
 
 command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
-" ────────────────────────────────────
-" ｆｕｎｃｔｉｏｎｓ／ａｕｇｒｏｕｐｓ
-" ────────────────────────────────────
+" ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
+" ├─ │ │││││   │ ││ ││││└─┐
+" ┆  ┆─┘┆└┘└─┘ ┆ ┆┘─┘┆└┘──┘
+" └─────────────── ─ ─
 
 " if working with splits, set cursorline only on active window,
 " to give an indication other than airline which split is active
@@ -426,9 +434,10 @@ nnoremap <leader><C-n> :call NumberToggle()<cr>
 
 
 
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Ｉｎａｃｔｉｖｅ
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
+" │││││─┤│   │ ││┌┘├─
+" ┆┆└┘┘ ┆└─┘ ┆ ┆└┘ ┴─┘
+" ------------------------
 " Promptline (used to generate a prompt for terminal to match airline.
 "let g:promptline_preset = {
   "\'a' : [ '$vim_mode' ],
