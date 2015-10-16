@@ -62,6 +62,36 @@ bindsym $mod+Shift+1 move workspace $TWS1_MED
 bindsym $mod+Shift+2 move workspace $TWS2_GAM
 bindsym $mod+Shift+3 move workspace $TWS3_MSC
 
+# ┆ F-workspaces
+# ┆ Auxiliary workspaces. Find myself needing throw-away workspaces often.
+# └─────────────────── ─ ─
+set $FWS1 "9[F1]"
+set $FWS2 "10[F2]"
+set $FWS3 "11[F3]"
+set $FWS4 "12[F4]"
+set $FWS5 "13[F5]"
+set $FWS6 "14[F6]"
+set $FWS7 "15[F7]"
+set $FWS8 "16[F8]"
+
+bindsym $mod+F1 workspace $FWS1
+bindsym $mod+F2 workspace $FWS2
+bindsym $mod+F3 workspace $FWS3
+bindsym $mod+F4 workspace $FWS4
+bindsym $mod+F5 workspace $FWS5
+bindsym $mod+F6 workspace $FWS6
+bindsym $mod+F7 workspace $FWS7
+bindsym $mod+F8 workspace $FWS8
+
+bindsym $mod+Shift+F1 workspace $FWS1
+bindsym $mod+Shift+F2 workspace $FWS2
+bindsym $mod+Shift+F3 workspace $FWS3
+bindsym $mod+Shift+F4 workspace $FWS4
+bindsym $mod+Shift+F5 workspace $FWS5
+bindsym $mod+Shift+F6 workspace $FWS6
+bindsym $mod+Shift+F7 workspace $FWS7
+bindsym $mod+Shift+F8 workspace $FWS8
+
 # ┆ outputs
 # └── ─ ─
 set $primary DVI-I-1
