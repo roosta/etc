@@ -29,10 +29,11 @@ nnoremap <C-S-j> 40j
 nnoremap <C-S-k> 40k
 
 " change delete tab behaviour.
-" tried for a while with last active but its very situational
 nnoremap dd :bd -select lastactive<CR>
 nnoremap d<Left> :bd -select left<CR>
 nnoremap d<Right> :bd -select right<CR>
+nnoremap dh :bd -select left<CR>
+nnoremap dl :bd -select right<CR>
 
 " noscript integration
 noremap <leader>s :noscript popup<CR>

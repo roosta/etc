@@ -67,5 +67,5 @@ xscreensaver -no-splash &
 
 # Ｗｉｎｄｏｗ  ｍａｎａｇｅｒ
 # ────────────────────────────
-exec i3 -c $HOME/.i3/config.i3
+exec i3 -c $HOME/.i3/i3.config
 

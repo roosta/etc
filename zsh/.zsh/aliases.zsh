@@ -28,6 +28,7 @@ alias vitmux='vim ~/.tmux.conf'
 alias vixinit='vim ~/.xinitrc'
 alias vifont='vim ~/.config/fontconfig/fonts.conf'
 alias vibinds='vim ~/.xbindkeysrc'
+alias vivimp='vim ~/.vimperatorrc'
 
 # placeholder. write/find script
 alias todo='vim ~/todo.md'
