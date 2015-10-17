@@ -198,13 +198,13 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
+Plug 'bling/vim-bufferline'
 
 "Plug 'tpope/vim-commentary'
 "Plug 'vim-scripts/YankRing.vim'
 "Plug 'tpope/vim-classpath'
 "Plug 'venantius/vim-eastwood'
 "Plug 'jgdavey/tslime.vim'
-"Plug 'bling/vim-bufferline'
 "Plug 'majutsushi/tagbar'
 "Plug 'edkolev/promptline.vim'
 "Plug 'edkolev/tmuxline.vim'
@@ -293,9 +293,17 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" Airline
-" -------------------
+" ┆ Airline
+" └── ─ ─
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#bufferline#enabled = 1
+
+" ┆ Bufferline
+" └── ─ ─
+let g:bufferline_modified = '+'
+let g:bufferline_show_bufnr = 0
+let g:bufferline_solo_highlight = 1
+let g:bufferline_echo = 0
 
 " Easyclip
 " -------------------

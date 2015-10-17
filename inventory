@@ -1,0 +1,17 @@
+[lintilla]
+localhost.localdomain
+ansible_connection=local
+
+[lintilla:vars]
+user=daniel
+home=/home/{{user}}
+repo={{home}}/.dotfiles
+
+[allitnil]
+localhost.localdomain
+ansible_connection=local
+
+[allitnil:vars]
+user=daniel
+home=/home/{{user}}
+repo={{home}}/.dotfiles

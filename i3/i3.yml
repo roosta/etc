@@ -1,0 +1,10 @@
+---
+- hosts: lintilla
+  connection: local
+  sudo: yes
+  sudo_user: "{{ user }}"
+  vars:
+    confpath: "{{ home }}/.i3"
+  tasks:
+    - name: Add i3 configuration as a symblic link to {{ confpath }}
+      file: src=../i3 dest={{ confpath }} state=link
