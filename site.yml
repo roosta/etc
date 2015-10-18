@@ -1,8 +1,9 @@
 ---
-# This playbook deploys the whole application stack in this site.
+# This playbook deploys the whole application stack to given target
+# Run ansible-playbook -i hosts site.yml -e "target=TARGET HOSTNAME"
 
 - name: apply common configuration
-  hosts: all
+  hosts: "{{target}}"
 
   roles:
     - common
