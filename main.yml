@@ -1,4 +1,0 @@
----
-vars:
-  bakc: "/home/{{user}}/bin/bakc"
-  

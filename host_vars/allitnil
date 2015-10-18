@@ -1,0 +1,4 @@
+---
+user: daniel
+home: "/home/{{user}}"
+dotfiles: "{{home}}/.dotfiles"

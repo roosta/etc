@@ -150,9 +150,9 @@ alias v='f -e vim'       # quick opening files with vim
 # └─────────────── ─ ─
 
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
-alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected /home"
-alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected /"
-alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected ."
+alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l $HOME/.tmp/clamscan.log $HOME"
+alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected /"
+alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected ."
 
 # ┬─┐┬─┐┌─┐┌┌┐┬─┐┌┐┐
 # │─┘│─┤│  ││││─┤│││

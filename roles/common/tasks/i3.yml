@@ -1,0 +1,3 @@
+---
+- name: "Symbolically link i3 configuration"
+  file: path={{home}}/.i3 src={{dotfiles}}/i3 state=link
