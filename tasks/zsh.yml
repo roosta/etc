@@ -1,0 +1,17 @@
+# run a command with the "shell" module and register the result into the
+# "default_shell" variable
+- name: zsh facts
+  shell: 'echo $SHELL'
+  register: default_shell
+  # changed when determines when will this task be considered changed when running
+  # ansible. In this case, we want it to always be false, as we are just
+  # retrieving information.
+  changed_when: False
+  sudo: no
+
+# set zsh as the default shell, unless it is already the default.
+- name: make zsh default
+  shell:  chsh -s /bin/zsh
+  # This task will run only when the following is true. In here, we check the
+  # value registered previously within the "default_shell" variable.
+  when: default_shell.stdout.find('/bin/zsh') == -1

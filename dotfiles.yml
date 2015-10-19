@@ -1,0 +1,25 @@
+---
+# This playbook deploys the whole application stack to given target
+# Run ansible-playbook -i hosts site.yml -e "target=TARGET HOSTNAME"
+
+- name: apply dotfile configuration
+  hosts: "{{target}}"
+
+  tasks:
+    - include: tasks/i3.yml
+    - include: tasks/background.yml
+    - include: tasks/bash.yml
+    - include: tasks/boxes.yml
+    - include: tasks/compton.yml
+    - include: tasks/ctags.yml
+    - include: tasks/dircolors.yml
+    - include: tasks/dunst.yml
+    - include: tasks/firefox.yml
+
+    # font setup. Needs some manual steps!
+    #- include: tasks/fontconfig.yml
+    - include: tasks/fonts.yml
+
+    - include: tasks/gimp.yml
+    - include: tasks/git.yml
+    - include: tasks/gtk.yml

@@ -19,7 +19,7 @@ alias vi="vim"
 # quick edits
 alias vigit='vim ~/.gitconfig'
 alias vissh='vim ~/.ssh/config'
-alias vii3='vim ~/.i3/config.i3'
+alias vii3='vim ~/.i3/i3.config'
 alias vialias='vim ~/.zsh/aliases.zsh'
 alias vivi='vim ~/.vimrc'
 alias vivim='vim ~/.vimrc'
