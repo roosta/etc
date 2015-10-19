@@ -1,3 +1,4 @@
 ---
 - include: i3.yml
 - include: background.yml
+- include: bash.yml
