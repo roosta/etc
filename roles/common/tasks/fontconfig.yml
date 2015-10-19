@@ -1,0 +1,8 @@
+---
+# Setup fontconfig. Relies on infinality conf
+#- name: Check for "dunst" package, and install if not present
+  #pacman: name=dunst state=present
+
+- name: Symlink "fontconfig"
+  file: path={{home}}/.config/fontconfig src={{dotfiles}}/fontconfig state=link
+

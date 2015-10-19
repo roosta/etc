@@ -18,7 +18,12 @@ Todo list
 * ~~vim caps~~
 * reflector
 * what happened to dunst!?
+
+#### ansible
 * gpg encrypt irssi cert
+* encrypy some fonts
+* aur setup & install
+* install infinality fonts
 
 #### Allitnil
 

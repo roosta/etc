@@ -1,0 +1,10 @@
+---
+# zsh being the preferred shell, I still track these
+- name: Install "firefox" package if not present
+  pacman: name=firefox state=present
+
+- name: Symlink "firefox" configs to ".mozilla" folder
+  file: dest={{home}}/.mozilla/{{item}} src={{dotfiles}}/firefox/{{item}} state=link
+  with_items:
+    - conf
+    - style

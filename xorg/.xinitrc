@@ -12,8 +12,8 @@
 # Ｉｎｉｔ
 # ────────
 # do this on startup for good measure :)
-xset +fp /usr/share/fonts/roosta &
-xset fp rehash &
+#xset +fp /usr/share/fonts/roosta &
+#xset fp rehash &
 
 # set background with feh
 $HOME/.fehbg &

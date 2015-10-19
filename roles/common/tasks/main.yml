@@ -7,3 +7,8 @@
 - include: ctags.yml
 - include: dircolors.yml
 - include: dunst.yml
+- include: firefox.yml
+
+  # font setup. Needs some manual steps!
+- include: fontconfig.yml
+- include: fonts.yml
