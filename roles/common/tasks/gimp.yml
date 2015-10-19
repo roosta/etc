@@ -1,0 +1,7 @@
+---
+# setup i3 window manager
+- name: Install "gimp" package if not present
+  pacman: name=gimp state=present
+
+- name: Symlink "gimp" configuration
+  file: path={{home}}/.gimp-2.8 src={{dotfiles}}/gimp state=link

@@ -1,0 +1,13 @@
+---
+# setup gtk configs
+- name: Install gtk packages not present
+  pacman: name={{ item }} state=present
+  with_items:
+    - gtk2
+    - gtk3
+
+- name: Symlink gtk configuration
+  file: dest={{home}}/{{item.dest}} src={{dotfiles}}/gtk/{{item.src}} state=link
+  with_items:
+    - { dest: '.config/gtk-3.0', src: 'gtk-3.0' }
+    - { dest: '.gtkrc-2.0', src: '.gtkrc-2.0' }

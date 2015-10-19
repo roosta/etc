@@ -10,5 +10,9 @@
 - include: firefox.yml
 
   # font setup. Needs some manual steps!
-- include: fontconfig.yml
+#- include: fontconfig.yml
 - include: fonts.yml
+
+- include: gimp.ml
+- include: git.yml
+- include: gtk.yml
