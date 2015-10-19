@@ -1,0 +1,6 @@
+---
+- name: Check for "ctags" package, and install if not present
+  pacman: name=ctags state=present
+
+- name: Symlink ctags config
+  file: path={{home}}/.ctags src={{dotfiles}}/ctags/.ctags state=link

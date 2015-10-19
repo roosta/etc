@@ -1,0 +1,7 @@
+---
+# Setup compton. Relies on AUR package!
+- name: Check for "dunst" package, and install if not present
+  pacman: name=dunst state=present
+
+- name: Symlink "dunst" configuration
+  file: path={{home}}/.config/dunst src={{dotfiles}}/dunst state=link

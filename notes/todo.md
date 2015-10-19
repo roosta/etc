@@ -18,6 +18,7 @@ Todo list
 * ~~vim caps~~
 * reflector
 * what happened to dunst!?
+* gpg encrypt irssi cert
 
 #### Allitnil
 

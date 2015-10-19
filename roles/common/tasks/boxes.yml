@@ -1,0 +1,4 @@
+---
+# TODO: add AUR install
+- name: Symlink boxes config
+  file: path={{home}}/.boxes src={{dotfiles}}/boxes/.boxes state=link

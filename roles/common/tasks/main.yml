@@ -2,3 +2,8 @@
 - include: i3.yml
 - include: background.yml
 - include: bash.yml
+- include: boxes.yml
+- include: compton.yml
+- include: ctags.yml
+- include: dircolors.yml
+- include: dunst.yml
