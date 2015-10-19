@@ -17,6 +17,7 @@ Todo list
 * git-extras
 * ~~vim caps~~
 * reflector
+* what happened to dunst!?
 
 #### Allitnil
 
