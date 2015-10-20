@@ -1,0 +1,41 @@
+---
+# define primary palette
+black: #282828
+white: #ebdbb2
+red: #fb4934
+green: #b8bb26
+yelllow: #fabd2f
+blue: #83a598
+magenta: #d3869b
+cyan: #8ec07c
+orange: #FC7F18
+gray: #918273
+light_gray: #a89984
+dark_gray: #928374
+dark_red: #cc241d
+dark_green: #98971a
+dark_yellow: #d79921
+dark_magenta: #b16286
+dark_blue: #45858#
+dark_cyan: #689d6a
+dark_orange: #D55C0D
+
+# define various extra shades
+background: #282828
+foreground: #ebdbb2
+background_soft: #32302f
+background_hard: #1d2021
+background_unfocused: #1C1C1C
+background0_h: #1C1F20
+background0_s: #312F2E
+background0: #272727
+background1: #3B3735
+background2: #4F4844
+background3: #655B53
+background4: #7B6E63
+foreground4: #A79883
+foreground3: #BCAD92
+foreground2: #D4C3A0
+foreground1: #E9DAB1
+foreground0: #F9EFC6
+

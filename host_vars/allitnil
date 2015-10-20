@@ -2,3 +2,15 @@
 user: daniel
 home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
+
+# define displays
+primary_display: "DVI-I-1"
+secondary_display: False
+tv_display: False
+
+# define fonts:
+font_i3: "Essential PragmataPro 15px"
+font_status: "pango: Essential PragmataPro 14px"
+
+# vim:ft=yaml:ts=2:sw=2
+

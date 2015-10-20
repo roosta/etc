@@ -2,3 +2,19 @@
 user: daniel
 home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
+
+# define displays
+primary_display: "DVI-I-1"
+secondary_display: "DVI-D-0"
+tv_display: "HDMI-0"
+
+# define fonts:
+font_i3: "pango: Essential PragmataPro 12px"
+font_status: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
+
+# define i3 status configs.
+status_primary: "i3blocks -c ~/.i3/i3blocks/lint_primary.conf"
+status_secondary: "i3blocks -c ~/.i3/i3blocks/lint_secondary.conf"
+
+# vim:ft=yaml:ts=2:sw=2
+
