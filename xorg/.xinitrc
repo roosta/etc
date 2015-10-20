@@ -12,7 +12,7 @@
 # Ｉｎｉｔ
 # ────────
 # do this on startup for good measure :)
-xset +fp $HOME/.local/share/fonts/roosta &
+xset +fp $HOME/.local/share/fonts &
 xset fp rehash &
 
 # set background with feh

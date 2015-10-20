@@ -11,6 +11,6 @@ augroup filetypedetect
 augroup END
 
 augroup filetypeplugin
-  au! BufNewFile,BufRead *.i3 setlocal commentstring=#\ %s
+  au! BufNewFile,BufRead i3.config setlocal commentstring=#\ %s
 augroup END
 
