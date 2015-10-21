@@ -2,5 +2,10 @@
 - name: Symlink fonts to "~/.local/share/fonts"
   file: path={{home}}/.local/share/fonts src={{dotfiles}}/fonts state=link
 
+- name: Symlink local fontconfig
+  file: path={{home}}/.config/fontconfig src={{dotfiles}}/fontconfig state=link
+
 - name: Generate font cache
-  shell: fc-cache -vf
+  shell: fc-cache -f && xset +fp $HOME/.local/share/fonts && xset fp rehash
+
+
