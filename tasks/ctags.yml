@@ -1,5 +1,6 @@
 ---
 - name: Check for "ctags" package, and install if not present
+  become: True
   pacman: name=ctags state=present
 
 - name: Symlink ctags config

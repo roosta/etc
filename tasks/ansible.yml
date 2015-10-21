@@ -1,0 +1,4 @@
+---
+- name: Symlink ansible user config
+  file: path={{home}}/.ansible.cfg src={{dotfiles}}/ansible/.ansible.cfg state=link
+

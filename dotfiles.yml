@@ -3,7 +3,7 @@
 # Run ansible-playbook -i hosts site.yml -e "target=TARGET HOSTNAME"
 
 - name: apply dotfile configuration
-  hosts: "{{target}}"
+  hosts: "{{ target }}"
 
   tasks:
     - include: tasks/i3.yml

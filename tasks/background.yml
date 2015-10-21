@@ -2,6 +2,7 @@
 # setup desktop background
 
 - name: Install feh if not present
+  become: True
   pacman: name=feh state=present
 
 - name: Symlink background folder
