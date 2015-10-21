@@ -33,8 +33,8 @@ base-16
 .bash_history
 
 # gui
-gtk/.config/*/bookmarks
-gtk/.config/*/gtkfilechooser.ini
+gtk/*/bookmarks
+gtk/*/gtkfilechooser.ini
 
 # ignore closed fonts
 fonts/*/*PragmataPro*

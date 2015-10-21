@@ -160,9 +160,9 @@ alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected ."
 # └─────────────── ─ ─
 
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
-alias pacman='pacaur --color=auto' # use pacaur as a pacman extension
+alias pacman='aura --color=auto' # use pacaur as a pacman extension
 alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupdf='pacman -Syu --devel --noedit --needed' # update all packages including development packages, dont edit conf and only needed packages
+alias pacupdf='pacman -Syyu' # force a refresh of all package lists and upgrade.
 alias pacdl='pacman -Sw' # Download specified package(s) as .tar.xz ball
 alias pacs='pacman -S' # Install specific package(s) from the repositories
 alias pacu='pacman -U' # Install specific package not from the repositories but from a file
@@ -185,14 +185,61 @@ alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package an
 alias pacinsd='pacman -S --asdeps' # Install given package(s) as dependencies
 
 # use reflector to sort the 5 fastest mirrows and force update
-# PS: might have to dl a country sorted list: curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/
+# get country sorted mirrorlist to use with reflector
+alias getmirlist='sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/'
 alias pacmirupd='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && pacman -Syy'
-
 
 # AUR
 # ------
-#alias pacaur4='pacaur --domain aur4.archlinux.org'
-#alias yaourt='pacaur'
+
+# installing
+alias paca="aura -A" # install AUR package
+alias pacaf="aura -Ax" # install and display make output
+alias pacaa="aura -Aa" # remove make deps when finished installing
+alias pacadiff="aura -Ak" # show PKGBUILD diff
+alias pacaupd="aura -Akua" # upgrades, removes make deps, shows PKGBUILD diffs
+alias pacai="aura -Ai" # get AUR package information
+alias pacax="aura -As" # search aur via a regex
+alias pacaupd="aura -Au" # update AUR packages
+alias pacapkg="aura -Ap" # Display an AUR package"s PKGBUILD
+alias pacadeps="aura -Ad" # display package deps
+
+# orphans
+alias pacao='aura -O' # with no args: display orphans. With arg adopt package.
+alias pacaorm="aura -Oj" # remove all orphan packages.
+
+# logs
+alias pacalog='aura -Li' # list install/upgrade history for a package
+alias pacalogx='aura -Ls' # Search the pacman logfile via a regex
+
+#Downgrade a package (this is interactive):
+#aura -C (package)
+
+#Search the package cache for package files via a regex:
+#aura -Cs (regex)
+
+#Backup the package cache:
+#aura -Cb (/path/to/backup/location/)
+
+#Reduce the package cache to contain only 'x' of each package file:
+#aura -Cc x
+
+
+#Build a repository package manually:
+#aura -M (package)
+
+#Build a repository package and all its dependencies manually:
+#aura -M (package) --absdeps
+
+#Sync a single package's data to the local ABS Tree:
+#aura -Mt (package)
+
+#Sync all package data in the local ABS Tree:
+#aura -My
+
+#Remove only those package files from the cache that aren't present in any package record:
+#aura -Ccc
+
 
 # ┬ ┐┌┐┐o┬  ┐─┐
 # │ │ │ ││  └─┐

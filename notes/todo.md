@@ -18,6 +18,7 @@ Todo list
 * ~~vim caps~~
 * reflector
 * what happened to dunst!?
+* check if avahi is still needed
 
 #### ansible
 * gpg encrypt irssi cert

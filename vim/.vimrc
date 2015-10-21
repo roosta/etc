@@ -42,8 +42,8 @@ set wildmenu " command line completion
 set wildmode=longest,list,full
 "set wildmode=longest:full,full
 set wildignorecase
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,*/dist/*,*/undo/*,
-      \*/out/*,*/.repl*,*/.cljs_rhino_repl/*,*/_site/*
+"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,*/dist/*,*/undo/*,
+      "\*/out/*,*/.repl*,*/.cljs_rhino_repl/*,*/_site/*
 
 " fix backspace behaviour
 set backspace=indent,eol,start
@@ -132,7 +132,7 @@ endif
 noremap 0 ^ " Go to the first non-blank character of a line
 noremap ^ 0 " Just in case you need to go to the very beginning of a line
 
-noremap <leader>ws :StripWhitespace<CR>
+noremap <leader>cw :StripWhitespace<CR>
 
 " source config on deman
 noremap <c-w>r :source $MYVIMRC<CR>
@@ -213,7 +213,7 @@ call plug#end()
 syntax on
 filetype plugin indent on
 
-" ┆Syntastic
+" ┆ Syntastic
 " └── ─ ─
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -225,32 +225,46 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
 
-" vim-multiple-cursor
-" -------------------
+" ┆ vim-multiple-cursor
+" └────────── ─ ─
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" Ctrl-P
-" ---------
-let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
-" let g:ctrlp_by_filename = 1
-let g:ctrlp_reuse_window = 1
+" ┆ ctrlp
+" └────────── ─ ─
 let g:ctrlp_use_caching = 1
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_show_hidden = 0
-noremap <leader>p :CtrlPBufTag<CR>
-noremap <leader>P :CtrlPBufTagAll<CR>
-noremap <c-b> :CtrlPBuffer<CR>
-let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
-                          \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
+let g:ctrlp_show_hidden = 1
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_reuse_window = 1
 
-" Easymotion
-" -------------------
+" Find in your current directory
+nmap <leader>p :CtrlP<cr>
+
+" Find within all your open buffers.
+nmap <leader>bb :CtrlPBuffer<cr>
+
+" Find within all your open buffers sorted by Most Recently Used (MRU).
+nmap <leader>bm :CtrlPMixed<cr>
+
+" Find with a mix of all the above.
+nmap <leader>bs :CtrlPMRU<cr>
+
+nmap <leader>b :CtrlPBuffer<CR>
+
+let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn|cljs_rhino_repl|repl|)|\_site|\build|\node_modules|dist|undo|out)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|tags)$',
+\}
+
+" ┆ Easymotion
+" └────────── ─ ─
 
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
@@ -280,10 +294,10 @@ map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 " set ctrl-v to paste in easymotion command line
-" EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
+"EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
 
-" Quickscope
-" ----------------
+" ┆ Quickscope
+" └────────── ─ ─
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
 let g:qs_first_occurrence_highlight_color = 155       " terminal vim
 
@@ -294,19 +308,19 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " ┆ Airline
-" └── ─ ─
+" └──────── ─ ─
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#bufferline#enabled = 1
 
 " ┆ Bufferline
-" └── ─ ─
+" └────────── ─ ─
 let g:bufferline_modified = '+'
 let g:bufferline_show_bufnr = 0
 let g:bufferline_solo_highlight = 1
 let g:bufferline_echo = 0
 
-" Easyclip
-" -------------------
+" ┆ Easyclip
+" └────────── ─ ─
 " remap mark to gm since EasyClip cut shadows m key
 let g:EasyClipUsePasteToggleDefaults = 0
 nnoremap gm m
@@ -322,16 +336,16 @@ nmap ]y <plug>EasyClipSwapPasteForward
 nmap [y <plug>EasyClipSwapPasteBackwards
 let g:EasyClipShareYanks = 1
 
-" Gruvbox
-" -------------------
+" ┆ Gruvbox (colorscheme)
+" └────────── ─ ─
 " Set theme
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italic = 1
 colorscheme gruvbox
 set background=dark " Setting dark mode
 
-" Rainbow Parenthesis
-" -------------------
+" ┆ Rainbow Parenthesis
+" └────────── ─ ─
 let g:rbpt_colorpairs = [
   \ ['brown',       'RoyalBlue3'],
   \ ['Darkblue',    'SeaGreen3'],
@@ -353,13 +367,14 @@ let g:rbpt_colorpairs = [
 
 "let g:rbpt_loadcmd_toggle = 0
 
+" auto enable Rainbow for all closures
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" NERDTree
-" --------------
+" ┆ NERDtree
+" └────────── ─ ─
 map <leader>t :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
@@ -368,29 +383,33 @@ let NERDTreeQuitOnOpen=1
 " close vim if nerdtree is only window remaining
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" NERDComment
-" -------------------
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+" ┆ NERDcomment
+" └────────── ─ ─
 " mirrow tpope commentary keys.
 "
 nmap gcc <plug>NERDCommenterToggle
 vmap gc <plug>NERDCommenterToggle
 
-" Paredit
-" -------------------
+" ┆ Paredit
+" └────────── ─ ─
 let g:paredit_electric_return = 0
 let g:paredit_leader = '\'
 let g:paredit_disable_clojure = 0
 
-" easy-align
-" -------------------
+" ┆ Easy-align
+" └────────── ─ ─
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" indent guides
-" -------------------
+" ┆ Indent guides
+" └────────── ─ ─
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
@@ -441,7 +460,7 @@ nnoremap <leader><C-n> :call NumberToggle()<cr>
 
 
 
-
+" holding on to these just in case I'll need them again
 " o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
 " │││││─┤│   │ ││┌┘├─
 " ┆┆└┘┘ ┆└─┘ ┆ ┆└┘ ┴─┘
