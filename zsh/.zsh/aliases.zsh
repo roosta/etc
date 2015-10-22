@@ -287,6 +287,8 @@ alias dut='du -ht'
 alias updatedb='sudo updatedb'
 alias xfontsel='xfontsel -print|copy'
 
+alias ~~="$HOME/.backup/home/$USER"
+
 # ┐─┐┐ ┬┐─┐┌┐┐┬─┐┌┌┐
 # └─┐└┌┘└─┐ │ ├─ │││
 # ──┘ ┆ ──┘ ┆ ┴─┘┘ ┆
