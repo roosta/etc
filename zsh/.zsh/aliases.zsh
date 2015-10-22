@@ -160,7 +160,7 @@ alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected ."
 # └─────────────── ─ ─
 
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
-alias pacman='pacman --color=auto' # use pacaur as a pacman extension
+alias pacman='sudo pacman --color=auto' # use pacaur as a pacman extension
 
 # Installing
 alias pacs='pacman -S' # Install specific package(s) from the repositories
@@ -198,7 +198,9 @@ alias pacmir='pacman -Syy' # Force refresh of all package lists after updating /
 # ------
 
 # installing
+alias aura='sudo aura'
 alias paca="aura -A" # install AUR package
+alias pacas="aura -As"
 alias pacaf="aura -Ax" # install and display make output
 alias pacaa="aura -Aa" # remove make deps when finished installing
 alias pacadiff="aura -Ak" # show PKGBUILD diff
