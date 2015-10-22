@@ -95,13 +95,13 @@ bindsym $mod+Shift+F8 workspace $FWS8
 
 # ┆ assign workspaces to outputs
 # └── ─ ─
-workspace $PWS1_TRM output {{ primary_display }}
-workspace $PWS3_WWW output {{ primary_display }}
-workspace $PWS2_DEV output {{ primary_display }}
+workspace $PWS1_TRM output {{ output_primary }}
+workspace $PWS3_WWW output {{ output_primary }}
+workspace $PWS2_DEV output {{ output_primary }}
 
-workspace $SWS1_AUX output {{ secondary_display }}
-workspace $SWS3_DBG output {{ secondary_display }}
-workspace $SWS2_COM output {{ secondary_display }}
+workspace $SWS1_AUX output {{ output_left }}
+workspace $SWS3_DBG output {{ output_left }}
+workspace $SWS2_COM output {{ output_left }}
 
 # ┆ Options
 # └── ─ ─
@@ -357,3 +357,12 @@ client.unfocused        {{ dark_blue }}   {{ background1 }} {{ dark_gray }}  {{ 
 client.urgent           {{ dark_orange }} {{ dark_orange }} {{ background }} {{ dark_orange }}
 client.placeholder      {{ cyan }}        {{ dark_cyan }}   {{ black }}      {{ magenta }}
 
+{% include bar_primary.j2 %}
+
+{% if target.lintilla %}
+
+  {% include bar_left.j2 %}
+
+  {% include bar_tv.j2 %}
+
+{% endif %}
