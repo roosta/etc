@@ -5,7 +5,7 @@
 - name: apply dotfile configuration
   hosts: "{{ target }}"
   vars_files:
-    - "{{ dotfiles }}/vars/gruvbox_palette.yml"
+    - vars/gruvbox_palette.yml
   tasks:
     - include: tasks/ansible.yml
     - include: tasks/i3.yml

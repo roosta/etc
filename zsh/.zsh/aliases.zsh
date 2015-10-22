@@ -29,6 +29,7 @@ alias vixinit='vim ~/.xinitrc'
 alias vifont='vim ~/.config/fontconfig/fonts.conf'
 alias vibinds='vim ~/.xbindkeysrc'
 alias vivimp='vim ~/.vimperatorrc'
+alias vigtk='vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini'
 
 # placeholder. write/find script
 alias todo='vim ~/todo.md'
@@ -160,10 +161,10 @@ alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected ."
 # └─────────────── ─ ─
 
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
-alias pacman='sudo pacman --color=auto' # use pacaur as a pacman extension
+alias pacman='pacman --color=auto' # use pacaur as a pacman extension
 
 # Installing
-alias pacs='pacman -S' # Install specific package(s) from the repositories
+alias pacs='sudo pacman -S' # Install specific package(s) from the repositories
 alias pacsi='pacman -Si' # Display information about a given package in the repositories
 alias pacss='pacman -Ss' # Search for package(s) in the repositories
 alias pacdl='pacman -Sw' # Download specified package(s) as .tar.xz ball
@@ -260,6 +261,7 @@ alias pip='sudo -H pip' # set home variable when running pip
 alias tmux='tmux -2'
 alias ufw='sudo ufw'
 alias make='colormake'
+alias ack='sack'
 
 # stow is always verbose
 alias stow='stow -v'
@@ -275,7 +277,7 @@ alias copy='xclip -sel clip'
 
 # print date in various formats
 alias gettime='date +"%T"'
-alias getdatef='date +%Y-%m-%d_%H-%M-%S'
+alias getdatef='date +%Y-%m-%d@%H-%M-%S'
 alias getdate='date +"%Y-%m-%d"'
 
 # ignore case always

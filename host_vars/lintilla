@@ -5,8 +5,8 @@ dotfiles: "{{home}}/.dotfiles"
 
 # define displays
 output_primary: "DVI-I-1"
-output_left: "DVI-D-0"
-output_tv: "HDMI-0"
+output_secondary: "DVI-D-0"
+output_tertiary: "HDMI-0"
 
 # define fonts:
 font_i3: "pango: Essential PragmataPro 12px"

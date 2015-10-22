@@ -1,13 +1,10 @@
 bar {
-  output {{ output_left }}
-  tray_output {{ output_left }}
+  output {{ output_secondary }}
+  tray_output primary
   strip_workspace_numbers yes
   position top
   font {{ font_status }}
   status_command {{ status_left }}
   separator_symbol "|"
-  colors {
-    {% include bar_colors.j2 %}
-  }
+    {% include 'bar_colors.j2' %}
 }
-# vim:ft=i3:ts=2

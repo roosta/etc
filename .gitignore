@@ -71,3 +71,5 @@ svn/*/README.txt
 
 # clj
 *.jar
+
+/i3/i3.config
