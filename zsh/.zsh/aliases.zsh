@@ -160,34 +160,39 @@ alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected ."
 # └─────────────── ─ ─
 
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
-alias pacman='aura --color=auto' # use pacaur as a pacman extension
-alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupdf='pacman -Syyu' # force a refresh of all package lists and upgrade.
-alias pacdl='pacman -Sw' # Download specified package(s) as .tar.xz ball
+alias pacman='pacman --color=auto' # use pacaur as a pacman extension
+
+# Installing
 alias pacs='pacman -S' # Install specific package(s) from the repositories
-alias pacu='pacman -U' # Install specific package not from the repositories but from a file
-alias pacrm='pacman -R' # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrmf='pacman -Rns' # Remove the specified package(s), its configuration(s) and unneeded dependencies
 alias pacsi='pacman -Si' # Display information about a given package in the repositories
 alias pacss='pacman -Ss' # Search for package(s) in the repositories
-alias pacqi='pacman -Qi' # Display information about a given package in the local database
-alias pacqs='pacman -Qs' # Search for package(s) in the local database
-alias pacorph="pacman -Qdt" # List all packages which are orphaned
+alias pacdl='pacman -Sw' # Download specified package(s) as .tar.xz ball
+
+
+alias pacrm='pacman -R' # Remove the specified package(s), retaining its configuration(s) and required dependencies
+alias pacrmf='pacman -Rns' # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias pacorm='pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
+alias paco="pacman -Qdt" # List all packages which are orphaned
+
+# management
 alias pacclean="pacman -Scc" # Clean cache - delete all the package files in the cache
+alias pacqs='pacman -Qs' # Search for package(s) in the local database
+alias pacqi='pacman -Qi' # Display information about a given package in the local database
+alias pacu='pacman -U' # Install specific package not from the repositories but from a file
 alias pacls="pacman -Ql" # List all files installed by a given package
 alias pacown="pacman -Qo" # Show package(s) owning the specified file(s)
-alias pacmir='pacman -Syy' # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 alias pacexp='pacman -Qet' # list all packages explicitly installed and not required as dependencies
-alias pacorphrm='pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
 alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
 alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
 alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package and ABS databases against repositories
 alias pacinsd='pacman -S --asdeps' # Install given package(s) as dependencies
 
-# use reflector to sort the 5 fastest mirrows and force update
-# get country sorted mirrorlist to use with reflector
-alias getmirlist='sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/'
-alias pacmirupd='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && pacman -Syy'
+# Updating
+alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacupdf='pacman -Syyu' # force a refresh of all package lists and upgrade.
+alias getmirlist='sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/' # get country sorted mirrorlist to use with reflector
+alias pacmirupd='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && pacman -Syy' # use reflector to sort the 5 fastest mirrors and force update
+alias pacmir='pacman -Syy' # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
 # AUR
 # ------
@@ -329,6 +334,7 @@ alias gitll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%
 alias gita='git add'
 alias gitaa='git add -A'
 alias gitc='git commit'
+alias commit='git commit'
 alias gitca='git commit -a'
 alias gitsubupd='git submodule foreach git pull origin master'
 

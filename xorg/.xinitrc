@@ -64,6 +64,7 @@ urxvtd -q -f -o &
 seaf-cli start &
 compton --config $HOME/.config/compton/compton.conf -b &
 xscreensaver -no-splash &
+dunst &
 
 # Ｗｉｎｄｏｗ  ｍａｎａｇｅｒ
 # ────────────────────────────

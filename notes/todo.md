@@ -8,16 +8,13 @@ Todo list
 * save keys
 * setup backup NFS drive (dm-crypt)
 * webpage
-* server arch install
 * make subkey for email
-* add i3block for: current host, DPMS state
+* add i3block for: DPMS state
 * progress & bar
-* all the workspaces!
 * change layout switch key
 * git-extras
 * ~~vim caps~~
 * reflector
-* what happened to dunst!?
 * check if avahi is still needed
 
 #### ansible
@@ -36,8 +33,6 @@ Todo list
 * fix X error
 
 #### Vim
-
-* setup marks in large configs
 
 #### Figlet fonts
 
