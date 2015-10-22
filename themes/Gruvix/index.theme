@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Gruvix
+Comment=Gruvbox Numix variation
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Gruvix
+MetacityTheme=Gruvix
+ButtonLayout=:minimize,maximize,close
