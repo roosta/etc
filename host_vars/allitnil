@@ -4,13 +4,15 @@ home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
 # define displays
-primary_display: "DVI-I-1"
-secondary_display: False
-tv_display: False
+output_primary: "eDP1"
+output_secondary: "HDMI2"
 
 # define fonts:
 font_i3: "Essential PragmataPro 15px"
 font_status: "pango: Essential PragmataPro 14px"
+
+status_primary: "i3blocks -c ~/.i3/i3blocks/lint_primary.conf"
+status_above: "i3blocks -c ~/.i3/i3blocks/lint_primary.conf"
 
 # vim:ft=yaml:ts=2:sw=2
 
