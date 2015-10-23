@@ -375,7 +375,7 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " ┆ NERDtree
 " └────────── ─ ─
-map <leader>t :NERDTreeToggle<CR>
+map <leader>tt :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=1

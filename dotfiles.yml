@@ -17,6 +17,9 @@
     - include: tasks/dircolors.yml
     - include: tasks/dunst.yml
     - include: tasks/firefox.yml
+    - include: tasks/themes.yml
+    - include: tasks/fasd.yml
+
 
     # font setup. Needs some manual steps!
     #- include: tasks/fonts.yml

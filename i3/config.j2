@@ -1,4 +1,4 @@
-# vim:ft=i3:ts=2
+# vim:ft=i3:ts=2:sw=2
 # ┌───────────────────────────────────┐
 # │▀▀▀░░░░░░░▀█▀░▀▀█░█░█░█▄█░░░░░░░▀▀▀│
 # │▀▀▀▀▀░░░░░░█░░░▀▄░█▄█░█░█░░░░░▀▀▀▀▀│
@@ -358,12 +358,12 @@ client.urgent {{ dark_orange }} {{ dark_orange }} {{ background }} {{ dark_orang
 client.placeholder {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}
 
 {% if target == "lintilla" %}
-{% include 'bar_primary.j2' %}
-{% include 'bar_secondary.j2' %}
-{% include 'bar_tertiary.j2' %}
+{% include 'bar/bar_primary.j2' %}
+{% include 'bar/bar_secondary.j2' %}
+{% include 'bar/bar_tertiary.j2' %}
 {% endif %}
 
 {% if target == "allitnil" %}
-{% include 'bar_primary.j2' %}
+{% include 'bar/bar_primary.j2' %}
 {% endif %}
 

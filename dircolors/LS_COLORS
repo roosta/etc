@@ -60,7 +60,10 @@ STICKY_OTHER_WRITABLE 48;5;235;38;5;139;3
 
 # roosta {{{1
 .proj                  38;5;240
-*tags                  38;5;64
+*tags                  38;5;222
+*.gen                  38;5;241
+*.j2                   38;5;155
+
 #}}}
 
 # documents {{{1

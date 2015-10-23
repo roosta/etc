@@ -1,0 +1,6 @@
+_FASD_MAX=10000
+_FASD_AWK=gawk
+#_FASD_DATA="$HOME/.fasd/fasd.data"
+# _FASD_BACKENDS=
+# vim:ft=sh:ts=2:sw=2
+

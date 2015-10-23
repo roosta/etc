@@ -60,14 +60,7 @@ fi
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-## Home key variants
-#bindkey '\e[1~' vi-beginning-of-line
-#bindkey '\eOH' vi-beginning-of-line
-
-## End key variants
-#bindkey '\e[4~' vi-end-of-line
-#bindkey '\eOF' vi-end-of-line
-
-## working delete key
-#bindkey "^[[3~" delete-char
-#bindkey "^[3;5~" delete-char
+# add fasd completion shortcuts
+bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (fils and directories)
+bindkey '^X^F' fasd-complete-f  # C-x C-f to do fasd-complete-f (only files)
+bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directories)

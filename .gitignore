@@ -73,3 +73,9 @@ svn/*/README.txt
 *.jar
 
 /i3/i3.config
+
+# backup files
+*.old
+*.bak
+*.*~
+

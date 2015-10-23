@@ -19,7 +19,7 @@ alias vi="vim"
 # quick edits
 alias vigit='vim ~/.gitconfig'
 alias vissh='vim ~/.ssh/config'
-alias vii3='vim ~/.i3/i3.config'
+alias vii3='vim ~/.i3/config.j2'
 alias vialias='vim ~/.zsh/aliases.zsh'
 alias vivi='vim ~/.vimrc'
 alias vivim='vim ~/.vimrc'
@@ -143,7 +143,8 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias c='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zi='fasd_cd -d -i' # cd with interactive selection
 alias ci='fasd_cd -d -i' # cd with interactive selection
-alias v='f -e vim'       # quick opening files with vim
+#alias v='f -e vim'       # quick opening files with vim
+alias v='f -t -e vim -b viminfo'
 
 # ┐─┐┬─┐┌─┐┬ ┐┬─┐o┌┐┐┐ ┬
 # └─┐├─ │  │ ││┬┘│ │ └┌┘

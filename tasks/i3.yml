@@ -5,7 +5,7 @@
   pacman: name=i3-wm state=present
 
 - name: Create i3 config from template
-  template: src={{ dotfiles }}/templates/i3/main.j2 dest={{ dotfiles }}/i3/i3.config backup=yes
+  template: src={{ dotfiles }}/i3/config.j2 dest={{ dotfiles }}/i3/config.gen backup=yes
 
 - name: Symlink i3 configuration
   file: path={{ home }}/.i3 src={{ dotfiles }}/i3 state=link
