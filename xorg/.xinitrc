@@ -42,9 +42,9 @@ xbindkeys &
 # Ｄｉｓｐｌａｙ
 # ──────────────
 # set display layout
-xrandr --output HDMI2 --primary --auto --pos 0x0 \
-       --output eDP1 --auto --left-of HDMI2 &
-
+xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
+       --output DVI-D-0 --auto --left-of DVI-I-1 \
+       --output HDMI-0 --off &
 # screen locker
 xss-lock -- xscreensaver-command -lock &
 
@@ -67,5 +67,5 @@ dunst &
 
 # Ｗｉｎｄｏｗ  ｍａｎａｇｅｒ
 # ────────────────────────────
-exec i3 -c $HOME/.i3/config.gen --shmlog-size=26214400
+exec i3 -c $HOME/.i3/config.i3 --shmlog-size=26214400
 

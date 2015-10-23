@@ -21,126 +21,73 @@
 # urgent
 
 # Global properties
-align=center
+command=~/.i3/i3blocks/blocks/$BLOCK_NAME
 color=#c0b18b
-#markup=pango
-#[test]
-#full_text=<span background="blue">test</span>
-#markup=pango
 
-[Keyboard layout]
-#label=Ú
-command=~/.i3/i3blocks/blocks/kbl.sh
-color=#c0b18b
+[keyboard-layout]
+label=Layout:
+#label=
+color=#E9DAB1
 interval=once
 signal=11
 
-[External IP]
-label=Å
-command=~/.i3/i3blocks/blocks/public-ip.sh
-min_width=255.255.255.255
-color=#c0b18b
-interval=6000
+#[vpn]
+#label=VPN:
+#interval=30
 
-[ethernet]
-label=
-#instance=eth0
-instance=enp8s0
-command=~/.i3/i3blocks/blocks/network
-#command=~/.i3/i3blocks/blocks/network
-color=#c0b18b
+[volume]
+label=Ô
+#label=
+instance=Master
+interval=1
+#signal=12
+
+[bandwidth]
+instance=enp9s0
+command=~/.i3/i3blocks/blocks/bandwidth
+color=#679C69
+interval=5
+
+[cpu-temp]
+color=#B7BA25
+#label=CPU 
+label=CPU:
 interval=10
 
-[download]
-label=Ð
-command=~/.i3/i3blocks/blocks/bandwidth.sh rx
-min_width=0000 kB/s
-align=right
-color=#c0b18b
-interval=1 # IMPORTANT
-
-[upload]
-label=Ñ
-command=~/.i3/i3blocks/blocks/bandwidth.sh tx
-min_width=0000 kB/s
-align=right
-color=#c0b18b
-interval=1 # IMPORTANT
+[gpu-temp]
+label=GPU:
+interval=10
 
 [memory]
 label=Þ
-command=~/.i3/i3blocks/blocks/memory
+command=/usr/lib/i3blocks/$BLOCK_NAME
+color=#82A497
 interval=30
 
-#[swap]
-#label=SWAP
-#instance=swap
-#command=~/.i3/i3blocks/blocks/memory
-#interval=30
-
-[disk-home]
-label=À
-instance=/dev/sdd7
-command=~/.i3/i3blocks/blocks/disk
-interval=30
-
-[cpu]
+[cpu_usage]
 label=Ï
-command=~/.i3/i3blocks/blocks/cpu_usage
+command=/usr/lib/i3blocks/$BLOCK_NAME
 interval=10
-color=#c0b18b
+color=#679C69
 min_width=100.00%
 
-[load]
+[load_average]
 label=Ù
-command=~/.i3/i3blocks/blocks/load_average
+command=/usr/lib/i3blocks/$BLOCK_NAME
+color=#8DBF7B
 interval=10
-
-#[battery]
-#label=
-#color=#c0b18b
-#command=~/.i3/i3blocks/blocks/battery
-#interval=30
-
-#[keyboard]
-#command=~/.i3/i3blocks/blocks/keyboard-layout.sh
-#interval=once
-#signal=1
 
 [time]
 label=Õ
-color=#c0b18b
+color=#F8BC2E
 command=date '+%H:%M:%S'
 interval=5
 
 [date]
 label=Ã
 command=date '+%Y-%m-%d'
-color=#c0b18b
+color=#D69820
 interval=5
-
-
-#[volume]
-#label=VOL
-##label=♪
-#instance=Master
-##instance=PCM
-#command=~/.i3/i3blocks/blocks/volume
-#interval=once
-#signal=10
-
-#[volume]
-##label=VOL
-#label=♪
-#instance=100/5
-#command=~/.i3/i3blocks/blocks/volume-pulse
-#interval=once
-
-#[MPD]
-#label=MPD
-#command=mopidy status | perl -ne 'if (/\[playing\]/) {CORE::say ("[",`mpc current|tr -d "\n"`,"]")}'
-#color=#00FF00
-#interval=20
 
 ## Char glyps for powerline fonts
 #sep_left=""                        # Powerline separator left

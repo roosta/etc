@@ -8,9 +8,10 @@ augroup filetypedetect
   au! BufNewFile,BufRead *.i3 setf i3
   au! BufNewFile,BufRead *vimpagerrc setf vim
   au! BufNewFile,BufRead */irssi/config setf config
+  au! BufNewFile,BufRead *.i3blocks setf config
 augroup END
 
 augroup filetypeplugin
-  au! BufNewFile,BufRead i3.config setlocal commentstring=#\ %s
+  au! BufNewFile,BufRead *.i3 setlocal commentstring=#\ %s
 augroup END
 
