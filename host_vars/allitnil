@@ -8,11 +8,11 @@ output_primary: "HDMI2"
 output_secondary: "eDP1"
 
 # define fonts:
-font_i3: "pango: Essential PragmataPro 15px"
-font_status: "pango: Essential PragmataPro 14px"
+font_i3: "pango: Essential PragmataPro 12px"
+font_status: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
 
-status_primary: "i3blocks -c ~/.i3/i3blocks/lint_primary.conf"
-status_secondary: "i3blocks -c ~/.i3/i3blocks/lint_primary.conf"
+status_primary: "i3blocks -c ~/.i3/i3blocks/alli_primary.conf"
+status_secondary: "i3blocks -c ~/.i3/i3blocks/alli_secondary.conf"
 
 # vim:ft=yaml:ts=2:sw=2
 
