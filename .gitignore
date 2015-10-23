@@ -74,6 +74,10 @@ svn/*/README.txt
 
 /i3/i3.config
 
+#ansible
+
+*.gen
+
 # backup files
 *.old
 *.bak
