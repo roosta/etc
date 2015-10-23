@@ -203,7 +203,7 @@ function __promptline_right_prompt {
   __promptline_wrapper "$(__promptline_git_status)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; }
 
   # section "y" header
-  slice_prefix="${y_sep_fg}${rsep}${y_fg}${y_bg}${space}" slice_suffix="$space${y_sep_fg}" slice_joiner="${y_fg}${y_bg}${alt_rsep}${space}" slice_empty_prefix=""
+  slice_prefix="${host_sep_fg}${rsep}${host_fg}${host_bg}${space}" slice_suffix="$space${host_sep_fg}" slice_joiner="${host_fg}${host_bg}${alt_rsep}${space}" slice_empty_prefix=""
   # section "y" slices
   __promptline_wrapper "$(__promptline_host)" "$slice_prefix" "$slice_suffix" && { slice_prefix="$slice_joiner"; }
 
@@ -274,9 +274,9 @@ function __promptline {
   local x_bg="${wrap}48;5;239${end_wrap}"
   local x_sep_fg="${wrap}38;5;239${end_wrap}"
 
-  local y_fg="${wrap}38;5;246${end_wrap}"
-  local y_bg="${wrap}48;5;239${end_wrap}"
-  local y_sep_fg="${wrap}38;5;239${end_wrap}"
+  local host_fg="${wrap}38;5;0${end_wrap}"
+  local host_bg="${wrap}48;5;11${end_wrap}"
+  local host_sep_fg="${wrap}38;5;11${end_wrap}"
 
   local z_fg="${wrap}38;5;235${end_wrap}"
   local z_bg="${wrap}48;5;246${end_wrap}"

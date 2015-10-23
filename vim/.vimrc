@@ -199,6 +199,7 @@ Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
 Plug 'bling/vim-bufferline'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 "Plug 'tpope/vim-commentary'
 "Plug 'vim-scripts/YankRing.vim'
