@@ -1,0 +1,15 @@
+{% macro render_dialog(_id='bar-1', _output='primary', _status='') -%}
+  bar {
+    id {{ _id }}
+    output {{ block _output }}
+    status_command {{ block _status }}
+    font {{ i3_status_font }}
+    position top
+    tray_output primary
+    strip_workspace_numbers yes
+    separator_symbol "|"
+    colors {
+      {% include 'templates/bar.colors' %}
+    }
+  }
+{%- endmacro %}

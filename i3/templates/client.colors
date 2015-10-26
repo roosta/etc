@@ -1,0 +1,6 @@
+# <class> <border> <background> <foreground> <indicator>
+client.focused          {{ dark_blue }} {{ dark_blue }} {{ black }} {{ dark_cyan }}
+client.focused_inactive {{ background1 }} {{ background0 }} {{ foreground }} {{ background0_s }}
+client.unfocused        {{ dark_blue }}   {{ background1 }} {{ dark_gray }}  {{ dark_cyan }}
+client.urgent           {{ dark_orange }} {{ dark_orange }} {{ background }} {{ dark_orange }}
+client.placeholder      {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}

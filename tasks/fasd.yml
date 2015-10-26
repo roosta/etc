@@ -1,4 +1,4 @@
 ---
 - name: Symlink fasd config
-  file: src={{dotfiles}}/ansible/.ansible.cfg dest={{home}}/.fasdrc state=link
+  file: src={{dotfiles}}/fasd/.fasdrc dest={{home}}/.fasdrc state=link
 

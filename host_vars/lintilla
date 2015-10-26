@@ -4,19 +4,19 @@ home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
 # outputs
-output_primary: "DVI-I-1"
-output_secondary: "DVI-D-0"
-output_tertiary: "HDMI-0"
+output0: "DVI-I-1"
+output1: "DVI-D-0"
+output2: "HDMI-0"
 output_layout: "xrandr --output DVI-I-1 --primary --auto --pos 0x0 --output DVI-D-0 --auto --left-of DVI-I-1 --output HDMI-0 --off &"
 
 # define fonts:
-font_i3: "pango: Essential PragmataPro 12px"
-font_status: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
+i3_font: "pango: Essential PragmataPro 12px"
+i3_status_font: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
 
 # define i3 status commands.
-status_primary: "i3blocks -c ~/.i3/bar/lintilla/primary.i3blocks"
-status_left: "i3blocks -c ~/.i3/i3blocks/lint_secondary.i3blocks"
-status_tv: "i3blocks -c ~/.i3/i3blocks/lint_primary.i3blocks"
+status0: "i3blocks -c ~/.i3/bar/lintilla/primary.i3blocks"
+status1: "i3blocks -c ~/.i3/bar/lintilla/secondary.i3blocks"
+status2: "i3blocks -c ~/.i3/bar/lintilla/primary.i3blocks"
 
 # vim:ft=yaml:ts=2:sw=2
 

@@ -95,13 +95,13 @@ bindsym $mod+Shift+F8 workspace $FWS8
 
 # ┆ assign workspaces to outputs
 # └── ─ ─
-workspace $PWS1_TRM output {{ output_primary }}
-workspace $PWS3_WWW output {{ output_primary }}
-workspace $PWS2_DEV output {{ output_primary }}
+workspace $PWS1_TRM output {{ output0 }}
+workspace $PWS3_WWW output {{ output0 }}
+workspace $PWS2_DEV output {{ output0 }}
 
-workspace $SWS1_AUX output {{ output_secondary }}
-workspace $SWS3_DBG output {{ output_secondary }}
-workspace $SWS2_COM output {{ output_secondary }}
+workspace $SWS1_AUX output {{ output1 }}
+workspace $SWS3_DBG output {{ output1 }}
+workspace $SWS2_COM output {{ output1 }}
 
 # ┆ Options
 # └── ─ ─
@@ -127,7 +127,7 @@ assign [class="(?i)steam"]               $TWS2_GAM
 assign [class="(?i)spotify"]             $TWS1_MED
 assign [class="(?i)pidgin"]              $SWS2_COM
 assign [class="(?i)linphone"]            $SWS2_COM
-assign [name="general | clojurians Slack - Vimperator"] $SWS2_COM
+#assign [name="(?i)\b(?i)slack"]          $SWS2_COM
 #assign [class="(?i)gimp"]                $PWS2_DEV
 #assign [class="(?i)urxvt"]               $PWS1_TRM
 
@@ -141,9 +141,9 @@ for_window [title="Preferences$"]                floating enable
 for_window [class="(?i)Jitsi"]                   floating enable
 for_window [class="(?i)SessionManager"]          floating enable
 for_window [title="(?i)Friends"]                 floating enable
-for_window [class="(?i)linphone"]                floating enable
-for_window [class="(?i)steam"]                   floating enable
-for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
+for_window [class="(?i)Linphone"]                floating enable
+#for_window [class="(?i)Steam"]                   floating enable
+#for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
 #for_window [class="(?i)Pidgin"]                  floating enable
 #for_window [class="(?i)thunderbird"]             floating enable
 
@@ -153,13 +153,14 @@ for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
 
 # ┆ no border
 # └────── ─ ─
-for_window [class="(?i)firefox"]        border none
+#for_window [name="(?i)slack"]           border 1px
+#for_window [name="(?i)firefox"]         border none
 for_window [class="(?i)google-chrome$"] border none
 
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
 # │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
 # ┘ ┆┆─┘ ┆ ┘─┘──┘ ┆ ┘ ┆┆└┘ ┆
-# └───────────────────────── ─ ─
+# └──────────────────────── ─── ── ─ ─
 
 exec urxvtc
 #exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
@@ -172,7 +173,7 @@ exec urxvtc
 # ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐┐─┐
 # ├┴┐├─ └┌┘│─││││││ │└─┐
 # ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘──┘
-# └───────────────────── ─ ─
+# └──────────────────────── ─── ── ─ ─
 
 # set modkey (Super key)
 set $mod Mod4
@@ -231,6 +232,7 @@ bindsym $mod+space focus mode_toggle
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+bindsym $mod+Control+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -281,24 +283,37 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 
 # ┆ RESIZE
 # └─── ─ ─
-mode "resize" {
+set $mode_resize Resize: (directions) 10px, (Shift+directions) 30px
+mode "$mode_resize" {
   # vi movement
-  bindsym h resize shrink width 10 px or 10 ppt
-  bindsym j resize grow height 10 px or 10 ppt
+  bindsym h resize shrink width  10 px or 10 ppt
+  bindsym j resize grow   height 10 px or 10 ppt
   bindsym k resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
+  bindsym l resize grow   width  10 px or 10 ppt
+
+  bindsym Shift+h resize shrink width  30 px or 30 ppt
+  bindsym Shift+j resize grow   height 30 px or 30 ppt
+  bindsym Shift+k resize shrink height 30 px or 30 ppt
+  bindsym Shift+l resize grow   width  30 px or 30 ppt
 
   # same bindings, but for the arrow keys
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Left resize shrink width  10 px or 10 ppt
+  bindsym Down resize grow   height 10 px or 10 ppt
+  bindsym Up resize shrink   height 10 px or 10 ppt
+  bindsym Right resize grow  width  10 px or 10 ppt
+
+  bindsym Shift+Left resize shrink width  30 px or 30 ppt
+  bindsym Shift+Down resize grow   height 30 px or 30 ppt
+  bindsym Shift+Up resize shrink   height 30 px or 30 ppt
+  bindsym Shift+Right resize grow  width  30 px or 30 ppt
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
   bindsym Escape mode "default"
+
+  #bindsym s sticky toggle
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "$mode_resize"
 
 # ┆ SYSTEM
 # └─── ─ ─
@@ -346,26 +361,37 @@ bindsym $mod+Home mode "$mode_chmon"
 # ┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┌┐┐┌─┐┬─┐
 # │─┤│─┘│─┘├─ │─┤│┬┘│─┤││││  ├─
 # ┘ ┆┆  ┆  ┴─┘┘ ┆┆└┘┘ ┆┆└┘└─┘┴─┘
-# └──────────────────────────── ─ ─
+# └──────────────────────── ─── ── ─ ─
 
 # set primary font
-font {{ font_i3 }}
+font {{ i3_font }}
 
-# class, border, background, foreground, indicator
-client.focused {{ dark_blue }} {{ dark_blue }} {{ black }} {{ dark_cyan }}
+# <class> <border> <background> <foreground> <indicator>
+client.focused          {{ dark_blue }} {{ dark_blue }} {{ black }} {{ dark_cyan }}
 client.focused_inactive {{ background1 }} {{ background0 }} {{ foreground }} {{ background0_s }}
-client.unfocused {{ dark_blue }}   {{ background1 }} {{ dark_gray }}  {{ dark_cyan }}
-client.urgent {{ dark_orange }} {{ dark_orange }} {{ background }} {{ dark_orange }}
-client.placeholder {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}
+client.unfocused        {{ dark_blue }} {{ background1 }} {{ dark_gray }} {{ dark_cyan }}
+client.urgent           {{ dark_orange }} {{ dark_orange }} {{ background }} {{ dark_orange }}
+client.placeholder      {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}
 
-{% if target == "lintilla" %}
-{% include 'bar/lintilla/bar_primary.j2' %}
-{% include 'bar/lintilla/bar_secondary.j2' %}
-{% include 'bar/lintilla/bar_tertiary.j2' %}
+{# Render each bar. Structure of bar config generally remains the same except for passed arguments. #}
+{% macro render_bar(_id, _output, _status) -%}
+  bar {
+    id {{ _id }}
+    output {{ _output }}
+    status_command {{ _status }}
+    font {{ i3_status_font }}
+    position top
+    tray_output primary
+    strip_workspace_numbers yes
+    separator_symbol "|"
+    colors {
+      {% include 'templates/bar.colors' %}
+    }
+  }
+{%- endmacro %}
+
+{% if target == 'lintilla' %}
+{{ render_bar('bar-0', {{ output0 }}, {{ status0 }}) }}
+{{ render_bar('bar-1', {{ output1 }}, {{ status1 }}) }}
+{{ render_bar('bar-2', {{ output2 }}, {{ status2 }}) }}
 {% endif %}
-
-{% if target == "allitnil" %}
-{% include 'bar/allitnil/bar_primary.j2' %}
-{% include 'bar/allitnil/bar_secondary.j2' %}
-{% endif %}
-
