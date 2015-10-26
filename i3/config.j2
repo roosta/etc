@@ -395,3 +395,8 @@ client.placeholder      {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}
 {{ render_bar('bar-1', {{ output1 }}, {{ status1 }}) }}
 {{ render_bar('bar-2', {{ output2 }}, {{ status2 }}) }}
 {% endif %}
+
+{% if target == 'allitnil' %}
+{{ render_bar('bar-0', {{ output0 }}, {{ status0 }}) }}
+{{ render_bar('bar-1', {{ output1 }}, {{ status1 }}) }}
+{% endif %}
