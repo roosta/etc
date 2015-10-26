@@ -14,6 +14,8 @@ output_layout: "xrandr --output DVI-I-1 --primary --auto --pos 0x0 --output DVI-
 # define fonts used in i3-wm
 i3_font: "pango: Essential PragmataPro 12px"
 i3_status_font: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
+font_location: "{{home}}/.local/share/fonts"
+
 
 # define i3bar status commands.
 # Currently using i3blocks <https://github.com/vivien/i3blocks>

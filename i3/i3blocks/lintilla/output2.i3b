@@ -21,7 +21,7 @@
 # urgent
 
 # Global properties
-command=~/.i3/i3blocks/blocks/$BLOCK_NAME
+command=~/.i3/scripts/$BLOCK_NAME
 color=#c0b18b
 
 [keyboard-layout]
@@ -44,7 +44,6 @@ interval=1
 
 [bandwidth]
 instance=enp9s0
-command=~/.i3/i3blocks/blocks/bandwidth
 color=#679C69
 interval=5
 

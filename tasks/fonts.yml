@@ -1,11 +1,22 @@
 ---
 - name: Symlink fonts to "~/.local/share/fonts"
-  file: path={{home}}/.local/share/fonts src={{dotfiles}}/fonts state=link
+  file: path={{ font_location }} src={{ dotfiles }}/fonts state=link
+
+- name: create font.dir
+  command: mkfontdir {{ font_location }}
+
+- name: create font.scale
+  command: mkfontscale {{ font_location }}
 
 - name: Symlink local fontconfig
   file: path={{home}}/.config/fontconfig src={{dotfiles}}/fontconfig state=link
 
-- name: Generate font cache
-  shell: fc-cache -f && xset +fp $HOME/.local/share/fonts && xset fp rehash
+- name: Set X font
+  command: xset +fp {{ font_location }}
 
+- name: Rehash X fonts
+  command: xset fp rehash
+
+- name: Re-generate font cache
+  command: fc-cache -f
 
