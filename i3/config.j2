@@ -373,25 +373,39 @@ client.unfocused        {{ dark_blue }} {{ background1 }} {{ dark_gray }} {{ dar
 client.urgent           {{ dark_orange }} {{ dark_orange }} {{ background }} {{ dark_orange }}
 client.placeholder      {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}
 
-{# Render each bar. Structure of bar config generally remains the same except for passed arguments. #}
 {% macro render_bar(_id, _output, _status) -%}
-  bar {
-    id {{ _id }}
-    output {{ _output }}
-    status_command {{ _status }}
-    font {{ i3_status_font }}
-    position top
-    tray_output primary
-    strip_workspace_numbers yes
-    separator_symbol "|"
-    colors {
-      {% include 'templates/bar.colors' %}
-    }
+bar {
+  id {{ _id }}
+  output {{ _output }}
+  status_command {{ _status }}
+  font {{ i3_status_font }}
+  position top
+  tray_output primary
+  strip_workspace_numbers yes
+  separator_symbol "|"
+  colors {
+    background {{ background }}
+    separator  {{ background0_s }}
+    statusline {{ foreground }}
+
+    # <workclass> <border> <background> <foreground>
+    focused_workspace  {{ background0_h }} {{ background1 }} {{ dark_blue }}
+    active_workspace   {{ background1 }} {{ background0_s }} {{ foreground }}
+    inactive_workspace {{ background0_h }} {{ background1 }} {{ dark_gray }}
+    urgent_workspace   {{ dark_orange }} {{ dark_orange }} {{ black }}
   }
+}
 {%- endmacro %}
 
-{% if target == 'lintilla' %}
-{{ render_bar('bar-0', {{ output0 }}, {{ status0 }}) }}
-{{ render_bar('bar-1', {{ output1 }}, {{ status1 }}) }}
-{{ render_bar('bar-2', {{ output2 }}, {{ status2 }}) }}
-{% endif %}
+{%- if target == "lintilla" %}
+
+# primary desktop statusbar.
+{{ render_bar("bar-0", output0, status0) }}
+
+# left desktop statusbar.
+{{ render_bar("bar-1", output1, status1) }}
+
+# television statusbar
+{{ render_bar("bar-2", output2, status2) }}
+{% endif -%}
+
