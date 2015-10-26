@@ -21,5 +21,7 @@ source $HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-sea
 
 source $HOME/.zsh/plugins/web-search.zsh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # source the rest
 #for plugin (~/.zsh/plugins/*.zsh) source $plugin

@@ -36,9 +36,9 @@ base-16
 gtk/*/bookmarks
 gtk/*/gtkfilechooser.ini
 
-# ignore closed fonts
-fonts/*/*PragmataPro*
-fonts/*/Envy*
+# ignore restricted fonts
+*PragmataPro*
+*Envy*
 
 .*.swp
 .DS_Store

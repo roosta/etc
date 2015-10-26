@@ -172,21 +172,23 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+
+" clojure/script
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
-Plug 'kovisoft/paredit'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'kovisoft/paredit'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
+
+
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'kien/ctrlp.vim'
-Plug 'morhetz/gruvbox'
 Plug 'scrooloose/syntastic'
-Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 Plug 'bling/vim-airline'
@@ -201,6 +203,15 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'bling/vim-bufferline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
+" colorscheme:
+Plug 'morhetz/gruvbox'
+
+" syntax:
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'PotatoesMaster/i3-vim-syntax'
+
+" inactive
 "Plug 'tpope/vim-commentary'
 "Plug 'vim-scripts/YankRing.vim'
 "Plug 'tpope/vim-classpath'
@@ -376,7 +387,7 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " ┆ NERDtree
 " └────────── ─ ─
-map <leader>tt :NERDTreeToggle<CR>
+map <leader>nt :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=1

@@ -15,8 +15,8 @@ noremap l gt
 noremap h gT
 
 " go to last active tab.
-noremap L <C-^>
-noremap H <C-^>
+noremap gp <C-^>
+"noremap H <C-^>
 
 " some quick movement maps
 nnoremap j       8j
@@ -44,4 +44,6 @@ noremap <leader>b :emenu View.Sidebar.Bookmarks<CR>
 
 " source config file
 noremap <c-w>r :source /home/daniel/.vimperatorrc<CR>
+
+"nnoremap <CR> :nohlsearch<CR><CR>
 

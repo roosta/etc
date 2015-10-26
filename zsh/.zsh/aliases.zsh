@@ -31,17 +31,19 @@ alias vibinds='vim ~/.xbindkeysrc'
 alias vivimp='vim ~/.vimperatorrc'
 alias vigtk='vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini'
 
-# placeholder. write/find script
-alias todo='vim ~/todo.md'
-alias lstodo='cat ~/todo.md'
+alias vitodo='vim ~/todo.md'
+alias todo='cat ~/todo.md'
+alias mdtodo='atom ~/todo.md'
 
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │
 # ┆  ┆┆└┘┆─┘
 # └─────────────── ─ ─
 
+alias grep="ag -i"
+
 # locate an alias quickly
-alias grea="alias | grep"
+alias grea="cat ~/.zsh/aliases.zsh | grep"
 
 # grep command history quickly
 alias greh="cat ~/.histfile | grep"
@@ -171,10 +173,15 @@ alias pacss='pacman -Ss' # Search for package(s) in the repositories
 alias pacdl='pacman -Sw' # Download specified package(s) as .tar.xz ball
 
 
-alias pacrm='pacman -R' # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrmf='pacman -Rns' # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacorm='pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
-alias paco="pacman -Qdt" # List all packages which are orphaned
+alias pacrm='sudo pacman -R' # Remove the specified package(s), retaining its configuration(s) and required dependencies
+alias pacrmf='sudo pacman -Rns' # Remove the specified package(s), its configuration(s) and unneeded dependencies
+
+# orphans
+alias paco='aura -O' # with no args: display orphans. With arg adopt package.
+alias pacorm="aura -Oj" # remove all orphan packages.
+#alias pacorm='sudo pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
+#alias paco="pacman -Qdt" # List all packages which are orphaned
+
 
 # management
 alias pacclean="pacman -Scc" # Clean cache - delete all the package files in the cache
@@ -190,9 +197,9 @@ alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package an
 alias pacinsd='pacman -S --asdeps' # Install given package(s) as dependencies
 
 # Updating
-alias pacupd='pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupdf='pacman -Syyu' # force a refresh of all package lists and upgrade.
-alias getmirlist='sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/' # get country sorted mirrorlist to use with reflector
+alias pacupd='sudo pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacupdf='sudo pacman -Syyu' # force a refresh of all package lists and upgrade.
+alias getmirror='sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/' # get country sorted mirrorlist to use with reflector
 alias pacmirupd='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy' # use reflector to sort the 5 fastest mirrors and force update
 alias pacmir='sudo pacman -Syy' # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
@@ -200,22 +207,17 @@ alias pacmir='sudo pacman -Syy' # Force refresh of all package lists after updat
 # ------
 
 # installing
-alias aura='sudo aura'
 alias paca="aura -A" # install AUR package
-alias pacas="aura -As"
+alias pacas="aura -As" # search AUR
 alias pacaf="aura -Ax" # install and display make output
 alias pacaa="aura -Aa" # remove make deps when finished installing
 alias pacadiff="aura -Ak" # show PKGBUILD diff
-alias pacaupd="aura -Akua" # upgrades, removes make deps, shows PKGBUILD diffs
+alias pacaupdf="aura -Akua" # upgrades, removes make deps, shows PKGBUILD diffs
 alias pacai="aura -Ai" # get AUR package information
-alias pacax="aura -As" # search aur via a regex
 alias pacaupd="aura -Au" # update AUR packages
 alias pacapkg="aura -Ap" # Display an AUR package"s PKGBUILD
 alias pacadeps="aura -Ad" # display package deps
 
-# orphans
-alias pacao='aura -O' # with no args: display orphans. With arg adopt package.
-alias pacaorm="aura -Oj" # remove all orphan packages.
 
 # logs
 alias pacalog='aura -Li' # list install/upgrade history for a package
@@ -253,16 +255,14 @@ alias pacalogx='aura -Ls' # Search the pacman logfile via a regex
 # ┬ ┐┌┐┐o┬  ┐─┐
 # │ │ │ ││  └─┐
 # ┆─┘ ┆ ┆┆─┘──┘
-# └─────────────── ─ ─
 
-alias grep="grep -i --color=auto" # ignore case in grep and color output
+alias watchff='watch progress -wc firefox' # watch firefox download progress.
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
 alias ports='netstat -tulanp' # list open ports
 alias pip='sudo -H pip' # set home variable when running pip
 alias tmux='tmux -2'
 alias ufw='sudo ufw'
 alias make='colormake'
-alias ack='sack'
 
 # stow is always verbose
 alias stow='stow -v'

@@ -4,7 +4,6 @@ rofi.opacity:                        100
 rofi.width:                          100
 rofi.lines:                          5
 rofi.columns:                        3
-!rofi.font:                           Essential\ PragmataPro 12
 rofi.font:                           Terminess Powerline 12px
 rofi.bg:                             #32302F
 rofi.fg:                             #E9DAB1
@@ -24,7 +23,7 @@ rofi.hlbg-urgent:                    #FC7F18
 rofi.bgalt:                          #2D2D2D
 rofi.hlfg:                           #282828
 rofi.hlbg:                           #82A497
-rofi.bc:                             #918273
+rofi.bc:                             #448487
 rofi.bw:                             1
 rofi.separator-style:                dottet
 rofi.location:                       1

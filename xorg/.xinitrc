@@ -9,9 +9,12 @@
 #│ Github : https://github.com/roosta  │
 #└─────────────────────────────────────┘
 
-# Ｉｎｉｔ
-# ────────
-# do this on startup for good measure :)
+# o┌┐┐o┌┐┐o┬─┐┬  o┌─┐┬─┐
+# │││││ │ ││─┤│  │┌─┘├─
+# ┆┆└┘┆ ┆ ┆┘ ┆┆─┘┆└─┘┴─┘
+# └──────────────────── ─── ── ─ ─
+
+# do this on startup for good measure
 xset +fp $HOME/.local/share/fonts &
 xset fp rehash &
 
@@ -21,8 +24,14 @@ $HOME/.fehbg &
 # merge new resources
 xrdb -merge $HOME/.Xresources &
 
-# Ｉｎｐｕｔｓ
-# ────────────
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
+# o┌┐┐┬─┐┬ ┐┌┐┐┐─┐
+# │││││─┘│ │ │ └─┐
+# ┆┆└┘┆  ┆─┘ ┆ ──┘
+# └────────────────── ─── ── ─ ─
+
 # Set keyboard layouts and options.
 # Switch layout with caps and terminate x session with ctrl alt backspace
 setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp &
@@ -39,12 +48,16 @@ xbindkeys &
 # initially diable touchpad on laptop
 #$HOME/.scripts/touchpad-toggle.sh
 
-# Ｄｉｓｐｌａｙ
-# ──────────────
+# ┬─┐o┐─┐┬─┐┬  ┬─┐┐ ┬
+# │ ││└─┐│─┘│  │─┤└┌┘
+# ┆─┘┆──┘┆  ┆─┘┘ ┆ ┆
+# └───────────────── ─── ── ─ ─
+
 # set display layout
 xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
        --output DVI-D-0 --auto --left-of DVI-I-1 \
        --output HDMI-0 --off &
+
 # screen locker
 xss-lock -- xscreensaver-command -lock &
 
@@ -57,15 +70,20 @@ $home/bin/lightsOn 590 &
 #xss-lock -- i3lock -n -e -d -t -i /usr/share/backgrounds/pattern-01.png &
 #xautolock -time 30 -locker "i3lock --dpms --ignore-empty-password --image=$HOME/.backgrounds/pattern-01.png --tiling" &
 
-# Ｄａｅｍｏｎｓ
-# ──────────────
+# ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
+# │ ││─┤├─ ││││ ││││└─┐
+# ┆─┘┘ ┆┴─┘┘ ┆┘─┘┆└┘──┘
+# └─────────────────── ─── ── ─ ─
+
 urxvtd -q -f -o &
 seaf-cli start &
 compton --config $HOME/.config/compton/compton.conf -b &
 xscreensaver -no-splash &
 dunst &
 
-# Ｗｉｎｄｏｗ  ｍａｎａｇｅｒ
-# ────────────────────────────
-exec i3 -c $HOME/.i3/config.i3 --shmlog-size=26214400
+# ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
+# ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘
+# └┴┆┆┆└┘┆─┘┘─┘└┴┆  ┘ ┆┘ ┆┆└┘┘ ┆┆─┘┴─┘┆└┘
+# └───────────────────────────────────── ─── ── ─ ─
+exec i3 -c $HOME/.i3/config.gen --shmlog-size=26214400
 

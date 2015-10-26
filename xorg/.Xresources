@@ -62,6 +62,7 @@ URxvt.url-select.underline: true
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.rend.0: Uline Bold fg5
 URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 !! using compton for this
 !! fade unfocused term

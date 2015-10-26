@@ -9,6 +9,7 @@ augroup filetypedetect
   au! BufNewFile,BufRead *vimpagerrc setf vim
   au! BufNewFile,BufRead */irssi/config setf config
   au! BufNewFile,BufRead *.i3blocks setf config
+  au! BufNewFile,BufRead *.j2 setf config
 augroup END
 
 augroup filetypeplugin

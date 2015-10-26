@@ -24,6 +24,7 @@
     # Markup is allowed
     format = "<b>%s</b>\n%b"
     #format = "%s\n%b"
+    #format = "%i%a - %s\n%b"
 
     # Sort messages by urgency.
     sort = yes
@@ -96,7 +97,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    follow = none
 
     # Should a notification popped up from history be sticky or timeout
     # as if it would normally do.
@@ -147,8 +148,7 @@
     icon_position = off
 
     # Paths to default icons.
-    #icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-    #icon_folders = /usr/share/icons/Flattr/status/scalable/:/usr/share/icons/Flattr/devices/scalable/
+    icon_folders = /usr/share/icons/Numix/16/status:/usr/share/icons/Numix/16/devices:/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 [frame]
     width = 1
