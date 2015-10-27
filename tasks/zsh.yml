@@ -1,17 +1,33 @@
+# Incomplete, adding as I go. Also some AUR deps needs to be added.
+- name: Install external deps with pacman
+  pacman: name={{ item }} state=present
+  become: True
+  with_items:
+    - zsh
+    - the_silver_searcher
+    - zsh-completions
+    - progress
+
 # run a command with the "shell" module and register the result into the
 # "default_shell" variable
 - name: zsh facts
   shell: 'echo $SHELL'
   register: default_shell
-  # changed when determines when will this task be considered changed when running
+  # changed_when determines when will this task be considered changed when running
   # ansible. In this case, we want it to always be false, as we are just
   # retrieving information.
   changed_when: False
-  sudo: no
+  become: False
 
 # set zsh as the default shell, unless it is already the default.
 - name: make zsh default
-  shell:  chsh -s /bin/zsh
-  # This task will run only when the following is true. In here, we check the
-  # value registered previously within the "default_shell" variable.
+  shell: chsh -s /bin/zsh
   when: default_shell.stdout.find('/bin/zsh') == -1
+
+- name: symlink config to home
+  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/zsh/{{ item }} state=link
+  with_items:
+    - .zsh
+    - .zshrc
+    - .zprofile
+    - .zshenv

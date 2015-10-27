@@ -7,6 +7,7 @@
 # │█░░  Site   : http://dotfiles.roosta.sh ░░█│
 # │█░░  Github : https://github.com/roosta ░░█│
 # └───┬───────────────────────────────────────┘
+#     │
 # ┌───┘
 # ┆
 
@@ -407,6 +408,7 @@ alias _="sudo"
 
 # quit aliases
 alias :q="exit"
+alias q:="exit"
 alias :Q="exit"
 
 # common typo

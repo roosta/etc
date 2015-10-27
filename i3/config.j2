@@ -373,14 +373,14 @@ client.unfocused        {{ dark_blue }} {{ background1 }} {{ dark_gray }} {{ dar
 client.urgent           {{ dark_orange }} {{ dark_orange }} {{ background }} {{ dark_orange }}
 client.placeholder      {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}
 
-{% macro render_bar(_id, _output, _status) -%}
+{% macro render_bar(_id, _output, _status, _tray) -%}
 bar {
   id {{ _id }}
   output {{ _output }}
   status_command {{ _status }}
   font {{ i3_status_font }}
   position top
-  tray_output primary
+  tray_output {{ _tray }}
   strip_workspace_numbers yes
   separator_symbol "|"
   colors {
@@ -400,12 +400,12 @@ bar {
 {%- if target == "lintilla" %}
 
 # primary desktop statusbar.
-{{ render_bar("bar-0", output0, status0) }}
+{{ render_bar("bar-0", output0, status0, output0) }}
 
 # left desktop statusbar.
-{{ render_bar("bar-1", output1, status1) }}
+{{ render_bar("bar-1", output1, status1, outout0) }}
 
 # television statusbar
-{{ render_bar("bar-2", output2, status2) }}
+{{ render_bar("bar-2", output2, status2, output2) }}
 {% endif -%}
 

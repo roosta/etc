@@ -24,6 +24,7 @@ $HOME/.fehbg &
 # merge new resources
 xrdb -merge $HOME/.Xresources &
 
+# init gnome-keyring.
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 

@@ -27,3 +27,4 @@
     - include: tasks/gimp.yml
     - include: tasks/git.yml
     - include: tasks/gtk.yml
+    #- include: tasks/zsh.yml
