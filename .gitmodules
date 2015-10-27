@@ -5,3 +5,9 @@
 	path = zsh/.zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search.git
 
+[submodule "scripts"]
+	path = scripts
+	url = https://github.com/roosta/scripts.git
+[submodule "colors"]
+	path = colors
+	url = https://github.com/roosta/colors.git
