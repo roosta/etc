@@ -1,4 +1,3 @@
-# vim:ft=i3:ts=2:sw=2
 # ┌───────────────────────────────────┐
 # │▀▀▀░░░░░░░▀█▀░▀▀█░█░█░█▄█░░░░░░░▀▀▀│
 # │▀▀▀▀▀░░░░░░█░░░▀▄░█▄█░█░█░░░░░▀▀▀▀▀│
@@ -133,16 +132,16 @@ assign [class="(?i)linphone"]            $SWS2_COM
 
 # ┆ floating default
 # └──────────── ─ ─
-for_window [window_role="pop-up"]                floating enable
-for_window [window_role="task_dialog"]           floating enable
-for_window [window_role="bubble"]                floating enable
-for_window [window_role="Preferences"]           floating enable
-for_window [title="Preferences$"]                floating enable
-for_window [class="(?i)Jitsi"]                   floating enable
-for_window [class="(?i)SessionManager"]          floating enable
-for_window [title="(?i)Friends"]                 floating enable
-for_window [class="(?i)Linphone"]                floating enable
-#for_window [class="(?i)Steam"]                   floating enable
+for_window [window_role="pop-up"]       floating enable
+for_window [window_role="task_dialog"]  floating enable
+for_window [window_role="bubble"]       floating enable
+for_window [window_role="Preferences"]  floating enable
+for_window [title="Preferences$"]       floating enable
+for_window [class="(?i)Jitsi"]          floating enable
+for_window [class="(?i)SessionManager"] floating enable
+for_window [title="(?i)Friends"]        floating enable
+for_window [class="(?i)Linphone"]       floating enable
+for_window [class="(?i)Steam*"]         floating enable
 #for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
 #for_window [class="(?i)Pidgin"]                  floating enable
 #for_window [class="(?i)thunderbird"]             floating enable
@@ -153,9 +152,10 @@ for_window [class="(?i)Linphone"]                floating enable
 
 # ┆ no border
 # └────── ─ ─
-#for_window [name="(?i)slack"]           border 1px
-#for_window [name="(?i)firefox"]         border none
-for_window [class="(?i)google-chrome$"] border none
+
+for_window [name="(?i)firefox"]                border none
+for_window [class="(?i)google-chrome$"]        border none
+for_window [name="(?i)PrisonArchitect.x86_64"] border none
 
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
 # │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
@@ -408,4 +408,6 @@ bar {
 # television statusbar
 {{ render_bar("bar-2", output2, status2, output2) }}
 {% endif -%}
+
+# vim:ft=i3:ts=2:sw=2
 

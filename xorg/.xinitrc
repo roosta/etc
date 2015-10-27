@@ -14,8 +14,10 @@
 # ┆┆└┘┆ ┆ ┆┘ ┆┆─┘┆└─┘┴─┘
 # └──────────────────── ─── ── ─ ─
 
-# do this on startup for good measure
-xset +fp $HOME/.local/share/fonts &
+# set X font locations
+xset +fp $HOME/.fonts/nerd-fonts &
+xset +fp $HOME/.fonts/restricted &
+xset +fp $HOME/.fonts/misc &
 xset fp rehash &
 
 # set background with feh

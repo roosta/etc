@@ -179,7 +179,7 @@ alias pacrmf='sudo pacman -Rns' # Remove the specified package(s), its configura
 
 # orphans
 alias paco='aura -O' # with no args: display orphans. With arg adopt package.
-alias pacorm="aura -Oj" # remove all orphan packages.
+alias pacorm="sudo aura -Oj" # remove all orphan packages.
 #alias pacorm='sudo pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
 #alias paco="pacman -Qdt" # List all packages which are orphaned
 
@@ -208,14 +208,14 @@ alias pacmir='sudo pacman -Syy' # Force refresh of all package lists after updat
 # ------
 
 # installing
-alias paca="aura -A" # install AUR package
+alias paca="sudo aura -A" # install AUR package
 alias pacas="aura -As" # search AUR
-alias pacaf="aura -Ax" # install and display make output
+alias pacaf="sudo aura -Ax" # install and display make output
 alias pacaa="aura -Aa" # remove make deps when finished installing
 alias pacadiff="aura -Ak" # show PKGBUILD diff
 alias pacaupdf="aura -Akua" # upgrades, removes make deps, shows PKGBUILD diffs
 alias pacai="aura -Ai" # get AUR package information
-alias pacaupd="aura -Au" # update AUR packages
+alias pacaupd="sudo aura -Au" # update AUR packages
 alias pacapkg="aura -Ap" # Display an AUR package"s PKGBUILD
 alias pacadeps="aura -Ad" # display package deps
 
