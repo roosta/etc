@@ -1,5 +1,5 @@
 ---
-- name: Symlink fonts to "~/.local/share/fonts"
+- name: Symlink fonts
   file: path={{ font_location }} src={{ dotfiles }}/fonts state=link
 
 - name: create font.dir
