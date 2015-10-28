@@ -1,13 +1,23 @@
-[submodule "zsh/.zsh/plugins/zsh-syntax-highlighting"]
-	path = zsh/.zsh/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/.zsh/plugins/zsh-history-substring-search"]
-	path = zsh/.zsh/plugins/zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search.git
+# personal repos too large to be sensibly included in the main repo
+# deeply tied to the dotfiles to made sense to include as modules.
 
+# generic shell scripts repo.
 [submodule "scripts"]
 	path = scripts
 	url = https://github.com/roosta/scripts.git
+
+# collection of color related variables
 [submodule "colors"]
 	path = colors
 	url = https://github.com/roosta/colors.git
+
+# zsh plugins
+[submodule "zsh/.zsh/plugins/zsh-syntax-highlighting"]
+  path = zsh/.zsh/plugins/zsh-syntax-highlighting
+  url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+
+[submodule "zsh/.zsh/plugins/zsh-history-substring-search"]
+  path = zsh/.zsh/plugins/zsh-history-substring-search
+  url = https://github.com/zsh-users/zsh-history-substring-search.git
+
+

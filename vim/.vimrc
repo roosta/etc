@@ -138,7 +138,11 @@ noremap <leader>cw :StripWhitespace<CR>
 noremap <c-w>r :source $MYVIMRC<CR>
 
 " Close all the buffers
-map <leader>ba :%bdelete<CR>
+"map <leader>ba :%bdelete<CR>
+map <leader>bn :bnext<CR>
+map <leader>bp :bprevious<CR>
+map <leader>bd :bdelete<CR>
+
 
 " Tab management
 map <leader>tn :tabnew<CR>
@@ -259,14 +263,13 @@ nmap <leader>p :CtrlP<cr>
 
 " Find within all your open buffers.
 nmap <leader>bb :CtrlPBuffer<cr>
+nmap <c-b> :CtrlPBuffer<cr>
 
 " Find within all your open buffers sorted by Most Recently Used (MRU).
 nmap <leader>bm :CtrlPMixed<cr>
 
 " Find with a mix of all the above.
 nmap <leader>bs :CtrlPMRU<cr>
-
-nmap <leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
 
