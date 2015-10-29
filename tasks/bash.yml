@@ -1,6 +1,7 @@
 ---
+# zsh being the preferred shell, I still track these
 - name: Symlink bash configs to home
-  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/bash/{{ item }} state=link
+  file: dest={{home}}/{{item}} src={{dotfiles}}/bash/{{item}} state=link
   with_items:
     - .bashrc
     - .bash_logout

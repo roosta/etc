@@ -206,10 +206,17 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
 Plug 'bling/vim-bufferline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+<<<<<<< HEAD
 
 " colorscheme:
 Plug 'morhetz/gruvbox'
 
+=======
+
+" colorscheme:
+Plug 'morhetz/gruvbox'
+
+>>>>>>> 13b9a13995404173f8372d6ae5e148fe09e7c1cd
 " syntax:
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sheerun/vim-polyglot'

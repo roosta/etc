@@ -145,3 +145,4 @@ dunst &
 #esac
 
 exec i3 -c $HOME/.i3/config.gen --shmlog-size=26214400
+
