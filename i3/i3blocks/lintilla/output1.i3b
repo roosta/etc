@@ -1,0 +1,134 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+command=/usr/lib/i3blocks/$BLOCK_NAME
+color=#c0b18b
+
+#[download]
+#label=Ð
+##label=DOWN:
+#command=~/.i3/i3blocks/blocks/bandwidth.sh rx
+#min_width=0000 kB/s
+##align=right
+#color=#679C69
+#interval=1 # IMPORTANT
+
+#[bandwidth]
+#instance=enp9s0
+#command=~/.i3/i3blocks/blocks/bandwidth
+#color=#679C69
+#interval=5
+
+#[temperature]
+#color=#B7BA25
+#label=TEMP:
+#interval=10
+
+#[upload]
+#label=Ñ
+##label=UP:
+#command=~/.i3/i3blocks/blocks/bandwidth.sh tx
+#min_width=0000 kB/s
+##align=right
+#color=#D69820
+#interval=1 # IMPORTANT
+
+
+[External IP]
+label=EXT:
+command=~/.i3/scripts/$BLOCK_NAME
+min_width=255.255.255.255
+color=#D55C0D
+interval=2000
+
+[iface]
+label=LAN:
+instance=enp9s0
+#command=~/.i3/scripts/network
+color=#B06185
+interval=10
+
+[disk]
+label=ROOT:
+color=#979619
+instance=/dev/sda2
+interval=30
+
+[disk]
+label=HOME:
+color=#B7BA25
+instance=/dev/sdd1
+interval=30
+
+[disk]
+label=VAR:
+color=#F8BC2E
+instance=/dev/sda3
+interval=30
+
+[disk]
+label=GAMES:
+color=#448487
+instance=/dev/sdb1
+interval=30
+
+[disk]
+label=ARCH:
+color=#82A497
+instance=/dev/sde1
+interval=30
+
+[disk]
+label=XSHARE:
+instance=/dev/sde3
+color=#918273
+interval=30
+
+[time]
+label=Õ
+color=#F8BC2E
+command=date '+%H:%M:%S'
+interval=5
+
+## Char glyps for powerline fonts
+#sep_left=""                        # Powerline separator left
+#sep_right=""                       # Powerline separator right
+#sep_l_left=""                      # Powerline light separator left
+#sep_l_right=""                     # Powerline light sepatator right
+
+## Icon glyphs from Terminusicons2
+#icon_clock="Õ"                      # Clock icon
+#icon_cpu="Ï"                        # CPU icon
+#icon_mem="Þ"                        # MEM icon
+#icon_dl="Ð"                         # Download icon
+#icon_ul="Ñ"                         # Upload icon
+#icon_vol="Ô"                        # Volume icon
+#icon_hd="À"                         # HD / icon
+#icon_home="Æ"                       # HD /home icon
+#icon_mail="Ó"                       # Mail icon
+#icon_chat="Ò"                       # IRC/Chat icon
+#icon_music="Î"                      # Music icon
+#icon_prog="Â"                       # Window icon
+#icon_contact="Á"                    # Contact icon
+#icon_wsp="É"
+#icon_network=Å

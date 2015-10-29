@@ -1,0 +1,113 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+command=~/.i3/scripts/$BLOCK_NAME
+color=#c0b18b
+
+[keyboard-layout]
+label=Layout:
+#label=
+color=#E9DAB1
+interval=once
+signal=11
+
+#[vpn]
+#label=VPN:
+#interval=30
+
+[volume]
+label=Ô
+#label=
+instance=Master
+interval=1
+#signal=12
+
+[bandwidth]
+instance=enp9s0
+command=~/.i3/i3blocks/blocks/bandwidth
+color=#679C69
+interval=5
+
+[cpu-temp]
+color=#B7BA25
+#label=CPU 
+label=CPU:
+interval=10
+
+[gpu-temp]
+label=GPU:
+interval=10
+
+[memory]
+label=Þ
+command=/usr/lib/i3blocks/$BLOCK_NAME
+color=#82A497
+interval=30
+
+[cpu_usage]
+label=Ï
+command=/usr/lib/i3blocks/$BLOCK_NAME
+interval=10
+color=#679C69
+min_width=100.00%
+
+[load_average]
+label=Ù
+command=/usr/lib/i3blocks/$BLOCK_NAME
+color=#8DBF7B
+interval=10
+
+[time]
+label=Õ
+color=#F8BC2E
+command=date '+%H:%M:%S'
+interval=5
+
+[date]
+label=Ã
+command=date '+%Y-%m-%d'
+color=#D69820
+interval=5
+
+## Char glyps for powerline fonts
+#sep_left=""                        # Powerline separator left
+#sep_right=""                       # Powerline separator right
+#sep_l_left=""                      # Powerline light separator left
+#sep_l_right=""                     # Powerline light sepatator right
+
+## Icon glyphs from Terminusicons2
+#icon_clock="Õ"                      # Clock icon
+#icon_cpu="Ï"                        # CPU icon
+#icon_mem="Þ"                        # MEM icon
+#icon_dl="Ð"                         # Download icon
+#icon_ul="Ñ"                         # Upload icon
+#icon_vol="Ô"                        # Volume icon
+#icon_hd="À"                         # HD / icon
+#icon_home="Æ"                       # HD /home icon
+#icon_mail="Ó"                       # Mail icon
+#icon_chat="Ò"                       # IRC/Chat icon
+#icon_music="Î"                      # Music icon
+#icon_prog="Â"                       # Window icon
+#icon_contact="Á"                    # Contact icon
+#icon_wsp="É"
+#icon_network=Å

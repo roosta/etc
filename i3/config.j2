@@ -14,15 +14,13 @@
 # │ http://dotshare.it (picked from various i3 confs, color schemes..etc)
 # ┆
 #
-# ┬  ┬─┐┐ ┬┌─┐┬ ┐┌┐┐
-# │  │─┤└┌┘│ ││ │ │
-# ┆─┘┘ ┆ ┆ ┘─┘┆─┘ ┆
-# └─────────────── ─ ─
+
+# ┐ ┬┌─┐┬─┐┬┌ ┐─┐┬─┐┬─┐┌─┐┬─┐┐─┐
+# ││││ ││┬┘├┴┐└─┐│─┘│─┤│  ├─ └─┐
+# └┴┆┘─┘┆└┘┆ ┘──┘┆  ┘ ┆└─┘┴─┘──┘
 # Numbers in front is for sorting order on i3bar.
 # In each bar numbers are stripped. See bar config below.
 
-# ┆ Primary workspaces
-# └── ─ ─
 set $PWS1_TRM "1Q:Term"
 set $PWS2_DEV "2W:Devel"
 set $PWS3_WWW "3E:Web"
@@ -63,9 +61,7 @@ bindsym $mod+Shift+1 move workspace $TWS1_MED
 bindsym $mod+Shift+2 move workspace $TWS2_GAM
 bindsym $mod+Shift+3 move workspace $TWS3_MSC
 
-# ┆ F-workspaces
-# ┆ Auxiliary workspaces. Find myself needing throw-away workspaces often.
-# └─────────────────── ─ ─
+# Auxiliary workspaces
 set $FWS1 "9[F1]"
 set $FWS2 "10[F2]"
 set $FWS3 "11[F3]"
@@ -93,18 +89,15 @@ bindsym $mod+Shift+F6 workspace $FWS6
 bindsym $mod+Shift+F7 workspace $FWS7
 bindsym $mod+Shift+F8 workspace $FWS8
 
-# ┆ assign workspaces to outputs
-# └── ─ ─
+# assign workspaces to outputs
 workspace $PWS1_TRM output {{ output0 }}
 workspace $PWS3_WWW output {{ output0 }}
 workspace $PWS2_DEV output {{ output0 }}
-
 workspace $SWS1_AUX output {{ output1 }}
 workspace $SWS3_DBG output {{ output1 }}
 workspace $SWS2_COM output {{ output1 }}
 
-# ┆ Options
-# └── ─ ─
+# Options
 focus_follows_mouse no
 new_window pixel 1
 hide_edge_borders none
@@ -112,10 +105,8 @@ hide_edge_borders none
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┬─┐┬ ┐┬  ┬─┐┐─┐
 # ││││││││ ││ ││││  │┬┘│ ││  ├─ └─┐
 # └┴┆┆┆└┘┆─┘┘─┘└┴┆  ┆└┘┆─┘┆─┘┴─┘──┘
-# └─────────────── ─ ─
 
-# ┆ workspace assignment
-# └──────── ─ ─
+# workspace assignment
 assign [class="(?i)subl3"]               $PWS2_DEV
 assign [class="(?i)atom"]                $PWS2_DEV
 assign [class="(?i)firefox"]             $PWS3_WWW
@@ -131,36 +122,32 @@ assign [class="(?i)linphone"]            $SWS2_COM
 #assign [class="(?i)gimp"]                $PWS2_DEV
 #assign [class="(?i)urxvt"]               $PWS1_TRM
 
-# ┆ floating default
-# └──────────── ─ ─
-for_window [window_role="pop-up"]                floating enable
-for_window [window_role="task_dialog"]           floating enable
-for_window [window_role="bubble"]                floating enable
-for_window [window_role="Preferences"]           floating enable
-for_window [title="Preferences$"]                floating enable
-for_window [class="(?i)Jitsi"]                   floating enable
-for_window [class="(?i)SessionManager"]          floating enable
-for_window [title="(?i)Friends"]                 floating enable
-for_window [class="(?i)Linphone"]                floating enable
-#for_window [class="(?i)Steam"]                   floating enable
-#for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
+# floating default
+for_window [window_role="pop-up"]       floating enable
+for_window [window_role="task_dialog"]  floating enable
+for_window [window_role="bubble"]       floating enable
+for_window [window_role="Preferences"]  floating enable
+for_window [title="Preferences$"]       floating enable
+for_window [class="(?i)Jitsi"]          floating enable
+for_window [class="(?i)SessionManager"] floating enable
+for_window [title="(?i)Friends"]        floating enable
+for_window [class="(?i)Linphone"]       floating enable
+for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
 #for_window [class="(?i)Pidgin"]                  floating enable
 #for_window [class="(?i)thunderbird"]             floating enable
+#for_window [class="(?i)Steam*"]         floating enable
 
-# ┆ window size
-# └──────── ─ ─
+# window size
 #for_window [class="(?i)Pidgin"]                  floating_maximum_size 50 x 75
 
-# ┆ no border
-# └────── ─ ─
-#for_window [name="(?i)slack"]           border 1px
-#for_window [name="(?i)firefox"]         border none
-for_window [class="(?i)google-chrome$"] border none
+# no border
+for_window [class="(?i)firefox"]                border none
+for_window [class="(?i)google-chrome$"]         border none
+for_window [class="(?i)PrisonArchitect.x86_64"] border none
 
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
 # │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
 # ┘ ┆┆─┘ ┆ ┘─┘──┘ ┆ ┘ ┆┆└┘ ┆
-# └──────────────────────── ─── ── ─ ─
 
 exec urxvtc
 #exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
@@ -173,7 +160,6 @@ exec urxvtc
 # ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐┐─┐
 # ├┴┐├─ └┌┘│─││││││ │└─┐
 # ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘──┘
-# └──────────────────────── ─── ── ─ ─
 
 # set modkey (Super key)
 set $mod Mod4
@@ -279,10 +265,10 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # ┌┌┐┬─┐┌┐┐┬ ┐┐─┐
 # │││├─ ││││ │└─┐
 # ┘ ┆┴─┘┆└┘┆─┘──┘
-# └─────────────── ─ ─
 
-# ┆ RESIZE
-# └─── ─ ─
+# RESIZE
+# resize windows with either vi keys or arrows.
+# shift+movement shrink or grow with larger increments
 set $mode_resize Resize: (directions) 10px, (Shift+directions) 30px
 mode "$mode_resize" {
   # vi movement
@@ -296,7 +282,7 @@ mode "$mode_resize" {
   bindsym Shift+k resize shrink height 30 px or 30 ppt
   bindsym Shift+l resize grow   width  30 px or 30 ppt
 
-  # same bindings, but for the arrow keys
+  # assign the same for arrows
   bindsym Left resize shrink width  10 px or 10 ppt
   bindsym Down resize grow   height 10 px or 10 ppt
   bindsym Up resize shrink   height 10 px or 10 ppt
@@ -310,18 +296,14 @@ mode "$mode_resize" {
   # back to normal: Enter or Escape
   bindsym Return mode "default"
   bindsym Escape mode "default"
-
-  #bindsym s sticky toggle
 }
 bindsym $mod+r mode "$mode_resize"
 
-# ┆ SYSTEM
-# └─── ─ ─
+# SYSTEM
 # https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
 # fast way to reach power settings for system. Requires polkit.
-
-#set $Locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
 set $Locker xscreensaver-command --lock
+#set $Locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
   bindsym l exec --no-startup-id $Locker, mode "default"
@@ -338,11 +320,9 @@ mode "$mode_system" {
 bindsym XF86Sleep mode "$mode_system"
 bindsym $mod+End mode "$mode_system"
 
-# ┆ OUTPUT
-# └─── ─ ─
+# OUTPUT
 # Quickly switch output based on presets
 # Script is in the submodule "scripts". Alternativly http://github.com/roosta/scripts
-
 set $changeto ~/bin/chmon
 set $mode_chmon Layout: (d) desk, (t) TV, (a) all
 mode "$mode_chmon" {
@@ -361,7 +341,9 @@ bindsym $mod+Home mode "$mode_chmon"
 # ┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┌┐┐┌─┐┬─┐
 # │─┤│─┘│─┘├─ │─┤│┬┘│─┤││││  ├─
 # ┘ ┆┆  ┆  ┴─┘┘ ┆┆└┘┘ ┆┆└┘└─┘┴─┘
-# └──────────────────────── ─── ── ─ ─
+# Generated from jinja templates with ansible.
+
+# TODO: assign key to re-generate and reload i3 config
 
 # set primary font
 font {{ i3_font }}
@@ -373,30 +355,43 @@ client.unfocused        {{ dark_blue }} {{ background1 }} {{ dark_gray }} {{ dar
 client.urgent           {{ dark_orange }} {{ dark_orange }} {{ background }} {{ dark_orange }}
 client.placeholder      {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}
 
-{# Render each bar. Structure of bar config generally remains the same except for passed arguments. #}
-{% macro render_bar(_id, _output, _status) -%}
-  bar {
-    id {{ _id }}
-    output {{ _output }}
-    status_command {{ _status }}
-    font {{ i3_status_font }}
-    position top
-    tray_output primary
-    strip_workspace_numbers yes
-    separator_symbol "|"
-    colors {
-      {% include 'templates/bar.colors' %}
-    }
+{# macro that renders status bars based on host spesific variables as args #}
+{% macro render_bar(_id, _output, _status, _tray='primary') -%}
+bar {
+  id {{ _id }}
+  output {{ _output }}
+  status_command {{ _status }}
+  font {{ i3_status_font }}
+  position top
+  tray_output {{ _tray }}
+  strip_workspace_numbers yes
+  separator_symbol "|"
+  colors {
+    background {{ background }}
+    separator  {{ background0_s }}
+    statusline {{ foreground }}
+
+    # <workclass> <border> <background> <foreground>
+    focused_workspace  {{ background0_h }} {{ background1 }} {{ dark_blue }}
+    active_workspace   {{ background1 }} {{ background0_s }} {{ foreground }}
+    inactive_workspace {{ background0_h }} {{ background1 }} {{ dark_gray }}
+    urgent_workspace   {{ dark_orange }} {{ dark_orange }} {{ black }}
   }
+}
 {%- endmacro %}
 
-{% if target == 'lintilla' %}
-{{ render_bar('bar-0', {{ output0 }}, {{ status0 }}) }}
-{{ render_bar('bar-1', {{ output1 }}, {{ status1 }}) }}
-{{ render_bar('bar-2', {{ output2 }}, {{ status2 }}) }}
-{% endif %}
+{# call on render_bar macro and use variables defined in ../host_vars #}
+{%- if ansible_hostname == "lintilla" %}
+{{ render_bar("bar-0", output0, status0, output0) }}
+{{ render_bar("bar-1", output1, status1) }}
+{{ render_bar("bar-2", output2, status2) }}
+{% endif -%}
 
-{% if target == 'allitnil' %}
-{{ render_bar('bar-0', {{ output0 }}, {{ status0 }}) }}
-{{ render_bar('bar-1', {{ output1 }}, {{ status1 }}) }}
-{% endif %}
+{%- if ansible_hostname == "allitnil" %}
+{{ render_bar("bar-0", output0, status0, output0) }}
+{{ render_bar("bar-1", output1, status1) }}
+{{ render_bar("bar-2", output2, status2) }}
+{% endif -%}
+
+# vim:ft=i3:ts=2:sw=2
+

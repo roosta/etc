@@ -9,8 +9,8 @@
 " └──────────┬───────────────────────────┘
 "  sources:  │
 " ┌──────────┘
-" │https://github.com/xero/dotfiles/tree/master/vim
-" │https://github.com/trapd00r/configs/tree/master/vim
+" │ https://github.com/xero/dotfiles/tree/master/vim
+" │ https://github.com/trapd00r/configs/tree/master/vim
 " ┆
 
 " use vim settings, rather than vi settings
@@ -22,7 +22,6 @@ endif
 " ┌─┐┬─┐┌┐┐o┌─┐┌┐┐┐─┐
 " │ ││─┘ │ ││ ││││└─┐
 " ┘─┘┆   ┆ ┆┘─┘┆└┘──┘
-" └─────────────── ─ ─
 
 " using EasyClip. See Plugins
 "set clipboard=unnamed " set same clipboard for vim and X
@@ -111,7 +110,6 @@ autocmd BufReadPost *
 " ┌─┐┬ ┐o
 " │ ┬│ ││
 " ┆─┘┆─┘┆
-" └─────────────── ─ ─
 
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
@@ -126,7 +124,6 @@ endif
 " ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐
 " ├┴┐├─ └┌┘│─││││││ │
 " ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘
-" └─────────────── ─ ─
 
 " Move across wrapped lines like regular lines
 noremap 0 ^ " Go to the first non-blank character of a line
@@ -138,7 +135,11 @@ noremap <leader>cw :StripWhitespace<CR>
 noremap <c-w>r :source $MYVIMRC<CR>
 
 " Close all the buffers
-map <leader>ba :%bdelete<CR>
+"map <leader>ba :%bdelete<CR>
+map <leader>bn :bnext<CR>
+map <leader>bp :bprevious<CR>
+map <leader>bd :bdelete<CR>
+
 
 " Tab management
 map <leader>tn :tabnew<CR>
@@ -162,7 +163,6 @@ nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 " │─┘│  │ ││ ┬││││└─┐
 " ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
 " └─────────────── ─ ─
-
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -180,8 +180,6 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'kovisoft/paredit'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-salve'
-
-
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
@@ -203,7 +201,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'bling/vim-bufferline'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" colorscheme:
+" colorscheme
 Plug 'morhetz/gruvbox'
 
 " syntax:
@@ -259,14 +257,13 @@ nmap <leader>p :CtrlP<cr>
 
 " Find within all your open buffers.
 nmap <leader>bb :CtrlPBuffer<cr>
+nmap <c-b> :CtrlPBuffer<cr>
 
 " Find within all your open buffers sorted by Most Recently Used (MRU).
 nmap <leader>bm :CtrlPMixed<cr>
 
 " Find with a mix of all the above.
 nmap <leader>bs :CtrlPMRU<cr>
-
-nmap <leader>b :CtrlPBuffer<CR>
 
 let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
 
@@ -275,8 +272,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|tags)$',
 \}
 
-" ┆ Easymotion
-" └────────── ─ ─
+" EASYMOTION
+" ----------
 
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
@@ -308,8 +305,8 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 " set ctrl-v to paste in easymotion command line
 "EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
 
-" ┆ Quickscope
-" └────────── ─ ─
+" QUICKSCOPE
+" ----------
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
 let g:qs_first_occurrence_highlight_color = 155       " terminal vim
 
@@ -319,20 +316,20 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" ┆ Airline
-" └──────── ─ ─
+" AIRLINE
+" -------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#bufferline#enabled = 1
 
-" ┆ Bufferline
-" └────────── ─ ─
+" BUFFERLINE
+" ----------
 let g:bufferline_modified = '+'
 let g:bufferline_show_bufnr = 0
 let g:bufferline_solo_highlight = 1
 let g:bufferline_echo = 0
 
-" ┆ Easyclip
-" └────────── ─ ─
+" EASYCLIP
+" --------
 " remap mark to gm since EasyClip cut shadows m key
 let g:EasyClipUsePasteToggleDefaults = 0
 nnoremap gm m
@@ -348,16 +345,16 @@ nmap ]y <plug>EasyClipSwapPasteForward
 nmap [y <plug>EasyClipSwapPasteBackwards
 let g:EasyClipShareYanks = 1
 
-" ┆ Gruvbox (colorscheme)
-" └────────── ─ ─
+" GRUVBOX
+" -------
 " Set theme
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italic = 1
 colorscheme gruvbox
 set background=dark " Setting dark mode
 
-" ┆ Rainbow Parenthesis
-" └────────── ─ ─
+" RAINBOW PARENTHESIS
+" -------------------
 let g:rbpt_colorpairs = [
   \ ['brown',       'RoyalBlue3'],
   \ ['Darkblue',    'SeaGreen3'],
@@ -385,8 +382,8 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" ┆ NERDtree
-" └────────── ─ ─
+" NERDTREE
+" --------
 map <leader>nt :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
@@ -399,48 +396,46 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-" ┆ NERDcomment
-" └────────── ─ ─
+" NERDCOMMENT
+" -----------
 " mirrow tpope commentary keys.
 "
 nmap gcc <plug>NERDCommenterToggle
 vmap gc <plug>NERDCommenterToggle
 
-" ┆ Paredit
-" └────────── ─ ─
+" PAREDIT
+" -------
 let g:paredit_electric_return = 0
 let g:paredit_leader = '\'
 "let g:paredit_disable_clojure = 0
 
-" ┆ Easy-align
-" └────────── ─ ─
+"  EASY-ALIGN
+" ------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" ┆ Indent guides
-" └────────── ─ ─
+" INDENT GUIDES
+" -------------
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
-" ┆ ack.vim
-" └────────── ─ ─
+" ACK.VIM
+" -----------
 let g:ackprg = 'ag --vimgrep'
 
 
 " ┌─┐┌─┐┌┌┐┌┌┐┬─┐┌┐┐┬─┐┐─┐
 " │  │ ││││││││─┤││││ │└─┐
 " └─┘┘─┘┘ ┆┘ ┆┘ ┆┆└┘┆─┘──┘
-" └─────────────── ─ ─
 
 command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
 " ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
 " ├─ │ │││││   │ ││ ││││└─┐
 " ┆  ┆─┘┆└┘└─┘ ┆ ┆┘─┘┆└┘──┘
-" └─────────────── ─ ─
 
 " if working with splits, set cursorline only on active window,
 " to give an indication other than airline which split is active

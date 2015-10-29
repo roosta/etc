@@ -1,12 +1,4 @@
 ---
-# setup gtk configs
-- name: Install gtk packages not present
-  become: True
-  pacman: name={{ item }} state=present
-  with_items:
-    - gtk2
-    - gtk3
-
 - name: Symlink gtk configuration
   file: dest={{home}}/{{item.dest}} src={{dotfiles}}/gtk/{{item.src}} state=link
   with_items:

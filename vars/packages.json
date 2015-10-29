@@ -1,0 +1,237 @@
+[
+  'i3-wm'
+  'ifeh',
+  'iack
+  'ibar
+  'icalc
+  'iccze
+  'icheckbashisms
+  'iclamav
+  'iclojure
+  'ictags
+  'idfc
+  'ifirefox
+  'iglances
+  'ikeychain
+  'ikeepassx
+  'ils++-git
+  'ihtop
+  'imlocate
+  'igpick
+  'iagave
+  'iarch-wiki-lite
+  'iaura-bin
+  'ibleachbit
+  'iboxes
+  'iclang
+  'icolordiff
+  'icolorgcc
+  'icolormake
+  'icolorsvn
+  'icompton
+  'iconky
+  'ictags
+  'ideluge
+  'idocker
+  'idzen2
+  'ietckeeper
+  'ievtest
+  'ifasd-git
+  'ifdupes
+  'ifeh
+  'ifirefox
+  'ifirefox-developer
+  'igdb
+  'igimp
+  'ignome-characters
+  'igo
+  'igoogle-chrome
+  'igoogle-chrome-beta
+  'igparted
+  'igucharmap
+  'ihtop
+  'ihwinfo
+  'ii3blocks
+  'iirssi
+  'ikeepassx
+  'ikeychain
+  'ileiningen
+  'ilemonbar-git
+  'ilighttable
+  'ils++-git
+  'iman-db
+  'iman-pages
+  'imeld
+  'imemtest86-efi
+  'imlocate
+  'impd
+  'imutt
+  'imypaint
+  'inano
+  'incdu
+  'incmpcpp
+  'inetctl
+  'inetworkmanager-openvpn
+  'inetworkmanager-pptp
+  'infs-utils
+  'inmap
+  'intop
+  'inumix-icon-theme-git
+  'inumix-themes
+  'inumlockx
+  'invidia
+  'ipavucontrol
+  'ipdnsd
+  'iphantomjs
+  'ipidgin-encryption
+  'ipidgin-libnotify
+  'ipidgin-otr
+  'ipkg-config
+  'ipkgtools
+  'iplayonlinux
+  'iponymix
+  'iprogress
+  'iqemu
+  'iqiv
+  'iranger
+  'ireflector
+  'iremmina
+  'irhino
+  'irkhunter
+  'irofi-git
+  'isassc
+  'iscrot
+  'iscudcloud
+  'iseafile-client
+  'iseafile-client-cli
+  'isl
+  'ispacefm
+  'ispotify
+  'isteam
+  'isteam-fonts
+  'isteamos-xpad-dkms
+  'istow
+  'isublime-text-dev
+  'itask
+  'ithe_silver_searcher
+  'ithunderbird
+  'itig
+  'itraceroute
+  'itransmission-gtk
+  'itree
+  'iufw
+  'iunrar
+  'iurxvt-perls
+  'iusbutils
+  'ivi
+  'ivifm
+  'ivimpager
+  'iwhich
+  'iwhois
+  'iwireshark-cli
+  'iwol
+  'iwyrd
+  'ixautolock
+  'ixbindkeys
+  'ixclip
+  'ixdm-archlinux
+  'ixf86-video-nouveau
+  'ixloadimage
+  'ixorg-iceauth
+  'ixorg-smproxy
+  'ixorg-utils
+  'ixorg-x11perf
+  'ixorg-xbacklight
+  'ixorg-xcmsdb
+  'ixorg-xcursorgen
+  'ixorg-xfd
+  'ixorg-xfontsel
+  'ixorg-xgamma
+  'ixorg-xhost
+  'ixorg-xinit
+  'ixorg-xinput
+  'ixorg-xkbevd
+  'ixorg-xkbutils
+  'ixorg-xlsfonts
+  'ixorg-xmodmap
+  'ixorg-xpr
+  'ixorg-xrefresh
+  'ixorg-xwd
+  'ixorg-xwud
+  'ixscreensaver
+  'iyoutube-viewer
+  'izsh-completions
+  'izsh-doc
+  'izsh-lovers
+  'izshdb
+]
+# ininality fonts
+    - otf-fira-mono
+    - otf-fira-sans
+    - otf-neris
+    - ttf-aller
+    - ttf-envy-code-r
+    - ttf-fira-mono
+    - ttf-fira-sans
+    - ttf-font-awesome
+
+
+# AU packages
+    - mopidy-mpris
+    - symlinks
+    - toilet
+    - numix-icon-theme-git
+    - atom-editor-bin
+    - spotify
+    - aur-git
+    - aura-bin
+    - boxes
+    - byobu
+    - checkbashisms
+    - colormake
+    - colorsvn
+    - compton
+    - cower-git
+    - fasd-git
+    - firefox-developer
+    - gbdfed
+    - google-chrome
+    - google-chrome-beta
+    - gtk-theme-iris-dark-git
+    - i3blocks
+    - leiningen
+    - lemonbar-git
+    - libcurl-compat
+    - lighttable
+    - ls++-git
+    - memtest86-efi
+    - moka-icon-theme-git
+    - mopidy-mpris
+    - mopidy-spotify
+    - numix-icon-theme-git
+    - otf-neris
+    - pacaur-git
+    - package-query
+    - pkgtools
+    - playerctl
+    - rofi-git
+    - rxvt-unicode-256xresources
+    - scudcloud
+    - seafile-client
+    - seafile-client-cli
+    - slack-chat
+    - solaar-git
+    - spotify
+    - steam-fonts
+    - steamos-xpad-dkms
+    - sublime-text-dev
+    - symlinks
+    - toilet
+    - ttf-aller
+    - ttf-envy-code-r
+    - ttf-font-awesome
+    - leiningen
+    - ls++-git
+
+
+

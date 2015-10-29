@@ -1,10 +1,4 @@
 ---
-# setup desktop background
-
-- name: Install feh if not present
-  become: True
-  pacman: name=feh state=present
-
 - name: Symlink background folder
   file: path={{home}}/.background src={{dotfiles}}/background/images state=link
 
