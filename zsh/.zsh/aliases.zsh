@@ -218,7 +218,7 @@ alias pacai="aura -Ai" # get AUR package information
 alias pacaupd="sudo aura -Au" # update AUR packages
 alias pacapkg="aura -Ap" # Display an AUR package"s PKGBUILD
 alias pacadeps="aura -Ad" # display package deps
-
+alias pacaexp='pacman -Qem' # list explicit packages not from official repos
 
 # logs
 alias pacalog='aura -Li' # list install/upgrade history for a package

@@ -1,30 +1,45 @@
 ---
-# This playbook deploys the whole application stack to given target
-# Run ansible-playbook -i hosts site.yml -e "target=TARGET HOSTNAME"
+# This playbook deploys the whole config stack to given target. Can run one or more tasks by spesifyint tags
+# Run ansible-playbook (-i hosts) (--limit <hostname>) dotfiles.yml (-t <tag>)
 
-- name: apply dotfile configuration
-  hosts: "{{ target }}"
+- hosts: all
   vars_files:
+    - vars/{{ ansible_hostname }}.yml
     - vars/gruvbox_palette.yml
 
+  #   prompt user for which config to run
+  #vars_prompt:
+    #- name: "target_conf"
+      #prompt: "Please enter a target config or empty for all"
+      #default: "all"
+      #private: no
+
   tasks:
-    - include: tasks/ansible.yml
-    - include: tasks/i3.yml
-    - include: tasks/background.yml
-    - include: tasks/bash.yml
-    - include: tasks/boxes.yml
-    - include: tasks/compton.yml
-    - include: tasks/ctags.yml
-    - include: tasks/dircolors.yml
-    - include: tasks/dunst.yml
-    - include: tasks/firefox.yml
-    - include: tasks/themes.yml
-    - include: tasks/fasd.yml
+    - include: tasks/ansible.yml tags=ansible,all
+    - include: tasks/i3.yml tags=i3,i3wm,i3-wm,all
+    - include: tasks/background.yml tags=background,bg,all
+    - include: tasks/bash.yml tags=bash,all
+    - include: tasks/boxes.yml tags=boxes,all
+    - include: tasks/compton.yml tags=compton,all
+    - include: tasks/ctags.yml tags=ctags,all
+    - include: tasks/dircolors.yml tags=dircolors,ls_colors,LS_COLORS,all
+    - include: tasks/dunst.yml tags=dunst,all
+    - include: tasks/firefox.yml tags=firefox,all
+    - include: tasks/themes.yml tags=themes,graphics,all
+    - include: tasks/fasd.yml tags=fasd,shell,tools,plugin,all
+    - include: tasks/fonts.yml tags=fonts,all
+    - include: tasks/gimp.yml tags=gimp,art,all
+    - include: tasks/git.yml tags=git,vcs,all
+    - include: tasks/gtk.yml tags=gtk,graphics,all
+    #- include: tasks/zsh.yml tags=zsh,shell,term,all
 
-    # font setup. Needs some manual steps!
-    - include: tasks/fonts.yml
+#tasks:
+#- name: Create a group of chosen configs to run by prompt
+#group_by: key={{ target_conf }}
 
-    - include: tasks/gimp.yml
-    - include: tasks/git.yml
-    - include: tasks/gtk.yml
-    #- include: tasks/zsh.yml
+#- hosts: i3
+#tasks:
+#- include: tasks/i3.yml
+
+#- include: tasks/i3.yml
+#when: target_conf == "i3" or target_conf == "all"

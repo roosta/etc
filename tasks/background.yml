@@ -1,0 +1,9 @@
+---
+- name: Symlink background folder
+  file: path={{home}}/.background src={{dotfiles}}/background/images state=link
+
+- name: Symlink background folder
+  file: path={{home}}/.fehbg src={{dotfiles}}/background/.fehbg state=link
+
+- name: Set background with feh script
+  shell: "{{home}}/.fehbg"

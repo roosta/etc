@@ -1,0 +1,3 @@
+---
+- name: Symlink "dunst" configuration
+  file: path={{ home }}/.config/dunst src={{ dotfiles }}/dunst state=link

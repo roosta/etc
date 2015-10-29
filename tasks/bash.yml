@@ -1,0 +1,7 @@
+---
+- name: Symlink bash configs to home
+  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/bash/{{ item }} state=link
+  with_items:
+    - .bashrc
+    - .bash_logout
+    - .bash_profile

@@ -1,9 +1,0 @@
-# Use this mainly so-as not to use elevated privileges every time a role/task is needed
-- name: Install dotfile dependencies with pacman
-  become: True
-  tasks:
-    - name: Install missing packages from Arch linux official repos
-      pacman: name={{ item }} state=present
-      with_items:
-        - i3-wm
-        - feh

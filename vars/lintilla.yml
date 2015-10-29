@@ -16,12 +16,10 @@ i3_font: "pango: Essential PragmataPro 12px"
 i3_status_font: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
 font_location: "{{home}}/.fonts/misc"
 
-
 # define i3bar status commands.
 # Currently using i3blocks <https://github.com/vivien/i3blocks>
 status0: "i3blocks -c ~/.i3/i3blocks/lintilla/output0.i3b"
 status1: "i3blocks -c ~/.i3/i3blocks/lintilla/output1.i3b"
 status2: "i3blocks -c ~/.i3/i3blocks/lintilla/output2.i3b"
-
 # vim:ft=yaml:ts=2:sw=2
 

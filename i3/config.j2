@@ -350,7 +350,7 @@ client.unfocused        {{ dark_blue }} {{ background1 }} {{ dark_gray }} {{ dar
 client.urgent           {{ dark_orange }} {{ dark_orange }} {{ background }} {{ dark_orange }}
 client.placeholder      {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}
 
-# macro that renders status bars based on host spesific variables
+{# macro that renders status bars based on host spesific variables as args #}
 {% macro render_bar(_id, _output, _status, _tray='primary') -%}
 bar {
   id {{ _id }}
@@ -375,8 +375,7 @@ bar {
 }
 {%- endmacro %}
 
-# add host spesific assignments here
-# call on render_bar macro and use variables defined in ../host_vars
+{# call on render_bar macro and use variables defined in ../host_vars #}
 {%- if ansible_hostname == "lintilla" %}
 {{ render_bar("bar-0", output0, status0, output0) }}
 {{ render_bar("bar-1", output1, status1) }}
