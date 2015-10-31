@@ -1,4 +1,7 @@
 ---
 - name: Symlink ansible user config
-  file: path={{home}}/.ansible.cfg src={{dotfiles}}/ansible/.ansible.cfg state=link
-
+  file: src={{ dotfiles }}/ansible/{{ item.src }} dest={{ home }}/{{ item.dest }} state=link
+  with_items:
+    - { src: '.ansible.cfg', dest: '.ansible.cfg' }
+    - { src: 'library', dest: '.ansible/library' }
+    - { src: 'hosts', dest: '.ansible/hosts' }
