@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 # vim:ft=i3:ts=2:sw=2
->>>>>>> 13b9a13995404173f8372d6ae5e148fe09e7c1cd
 # ┌───────────────────────────────────┐
 # │▀▀▀░░░░░░░▀█▀░▀▀█░█░█░█▄█░░░░░░░▀▀▀│
 # │▀▀▀▀▀░░░░░░█░░░▀▄░█▄█░█░█░░░░░▀▀▀▀▀│
@@ -18,12 +15,39 @@
 # ┆
 #
 
+# ┐ ┬┬─┐┬─┐o┬─┐┬─┐┬  ┬─┐┐─┐
+# │┌┘│─┤│┬┘││─┤│─││  ├─ └─┐
+# └┘ ┘ ┆┆└┘┆┘ ┆┆─┘┆─┘┴─┘──┘
+
+# fast way to reach power settings for system. Requires polkit.
+set $locker xscreensaver-command --lock
+
+# Have to call a script to open urxvt in tmux. See script for details
+set $term ~/.i3/scripts/tmux_handler
+
+# set scrot/screenshot file arguments
+set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
+
+# ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
+# │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
+# ┘ ┆┆─┘ ┆ ┘─┘──┘ ┆ ┘ ┆┆└┘ ┆
+
+#exec urxvtc
+exec $term
+#exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
+#exec firefox
+#exec thunderbird
+#exec pidgin
+#exec spotify
+#exec steam
+
 # ┐ ┬┌─┐┬─┐┬┌ ┐─┐┬─┐┬─┐┌─┐┬─┐┐─┐
 # ││││ ││┬┘├┴┐└─┐│─┘│─┤│  ├─ └─┐
 # └┴┆┘─┘┆└┘┆ ┘──┘┆  ┘ ┆└─┘┴─┘──┘
 # Numbers in front is for sorting order on i3bar.
 # In each bar numbers are stripped. See bar config below.
 
+# primary workspaces
 set $PWS1_TRM "1Q:Term"
 set $PWS2_DEV "2W:Devel"
 set $PWS3_WWW "3E:Web"
@@ -36,11 +60,7 @@ bindsym $mod+Shift+q move workspace $PWS1_TRM
 bindsym $mod+Shift+w move workspace $PWS2_DEV
 bindsym $mod+Shift+e move workspace $PWS3_WWW
 
-<<<<<<< HEAD
-=======
-# ┆ Secondary workspaces
-# └── ─ ─
->>>>>>> 13b9a13995404173f8372d6ae5e148fe09e7c1cd
+# secondary workspaces
 set $SWS1_AUX "4A:Aux"
 set $SWS2_COM "5S:Comms"
 set $SWS3_DBG "6D:Debug"
@@ -53,11 +73,7 @@ bindsym $mod+Shift+a move workspace $SWS1_AUX
 bindsym $mod+Shift+s move workspace $SWS2_COM
 bindsym $mod+Shift+d move workspace $SWS3_DBG
 
-<<<<<<< HEAD
-=======
-# ┆ Tertiary workspaces
-# └── ─ ─
->>>>>>> 13b9a13995404173f8372d6ae5e148fe09e7c1cd
+# Tertiary workspaces
 set $TWS1_MED "7:1:Media"
 set $TWS2_GAM "8:2:Games"
 set $TWS3_MSC "9:3:Misc"
@@ -154,18 +170,6 @@ for_window [class="(?i)firefox"]                border none
 for_window [class="(?i)google-chrome$"]         border none
 for_window [class="(?i)PrisonArchitect.x86_64"] border none
 
-# ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
-# │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
-# ┘ ┆┆─┘ ┆ ┘─┘──┘ ┆ ┘ ┆┆└┘ ┆
-
-exec urxvtc
-#exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
-#exec firefox
-#exec thunderbird
-#exec pidgin
-#exec spotify
-#exec steam
-
 # ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐┐─┐
 # ├┴┐├─ └┌┘│─││││││ │└─┐
 # ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘──┘
@@ -176,8 +180,7 @@ set $mod Mod4
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+c kill
@@ -259,8 +262,8 @@ bindsym $mod+Shift+p focus child
 
 # screenshot
 # source: https://github.com/Airblader/dotfiles-manjaro
-bindsym --release Print exec scrot $HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
-bindsym --release Shift+Print exec scrot -s $HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png
+bindsym --release Print exec scrot $screenshot
+bindsym --release Shift+Print exec scrot -s $screenshot
 
 # send a signal to i3blocks on caps to toggle layout
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
@@ -310,14 +313,12 @@ bindsym $mod+r mode "$mode_resize"
 
 # SYSTEM
 # https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
-# fast way to reach power settings for system. Requires polkit.
-set $Locker xscreensaver-command --lock
-#set $Locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
+#set $locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-  bindsym l exec --no-startup-id $Locker, mode "default"
+  bindsym l exec --no-startup-id $locker, mode "default"
   bindsym e exec --no-startup-id i3-msg exit, mode "default"
-  bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+  bindsym s exec --no-startup-id $locker && systemctl suspend, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -365,7 +366,7 @@ client.urgent           {{ dark_orange }} {{ dark_orange }} {{ background }} {{ 
 client.placeholder      {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}
 
 {# macro that renders status bars based on host spesific variables as args #}
-{% macro render_bar(_id, _output, _status, _tray='primary') -%}
+{% macro render_bar(_id, _output, _status, _tray='primary') %}
 bar {
   id {{ _id }}
   output {{ _output }}
@@ -387,7 +388,7 @@ bar {
     urgent_workspace   {{ dark_orange }} {{ dark_orange }} {{ black }}
   }
 }
-{%- endmacro %}
+{% endmacro %}
 
 {# call on render_bar macro and use variables defined in ../host_vars #}
 {%- if ansible_hostname == "lintilla" %}

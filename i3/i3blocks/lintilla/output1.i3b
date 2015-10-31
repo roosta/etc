@@ -24,37 +24,7 @@
 command=/usr/lib/i3blocks/$BLOCK_NAME
 color=#c0b18b
 
-#[download]
-#label=Ð
-##label=DOWN:
-#command=~/.i3/i3blocks/blocks/bandwidth.sh rx
-#min_width=0000 kB/s
-##align=right
-#color=#679C69
-#interval=1 # IMPORTANT
-
-#[bandwidth]
-#instance=enp9s0
-#command=~/.i3/i3blocks/blocks/bandwidth
-#color=#679C69
-#interval=5
-
-#[temperature]
-#color=#B7BA25
-#label=TEMP:
-#interval=10
-
-#[upload]
-#label=Ñ
-##label=UP:
-#command=~/.i3/i3blocks/blocks/bandwidth.sh tx
-#min_width=0000 kB/s
-##align=right
-#color=#D69820
-#interval=1 # IMPORTANT
-
-
-[External IP]
+[public_ip]
 label=EXT:
 command=~/.i3/scripts/$BLOCK_NAME
 min_width=255.255.255.255
@@ -64,7 +34,6 @@ interval=2000
 [iface]
 label=LAN:
 instance=enp9s0
-#command=~/.i3/scripts/network
 color=#B06185
 interval=10
 
