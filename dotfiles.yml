@@ -31,15 +31,7 @@
     - include: tasks/gimp.yml tags=gimp,art,all
     - include: tasks/git.yml tags=git,vcs,all
     - include: tasks/gtk.yml tags=gtk,graphics,all
-    #- include: tasks/zsh.yml tags=zsh,shell,term,all
+    - include: tasks/zsh.yml tags=zsh,shell,term,all
+    - include: tasks/colors.yml tags=colors,shell,term,all
+    - include: tasks/scripts.yml tags=scripts,shell,term,all
 
-#tasks:
-#- name: Create a group of chosen configs to run by prompt
-#group_by: key={{ target_conf }}
-
-#- hosts: i3
-#tasks:
-#- include: tasks/i3.yml
-
-#- include: tasks/i3.yml
-#when: target_conf == "i3" or target_conf == "all"

@@ -1,7 +1,4 @@
 ---
-# Setup compton. Relies on AUR package!
-#- name: Check for compton package, and install if not present
-  #pacman: name=compton state=present
-
+# Setup compton. Relies on AUR package
 - name: Symlink compton configuration
   file: path={{home}}/.config/compton src={{dotfiles}}/compton state=link

@@ -83,3 +83,4 @@ svn/*/README.txt
 *.bak
 *.*~
 
+/**/tmp

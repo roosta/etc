@@ -8,13 +8,14 @@
   # retrieving information.
   changed_when: False
 
+# TODO: fix this (docs are down ATM so this waits)
 # set zsh as the default shell, unless it is already the default.
-- name: make zsh default
-  shell: chsh -s /bin/zsh
-  when: default_shell not "zsh"
+#- name: make zsh default
+  #shell: chsh -s /bin/zsh
+  #when: default_shell != "/usr/bin/zsh"
 
 - name: symlink config to home
-  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/zsh/{{ item }} state=link
+  file: src={{ dotfiles }}/zsh/{{ item }} dest={{ home }}/{{ item }} state=link
   with_items:
     - .zsh
     - .zshrc

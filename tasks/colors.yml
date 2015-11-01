@@ -1,0 +1,3 @@
+---
+- name: Symlink color configuration
+  file: src={{dotfiles}}/colors dest={{home}}/.colors state=link
