@@ -14,39 +14,39 @@ compinit
 autoload -U ~/.zsh/completion/*(:t)
 
 # set some options first
-unsetopt menu_complete      # do not autoselect the first completion entry
+unsetopt menu_complete # do not autoselect the first completion entry
 unsetopt flowcontrol
-setopt   auto_menu          # show completion menu on succesive tab press
-setopt   complete_in_word
-setopt   always_to_end
+setopt auto_menu # show completion menu on succesive tab press
+setopt complete_in_word
+setopt always_to_end
 
 # general
-zstyle ':completion:*'         rehash true
-zstyle ':completion:*'         auto-description 'specify: %d'
-zstyle ':completion:*'         completer _expand _complete _correct _approximate
-zstyle ':completion:*'         format 'Completing %d'
-zstyle ':completion:*'         group-name ''
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
 
 # use dircolors for menus
-zstyle ':completion:*'         menu select=2 eval "$(dircolors -b)"
+zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-zstyle ':completion:*'         list-colors ''
-zstyle ':completion:*'         list-prompt %SAt %p: hit TAB for more, or the character to insert%s
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: hit TAB for more, or the character to insert%s
 
 # If you end up using a directory as argument, this will remove the trailing slash (usefull in ln)
-zstyle ':completion:*'         squeeze-slashes true
+zstyle ':completion:*' squeeze-slashes true
 
-zstyle ':completion:*'         matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
-#zstyle ':completion:*'         matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*'         menu select=long #200
-zstyle ':completion:*'         select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*'         use-compctl false
-zstyle ':completion:*'         verbose true
-zstyle ':completion:*'         accept-exact '*(N)'
-zstyle ':completion:*'         separate-sections 'yes'
-zstyle ':completion:*'         list-dirs-first true
-zstyle ':completion:*'         use-perl=1
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' 'l:|=* r:|=*'
+#zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' menu select=long #200
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' separate-sections 'yes'
+zstyle ':completion:*' list-dirs-first true
+zstyle ':completion:*' use-perl=1
 
 # formatting
 zstyle ':completion:*:descriptions' format $'%{- \e[38;5;137;1m\e[48;5;234m%}%B%d%b%{\e[m%}'
@@ -68,33 +68,33 @@ zstyle ':completion::complete:*'       use-cache 1
 zstyle ':completion::complete:*'       cache-path $ZSH_CACHE_DIR
 
 
-zstyle ':completion:*:processes'       command 'ps -axw'
+zstyle ':completion:*:processes' command 'ps -axw'
 zstyle ':completion:*:processes-names' command 'ps -awxho command'
-zstyle ':completion:*:functions'       ignored-patterns '_*'
+zstyle ':completion:*:functions' ignored-patterns '_*'
 
 # mplayer
-zstyle ':completion:*:*:mplayer:*'           tag-order files
-zstyle ':completion:*:*:mplayer:*'           file-patterns   \
+zstyle ':completion:*:*:mplayer:*' tag-order files
+zstyle ':completion:*:*:mplayer:*' file-patterns   \
        '*.(rmvb|mkv|mpg|wmv|mpeg|avi|flv|mp3|mp4|flac|ogg):video' \
        '*:all-files' '*(-/):directories'
 
 # vim
-zstyle ':completion:*:*:(vim|rview|vimdiff|xxd):*'        file-sort modification
-zstyle ':completion:*:*:(vim|rview|vimdiff|xxd):*'        tag-order files
-zstyle ':completion:*:vim:*:directories'                  ignored-patterns \*
+zstyle ':completion:*:*:(vim|rview|vimdiff|xxd):*' file-sort modification
+zstyle ':completion:*:*:(vim|rview|vimdiff|xxd):*' tag-order files
+zstyle ':completion:*:vim:*:directories' ignored-patterns \*
 zstyle ':completion:*:*:(vim|rview|vimdiff|xxd):*:*files' ignored-patterns \
        '*~|*.(old|bak|zwc|viminfo|rxvt-*|zcompdump)|pm_to_blib|cover_db|blib' file-sort modification
 
 # change directory
 #zstyle ':completion:*:*:(cd):*:*files' ignored-patterns '*~' file-sort access
-zstyle ':completion:*:*:(cd):*'        file-sort access
-zstyle ':completion:*:*:(cd):*'        menu select
-zstyle ':completion:*:*:(cd):*'        completer _history
+zstyle ':completion:*:*:(cd):*' file-sort access
+zstyle ':completion:*:*:(cd):*' menu select
+zstyle ':completion:*:*:(cd):*' completer _history
 
 # cd will never select the parent directory (e.g.: cd ../<TAB>):
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
-zstyle ':completion:*:*:perl:*'        file-patterns '*'
+zstyle ':completion:*:*:perl:*' file-patterns '*'
 
 # Method for quick change directories.
 rationalise-dot() {

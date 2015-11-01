@@ -52,3 +52,12 @@ ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=black,bold,bg=red')
 # Sudo
 ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=black,bold,bg=red')
 
+# colors for permissions
+if [[ "$EUID" -ne "0" ]]
+then  # if user is not root
+    USER_LEVEL="%F{cyan}"
+else # root!
+    USER_LEVEL="%F{red}"
+fi
+
+

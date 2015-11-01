@@ -14,7 +14,7 @@
 # ┐ ┬o┌┌┐
 # │┌┘││││
 # └┘ ┆┘ ┆
-# └─────────────── ─ ─
+
 alias vi="vim"
 
 # quick edits
@@ -32,14 +32,13 @@ alias vibinds='vim ~/.xbindkeysrc'
 alias vivimp='vim ~/.vimperatorrc'
 alias vigtk='vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini'
 
-alias vitodo='vim ~/todo.md'
-alias todo='cat ~/todo.md'
-alias mdtodo='atom ~/todo.md'
+#alias vitodo='vim ~/todo.md'
+#alias todo='cat ~/todo.md'
+#alias mdtodo='atom ~/todo.md'
 
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │
 # ┆  ┆┆└┘┆─┘
-# └─────────────── ─ ─
 
 alias grep="ag -i"
 
@@ -71,7 +70,6 @@ alias awk='gawk'
 # ┐─┐┬─┐┬─┐┬─┐┌┐┐┐ ┬
 # └─┐│─┤├─ ├─  │ └┌┘
 # ──┘┘ ┆┆  ┴─┘ ┆  ┆
-# └─────────────── ─ ─
 
 alias mv=' timeout 8 mv -iv'
 alias rm=' timeout 3 rm -Iv --one-file-system'
@@ -97,7 +95,6 @@ alias mkdir='mkdir -pv'
 # ┌┌┐┌─┐┐ ┬┬─┐┌┌┐┬─┐┌┐┐┌┐┐
 # ││││ ││┌┘├─ │││├─ │││ │
 # ┘ ┆┘─┘└┘ ┴─┘┘ ┆┴─┘┆└┘ ┆
-# └─────────────── ─ ─
 
 # dirstack needs some extra config, see dirstack.sh
 alias cd..='cd ..'
@@ -152,7 +149,6 @@ alias v='f -t -e vim -b viminfo'
 # ┐─┐┬─┐┌─┐┬ ┐┬─┐o┌┐┐┐ ┬
 # └─┐├─ │  │ ││┬┘│ │ └┌┘
 # ──┘┴─┘└─┘┆─┘┆└┘┆ ┆  ┆
-# └─────────────── ─ ─
 
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
 alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l $HOME/.tmp/clamscan.log $HOME"
@@ -162,7 +158,6 @@ alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected ."
 # ┬─┐┬─┐┌─┐┌┌┐┬─┐┌┐┐
 # │─┘│─┤│  ││││─┤│││
 # ┆  ┘ ┆└─┘┘ ┆┘ ┆┆└┘
-# └─────────────── ─ ─
 
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
 alias pacman='pacman --color=auto' # use pacaur as a pacman extension
@@ -275,7 +270,7 @@ alias getkey='xev -event keyboard'
 alias logcolor='ccze'
 
 # utput from a command with xclip when this is piped in
-alias copy='xclip -sel clip'
+alias copy='xsel -i -p -b'
 
 # print date in various formats
 alias gettime='date +"%T"'
@@ -294,11 +289,11 @@ alias updatedb='sudo updatedb'
 alias xfontsel='xfontsel -print|copy'
 
 alias ~~="$HOME/.backup/home/$USER"
+alias tasks="task"
 
 # ┐─┐┐ ┬┐─┐┌┐┐┬─┐┌┌┐
 # └─┐└┌┘└─┐ │ ├─ │││
 # ──┘ ┆ ──┘ ┆ ┴─┘┘ ┆
-# └─────────────── ─ ─
 
 # systemctl query
 alias sysstat='systemctl status'
@@ -325,7 +320,6 @@ alias sysedit='sudo systemctl edit'
 # ┐ ┬┌─┐┐─┐
 # │┌┘│  └─┐
 # └┘ └─┘──┘
-# └─────────────── ─ ─
 
 alias diff='colordiff'
 
@@ -382,7 +376,6 @@ alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 # ┬─┐┬─┐┐ ┬┬─┐┬  ┌─┐┬─┐
 # │ │├─ │┌┘├─ │  │ ││─┘
 # ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
-# └─────────────── ─ ─
 
 alias figwheel='rlwrap lein figwheel'
 alias hxrepl='haxelib run ihx'
@@ -397,7 +390,6 @@ alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # ┌┌┐o┐─┐┌─┐
 # ││││└─┐│
 # ┘ ┆┆──┘└─┘
-# └─────────────── ─ ─
 
 # delete and or refresh shell confs
 alias xrmerge="xrdb -merge ~/.Xresources"

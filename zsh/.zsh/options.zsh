@@ -19,12 +19,13 @@ setopt CORRECT
 setopt COMPLETE_IN_WORD
 setopt IGNORE_EOF
 unsetopt beep
+#
+# Alias every command that doesn't exist.
+if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
+   source /usr/share/doc/pkgfile/command-not-found.zsh
+fi
 
-source /usr/share/doc/pkgfile/command-not-found.zsh
-
-# ======= History =======
-# -----------------------
-
+# History
 # setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
 # setopt APPEND_HISTORY # adds history

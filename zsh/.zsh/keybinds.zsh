@@ -8,12 +8,10 @@
 
 # set key bindings (e = emacs, v = vi)
 bindkey -v
-
 #zmodload zsh/terminfo
 
 # 10ms for key sequences
 KEYTIMEOUT=1
-
 
 # keybindings
 typeset -A key
@@ -35,8 +33,8 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Delete]}"   ]]  && bindkey  "${key[Delete]}"   delete-char
 [[ -n "${key[Up]}"       ]]  && bindkey  "${key[Up]}"       history-substring-search-up
 [[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     history-substring-search-down
-[[ -n "${key[Left]}"     ]]  && bindkey  "${key[Left]}"     backward-char
-[[ -n "${key[Right]}"    ]]  && bindkey  "${key[Right]}"    forward-char
+[[ -n "${key[left]}"     ]]  && bindkey  "${key[left]}"     backward-char
+[[ -n "${key[right]}"    ]]  && bindkey  "${key[right]}"    forward-char
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
 
@@ -53,9 +51,6 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
   zle -N zle-line-finish
 fi
 
-#======= Vi mode =======
-#-----------------------
-
 # bind k and j for VI mode hist substring search
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
@@ -64,3 +59,11 @@ bindkey -M vicmd 'j' history-substring-search-down
 bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (fils and directories)
 bindkey '^X^F' fasd-complete-f  # C-x C-f to do fasd-complete-f (only files)
 bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directories)
+
+bindkey ' ' magic-space # [Space] - do history expansion
+#bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
+#bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
+
+if [[ "${terminfo[kcbt]}" != "" ]]; then
+  bindkey "${terminfo[kcbt]}" reverse-menu-complete   # [Shift-Tab] - move through the completion menu backwards
+fi

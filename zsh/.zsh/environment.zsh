@@ -11,12 +11,14 @@ export RANGER_LOAD_DEFAULT_RC="false"
 
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-#export TERM=rxvt-unicode-256color
+export TERM="tmux-256color"
 
 export EDITOR=vim
 export VISUAL=vim
 
 export GOPATH=$HOME/.go
+
+export ZSH_CACHE_DIR=$HOME/.cache/zsh
 
 # use vimpager, and replace less
 export PAGER=/usr/bin/vimpager
@@ -28,4 +30,4 @@ alias zless=$PAGER
 
 export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:/usr/local/bin:$HOME/.go/bin:$PATH
 
-#export LESS=-R
+export LESS=-R
