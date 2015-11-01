@@ -97,3 +97,21 @@ new [description:"update prompt" entry:"1446324833" modified:"1446324833" status
 time 1446332064
 new [description:"fix italic font issue" entry:"1446332064" modified:"1446332064" status:"pending" tags:"tmux" uuid:"a34b806a-e998-4cf3-85ec-bc463a0ab070"]
 ---
+time 1446389749
+new [description:"Remove udisk polkit rules?" entry:"1446389749" modified:"1446389749" status:"pending" tags:"general" uuid:"7c6ce102-d999-46e3-adf2-22a141b53293"]
+---
+time 1446389936
+old [description:"fix X config error" entry:"1446234204" modified:"1446234204" status:"pending" tags:"lintilla" uuid:"675fb393-2d51-4896-a517-32ba2490cf07"]
+new [description:"fix X config error" end:"1446389936" entry:"1446234204" modified:"1446389936" status:"completed" tags:"lintilla" uuid:"675fb393-2d51-4896-a517-32ba2490cf07"]
+---
+time 1446391262
+new [description:"check out freemind" entry:"1446391262" modified:"1446391262" status:"pending" tags:"general" uuid:"217dc856-0133-4829-9f2f-569bba673b16"]
+---
+time 1446401044
+old [description:"fix italic font issue" entry:"1446332064" modified:"1446332064" status:"pending" tags:"tmux" uuid:"a34b806a-e998-4cf3-85ec-bc463a0ab070"]
+new [description:"fix italic font issue" end:"1446401044" entry:"1446332064" modified:"1446401044" status:"completed" tags:"tmux" uuid:"a34b806a-e998-4cf3-85ec-bc463a0ab070"]
+---
+time 1446401065
+old [description:"AUR setup" entry:"1446234594" modified:"1446234594" status:"pending" tags:"ansible" uuid:"02765a56-6ad7-473a-9f7e-2f05a75e4794"]
+new [description:"AUR setup" end:"1446401064" entry:"1446234594" modified:"1446401065" status:"deleted" tags:"ansible" uuid:"02765a56-6ad7-473a-9f7e-2f05a75e4794"]
+---

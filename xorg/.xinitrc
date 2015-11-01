@@ -12,7 +12,7 @@
 # o┌┐┐o┌┐┐o┬─┐┬  o┌─┐┬─┐
 # │││││ │ ││─┤│  │┌─┘├─
 # ┆┆└┘┆ ┆ ┆┘ ┆┆─┘┆└─┘┴─┘
-# └──────────────────── ─── ── ─ ─
+
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -52,6 +52,9 @@ xset fp rehash &
 # set background with feh
 $HOME/.fehbg &
 
+# watch for udisks2 mounts
+#$HOME/bin/devwatch &
+
 # init gnome-keyring.
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
@@ -59,7 +62,6 @@ export SSH_AUTH_SOCK
 # o┌┐┐┬─┐┬ ┐┌┐┐┐─┐
 # │││││─┘│ │ │ └─┐
 # ┆┆└┘┆  ┆─┘ ┆ ──┘
-# └────────────────── ─── ── ─ ─
 
 # Set keyboard layouts and options.
 # Switch layout with caps and terminate x session with ctrl alt backspace
@@ -80,7 +82,6 @@ xbindkeys &
 # ┬─┐o┐─┐┬─┐┬  ┬─┐┐ ┬
 # │ ││└─┐│─┘│  │─┤└┌┘
 # ┆─┘┆──┘┆  ┆─┘┘ ┆ ┆
-# └───────────────── ─── ── ─ ─
 
 # set display layout
 xrandr --output DVI-I-1 --primary --auto --pos 0x0 \
@@ -102,7 +103,6 @@ $home/bin/lightsOn 590 &
 # ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
 # │ ││─┤├─ ││││ ││││└─┐
 # ┆─┘┘ ┆┴─┘┘ ┆┘─┘┆└┘──┘
-# └─────────────────── ─── ── ─ ─
 
 urxvtd -q -f -o &
 seaf-cli start &
@@ -113,7 +113,6 @@ dunst &
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
 # ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘
 # └┴┆┆┆└┘┆─┘┘─┘└┴┆  ┘ ┆┘ ┆┆└┘┘ ┆┆─┘┴─┘┆└┘
-# └───────────────────────────────────── ─── ── ─ ─
 
 # Here i3wm is kept as default
 #session=${1:-xfce}

@@ -28,3 +28,8 @@
 {"description":"fix pageup \/ down scrolling","entry":"20151031T205325Z","modified":"20151031T205325Z","status":"pending","tags":["tmux"],"uuid":"d25fcd4c-4566-4554-9cb3-f82ae60c9e7d"}
 {"description":"update prompt","entry":"20151031T205353Z","modified":"20151031T205353Z","status":"pending","tags":["shell"],"uuid":"64c693d5-afe1-469d-9441-5d937f6d89bc"}
 {"description":"fix italic font issue","entry":"20151031T225424Z","modified":"20151031T225424Z","status":"pending","tags":["tmux"],"uuid":"a34b806a-e998-4cf3-85ec-bc463a0ab070"}
+{"description":"Remove udisk polkit rules?","entry":"20151101T145549Z","modified":"20151101T145549Z","status":"pending","tags":["general"],"uuid":"7c6ce102-d999-46e3-adf2-22a141b53293"}
+{"description":"fix X config error","end":"20151101T145856Z","entry":"20151030T194324Z","modified":"20151101T145856Z","status":"completed","tags":["lintilla"],"uuid":"675fb393-2d51-4896-a517-32ba2490cf07"}
+{"description":"check out freemind","entry":"20151101T152102Z","modified":"20151101T152102Z","status":"pending","tags":["general"],"uuid":"217dc856-0133-4829-9f2f-569bba673b16"}
+{"description":"fix italic font issue","end":"20151101T180404Z","entry":"20151031T225424Z","modified":"20151101T180404Z","status":"completed","tags":["tmux"],"uuid":"a34b806a-e998-4cf3-85ec-bc463a0ab070"}
+{"description":"AUR setup","end":"20151101T180424Z","entry":"20151030T194954Z","modified":"20151101T180425Z","status":"deleted","tags":["ansible"],"uuid":"02765a56-6ad7-473a-9f7e-2f05a75e4794"}

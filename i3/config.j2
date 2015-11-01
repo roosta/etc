@@ -23,7 +23,7 @@
 set $locker xscreensaver-command --lock
 
 # Have to call a script to open urxvt in tmux. See script for details
-set $term ~/.i3/scripts/tmux_handler
+set $term urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 
 # set scrot/screenshot file arguments
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"

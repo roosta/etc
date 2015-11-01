@@ -24,7 +24,7 @@
 command=~/.i3/scripts/$BLOCK_NAME
 color=#c0b18b
 
-[keyboard-layout]
+[keyboard_layout]
 label=Layout:
 #label=
 color=#E9DAB1
@@ -47,13 +47,13 @@ instance=enp9s0
 color=#679C69
 interval=5
 
-[cpu-temp]
+[cpu_temp]
 color=#B7BA25
 #label=CPU 
 label=CPU:
 interval=10
 
-[gpu-temp]
+[gpu_temp]
 label=GPU:
 interval=10
 

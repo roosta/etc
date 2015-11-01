@@ -25,7 +25,7 @@ rofi.hlfg:                           #282828
 rofi.hlbg:                           #82A497
 rofi.bc:                             #448487
 rofi.bw:                             1
-rofi.separator-style:                dottet
+rofi.separator-style:                dash
 rofi.location:                       1
 rofi.padding:                        5
 rofi.yoffset:                        18

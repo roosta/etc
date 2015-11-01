@@ -1,2 +1,5 @@
+[description:"AUR setup" end:"1446401064" entry:"1446234594" modified:"1446401065" status:"deleted" tags:"ansible" uuid:"02765a56-6ad7-473a-9f7e-2f05a75e4794"]
+[description:"fix italic font issue" end:"1446401044" entry:"1446332064" modified:"1446401044" status:"completed" tags:"tmux" uuid:"a34b806a-e998-4cf3-85ec-bc463a0ab070"]
+[description:"fix X config error" end:"1446389936" entry:"1446234204" modified:"1446389936" status:"completed" tags:"lintilla" uuid:"675fb393-2d51-4896-a517-32ba2490cf07"]
 [description:"( ( == 1 ) )" end:"1446233831" entry:"1446233812" modified:"1446233832" status:"deleted" tags:"lintilla" uuid:"45ecd408-4470-41c6-a95e-129665cfd6f5"]
 [description:"test" end:"1446233101" entry:"1439456201" modified:"1446233102" status:"deleted" uuid:"9478aa38-e6a1-48b8-ba9c-94cf97797e0c"]

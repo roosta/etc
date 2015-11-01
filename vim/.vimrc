@@ -39,7 +39,6 @@ set noswapfile
 " wild*
 set wildmenu " command line completion
 set wildmode=longest,list,full
-"set wildmode=longest:full,full
 set wildignorecase
 "set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,*/dist/*,*/undo/*,
       "\*/out/*,*/.repl*,*/.cljs_rhino_repl/*,*/_site/*
@@ -59,8 +58,6 @@ set t_Co=256 " force 256colors
 set lazyredraw " stop unnecessary rendering
 
 " Highlights
-"set cc=80 " column hightlighting
-" highlight column "set cursorcolumn
 set cursorline " highlight current line
 set wrap " show line numbers
 set number " show line numbers
@@ -76,8 +73,6 @@ set expandtab " tabs are spaces
 set shiftwidth=2 " use indents of 2 spaces
 set tabstop=2 " use indents of 2 spaces
 set softtabstop=2 " let backspace delete indent
-"set smartindent
-"set smarttab
 
 " searching
 "set hlsearch " using easymotion for hl
@@ -91,8 +86,11 @@ set mouse=a
 set fo-=o
 set relativenumber
 
-" Tags
-"set tags+=tags " look for tag file at ./[here]
+set tags+=./.tags
+
+" ┌─┐┬ ┐┬─┐┐─┐┌─┐┬─┐
+" │  │ ││┬┘└─┐│ ││┬┘
+" └─┘┆─┘┆└┘──┘┘─┘┆└┘
 
 " change cursor depending on mode (VTE compatible terminals)
 let &t_SI = "\<Esc>[6 q"
@@ -162,7 +160,7 @@ nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 " ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
 " │─┘│  │ ││ ┬││││└─┐
 " ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
-" └─────────────── ─ ─
+
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -272,6 +270,11 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|tags)$',
 \}
 
+" thank you: https://github.com/sykora/etc/blob/master/vim/vimrc
+let g:ctrlp_prompt_mappings = {
+\   'PrtClearCache()': ['<F5>'],
+\}
+
 " EASYMOTION
 " ----------
 
@@ -351,7 +354,7 @@ let g:EasyClipShareYanks = 1
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_italic = 1
 colorscheme gruvbox
-set background=dark " Setting dark mode
+set background=dark
 
 " RAINBOW PARENTHESIS
 " -------------------
