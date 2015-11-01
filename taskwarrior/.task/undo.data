@@ -88,3 +88,12 @@ new [description:"infinality repo setup & install" entry:"1446234630" modified:"
 time 1446235140
 new [description:"Finish password process" entry:"1446235140" modified:"1446235140" status:"pending" tags:"general" uuid:"4546a86e-cc54-4e72-9e3d-ff31bd423b29"]
 ---
+time 1446324805
+new [description:"fix pageup \/ down scrolling" entry:"1446324805" modified:"1446324805" status:"pending" tags:"tmux" uuid:"d25fcd4c-4566-4554-9cb3-f82ae60c9e7d"]
+---
+time 1446324833
+new [description:"update prompt" entry:"1446324833" modified:"1446324833" status:"pending" tags:"shell" uuid:"64c693d5-afe1-469d-9441-5d937f6d89bc"]
+---
+time 1446332064
+new [description:"fix italic font issue" entry:"1446332064" modified:"1446332064" status:"pending" tags:"tmux" uuid:"a34b806a-e998-4cf3-85ec-bc463a0ab070"]
+---

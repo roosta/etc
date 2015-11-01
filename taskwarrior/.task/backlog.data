@@ -25,3 +25,6 @@
 {"description":"AUR setup & install","entry":"20151030T195003Z","modified":"20151030T195003Z","status":"pending","tags":["ansible"],"uuid":"f05444c7-87ca-4b23-bfee-1539df1f5e69"}
 {"description":"infinality repo setup & install","entry":"20151030T195030Z","modified":"20151030T195030Z","status":"pending","tags":["ansible"],"uuid":"f82732d9-9384-48a2-a766-6232cc8f2c59"}
 {"description":"Finish password process","entry":"20151030T195900Z","modified":"20151030T195900Z","status":"pending","tags":["general"],"uuid":"4546a86e-cc54-4e72-9e3d-ff31bd423b29"}
+{"description":"fix pageup \/ down scrolling","entry":"20151031T205325Z","modified":"20151031T205325Z","status":"pending","tags":["tmux"],"uuid":"d25fcd4c-4566-4554-9cb3-f82ae60c9e7d"}
+{"description":"update prompt","entry":"20151031T205353Z","modified":"20151031T205353Z","status":"pending","tags":["shell"],"uuid":"64c693d5-afe1-469d-9441-5d937f6d89bc"}
+{"description":"fix italic font issue","entry":"20151031T225424Z","modified":"20151031T225424Z","status":"pending","tags":["tmux"],"uuid":"a34b806a-e998-4cf3-85ec-bc463a0ab070"}
