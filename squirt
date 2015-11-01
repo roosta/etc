@@ -3,4 +3,7 @@
 # this is a work in progress. I havn't gotten all the kinks worked out of the current setup.
 # Want to be able to use ansible itself but those calls quickly get quite unwieldy so decided to
 # do the handling this way for now
-ansible-playbook dotfiles.yml -t $@
+
+playbook=$HOME/.dotfiles/dotfiles.yml
+
+ansible-playbook $playbook -t $@
