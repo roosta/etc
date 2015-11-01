@@ -4,15 +4,15 @@ home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
 # define displays
-output_primary: "HDMI2"
-output_secondary: "eDP1"
+output0: "HDMI2"
+output1: "eDP1"
 
 # define fonts:
-font_i3: "pango: Essential PragmataPro 12px"
-font_status: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
+i3_font: "pango: Essential PragmataPro 12px"
+i3_status_font: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
 
-status_primary: "i3blocks -c ~/.i3/i3blocks/alli_primary.conf"
-status_secondary: "i3blocks -c ~/.i3/i3blocks/alli_secondary.conf"
+status0: "i3blocks -c ~/.i3/i3blocks/alli_primary.conf"
+status1: "i3blocks -c ~/.i3/i3blocks/alli_secondary.conf"
 
 # vim:ft=yaml:ts=2:sw=2
 
