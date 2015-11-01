@@ -33,3 +33,7 @@
 {"description":"check out freemind","entry":"20151101T152102Z","modified":"20151101T152102Z","status":"pending","tags":["general"],"uuid":"217dc856-0133-4829-9f2f-569bba673b16"}
 {"description":"fix italic font issue","end":"20151101T180404Z","entry":"20151031T225424Z","modified":"20151101T180404Z","status":"completed","tags":["tmux"],"uuid":"a34b806a-e998-4cf3-85ec-bc463a0ab070"}
 {"description":"AUR setup","end":"20151101T180424Z","entry":"20151030T194954Z","modified":"20151101T180425Z","status":"deleted","tags":["ansible"],"uuid":"02765a56-6ad7-473a-9f7e-2f05a75e4794"}
+{"description":"update userchrome with blue colors and 5px border - bottom","entry":"20151101T192643Z","modified":"20151101T192643Z","status":"pending","tags":["general"],"uuid":"c46f206c-56e6-472c-9420-ae7491383e20"}
+{"description":"fix check for exec tasksh","entry":"20151101T192804Z","modified":"20151101T192804Z","status":"pending","tags":["ansible"],"uuid":"ce6d3fb0-5e49-4f21-9dc8-d1a429c649b5"}
+{"description":"add check for bin","entry":"20151101T192815Z","modified":"20151101T192815Z","status":"pending","tags":["ansible"],"uuid":"ecdaf9de-2011-486a-899a-80177cdbee94"}
+{"description":"git clone and link cljs lightsOn","entry":"20151101T194408Z","modified":"20151101T194408Z","status":"pending","tags":["ansible"],"uuid":"9c82e82c-20af-4dca-b515-09a95d54021d"}

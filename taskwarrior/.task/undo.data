@@ -115,3 +115,15 @@ time 1446401065
 old [description:"AUR setup" entry:"1446234594" modified:"1446234594" status:"pending" tags:"ansible" uuid:"02765a56-6ad7-473a-9f7e-2f05a75e4794"]
 new [description:"AUR setup" end:"1446401064" entry:"1446234594" modified:"1446401065" status:"deleted" tags:"ansible" uuid:"02765a56-6ad7-473a-9f7e-2f05a75e4794"]
 ---
+time 1446406003
+new [description:"update userchrome with blue colors and 5px border - bottom" entry:"1446406003" modified:"1446406003" status:"pending" tags:"general" uuid:"c46f206c-56e6-472c-9420-ae7491383e20"]
+---
+time 1446406084
+new [description:"fix check for exec tasksh" entry:"1446406084" modified:"1446406084" status:"pending" tags:"ansible" uuid:"ce6d3fb0-5e49-4f21-9dc8-d1a429c649b5"]
+---
+time 1446406095
+new [description:"add check for bin" entry:"1446406095" modified:"1446406095" status:"pending" tags:"ansible" uuid:"ecdaf9de-2011-486a-899a-80177cdbee94"]
+---
+time 1446407048
+new [description:"git clone and link cljs lightsOn" entry:"1446407048" modified:"1446407048" status:"pending" tags:"ansible" uuid:"9c82e82c-20af-4dca-b515-09a95d54021d"]
+---

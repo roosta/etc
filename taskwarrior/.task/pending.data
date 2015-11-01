@@ -16,3 +16,7 @@
 [description:"update prompt" entry:"1446324833" modified:"1446324833" status:"pending" tags:"shell" uuid:"64c693d5-afe1-469d-9441-5d937f6d89bc"]
 [description:"Remove udisk polkit rules?" entry:"1446389749" modified:"1446389749" status:"pending" tags:"general" uuid:"7c6ce102-d999-46e3-adf2-22a141b53293"]
 [description:"check out freemind" entry:"1446391262" modified:"1446391262" status:"pending" tags:"general" uuid:"217dc856-0133-4829-9f2f-569bba673b16"]
+[description:"update userchrome with blue colors and 5px border - bottom" entry:"1446406003" modified:"1446406003" status:"pending" tags:"general" uuid:"c46f206c-56e6-472c-9420-ae7491383e20"]
+[description:"fix check for exec tasksh" entry:"1446406084" modified:"1446406084" status:"pending" tags:"ansible" uuid:"ce6d3fb0-5e49-4f21-9dc8-d1a429c649b5"]
+[description:"add check for bin" entry:"1446406095" modified:"1446406095" status:"pending" tags:"ansible" uuid:"ecdaf9de-2011-486a-899a-80177cdbee94"]
+[description:"git clone and link cljs lightsOn" entry:"1446407048" modified:"1446407048" status:"pending" tags:"ansible" uuid:"9c82e82c-20af-4dca-b515-09a95d54021d"]
