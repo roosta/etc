@@ -21,3 +21,4 @@
 [description:"add check for bin" entry:"1446406095" modified:"1446406095" status:"pending" tags:"ansible" uuid:"ecdaf9de-2011-486a-899a-80177cdbee94"]
 [description:"git clone and link cljs lightsOn" entry:"1446407048" modified:"1446407048" status:"pending" tags:"ansible" uuid:"9c82e82c-20af-4dca-b515-09a95d54021d"]
 [description:"add irssi setup with gpg decrypt pam" entry:"1446415155" modified:"1446415155" status:"pending" tags:"ansible" uuid:"1f9bb0f2-8ac4-4060-9bf1-dd7ef59c8e11"]
+[description:"add taskwarrior sync" entry:"1446489429" modified:"1446489429" status:"pending" tags:"general" uuid:"73bc72cc-a69b-47ff-9c1f-cdaef40175d8"]

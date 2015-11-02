@@ -22,8 +22,11 @@
 # fast way to reach power settings for system. Requires polkit.
 set $locker xscreensaver-command --lock
 
-# Have to call a script to open urxvt in tmux. See script for details
-set $term urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
+# TODO: fix script
+# ~~~Have to call a script to open urxvt in tmux. See script for details~~~
+# tmux new-session -n$USER -s$USER@$HOSTNAME
+set $tmux_attach urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
+set $tmux_new urxvtc -e bash -c "tmux new-session"
 
 # set scrot/screenshot file arguments
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
@@ -34,6 +37,7 @@ set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S
 
 #exec urxvtc
 exec $term
+exec scudcloud
 #exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
 #exec firefox
 #exec thunderbird
@@ -143,6 +147,8 @@ assign [class="(?i)steam"]               $TWS2_GAM
 assign [class="(?i)spotify"]             $TWS1_MED
 assign [class="(?i)pidgin"]              $SWS2_COM
 assign [class="(?i)linphone"]            $SWS2_COM
+assign [class="(?i)scudcloud"]           $SWS2_COM
+
 #assign [name="(?i)\b(?i)slack"]          $SWS2_COM
 #assign [class="(?i)gimp"]                $PWS2_DEV
 #assign [class="(?i)urxvt"]               $PWS1_TRM
@@ -180,7 +186,8 @@ set $mod Mod4
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec $tmux_attach
+bindsym $mod+Shift+Return exec $tmux_new
 
 # kill focused window
 bindsym $mod+c kill
