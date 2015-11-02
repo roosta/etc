@@ -25,11 +25,13 @@ set $locker xscreensaver-command --lock
 # TODO: fix script
 # ~~~Have to call a script to open urxvt in tmux. See script for details~~~
 # tmux new-session -n$USER -s$USER@$HOSTNAME
-set $tmux_attach urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
-set $tmux_new urxvtc -e bash -c "tmux new-session"
+set $tmux_attach urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
+set $tmux_new urxvtc -e bash -c "tmux new-session -n$USER -s$USER@$HOSTNAME"
 
 # set scrot/screenshot file arguments
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
+
+set $fullreload urxvtc -e bash -c "ansible-playbook $HOME/.dotfiles/dotfiles.yml i3 && i3-msg reload"
 
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
 # │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
@@ -147,8 +149,6 @@ assign [class="(?i)spotify"]             $TWS1_MED
 assign [class="(?i)pidgin"]              $SWS2_COM
 assign [class="(?i)linphone"]            $SWS2_COM
 assign [class="(?i)scudcloud"]           $SWS2_COM
-
-#assign [name="(?i)\b(?i)slack"]          $SWS2_COM
 #assign [class="(?i)gimp"]                $PWS2_DEV
 #assign [class="(?i)urxvt"]               $PWS1_TRM
 
@@ -219,24 +219,16 @@ bindsym $mod+Shift+Right move right
 # choose split direction.
 bindsym $mod+v split v
 bindsym $mod+Shift+v split h
-
-# enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-
-# change container layout
 bindsym $mod+Control+Shift+t layout tabbed
-bindsym $mod+Shift+t         layout toggle split
-bindsym $mod+t               layout toggle
-
-# toggle tiling / floating
+bindsym $mod+Shift+t layout toggle split
+bindsym $mod+t layout toggle
 bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# reload the configuration file
 bindsym $mod+Shift+c reload
-bindsym $mod+Control+Shift+c reload
+
+# regenerate i3 conf and reload
+bindsym $mod+Control+Shift+c exec $fullreload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart

@@ -1,6 +1,6 @@
 ---
 - name: Create i3 config from template
-  template: src={{ dotfiles }}/i3/config.j2 dest={{ dotfiles }}/i3/config.gen backup=yes
+  template: src={{ dotfiles }}/i3/config.j2 dest={{ dotfiles }}/i3/config.gen backup=no
 
 - name: Symlink i3 configuration
   file: dest={{ home }}/.i3 src={{ dotfiles }}/i3 state=link
