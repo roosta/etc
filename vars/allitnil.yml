@@ -7,12 +7,15 @@ dotfiles: "{{home}}/.dotfiles"
 output0: "HDMI2"
 output1: "eDP1"
 
-# define fonts:
+font_location: "{{home}}/.fonts/misc"
+
+# i3-wm
+# -----
 i3_font: "pango: Essential PragmataPro 12px"
 i3_status_font: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
 
-status0: "i3blocks -c ~/.i3/i3blocks/alli_primary.conf"
-status1: "i3blocks -c ~/.i3/i3blocks/alli_secondary.conf"
+status0: "i3blocks -c ~/.i3/i3blocks/allitnil/output0.i3b"
+status1: "i3blocks -c ~/.i3/i3blocks/allitnil/output1.i3b"
 
 # vim:ft=yaml:ts=2:sw=2
 

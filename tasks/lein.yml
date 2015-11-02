@@ -1,4 +1,4 @@
 ---
 # Setup leiningen config. Relies on AUR package!
 - name: Symlink "lein" configuration
-  file: dest={{ home }}/.lein src={{ dotfiles }}/lein state=link
+  file: dest={{ home }}/.lein/profiles.clj src={{ dotfiles }}/lein/profiles.clj state=link

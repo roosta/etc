@@ -23,7 +23,9 @@
 set $locker xscreensaver-command --lock
 
 # Have to call a script to open urxvt in tmux. See script for details
-set $term urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
+# -n$USER -s$USER@$HOSTNAME
+set $tmux_attach urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
+set $tmux_new urxvt -e bash -c "tmux new-session"
 
 # set scrot/screenshot file arguments
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
@@ -33,7 +35,7 @@ set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S
 # ┘ ┆┆─┘ ┆ ┘─┘──┘ ┆ ┘ ┆┆└┘ ┆
 
 #exec urxvtc
-exec $term
+exec $tmux_attach
 #exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
 #exec firefox
 #exec thunderbird
@@ -180,7 +182,7 @@ set $mod Mod4
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym $mod+Return exec $term
+bindsym $mod+Return exec $tmux_attach
 
 # kill focused window
 bindsym $mod+c kill
@@ -399,8 +401,7 @@ bar {
 
 {%- if ansible_hostname == "allitnil" %}
 {{ render_bar("bar-0", output0, status0, output0) }}
-{{ render_bar("bar-1", output1, status1) }}
-{{ render_bar("bar-2", output2, status2) }}
+{{ render_bar("bar-1", output1, status1, output1) }}
 {% endif -%}
 
 # vim:ft=i3:ts=2:sw=2
