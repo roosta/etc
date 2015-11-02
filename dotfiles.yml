@@ -22,7 +22,7 @@
     - include: tasks/boxes.yml tags=boxes,all
     - include: tasks/compton.yml tags=compton,all
     - include: tasks/ctags.yml tags=ctags,all
-    - include: tasks/dircolors.yml tags=dircolors,ls_colors,LS_COLORS,all
+    - include: tasks/dircolors.yml tags=dircolors,all
     - include: tasks/dunst.yml tags=dunst,all
     - include: tasks/firefox.yml tags=firefox,all
     - include: tasks/themes.yml tags=themes,graphics,all
@@ -34,4 +34,5 @@
     - include: tasks/zsh.yml tags=zsh,shell,term,all
     - include: tasks/colors.yml tags=colors,shell,term,all
     - include: tasks/scripts.yml tags=scripts,shell,term,all
+    - include: tasks/lein.yml tags=lein,all
 
