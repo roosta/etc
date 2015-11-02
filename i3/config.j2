@@ -36,8 +36,7 @@ set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S
 # ┘ ┆┆─┘ ┆ ┘─┘──┘ ┆ ┘ ┆┆└┘ ┆
 
 #exec urxvtc
-exec $term
-exec scudcloud
+exec $tmux_attach
 #exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
 #exec firefox
 #exec thunderbird
@@ -406,8 +405,7 @@ bar {
 
 {%- if ansible_hostname == "allitnil" %}
 {{ render_bar("bar-0", output0, status0, output0) }}
-{{ render_bar("bar-1", output1, status1) }}
-{{ render_bar("bar-2", output2, status2) }}
+{{ render_bar("bar-1", output1, status1, output1) }}
 {% endif -%}
 
 # vim:ft=i3:ts=2:sw=2

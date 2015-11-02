@@ -96,6 +96,11 @@ set tags+=./.tags
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+" 1 or 0 -> blinking block
+" 3 -> blinking underscore
+" Recent versions of xterm (282 or above) also support
+" 5 -> blinking vertical bar
+" 6 -> solid vertical bar
 
 " Always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside
