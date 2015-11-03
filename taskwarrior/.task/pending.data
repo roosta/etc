@@ -22,3 +22,6 @@
 [description:"git clone and link cljs lightsOn" entry:"1446407048" modified:"1446407048" status:"pending" tags:"ansible" uuid:"9c82e82c-20af-4dca-b515-09a95d54021d"]
 [description:"add irssi setup with gpg decrypt pam" entry:"1446415155" modified:"1446415155" status:"pending" tags:"ansible" uuid:"1f9bb0f2-8ac4-4060-9bf1-dd7ef59c8e11"]
 [description:"add taskwarrior sync" entry:"1446489429" modified:"1446489429" status:"pending" tags:"general" uuid:"73bc72cc-a69b-47ff-9c1f-cdaef40175d8"]
+[description:"finish squirt first draft" entry:"1446500610" modified:"1446500610" status:"pending" tags:"ansible" uuid:"c5b37cbd-37a6-4292-807b-610b400eda43"]
+[description:"add gtk bookmark host spesific" entry:"1446537489" modified:"1446537489" status:"pending" tags:"ansible" uuid:"40dc7ba9-d237-4da1-bda2-7428aeea44f0"]
+[description:"fix v fasd alias" entry:"1446537796" modified:"1446537796" status:"pending" tags:"shell" uuid:"56acf579-1da2-4c3e-9cc2-362092040ba2"]

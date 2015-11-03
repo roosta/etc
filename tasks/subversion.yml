@@ -1,0 +1,4 @@
+---
+# Setup ls++ config. Relies on AUR package!
+- name: Symlink "Subversion" configuration
+  file: dest={{ home }}/.subversion src={{ dotfiles }}/subversion state=link

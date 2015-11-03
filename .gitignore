@@ -2,7 +2,7 @@ icons/
 
 # music
 mpd/.config/mpd/mpd.log
-ncmpcpp/.ncmpcpp/error.log
+ncmpcpp/error.log
 
 # ranger
 ranger/.config/ranger/bookmarks

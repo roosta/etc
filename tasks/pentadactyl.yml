@@ -1,0 +1,6 @@
+---
+- name: Symlink "pentadactyl" config to home
+  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/pentadactyl/{{ item }} state=link
+  with_items:
+    - .pentadactylrc
+    - .pentadactyl
