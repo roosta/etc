@@ -37,13 +37,13 @@
 !#define FONT_BOLDITALIC xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Bold\ Italic
 
 ! define xft fallbacks
-Xft.antialias: 1
-Xft.autohint: 0
-Xft.dpi: 96
-Xft.hinting: 1
-Xft.hintstyle: hintfull
-Xft.lcdfilter: lcddefault
-Xft.rgba: rgb
+!Xft.antialias: 0
+!Xft.autohint: 0
+!Xft.dpi: 96
+!Xft.hinting: 1
+!Xft.hintstyle: hintfull
+!Xft.lcdfilter: lcddefault
+!Xft.rgba: rgb
 
 ! ┬─┐┐ │┐ ┬┌┐┐  ┬ ┐┌┐┐o┌─┐┌─┐┬─┐┬─┐
 ! │┬┘┌┼┘│┌┘ │ ──│ ││││││  │ ││ │├─
@@ -71,6 +71,9 @@ URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.rend.0: Uline Bold fg5
+
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 ! Meta (Alt) + keypress to set the 8th bit
 URxvt*meta8: true
