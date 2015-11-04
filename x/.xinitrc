@@ -85,8 +85,8 @@ $HOME/.scripts/touchpad-toggle.sh
 
 # set display layout
 
-xrandr --output HDMI2 --primary --auto --pos 0x0 \
-       --output eDP1 --auto --left-of HDMI2
+#xrandr --output HDMI2 --primary --auto --pos 0x0 \
+       #--output eDP1 --auto --left-of HDMI2
 
 # screen locker
 xss-lock -- xscreensaver-command -lock &
