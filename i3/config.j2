@@ -136,41 +136,55 @@ hide_edge_borders none
 # ││││││││ ││ ││││  │┬┘│ ││  ├─ └─┐
 # └┴┆┆┆└┘┆─┘┘─┘└┴┆  ┆└┘┆─┘┆─┘┴─┘──┘
 
-# workspace assignment
+# WINDOW WORKSPACE ASSIGNMENT
+# ---------------------------
+# -> devel
 assign [class="(?i)subl3"]               $PWS2_DEV
+assign [class="(?i)jetbrains-idea"]      $SWS2_DEV
 assign [class="(?i)atom"]                $PWS2_DEV
-assign [class="(?i)firefox"]             $PWS3_WWW
-assign [instance="^Devtools$$"]          $SWS3_DBG
-assign [class="(?i)thunderbird"]         $SWS2_COM
-assign [class="(?i)google-chrome$"]      $TWS1_MED
+#assign [class="(?i)gimp"]                $PWS2_DEV
+
+# -> debug
 assign [class="(?i)google-chrome-beta$"] $SWS3_DBG
+assign [instance="^Devtools$$"]          $SWS3_DBG
+
+# -> www
+assign [class="(?i)firefox"]             $PWS3_WWW
+
+# -> games
 assign [class="(?i)steam"]               $TWS2_GAM
+
+# -> media
 assign [class="(?i)spotify"]             $TWS1_MED
+assign [class="(?i)google-chrome$"]      $TWS1_MED
+
+# -> Comms
 assign [class="(?i)pidgin"]              $SWS2_COM
 assign [class="(?i)linphone"]            $SWS2_COM
 assign [class="(?i)scudcloud"]           $SWS2_COM
-#assign [class="(?i)gimp"]                $PWS2_DEV
-#assign [class="(?i)urxvt"]               $PWS1_TRM
+assign [class="(?i)thunderbird"]         $SWS2_COM
 
-# floating default
-for_window [window_role="pop-up"]       floating enable
-for_window [window_role="task_dialog"]  floating enable
-for_window [window_role="bubble"]       floating enable
-for_window [window_role="Preferences"]  floating enable
-for_window [title="Preferences$"]       floating enable
-for_window [class="(?i)Jitsi"]          floating enable
-for_window [class="(?i)SessionManager"] floating enable
-for_window [title="(?i)Friends"]        floating enable
-for_window [class="(?i)Linphone"]       floating enable
+# WINDOW BEHAVIOUR
+# ----------------
+for_window [window_role="pop-up"]                floating enable
+for_window [window_role="task_dialog"]           floating enable
+for_window [window_role="bubble"]                floating enable
+for_window [window_role="Preferences"]           floating enable
+for_window [title="Preferences$"]                floating enable
+for_window [class="(?i)Jitsi"]                   floating enable
+for_window [class="(?i)SessionManager"]          floating enable
+for_window [title="(?i)Friends"]                 floating enable
+for_window [class="(?i)Linphone"]                floating enable
 for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
-#for_window [class="(?i)Pidgin"]                  floating enable
+for_window [class="(?i)Pidgin"]                  floating enable
 #for_window [class="(?i)thunderbird"]             floating enable
-#for_window [class="(?i)Steam*"]         floating enable
 
-# window size
-#for_window [class="(?i)Pidgin"]                  floating_maximum_size 50 x 75
+# WINDOW SIZE
+# -----------
+for_window [class="(?i)Pidgin"]                  floating_maximum_size 50 x 75
 
-# no border
+# BORDER
+# ------
 for_window [class="(?i)firefox"]                border none
 for_window [class="(?i)google-chrome$"]         border none
 for_window [class="(?i)PrisonArchitect.x86_64"] border none

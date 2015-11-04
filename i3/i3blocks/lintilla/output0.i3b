@@ -65,7 +65,6 @@ interval=30
 
 [cpu_usage]
 label=Ï
-command=/usr/lib/i3blocks/$BLOCK_NAME
 interval=10
 color=#679C69
 min_width=100.00%

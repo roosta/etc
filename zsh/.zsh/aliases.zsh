@@ -143,8 +143,8 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias c='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zi='fasd_cd -d -i' # cd with interactive selection
 alias ci='fasd_cd -d -i' # cd with interactive selection
-#alias v='f -e vim'       # quick opening files with vim
-alias v='f -t -e vim -b viminfo'
+alias v='f -e vim'       # quick opening files with vim
+#alias v='f -t -e vim -b viminfo'
 
 # ┐─┐┬─┐┌─┐┬ ┐┬─┐o┌┐┐┐ ┬
 # └─┐├─ │  │ ││┬┘│ │ └┌┘

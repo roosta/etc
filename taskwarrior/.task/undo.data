@@ -145,3 +145,15 @@ new [description:"fix v fasd alias" entry:"1446537796" modified:"1446537796" sta
 time 1446634997
 new [description:"seaf passwd" entry:"1446634997" modified:"1446634997" status:"pending" tags:"sec" uuid:"81eba438-9693-4248-819c-1458b39f0894"]
 ---
+time 1446660069
+old [description:"Test WOL setup" entry:"1446233087" modified:"1446234042" status:"pending" tags:"lintilla" uuid:"e124cc73-1d02-4c0b-92e6-2ad4009e5831"]
+new [description:"check if avahi is still needed" entry:"1446233087" modified:"1446660069" status:"pending" tags:"lintilla" uuid:"e124cc73-1d02-4c0b-92e6-2ad4009e5831"]
+---
+time 1446660101
+old [description:"check if avahi is still needed" entry:"1446233087" modified:"1446660069" status:"pending" tags:"lintilla" uuid:"e124cc73-1d02-4c0b-92e6-2ad4009e5831"]
+new [description:"Test WOL setup" entry:"1446233087" modified:"1446660101" status:"pending" tags:"lintilla" uuid:"e124cc73-1d02-4c0b-92e6-2ad4009e5831"]
+---
+time 1446660114
+old [description:"cehck if avahi is still needed" entry:"1446233204" modified:"1446234089" status:"pending" tags:"general" uuid:"58307912-9471-4e4a-ad82-6250675f13d3"]
+new [description:"check if avahi is still needed" entry:"1446233204" modified:"1446660114" status:"pending" tags:"general" uuid:"58307912-9471-4e4a-ad82-6250675f13d3"]
+---

@@ -1,8 +1,7 @@
 ---
-# This playbook deploys the whole config stack to given target. Can run one or more tasks by spesifyint tags
 # Run ansible-playbook (-i hosts) (--limit <hostname>) dotfiles.yml (-t <tag>)
-
 - hosts: all
+
   vars_files:
     - vars/{{ ansible_hostname }}.yml
     - vars/gruvbox_palette.yml
@@ -16,8 +15,6 @@
     - include: tasks/pentadactyl.yml tags=pentadactyl,browser,all
 
       # desktop group
-    - include: tasks/git.yml         tags=git,vcs,all
-    - include: tasks/subversion.yml  tags=subversion,svn,vcs,all
     - include: tasks/themes.yml      tags=themes,desktop,gtk,all
     - include: tasks/gtk.yml         tags=gtk,desktop,all
     - include: tasks/dunst.yml       tags=dunst,desktop,all
@@ -42,4 +39,7 @@
     - include: tasks/ncmpcpp.yml     tags=ncmpcpp,media,all
     - include: tasks/npm.yml         tags=npm,all
     - include: tasks/ctags.yml       tags=ctags,all
+    - include: tasks/git.yml         tags=git,vcs,all
+    - include: tasks/subversion.yml  tags=subversion,svn,vcs,all
+    - include: tasks/idea.yml        tags=idea,editor,all
 

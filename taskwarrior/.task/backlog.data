@@ -43,3 +43,6 @@
 {"description":"add gtk bookmark host spesific","entry":"20151103T075809Z","modified":"20151103T075809Z","status":"pending","tags":["ansible"],"uuid":"40dc7ba9-d237-4da1-bda2-7428aeea44f0"}
 {"description":"fix v fasd alias","entry":"20151103T080316Z","modified":"20151103T080316Z","status":"pending","tags":["shell"],"uuid":"56acf579-1da2-4c3e-9cc2-362092040ba2"}
 {"description":"seaf passwd","entry":"20151104T110317Z","modified":"20151104T110317Z","status":"pending","tags":["sec"],"uuid":"81eba438-9693-4248-819c-1458b39f0894"}
+{"description":"check if avahi is still needed","entry":"20151030T192447Z","modified":"20151104T180109Z","status":"pending","tags":["lintilla"],"uuid":"e124cc73-1d02-4c0b-92e6-2ad4009e5831"}
+{"description":"Test WOL setup","entry":"20151030T192447Z","modified":"20151104T180141Z","status":"pending","tags":["lintilla"],"uuid":"e124cc73-1d02-4c0b-92e6-2ad4009e5831"}
+{"description":"check if avahi is still needed","entry":"20151030T192644Z","modified":"20151104T180154Z","status":"pending","tags":["general"],"uuid":"58307912-9471-4e4a-ad82-6250675f13d3"}
