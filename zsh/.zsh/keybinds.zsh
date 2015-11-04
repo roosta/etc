@@ -61,8 +61,8 @@ bindkey '^X^F' fasd-complete-f  # C-x C-f to do fasd-complete-f (only files)
 bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directories)
 
 bindkey ' ' magic-space # [Space] - do history expansion
-#bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
-#bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
+bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
+bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
 
 # [Shift-Tab] - move through the completion menu backwards
 if [[ "${terminfo[kcbt]}" != "" ]]; then

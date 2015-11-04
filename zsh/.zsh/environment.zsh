@@ -11,8 +11,10 @@ export RANGER_LOAD_DEFAULT_RC="false"
 
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-export TERM="tmux-256color"
+#export TERM="tmux-256color"
 
+export DESKTOP_SESSION=gnome
+export QT_STYLE_OVERRIDE=GTK+
 export EDITOR=vim
 export VISUAL=vim
 

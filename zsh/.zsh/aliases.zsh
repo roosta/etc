@@ -180,7 +180,7 @@ alias pacorm="sudo aura -Oj" # remove all orphan packages.
 
 
 # management
-alias pacclean="pacman -Scc" # Clean cache - delete all the package files in the cache
+alias pacclean="sudo pacman -Scc" # Clean cache - delete all the package files in the cache
 alias pacqs='pacman -Qs' # Search for package(s) in the local database
 alias pacqi='pacman -Qi' # Display information about a given package in the local database
 alias pacu='pacman -U' # Install specific package not from the repositories but from a file

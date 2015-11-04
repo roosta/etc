@@ -439,6 +439,7 @@ let g:ackprg = 'ag --vimgrep'
 " │  │ ││││││││─┤││││ │└─┐
 " └─┘┘─┘┘ ┆┘ ┆┘ ┆┆└┘┆─┘──┘
 
+" https://github.com/tpope/vim-fireplace/pull/222
 command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
 " ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
