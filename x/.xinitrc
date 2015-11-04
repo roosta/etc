@@ -1,17 +1,17 @@
 # vim:ft=sh
 #┌─────────────────────────────────────┐
-#│░░░░░░░░░░█░█░▀█▀░█▀█░▀█▀░▀█▀░░░░░░░░│
-#│░░░░░░░░░░▄▀▄░░█░░█░█░░█░░░█░░░░░░░░░│
-#│░░░░░░░░░░▀░▀░▀▀▀░▀░▀░▀▀▀░░▀░░░░░░░░░│
-#├─────────────────────────────────────┤
-#│ Author : Roosta <mail@roosta.sh>    │
-#│ Site   : http://dotfiles.roosta.sh  │
-#│ Github : https://github.com/roosta  │
-#└─────────────────────────────────────┘
-
-# o┌┐┐o┌┐┐o┬─┐┬  o┌─┐┬─┐
-# │││││ │ ││─┤│  │┌─┘├─
-# ┆┆└┘┆ ┆ ┆┘ ┆┆─┘┆└─┘┴─┘
+#│▀▀▀▀░░░░░█░█░▀█▀░█▀█░▀█▀░▀█▀░░░░░▀▀▀▀│
+#│▀▀▀▀░░░░░▄▀▄░░█░░█░█░░█░░░█░░░░░░▀▀▀▀│
+#│▀▀▀▀░░░░░▀░▀░▀▀▀░▀░▀░▀▀▀░░▀░░░░░░▀▀▀▀│
+#│█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█│
+#│█ author: roosta <mail@roosta.sh>   █│
+#│█ site  : http://dotfiles.roosta.sh █│
+#│█ github: https://github.com/roosta █│
+#└───────────┬─────────────────────────┘
+# ┌──────────┘
+# │ o┌┐┐o┌┐┐o┬─┐┬  o┌─┐┬─┐
+# │ │││││ │ ││─┤│  │┌─┘├─
+# ┆ ┆┆└┘┆ ┆ ┆┘ ┆┆─┘┆└─┘┴─┘
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -51,9 +51,6 @@ xset fp rehash &
 
 # set background with feh
 $HOME/.fehbg &
-
-# watch for udisks2 mounts
-#$HOME/bin/devwatch &
 
 # init gnome-keyring.
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

@@ -13,7 +13,6 @@
 " │ https://github.com/trapd00r/configs/tree/master/vim
 " ┆
 
-" use vim settings, rather than vi settings
 " must be first, because it changes other options as a side effect
 if &compatible
   set nocompatible
@@ -22,12 +21,6 @@ endif
 " ┌─┐┬─┐┌┐┐o┌─┐┌┐┐┐─┐
 " │ ││─┘ │ ││ ││││└─┐
 " ┘─┘┆   ┆ ┆┘─┘┆└┘──┘
-
-" using EasyClip. See Plugins
-"set clipboard=unnamed " set same clipboard for vim and X
-"set paste
-
-" set autowrite
 
 " maintain undo history between sessions
 set undofile
@@ -40,8 +33,9 @@ set noswapfile
 set wildmenu " command line completion
 set wildmode=longest,list,full
 set wildignorecase
-"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,*/dist/*,*/undo/*,
-      "\*/out/*,*/.repl*,*/.cljs_rhino_repl/*,*/_site/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
+               \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
+               \*/_site/*
 
 " fix backspace behaviour
 set backspace=indent,eol,start
@@ -74,8 +68,7 @@ set shiftwidth=2 " use indents of 2 spaces
 set tabstop=2 " use indents of 2 spaces
 set softtabstop=2 " let backspace delete indent
 
-" searching
-"set hlsearch " using easymotion for hl
+" SEARCHING
 set incsearch
 set ignorecase
 set smartcase
@@ -87,6 +80,13 @@ set fo-=o
 set relativenumber
 
 set tags+=./.tags
+
+" INACTIVE
+" --------
+"set clipboard=unnamed " set same clipboard for vim and X: using EasyClip. See Plugins
+"set paste
+"set hlsearch " using easymotion for hl
+"set autowrite
 
 " ┌─┐┬ ┐┬─┐┐─┐┌─┐┬─┐
 " │  │ ││┬┘└─┐│ ││┬┘
@@ -129,12 +129,14 @@ endif
 " ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘
 
 " Move across wrapped lines like regular lines
-noremap 0 ^ " Go to the first non-blank character of a line
-noremap ^ 0 " Just in case you need to go to the very beginning of a line
+"noremap 0 ^ " Go to the first non-blank character of a line
+"noremap ^ 0 " Just in case you need to go to the very beginning of a line
 
+" remove all trailing whitespace
 noremap <leader>cw :StripWhitespace<CR>
 
-" source config on deman
+" source config on demand
+" Note that this cause some plugin conf not to load properly if it has init logic
 noremap <c-w>r :source $MYVIMRC<CR>
 
 " Close all the buffers
@@ -143,7 +145,6 @@ map <leader>bn :bnext<CR>
 map <leader>bp :bprevious<CR>
 map <leader>bd :bdelete<CR>
 
-
 " Tab management
 map <leader>tn :tabnew<CR>
 map <leader>to :tabonly<CR>
@@ -151,16 +152,21 @@ map <leader>tc :tabclose<CR>
 " map <leader>tm :tabmove
 
 " Switch between Vim window splits
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Up>    :wincmd k<CR>
+nmap <silent> <A-Down>  :wincmd j<CR>
+nmap <silent> <A-Left>  :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
 " resize splits
-nnoremap <silent> <Leader><Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader><Leader>-:exe "resize " . (winheight(0) * 2/3)<CR>
-nnoremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+"nnoremap <C-w>Up    :exe "resize " .          (winheight(0) * 3/2)<CR>
+"nnoremap <C-w>Down  :exe "resize " .          (winheight(0) * 2/3)<CR>
+"nnoremap <C-w>Left  :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+"nnoremap <C-w>Right :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+
+"nnoremap <A-Up>    :normal <c-r>=SwitchWindow('+')<CR><CR>
+"nnoremap <A-Down>  :normal <c-r>=SwitchWindow('-')<CR><CR>
+"nnoremap <A-Left>  :normal <c-r>=SwitchWindow('<')<CR><CR>
+"nnoremap <A-Right> :normal <c-r>=SwitchWindow('>')<CR><CR>
 
 " ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
 " │─┘│  │ ││ ┬││││└─┐
@@ -226,8 +232,8 @@ call plug#end()
 syntax on
 filetype plugin indent on
 
-" ┆ Syntastic
-" └── ─ ─
+" SYNTASTIC
+" ---------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -238,15 +244,15 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
 
-" ┆ vim-multiple-cursor
-" └────────── ─ ─
+" VIM-MULTIPLE-CURSOR
+" -------------------
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" ┆ ctrlp
-" └────────── ─ ─
+" CTRL-P
+" -------
 let g:ctrlp_use_caching = 1
 let g:ctrlp_follow_symlinks = 1
 let g:ctrlp_working_path_mode = 'r'
@@ -282,7 +288,6 @@ let g:ctrlp_prompt_mappings = {
 
 " EASYMOTION
 " ----------
-
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
 " resoning is that EM takes up such a huge amount of binds I wanted it to have
@@ -356,7 +361,7 @@ let g:EasyClipShareYanks = 1
 " GRUVBOX
 " -------
 " Set theme
-let g:gruvbox_italicize_comments = 1
+"let g:gruvbox_italicize_comments = 0
 let g:gruvbox_italic = 1
 colorscheme gruvbox
 set background=dark
@@ -472,7 +477,22 @@ endfunc
 
 nnoremap <leader><C-n> :call NumberToggle()<cr>
 
-
+" window switch function. Binds are added at keybinds sections
+function! SwitchWindow(dir)
+  let this = winnr()
+  if '+' == a:dir
+    execute "normal \<c-w>k"
+    elseif '-' == a:dir
+    execute "normal \<c-w>j"
+    elseif '>' == a:dir
+    execute "normal \<c-w>l"
+    elseif '<' == a:dir
+    execute "normal \<c-w>h"
+  else
+    echo "oops. check your ~/.vimrc"
+    return ""
+  endif
+endfunction
 
 
 

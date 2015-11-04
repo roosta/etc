@@ -25,3 +25,4 @@
 [description:"finish squirt first draft" entry:"1446500610" modified:"1446500610" status:"pending" tags:"ansible" uuid:"c5b37cbd-37a6-4292-807b-610b400eda43"]
 [description:"add gtk bookmark host spesific" entry:"1446537489" modified:"1446537489" status:"pending" tags:"ansible" uuid:"40dc7ba9-d237-4da1-bda2-7428aeea44f0"]
 [description:"fix v fasd alias" entry:"1446537796" modified:"1446537796" status:"pending" tags:"shell" uuid:"56acf579-1da2-4c3e-9cc2-362092040ba2"]
+[description:"seaf passwd" entry:"1446634997" modified:"1446634997" status:"pending" tags:"sec" uuid:"81eba438-9693-4248-819c-1458b39f0894"]

@@ -90,7 +90,7 @@ URxvt.secondaryScroll: 0
 
 URxvt*externalBorder: 0
 URxvt*internalBorder: 0
-
+!
 ! emulate XTerm for proper recognition of key combinations in Vim
 !URxvt.keysym.Up              : \033[A  !breaks arrow keys in Vim
 !URxvt.keysym.Down            : \033[B  !breaks arrow keys in Vim
@@ -112,8 +112,8 @@ URxvt.keysym.M-Up             : \033[1;3A
 URxvt.keysym.M-Down           : \033[1;3B
 URxvt.keysym.M-Right          : \033[1;3C
 URxvt.keysym.M-Left           : \033[1;3D
-!URxvt.keysym.M-Page_Up        : \033[5;3~
-!URxvt.keysym.M-Page_Down      : \033[6;3~
+URxvt.keysym.M-Page_Up        : \033[5;3~
+URxvt.keysym.M-Page_Down      : \033[6;3~
 URxvt.keysym.M-Home           : \033[1;3H
 URxvt.keysym.M-End            : \033[1;3F
 URxvt.keysym.M-S-Up           : \033[1;4A
@@ -144,8 +144,8 @@ URxvt.keysym.M-C-Up           : \033[1;7A
 URxvt.keysym.M-C-Down         : \033[1;7B
 URxvt.keysym.M-C-Right        : \033[1;7C
 URxvt.keysym.M-C-Left         : \033[1;7D
-!URxvt.keysym.M-C-Page_Up      : \033[5;7~
-!URxvt.keysym.M-C-Page_Down    : \033[6;7~
+URxvt.keysym.M-C-Page_Up      : \033[5;7~
+URxvt.keysym.M-C-Page_Down    : \033[6;7~
 URxvt.keysym.M-C-Home         : \033[1;7H
 URxvt.keysym.M-C-End          : \033[1;7F
 URxvt.keysym.M-C-S-Up         : \033[1;8A

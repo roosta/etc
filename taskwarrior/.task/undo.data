@@ -142,3 +142,6 @@ new [description:"add gtk bookmark host spesific" entry:"1446537489" modified:"1
 time 1446537796
 new [description:"fix v fasd alias" entry:"1446537796" modified:"1446537796" status:"pending" tags:"shell" uuid:"56acf579-1da2-4c3e-9cc2-362092040ba2"]
 ---
+time 1446634997
+new [description:"seaf passwd" entry:"1446634997" modified:"1446634997" status:"pending" tags:"sec" uuid:"81eba438-9693-4248-819c-1458b39f0894"]
+---
