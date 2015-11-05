@@ -20,4 +20,6 @@
   path = zsh/.zsh/plugins/zsh-history-substring-search
   url = https://github.com/zsh-users/zsh-history-substring-search.git
 
-
+[submodule "dircolors"]
+	path = dircolors
+	url = https://github.com/roosta/LS_COLORS.git

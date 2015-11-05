@@ -8,7 +8,7 @@
 eval "$(fasd --init auto)"
 
 # read dir colors
-eval $( dircolors -b $HOME/.dircolors/LS_COLORS )
+eval $( dircolors -b $HOME/.dircolors )
 
 # source the plugin https://github.com/zsh-users/zsh-syntax-highlighting
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
