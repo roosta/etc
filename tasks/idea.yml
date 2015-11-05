@@ -1,4 +1,8 @@
 ---
 # Setup leiningen config. Relies on AUR package!
 - name: Symlink "IntellijIdea" configuration
-  file: dest={{ home }}/.ideavimrc src={{ dotfiles }}/idea/.ideavimrc state=link
+  file: dest={{ home }}/{{ item.dest }} src={{ dotfiles }}/idea/{{ item.src }} state=link
+  with_items:
+    - { src: '.ideavimrc', dest: '.ideavimrc' }
+    - { src: 'config', dest: '.IntelliJIdea15/config' }
+

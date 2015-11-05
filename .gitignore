@@ -85,3 +85,5 @@ svn/*/README.txt
 
 /**/tmp
 gimp/sessionrc*
+
+/idea/config/eval/*
