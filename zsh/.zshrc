@@ -1,3 +1,4 @@
+# vim:ft=zsh:ts=2:sw=2
 # ┌─────────────────────────────────────┐
 # │▀▀▀░░░░░░▀▀█░█▀▀░█░█░█▀▄░█▀▀░░░░░░▀▀▀│
 # │▀▀▀▀▀░░░░▄▀░░▀▀█░█▀█░█▀▄░█░░░░░░▀▀▀▀▀│
@@ -20,7 +21,4 @@
 # │ https://dotfiles.github.io/
 # ┆
 for config (~/.zsh/*.zsh) source $config
-# vim:ft=zsh:ts=2:sw=2
-#
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
