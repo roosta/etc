@@ -1,8 +1,16 @@
-icons/
-
-# music
-mpd/.config/mpd/mpd.log
-ncmpcpp/error.log
+# temporary files
+*tmp*
+*cache*
+*deprecated*
+*.old
+*.bak
+*.*~
+.*.swp
+.DS_Store
+backup/*
+/**/tmp
+gimp/sessionrc*
+gimp/gimpswap.*
 
 # ranger
 ranger/.config/ranger/bookmarks
@@ -11,19 +19,14 @@ ranger/.config/ranger/colorschemes/__pycache__/**
 ranger/.config/ranger/history
 ranger/.config/ranger/tagged
 
-vimperator/.vimperator/info/**
-
-# vim
+# vim/perator
 vim/.vim/undo/*
 vim/.vim/plugged/*
 vim/.vim/.netrwhist
 vim/backup/*
+vimperator/.vimperator/info/**
 
-*tmp*
-*cache*
-*deprecated*
-
-# sublime
+# sublime text
 *.last-run
 SublimeGit.sublime-settings
 *ca-bundle*
@@ -32,59 +35,46 @@ SublimeGit.sublime-settings
 base-16
 .bash_history
 
-# gui
+# GUI
 gtk/*/bookmarks
 gtk/*/gtkfilechooser.ini
 
-# ignore restricted fonts
+# fonts
 *PragmataPro*
 *Envy*
 
-.*.swp
-.DS_Store
-backup/*
-
-# keys
+# auth
 ssh/id*
 ssh/known_hosts
-subversion/README.txt
-subversion/auth/*
+subversion/auth/**
+svn/.subversion/auth/**
 gnupg/secring.gpg
 gnupg/random*
 gnupg/*~
 
+# Comms
+irssi/.irssi/*.pem
 centerim/*/
 centerim/pid
-
 mutt/cache/*
 mutt/smime/cetificates/*
 mutt/smime/keys/*
 
-irssi/.irssi/*.pem
-
-# svn
-svn/.subversion/auth/**
+# misc
+**/tags
+*.jar
+icons/
+*.gen
+mpd/.config/mpd/mpd.log
+ncmpcpp/error.log
+subversion/README.txt
 svn/*/README.txt
 
-# ctags
-**/tags
-
-# clj
-*.jar
-
-/i3/i3.config
-
-#ansible
-
-*.gen
-
-# backup files
-*.old
-*.bak
-*.*~
-
-/**/tmp
-gimp/sessionrc*
-
+# IntelliJ
 /idea/config/eval/*
-gimp/gimpswap.15497
+idea/config/options/usage.statistics.xml
+idea/config/options/statistics.application.usages.xml
+idea/config/options/feature.usage.statistics.xml
+idea/config/options/ClojureUsageStatistics.xml
+
+
