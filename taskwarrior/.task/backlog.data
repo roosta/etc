@@ -46,3 +46,4 @@
 {"description":"check if avahi is still needed","entry":"20151030T192447Z","modified":"20151104T180109Z","status":"pending","tags":["lintilla"],"uuid":"e124cc73-1d02-4c0b-92e6-2ad4009e5831"}
 {"description":"Test WOL setup","entry":"20151030T192447Z","modified":"20151104T180141Z","status":"pending","tags":["lintilla"],"uuid":"e124cc73-1d02-4c0b-92e6-2ad4009e5831"}
 {"description":"check if avahi is still needed","entry":"20151030T192644Z","modified":"20151104T180154Z","status":"pending","tags":["general"],"uuid":"58307912-9471-4e4a-ad82-6250675f13d3"}
+{"description":"fix gtk - 2.0 gruvix colors","entry":"20151105T111052Z","modified":"20151105T111052Z","status":"pending","tags":["general"],"uuid":"2ca617ed-143c-4962-b5b5-b4219f439585"}

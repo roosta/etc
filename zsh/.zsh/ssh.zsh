@@ -14,5 +14,5 @@
 #envoy -t ssh-agent
 #source <(envoy -p)
 #
-eval $(keychain --eval --nogui --noask --quiet id_rsa lint@github)
+eval $(keychain --eval --nogui --noask --quiet id_rsa)
 
