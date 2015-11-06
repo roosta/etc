@@ -21,7 +21,7 @@
     - include: tasks/i3.yml          tags=i3,desktop,all
     - include: tasks/background.yml  tags=background,bg,all
     - include: tasks/compton.yml     tags=compton,desktop,all
-    - include: tasks/fonts.yml       tags=fonts,all
+    - include: tasks/fonts.yml       tags=fonts
     - include: tasks/gimp.yml        tags=gimp,art,all
 
       # shell group
@@ -43,3 +43,4 @@
     - include: tasks/subversion.yml  tags=subversion,svn,vcs,all
     - include: tasks/idea.yml        tags=idea,editor,all
 
+    - include: tasks/taskwarrior.yml tags=tasks,taskwarrior,all

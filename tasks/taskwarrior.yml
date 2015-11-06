@@ -1,0 +1,6 @@
+---
+- name: Symlink taskwarrior data
+  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/taskwarrior/{{ item }} state=link
+  with_items:
+    - .taskrc
+    - .task
