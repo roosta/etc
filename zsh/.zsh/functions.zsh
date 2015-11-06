@@ -4,12 +4,12 @@
 # │░░░▀░░░▀▀▀░▀░▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░░░░│
 # └──────────────────────────────────────────┘
 
-# allow functions in the prompt
-setopt PROMPT_SUBST
+# source functions
+for funct (~/.zsh/functions/*.zsh) source $funct
 
 # autoload zsh functions
- fpath=(~/.zsh/functions $fpath)
- autoload -U ~/.zsh/functions/*(:t)
+#fpath=(~/.zsh/functions $fpath)
+#autoload -U ~/.zsh/functions/*(:t)
 
 # enable auto-execution of functions
 typeset -ga preexec_functions

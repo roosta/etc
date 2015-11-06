@@ -13,6 +13,9 @@ vim_ins_mode="INSERT"
 vim_cmd_mode="NORMAL"
 vim_mode=$vim_ins_mode
 
+# allow functions in the prompt
+setopt PROMPT_SUBST
+
 function zle-keymap-select {
   vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
   __promptline

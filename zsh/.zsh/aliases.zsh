@@ -6,10 +6,10 @@
 # │█░░  Author : Roosta <mail@roosta.sh>   ░░█│
 # │█░░  Site   : http://dotfiles.roosta.sh ░░█│
 # │█░░  Github : https://github.com/roosta ░░█│
-# └───┬───────────────────────────────────────┘
-#     │
-# ┌───┘
-# ┆
+# └───────────┬───────────────────────────────┘
+#  thanks to: │ 
+# ┌───────────┘
+# ┆ https://github.com/xero
 
 # ┐ ┬o┌┌┐
 # │┌┘││││
@@ -32,26 +32,17 @@ alias vibinds='vim ~/.xbindkeysrc'
 alias vivimp='vim ~/.vimperatorrc'
 alias vigtk='vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini'
 
-#alias vitodo='vim ~/todo.md'
-#alias todo='cat ~/todo.md'
-#alias mdtodo='atom ~/todo.md'
-
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │
 # ┆  ┆┆└┘┆─┘
 
-alias grep="ag -i"
+alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
+alias grep="ag"
 
-# locate an alias quickly
-alias grea="cat ~/.zsh/aliases.zsh | grep"
-
-# grep command history quickly
-alias greh="cat ~/.histfile | grep"
-
-alias greps="ps -aux|grep"
-
-# echo path variable
-alias lspath='echo -e ${PATH//:/\\n}'
+alias grea="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
+alias greh="cat ~/.histfile | grep" # grep command history quickly
+alias greps="ps -aux|grep" # grep processes
+alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
 # locate file at working dir
 alias gref='lsp -p|grep'
@@ -74,6 +65,7 @@ alias awk='gawk'
 alias mv=' timeout 8 mv -iv'
 alias rm=' timeout 3 rm -Iv --one-file-system'
 alias rmr='rm -r'
+alias rmrf="rm -rf"
 alias cp='cp -i'
 alias ln='ln -i'
 
@@ -260,6 +252,9 @@ alias tmux='tmux -2'
 alias ufw='sudo ufw'
 alias make='colormake'
 
+# https://github.com/xero/dotfiles/blob/master/zsh/.zsh/aliases.zsh
+alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
+
 # stow is always verbose
 alias stow='stow -v'
 
@@ -270,7 +265,8 @@ alias getkey='xev -event keyboard'
 alias logcolor='ccze'
 
 # utput from a command with xclip when this is piped in
-alias copy='xsel -i -p -b'
+#alias copy='xsel -i -p -b'
+alias copy="clipcopy" # see functions
 
 # print date in various formats
 alias gettime='date +"%T"'
@@ -286,10 +282,16 @@ alias df='df -h'
 alias dut='du -ht'
 
 alias updatedb='sudo updatedb'
-alias xfontsel='xfontsel -print|copy'
+alias xfontsel='xfontsel -print|clipcopy'
 
 alias ~~="$HOME/.backup/home/$USER"
 alias tasks="task"
+
+alias toiletlist='for i in ${TOILET_FONT_PATH:=/usr/share/figlet}/*.{t,f}lf; do j=${i##*/}; echo ""; echo "╓───── "$j; echo "╙────────────────────────────────────── ─ ─ "; echo ""; toilet -d "${i%/*}" -f "$j" "${j%.*}"; done'
+alias ascii="toilet -t -f 3d"
+alias future="toilet -t -f future"
+alias rusto="toilet -t -f rusto"
+alias rustofat="toilet -t -f rustofat"
 
 # ┐─┐┐ ┬┐─┐┌┐┐┬─┐┌┌┐
 # └─┐└┌┘└─┐ │ ├─ │││
@@ -411,3 +413,17 @@ alias cl='clear'
 # see: https://wiki.archlinux.org/index.php/Steam#Using_native_runtime
 alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
 
+# ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
+# ├─ │ │││││   │ ││ ││││└─┐
+# ┆  ┆─┘┆└┘└─┘ ┆ ┆┘─┘┆└┘──┘
+
+# do a quick spellcheck in terminal
+define () {
+  echo "$*"|aspell -a --suggest
+}
+
+# read markdown files like manpages
+# https://github.com/xero/dotfiles/blob/master/zsh/.zsh/aliases.zsh
+md () {
+    pandoc -s -f markdown -t man "$*" | man -l -
+}
