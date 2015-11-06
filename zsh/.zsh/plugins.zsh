@@ -10,8 +10,12 @@ eval "$(fasd --init auto)"
 # read dir colors
 eval $( dircolors -b $HOME/.dircolors )
 
-# source the plugin https://github.com/zsh-users/zsh-syntax-highlighting
-source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source https://github.com/zsh-users/zsh-syntax-highlighting
+#source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# source https://github.com/trapd00r/zsh-syntax-highlighting-filetypes
+# supports dircolors
+source $HOME/.zsh/plugins/zsh-syntax-highlighting-filetypes/zsh-syntax-highlighting-filetypes.zsh
 
 # source and configure history search
 source $HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh

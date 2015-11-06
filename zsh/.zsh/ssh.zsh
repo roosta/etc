@@ -4,6 +4,9 @@
 # │░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀░│
 # └───────────────────────────────────────┘
 
+# start keychain. Remove --noask if you want to add a key on shell startup
+eval $(keychain --eval --nogui --noask --agents ssh,gpg --quiet id_rsa lint@github)
+
 # Use gnome-keyring daemon for ssh keys
 #if [ -n "$DESKTOP_SESSION" ];then
     #eval $(gnome-keyring-daemon --start)
@@ -13,6 +16,11 @@
 # use envoy as a ssh-agent wrapper
 #envoy -t ssh-agent
 #source <(envoy -p)
-#
-eval $(keychain --eval --nogui --noask --quiet id_rsa)
+
+#keys="id_rsa"
+#if [[ -e "$HOME/.ssh/lint@github" ]]; then
+  #keys+=" lint@github"
+#fi
+#unset keys
+
 

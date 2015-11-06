@@ -4,20 +4,25 @@
 # │░░░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░░▀░░░░░│
 # └──────────────────────────────────────────────────┘
 
+# set paths.
+export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
 
-# set env to tell ranger not to use default config
-export RANGER_LOAD_DEFAULT_RC="false"
 
+# locate
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 #export TERM="xterm-256"
 
+# uniform qt/gtk look.
 export DESKTOP_SESSION=gnome
 export QT_STYLE_OVERRIDE=GTK+
+
+# editor
 export EDITOR=vim
 export VISUAL=vim
 
+# golang lib path
 export GOPATH=$HOME/.go
 
 export ZSH_CACHE_DIR=$HOME/.cache/zsh
@@ -26,15 +31,22 @@ export ZSH_CACHE_DIR=$HOME/.cache/zsh
 export PAGER=/usr/bin/vimpager
 export LESS=-R
 
+# alias less to vim pager
 alias less=$PAGER
 alias zless=$PAGER
 
-# fix display variable not beeing accessible with tty login...?
-#systemctl --user import-environment DISPLAY XAUTHORITY
+# set env to tell ranger not to use default config
+export RANGER_LOAD_DEFAULT_RC="false"
 
-export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$PATH
+# https://wiki.archlinux.org/index.php/NVIDIA#Gaming_using_TwinView
+# attempt to fix vsync issue with nvidia multiple displays
+export SDL_VIDEO_FULLSCREEN_HEAD=1
+export __GL_SYNC_TO_VBLANK=1
+export __GL_SYNC_DISPLAY_DEVICE=DFP-0
+export __VDPAU_NVIDIA_SYNC_DISPLAY_DEVICE=DFP-0
+#
+# cpan stuff
 #PATH="/home/daniel/perl5/bin${PATH+:}${PATH}"; export PATH;
-
 PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
