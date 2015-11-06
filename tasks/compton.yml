@@ -1,4 +1,4 @@
 ---
 # Setup compton. Relies on AUR package
 - name: Symlink compton configuration
-  file: path={{home}}/.config/compton src={{dotfiles}}/compton state=link
+  file: dest={{ home }}/.compton.conf src={{ dotfiles }}/compton/.compton.conf state=link
