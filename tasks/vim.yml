@@ -1,0 +1,6 @@
+---
+- name: Symlinking vim config...
+  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/vim/{{ item }} state=link
+  with_items:
+    - .vimrc
+    - .vim

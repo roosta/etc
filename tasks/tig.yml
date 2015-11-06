@@ -1,0 +1,4 @@
+---
+# Setup ls++ config. Relies on AUR package!
+- name: Symlink "tig" configuration
+  file: dest={{ home }}/.tigrc src={{ dotfiles }}/tig/.tigrc state=link

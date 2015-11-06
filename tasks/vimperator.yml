@@ -1,0 +1,6 @@
+---
+- name: Symlinking vim config...
+  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/vimperator/{{ item }} state=link
+  with_items:
+    - .vimperatorrc
+    - .vimperator
