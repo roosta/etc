@@ -13,6 +13,7 @@
       # browser group
     - include: tasks/firefox.yml     tags=firefox,browser,all
     - include: tasks/pentadactyl.yml tags=pentadactyl,browser,all
+    - include: tasks/vimperator.yml  tags=vimperator,browser,all
 
       # desktop group
     - include: tasks/themes.yml      tags=themes,desktop,gtk,all
@@ -22,25 +23,29 @@
     - include: tasks/background.yml  tags=background,bg,all
     - include: tasks/compton.yml     tags=compton,desktop,all
     - include: tasks/fonts.yml       tags=fonts
-    - include: tasks/gimp.yml        tags=gimp,art,all
 
       # shell group
     - include: tasks/dircolors.yml   tags=dircolors,all
     - include: tasks/zsh.yml         tags=zsh,shell,term,all
     - include: tasks/colors.yml      tags=colors,shell,term,all
     - include: tasks/scripts.yml     tags=scripts,shell,term,all
-    - include: tasks/ls++.yml        tags=ls++,dircolors,all
+    - include: tasks/ls++.yml        tags=ls++,dircolors,shell,all
     - include: tasks/bash.yml        tags=bash,shell,all
     - include: tasks/boxes.yml       tags=boxes,shell,all
     - include: tasks/fasd.yml        tags=fasd,shell,all
+    - include: tasks/tmux.yml        tags=tmux,shell,all
 
       # dev group
-    - include: tasks/lein.yml        tags=lein,dev,all
-    - include: tasks/ncmpcpp.yml     tags=ncmpcpp,media,all
-    - include: tasks/npm.yml         tags=npm,all
-    - include: tasks/ctags.yml       tags=ctags,all
-    - include: tasks/git.yml         tags=git,vcs,all
-    - include: tasks/subversion.yml  tags=subversion,svn,vcs,all
-    - include: tasks/idea.yml        tags=idea,editor,all
+    - include: tasks/lein.yml        tags=lein,clojure,dev,all
+    - include: tasks/npm.yml         tags=npm,dev,all
+    - include: tasks/ctags.yml       tags=ctags,dev,all
+    - include: tasks/git.yml         tags=git,dev,all
+    - include: tasks/subversion.yml  tags=subversion,svn,dev,all
+    - include: tasks/idea.yml        tags=idea,intellij,dev,all
+    - include: tasks/tig.yml         tags=tig,dev,all
+    - include: tasks/vim.yml         tags=vim,dev,all
 
+      # misc
     - include: tasks/taskwarrior.yml tags=tasks,taskwarrior,all
+    - include: tasks/ncmpcpp.yml     tags=ncmpcpp,all
+    - include: tasks/gimp.yml        tags=gimp,all

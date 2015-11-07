@@ -96,17 +96,6 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 zstyle ':completion:*:*:perl:*' file-patterns '*'
 
-# Method for quick change directories.
-rationalise-dot() {
-  if [[ $LBUFFER = *.. ]]; then
-    LBUFFER+=/..
-  else
-    LBUFFER+=.
-  fi
-}
-zle -N rationalise-dot
-bindkey . rationalise-dot
-
 # MRU
 zstyle ':completion:most-accessed-file:*' match-original both
 zstyle ':completion:most-accessed-file:*' file-sort access

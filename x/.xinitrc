@@ -103,7 +103,7 @@ $home/bin/lightsOn 590 &
 
 urxvtd -q -f -o &
 seaf-cli start &
-compton --config $HOME/.config/compton/compton.conf -b &
+compton -b &
 xscreensaver -no-splash &
 dunst &
 

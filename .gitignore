@@ -78,3 +78,5 @@ idea/config/options/feature.usage.statistics.xml
 idea/config/options/ClojureUsageStatistics.xml
 
 
+parasiterc
+gimp/menurc

@@ -160,3 +160,26 @@ new [description:"check if avahi is still needed" entry:"1446233204" modified:"1
 time 1446721852
 new [description:"fix gtk - 2.0 gruvix colors" entry:"1446721852" modified:"1446721852" status:"pending" tags:"general" uuid:"2ca617ed-143c-4962-b5b5-b4219f439585"]
 ---
+time 1446884340
+new [description:"clear directories before symlinking" entry:"1446884340" modified:"1446884340" status:"pending" tags:"ansible" uuid:"06f56d20-c635-4341-8abe-00d541f87891"]
+---
+time 1446897831
+old [description:"install \/ checkout git - extras" entry:"1446233177" modified:"1446234082" status:"pending" tags:"general" uuid:"bac58abf-7778-4ed7-be81-c93461d9e339"]
+new [description:"install \/ checkout git - extras" end:"1446897831" entry:"1446233177" modified:"1446897831" status:"completed" tags:"general" uuid:"bac58abf-7778-4ed7-be81-c93461d9e339"]
+---
+time 1446897873
+old [description:"Finish password process" entry:"1446235140" modified:"1446235140" status:"pending" tags:"general" uuid:"4546a86e-cc54-4e72-9e3d-ff31bd423b29"]
+new [description:"Finish password process" end:"1446897873" entry:"1446235140" modified:"1446897873" status:"completed" tags:"general" uuid:"4546a86e-cc54-4e72-9e3d-ff31bd423b29"]
+---
+time 1446897921
+old [description:"add check for bin" entry:"1446406095" modified:"1446406095" status:"pending" tags:"ansible" uuid:"ecdaf9de-2011-486a-899a-80177cdbee94"]
+new [description:"add check for bin" end:"1446897921" entry:"1446406095" modified:"1446897921" status:"completed" tags:"ansible" uuid:"ecdaf9de-2011-486a-899a-80177cdbee94"]
+---
+time 1446897934
+old [description:"Remove udisk polkit rules?" entry:"1446389749" modified:"1446389749" status:"pending" tags:"general" uuid:"7c6ce102-d999-46e3-adf2-22a141b53293"]
+new [description:"Remove udisk polkit rules?" end:"1446897934" entry:"1446389749" modified:"1446897934" status:"completed" tags:"general" uuid:"7c6ce102-d999-46e3-adf2-22a141b53293"]
+---
+time 1446897941
+old [description:"fix pageup \/ down scrolling" entry:"1446324805" modified:"1446324805" status:"pending" tags:"tmux" uuid:"d25fcd4c-4566-4554-9cb3-f82ae60c9e7d"]
+new [description:"fix pageup \/ down scrolling" end:"1446897941" entry:"1446324805" modified:"1446897941" status:"completed" tags:"tmux" uuid:"d25fcd4c-4566-4554-9cb3-f82ae60c9e7d"]
+---

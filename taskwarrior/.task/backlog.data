@@ -47,3 +47,9 @@
 {"description":"Test WOL setup","entry":"20151030T192447Z","modified":"20151104T180141Z","status":"pending","tags":["lintilla"],"uuid":"e124cc73-1d02-4c0b-92e6-2ad4009e5831"}
 {"description":"check if avahi is still needed","entry":"20151030T192644Z","modified":"20151104T180154Z","status":"pending","tags":["general"],"uuid":"58307912-9471-4e4a-ad82-6250675f13d3"}
 {"description":"fix gtk - 2.0 gruvix colors","entry":"20151105T111052Z","modified":"20151105T111052Z","status":"pending","tags":["general"],"uuid":"2ca617ed-143c-4962-b5b5-b4219f439585"}
+{"description":"clear directories before symlinking","entry":"20151107T081900Z","modified":"20151107T081900Z","status":"pending","tags":["ansible"],"uuid":"06f56d20-c635-4341-8abe-00d541f87891"}
+{"description":"install \/ checkout git - extras","end":"20151107T120351Z","entry":"20151030T192617Z","modified":"20151107T120351Z","status":"completed","tags":["general"],"uuid":"bac58abf-7778-4ed7-be81-c93461d9e339"}
+{"description":"Finish password process","end":"20151107T120433Z","entry":"20151030T195900Z","modified":"20151107T120433Z","status":"completed","tags":["general"],"uuid":"4546a86e-cc54-4e72-9e3d-ff31bd423b29"}
+{"description":"add check for bin","end":"20151107T120521Z","entry":"20151101T192815Z","modified":"20151107T120521Z","status":"completed","tags":["ansible"],"uuid":"ecdaf9de-2011-486a-899a-80177cdbee94"}
+{"description":"Remove udisk polkit rules?","end":"20151107T120534Z","entry":"20151101T145549Z","modified":"20151107T120534Z","status":"completed","tags":["general"],"uuid":"7c6ce102-d999-46e3-adf2-22a141b53293"}
+{"description":"fix pageup \/ down scrolling","end":"20151107T120541Z","entry":"20151031T205325Z","modified":"20151107T120541Z","status":"completed","tags":["tmux"],"uuid":"d25fcd4c-4566-4554-9cb3-f82ae60c9e7d"}

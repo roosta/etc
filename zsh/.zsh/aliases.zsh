@@ -88,14 +88,19 @@ alias mkdir='mkdir -pv'
 # ││││ ││┌┘├─ │││├─ │││ │
 # ┘ ┆┘─┘└┘ ┴─┘┘ ┆┴─┘┆└┘ ┆
 
-# dirstack needs some extra config, see dirstack.sh
-alias cd..='cd ..'
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
+# Method for quick change directories.
+# http://grml.org/zsh/zsh-lovers.html
+rationalise-dot() {
+  if [[ $LBUFFER = *.. ]]; then
+    LBUFFER+=/..
+  else
+    LBUFFER+=.
+  fi
+}
+zle -N rationalise-dot
+bindkey . rationalise-dot
 
-# dirstack control
+## dirstack movement: needs some extra config, see dirstack.sh
 alias stack='dirs -v'
 alias 1='cd -'
 alias 2='cd -2'
@@ -135,8 +140,8 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias c='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zi='fasd_cd -d -i' # cd with interactive selection
 alias ci='fasd_cd -d -i' # cd with interactive selection
-alias v='f -e vim'       # quick opening files with vim
-#alias v='f -t -e vim -b viminfo'
+#alias v='f -e vim'       # quick opening files with vim
+alias v='f -t -e vim -b viminfo'
 
 # ┐─┐┬─┐┌─┐┬ ┐┬─┐o┌┐┐┐ ┬
 # └─┐├─ │  │ ││┬┘│ │ └┌┘
@@ -427,3 +432,4 @@ define () {
 md () {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
+
