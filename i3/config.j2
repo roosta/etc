@@ -1,4 +1,3 @@
-# vim:ft=i3:ts=2:sw=2
 # ┌───────────────────────────────────┐
 # │▀▀▀░░░░░░░▀█▀░▀▀█░█░█░█▄█░░░░░░░▀▀▀│
 # │▀▀▀▀▀░░░░░░█░░░▀▄░█▄█░█░█░░░░░▀▀▀▀▀│
@@ -142,7 +141,6 @@ hide_edge_borders none
 assign [class="(?i)subl3"]               $PWS2_DEV
 assign [class="(?i)jetbrains-idea"]      $PWS2_DEV
 assign [class="(?i)atom"]                $PWS2_DEV
-#assign [class="(?i)gimp"]                $PWS2_DEV
 
 # -> debug
 assign [class="(?i)google-chrome-beta$"] $SWS3_DBG
@@ -363,19 +361,17 @@ bindsym $mod+Home mode "$mode_chmon"
 # ┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┌┐┐┌─┐┬─┐
 # │─┤│─┘│─┘├─ │─┤│┬┘│─┤││││  ├─
 # ┘ ┆┆  ┆  ┴─┘┘ ┆┆└┘┘ ┆┆└┘└─┘┴─┘
-# Generated from jinja templates with ansible.
 
-# TODO: assign key to re-generate and reload i3 config
-
+# generated from template {{{1
 # set primary font
 font {{ i3_font }}
 
 # <class> <border> <background> <foreground> <indicator>
-client.focused          {{ dark_blue }} {{ dark_blue }} {{ black }} {{ dark_cyan }}
-client.focused_inactive {{ background1 }} {{ background0 }} {{ foreground }} {{ background0_s }}
-client.unfocused        {{ dark_blue }} {{ background1 }} {{ dark_gray }} {{ dark_cyan }}
-client.urgent           {{ dark_orange }} {{ dark_orange }} {{ background }} {{ dark_orange }}
-client.placeholder      {{ cyan }} {{ dark_cyan }} {{ black }} {{ magenta }}
+client.focused          {{ neutral_blue }} {{ neutral_blue }} {{ dark0 }} {{ neutral_aqua }}
+client.focused_inactive {{ dark1 }} {{ dark0 }} {{ light1 }} {{ dark0_soft }}
+client.unfocused        {{ neutral_blue }} {{ dark1 }} {{ gray_245 }} {{ neutral_aqua }}
+client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{ neutral_orange }}
+client.placeholder      {{ bright_aqua }} {{ neutral_aqua }} {{ dark0 }} {{ bright_purple }}
 
 {# macro that renders status bars based on host spesific variables as args #}
 {% macro render_bar(_id, _output, _status, _tray='primary') %}
@@ -389,15 +385,15 @@ bar {
   strip_workspace_numbers yes
   separator_symbol "|"
   colors {
-    background {{ background }}
-    separator  {{ background0_s }}
-    statusline {{ foreground }}
+    background {{ dark0 }}
+    separator  {{ dark0_soft }}
+    statusline {{ light1 }}
 
     # <workclass> <border> <background> <foreground>
-    focused_workspace  {{ background0_h }} {{ background1 }} {{ dark_blue }}
-    active_workspace   {{ background1 }} {{ background0_s }} {{ foreground }}
-    inactive_workspace {{ background0_h }} {{ background1 }} {{ dark_gray }}
-    urgent_workspace   {{ dark_orange }} {{ dark_orange }} {{ black }}
+    focused_workspace  {{ dark0_hard }} {{ dark1 }} {{ neutral_blue }}
+    active_workspace   {{ dark1 }} {{ dark0_soft }} {{ light1 }}
+    inactive_workspace {{ dark0_hard }} {{ dark1 }} {{ gray_245 }}
+    urgent_workspace   {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }}
   }
 }
 {% endmacro %}
@@ -413,6 +409,6 @@ bar {
 {{ render_bar("bar-0", output0, status0, output0) }}
 {{ render_bar("bar-1", output1, status1, output1) }}
 {% endif -%}
+# }}}
 
-# vim:ft=i3:ts=2:sw=2
-
+# vim:ft=i3:ts=2:sw=2:fdm=marker
