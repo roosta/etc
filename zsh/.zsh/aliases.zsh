@@ -88,17 +88,11 @@ alias mkdir='mkdir -pv'
 # ││││ ││┌┘├─ │││├─ │││ │
 # ┘ ┆┘─┘└┘ ┴─┘┘ ┆┴─┘┆└┘ ┆
 
-# Method for quick change directories.
-# http://grml.org/zsh/zsh-lovers.html
-rationalise-dot() {
-  if [[ $LBUFFER = *.. ]]; then
-    LBUFFER+=/..
-  else
-    LBUFFER+=.
-  fi
-}
-zle -N rationalise-dot
-bindkey . rationalise-dot
+alias cd..='cd ..'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
 
 ## dirstack movement: needs some extra config, see dirstack.sh
 alias stack='dirs -v'
@@ -205,7 +199,7 @@ alias pacas="aura -As" # search AUR
 alias pacaf="sudo aura -Ax" # install and display make output
 alias pacaa="aura -Aa" # remove make deps when finished installing
 alias pacadiff="aura -Ak" # show PKGBUILD diff
-alias pacaupdf="aura -Akua" # upgrades, removes make deps, shows PKGBUILD diffs
+alias pacaupdf="sudo aura -Akua" # upgrades, removes make deps, shows PKGBUILD diffs
 alias pacai="aura -Ai" # get AUR package information
 alias pacaupd="sudo aura -Au" # update AUR packages
 alias pacapkg="aura -Ap" # Display an AUR package"s PKGBUILD
@@ -316,13 +310,14 @@ alias sysisf='systemctl is-failed'
 alias syscat='sudo systemctl cat'
 
 # systemctl modify
-alias sysresf='sudo systemctl daemon-reload'
+alias sysresd='sudo systemctl daemon-reload'
 alias sysenable='sudo systemctl enable'
 alias sysstart='sudo systemctl start'
 alias sysstop='sudo systemctl stop'
 alias sysrest='sudo systemctl restart'
 alias syscan='sudo systemctl cancel'
 alias sysedit='sudo systemctl edit'
+alias sysdis='sudo systemctl disable'
 
 # ┐ ┬┌─┐┐─┐
 # │┌┘│  └─┐
@@ -417,19 +412,4 @@ alias cl='clear'
 # quick alias to remove steam runtime and use native
 # see: https://wiki.archlinux.org/index.php/Steam#Using_native_runtime
 alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
-
-# ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
-# ├─ │ │││││   │ ││ ││││└─┐
-# ┆  ┆─┘┆└┘└─┘ ┆ ┆┘─┘┆└┘──┘
-
-# do a quick spellcheck in terminal
-define () {
-  echo "$*"|aspell -a --suggest
-}
-
-# read markdown files like manpages
-# https://github.com/xero/dotfiles/blob/master/zsh/.zsh/aliases.zsh
-md () {
-    pandoc -s -f markdown -t man "$*" | man -l -
-}
 

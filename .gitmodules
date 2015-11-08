@@ -25,3 +25,6 @@
 [submodule "zsh/.zsh/plugins/zsh-syntax-highlighting-filetypes"]
 	path = zsh/.zsh/plugins/zsh-syntax-highlighting-filetypes
 	url = https://github.com/trapd00r/zsh-syntax-highlighting-filetypes.git
+[submodule "zsh/.zsh/plugins/pure"]
+	path = zsh/.zsh/plugins/pure
+	url = https://github.com/roosta/pure.git
