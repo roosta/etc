@@ -53,8 +53,8 @@ xset fp rehash &
 $HOME/.fehbg &
 
 # init gnome-keyring.
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
 
 # o┌┐┐┬─┐┬ ┐┌┐┐┐─┐
 # │││││─┘│ │ │ └─┐
@@ -74,16 +74,11 @@ xbindkeys &
 #xboxdrv -D --config $HOME/.xboxdrv
 
 # initially diable touchpad on laptop
-$HOME/.scripts/touchpad-toggle.sh
+#$HOME/.scripts/touchpad-toggle.sh
 
 # ┬─┐o┐─┐┬─┐┬  ┬─┐┐ ┬
 # │ ││└─┐│─┘│  │─┤└┌┘
 # ┆─┘┆──┘┆  ┆─┘┘ ┆ ┆
-
-# set display layout
-
-#xrandr --output HDMI2 --primary --auto --pos 0x0 \
-       #--output eDP1 --auto --left-of HDMI2
 
 # screen locker
 xss-lock -- xscreensaver-command -lock &
@@ -94,8 +89,6 @@ $home/bin/lightsOn 590 &
 
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
 #xset dpms 600 1200 2000 &
-#xss-lock -- i3lock -n -e -d -t -i /usr/share/backgrounds/pattern-01.png &
-#xautolock -time 30 -locker "i3lock --dpms --ignore-empty-password --image=$HOME/.backgrounds/pattern-01.png --tiling" &
 
 # ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
 # │ ││─┤├─ ││││ ││││└─┐

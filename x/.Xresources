@@ -19,10 +19,10 @@
 !#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=10:antialias=1:hinting=1:hintstyle=3
 
 ! PragmataPro <lintilla: 1920x1080>
-#define FONT_NORMAL     xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Regular
-#define FONT_BOLD       xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Bold
-#define FONT_ITALIC     xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Italic
-#define FONT_BOLDITALIC xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Bold\ Italic
+#define FONT_NORMAL     xft:PragmataPro\ for\ Powerline:pixelsize=14:style=Regular
+#define FONT_BOLD       xft:PragmataPro\ for\ Powerline:pixelsize=14:style=Bold
+#define FONT_ITALIC     xft:PragmataPro\ for\ Powerline:pixelsize=14:style=Italic
+#define FONT_BOLDITALIC xft:PragmataPro\ for\ Powerline:pixelsize=14:style=Bold\ Italic
 
 ! Ttyp0 <allitnil: 1600x900>
 !#define FONT_NORMAL -uw-ttyp0-medium-r-normal--17-160-75-75-c-90-iso10646-1
@@ -59,13 +59,13 @@ URxvt.boldItalicFont: FONT_BOLDITALIC
 URxvt*saveLines: 12000
 URxvt*scrollBar: false
 
-!! Use tmux for select mode.
-!URxvt.perl-ext-common: default,url-select,selection-to-clipboard,keyboard-select
-!URxvt.keysym.M-s: perl:keyboard-select:search
-!URxvt.keysym.M-Escape: perl:keyboard-select:activate
+!! Alt+Esc enables vi select mode
+URxvt.perl-ext-common: default,url-select,selection-to-clipboard,keyboard-select
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 !URL matching, use alt-u to enter select mode
-URxvt.perl-ext-common: default,url-select,selection-to-clipboard
+!URxvt.perl-ext-common: default,url-select,selection-to-clipboard
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/xdg-open
 URxvt.url-select.underline: true

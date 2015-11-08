@@ -24,12 +24,12 @@ set $locker xscreensaver-command --lock
 # TODO: fix script
 # ~~~Have to call a script to open urxvt in tmux. See script for details~~~
 # tmux new-session -n$USER -s$USER@$HOSTNAME
-set $tmux_attach urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
-set $tmux_new urxvtc -e bash -c "tmux new-session"
-
+#set $term urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
+#set $term urxvtc -e bash -c "tmux new-session"
+set $term urxvtc
 # set scrot/screenshot file arguments
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
-
+# generate new config with ansible and reload i3
 set $fullreload urxvtc -e bash -c "ansible-playbook $HOME/.dotfiles/dotfiles.yml i3 && i3-msg reload"
 
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
@@ -37,7 +37,7 @@ set $fullreload urxvtc -e bash -c "ansible-playbook $HOME/.dotfiles/dotfiles.yml
 # ┘ ┆┆─┘ ┆ ┘─┘──┘ ┆ ┘ ┆┆└┘ ┆
 
 #exec urxvtc
-exec $tmux_attach
+exec $term
 #exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
 #exec firefox
 #exec thunderbird
@@ -197,8 +197,8 @@ set $mod Mod4
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-bindsym $mod+Return exec $tmux_attach
-bindsym $mod+Shift+Return exec $tmux_new
+bindsym $mod+Return exec $term
+#bindsym $mod+Shift+Return exec $tmux_new
 
 # kill focused window
 bindsym $mod+c kill
@@ -362,7 +362,7 @@ bindsym $mod+Home mode "$mode_chmon"
 # │─┤│─┘│─┘├─ │─┤│┬┘│─┤││││  ├─
 # ┘ ┆┆  ┆  ┴─┘┘ ┆┆└┘┘ ┆┆└┘└─┘┴─┘
 
-# generated from template {{{1
+# generated from template
 # set primary font
 font {{ i3_font }}
 
@@ -409,6 +409,5 @@ bar {
 {{ render_bar("bar-0", output0, status0, output0) }}
 {{ render_bar("bar-1", output1, status1, output1) }}
 {% endif -%}
-# }}}
 
 # vim:ft=i3:ts=2:sw=2:fdm=marker

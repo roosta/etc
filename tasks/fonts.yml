@@ -1,6 +1,6 @@
 ---
 - name: Symlink fonts
-  file: path={{ font_location }} src={{ dotfiles }}/fonts state=link
+  file: dest={{ font_location }} src={{ dotfiles }}/fonts state=link
 
 - name: create font.dir
   command: mkfontdir {{ font_location }}
