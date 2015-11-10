@@ -4,6 +4,14 @@ fpath=($HOME/.zsh/functions $fpath)
 autoload -U promptinit && promptinit
 PURE_PROMPT_SYMBOL=""
 prompt pure
+
+#zle-keymap-select () {
+  #case $KEYMAP in
+    #vicmd) print -rn -- $terminfo[cvvis];; # block cursor
+    #viins|main) print -rn -- $terminfo[cnorm];; # less visible cursor
+  #esac
+#}
+
 #PROMPT=$HOME/.zsh/prompts/bullet_train.zsh
 #PROMPT=$HOME/.zsh/prompts/promptline.zsh
 #PROMPT=$HOME/.zsh/prompts/pure.zsh

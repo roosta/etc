@@ -1,21 +1,20 @@
-# ┌──────────────────────────────────────────────┐
-# │░░░█▀▀░█▀█░█▄█░█▀█░█░░░█▀▀░▀█▀░▀█▀░█▀█░█▀█░░░░│
-# │░░░█░░░█░█░█░█░█▀▀░█░░░█▀▀░░█░░░█░░█░█░█░█░░░░│
-# │░░░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀░▀░░░░│
-# └──────────────────────────────────────────────┘
+# ┏━┓┏━┓┏┏┓┳━┓┳  ┳━┓┏┓┓o┏━┓┏┓┓
+# ┃  ┃ ┃┃┃┃┃━┛┃  ┣━  ┃ ┃┃ ┃┃┃┃
+# ┗━┛┛━┛┛ ┇┇  ┇━┛┻━┛ ┇ ┇┛━┛┇┗┛
 # thanks to:
-# - https://github.com/xero/dotfiles/blob/master/zsh/.zsh/autocompletion.zsh
-# - https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/completion.zsh
-# - http://dotshare.it/dots/100/
+# * https://github.com/xero/dotfiles/blob/master/zsh/.zsh/autocompletion.zsh
+# * https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/completion.zsh
+# * http://dotshare.it/dots/100/
 
 # init
 autoload -Uz compinit
 compinit
 autoload -U ~/.zsh/completion/*(:t)
 
-# set some options first
-unsetopt menu_complete # do not autoselect the first completion entry
+# do not autoselect the first completion entry
+unsetopt menu_complete
 unsetopt flowcontrol
+
 setopt auto_menu # show completion menu on succesive tab press
 setopt complete_in_word
 setopt always_to_end

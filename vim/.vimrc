@@ -25,7 +25,7 @@ endif
 " maintain undo history between sessions
 set undofile
 set undodir=~/.vim/undo
-set noswapfile
+"set noswapfile
 
 "set shell=zsh\ -i
 
