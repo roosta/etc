@@ -49,9 +49,11 @@ xset +fp $HOME/.fonts/restricted &
 xset +fp $HOME/.fonts/misc &
 xset fp rehash &
 
+# load nvidia-settings on startup
+nvidia-settings --load-config-only
+
 # set background with feh
 $HOME/.fehbg &
-
 # init gnome-keyring.
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 #export SSH_AUTH_SOCK

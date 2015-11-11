@@ -162,10 +162,10 @@ URxvt.keysym.M-C-S-End        : \033[1;8F
 ! ┆┆└┘└─┘┆─┘┆─┘┆─┘┴─┘
 
 !! colorschemes
-#include "/home/daniel/.colors/xcolors/gruvbox-dark.xresources"
-#include "/home/daniel/.colors/xcolors/gruvbox-urxvt256.xresources"
+#include "/home/roosta/.colors/xcolors/gruvbox-dark.xresources"
+#include "/home/roosta/.colors/xcolors/gruvbox-urxvt256.xresources"
 
 !! applications
-#include "/home/daniel/.rofi.xresources"
-#include "/home/daniel/.xscreensaver.xresources"
+#include "/home/roosta/.rofi.xresources"
+#include "/home/roosta/.xscreensaver.xresources"
 

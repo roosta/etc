@@ -8,7 +8,7 @@ set focuscontent
 set defsearch=duckduckgo
 set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position
-source! /home/daniel/.vimperatorrc.local
+source! /home/roosta/.vimperatorrc.local
 
 " map l and h to tab movement
 noremap l gt
@@ -43,7 +43,7 @@ noremap <leader>S :noscript popup<CR>
 noremap <leader>b :emenu View.Sidebar.Bookmarks<CR>
 
 " source config file
-noremap <c-w>r :source /home/daniel/.vimperatorrc<CR>
+noremap <c-w>r :source /home/roosta/.vimperatorrc<CR>
 
 "nnoremap <CR> :nohlsearch<CR><CR>
 

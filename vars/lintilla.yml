@@ -1,5 +1,5 @@
 ---
-user: daniel
+user: roosta
 home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
