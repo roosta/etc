@@ -7,8 +7,11 @@
     - vars/gruvbox_palette.yml
 
   tasks:
-      # ansible config
-    - include: tasks/ansible.yml     tags=ansible,full
+      # init group
+      # this group is the most essential. To use the rest these need to be run first
+    - include: tasks/ansible.yml     tags=ansible,init,full
+    - include: tasks/zsh.yml         tags=zsh,init,full
+    - include: tasks/bin.yml         tags=bin,init,full
 
       # browser group
     - include: tasks/firefox.yml     tags=firefox,browser,full
@@ -27,7 +30,6 @@
 
       # shell group
     - include: tasks/dircolors.yml   tags=dircolors,full
-    - include: tasks/zsh.yml         tags=zsh,shell,term,full
     - include: tasks/colors.yml      tags=colors,shell,term,full
     - include: tasks/scripts.yml     tags=scripts,shell,term,full
     - include: tasks/ls++.yml        tags=ls++,dircolors,shell,full

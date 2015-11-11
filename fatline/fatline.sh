@@ -6,4 +6,11 @@
 
 playbook=$HOME/.dotfiles/dotfiles.yml
 
+#echo "Select configuration to setup"
+#select yn in "Yes" "No"; do
+    #case $yn in
+        #Yes ) make install; break;;
+        #No ) exit;;
+    #esac
+#done
 ansible-playbook $playbook -t $@

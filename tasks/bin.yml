@@ -1,0 +1,18 @@
+- name: check for/create library and bin directory
+  file: path={{ home }}/library state=directory mode=0755
+  with_items:
+    - library
+    - bin
+
+- name: clone / update external libraries
+  git: repo=https://github.com/fidian/ansi dest={{ home }}/library/ansi clone=yes update=yes
+  git: repo=https://github.com/iye/lightsOn dest={{ home }}/library/ansi clone=yes update=yes
+
+- name: symlink local binaries
+  file: src={{ item.src }} dest={{ home }}/{{ item.dest }} state=link
+  with_items:
+    - { src: "{{ home }}/library/ansi/ansi", dest: "bin/ansi" }
+    - { src: "{{ home }}/library/lightsOn/lightsOn.sh", dest: "bin/lightsOn" }
+    - { src: "{{ dotfiles }}/scripts/chmon.sh", dest: "bin/chmon" }
+    - { src: "{{ dotfiles }}/scripts/bakc.sh", dest: "bin/bakc" }
+    - { src: "{{ dotfiles }}/fatline/fatline.sh", dest: "bin/fatline" }
