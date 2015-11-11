@@ -12,6 +12,7 @@
     - include: tasks/ansible.yml     tags=ansible,init,full
     - include: tasks/zsh.yml         tags=zsh,init,full
     - include: tasks/bin.yml         tags=bin,init,full
+    - include: tasks/packages.yml    tags=packages,init
 
       # browser group
     - include: tasks/firefox.yml     tags=firefox,browser,full
