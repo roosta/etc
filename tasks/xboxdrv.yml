@@ -1,0 +1,3 @@
+---
+- name: Symlinking xboxdrv config.
+  file: dest={{ home }}/.xboxdrv src={{ dotfiles }}/xboxdrv/.xboxdrv state=link

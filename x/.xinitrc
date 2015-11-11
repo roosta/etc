@@ -44,7 +44,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # set X font locations
-xset +fp $HOME/.fonts/nerd-fonts &
+#xset +fp $HOME/.fonts/nerd-fonts &
 xset +fp $HOME/.fonts/restricted &
 xset +fp $HOME/.fonts/misc &
 xset fp rehash &

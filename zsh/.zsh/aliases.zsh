@@ -291,6 +291,8 @@ alias ascii="toilet -t -f 3d"
 alias future="toilet -t -f future"
 alias rusto="toilet -t -f rusto"
 alias rustofat="toilet -t -f rustofat"
+alias pagga="toilet -t -f pagga"
+alias paggaborder="toilet -t -f pagga -F border"
 
 # ┐─┐┐ ┬┐─┐┌┐┐┬─┐┌┌┐
 # └─┐└┌┘└─┐ │ ├─ │││

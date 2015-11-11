@@ -1,0 +1,12 @@
+---
+#- name: x template
+  #template: src={{ dotfiles }}/i3/config.j2 dest={{ dotfiles }}/i3/config.gen backup=no
+
+- name: Symlink x configuration
+  file: src={{ dotfiles }}/x/{{ item }} dest={{ home }}/{{ item }} state=link
+  with_items:
+    - .Xresources
+    - .xscreensaver.xresources
+    - .xbindkeysrc
+    - .xinitrc
+    - .xserverrc
