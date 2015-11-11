@@ -8,44 +8,46 @@
 
   tasks:
       # ansible config
-    - include: tasks/ansible.yml     tags=ansible,all
+    - include: tasks/ansible.yml     tags=ansible,full
 
       # browser group
-    - include: tasks/firefox.yml     tags=firefox,browser,all
-    - include: tasks/pentadactyl.yml tags=pentadactyl,browser,all
-    - include: tasks/vimperator.yml  tags=vimperator,browser,all
+    - include: tasks/firefox.yml     tags=firefox,browser,full
+    - include: tasks/pentadactyl.yml tags=pentadactyl,browser,full
+    - include: tasks/vimperator.yml  tags=vimperator,browser,full
 
       # desktop group
-    - include: tasks/themes.yml      tags=themes,desktop,gtk,all
-    - include: tasks/gtk.yml         tags=gtk,desktop,all
-    - include: tasks/dunst.yml       tags=dunst,desktop,all
-    - include: tasks/i3.yml          tags=i3,desktop,all
-    - include: tasks/background.yml  tags=background,bg,all
-    - include: tasks/compton.yml     tags=compton,desktop,all
+    - include: tasks/themes.yml      tags=themes,desktop,gtk,full
+    - include: tasks/gtk.yml         tags=gtk,desktop,full
+    - include: tasks/dunst.yml       tags=dunst,desktop,full
+    - include: tasks/i3.yml          tags=i3,desktop,full
+    - include: tasks/background.yml  tags=background,bg,full
+    - include: tasks/compton.yml     tags=compton,desktop,full
     - include: tasks/fonts.yml       tags=fonts
 
       # shell group
-    - include: tasks/dircolors.yml   tags=dircolors,all
-    - include: tasks/zsh.yml         tags=zsh,shell,term,all
-    - include: tasks/colors.yml      tags=colors,shell,term,all
-    - include: tasks/scripts.yml     tags=scripts,shell,term,all
-    - include: tasks/ls++.yml        tags=ls++,dircolors,shell,all
-    - include: tasks/bash.yml        tags=bash,shell,all
-    - include: tasks/boxes.yml       tags=boxes,shell,all
-    - include: tasks/fasd.yml        tags=fasd,shell,all
-    - include: tasks/tmux.yml        tags=tmux,shell,all
+    - include: tasks/dircolors.yml   tags=dircolors,full
+    - include: tasks/zsh.yml         tags=zsh,shell,term,full
+    - include: tasks/colors.yml      tags=colors,shell,term,full
+    - include: tasks/scripts.yml     tags=scripts,shell,term,full
+    - include: tasks/ls++.yml        tags=ls++,dircolors,shell,full
+    - include: tasks/bash.yml        tags=bash,shell,full
+    - include: tasks/boxes.yml       tags=boxes,shell,full
+    - include: tasks/fasd.yml        tags=fasd,shell,full
+    - include: tasks/tmux.yml        tags=tmux,shell,full
+    - include: tasks/screen.yml      tags=screen,shell,full
+    - include: tasks/termite.yml     tags=termite,shell,full
 
       # dev group
-    - include: tasks/lein.yml        tags=lein,clojure,dev,all
-    - include: tasks/npm.yml         tags=npm,dev,all
-    - include: tasks/ctags.yml       tags=ctags,dev,all
-    - include: tasks/git.yml         tags=git,dev,all
-    - include: tasks/subversion.yml  tags=subversion,svn,dev,all
-    - include: tasks/idea.yml        tags=idea,intellij,dev,all
-    - include: tasks/tig.yml         tags=tig,dev,all
-    - include: tasks/vim.yml         tags=vim,dev,all
+    - include: tasks/lein.yml        tags=lein,clojure,dev,full
+    - include: tasks/npm.yml         tags=npm,dev,full
+    - include: tasks/ctags.yml       tags=ctags,dev,full
+    - include: tasks/git.yml         tags=git,dev,full
+    - include: tasks/subversion.yml  tags=subversion,svn,dev,full
+    - include: tasks/idea.yml        tags=idea,intellij,dev,full
+    - include: tasks/tig.yml         tags=tig,dev,full
+    - include: tasks/vim.yml         tags=vim,dev,full
 
       # misc
-    - include: tasks/taskwarrior.yml tags=tasks,taskwarrior,all
-    - include: tasks/ncmpcpp.yml     tags=ncmpcpp,all
-    - include: tasks/gimp.yml        tags=gimp,all
+    - include: tasks/taskwarrior.yml tags=tasks,taskwarrior,full
+    - include: tasks/ncmpcpp.yml     tags=ncmpcpp,full
+    - include: tasks/gimp.yml        tags=gimp,full

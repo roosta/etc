@@ -1,3 +1,5 @@
+[description:"change username" end:"1447235628" entry:"1446234222" modified:"1447235628" status:"completed" tags:"allitnil" uuid:"60257ee7-974f-47f0-939a-6142df092b97"]
+[description:"update prompt" end:"1447235634" entry:"1446324833" modified:"1447235634" status:"completed" tags:"shell" uuid:"64c693d5-afe1-469d-9441-5d937f6d89bc"]
 [description:"fix pageup \/ down scrolling" end:"1446897941" entry:"1446324805" modified:"1446897941" status:"completed" tags:"tmux" uuid:"d25fcd4c-4566-4554-9cb3-f82ae60c9e7d"]
 [description:"Remove udisk polkit rules?" end:"1446897934" entry:"1446389749" modified:"1446897934" status:"completed" tags:"general" uuid:"7c6ce102-d999-46e3-adf2-22a141b53293"]
 [description:"add check for bin" end:"1446897921" entry:"1446406095" modified:"1446897921" status:"completed" tags:"ansible" uuid:"ecdaf9de-2011-486a-899a-80177cdbee94"]

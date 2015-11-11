@@ -53,3 +53,8 @@
 {"description":"add check for bin","end":"20151107T120521Z","entry":"20151101T192815Z","modified":"20151107T120521Z","status":"completed","tags":["ansible"],"uuid":"ecdaf9de-2011-486a-899a-80177cdbee94"}
 {"description":"Remove udisk polkit rules?","end":"20151107T120534Z","entry":"20151101T145549Z","modified":"20151107T120534Z","status":"completed","tags":["general"],"uuid":"7c6ce102-d999-46e3-adf2-22a141b53293"}
 {"description":"fix pageup \/ down scrolling","end":"20151107T120541Z","entry":"20151031T205325Z","modified":"20151107T120541Z","status":"completed","tags":["tmux"],"uuid":"d25fcd4c-4566-4554-9cb3-f82ae60c9e7d"}
+{"description":"setup specialized conf for compton","entry":"20151110T223924Z","modified":"20151110T223924Z","status":"pending","tags":["general"],"uuid":"f911b594-c17c-4b82-afc9-576ca0a09816"}
+{"description":"fix twinview","entry":"20151110T223946Z","modified":"20151110T223946Z","status":"pending","tags":["multihead"],"uuid":"306458eb-4e5f-4c19-b712-29a10919b058"}
+{"description":"fix connected monitors thing","entry":"20151110T223954Z","modified":"20151110T223954Z","status":"pending","tags":["multihead"],"uuid":"29bc38b9-c96a-4bbd-9ae2-c8a3e763c214"}
+{"description":"change username","end":"20151111T095348Z","entry":"20151030T194342Z","modified":"20151111T095348Z","status":"completed","tags":["allitnil"],"uuid":"60257ee7-974f-47f0-939a-6142df092b97"}
+{"description":"update prompt","end":"20151111T095354Z","entry":"20151031T205353Z","modified":"20151111T095354Z","status":"completed","tags":["shell"],"uuid":"64c693d5-afe1-469d-9441-5d937f6d89bc"}

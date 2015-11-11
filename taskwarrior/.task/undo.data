@@ -183,3 +183,20 @@ time 1446897941
 old [description:"fix pageup \/ down scrolling" entry:"1446324805" modified:"1446324805" status:"pending" tags:"tmux" uuid:"d25fcd4c-4566-4554-9cb3-f82ae60c9e7d"]
 new [description:"fix pageup \/ down scrolling" end:"1446897941" entry:"1446324805" modified:"1446897941" status:"completed" tags:"tmux" uuid:"d25fcd4c-4566-4554-9cb3-f82ae60c9e7d"]
 ---
+time 1447195164
+new [description:"setup specialized conf for compton" entry:"1447195164" modified:"1447195164" status:"pending" tags:"general" uuid:"f911b594-c17c-4b82-afc9-576ca0a09816"]
+---
+time 1447195186
+new [description:"fix twinview" entry:"1447195186" modified:"1447195186" status:"pending" tags:"multihead" uuid:"306458eb-4e5f-4c19-b712-29a10919b058"]
+---
+time 1447195194
+new [description:"fix connected monitors thing" entry:"1447195194" modified:"1447195194" status:"pending" tags:"multihead" uuid:"29bc38b9-c96a-4bbd-9ae2-c8a3e763c214"]
+---
+time 1447235628
+old [description:"change username" entry:"1446234222" modified:"1446234222" status:"pending" tags:"allitnil" uuid:"60257ee7-974f-47f0-939a-6142df092b97"]
+new [description:"change username" end:"1447235628" entry:"1446234222" modified:"1447235628" status:"completed" tags:"allitnil" uuid:"60257ee7-974f-47f0-939a-6142df092b97"]
+---
+time 1447235634
+old [description:"update prompt" entry:"1446324833" modified:"1446324833" status:"pending" tags:"shell" uuid:"64c693d5-afe1-469d-9441-5d937f6d89bc"]
+new [description:"update prompt" end:"1447235634" entry:"1446324833" modified:"1447235634" status:"completed" tags:"shell" uuid:"64c693d5-afe1-469d-9441-5d937f6d89bc"]
+---
