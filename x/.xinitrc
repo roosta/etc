@@ -43,14 +43,17 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+$HOME/.screenlayout/dual.sh &
 # set X font locations
 #xset +fp $HOME/.fonts/nerd-fonts &
-xset +fp $HOME/.fonts/restricted &
-xset +fp $HOME/.fonts/misc &
-xset fp rehash &
+#xset +fp $HOME/.fonts/restricted &
+#xset +fp $HOME/.fonts/misc &
+#xset fp rehash &
 
 # load nvidia-settings on startup
-nvidia-settings --load-config-only
+#nvidia-settings --load-config-only
 
 # set background with feh
 $HOME/.fehbg &
@@ -87,7 +90,7 @@ xss-lock -- xscreensaver-command -lock &
 
 # disable screensaver when certain fullscreen apps are active
 # see https://github.com/iye/lightsOn/blob/master/lightsOn.sh
-$home/bin/lightsOn 590 &
+#$home/bin/lightsOn 590 &
 
 # DPMS monitor setting (standby -> suspend -> off) (seconds)
 #xset dpms 600 1200 2000 &

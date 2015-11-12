@@ -1,0 +1,5 @@
+---
+- name: Symlink tmux config...
+  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/rofi/{{ item }} state=link
+  with_items:
+    - .rofi.xresources

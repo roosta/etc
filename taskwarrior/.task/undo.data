@@ -200,3 +200,6 @@ time 1447235634
 old [description:"update prompt" entry:"1446324833" modified:"1446324833" status:"pending" tags:"shell" uuid:"64c693d5-afe1-469d-9441-5d937f6d89bc"]
 new [description:"update prompt" end:"1447235634" entry:"1446324833" modified:"1447235634" status:"completed" tags:"shell" uuid:"64c693d5-afe1-469d-9441-5d937f6d89bc"]
 ---
+time 1447322437
+new [description:"fix pure prompt symlinking" entry:"1447322437" modified:"1447322437" status:"pending" tags:"ansible" uuid:"457a8a72-e020-454a-a904-03b962855754"]
+---

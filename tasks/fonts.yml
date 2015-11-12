@@ -1,4 +1,8 @@
+
 ---
+- name: check for/create font directories
+  file: path={{ home }}/.fonts state=directory mode=0755
+
 - name: Symlink fonts
   file: dest={{ font_location }} src={{ dotfiles }}/fonts state=link
 

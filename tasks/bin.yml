@@ -1,12 +1,12 @@
 - name: check for/create library and bin directory
-  file: path={{ home }}/library state=directory mode=0755
+  file: path={{ home }}/{{ item }} state=directory mode=0755
   with_items:
     - library
     - bin
 
 - name: clone / update external libraries
   git: repo=https://github.com/fidian/ansi dest={{ home }}/library/ansi clone=yes update=yes
-  git: repo=https://github.com/iye/lightsOn dest={{ home }}/library/ansi clone=yes update=yes
+  git: repo=https://github.com/iye/lightsOn dest={{ home }}/library/lightsOn clone=yes update=yes
 
 - name: symlink local binaries
   file: src={{ item.src }} dest={{ home }}/{{ item.dest }} state=link

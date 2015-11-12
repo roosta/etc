@@ -1,0 +1,3 @@
+---
+- name: Symlink ranger config...
+  file: dest={{ home }}/.config/ranger src={{ dotfiles }}/ranger state=link

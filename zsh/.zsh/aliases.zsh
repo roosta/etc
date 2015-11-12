@@ -37,7 +37,7 @@ alias vigtk='vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini'
 # ┆  ┆┆└┘┆─┘
 
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
-alias grep="ag"
+#alias grep="ag"
 
 alias grea="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
 alias greh="cat ~/.histfile | grep" # grep command history quickly
@@ -117,11 +117,11 @@ alias 18='cd -18'
 alias 19='cd -19'
 
 # long format and color ls output with various options. (see "man ls")
-alias ls="ls -lAhpk --color=auto --group-directories-first"
+alias lsl="ls -lAhpk --color=auto --group-directories-first"
 #alias dir='ls++ --potsf -lAhpXk'
-alias dir='ls++ -lAhpk'
-alias dirr='dir -R'
-alias lsa='lsp -p'
+alias ls='ls++ -lAhpk'
+alias lsr='dir -R'
+alias lss='lsp -p'
 
 # fasd plugin aliases (most of these are added by default but I often grep this list)
 alias a='fasd -a'        # any
@@ -151,7 +151,7 @@ alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected ."
 # ┆  ┘ ┆└─┘┘ ┆┘ ┆┆└┘
 
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
-alias pacman='pacman --color=auto' # use pacaur as a pacman extension
+alias pacman='yaourt --color=auto' # use pacaur as a pacman extension
 
 # Installing
 alias pacs='sudo pacman -S' # Install specific package(s) from the repositories
@@ -167,10 +167,10 @@ alias pacrmf='sudo pacman -Rns' # Remove the specified package(s), its configura
 alias pacclean="sudo pacman -Scc" # Clean cache - delete all the package files in the cache
 
 # orphans
-alias paco='aura -O' # with no args: display orphans. With arg adopt package.
-alias pacorm="sudo aura -Oj" # remove all orphan packages.
-#alias pacorm='sudo pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
-#alias paco="pacman -Qdt" # List all packages which are orphaned
+#alias paco='aura -O' # with no args: display orphans. With arg adopt package.
+#alias pacorm="sudo aura -Oj" # remove all orphan packages.
+alias pacorm='sudo pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
+alias paco="pacman -Qdt" # List all packages which are orphaned
 
 # query
 alias pacqs='pacman -Qs' # Search for package(s) in the local database
@@ -199,49 +199,6 @@ alias pacmir='sudo pacman -Syy' # Force refresh of all package lists after updat
 # ------
 
 # installing
-alias paca="sudo aura -A" # install AUR package
-alias pacas="aura -As" # search AUR
-alias pacaf="sudo aura -Ax" # install and display make output
-alias pacaa="aura -Aa" # remove make deps when finished installing
-alias pacadiff="aura -Ak" # show PKGBUILD diff
-alias pacaupdf="sudo aura -Akua" # upgrades, removes make deps, shows PKGBUILD diffs
-alias pacai="aura -Ai" # get AUR package information
-alias pacaupd="sudo aura -Au" # update AUR packages
-alias pacapkg="aura -Ap" # Display an AUR package"s PKGBUILD
-alias pacadeps="aura -Ad" # display package deps
-
-# logs
-alias pacalog='aura -Li' # list install/upgrade history for a package
-alias pacalogx='aura -Ls' # Search the pacman logfile via a regex
-
-#Downgrade a package (this is interactive):
-#aura -C (package)
-
-#Search the package cache for package files via a regex:
-#aura -Cs (regex)
-
-#Backup the package cache:
-#aura -Cb (/path/to/backup/location/)
-
-#Reduce the package cache to contain only 'x' of each package file:
-#aura -Cc x
-
-
-#Build a repository package manually:
-#aura -M (package)
-
-#Build a repository package and all its dependencies manually:
-#aura -M (package) --absdeps
-
-#Sync a single package's data to the local ABS Tree:
-#aura -Mt (package)
-
-#Sync all package data in the local ABS Tree:
-#aura -My
-
-#Remove only those package files from the cache that aren't present in any package record:
-#aura -Ccc
-
 
 # ┬ ┐┌┐┐o┬  ┐─┐
 # │ │ │ ││  └─┐

@@ -1,6 +1,6 @@
 ---
-#- name: Create sublime config from template
-  #template: src={{ dotfiles }}/i3/config.j2 dest={{ dotfiles }}/i3/config.gen backup=no
+- name: check for and/or create directory
+  file: path={{ home }}/.config/sublime-text-3/Packages state=directory mode=0755
 
 - name: Symlink Sublime text 3 configuration
   file: src={{ dotfiles }}/sublime_text dest={{ home }}/.config/sublime-text-3/Packages/User state=link

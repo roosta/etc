@@ -1,18 +1,16 @@
 ---
 # Run ansible-playbook (-i hosts) (--limit <hostname>) dotfiles.yml (-t <tag>)
 - hosts: all
-
   vars_files:
     - vars/{{ ansible_hostname }}.yml
     - vars/gruvbox_palette.yml
-
   tasks:
       # init group
       # this group is the most essential. To use the rest these need to be run first
     - include: tasks/ansible.yml     tags=ansible,init,full
     - include: tasks/zsh.yml         tags=zsh,init,full
     - include: tasks/bin.yml         tags=bin,init,full
-    - include: tasks/packages.yml    tags=packages,init
+    #- include: tasks/packages.yml    tags=packages,init
 
       # browser group
     - include: tasks/firefox.yml     tags=firefox,browser,full
@@ -28,6 +26,7 @@
     - include: tasks/compton.yml     tags=compton,desktop,full
     - include: tasks/fonts.yml       tags=fonts,desktop,full
     - include: tasks/x.yml           tags=x,xorg,desktop,full
+    - include: tasks/rofi.yml        tags=rofi,desktop,full
 
       # shell group
     - include: tasks/dircolors.yml   tags=dircolors,full
@@ -47,7 +46,7 @@
     - include: tasks/ctags.yml       tags=ctags,dev,full
     - include: tasks/git.yml         tags=git,dev,full
     - include: tasks/subversion.yml  tags=subversion,svn,dev,full
-    - include: tasks/idea.yml        tags=idea,intellij,dev,full
+    #- include: tasks/idea.yml        tags=idea,intellij,dev,full
     - include: tasks/tig.yml         tags=tig,dev,full
     - include: tasks/vim.yml         tags=vim,dev,full
     - include: tasks/sublime.yml     tags=st3,subl3,sublime,dev,full

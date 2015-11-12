@@ -46,8 +46,9 @@ ZSH_HIGHLIGHT_STYLES[history-expansion]='fg=yellow'
 ZSH_HIGHLIGHT_STYLES[assign]='none'
 
 # PATTERNS
-# rm -rf
+# mark dangerous commands with red
 ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=black,bold,bg=red')
+ZSH_HIGHLIGHT_PATTERNS+=('rmrf *' 'fg=black,bold,bg=red')
 
 # Sudo
 ZSH_HIGHLIGHT_PATTERNS+=('sudo ' 'fg=black,bold,bg=red')

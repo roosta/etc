@@ -30,7 +30,7 @@ set $term urxvtc
 # set scrot/screenshot file arguments
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
 # generate new config with ansible and reload i3
-set $fullreload urxvtc -e bash -c "ansible-playbook $HOME/.dotfiles/dotfiles.yml i3 && i3-msg reload"
+set $fullreload urxvtc -e bash -c "ansible-playbook $HOME/.dotfiles/dotfiles.yml i3 && i3-msg restart"
 
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
 # │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
@@ -410,4 +410,8 @@ bar {
 {{ render_bar("bar-1", output1, status1, output1) }}
 {% endif -%}
 
+{%- if ansible_hostname == "poodoo" %}
+{{ render_bar("bar-0", output0, status0, output0) }}
+{{ render_bar("bar-1", output1, status1, output1) }}
+{% endif -%}
 # vim:ft=i3:ts=2:sw=2:fdm=marker

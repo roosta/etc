@@ -58,3 +58,4 @@
 {"description":"fix connected monitors thing","entry":"20151110T223954Z","modified":"20151110T223954Z","status":"pending","tags":["multihead"],"uuid":"29bc38b9-c96a-4bbd-9ae2-c8a3e763c214"}
 {"description":"change username","end":"20151111T095348Z","entry":"20151030T194342Z","modified":"20151111T095348Z","status":"completed","tags":["allitnil"],"uuid":"60257ee7-974f-47f0-939a-6142df092b97"}
 {"description":"update prompt","end":"20151111T095354Z","entry":"20151031T205353Z","modified":"20151111T095354Z","status":"completed","tags":["shell"],"uuid":"64c693d5-afe1-469d-9441-5d937f6d89bc"}
+{"description":"fix pure prompt symlinking","entry":"20151112T100037Z","modified":"20151112T100037Z","status":"pending","tags":["ansible"],"uuid":"457a8a72-e020-454a-a904-03b962855754"}

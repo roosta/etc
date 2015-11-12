@@ -5,7 +5,7 @@
 # └───────────────────────────────────────┘
 
 # start keychain. Remove --noask if you want to add a key on shell startup
-eval $(keychain --eval --nogui --noask --agents ssh,gpg --quiet id_rsa lint@github)
+eval $(keychain --eval --nogui --noask --agents ssh,gpg --quiet)
 
 # Use gnome-keyring daemon for ssh keys
 #if [ -n "$DESKTOP_SESSION" ];then
