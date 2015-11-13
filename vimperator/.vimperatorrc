@@ -1,5 +1,3 @@
-" 3.9 (created: 2015/02/15 15:49:05)
-" vim:filetype=vimperator
 colorscheme sweetlove
 set noscrollbars
 set loadplugins
@@ -11,14 +9,15 @@ set status=ssl,input,location,bookmark,history,tabcount,position
 source! /home/roosta/.vimperatorrc.local
 
 " map l and h to tab movement
+" this removes horizontal movement but arrows till work
+" and I hardly ever scroll horizontally anyways.
 noremap l gt
 noremap h gT
 
 " go to last active tab.
 noremap gp <C-^>
-"noremap H <C-^>
 
-" some quick movement maps
+" some quick vertical movement maps
 nnoremap j       8j
 nnoremap k       8k
 nnoremap J       16j
@@ -29,6 +28,8 @@ nnoremap <C-S-j> 40j
 nnoremap <C-S-k> 40k
 
 " change delete tab behaviour.
+" choose direction to go with movement after deleting a tab
+" dd to go to last active
 nnoremap dd :bd -select lastactive<CR>
 nnoremap d<Left> :bd -select left<CR>
 nnoremap d<Right> :bd -select right<CR>
@@ -36,14 +37,18 @@ nnoremap dh :bd -select left<CR>
 nnoremap dl :bd -select right<CR>
 
 " noscript integration
-noremap <leader>s :noscript popup<CR>
-noremap <leader>S :noscript popup<CR>
+noremap <leader>np :noscript popup<CR>
+noremap <leader>np :noscript popup<CR>
 
-" toggle bookmark sidebar
 noremap <leader>b :emenu View.Sidebar.Bookmarks<CR>
+noremap <leader>d :emenu Tools.Downloads<CR>
+noremap <leader>ss :emenu Tools.Session Manager.Save Session...<CR>
+noremap <leader>sl :emenu Tools.Session Manager.Load Session...<CR>
+
 
 " source config file
 noremap <c-w>r :source /home/roosta/.vimperatorrc<CR>
 
-"nnoremap <CR> :nohlsearch<CR><CR>
+noremap <leader>v :nohlsearch<CR>
 
+" vim:filetype=vimperator

@@ -7,13 +7,11 @@
 # │█░░  Site   : http://dotfiles.roosta.sh ░░█│
 # │█░░  Github : https://github.com/roosta ░░█│
 # └───────────┬───────────────────────────────┘
-#  thanks to: │ 
+#  thanks to: │
 # ┌───────────┘
-# ┆ https://github.com/xero
-
-# ┐ ┬o┌┌┐
-# │┌┘││││
-# └┘ ┆┘ ┆
+# │ ┐ ┬o┌┌┐
+# │ │┌┘││││
+# ┆ └┘ ┆┘ ┆
 
 alias vi="vim"
 
@@ -116,26 +114,12 @@ alias 17='cd -17'
 alias 18='cd -18'
 alias 19='cd -19'
 
-# long format and color ls output with various options. (see "man ls")
-alias lsl="ls -lAhpk --color=auto --group-directories-first"
-#alias dir='ls++ --potsf -lAhpXk'
+# lists
+alias lsa="\ls -lAhpk --color=auto --group-directories-first"
 alias ls='ls++ -lAhpk'
-alias lsr='dir -R'
+alias dir='ls'
+alias lsr='ls -R'
 alias lss='lsp -p'
-
-# fasd plugin aliases (most of these are added by default but I often grep this list)
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias c='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zi='fasd_cd -d -i' # cd with interactive selection
-alias ci='fasd_cd -d -i' # cd with interactive selection
-#alias v='f -e vim'       # quick opening files with vim
-alias v='f -t -e vim -b viminfo'
 
 # ┐─┐┬─┐┌─┐┬ ┐┬─┐o┌┐┐┐ ┬
 # └─┐├─ │  │ ││┬┘│ │ └┌┘
@@ -151,37 +135,35 @@ alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected ."
 # ┆  ┘ ┆└─┘┘ ┆┘ ┆┆└┘
 
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
-alias pacman='yaourt --color=auto' # use pacaur as a pacman extension
+alias pacman='yaourt' # use yaourt as a pacman wrapper
 
 # Installing
-alias pacs='sudo pacman -S' # Install specific package(s) from the repositories
-alias pacss='pacman -Ss' # Search for package(s) in the repositories
-alias pacdl='pacman -Sw' # Download specified package(s) as .tar.xz ball
-alias pacupre='pacman -Sy && sudo abs' # Update and refresh the local package and ABS databases against repositories
-alias pacinsd='pacman -S --asdeps' # Install given package(s) as dependencies
-alias pacu='pacman -U' # Install specific package not from the repositories but from a file
+alias pacs="pacman -S" # Install specific package(s) from the repositories
+alias pacss="pacman -Ss" # Search for package(s) in the repositories
+alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
+alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
+alias pacinsd="pacman -S --asdeps" # Install given package(s) as dependencies
+alias pacu="pacman -U" # Install specific package not from the repositories but from a file
 
 # cleaning
-alias pacrm='sudo pacman -R' # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrmf='sudo pacman -Rns' # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacclean="sudo pacman -Scc" # Clean cache - delete all the package files in the cache
+alias pacrm="pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
+alias pacrmf="pacman -Rns" # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias pacclean="pacman -Scc" # Clean cache - delete all the package files in the cache
 
 # orphans
-#alias paco='aura -O' # with no args: display orphans. With arg adopt package.
-#alias pacorm="sudo aura -Oj" # remove all orphan packages.
-alias pacorm='sudo pacman -Rns $(pacman -Qtdq)' # remove all orphaned packages
+alias pacorm="pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
 alias paco="pacman -Qdt" # List all packages which are orphaned
 
 # query
-alias pacqs='pacman -Qs' # Search for package(s) in the local database
-alias pacqi='pacman -Qi' # Display information about a given package in the local database
+alias pacqs="pacman -Qs" # Search for package(s) in the local database
+alias pacqi="pacman -Qi" # Display information about a given package in the local database
 
 # lists/info
-alias pacsi='pacman -Si' # Display information about a given package in the repositories
-alias pacls='pacman -Qet' # list all packages explicitly installed and not required as dependencies
+alias pacsi="pacman -Si" # Display information about a given package in the repositories
+alias pacls="pacman -Qet" # list all packages explicitly installed and not required as dependencies
 alias paclss="pacman -Ql" # List all files installed by a given package
-alias paclsl='pacman -Qen' # list all packages from official repos
-alias pacals='pacman -Qem' # list explicit packages not from official repos
+alias paclsl="pacman -Qen" # list all packages from official repos
+alias pacals="pacman -Qem" # list explicit packages not from official repos
 alias pacown="pacman -Qo" # Show package(s) owning the specified file(s)
 
 # mark
@@ -189,40 +171,35 @@ alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as expli
 alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
 
 # Updating
-alias pacupd='sudo pacman -Syu' # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupdf='sudo pacman -Syyu' # force a refresh of all package lists and upgrade.
-alias getmirror='sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/' # get country sorted mirrorlist to use with reflector
-alias pacmirupd='sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy' # use reflector to sort the 5 fastest mirrors and force update
-alias pacmir='sudo pacman -Syy' # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
-
-# AUR
-# ------
-
-# installing
+alias pacupd="pacman -Syu" # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacupdf="pacman -Syyu" # force a refresh of all package lists and upgrade.
+alias getmirror="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
+alias pacmirupd="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
+alias pacmir="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
 # ┬ ┐┌┐┐o┬  ┐─┐
 # │ │ │ ││  └─┐
 # ┆─┘ ┆ ┆┆─┘──┘
 
-alias watchff='watch progress -wc firefox' # watch firefox download progress.
+alias watchff="watch progress -wc firefox" # watch firefox download progress.
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
-alias ports='netstat -tulanp' # list open ports
-alias pip='sudo -H pip' # set home variable when running pip
-alias tmux='tmux -2'
-alias ufw='sudo ufw'
-alias make='colormake'
+alias ports="netstat -tulanp" # list open ports
+alias pip="sudo -H pip" # set home variable when running pip
+alias tmux="tmux -2"
+alias ufw="sudo ufw"
+alias make="colormake"
 
 # https://github.com/xero/dotfiles/blob/master/zsh/.zsh/aliases.zsh
 alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
 
 # stow is always verbose
-alias stow='stow -v'
+alias stow="stow -v"
 
 # keep forgetting what these are called.
-alias getclass='xprop'
-alias getkey='xev -event keyboard'
+alias getclass="xprop"
+alias getkey="xev -event keyboard"
 #alias getkeycode=xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
-alias logcolor='ccze'
+alias logcolor="ccze"
 
 # utput from a command with xclip when this is piped in
 #alias copy='xsel -i -p -b'

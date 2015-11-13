@@ -40,7 +40,6 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** 
 #zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
 zstyle ':completion:*' menu select=long #200
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' separate-sections 'yes'
@@ -66,16 +65,10 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle ':completion::complete:*'       use-cache 1
 zstyle ':completion::complete:*'       cache-path $ZSH_CACHE_DIR
 
-
+# zstyle prosess list
 zstyle ':completion:*:processes' command 'ps -axw'
 zstyle ':completion:*:processes-names' command 'ps -awxho command'
 zstyle ':completion:*:functions' ignored-patterns '_*'
-
-# mplayer
-zstyle ':completion:*:*:mplayer:*' tag-order files
-zstyle ':completion:*:*:mplayer:*' file-patterns   \
-       '*.(rmvb|mkv|mpg|wmv|mpeg|avi|flv|mp3|mp4|flac|ogg):video' \
-       '*:all-files' '*(-/):directories'
 
 # vim
 zstyle ':completion:*:*:(vim|rview|vimdiff|xxd):*' file-sort modification
