@@ -43,9 +43,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-$HOME/.screenlayout/dual.sh &
 # set X font locations
 #xset +fp $HOME/.fonts/nerd-fonts &
 #xset +fp $HOME/.fonts/restricted &
@@ -53,10 +50,11 @@ $HOME/.screenlayout/dual.sh &
 #xset fp rehash &
 
 # load nvidia-settings on startup
-#nvidia-settings --load-config-only
+nvidia-settings --load-config-only
 
 # set background with feh
 $HOME/.fehbg &
+
 # init gnome-keyring.
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 #export SSH_AUTH_SOCK
@@ -90,10 +88,7 @@ xss-lock -- xscreensaver-command -lock &
 
 # disable screensaver when certain fullscreen apps are active
 # see https://github.com/iye/lightsOn/blob/master/lightsOn.sh
-#$home/bin/lightsOn 590 &
-
-# DPMS monitor setting (standby -> suspend -> off) (seconds)
-#xset dpms 600 1200 2000 &
+$home/bin/lightsOn 590 &
 
 # ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
 # │ ││─┤├─ ││││ ││││└─┐
