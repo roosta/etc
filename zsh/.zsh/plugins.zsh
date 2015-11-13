@@ -7,8 +7,6 @@
 # ┬─┐┬─┐┐─┐┬─┐
 # ├─ │─┤└─┐│ │
 # ┆  ┘ ┆──┘┆─┘
-# fasd ( https://github.com/clvv/fasd )
-eval "$(fasd --init auto)"
 #
 # fasd plugin aliases
 alias a='fasd -a'        # any
@@ -42,11 +40,18 @@ alias v='f -t -e vim -b viminfo' # mimic 'v'
 # ├─ │ │┌─┘┌─┘└┌┘──├─ │││││ │├─ │┬┘
 # ┆  ┆─┘└─┘└─┘ ┆   ┆  ┆┆└┘┆─┘┴─┘┆└┘
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # COMMAND HISTORY
 # -------------------
 
+# fh - repeat history
+fh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+# fh - repeat history
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
 
 # CHANGING DIRECTORY
 # ---------------------
@@ -65,17 +70,9 @@ fda() {
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
-# fh - repeat history
-fh() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
 
-# fh - repeat history
-fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
-
-# fkill - kill process
+# KILL
+# -----------
 fkill() {
   pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
 
@@ -212,23 +209,3 @@ ftags() {
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }
 
-# ┬  ┐─┐   ┌─┐┌─┐┬  ┌─┐┬─┐┐─┐
-# │  └─┐   │  │ ││  │ ││┬┘└─┐
-# ┆─┘──┘───└─┘┘─┘┆─┘┘─┘┆└┘──┘
-
-# https://github.com/trapd00r/LS_COLORS
-eval $( dircolors -b $HOME/.dircolors )
-
-# syntax hilighting with support for dircolors
-# source https://github.com/trapd00r/zsh-syntax-highlighting-filetypes
-source ~/.zsh/plugins/zsh-syntax-highlighting-filetypes/zsh-syntax-highlighting-filetypes.zsh
-
-# ┌┐┐┬ ┬┬─┐  ┬─┐┬─┐┐─┐┌┐┐
-#  │ │─┤├─ ──│┬┘├─ └─┐ │
-#  ┆ ┆ ┴┴─┘  ┆└┘┴─┘──┘ ┆
-
-# complete from history with up/down
-source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-# quick web searchers in term
-source ~/.zsh/plugins/web-search.zsh

@@ -117,7 +117,7 @@ alias 19='cd -19'
 # lists
 alias lsa="\ls -lAhpk --color=auto --group-directories-first"
 alias ls='ls++ -lAhpk'
-alias dir='ls'
+#alias dir='ls'
 alias lsr='ls -R'
 alias lss='lsp -p'
 

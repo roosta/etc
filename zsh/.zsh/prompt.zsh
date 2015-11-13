@@ -1,9 +1,9 @@
 
 # use pure prompt
-fpath=($HOME/.zsh/functions $fpath)
-autoload -U promptinit && promptinit
+#fpath=($HOME/.zsh/functions $fpath)
+#autoload -U promptinit && promptinit
 PURE_PROMPT_SYMBOL=""
-prompt pure
+#prompt pure
 
 #zle-keymap-select () {
   #case $KEYMAP in
