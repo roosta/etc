@@ -17,14 +17,3 @@
 	url = https://github.com/roosta/LS_COLORS.git
 
 # zsh plugins
-[submodule "zsh/.zsh/plugins/zsh-history-substring-search"]
-  path = zsh/.zsh/plugins/zsh-history-substring-search
-  url = https://github.com/zsh-users/zsh-history-substring-search.git
-
-
-[submodule "zsh/.zsh/plugins/zsh-syntax-highlighting-filetypes"]
-	path = zsh/.zsh/plugins/zsh-syntax-highlighting-filetypes
-	url = https://github.com/trapd00r/zsh-syntax-highlighting-filetypes.git
-[submodule "zsh/.zsh/plugins/pure"]
-	path = zsh/.zsh/plugins/pure
-	url = https://github.com/roosta/pure.git
