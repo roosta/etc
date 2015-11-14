@@ -22,6 +22,11 @@ alias ci='fasd_cd -d -i' # cd with interactive selection
 #alias v='f -e vim'       # quick opening files with vim
 alias v='f -t -e vim -b viminfo' # mimic 'v'
 
+# add fasd completion shortcuts
+bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (fils and directories)
+bindkey '^X^F' fasd-complete-f  # C-x C-f to do fasd-complete-f (only files)
+bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directories)
+
 # all fasd args, passed after --init
 #zsh-hook             # define _fasd_preexec and add it to zsh preexec array
 #zsh-ccomp            # zsh command mode completion definitions

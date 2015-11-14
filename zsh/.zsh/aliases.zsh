@@ -35,7 +35,7 @@ alias vigtk='vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini'
 # ┆  ┆┆└┘┆─┘
 
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
-#alias grep="ag"
+alias grep="ag"
 
 alias grea="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
 alias greh="cat ~/.histfile | grep" # grep command history quickly

@@ -9,6 +9,7 @@ bundles =
   , bundle "roosta/pure"
   , bundle "zsh-users/zsh-syntax-highlighting"
   , bundle "zsh-users/zsh-history-substring-search"
+  , bundle "zsh-users/zsh-completions"
   ]
 
 config = defaultConfig { plugins = bundles }
