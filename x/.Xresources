@@ -19,10 +19,15 @@
 !#define FONT_BOLDITALIC xft:DejaVu\ Sans\ Mono\ for\ Powerline:style=Bold\ Oblique:pixelsize=10:antialias=1:hinting=1:hintstyle=3
 
 ! PragmataPro <lintilla: 1920x1080>
-#define FONT_NORMAL     xft:PragmataPro\ for\ Powerline:pixelsize=14:style=Regular
-#define FONT_BOLD       xft:PragmataPro\ for\ Powerline:pixelsize=14:style=Bold
-#define FONT_ITALIC     xft:PragmataPro\ for\ Powerline:pixelsize=14:style=Italic
-#define FONT_BOLDITALIC xft:PragmataPro\ for\ Powerline:pixelsize=14:style=Bold\ Italic
+!#define FONT_NORMAL     xft:PragmataPro\ for\ Powerline:size=10:style=Regular
+!#define FONT_BOLD       xft:PragmataPro\ for\ Powerline:size=10:style=Bold
+!#define FONT_ITALIC     xft:PragmataPro\ for\ Powerline:size=10:style=Italic
+!#define FONT_BOLDITALIC xft:PragmataPro\ for\ Powerline:size=10:style=Bold\ Italic
+
+#define FONT_NORMAL     xft:Essential PragmataPro:size=10:style=Regular
+#define FONT_BOLD       xft:Essential PragmataPro:size=10:style=Bold
+#define FONT_ITALIC     xft:Essential PragmataPro:size=10:style=Italic
+#define FONT_BOLDITALIC xft:Essential PragmataPro:size=10:style=Bold Italic
 
 ! Ttyp0 <allitnil: 1600x900>
 !#define FONT_NORMAL -uw-ttyp0-medium-r-normal--17-160-75-75-c-90-iso10646-1
@@ -38,21 +43,21 @@
 
 ! define xft fallbacks
 Xft.antialias: 1
-Xft.autohint: 0
-Xft.dpi: 96
-Xft.hinting: 1
+Xft.autohint:  0
+Xft.dpi:       96
+Xft.hinting:   1
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
-Xft.rgba: rgb
+Xft.rgba:      rgb
 
 ! ┬─┐┐ │┐ ┬┌┐┐  ┬ ┐┌┐┐o┌─┐┌─┐┬─┐┬─┐
 ! │┬┘┌┼┘│┌┘ │ ──│ ││││││  │ ││ │├─
 ! ┆└┘┆ └└┘  ┆   ┆─┘┆└┘┆└─┘┘─┘┆─┘┴─┘
 
-URxvt.font: FONT_NORMAL
-URxvt.imFont: FONT_NORMAL
-URxvt.boldFont: FONT_BOLD
-URxvt.italicFont: FONT_ITALIC
+URxvt.font:           FONT_NORMAL
+URxvt.imFont:         FONT_NORMAL
+URxvt.boldFont:       FONT_BOLD
+URxvt.italicFont:     FONT_ITALIC
 URxvt.boldItalicFont: FONT_BOLDITALIC
 
 !URxvt*letterSpace: -1
@@ -61,29 +66,29 @@ URxvt*scrollBar: false
 
 !! Alt+Esc enables vi select mode
 URxvt.perl-ext-common: default,url-select,selection-to-clipboard,keyboard-select
-URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-s:      perl:keyboard-select:search
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 !URL matching, use alt-u to enter select mode
 !URxvt.perl-ext-common: default,url-select,selection-to-clipboard
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.launcher:  /usr/bin/xdg-open
 URxvt.url-select.underline: true
-URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.rend.0: Uline Bold fg5
+URxvt.url-launcher:         /usr/bin/firefox
+URxvt.matcher.rend.0:       Uline Bold fg5
 
 URxvt.cursorColor: #D3869B
-URxvt.cursorBlink: true
+URxvt.cursorBlink: false
 
-URxvt.iso14755: false
-URxvt.iso14755_52: false
+!URxvt.iso14755: false
+!URxvt.iso14755_52: false
 
 ! Meta (Alt) + keypress to set the 8th bit
 URxvt*meta8: true
 
 ! scroll single lines with shift+up/down
 ! http://unix.stackexchange.com/questions/44756/urxvt-scroll-just-one-line
-URxvt.keysym.C-Page_Up: command:\033]720;1\007
+URxvt.keysym.C-Page_Up:   command:\033]720;1\007
 URxvt.keysym.C-Page_Down: command:\033]721;1\007
 
 !! fix pager scrolling issue

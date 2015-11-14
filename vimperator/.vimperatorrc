@@ -37,8 +37,7 @@ nnoremap dh :bd -select left<CR>
 nnoremap dl :bd -select right<CR>
 
 " noscript integration
-noremap <leader>np :noscript popup<CR>
-noremap <leader>np :noscript popup<CR>
+noremap <leader><leader> :noscript popup<CR>
 
 noremap <leader>b :emenu View.Sidebar.Bookmarks<CR>
 noremap <leader>d :emenu Tools.Downloads<CR>
