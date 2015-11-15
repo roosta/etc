@@ -17,6 +17,6 @@
 	url = https://github.com/roosta/LS_COLORS.git
 
 # zsh plugins
-[submodule "zsh/.zsh/antigen-hs"]
-	path = zsh/.zsh/antigen-hs
-	url = https://github.com/Tarrasch/antigen-hs
+[submodule "zsh/.zsh/zgen"]
+	path = zsh/.zsh/zgen
+	url = https://github.com/tarjoilija/zgen
