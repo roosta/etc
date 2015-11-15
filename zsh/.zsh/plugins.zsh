@@ -4,10 +4,34 @@
 # │░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░▀▀▀░▀░▀░▀░░░│
 # └───────────────────────────────────────────────────────────┘
 
+# load zgen
+source "${HOME}/.zsh/zgen/zgen.zsh"
+
+# check if there's no init script
+if ! zgen saved; then
+    echo "Creating a zgen save"
+
+    # plugins
+    zgen load zsh-users/zsh-syntax-highlighting
+    zgen load zsh-users/zsh-completions src
+    zgen load zsh-users/zsh-history-substring-search
+    zgen load mafredri/zsh-async
+    zgen load roosta/pure
+
+    # save all to init script
+    zgen save
+fi
+
+# https://github.com/trapd00r/LS_COLORS
+eval $( dircolors -b $HOME/.dircolors )
+
 # ┬─┐┬─┐┐─┐┬─┐
 # ├─ │─┤└─┐│ │
 # ┆  ┘ ┆──┘┆─┘
-#
+
+# fasd ( https://github.com/clvv/fasd )
+eval "$(fasd --init auto)"
+
 # fasd plugin aliases
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
@@ -45,9 +69,12 @@ bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directorie
 # ├─ │ │┌─┘┌─┘└┌┘──├─ │││││ │├─ │┬┘
 # ┆  ┆─┘└─┘└─┘ ┆   ┆  ┆┆└┘┆─┘┴─┘┆└┘
 
+# source fuzzy finder <3
+# plugin handled externally with vim-plug
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # COMMAND HISTORY
 # -------------------
-
 # fh - repeat history
 fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')

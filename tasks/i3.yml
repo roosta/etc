@@ -5,5 +5,5 @@
 - name: Symlink i3 configuration
   file: dest={{ home }}/.i3 src={{ dotfiles }}/i3 state=link
 
-- name: restart i3 with new config
-  command: i3-msg -q restart
+#- name: restart i3 with new config
+  #command: i3-msg -q restart

@@ -21,20 +21,6 @@
 # ├─┤ https://dotfiles.github.io/
 # ┆ ┆
 
-# source fuzzy finder <3
-# plugin handled externally with vim-plug
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # source zsh configuration
 for config (~/.zsh/*.zsh) source $config
 
-# https://github.com/trapd00r/LS_COLORS
-eval $( dircolors -b $HOME/.dircolors )
-
-# fasd ( https://github.com/clvv/fasd )
-eval "$(fasd --init auto)"
-
-# ┬─┐┌┐┐┌┐┐o┌─┐┬─┐┌┐┐  ┬ ┬┐─┐
-# │─┤│││ │ ││ ┬├─ │││──│─┤└─┐
-# ┘ ┆┆└┘ ┆ ┆┆─┘┴─┘┆└┘  ┆ ┴──┘
-source ~/.zsh/antigen-hs/init.zsh

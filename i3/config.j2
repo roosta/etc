@@ -33,7 +33,8 @@ set $term urxvtc
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
 
 # generate new config with ansible and reload i3
-set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3"
+set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg restart"
+set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg reload"
 
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
 # │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
@@ -256,10 +257,13 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+r restart
 
 # regenerate configuration from template and restart i3
-bindsym $mod+Control+Shift+r exec --no-startup-id $fullreload
+bindsym $mod+Control+Shift+r exec --no-startup-id $fullrestart
 
 # reload i3 configuration
 bindsym $mod+Shift+c reload
+
+# regenerate i3 config and reload
+bindsym $mod+Control+Shift+c exec --no-startup-id $fullreload
 
 # border changing
 bindsym $mod+b border toggle
