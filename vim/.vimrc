@@ -6,21 +6,16 @@
 " │█ author : roosta <mail@roosta.sh>   █│
 " │█ site   : http://dotfiles.roosta.sh █│
 " │█ github : https://github.com/roosta █│
-" └──────────┬───────────────────────────┘
-"  sources:  │
-" ┌──────────┘
-" │ https://github.com/xero/dotfiles/tree/master/vim
-" │ https://github.com/trapd00r/configs/tree/master/vim
-" ┆
+" └──────────────────────────────────────┘
+" OPTIONS {{{1
+" ┌─┐┬─┐┌┐┐o┌─┐┌┐┐┐─┐
+" │ ││─┘ │ ││ ││││└─┐
+" ┘─┘┆   ┆ ┆┘─┘┆└┘──┘
 
 " must be first, because it changes other options as a side effect
 if &compatible
   set nocompatible
 endif
-
-" ┌─┐┬─┐┌┐┐o┌─┐┌┐┐┐─┐
-" │ ││─┘ │ ││ ││││└─┐
-" ┘─┘┆   ┆ ┆┘─┘┆└┘──┘
 
 " maintain undo history between sessions
 set undofile
@@ -78,20 +73,12 @@ set gdefault " the /g flag on :s substitutions by default
 set mouse=a
 set fo-=o
 set relativenumber
-
 set tags+=./.tags
-
-" INACTIVE
-" --------
-"set clipboard=unnamed " set same clipboard for vim and X: using EasyClip. See Plugins
-"set paste
-"set hlsearch " using easymotion for hl
-"set autowrite
-
+"}}}
+" CURSOR {{{1
 " ┌─┐┬ ┐┬─┐┐─┐┌─┐┬─┐
 " │  │ ││┬┘└─┐│ ││┬┘
 " └─┘┆─┘┆└┘──┘┘─┘┆└┘
-
 " change cursor depending on mode (VTE compatible terminals)
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
@@ -109,10 +96,11 @@ autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
       \   exe "normal g`\"" |
       \ endif
-
-" ┌─┐┬ ┐o
-" │ ┬│ ││
-" ┆─┘┆─┘┆
+"}}}
+" GVIM {{{1
+" ┌─┐┐ ┬o┌┌┐
+" │ ┬│┌┘││││
+" ┆─┘└┘ ┆┘ ┆
 
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
@@ -123,7 +111,8 @@ if has('gui_running')
   set guifont=Essential\ PragmataPro\ 14px
   set guiheadroom=0
 endif
-
+"}}}
+" KEYBINDS {{{1
 " ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐
 " ├┴┐├─ └┌┘│─││││││ │
 " ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘
@@ -167,11 +156,14 @@ nmap <silent> <A-Right> :wincmd l<CR>
 "nnoremap <A-Down>  :normal <c-r>=SwitchWindow('-')<CR><CR>
 "nnoremap <A-Left>  :normal <c-r>=SwitchWindow('<')<CR><CR>
 "nnoremap <A-Right> :normal <c-r>=SwitchWindow('>')<CR><CR>
-
+" }}}
+" PLUGINS {{{1
 " ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
 " │─┘│  │ ││ ┬││││└─┐
 " ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
-
+" -------------------
+" VIM-PLUG {{{2
+" --------
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -182,43 +174,50 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" clojure/script
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'kovisoft/paredit'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-salve'
+" editing
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/syntastic'
-Plug 'easymotion/vim-easymotion'
-Plug 'unblevable/quick-scope'
-Plug 'bling/vim-airline'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'scrooloose/nerdtree'
 Plug 'junegunn/vim-easy-align'
 Plug 'svermeulen/vim-easyclip'
-Plug 'mileszs/ack.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
-Plug 'bling/vim-bufferline'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" colorscheme
+" completion
+Plug 'scrooloose/syntastic'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
+" navigation
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'easymotion/vim-easymotion'
+Plug 'unblevable/quick-scope'
+Plug 'scrooloose/nerdtree'
+
+" GUI
 Plug 'morhetz/gruvbox'
+Plug 'bling/vim-bufferline'
+Plug 'bling/vim-airline'
 
 " syntax:
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 
+" cloujure:
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
+Plug 'kien/rainbow_parentheses.vim'
+"Plug 'kovisoft/paredit'
+"Plug 'tpope/vim-fireplace'
+"Plug 'tpope/vim-salve'
+
 " inactive
+"Plug 'kien/ctrlp.vim'
 "Plug 'tpope/vim-commentary'
 "Plug 'vim-scripts/YankRing.vim'
 "Plug 'tpope/vim-classpath'
@@ -231,9 +230,9 @@ call plug#end()
 
 syntax on
 filetype plugin indent on
-
-" SYNTASTIC
-" ---------
+"}}}
+" SYNTASTIC {{{2
+" --------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -243,51 +242,40 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
-
-" VIM-MULTIPLE-CURSOR
+"}}}
+" VIM-MULTIPLE-CURSOR {{{2
 " -------------------
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-
-" CTRL-P
+" }}}
+" FZF.VIM {{{2
 " -------
-let g:ctrlp_use_caching = 1
-let g:ctrlp_follow_symlinks = 1
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_show_hidden = 1
-"let g:ctrlp_map = '<c-p>'
-"let g:ctrlp_cmd = 'CtrlP'
-"let g:ctrlp_reuse_window = 1
+" https://github.com/junegunn/fzf.vim
 
-" Find in your current directory
-nmap <leader>p :CtrlP<cr>
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
 
-" Find within all your open buffers.
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <c-b> :CtrlPBuffer<cr>
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
-" Find within all your open buffers sorted by Most Recently Used (MRU).
-nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>f  :Files<CR>
+nmap <leader>bb  :Buffers<cr>
 
-" Find with a mix of all the above.
-nmap <leader>bs :CtrlPMRU<cr>
-
-let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn|cljs_rhino_repl|repl|)|\_site|\build|\node_modules|dist|undo|out)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|tags)$',
-\}
-
-" thank you: https://github.com/sykora/etc/blob/master/vim/vimrc
-let g:ctrlp_prompt_mappings = {
-\   'PrtClearCache()': ['<F5>'],
-\}
-
-" EASYMOTION
-" ----------
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+" }}}
+" EASYMOTION {{{2
+" ---------------
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
 " resoning is that EM takes up such a huge amount of binds I wanted it to have
@@ -317,9 +305,9 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 " set ctrl-v to paste in easymotion command line
 "EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
-
-" QUICKSCOPE
-" ----------
+" }}}
+" QUICKSCOPE {{{2
+" ---------------
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
 let g:qs_first_occurrence_highlight_color = 155       " terminal vim
 
@@ -328,21 +316,21 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-" AIRLINE
-" -------
+" }}}
+" AIRLINE {{{2
+" ------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#bufferline#enabled = 1
-
-" BUFFERLINE
-" ----------
+"}}}
+" BUFFERLINE {{{2
+" ---------------
 let g:bufferline_modified = '+'
 let g:bufferline_show_bufnr = 0
 let g:bufferline_solo_highlight = 1
 let g:bufferline_echo = 0
-
-" EASYCLIP
-" --------
+"}}}
+" EASYCLIP {{{2
+" -------------
 " remap mark to gm since EasyClip cut shadows m key
 let g:EasyClipUsePasteToggleDefaults = 0
 nnoremap gm m
@@ -357,18 +345,18 @@ set clipboard=unnamed,unnamedplus
 nmap ]y <plug>EasyClipSwapPasteForward
 nmap [y <plug>EasyClipSwapPasteBackwards
 let g:EasyClipShareYanks = 1
-
-" GRUVBOX
-" -------
+" }}}
+" GRUVBOX {{{2
+" ------------
 " Set theme
 "let g:gruvbox_italicize_comments = 0
 let g:gruvbox_italic = 1
 "let g:gruvbox_contrast_dark = "hard"
 colorscheme gruvbox
 set background=dark
-
-" RAINBOW PARENTHESIS
-" -------------------
+" }}}
+" RAINBOW PARENTHESIS {{{2
+" ------------------------
 let g:rbpt_colorpairs = [
   \ ['brown',       'RoyalBlue3'],
   \ ['Darkblue',    'SeaGreen3'],
@@ -395,9 +383,9 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-
-" NERDTREE
-" --------
+" }}}
+" NERDTREE {{{2
+" -------------
 map <leader>nt :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeShowBookmarks=1
@@ -409,48 +397,53 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+"}}}}
+" NERDCOMMENT {{{2
+" ----------------
 
-" NERDCOMMENT
-" -----------
-" mirrow tpope commentary keys.
-"
+" mirror tpope commentary keys.
 nmap gcc <plug>NERDCommenterToggle
 vmap gc <plug>NERDCommenterToggle
 
-" PAREDIT
-" -------
+"}}}
+" PAREDIT {{{2
+" -----------
+
 let g:paredit_electric_return = 0
 let g:paredit_leader = '\'
 "let g:paredit_disable_clojure = 0
 
-"  EASY-ALIGN
-" ------------
+" }}}
+" EASY-ALIGN {{{2
+" ---------------
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+" }}}
+" INDENT GUIDES {{{2
+" ------------------
 
-" INDENT GUIDES
-" -------------
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
-" ACK.VIM
-" -----------
+" }}}
+" ACK.VIM {{{2
+" ------------
+
 let g:ackprg = 'ag --vimgrep'
 
-
-" ┌─┐┌─┐┌┌┐┌┌┐┬─┐┌┐┐┬─┐┐─┐
-" │  │ ││││││││─┤││││ │└─┐
-" └─┘┘─┘┘ ┆┘ ┆┘ ┆┆└┘┆─┘──┘
-
-" https://github.com/tpope/vim-fireplace/pull/222
-command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
-
+"}}}
+"}}}
+" FUNCTIONS {{{
 " ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
 " ├─ │ │││││   │ ││ ││││└─┐
 " ┆  ┆─┘┆└┘└─┘ ┆ ┆┘─┘┆└┘──┘
+
+" https://github.com/tpope/vim-fireplace/pull/222
+command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
 " if working with splits, set cursorline only on active window,
 " to give an indication other than airline which split is active
@@ -494,19 +487,21 @@ function! SwitchWindow(dir)
     return ""
   endif
 endfunction
-
-
-
-
-
-
-
-
-" holding on to these just in case I'll need them again
+" }}}
+" INACTIVE {{{
 " o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
 " │││││─┤│   │ ││┌┘├─
 " ┆┆└┘┘ ┆└─┘ ┆ ┆└┘ ┴─┘
 " ------------------------
+
+" OPTIONS
+" -------
+"set clipboard=unnamed " set same clipboard for vim and X: using EasyClip. See Plugins
+"set paste
+"set hlsearch " using easymotion for hl
+"set autowrite
+
+
 " Promptline (used to generate a prompt for terminal to match airline.
 "let g:promptline_preset = {
   "\'a' : [ '$vim_mode' ],
@@ -548,4 +543,43 @@ endfunction
 " --------
 " nmap <leader>t :TagbarToggle<CR>
 
+" CTRL-P
+" -------
+"let g:ctrlp_use_caching = 1
+"let g:ctrlp_follow_symlinks = 1
+"let g:ctrlp_show_hidden = 1
+"let g:ctrlp_working_path_mode = '0' " use the current folder, not repo root
 
+""let g:ctrlp_working_path_mode = 'r'
+""let g:ctrlp_map = '<c-p>'
+""let g:ctrlp_cmd = 'CtrlP'
+""let g:ctrlp_reuse_window = 1
+
+"" Find in your current directory
+"nmap <leader>p :CtrlP<cr>
+
+"" Find within all your open buffers.
+"nmap <leader>bb :CtrlPBuffer<cr>
+"nmap <c-b> :CtrlPBuffer<cr>
+
+"" Find within all your open buffers sorted by Most Recently Used (MRU).
+"nmap <leader>bm :CtrlPMixed<cr>
+
+"" Find with a mix of all the above.
+"nmap <leader>bs :CtrlPMRU<cr>
+
+"let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
+
+"let g:ctrlp_custom_ignore = {
+  "\ 'dir':  '\v[\/](\.(git|hg|svn|cljs_rhino_repl|repl|)|\_site|\build|\node_modules|dist|undo|out)$',
+  "\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|tags)$',
+"\}
+
+"" thank you: https://github.com/sykora/etc/blob/master/vim/vimrc
+"let g:ctrlp_prompt_mappings = {
+"\   'PrtClearCache()': ['<F5>'],
+"\}
+
+
+"}}}
+" vim: fdm=marker:sw=2
