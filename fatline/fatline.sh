@@ -5,6 +5,12 @@
 # do the handling this way for now
 
 playbook=$HOME/.dotfiles/dotfiles.yml
+#tags=$(ansible-playbook $playbook --list-tags)
+#awk '
+#BEGIN { print "START" }
+#{ print $tags }
+#END { print "STOP" }
+#'
 
 #echo "Select configuration to setup"
 #select yn in "Yes" "No"; do
