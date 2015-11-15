@@ -9,8 +9,7 @@ set status=ssl,input,location,bookmark,history,tabcount,position
 source! /home/roosta/.vimperatorrc.local
 
 " map l and h to tab movement
-" this removes horizontal movement but arrows till work
-" and I hardly ever scroll horizontally anyways.
+" this removes horizontal h&l movement but arrows still work
 noremap l gt
 noremap h gT
 
@@ -30,24 +29,34 @@ nnoremap <C-S-k> 40k
 " change delete tab behaviour.
 " choose direction to go with movement after deleting a tab
 " dd to go to last active
-nnoremap dd :bd -select lastactive<CR>
-nnoremap d<Left> :bd -select left<CR>
+nnoremap dd       :bd -select lastactive<CR>
+nnoremap d<Left>  :bd -select left<CR>
 nnoremap d<Right> :bd -select right<CR>
-nnoremap dh :bd -select left<CR>
-nnoremap dl :bd -select right<CR>
+nnoremap dh       :bd -select left<CR>
+nnoremap dl       :bd -select right<CR>
 
 " noscript integration
 noremap <leader><leader> :noscript popup<CR>
 
+" bind some firefox menus
 noremap <leader>b :emenu View.Sidebar.Bookmarks<CR>
 noremap <leader>d :emenu Tools.Downloads<CR>
+
+" session manager shortcuts
 noremap <leader>ss :emenu Tools.Session Manager.Save Session...<CR>
 noremap <leader>sl :emenu Tools.Session Manager.Load Session...<CR>
 
+" select all on a page.
+noremap <c-a> i<c-a>
 
 " source config file
 noremap <c-w>r :source /home/roosta/.vimperatorrc<CR>
 
-noremap <leader>v :nohlsearch<CR>
+noremap <leader>ds :nohlsearch<CR>
 
-" vim:filetype=vimperator
+" use up/down when in cmdmode to select completions
+" note: use shift-movement to move in command history
+cmap <Down> <Tab>
+cmap <Up> <S-Tab>
+
+" vim:ft=vimperator:sw=2:ts=2

@@ -1,17 +1,18 @@
-" ┌──────────────────────────────────────┐
-" │█▀▀▀▀▀▀▀▀█░░░░█░█░▀█▀░█▄█░░░█▀▀▀▀▀▀▀▀█│
-" │█▀▀▀▀▀▀▀▀█░░░░▀▄▀░░█░░█░█░░░█▀▀▀▀▀▀▀▀█│
-" │█▀▀▀▀▀▀▀▀▀░░░░░▀░░▀▀▀░▀░▀░░░▀▀▀▀▀▀▀▀▀█│
-" │█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█│
-" │█ author : roosta <mail@roosta.sh>   █│
-" │█ site   : http://dotfiles.roosta.sh █│
-" │█ github : https://github.com/roosta █│
-" └──────────────────────────────────────┘
+"┌──────────────────────────────────────┐
+"│█▀▀▀▀▀▀▀▀█░░░░█░█░▀█▀░█▄█░░░█▀▀▀▀▀▀▀▀█│
+"│█▀▀▀▀▀▀▀▀█░░░░▀▄▀░░█░░█░█░░░█▀▀▀▀▀▀▀▀█│
+"│█▀▀▀▀▀▀▀▀▀░░░░░▀░░▀▀▀░▀░▀░░░▀▀▀▀▀▀▀▀▀█│
+"│█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█│
+"│█ author : roosta <mail@roosta.sh>   █│
+"│█ site   : http://dotfiles.roosta.sh █│
+"│█ github : https://github.com/roosta █│
+"└──────────────────────────────────────┘
 " OPTIONS {{{1
+" -------------------
 " ┌─┐┬─┐┌┐┐o┌─┐┌┐┐┐─┐
 " │ ││─┘ │ ││ ││││└─┐
 " ┘─┘┆   ┆ ┆┘─┘┆└┘──┘
-
+" -------------------
 " must be first, because it changes other options as a side effect
 if &compatible
   set nocompatible
@@ -76,9 +77,11 @@ set relativenumber
 set tags+=./.tags
 "}}}
 " CURSOR {{{1
+" ------------------
 " ┌─┐┬ ┐┬─┐┐─┐┌─┐┬─┐
 " │  │ ││┬┘└─┐│ ││┬┘
 " └─┘┆─┘┆└┘──┘┘─┘┆└┘
+" ------------------
 " change cursor depending on mode (VTE compatible terminals)
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
@@ -98,10 +101,11 @@ autocmd BufReadPost *
       \ endif
 "}}}
 " GVIM {{{1
+" ----------
 " ┌─┐┐ ┬o┌┌┐
 " │ ┬│┌┘││││
 " ┆─┘└┘ ┆┘ ┆
-
+" ----------
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -113,10 +117,11 @@ if has('gui_running')
 endif
 "}}}
 " KEYBINDS {{{1
-" ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐
-" ├┴┐├─ └┌┘│─││││││ │
-" ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘
-
+" ----------------------
+" ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐┐─┐
+" ├┴┐├─ └┌┘│─││││││ │└─┐
+" ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘──┘
+" ----------------------
 " Move across wrapped lines like regular lines
 "noremap 0 ^ " Go to the first non-blank character of a line
 "noremap ^ 0 " Just in case you need to go to the very beginning of a line
@@ -158,12 +163,13 @@ nmap <silent> <A-Right> :wincmd l<CR>
 "nnoremap <A-Right> :normal <c-r>=SwitchWindow('>')<CR><CR>
 " }}}
 " PLUGINS {{{1
+" -------------------
 " ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
 " │─┘│  │ ││ ┬││││└─┐
 " ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
 " -------------------
-" VIM-PLUG {{{2
-" --------
+" PLUGIN MANAGER {{{2
+" -------------------
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -180,13 +186,14 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'svermeulen/vim-easyclip'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
-" completion
-Plug 'scrooloose/syntastic'
+" compl/lint
+Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " navigation
@@ -196,7 +203,8 @@ Plug 'mileszs/ack.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
+Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
 
 " GUI
 Plug 'morhetz/gruvbox'
@@ -207,13 +215,13 @@ Plug 'bling/vim-airline'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'junegunn/rainbow_parentheses.vim'
 
-" cloujure:
+" cloujure
+"Plug 'kovisoft/paredit',    { 'for': 'clojure' }
+"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
-Plug 'kien/rainbow_parentheses.vim'
-"Plug 'kovisoft/paredit'
-"Plug 'tpope/vim-fireplace'
 "Plug 'tpope/vim-salve'
 
 " inactive
@@ -357,32 +365,38 @@ set background=dark
 " }}}
 " RAINBOW PARENTHESIS {{{2
 " ------------------------
-let g:rbpt_colorpairs = [
-  \ ['brown',       'RoyalBlue3'],
-  \ ['Darkblue',    'SeaGreen3'],
-  \ ['darkgray',    'DarkOrchid3'],
-  \ ['darkgreen',   'firebrick3'],
-  \ ['darkcyan',    'RoyalBlue3'],
-  \ ['darkred',     'SeaGreen3'],
-  \ ['darkmagenta', 'DarkOrchid3'],
-  \ ['brown',       'firebrick3'],
-  \ ['gray',        'RoyalBlue3'],
-  \ ['yellow',       'yellow'],
-  \ ['darkmagenta', 'DarkOrchid3'],
-  \ ['Darkblue',    'firebrick3'],
-  \ ['darkgreen',   'RoyalBlue3'],
-  \ ['darkcyan',    'SeaGreen3'],
-  \ ['darkred',     'DarkOrchid3'],
-  \ ['red',         'firebrick3'],
-  \ ]
+"let g:rbpt_colorpairs = [
+  "\ ['brown',       'RoyalBlue3'],
+  "\ ['Darkblue',    'SeaGreen3'],
+  "\ ['darkgray',    'DarkOrchid3'],
+  "\ ['darkgreen',   'firebrick3'],
+  "\ ['darkcyan',    'RoyalBlue3'],
+  "\ ['darkred',     'SeaGreen3'],
+  "\ ['darkmagenta', 'DarkOrchid3'],
+  "\ ['brown',       'firebrick3'],
+  "\ ['gray',        'RoyalBlue3'],
+  "\ ['yellow',       'yellow'],
+  "\ ['darkmagenta', 'DarkOrchid3'],
+  "\ ['Darkblue',    'firebrick3'],
+  "\ ['darkgreen',   'RoyalBlue3'],
+  "\ ['darkcyan',    'SeaGreen3'],
+  "\ ['darkred',     'DarkOrchid3'],
+  "\ ['red',         'firebrick3'],
+  "\ ]
+
+" Activation based on file type
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
 
 "let g:rbpt_loadcmd_toggle = 0
 
 " auto enable Rainbow for all closures
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 " }}}
 " NERDTREE {{{2
 " -------------
@@ -400,7 +414,6 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 "}}}}
 " NERDCOMMENT {{{2
 " ----------------
-
 " mirror tpope commentary keys.
 nmap gcc <plug>NERDCommenterToggle
 vmap gc <plug>NERDCommenterToggle
@@ -432,16 +445,15 @@ let g:indent_guides_start_level = 2
 " }}}
 " ACK.VIM {{{2
 " ------------
-
 let g:ackprg = 'ag --vimgrep'
-
 "}}}
 "}}}
 " FUNCTIONS {{{
+" -------------------------
 " ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
 " ├─ │ │││││   │ ││ ││││└─┐
 " ┆  ┆─┘┆└┘└─┘ ┆ ┆┘─┘┆└┘──┘
-
+" -------------------------
 " https://github.com/tpope/vim-fireplace/pull/222
 command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
@@ -489,10 +501,13 @@ function! SwitchWindow(dir)
 endfunction
 " }}}
 " INACTIVE {{{
+" --------------------
 " o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
 " │││││─┤│   │ ││┌┘├─
 " ┆┆└┘┘ ┆└─┘ ┆ ┆└┘ ┴─┘
-" ------------------------
+" --------------------
+" Old configuration that I keep here for posterity
+" ------------------------------------------------
 
 " OPTIONS
 " -------

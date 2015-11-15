@@ -40,16 +40,16 @@ key[PageDown]=${terminfo[knp]}
 
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
-if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-  function zle-line-init-binds () {
-    printf '%s' "${terminfo[smkx]}"
-  }
-  function zle-line-finish-binds () {
-    printf '%s' "${terminfo[rmkx]}"
-  }
-  zle -N zle-line-init-binds
-  zle -N zle-line-finish-binds
-fi
+#if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+  #function zle-line-init-binds () {
+    #printf '%s' "${terminfo[smkx]}"
+  #}
+  #function zle-line-finish-binds () {
+    #printf '%s' "${terminfo[rmkx]}"
+  #}
+  #zle -N zle-line-init-binds
+  #zle -N zle-line-finish-binds
+#fi
 
 
 # bind k and j for VI mode hist substring search

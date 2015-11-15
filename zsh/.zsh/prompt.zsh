@@ -2,14 +2,18 @@
 # ┃━┛┃┳┛┃ ┃┃┃┃┃━┛ ┃
 # ┇  ┇┗┛┛━┛┛ ┇┇   ┇
 
-PROMPT_SYMBOL_VIINS=""
-PROMPT_SYMBOL_VICMD=""
+#PURE_PROMPT_SYMBOL_VIINS=""
+#PURE_PROMPT_SYMBOL_VICMD=""
+PURE_PROMPT_SYMBOL=""
 
-function zle-line-init zle-keymap-select {
-  zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+#function zle-line-init zle-keymap-select {
+  #zle reset-prompt
+#}
+
+#zle -N zle-line-init
+#zle -N zle-keymap-select
+
+#setopt prompt_subst
 
 # attempt at changing cursor shape in vim/cmd mode
 #zle-keymap-select () {

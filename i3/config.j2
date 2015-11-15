@@ -21,16 +21,19 @@
 # fast way to reach power settings for system. Requires polkit.
 set $locker xscreensaver-command --lock
 
-# TODO: fix script
-# ~~~Have to call a script to open urxvt in tmux. See script for details~~~
+# tmux session management
 # tmux new-session -n$USER -s$USER@$HOSTNAME
 #set $term urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
 #set $term urxvtc -e bash -c "tmux new-session"
+
+# set terminal command.
 set $term urxvtc
+
 # set scrot/screenshot file arguments
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
+
 # generate new config with ansible and reload i3
-set $fullreload urxvtc -e bash -c "ansible-playbook $HOME/.dotfiles/dotfiles.yml i3 && i3-msg restart"
+set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3"
 
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
 # │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
@@ -44,6 +47,13 @@ exec $term
 #exec pidgin
 #exec spotify
 #exec steam
+
+# ┌─┐┬─┐┌┐┐o┌─┐┌┐┐┐─┐
+# │ ││─┘ │ ││ ││││└─┐
+# ┘─┘┆   ┆ ┆┘─┘┆└┘──┘
+
+# jump to previous workspace by hitting first ws button again
+#workspace_auto_back_and_forth yes
 
 # ┐ ┬┌─┐┬─┐┬┌ ┐─┐┬─┐┬─┐┌─┐┬─┐┐─┐
 # ││││ ││┬┘├┴┐└─┐│─┘│─┤│  ├─ └─┐
@@ -109,14 +119,14 @@ bindsym $mod+F6 workspace $FWS6
 bindsym $mod+F7 workspace $FWS7
 bindsym $mod+F8 workspace $FWS8
 
-bindsym $mod+Shift+F1 workspace $FWS1
-bindsym $mod+Shift+F2 workspace $FWS2
-bindsym $mod+Shift+F3 workspace $FWS3
-bindsym $mod+Shift+F4 workspace $FWS4
-bindsym $mod+Shift+F5 workspace $FWS5
-bindsym $mod+Shift+F6 workspace $FWS6
-bindsym $mod+Shift+F7 workspace $FWS7
-bindsym $mod+Shift+F8 workspace $FWS8
+bindsym $mod+Shift+F1 move workspace $FWS1
+bindsym $mod+Shift+F2 move workspace $FWS2
+bindsym $mod+Shift+F3 move workspace $FWS3
+bindsym $mod+Shift+F4 move workspace $FWS4
+bindsym $mod+Shift+F5 move workspace $FWS5
+bindsym $mod+Shift+F6 move workspace $FWS6
+bindsym $mod+Shift+F7 move workspace $FWS7
+bindsym $mod+Shift+F8 move workspace $FWS8
 
 # assign workspaces to outputs
 workspace $PWS1_TRM output {{ output0 }}
@@ -231,19 +241,25 @@ bindsym $mod+Shift+Right move right
 # choose split direction.
 bindsym $mod+v split v
 bindsym $mod+Shift+v split h
+
+# window layout controls
+bindsym $mod+Control+Shift+t layout split
+bindsym $mod+Shift+t layout toggle
+bindsym $mod+t layout tabbed
 bindsym $mod+f fullscreen toggle
-bindsym $mod+Control+Shift+t layout tabbed
-bindsym $mod+Shift+t layout toggle split
-bindsym $mod+t layout toggle
+
+# toggle
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
-bindsym $mod+Shift+c reload
-
-# regenerate i3 conf and reload
-bindsym $mod+Control+Shift+c exec $fullreload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
+# regenerate configuration from template and restart i3
+bindsym $mod+Control+Shift+r exec --no-startup-id $fullreload
+
+# reload i3 configuration
+bindsym $mod+Shift+c reload
 
 # border changing
 bindsym $mod+b border toggle
@@ -260,9 +276,6 @@ bindsym $mod+z workspace back_and_forth
 
 # move windows back and forth
 bindsym $mod+Shift+z move container to workspace back_and_forth
-
-# jump to previous workspace by hitting first ws button again
-#workspace_auto_back_and_forth yes
 
 bindsym $mod+Control+Shift+left move container to output left
 bindsym $mod+Control+Shift+right move container to output right
@@ -326,10 +339,10 @@ bindsym $mod+r mode "$mode_resize"
 #set $locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-  bindsym l exec --no-startup-id $locker, mode "default"
-  bindsym e exec --no-startup-id i3-msg exit, mode "default"
-  bindsym s exec --no-startup-id $locker && systemctl suspend, mode "default"
-  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+  bindsym l       exec --no-startup-id $locker, mode "default"
+  bindsym e       exec --no-startup-id i3-msg exit, mode "default"
+  bindsym s       exec --no-startup-id $locker && systemctl suspend, mode "default"
+  bindsym r       exec --no-startup-id systemctl reboot, mode "default"
   bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
   # back to normal: Enter or Escape
