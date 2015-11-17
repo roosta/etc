@@ -203,3 +203,42 @@ new [description:"update prompt" end:"1447235634" entry:"1446324833" modified:"1
 time 1447322437
 new [description:"fix pure prompt symlinking" entry:"1447322437" modified:"1447322437" status:"pending" tags:"ansible" uuid:"457a8a72-e020-454a-a904-03b962855754"]
 ---
+time 1447772673
+new [description:"fix error exit code in prompt" entry:"1447772673" modified:"1447772673" status:"pending" tags:"shell" uuid:"0c577a35-8640-4e02-84ee-f1465f327d92"]
+---
+time 1447772725
+old [description:"fix pure prompt symlinking" entry:"1447322437" modified:"1447322437" status:"pending" tags:"ansible" uuid:"457a8a72-e020-454a-a904-03b962855754"]
+new [description:"fix pure prompt symlinking" end:"1447772722" entry:"1447322437" modified:"1447772725" status:"deleted" tags:"ansible" uuid:"457a8a72-e020-454a-a904-03b962855754"]
+---
+time 1447772731
+old [description:"fix v fasd alias" entry:"1446537796" modified:"1446537796" status:"pending" tags:"shell" uuid:"56acf579-1da2-4c3e-9cc2-362092040ba2"]
+new [description:"fix v fasd alias" end:"1447772731" entry:"1446537796" modified:"1447772731" status:"completed" tags:"shell" uuid:"56acf579-1da2-4c3e-9cc2-362092040ba2"]
+---
+time 1447772779
+old [description:"git clone and link cljs lightsOn" entry:"1446407048" modified:"1446407048" status:"pending" tags:"ansible" uuid:"9c82e82c-20af-4dca-b515-09a95d54021d"]
+new [description:"git clone and link cljs lightsOn" end:"1447772779" entry:"1446407048" modified:"1447772779" status:"completed" tags:"ansible" uuid:"9c82e82c-20af-4dca-b515-09a95d54021d"]
+---
+time 1447772808
+old [description:"fix connected monitors thing" entry:"1447195194" modified:"1447195194" status:"pending" tags:"multihead" uuid:"29bc38b9-c96a-4bbd-9ae2-c8a3e763c214"]
+new [description:"fix connected monitors thing" end:"1447772807" entry:"1447195194" modified:"1447772808" status:"deleted" tags:"multihead" uuid:"29bc38b9-c96a-4bbd-9ae2-c8a3e763c214"]
+---
+time 1447772832
+old [description:"finish squirt first draft" entry:"1446500610" modified:"1446500610" status:"pending" tags:"ansible" uuid:"c5b37cbd-37a6-4292-807b-610b400eda43"]
+new [description:"finish fatline first draft" entry:"1446500610" modified:"1447772832" status:"pending" tags:"ansible" uuid:"c5b37cbd-37a6-4292-807b-610b400eda43"]
+---
+time 1447772851
+old [description:"add taskwarrior sync" entry:"1446489429" modified:"1446489429" status:"pending" tags:"general" uuid:"73bc72cc-a69b-47ff-9c1f-cdaef40175d8"]
+new [description:"add taskwarrior sync" end:"1447772849" entry:"1446489429" modified:"1447772851" status:"deleted" tags:"general" uuid:"73bc72cc-a69b-47ff-9c1f-cdaef40175d8"]
+---
+time 1447772972
+old [description:"check if avahi is still needed" entry:"1446233204" modified:"1446660114" status:"pending" tags:"general" uuid:"58307912-9471-4e4a-ad82-6250675f13d3"]
+new [description:"check if avahi is still needed" end:"1447772972" entry:"1446233204" modified:"1447772972" status:"completed" tags:"general" uuid:"58307912-9471-4e4a-ad82-6250675f13d3"]
+---
+time 1447773021
+old [description:"infinality repo setup & install" entry:"1446234630" modified:"1446234630" status:"pending" tags:"ansible" uuid:"f82732d9-9384-48a2-a766-6232cc8f2c59"]
+new [description:"infinality repo setup & install" end:"1447773019" entry:"1446234630" modified:"1447773021" status:"deleted" tags:"ansible" uuid:"f82732d9-9384-48a2-a766-6232cc8f2c59"]
+---
+time 1447773068
+old [description:"fix check for exec tasksh" entry:"1446406084" modified:"1446406084" status:"pending" tags:"ansible" uuid:"ce6d3fb0-5e49-4f21-9dc8-d1a429c649b5"]
+new [description:"fix check for exec tasksh" end:"1447773067" entry:"1446406084" modified:"1447773068" status:"deleted" tags:"ansible" uuid:"ce6d3fb0-5e49-4f21-9dc8-d1a429c649b5"]
+---
