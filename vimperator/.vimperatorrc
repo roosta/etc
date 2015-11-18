@@ -53,6 +53,7 @@ noremap <c-a> i<c-a>
 noremap <c-w>r :source /home/roosta/.vimperatorrc<CR>
 
 noremap <leader>ds :nohlsearch<CR>
+noremap <leader>st :stylish toggle<CR>
 
 " use up/down when in cmdmode to select completions
 " note: use shift-movement to move in command history

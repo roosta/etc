@@ -385,10 +385,12 @@ set background=dark
   "\ ]
 
 " Activation based on file type
-augroup rainbow_lisp
-  autocmd!
-  autocmd FileType lisp,clojure,scheme RainbowParentheses
-augroup END
+"augroup rainbow_lisp
+  "autocmd!
+  "autocmd FileType lisp,clojure,scheme RainbowParentheses
+"augroup END
+
+au VimEnter * RainbowParentheses
 
 "let g:rbpt_loadcmd_toggle = 0
 

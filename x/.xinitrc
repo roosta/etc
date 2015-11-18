@@ -95,7 +95,7 @@ $home/bin/lightsOn 590 &
 # ┆─┘┘ ┆┴─┘┘ ┆┘─┘┆└┘──┘
 
 urxvtd -q -f -o &
-seaf-cli start &
+#seaf-cli start &
 compton -b &
 xscreensaver -no-splash &
 dunst &

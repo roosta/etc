@@ -80,3 +80,6 @@ idea/config/options/ClojureUsageStatistics.xml
 
 parasiterc
 gimp/menurc
+idea/config/options/dimensions.xml
+idea/config/options/extensionsRootType.xml
+idea/config/plugins/availables.xml

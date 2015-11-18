@@ -172,7 +172,7 @@ alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non e
 
 # Updating
 alias pacupd="pacman -Syu" # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupdf="pacman -Syyu" # force a refresh of all package lists and upgrade.
+alias pacupdf="pacman -Syua --noconfirm" # force a refresh of all package lists and upgrade.
 alias getmirror="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
 alias pacmirupd="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
 alias pacmir="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
