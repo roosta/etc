@@ -1,4 +1,7 @@
 ---
 - name: Symlink fasd config
-  file: src={{dotfiles}}/fasd/.fasdrc dest={{home}}/.fasdrc state=link
+  file: src={{dotfiles}}/fasd/{{ item }} dest={{home}}/{{ item }} state=link
+  with_items:
+    - .fasdrc
+    - .fasd
 

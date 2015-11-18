@@ -1,4 +1,9 @@
 ---
+- name: check for/create library and bin directory
+  file: path={{ home }}/{{ item }} state=directory mode=0755
+  with_items:
+    - .IntelliJIdea15
+
 # Setup leiningen config. Relies on AUR package!
 - name: Symlink "IntellijIdea" configuration
   file: dest={{ home }}/{{ item.dest }} src={{ dotfiles }}/idea/{{ item.src }} state=link

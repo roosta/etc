@@ -83,3 +83,5 @@ gimp/menurc
 idea/config/options/dimensions.xml
 idea/config/options/extensionsRootType.xml
 idea/config/plugins/availables.xml
+fasd.data
+fasd.log

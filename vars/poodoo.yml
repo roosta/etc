@@ -15,7 +15,7 @@ i3_font: "pango: Essential PragmataPro 12px"
 i3_status_font: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
 
 status0: "i3blocks -c ~/.i3/i3blocks/poodoo/output0.i3b"
-status1: "i3blocks -c ~/.i3/i3blocks/poodoo/output1.i3b"
+#status1: "i3blocks -c ~/.i3/i3blocks/poodoo/output1.i3b"
 
 # vim:ft=yaml:ts=2:sw=2
 

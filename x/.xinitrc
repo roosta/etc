@@ -83,6 +83,8 @@ xbindkeys &
 # │ ││└─┐│─┘│  │─┤└┌┘
 # ┆─┘┆──┘┆  ┆─┘┘ ┆ ┆
 
+$HOME/.screenlayout/dual.sh
+
 # screen locker
 xss-lock -- xscreensaver-command -lock &
 
