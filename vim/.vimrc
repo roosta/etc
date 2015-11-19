@@ -222,16 +222,15 @@ Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
-"Plug 'tpope/vim-salve'
+Plug 'venantius/vim-eastwood'
+Plug 'tpope/vim-salve'
 
 " inactive
 "Plug 'kien/ctrlp.vim'
 "Plug 'tpope/vim-commentary'
 "Plug 'vim-scripts/YankRing.vim'
 "Plug 'tpope/vim-classpath'
-"Plug 'venantius/vim-eastwood'
 "Plug 'jgdavey/tslime.vim'
-"Plug 'majutsushi/tagbar'
 "Plug 'edkolev/promptline.vim'
 "Plug 'edkolev/tmuxline.vim'
 call plug#end()
