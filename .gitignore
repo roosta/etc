@@ -85,3 +85,5 @@ idea/config/options/extensionsRootType.xml
 idea/config/plugins/availables.xml
 fasd.data
 fasd.log
+idea/config/options/ClojureUsageStatisticsSettings.xml
+idea/config/options/recentProjects.xml

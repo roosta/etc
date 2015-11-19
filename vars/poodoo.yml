@@ -4,7 +4,7 @@ home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
 # define displays
-output0: "HDM1"
+output0: "HDMI1"
 output1: "VGA1"
 
 font_location: "{{home}}/.fonts/misc"

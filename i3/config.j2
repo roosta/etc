@@ -240,8 +240,8 @@ bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # choose split direction.
-bindsym $mod+v split v
-bindsym $mod+Shift+v split h
+bindsym $mod+v split h
+bindsym $mod+x split v
 
 # window layout controls
 bindsym $mod+Control+Shift+t layout split
@@ -391,13 +391,13 @@ client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{
 client.placeholder      {{ bright_aqua }} {{ neutral_aqua }} {{ dark0 }} {{ bright_purple }}
 
 {# macro that renders status bars based on host spesific variables as args #}
-{% macro render_bar(_id, _output, _status, _tray='primary') %}
+{% macro render_bar(_id, _output, _status, _tray='primary', _pos='top') %}
 bar {
   id {{ _id }}
   output {{ _output }}
   status_command {{ _status }}
   font {{ i3_status_font }}
-  position top
+  position {{ _pos }}
   tray_output {{ _tray }}
   strip_workspace_numbers yes
   separator_symbol "|"
@@ -429,5 +429,6 @@ bar {
 
 {%- if ansible_hostname == "poodoo" %}
 {{ render_bar("bar-0", output0, status0, output0) }}
+{{ render_bar("bar-1", output1, status0, output1, 'bottom') }}
 {% endif -%}
 # vim:ft=i3:ts=2:sw=2:fdm=marker
