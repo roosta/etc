@@ -27,6 +27,7 @@
     - include: tasks/fonts.yml       tags=fonts,desktop,full
     - include: tasks/x.yml           tags=x,xorg,desktop,full
     - include: tasks/rofi.yml        tags=rofi,desktop,full
+    - include: tasks/ranger.yml      tags=ranger,desktop,full
 
       # shell group
     - include: tasks/dircolors.yml   tags=dircolors,full
@@ -46,7 +47,7 @@
     - include: tasks/ctags.yml       tags=ctags,dev,full
     - include: tasks/git.yml         tags=git,dev,full
     - include: tasks/subversion.yml  tags=subversion,svn,dev,full
-    #- include: tasks/idea.yml        tags=idea,intellij,dev,full
+    - include: tasks/idea.yml        tags=idea,intellij,dev,full
     - include: tasks/tig.yml         tags=tig,dev,full
     - include: tasks/vim.yml         tags=vim,dev,full
     - include: tasks/sublime.yml     tags=st3,subl3,sublime,dev,full

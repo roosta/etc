@@ -1,4 +1,5 @@
-{:user {:plugins [[cider/cider-nrepl "0.9.1"]]}}
+{:user {:plugins [[cider/cider-nrepl "0.9.1"]]
+        :dependencies [[jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]]}}
 
 ;[cider/cider-nrepl "0.9.1"]
 ;[venantius/ultra "0.3.4"]
