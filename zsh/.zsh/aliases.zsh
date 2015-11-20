@@ -16,19 +16,20 @@
 alias vi="vim"
 
 # quick edits
-alias vigit='vim ~/.gitconfig'
-alias vissh='vim ~/.ssh/config'
-alias vii3='vim ~/.i3/config.j2'
-alias vialias='vim ~/.zsh/aliases.zsh'
-alias vivi='vim ~/.vimrc'
-alias vivim='vim ~/.vimrc'
-alias vixr='vim ~/.Xresources'
-alias vitmux='vim ~/.tmux.conf'
-alias vixinit='vim ~/.xinitrc'
-alias vifont='vim ~/.config/fontconfig/fonts.conf'
-alias vibinds='vim ~/.xbindkeysrc'
-alias vivimp='vim ~/.vimperatorrc'
-alias vigtk='vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini'
+alias vigit="vim ~/.gitconfig"
+alias vissh="vim ~/.ssh/config"
+alias vii3="vim ~/.i3/config.j2"
+alias vialias="vim ~/.zsh/aliases.zsh"
+alias vivi="vim ~/.vimrc"
+alias vivim="vim ~/.vimrc"
+alias vixr="vim ~/.Xresources"
+alias vitmux="vim ~/.tmux.conf"
+alias vixinit="vim ~/.xinitrc"
+alias vifont="vim ~/.config/fontconfig/fonts.conf"
+alias vibinds="vim ~/.xbindkeysrc"
+alias vivimp="vim ~/.vimperatorrc"
+alias vigtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
+alias vivimp="vim ~/.vimperatorrc"
 
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │
