@@ -16,20 +16,19 @@
 alias vi="vim"
 
 # quick edits
-alias vigit="vim ~/.gitconfig"
-alias vissh="vim ~/.ssh/config"
-alias vii3="vim ~/.i3/config.j2"
-alias vialias="vim ~/.zsh/aliases.zsh"
-alias vivi="vim ~/.vimrc"
-alias vivim="vim ~/.vimrc"
-alias vixr="vim ~/.Xresources"
-alias vitmux="vim ~/.tmux.conf"
-alias vixinit="vim ~/.xinitrc"
-alias vifont="vim ~/.config/fontconfig/fonts.conf"
-alias vibinds="vim ~/.xbindkeysrc"
-alias vivimp="vim ~/.vimperatorrc"
-alias vigtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
-alias vivimp="vim ~/.vimperatorrc"
+alias vgit="vim ~/.gitconfig"
+alias vssh="vim ~/.ssh/config"
+alias vi3="vim ~/.i3/config.j2"
+alias valias="vim ~/.zsh/aliases.zsh"
+alias vvim="vim ~/.vimrc"
+alias vxres="vim ~/.Xresources"
+alias vtmux="vim ~/.tmux.conf"
+alias vxinit="vim ~/.xinitrc"
+alias vfont="vim ~/.config/fontconfig/fonts.conf"
+alias vbinds="vim ~/.xbindkeysrc"
+alias vvimp="vim ~/.vimperatorrc"
+alias vgtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
+alias vvimp="vim ~/.vimperatorrc"
 
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │
@@ -38,20 +37,19 @@ alias vivimp="vim ~/.vimperatorrc"
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias grep="ag"
 
-alias grea="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
-alias greh="cat ~/.histfile | grep" # grep command history quickly
-alias greps="ps -aux|grep" # grep processes
+alias galias="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
+alias ghist="cat ~/.histfile | grep" # grep command history quickly
+alias gps="ps -aux|grep" # grep processes
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
 # locate file at working dir
-alias gref='lsp -p|grep'
-alias grefr='ls -R|grep'
+alias gls='lsa | grep'
+alias glsr='lsa -R | grep'
 
 # list pulseaudio sinks
 alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
 # recursive grep through filetypes
-alias grehx='grep -R --include="*.hx"'
 alias greclj='grep -R --include="*.clj*"'
 
 # yes
