@@ -1,9 +1,8 @@
-# ┌──────────────────────────────────────┐
-# │░░░█░█░█▀▀░█░█░█▀▄░▀█▀░█▀█░█▀▄░█▀▀░░░░│
-# │░░░█▀▄░█▀▀░░█░░█▀▄░░█░░█░█░█░█░▀▀█░░░░│
-# │░░░▀░▀░▀▀▀░░▀░░▀▀░░▀▀▀░▀░▀░▀▀░░▀▀▀░░░░│
-# └──────────────────────────────────────┘
-# source:
+# > ┳┏ ┳━┓┓ ┳┳━┓o┏┓┓┳━┓┓━┓
+# > ┣┻┓┣━ ┗┏┛┃━┃┃┃┃┃┃ ┃┗━┓
+# > ┇ ┛┻━┛ ┇ ┇━┛┇┇┗┛┇━┛━━┛
+# > ----------------------
+# sources:
 # https://github.com/xero/dotfiles/blob/master/zsh/.zsh/keybindings.zsh
 
 # set key bindings (e = emacs, v = vi)
@@ -11,6 +10,7 @@ bindkey -v
 #zmodload zsh/terminfo
 
 # 10ms for key sequences
+# make keymode indication more responsive
 KEYTIMEOUT=1
 
 # keybindings

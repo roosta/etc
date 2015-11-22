@@ -1,105 +1,67 @@
 ```
-┌───────────────────────────────────────────────────────────────────────────────┐
-│█▀▀▀▀▀█░░░█▀▄░█▀█░█▀█░█▀▀░▀█▀░█▀█░░▀░░█▀▄░█▀█░▀█▀░█▀▀░▀█▀░█░░░█▀▀░█▀▀░░░█▀▀▀▀▀█│
-│█▀▀▀▀▀█░░░█▀▄░█░█░█░█░▀▀█░░█░░█▀█░░░░░█░█░█░█░░█░░█▀▀░░█░░█░░░█▀▀░▀▀█░░░█▀▀▀▀▀█│
-│█▀▀▀▀▀▀░░░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀░░▀░▀░░▀░░▀▀░░▀▀▀░░▀░░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░░▀▀▀▀▀▀█│
-│███████████████████████████████████████████████████████████████████████████████│
-├┬─────────────────────────────────────┬─┬──────────────────────────────────────┘
-├┤ Author : Roosta <mail@roosta.sh>    ├┬┘
-├┤ Site   : http://dotfiles.roosta.sh  ├┘
-├┤ Github : https://github.com/roosta  │
-┆├────────────────────┬┬───────────────┘
- │ Table of contents: ├┘
-┆├────────────────────┘
-├┘
-│ o┌┐┐o┌┐┐
-│ │││││ │
-│ ┆┆└┘┆ ┆
-├───────┘
-├─ ansible     tags=ansible,init,full
-├─ zsh         tags=zsh,init,full
-├─ bin         tags=bin,init,full
-│
-│ ┬─┐┬─┐┌─┐┐ ┬┐─┐┬─┐┬─┐
-│ │─││┬┘│ ││││└─┐├─ │┬┘
-│ ┆─┘┆└┘┘─┘└┴┆──┘┴─┘┆└┘
-├────────────┘
-├─ firefox     tags=firefox,browser,full
-├─ pentadactyl tags=pentadactyl,browser,full
-├─ vimperator  tags=vimperator,browser,full
-│
-│ ┬─┐┬─┐┐─┐┬┌ ┌┐┐┌─┐┬─┐
-│ │ │├─ └─┐├┴┐ │ │ ││─┘
-│ ┆─┘┴─┘──┘┆ ┘ ┆ ┘─┘┆  
-├──────────────┘
-├─ themes      tags=themes,desktop,gtk,full
-├─ gtk         tags=gtk,desktop,full
-├─ dunst       tags=dunst,desktop,full
-├─ i3          tags=i3,i3wm,i3├─wm,desktop,full
-├─ background  tags=background,bg,full
-├─ compton     tags=compton,desktop,full
-├─ fonts       tags=fonts,desktop,full
-├─ x           tags=x,xorg,desktop,full
-├─ rofi        tags=rofi,desktop,full
-│
-│ ┐─┐┬ ┬┬─┐┬  ┬  
-│ └─┐│─┤├─ │  │  
-│ ──┘┆ ┴┴─┘┆─┘┆─┘
-├──────────┘
-├─ dircolors   tags=dircolors,full
-├─ colors      tags=colors,shell,term,full
-├─ scripts     tags=scripts,shell,term,full
-├─ ls++        tags=ls++,dircolors,shell,full
-├─ bash        tags=bash,shell,full
-├─ boxes       tags=boxes,shell,full
-├─ fasd        tags=fasd,shell,full
-├─ tmux        tags=tmux,shell,full
-├─ screen      tags=screen,shell,full
-├─ termite     tags=termite,shell,full
-│
-│ ┬─┐┬─┐┐ ┬
-│ │ │├─ │┌┘
-│ ┆─┘┴─┘└┘
-├────────┘
-├─ lein        tags=lein,leiningen,dev,full
-├─ npm         tags=npm,dev,full
-├─ ctags       tags=ctags,dev,full
-├─ git         tags=git,dev,full
-├─ subversion  tags=subversion,svn,dev,full
-├─ idea        tags=idea,intellij,dev,full
-├─ tig         tags=tig,dev,full
-├─ vim         tags=vim,dev,full
-├─ sublime     tags=st3,subl3,sublime,dev,full
-│
-│ ┌┌┐o┐─┐┌─┐
-│ ││││└─┐│  
-│ ┘ ┆┆──┘└─┘
-├────┘
-├─ taskwarrior tags=tasks,taskwarrior,full
-├─ ncmpcpp     tags=ncmpcpp,full
-├─ gimp        tags=gimp,full
-├─ xboxdrv     tags=xbox,full
-├────┘
-├──────────────┬
-┆              +      
-┆              #      OS: Arch Linux x86_64
-              ###     Kernel Release: 4.2.5-1-ARCH
-             #####    WM: i3
-             ######   DE: None
-            ; #####;  $EDITOR: vim
-           +##.#####
-          +##########
-         #############;
-        ###############+
-       #######   #######
-     .######;     ;###;`".
-    .#######;     ;#####.
-    #########.   .########`
-   ######'           '######
-  ;####                 ####;
-  ##'                     '##
- #'                         `#
+> ┳━┓┏━┓┏━┓┓━┓┏┓┓┳━┓   ╻  ┳━┓┏━┓┏┓┓┳━┓o┳  ┳━┓┓━┓
+> ┃┳┛┃ ┃┃ ┃┗━┓ ┃ ┃━┫  ┏┛  ┃ ┃┃ ┃ ┃ ┣━ ┃┃  ┣━ ┗━┓
+> ┇┗┛┛━┛┛━┛━━┛ ┇ ┛ ┇  ╹   ┇━┛┛━┛ ┇ ┇  ┇┇━┛┻━┛━━┛
 ```
+
+Init|tags|Comment
+----|----|-------
+ansible|ansible,init,full|Ansible configuration. Task runner this repo uses.
+zsh|zsh,init,full|All things zsh. Custom prompts,aliases, completions etc.
+bin|bin,init,full|Binary files from other repositories and from [scripts submodule](https://github.com/roosta/scripts)
+packages|packages,init|this task is currently broken, unsure if I should even keep it
+
+browser|tags|comment
+-------|----|-------
+firefox|firefox,browser,full|Generic browser configuration
+vimperator|vimperator,browser,full|[Add vi bindings to firefox.](http://www.vimperator.org/vimperator/)
+pentadactyl|pentadactyl,browser,full|Fork of vimperator with a different philosophy. Sticks even closer to vim proper
+
+desktop|tags|comment
+-------|----|-------
+themes|themes,desktop,gtk,full|Desktop themes.
+gtk|gtk,desktop,full|Setup gtk theme variables. Relies on external packages.
+dunst|dunst,desktop,full|[Desktop notifications](https://github.com/knopwob/dunst)
+i3|i3,i3wm,i3-wm,desktop,full|[i3 tiling window manager](http://i3wm.org/)
+background|background,bg,full|Desktop backgrounds. Use 'feh' to set on wm startup.
+compton|compton,desktop,full|[Compton](https://github.com/chjj/compton) Compositor for X to supplement i3wm which lacks more flashy features. Can also be used to fix tearing issue in i3.
+fonts|fonts,desktop,full|Contains custom fonts and logic to set it up on the system by generating cache and setting some X variables. Absent from repo is some restricted fonts like [PragmataPro](http://www.fsd.it/fonts/pragmatapro.htm) which isn't free.
+X/Org|x,xorg,desktop,full|Contains system initialization (.xinitrc) which is used to start window manger among other things. Terminal configuration is also here (rxvt-unicode) and other X related stuff.
+rofi|rofi,desktop,full|[A window switcher, run dialog and dmenu replacement](https://davedavenport.github.io/rofi/)
+ranger|ranger,desktop,full|Terminal file manager with vim like shortcuts
+
+shell|tags|comment
+-----|----|-------
+dircolors|dircolors,full|Colorful filenames. Using a fork of [LS_COLORS](https://github.com/trapd00r/LS_COLORS)
+colors|colors,shell,term,full|[Repo containing color related stuff](https://github.com/roosta/colors)
+scripts|scripts,shell,term,full|[collection of scripts I created/curated[https://github.com/roosta/scripts]
+ls++|ls++,dircolors,shell,full|[Colorful improved ls command](https://github.com/trapd00r/ls--)
+bash|bash,shell,full|Not much here, I use zsh as my primary shell.
+boxes|boxes,shell,full|[generate various ASCII art from term, mainly boxes :)](http://boxes.thomasjensen.com/)
+fasd|fasd,shell,full|Quick navigation in shell
+tmux|tmux,shell,full|Terminal multiplexer. I currently opt out of using this and rely on tiling WM for my term splitting needs. Missing out on other advantages but having some configuration issues with this and urxvt.
+screen|screen,shell,full|GNU screen. Same as above.
+termite|termite,shell,full|Terminal application similar to rxvt-unicode.
+
+develop|tags|comment
+-------|----|-------
+lein|lein,leiningen,dev,full|[Automate Clojure projects without setting your hair on fire.](https://github.com/technomancy/leiningen)
+npm|npm,dev,full|[Nodejs package manager](https://www.npmjs.com/)
+ctags|ctags,dev,full|Generate tags file from language objects found in sourcecode. Useful with vim.
+git|git,dev,full|Version Control System
+subversion|subversion,svn,dev,full|Version Control System
+idea|idea,intellij,dev,full|Intellij IDEA configuration. IDE for java among other languages.
+tig|tig,dev,full|ncurses git interface
+vim|vim,dev,full|VI Improved. Fantasic editor that at this point am stuck with :) trying anything else just don't sit right.
+sublime|st3,subl3,sublime,dev,full| Another editor. Configuration is not maintained. See above.
+
+develop|tags|comment
+-------|----|-------
+taskwarrior|tasks,taskwarrior,full|Track tasks and todos in terminal.
+ncmpcpp|ncmpcpp,full|Music player deamon ncurses based client.
+gimp|gimp,full|Photoshop alternative. Currently I'm trying out [krita](https://krita.org/) and really liking it.
+xboxdrv|xbox,full|Alternative driver for gamepads in linux. Used until I tried [SteamOS's patched xpad driver](https://aur4.archlinux.org/packages/steamos-xpad-dkms/)
+
 Installation
 ---
 1. clone repository and install Ansible using your local package manager.
