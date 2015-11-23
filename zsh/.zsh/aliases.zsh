@@ -16,19 +16,20 @@
 alias vi="vim"
 
 # quick edits
-alias vgit="vim ~/.gitconfig"
-alias vssh="vim ~/.ssh/config"
-alias vi3="vim ~/.i3/config.j2"
-alias valias="vim ~/.zsh/aliases.zsh"
-alias vvim="vim ~/.vimrc"
-alias vxres="vim ~/.Xresources"
-alias vtmux="vim ~/.tmux.conf"
-alias vxinit="vim ~/.xinitrc"
-alias vfont="vim ~/.config/fontconfig/fonts.conf"
-alias vbinds="vim ~/.xbindkeysrc"
-alias vvimp="vim ~/.vimperatorrc"
-alias vgtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
-alias vvimp="vim ~/.vimperatorrc"
+alias vigit="vim ~/.gitconfig"
+alias vissh="vim ~/.ssh/config"
+alias vii3="vim ~/.i3/config.j2"
+alias vialias="vim ~/.zsh/aliases.zsh"
+alias vivim="vim ~/.vimrc"
+alias vixres="vim ~/.Xresources"
+alias vitmux="vim ~/.tmux.conf"
+alias vixinit="vim ~/.xinitrc"
+alias vifont="vim ~/.config/fontconfig/fonts.conf"
+alias vibinds="vim ~/.xbindkeysrc"
+alias vivimp="vim ~/.vimperatorrc"
+alias vigtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
+alias vivimp="vim ~/.vimperatorrc"
+alias vilein="vim ~/.lein/profiles.clj"
 
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │
@@ -39,7 +40,7 @@ alias grep="ag"
 
 alias galias="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
 alias ghist="cat ~/.histfile | grep" # grep command history quickly
-alias gps="ps -aux|grep" # grep processes
+alias gproc="ps -aux|grep" # grep processes
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
 # locate file at working dir
@@ -319,6 +320,7 @@ alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 # ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
 
 alias figwheel='rlwrap lein figwheel'
+alias lein='rlwrap lein'
 alias hxrepl='haxelib run ihx'
 
 alias tlwd='cd /home/transform/Projects/Transform/Daniel'
