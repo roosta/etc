@@ -16,19 +16,20 @@
 alias vi="vim"
 
 # quick edits
-alias vigit='vim ~/.gitconfig'
-alias vissh='vim ~/.ssh/config'
-alias vii3='vim ~/.i3/config.j2'
-alias vialias='vim ~/.zsh/aliases.zsh'
-alias vivi='vim ~/.vimrc'
-alias vivim='vim ~/.vimrc'
-alias vixr='vim ~/.Xresources'
-alias vitmux='vim ~/.tmux.conf'
-alias vixinit='vim ~/.xinitrc'
-alias vifont='vim ~/.config/fontconfig/fonts.conf'
-alias vibinds='vim ~/.xbindkeysrc'
-alias vivimp='vim ~/.vimperatorrc'
-alias vigtk='vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini'
+alias vigit="vim ~/.gitconfig"
+alias vissh="vim ~/.ssh/config"
+alias vii3="vim ~/.i3/config.j2"
+alias vialias="vim ~/.zsh/aliases.zsh"
+alias vivim="vim ~/.vimrc"
+alias vixres="vim ~/.Xresources"
+alias vitmux="vim ~/.tmux.conf"
+alias vixinit="vim ~/.xinitrc"
+alias vifont="vim ~/.config/fontconfig/fonts.conf"
+alias vibinds="vim ~/.xbindkeysrc"
+alias vivimp="vim ~/.vimperatorrc"
+alias vigtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
+alias vivimp="vim ~/.vimperatorrc"
+alias vilein="vim ~/.lein/profiles.clj"
 
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │
@@ -37,20 +38,19 @@ alias vigtk='vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini'
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias grep="ag"
 
-alias grea="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
-alias greh="cat ~/.histfile | grep" # grep command history quickly
-alias greps="ps -aux|grep" # grep processes
+alias galias="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
+alias ghist="cat ~/.histfile | grep" # grep command history quickly
+alias gproc="ps -aux|grep" # grep processes
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
 # locate file at working dir
-alias gref='lsp -p|grep'
-alias grefr='ls -R|grep'
+alias gls='lsa | grep'
+alias glsr='lsa -R | grep'
 
 # list pulseaudio sinks
 alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
 # recursive grep through filetypes
-alias grehx='grep -R --include="*.hx"'
 alias greclj='grep -R --include="*.clj*"'
 
 # yes
@@ -320,6 +320,7 @@ alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 # ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
 
 alias figwheel='rlwrap lein figwheel'
+alias lein='rlwrap lein'
 alias hxrepl='haxelib run ihx'
 
 alias tlwd='cd /home/transform/Projects/Transform/Daniel'

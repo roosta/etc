@@ -165,6 +165,8 @@ URxvt.keysym.M-C-S-Left       : \033[1;8D
 URxvt.keysym.M-C-S-Home       : \033[1;8H
 URxvt.keysym.M-C-S-End        : \033[1;8F
 
+!Xcursor.theme: Numix-Cursor
+
 ! o┌┐┐┌─┐┬  ┬ ┐┬─┐┬─┐
 ! │││││  │  │ ││ │├─
 ! ┆┆└┘└─┘┆─┘┆─┘┆─┘┴─┘

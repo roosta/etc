@@ -191,6 +191,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'terryma/vim-expand-region'
 
 " compl/lint
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
@@ -252,7 +253,7 @@ let g:syntastic_enable_perl_checker = 1
 "}}}
 " VIM-MULTIPLE-CURSOR {{{2
 " -------------------
-let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_next_key='<C-d>'
 let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
@@ -339,18 +340,18 @@ let g:bufferline_echo = 0
 " EASYCLIP {{{2
 " -------------
 " remap mark to gm since EasyClip cut shadows m key
-let g:EasyClipUsePasteToggleDefaults = 0
 nnoremap gm m
-
 imap <c-v> <plug>EasyClipInsertModePaste
 cmap <c-v> <plug>EasyClipCommandModePaste
-let g:EasyClipShareYanks = 1
 
 " set common register in vim+x
 set clipboard=unnamed,unnamedplus
 
-nmap ]y <plug>EasyClipSwapPasteForward
-nmap [y <plug>EasyClipSwapPasteBackwards
+"let g:EasyClipUsePasteToggleDefaults = 0
+"nmap <c-.> <plug>EasyClipSwapPasteForward
+"nmap <c-,> <plug>EasyClipSwapPasteBackwards
+"nmap ]y <plug>EasyClipSwapPasteForward
+"nmap [y <plug>EasyClipSwapPasteBackwards
 let g:EasyClipShareYanks = 1
 " }}}
 " GRUVBOX {{{2
@@ -418,6 +419,9 @@ let g:indent_guides_start_level = 2
 " ACK.VIM {{{2
 " ------------
 let g:ackprg = 'ag --vimgrep'
+"}}}
+" UNDOTREE {{{2
+nnoremap <leader>ut :UndotreeToggle<cr>
 "}}}
 "}}}
 " FUNCTIONS {{{

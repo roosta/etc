@@ -39,8 +39,8 @@ nnoremap dl       :bd -select right<CR>
 noremap <leader><leader> :noscript popup<CR>
 
 " bind some firefox menus
-noremap <leader>b :emenu View.Sidebar.Bookmarks<CR>
-noremap <leader>d :emenu Tools.Downloads<CR>
+noremap <leader>bm :emenu View.Sidebar.Bookmarks<CR>
+noremap <leader>dl :emenu Tools.Downloads<CR>
 
 " session manager shortcuts
 noremap <leader>ss :emenu Tools.Session Manager.Save Session...<CR>

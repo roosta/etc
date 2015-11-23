@@ -97,10 +97,10 @@ $HOME/.fehbg &
 # ┆─┘┘ ┆┴─┘┘ ┆┘─┘┆└┘──┘
 
 urxvtd -q -f -o &
-#seaf-cli start &
 compton -b &
 xscreensaver -no-splash &
 dunst &
+dropbox &
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
 # ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘
