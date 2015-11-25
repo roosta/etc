@@ -319,12 +319,7 @@ alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 # │ │├─ │┌┘├─ │  │ ││─┘
 # ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
 
-alias figwheel='rlwrap lein figwheel'
 alias lein='rlwrap lein'
-alias hxrepl='haxelib run ihx'
-
-alias tlwd='cd /home/transform/Projects/Transform/Daniel'
-alias tlproj='cd /home/transform/Projects'
 
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
