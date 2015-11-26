@@ -1,0 +1,8 @@
+---
+- name: check for/create containing dirs
+  file: path={{ home }}/{{ item }} state=directory mode=0755
+  with_items:
+    - .kde4/share/apps
+
+- name: Symlink Krita configuration
+  file: src={{dotfiles}}/krita dest={{home}}/.kde4/share/apps/krita state=link

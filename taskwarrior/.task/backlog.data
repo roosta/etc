@@ -69,3 +69,6 @@
 {"description":"check if avahi is still needed","end":"20151117T150932Z","entry":"20151030T192644Z","modified":"20151117T150932Z","status":"completed","tags":["general"],"uuid":"58307912-9471-4e4a-ad82-6250675f13d3"}
 {"description":"infinality repo setup & install","end":"20151117T151019Z","entry":"20151030T195030Z","modified":"20151117T151021Z","status":"deleted","tags":["ansible"],"uuid":"f82732d9-9384-48a2-a766-6232cc8f2c59"}
 {"description":"fix check for exec tasksh","end":"20151117T151107Z","entry":"20151101T192804Z","modified":"20151117T151108Z","status":"deleted","tags":["ansible"],"uuid":"ce6d3fb0-5e49-4f21-9dc8-d1a429c649b5"}
+{"description":"fix zgen startup directory","entry":"20151125T091347Z","modified":"20151125T091347Z","status":"pending","tags":["shell"],"uuid":"e3fe2ab3-667f-49db-8a50-48967103346a"}
+{"description":"seaf passwd","end":"20151125T091415Z","entry":"20151104T110317Z","modified":"20151125T091418Z","status":"deleted","tags":["sec"],"uuid":"81eba438-9693-4248-819c-1458b39f0894"}
+{"description":"create statusbar script for DPMS","end":"20151125T091435Z","entry":"20151030T192717Z","modified":"20151125T091436Z","status":"deleted","tags":["general"],"uuid":"d9c7b54b-1dc6-423a-ad79-162cc4eced73"}

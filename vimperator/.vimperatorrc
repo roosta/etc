@@ -15,6 +15,7 @@ noremap h gT
 
 " go to last active tab.
 noremap gp <C-^>
+noremap L <C-^>
 
 " some quick vertical movement maps
 nnoremap j       8j
