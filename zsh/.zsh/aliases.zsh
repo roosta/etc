@@ -268,10 +268,12 @@ alias diff='colordiff'
 # --- git ---
 alias gits='git status'
 alias gitd='git diff'
+alias gitdc='git diff --cached'
 alias gitout='git checkout'
 
 # show short log
 alias gitls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
+
 # show long log
 alias gitll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
 
@@ -319,12 +321,7 @@ alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 # │ │├─ │┌┘├─ │  │ ││─┘
 # ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
 
-alias figwheel='rlwrap lein figwheel'
 alias lein='rlwrap lein'
-alias hxrepl='haxelib run ihx'
-
-alias tlwd='cd /home/transform/Projects/Transform/Daniel'
-alias tlproj='cd /home/transform/Projects'
 
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;

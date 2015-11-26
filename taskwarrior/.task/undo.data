@@ -242,3 +242,14 @@ time 1447773068
 old [description:"fix check for exec tasksh" entry:"1446406084" modified:"1446406084" status:"pending" tags:"ansible" uuid:"ce6d3fb0-5e49-4f21-9dc8-d1a429c649b5"]
 new [description:"fix check for exec tasksh" end:"1447773067" entry:"1446406084" modified:"1447773068" status:"deleted" tags:"ansible" uuid:"ce6d3fb0-5e49-4f21-9dc8-d1a429c649b5"]
 ---
+time 1448442827
+new [description:"fix zgen startup directory" entry:"1448442827" modified:"1448442827" status:"pending" tags:"shell" uuid:"e3fe2ab3-667f-49db-8a50-48967103346a"]
+---
+time 1448442858
+old [description:"seaf passwd" entry:"1446634997" modified:"1446634997" status:"pending" tags:"sec" uuid:"81eba438-9693-4248-819c-1458b39f0894"]
+new [description:"seaf passwd" end:"1448442855" entry:"1446634997" modified:"1448442858" status:"deleted" tags:"sec" uuid:"81eba438-9693-4248-819c-1458b39f0894"]
+---
+time 1448442876
+old [description:"create statusbar script for DPMS" entry:"1446233237" modified:"1446234105" status:"pending" tags:"general" uuid:"d9c7b54b-1dc6-423a-ad79-162cc4eced73"]
+new [description:"create statusbar script for DPMS" end:"1448442875" entry:"1446233237" modified:"1448442876" status:"deleted" tags:"general" uuid:"d9c7b54b-1dc6-423a-ad79-162cc4eced73"]
+---

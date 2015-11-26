@@ -100,7 +100,7 @@ urxvtd -q -f -o &
 compton -b &
 xscreensaver -no-splash &
 dunst &
-dropbox &
+#dropbox &
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
 # ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘

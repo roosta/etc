@@ -48,7 +48,7 @@ alias ddg='web_search duckduckgo'
 alias duck='web_search duckduckgo'
 alias github='web_search github'
 alias devdocs='web_search devdocs'
-alias dc='devdocs'
+alias docs='devdocs'
 
 #add your own !bang searches here
 alias wiki='web_search duckduckgo \!w'

@@ -57,4 +57,5 @@
     - include: tasks/ncmpcpp.yml     tags=ncmpcpp,full
     - include: tasks/gimp.yml        tags=gimp,full
     - include: tasks/xboxdrv.yml     tags=xbox,full
+    - include: tasks/krita.yml       tags=krita,full
 
