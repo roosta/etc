@@ -10,3 +10,6 @@
     - .xbindkeysrc
     - .xinitrc
     - .xserverrc
+    - .urxvt.xresources
+    - .rofi.xresources
+    - .fonts.xresources
