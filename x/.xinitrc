@@ -82,8 +82,6 @@ xbindkeys &
 # │ ││└─┐│─┘│  │─┤└┌┘
 # ┆─┘┆──┘┆  ┆─┘┘ ┆ ┆
 
-$HOME/.screenlayout/dual.sh &
-
 # screen locker
 xss-lock -- xscreensaver-command -lock &
 
@@ -92,7 +90,7 @@ xss-lock -- xscreensaver-command -lock &
 $home/bin/lightsOn 590 &
 
 # load nvidia-settings on startup
-nvidia-settings --load-config-only
+nvidia-settings --load-config-only &
 
 # set background with feh
 $HOME/.fehbg &
@@ -105,7 +103,6 @@ urxvtd -q -f -o &
 compton -b &
 xscreensaver -no-splash &
 dunst &
-#dropbox &
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
 # ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘

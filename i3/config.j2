@@ -175,11 +175,15 @@ assign [class="(?i)thunderbird"]         $SWS2_COM
 
 # WINDOW BEHAVIOUR
 # ----------------
+# create some rules to force floating on certain roles/classes
 for_window [window_role="pop-up"]                floating enable
 for_window [window_role="task_dialog"]           floating enable
 for_window [window_role="bubble"]                floating enable
+for_window [title="Preferences$"]                floating enable
 for_window [window_role="Preferences"]           floating enable
 for_window [title="Preferences$"]                floating enable
+
+# application spesific
 for_window [class="(?i)Jitsi"]                   floating enable
 for_window [class="(?i)SessionManager"]          floating enable
 for_window [title="(?i)Friends"]                 floating enable
@@ -194,7 +198,7 @@ for_window [class="(?i)Pidgin"]                  floating_maximum_size 50 x 75
 
 # BORDER
 # ------
-for_window [class="(?i)firefox"]                border none
+#for_window [class="(?i)firefox"]                border none
 for_window [class="(?i)google-chrome$"]         border none
 for_window [class="(?i)PrisonArchitect.x86_64"] border none
 

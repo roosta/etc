@@ -53,11 +53,6 @@ setopt IGNORE_EOF
 # no beeps plz
 unsetopt beep
 
-# Alias every command that doesn't exist.
-if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
-   source /usr/share/doc/pkgfile/command-not-found.zsh
-fi
-
 # ┬ ┬o┐─┐┌┐┐┌─┐┬─┐┐ ┬
 # │─┤│└─┐ │ │ ││┬┘└┌┘
 # ┆ ┴┆──┘ ┆ ┘─┘┆└┘ ┆

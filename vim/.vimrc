@@ -151,279 +151,20 @@ nmap <silent> <A-Down>  :wincmd j<CR>
 nmap <silent> <A-Left>  :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+map <C-Up> {
+map <C-Down> }
+
 " resize splits
-"nnoremap <C-w>Up    :exe "resize " .          (winheight(0) * 3/2)<CR>
-"nnoremap <C-w>Down  :exe "resize " .          (winheight(0) * 2/3)<CR>
-"nnoremap <C-w>Left  :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-"nnoremap <C-w>Right :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+nnoremap <leader>_  :exe "resize " .          (winheight(0) * 3/2)<CR>
+nnoremap <leader>-  :exe "resize " .          (winheight(0) * 2/3)<CR>
+nnoremap <leader>,  :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <leader>.  :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 "nnoremap <A-Up>    :normal <c-r>=SwitchWindow('+')<CR><CR>
 "nnoremap <A-Down>  :normal <c-r>=SwitchWindow('-')<CR><CR>
 "nnoremap <A-Left>  :normal <c-r>=SwitchWindow('<')<CR><CR>
 "nnoremap <A-Right> :normal <c-r>=SwitchWindow('>')<CR><CR>
 " }}}
-" PLUGINS {{{1
-" -------------------
-" ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
-" │─┘│  │ ││ ┬││││└─┐
-" ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
-" -------------------
-" PLUGIN MANAGER {{{2
-" -------------------
-" Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
-" download vim-plug if not present in 'autoload'
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
-
-call plug#begin('~/.vim/plugged')
-
-" editing
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-dispatch'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-Plug 'svermeulen/vim-easyclip'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'scrooloose/nerdcommenter'
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-Plug 'terryma/vim-expand-region'
-
-" compl/lint
-Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-
-" navigation
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'easymotion/vim-easymotion'
-Plug 'unblevable/quick-scope'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
-Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
-
-" GUI
-Plug 'morhetz/gruvbox'
-Plug 'bling/vim-bufferline'
-Plug 'bling/vim-airline'
-
-" syntax:
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'sheerun/vim-polyglot'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'junegunn/rainbow_parentheses.vim'
-
-" cloujure
-Plug 'kovisoft/paredit',    { 'for': 'clojure' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
-Plug 'venantius/vim-eastwood'
-Plug 'tpope/vim-salve'
-
-" inactive
-"Plug 'kien/ctrlp.vim'
-"Plug 'tpope/vim-commentary'
-"Plug 'vim-scripts/YankRing.vim'
-"Plug 'tpope/vim-classpath'
-"Plug 'jgdavey/tslime.vim'
-"Plug 'edkolev/promptline.vim'
-"Plug 'edkolev/tmuxline.vim'
-call plug#end()
-
-syntax on
-filetype plugin indent on
-"}}}
-" SYNTASTIC {{{2
-" --------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_perl_checker = 1
-"}}}
-" VIM-MULTIPLE-CURSOR {{{2
-" -------------------
-let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-l>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
-" }}}
-" FZF.VIM {{{2
-" -------
-" https://github.com/junegunn/fzf.vim
-
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-nmap <leader>f  :Files<CR>
-nmap <leader>bb  :Buffers<cr>
-
-" This is the default extra key bindings
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-" }}}
-" EASYMOTION {{{2
-" ---------------
-" easymotion is generally <leader><leader> motion
-" but in some cases map single leader to most used functions
-" resoning is that EM takes up such a huge amount of binds I wanted it to have
-" its own 'space' so that single leader leaves room for other stuff
-
-"let g:EasyMotion_do_mapping = 0 " Disable default mappings
-" define my own prefix (default <leader><leader>
-"map , <Plug>(easymotion-prefix)
-
-let g:EasyMotion_smartcase = 1
-
-" map two letter motion to s
-nmap <leader>s <Plug>(easymotion-s2)
-
-" use easymotion searching
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
-" line movement
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
-
-" set ctrl-v to paste in easymotion command line
-"EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
-" }}}
-" QUICKSCOPE {{{2
-" ---------------
-let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
-let g:qs_first_occurrence_highlight_color = 155       " terminal vim
-
-let g:qs_second_occurrence_highlight_color = '#5fffff'  " gui vim
-let g:qs_second_occurrence_highlight_color = 81         " terminal vim
-
-" Trigger a highlight in the appropriate direction when pressing these keys:
-"let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-" }}}
-" AIRLINE {{{2
-" ------------
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#bufferline#enabled = 1
-"}}}
-" BUFFERLINE {{{2
-" ---------------
-let g:bufferline_modified = '+'
-let g:bufferline_show_bufnr = 0
-let g:bufferline_solo_highlight = 1
-let g:bufferline_echo = 0
-"}}}
-" EASYCLIP {{{2
-" -------------
-" remap mark to gm since EasyClip cut shadows m key
-nnoremap gm m
-imap <c-v> <plug>EasyClipInsertModePaste
-cmap <c-v> <plug>EasyClipCommandModePaste
-
-" set common register in vim+x
-set clipboard=unnamed,unnamedplus
-
-"let g:EasyClipUsePasteToggleDefaults = 0
-"nmap <c-.> <plug>EasyClipSwapPasteForward
-"nmap <c-,> <plug>EasyClipSwapPasteBackwards
-"nmap ]y <plug>EasyClipSwapPasteForward
-"nmap [y <plug>EasyClipSwapPasteBackwards
-let g:EasyClipShareYanks = 1
-" }}}
-" GRUVBOX {{{2
-" ------------
-
-" Set theme
-"let g:gruvbox_italicize_comments = 0
-let g:gruvbox_italic = 1
-"let g:gruvbox_contrast_dark = "hard"
-colorscheme gruvbox
-set background=dark
-" }}}
-" RAINBOW PARENTHESIS {{{2
-" ------------------------
-
-au VimEnter * RainbowParentheses
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-"let g:rbpt_loadcmd_toggle = 0
-" }}}
-" NERDTREE {{{2
-" -------------
-map <leader>nt :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-let NERDTreeShowBookmarks=1
-let NERDTreeQuitOnOpen=1
-
-" close vim if nerdtree is only window remaining
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-"}}}}
-" NERDCOMMENT {{{2
-" ----------------
-" mirror tpope commentary keys.
-nmap gcc <plug>NERDCommenterToggle
-vmap gc <plug>NERDCommenterToggle
-
-"}}}
-" PAREDIT {{{2
-" -----------
-
-let g:paredit_electric_return = 0
-let g:paredit_leader = '\'
-"let g:paredit_disable_clojure = 0
-
-" }}}
-" EASY-ALIGN {{{2
-" ---------------
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-" }}}
-" INDENT GUIDES {{{2
-" ------------------
-
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
-
-" }}}
-" ACK.VIM {{{2
-" ------------
-let g:ackprg = 'ag --vimgrep'
-"}}}
-" UNDOTREE {{{2
-nnoremap <leader>ut :UndotreeToggle<cr>
-"}}}
-"}}}
 " FUNCTIONS {{{
 " -------------------------
 " ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
@@ -476,6 +217,273 @@ function! SwitchWindow(dir)
   endif
 endfunction
 " }}}
+" PLUGIN MANAGER {{{1
+" -------------------
+" Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
+" download vim-plug if not present in 'autoload'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
+call plug#begin('~/.vim/plugged')
+
+" editing
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-dispatch'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+Plug 'svermeulen/vim-easyclip'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'scrooloose/nerdcommenter'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'terryma/vim-expand-region'
+
+" compl/lint
+Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
+" navigation
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'easymotion/vim-easymotion'
+Plug 'unblevable/quick-scope'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
+Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
+
+" GUI
+Plug 'morhetz/gruvbox'
+Plug 'bling/vim-bufferline'
+Plug 'bling/vim-airline'
+
+" syntax:
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'junegunn/rainbow_parentheses.vim'
+
+" cloujure
+Plug 'kovisoft/paredit',    { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+"Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
+Plug 'venantius/vim-eastwood'
+Plug 'tpope/vim-salve'
+
+" inactive
+"Plug 'kien/ctrlp.vim'
+"Plug 'tpope/vim-commentary'
+"Plug 'vim-scripts/YankRing.vim'
+"Plug 'tpope/vim-classpath'
+"Plug 'jgdavey/tslime.vim'
+"Plug 'edkolev/promptline.vim'
+"Plug 'edkolev/tmuxline.vim'
+call plug#end()
+
+syntax on
+filetype plugin indent on
+"}}}
+" SYNTASTIC {{{1
+" --------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_perl_checker = 1
+"}}}
+" VIM-MULTIPLE-CURSOR {{{1
+" -------------------
+let g:multi_cursor_next_key='<C-d>'
+let g:multi_cursor_prev_key='<C-l>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+" }}}
+" FZF.VIM {{{1
+" -------
+" https://github.com/junegunn/fzf.vim
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nmap <leader>f  :Files<CR>
+nmap <leader>bb  :Buffers<cr>
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+" }}}
+" EASYMOTION {{{1
+" ---------------
+" easymotion is generally <leader><leader> motion
+" but in some cases map single leader to most used functions
+" resoning is that EM takes up such a huge amount of binds I wanted it to have
+" its own 'space' so that single leader leaves room for other stuff
+
+"let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" define my own prefix (default <leader><leader>
+"map , <Plug>(easymotion-prefix)
+
+let g:EasyMotion_smartcase = 1
+
+" map two letter motion to s
+nmap <leader>s <Plug>(easymotion-s2)
+
+" use easymotion searching
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+" line movement
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+" set ctrl-v to paste in easymotion command line
+"EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
+" }}}
+" QUICKSCOPE {{{1
+" ---------------
+let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
+let g:qs_first_occurrence_highlight_color = 155       " terminal vim
+
+let g:qs_second_occurrence_highlight_color = '#5fffff'  " gui vim
+let g:qs_second_occurrence_highlight_color = 81         " terminal vim
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+"let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" }}}
+" AIRLINE {{{1
+" ------------
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#overwrite_variables = 1
+
+"}}}
+" BUFFERLINE {{{1
+" ---------------
+"
+"let g:bufferline_active_buffer_left = ''
+"let g:bufferline_active_buffer_right = ''
+"let g:bufferline_modified = '+'
+let g:bufferline_show_bufnr = 0
+let g:bufferline_solo_highlight = 1
+let g:bufferline_echo = 0
+"let g:bufferline_inactive_highlight = 'StatusLine'
+"let g:bufferline_active_highlight = 'StatusLineNC'
+
+"}}}
+" EASYCLIP {{{1
+" -------------
+
+" remap mark to gm since EasyClip cut shadows m key
+nnoremap gm m
+imap <c-v> <plug>EasyClipInsertModePaste
+cmap <c-v> <plug>EasyClipCommandModePaste
+
+" set common register in vim+x
+set clipboard=unnamed,unnamedplus
+
+"let g:EasyClipUsePasteToggleDefaults = 0
+"nmap <c-.> <plug>EasyClipSwapPasteForward
+"nmap <c-,> <plug>EasyClipSwapPasteBackwards
+"nmap ]y <plug>EasyClipSwapPasteForward
+"nmap [y <plug>EasyClipSwapPasteBackwards
+let g:EasyClipShareYanks = 1
+
+" }}}
+" GRUVBOX {{{1
+" ------------
+
+" Set theme
+"let g:gruvbox_italicize_comments = 0
+let g:gruvbox_italic = 1
+"let g:gruvbox_contrast_dark = "hard"
+colorscheme gruvbox
+set background=dark
+
+" }}}
+" RAINBOW PARENTHESIS {{{1
+" ------------------------
+
+au VimEnter * RainbowParentheses
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+"let g:rbpt_loadcmd_toggle = 0
+
+" }}}
+" NERDTREE {{{1
+" -------------
+map <leader>nt :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+let NERDTreeShowBookmarks=1
+let NERDTreeQuitOnOpen=1
+
+" close vim if nerdtree is only window remaining
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+"}}}}
+" NERDCOMMENT {{{1
+" ----------------
+" mirror tpope commentary keys.
+nmap gcc <plug>NERDCommenterToggle
+vmap gc <plug>NERDCommenterToggle
+
+"}}}
+" PAREDIT {{{1
+" -----------
+
+let g:paredit_electric_return = 0
+let g:paredit_leader = '\'
+"let g:paredit_disable_clojure = 0
+
+" }}}
+" EASY-ALIGN {{{1
+" ---------------
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" }}}
+" INDENT GUIDES {{{1
+" ------------------
+
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+
+" }}}
+" ACK.VIM {{{1
+" ------------
+let g:ackprg = 'ag --vimgrep'
+"}}}
+" UNDOTREE {{{1
+nnoremap <leader>ut :UndotreeToggle<cr>
+"}}}
 " INACTIVE {{{
 " --------------------
 " o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
