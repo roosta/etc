@@ -1,4 +1,4 @@
-colorscheme sweetlove
+colorscheme gruvbox_dark
 set noscrollbars
 set loadplugins
 set complete=ltsS
@@ -33,6 +33,8 @@ nnoremap <C-S-k> 40k
 nnoremap dd       :bd -select lastactive<CR>
 nnoremap d<Left>  :bd -select left<CR>
 nnoremap d<Right> :bd -select right<CR>
+nnoremap d<Up>    :bd -select left<CR>
+nnoremap d<Down>  :bd -select right<CR>
 nnoremap dh       :bd -select left<CR>
 nnoremap dl       :bd -select right<CR>
 
