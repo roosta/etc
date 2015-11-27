@@ -253,3 +253,6 @@ time 1448442876
 old [description:"create statusbar script for DPMS" entry:"1446233237" modified:"1446234105" status:"pending" tags:"general" uuid:"d9c7b54b-1dc6-423a-ad79-162cc4eced73"]
 new [description:"create statusbar script for DPMS" end:"1448442875" entry:"1446233237" modified:"1448442876" status:"deleted" tags:"general" uuid:"d9c7b54b-1dc6-423a-ad79-162cc4eced73"]
 ---
+time 1448616543
+new [description:"setup left tab bar" entry:"1448616543" modified:"1448616543" status:"pending" tags:"firefox" uuid:"14698076-23fd-4aab-aa44-af646407aa6e"]
+---
