@@ -1,4 +1,4 @@
-colorscheme gruvbox_dark
+colorscheme light_fantastic
 set noscrollbars
 set loadplugins
 set complete=ltsS
@@ -13,19 +13,24 @@ source! /home/roosta/.vimperatorrc.local
 noremap l gt
 noremap h gT
 
+noremap } gt
+noremap { gT
+
 " go to last active tab.
 noremap gp <C-^>
-noremap L <C-^>
+noremap L  <C-^>
 
 " some quick vertical movement maps
-nnoremap j       8j
-nnoremap k       8k
-nnoremap J       16j
-nnoremap K       16k
-nnoremap <C-j>   24j
-nnoremap <C-k>   24k
-nnoremap <C-S-j> 40j
-nnoremap <C-S-k> 40k
+nnoremap j        8j
+nnoremap k        8k
+nnoremap J        16j
+nnoremap K        16k
+nnoremap <C-j>    24j
+nnoremap <C-k>    24k
+nnoremap <C-S-j>  40j
+nnoremap <C-S-k>  40k
+nnoremap <C-Up>   24k
+nnoremap <C-Down> 24j
 
 " change delete tab behaviour.
 " choose direction to go with movement after deleting a tab
@@ -33,10 +38,12 @@ nnoremap <C-S-k> 40k
 nnoremap dd       :bd -select lastactive<CR>
 nnoremap d<Left>  :bd -select left<CR>
 nnoremap d<Right> :bd -select right<CR>
-nnoremap d<Up>    :bd -select left<CR>
-nnoremap d<Down>  :bd -select right<CR>
+nnoremap d<Prior> :bd -select left<CR>
+nnoremap d<Next>  :bd -select right<CR>
 nnoremap dh       :bd -select left<CR>
 nnoremap dl       :bd -select right<CR>
+
+nnoremap d<Escape> <Nop>
 
 " noscript integration
 noremap <leader><leader> :noscript popup<CR>
@@ -57,6 +64,7 @@ noremap <c-w>r :source /home/roosta/.vimperatorrc<CR>
 
 noremap <leader>ds :nohlsearch<CR>
 noremap <leader>st :stylish toggle<CR>
+noremap <leader>sp :stylish popup<CR>
 
 " use up/down when in cmdmode to select completions
 " note: use shift-movement to move in command history

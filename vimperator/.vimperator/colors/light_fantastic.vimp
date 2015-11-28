@@ -1,12 +1,12 @@
-" ==VimperatorColorSchema==
-" name: gruvbox_dark
-" url:
-" ==/VimperatorColorSchema==
-
-
+" VimperatorColorSchema/firefox userChrome.css
+" name: light_fantastic
+" url: https://github.com/roosta/dotfiles/tree/master/vimperator
+" --------------------------------------------------------------
+"
+" colortable {{{
 " Gruvbox - Pavel Pertsev
 " https://github.com/morhetz/gruvbox
-" ----------------------------------------------
+" ----------------------------------
 " GRUVCOLR         HEX       RELATV ALIAS   TERMCOLOR      RGB           ITERM RGB     OSX HEX
 " --------------   -------   ------------   ------------   -----------   -----------   -------
 " dark0_hard       #1d2021   [   ]  [   ]   234 [h0][  ]    29- 32- 33    22- 24- 25   #161819
@@ -51,8 +51,13 @@
 " faded_purple     #8f3f71   [   ][purple]   96 [  ][13]   143- 63-113   123- 43- 94   #7b2b5e
 " faded_aqua       #427b58   [   ]  [aqua]   66 [  ][14]    66-123- 88    53-106- 70   #356a46
 " faded_orange     #af3a03   [   ][orange]  130 [  ][  ]   175- 58-  3   157- 40-  7   #9d2807
-
+" }}}
 " highlight settings {{{
+" -----------------------
+" ┬ ┬o┌─┐┬ ┬┬  o┌─┐┬ ┬┌┐┐
+" │─┤││ ┬│─┤│  ││ ┬│─┤ │
+" ┆ ┴┆┆─┘┆ ┴┆─┘┆┆─┘┆ ┴ ┆
+" -----------------------
 hi Hint       font-family: "Terminess Powerline"; font-size: 15px; font-weight: normal; color: #dc322f; background-color: #002b36; border-color: #839496; border-width: 0px; border-style: solid; padding: 0px 5px 0px 5px; text-transform: uppercase;
 hi HintElem   background-color: #073642; color: #b58900;
 hi HintActive background-color: #dc322f; color: #073642;
@@ -96,19 +101,23 @@ hi URL       color: #B8BB26;
 
 hi TabNumber  color: #002b36; font-weight: bold; font-size:10pt;
 " }}}
-
 " CSS {{{
-" vim:ft=css
+" ---------
+" ┌─┐┐─┐┐─┐
+" │  └─┐└─┐
+" └─┘──┘──┘
+" ---------
 style -name user chrome://* <<EOM
 @namespace html url(http://www.w3.org/1999/xhtml);
 @namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 /*
-    Author: Roosta
+    Author: Twily (modified by Roosta [https://github.com/roosta])
     Description: Fork of "Twily's Powerline Firefox CSS" https://userstyles.org/styles/102262/twily-s-powerline-firefox-css
     Compitability: Firefox Nightly v31.0a1 - v32.0a1 (Australis)
-     CSS Variables were introduced to Firefox in v29.0a1
+      CSS Variables were introduced to Firefox in v29.0a1
+    Note: CSS was written with this addon in mind:
+      https://addons.mozilla.org/en-us/firefox/addon/tree-style-tab
 */
-
 :root {
   /* TAB VARIABLES */
   --bg-light: #32302F;
@@ -468,6 +477,5 @@ tabbrowser tabpanels, #appcontent > #content {
 }
 EOM
 " }}}
-
 " vim:ft=vim:ts=2:sw=2:fdm=marker
 
