@@ -256,3 +256,6 @@ new [description:"create statusbar script for DPMS" end:"1448442875" entry:"1446
 time 1448616543
 new [description:"setup left tab bar" entry:"1448616543" modified:"1448616543" status:"pending" tags:"firefox" uuid:"14698076-23fd-4aab-aa44-af646407aa6e"]
 ---
+time 1448719701
+new [description:"fix highlighting" entry:"1448719701" modified:"1448719701" status:"pending" tags:"vimperator" uuid:"dba77449-fa25-4a24-8b21-931795d0f1b3"]
+---

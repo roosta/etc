@@ -94,7 +94,7 @@ alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
 ## dirstack movement: needs some extra config, see dirstack.sh
-alias stack='dirs -v'
+alias dirs='dirs -v'
 alias 1='cd -'
 alias 2='cd -2'
 alias 3='cd -3'

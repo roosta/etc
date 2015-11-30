@@ -5,9 +5,7 @@
 # └───────────────────────────────────────────────────────────┘
 
 # Alias every command that doesn't exist.
-if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
-   source /usr/share/doc/pkgfile/command-not-found.zsh
-fi
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # ┬─┐┬─┐┐─┐┬─┐
 # ├─ │─┤└─┐│ │

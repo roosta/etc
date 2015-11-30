@@ -146,24 +146,19 @@ map <leader>tc :tabclose<CR>
 " map <leader>tm :tabmove
 
 " Switch between Vim window splits
-nmap <silent> <A-Up>    :wincmd k<CR>
-nmap <silent> <A-Down>  :wincmd j<CR>
-nmap <silent> <A-Left>  :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+nnoremap <silent> <A-Up>    :wincmd k<CR>
+nnoremap <silent> <A-Down>  :wincmd j<CR>
+nnoremap <silent> <A-Left>  :wincmd h<CR>
+nnoremap <silent> <A-Right> :wincmd l<CR>
 
-map <C-Up> {
-map <C-Down> }
+" Maps Alt-[h,j,k,l] to resizing a window split
+nnoremap <silent> <A-S-Left> 5<C-w><
+nnoremap <silent> <A-S-Down> 5<C-W>-
+nnoremap <silent> <A-S-Up> 5<C-W>+
+nnoremap <silent> <A-S-Right> 5<C-w>>
 
-" resize splits
-nnoremap <leader>_  :exe "resize " .          (winheight(0) * 3/2)<CR>
-nnoremap <leader>-  :exe "resize " .          (winheight(0) * 2/3)<CR>
-nnoremap <leader>,  :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-nnoremap <leader>.  :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
-
-"nnoremap <A-Up>    :normal <c-r>=SwitchWindow('+')<CR><CR>
-"nnoremap <A-Down>  :normal <c-r>=SwitchWindow('-')<CR><CR>
-"nnoremap <A-Left>  :normal <c-r>=SwitchWindow('<')<CR><CR>
-"nnoremap <A-Right> :normal <c-r>=SwitchWindow('>')<CR><CR>
+noremap <C-Up> {
+noremap <C-Down> }
 " }}}
 " FUNCTIONS {{{
 " -------------------------
@@ -172,7 +167,7 @@ nnoremap <leader>.  :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 " ┆  ┆─┘┆└┘└─┘ ┆ ┆┘─┘┆└┘──┘
 " -------------------------
 " https://github.com/tpope/vim-fireplace/pull/222
-command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
+"command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
 " if working with splits, set cursorline only on active window,
 " to give an indication other than airline which split is active
@@ -197,25 +192,8 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunc
-
 nnoremap <leader><C-n> :call NumberToggle()<cr>
 
-" window switch function. Binds are added at keybinds sections
-function! SwitchWindow(dir)
-  let this = winnr()
-  if '+' == a:dir
-    execute "normal \<c-w>k"
-    elseif '-' == a:dir
-    execute "normal \<c-w>j"
-    elseif '>' == a:dir
-    execute "normal \<c-w>l"
-    elseif '<' == a:dir
-    execute "normal \<c-w>h"
-  else
-    echo "oops. check your ~/.vimrc"
-    return ""
-  endif
-endfunction
 " }}}
 " PLUGIN MANAGER {{{1
 " -------------------
@@ -240,7 +218,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-Plug 'terryma/vim-expand-region'
+"Plug 'terryma/vim-expand-region'
 
 " compl/lint
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
@@ -266,6 +244,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'gorodinskiy/vim-coloresque'
 
 " cloujure
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }

@@ -17,7 +17,7 @@
 # ┐ ┬┬─┐┬─┐o┬─┐┬─┐┬  ┬─┐┐─┐
 # │┌┘│─┤│┬┘││─┤│─││  ├─ └─┐
 # └┘ ┘ ┆┆└┘┆┘ ┆┆─┘┆─┘┴─┘──┘
-
+# -------------------------
 # fast way to reach power settings for system. Requires polkit.
 set $locker xscreensaver-command --lock
 
@@ -39,26 +39,21 @@ set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg r
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
 # │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
 # ┘ ┆┆─┘ ┆ ┘─┘──┘ ┆ ┘ ┆┆└┘ ┆
-
-#exec urxvtc
+# --------------------------
 exec $term
 #exec --no-startup-id "i3-msg 'workspace 5S:Comms; append_layout ~/.i3/workspace/comms_ws.json'"
-#exec firefox
-#exec thunderbird
-#exec pidgin
-#exec spotify
-#exec steam
 
 # ┌─┐┬─┐┌┐┐o┌─┐┌┐┐┐─┐
 # │ ││─┘ │ ││ ││││└─┐
 # ┘─┘┆   ┆ ┆┘─┘┆└┘──┘
-
+# -------------------
 # jump to previous workspace by hitting first ws button again
 #workspace_auto_back_and_forth yes
 
 # ┐ ┬┌─┐┬─┐┬┌ ┐─┐┬─┐┬─┐┌─┐┬─┐┐─┐
 # ││││ ││┬┘├┴┐└─┐│─┘│─┤│  ├─ └─┐
 # └┴┆┘─┘┆└┘┆ ┘──┘┆  ┘ ┆└─┘┴─┘──┘
+# ------------------------------
 # Numbers in front is for sorting order on i3bar.
 # In each bar numbers are stripped. See bar config below.
 
@@ -145,33 +140,33 @@ hide_edge_borders none
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┬─┐┬ ┐┬  ┬─┐┐─┐
 # ││││││││ ││ ││││  │┬┘│ ││  ├─ └─┐
 # └┴┆┆┆└┘┆─┘┘─┘└┴┆  ┆└┘┆─┘┆─┘┴─┘──┘
-
+# ---------------------------------
 # WINDOW WORKSPACE ASSIGNMENT
 # ---------------------------
 # -> devel
-assign [class="(?i)subl3"]               $PWS2_DEV
-assign [class="(?i)jetbrains-idea"]      $PWS2_DEV
-assign [class="(?i)atom"]                $PWS2_DEV
+assign [class="(?i)subl3"]                 $PWS2_DEV
+assign [class="(?i)jetbrains-idea"]        $PWS2_DEV
+assign [class="(?i)atom"]                  $PWS2_DEV
 
 # -> debug
-assign [class="(?i)google-chrome-beta$"] $SWS3_DBG
-assign [instance="^Devtools$$"]          $SWS3_DBG
+assign [class="(?i)google-chrome-beta$"]   $SWS3_DBG
+assign [instance="^Devtools$$"]            $SWS3_DBG
 
 # -> www
-assign [class="(?i)firefox"]             $PWS3_WWW
+assign [class="(?i)firefox"]               $PWS3_WWW
 
 # -> games
-assign [class="(?i)steam"]               $TWS2_GAM
+assign [class="(?i)steam"]                 $TWS2_GAM
 
 # -> media
-assign [class="(?i)spotify"]             $TWS1_MED
-assign [class="(?i)google-chrome$"]      $TWS1_MED
+assign [class="(?i)spotify"]               $TWS1_MED
+assign [class="(?i)google-chrome-stable$"] $TWS1_MED
 
 # -> Comms
-assign [class="(?i)pidgin"]              $SWS2_COM
-assign [class="(?i)linphone"]            $SWS2_COM
-assign [class="(?i)scudcloud"]           $SWS2_COM
-assign [class="(?i)thunderbird"]         $SWS2_COM
+assign [class="(?i)pidgin"]                $SWS2_COM
+assign [class="(?i)linphone"]              $SWS2_COM
+assign [class="(?i)scudcloud"]             $SWS2_COM
+assign [class="(?i)thunderbird"]           $SWS2_COM
 
 # WINDOW BEHAVIOUR
 # ----------------
@@ -190,7 +185,8 @@ for_window [title="(?i)Friends"]                 floating enable
 for_window [class="(?i)Linphone"]                floating enable
 for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
 for_window [class="(?i)Pidgin"]                  floating enable
-#for_window [class="(?i)thunderbird"]             floating enable
+#for_window [class="(?i)thunderbird"]            floating enable
+for_window [class="(?i)google-chrome-stable"]    layout tabbed
 
 # WINDOW SIZE
 # -----------

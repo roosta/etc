@@ -35,14 +35,15 @@ nnoremap <C-Down> 24j
 " change delete tab behaviour.
 " choose direction to go with movement after deleting a tab
 " dd to go to last active
-nnoremap dd       :bd -select lastactive<CR>
-nnoremap d<Left>  :bd -select left<CR>
-nnoremap d<Right> :bd -select right<CR>
-nnoremap d<Prior> :bd -select left<CR>
-nnoremap d<Next>  :bd -select right<CR>
-nnoremap dh       :bd -select left<CR>
-nnoremap dl       :bd -select right<CR>
+nnoremap dd          :bd -select lastactive<CR>
+nnoremap d<Left>     :bd -select left<CR>
+nnoremap d<Right>    :bd -select right<CR>
+nnoremap d<PageUp>   :bd -select left<CR>
+nnoremap d<PageDown> :bd -select right<CR>
+nnoremap dh          :bd -select left<CR>
+nnoremap dl          :bd -select right<CR>
 
+" escape cancle tab delete
 nnoremap d<Escape> <Nop>
 
 " noscript integration

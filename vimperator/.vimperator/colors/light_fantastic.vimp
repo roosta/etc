@@ -71,15 +71,15 @@ hi StatusLine     color: #EBDBB2; background: #282828; font-weight: normal; font
 "hi StatusLineExtended color:  #93a1a1; background: #af005f; font-weight: normal; font-size: 12pt;
 "hi StatusLineSecure   color:  #93a1a1; background: #b58900; font-weight: normal; font-size: 12pt;
 
-hi Normal     color:  #EBDBB2;  background: #282828; font-size: 10pt; font-family: Terminess Powerline;
-hi CmdLine    color:  #EBDBB2;  background: #282828; font-size: 10pt; font-family: Terminess Powerline;
-hi InfoMsg    color:  #EBDBB2;  background: #282828; font-size: 10pt; font-family: Terminess Powerline;
-hi ModeMsg    color:  #EBDBB2;  background: #282828; font-size: 10pt; font-family: Terminess Powerline;
-hi MoreMsg    color:  #859900;  background: #282828; font-size: 10pt; font-family: Terminess Powerline;
-hi LineNr     color:  #dc322f;  background: #282828; font-size: 10pt; font-family: Terminess Powerline;
-hi Question   color:  #b58900;  background: #282828; font-size: 10pt; font-family: Terminess Powerline;
-hi WarningMsg color:  #dc322f;  background: #282828; font-size: 10pt; font-family: Terminess Powerline;
-hi ErrorMsg   color:  #EBDBB2;  background: #FB4934; font-size: 10pt; font-family: Terminess Powerline;
+hi Normal     color: #EBDBB2; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi CmdLine    color: #EBDBB2; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi InfoMsg    color: #EBDBB2; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi ModeMsg    color: #EBDBB2; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi MoreMsg    color: #859900; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi LineNr     color: #FE8019; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi Question   color: #FABD2F; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi WarningMsg color: #D65D0E; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi ErrorMsg   color: #CC241D; background: #282828; font-size: 10pt; font-family: Terminess Powerline; font-weight: bold;
 hi NonText    background: #282828;
 hi Null       color: CornflowerBlue;
 hi Tag        color: CornflowerBlue;
@@ -91,10 +91,10 @@ hi CompItem[selected] color: #458588; background: #3C3836;
 hi CompItem           color: #EBDBB2; width: 50%;
 hi CompDesc           color: #D3869B;
 
-hi Title     color: #002b36;
+hi Title     color: #EBDBB2;
 hi Indicator color: #b58900;
-hi String    color: #002b36;
-hi Number    color: #002b36;
+hi String    color: #EBDBB2;
+hi Number    color: #EBDBB2;
 hi Object    color: #2aa198;
 hi Function  color: #268bd2;
 hi URL       color: #B8BB26;
@@ -216,7 +216,7 @@ style -name user chrome://* <<EOM
     min-height: var(--tab-height) !important;
     background: var(--bg-dark) !important;
     color: var(--fg-dark) !important;
-    font-size: var(--tab-font-size);
+    font-size: var(--tab-font-size) !important;
     text-shadow: none !important;
     text-align: var(--tab-text-align) !important;
   }
@@ -367,6 +367,11 @@ style -name user chrome://* <<EOM
     margin: -2px -2px !important;
     padding: 0 0 !important;
     height: 24px !important;
+    z-index: 1 !important;
+  }
+
+  #liberator* {
+    z-index: 4 !important;
   }
 
   #liberator-statusline:not([customizing="true"]) :-moz-any(toolbarbutton) { height: 100% !important; }
