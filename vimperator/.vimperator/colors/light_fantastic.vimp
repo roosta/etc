@@ -1,0 +1,486 @@
+" VimperatorColorSchema/firefox userChrome.css
+" name: light_fantastic
+" url: https://github.com/roosta/dotfiles/tree/master/vimperator
+" --------------------------------------------------------------
+"
+" colortable {{{
+" Gruvbox - Pavel Pertsev
+" https://github.com/morhetz/gruvbox
+" ----------------------------------
+" GRUVCOLR         HEX       RELATV ALIAS   TERMCOLOR      RGB           ITERM RGB     OSX HEX
+" --------------   -------   ------------   ------------   -----------   -----------   -------
+" dark0_hard       #1d2021   [   ]  [   ]   234 [h0][  ]    29- 32- 33    22- 24- 25   #161819
+" dark0            #282828   [bg0]  [fg0]   235 [ 0][  ]    40- 40- 40    30- 30- 30   #1e1e1e
+" dark0_soft       #32302f   [   ]  [   ]   236 [s0][  ]    50- 48- 47    38- 36- 35   #262423
+" dark1            #3c3836   [bg1]  [fg1]   237 [  ][15]    60- 56- 54    46- 42- 41   #2e2a29
+" dark2            #504945   [bg2]  [fg2]   239 [  ][  ]    80- 73- 69    63- 57- 53   #3f3935
+" dark3            #665c54   [bg3]  [fg3]   241 [  ][  ]   102- 92- 84    83- 74- 66   #534a42
+" dark4            #7c6f64   [bg4]  [fg4]   243 [  ][ 7]   124-111-100   104- 92- 81   #685c51
+
+" gray_245         #928374   [gray] [   ]   245 [ 8][  ]   146-131-116   127-112- 97   #7f7061
+" gray_244         #928374   [   ] [gray]   244 [  ][ 8]   146-131-116   127-112- 97   #7f7061
+
+" light0_hard      #f9f5d7   [   ]  [   ]   230 [  ][h0]   249-245-215   248-244-205   #f8f4cd
+" light0           #fbf1c7   [fg0]  [bg0]   229 [  ][ 0]   251-241-199   250-238-187   #faeebb
+" light0_soft      #f2e5bc   [   ]  [   ]   228 [  ][s0]   242-229-188   239-223-174   #efdfae
+" light1           #ebdbb2   [fg1]  [bg1]   223 [15][  ]   235-219-178   230-212-163   #e6d4a3
+" light2           #d5c4a1   [fg2]  [bg2]   250 [  ][  ]   213-196-161   203-184-144   #cbb890
+" light3           #bdae93   [fg3]  [bg3]   248 [  ][  ]   189-174-147   175-159-129   #af9f81
+" light4           #a89984   [fg4]  [bg4]   246 [ 7][  ]   168-153-132   151-135-113   #978771
+
+" bright_red       #fb4934   [red]   [  ]   167 [ 9][  ]   251- 73- 52   247- 48- 40   #f73028
+" bright_green     #b8bb26   [green] [  ]   142 [10][  ]   184-187- 38   170-176- 30   #aab01e
+" bright_yellow    #fabd2f   [yellow][  ]   214 [11][  ]   250-189- 47   247-177- 37   #f7b125
+" bright_blue      #83a598   [blue]  [  ]   109 [12][  ]   131-165-152   113-149-134   #719586
+" bright_purple    #d3869b   [purple][  ]   175 [13][  ]   211-134-155   199-112-137   #c77089
+" bright_aqua      #8ec07c   [aqua]  [  ]   108 [14][  ]   142-192-124   125-182-105   #7db669
+" bright_orange    #fe8019   [orange][  ]   208 [  ][  ]   254-128- 25   251-106- 22   #fb6a16
+
+" neutral_red      #cc241d   [   ]  [   ]   124 [ 1][ 1]   204- 36- 29   190- 15- 23   #be0f17
+" neutral_green    #98971a   [   ]  [   ]   106 [ 2][ 2]   152-151- 26   134-135- 21   #868715
+" neutral_yellow   #d79921   [   ]  [   ]   172 [ 3][ 3]   215-153- 33   204-136- 26   #cc881a
+" neutral_blue     #458588   [   ]  [   ]    66 [ 4][ 4]    69-133-136    55-115-117   #377375
+" neutral_purple   #b16286   [   ]  [   ]   132 [ 5][ 5]   177- 98-134   160- 75-115   #a04b73
+" neutral_aqua     #689d6a   [   ]  [   ]    72 [ 6][ 6]   104-157-106    87-142- 87   #578e57
+" neutral_orange   #d65d0e   [   ]  [   ]   166 [  ][  ]   214- 93- 14   202- 72- 14   #ca480e
+
+" faded_red        #9d0006   [   ]   [red]   88 [  ][ 9]   157-  0-  6   137-  0-  9   #890009
+" faded_green      #79740e   [   ] [green]  100 [  ][10]   121-116- 14   102- 98- 13   #66620d
+" faded_yellow     #b57614   [   ][yellow]  136 [  ][11]   181-118- 20   165- 99- 17   #a56311
+" faded_blue       #076678   [   ]  [blue]   24 [  ][12]     7-102-120    14- 83-101   #0e5365
+" faded_purple     #8f3f71   [   ][purple]   96 [  ][13]   143- 63-113   123- 43- 94   #7b2b5e
+" faded_aqua       #427b58   [   ]  [aqua]   66 [  ][14]    66-123- 88    53-106- 70   #356a46
+" faded_orange     #af3a03   [   ][orange]  130 [  ][  ]   175- 58-  3   157- 40-  7   #9d2807
+" }}}
+" highlight settings {{{
+" -----------------------
+" ┬ ┬o┌─┐┬ ┬┬  o┌─┐┬ ┬┌┐┐
+" │─┤││ ┬│─┤│  ││ ┬│─┤ │
+" ┆ ┴┆┆─┘┆ ┴┆─┘┆┆─┘┆ ┴ ┆
+" -----------------------
+hi Hint       font-family: "Terminess Powerline"; font-size: 15px; font-weight: normal; color: #dc322f; background-color: #002b36; border-color: #839496; border-width: 0px; border-style: solid; padding: 0px 5px 0px 5px; text-transform: uppercase;
+hi HintElem   background-color: #073642; color: #b58900;
+hi HintActive background-color: #dc322f; color: #073642;
+
+hi -append Hint         background-color: rgba(253, 246, 227, 0.7); border: 1px solid #fdf6e3; -moz-border-radius: 4px; -moz-box-shadow: 0px 0px 1px black;
+hi -append HintElem     text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #002b36;
+hi -append HintActive   text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #002b36;
+
+hi StatusLine     color: #EBDBB2; background: #282828; font-weight: normal; font-size: 10pt; font-family: Terminess Powerline;
+"hi StatusLineBroken   color:  #93a1a1; background: #ffffd7; font-weight: normal; font-size: 12pt;
+"hi StatusLineExtended color:  #93a1a1; background: #af005f; font-weight: normal; font-size: 12pt;
+"hi StatusLineSecure   color:  #93a1a1; background: #b58900; font-weight: normal; font-size: 12pt;
+
+hi Normal     color: #EBDBB2; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi CmdLine    color: #EBDBB2; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi InfoMsg    color: #EBDBB2; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi ModeMsg    color: #EBDBB2; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi MoreMsg    color: #859900; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi LineNr     color: #FE8019; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi Question   color: #FABD2F; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi WarningMsg color: #D65D0E; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
+hi ErrorMsg   color: #CC241D; background: #282828; font-size: 10pt; font-family: Terminess Powerline; font-weight: bold;
+hi NonText    background: #282828;
+hi Null       color: CornflowerBlue;
+hi Tag        color: CornflowerBlue;
+hi Number     color: CornflowerBlue;
+
+hi CompTitle          background: #3C3836;
+hi CompTitle>*        color: #458588; padding-bottom: 1px; padding-left: 10px; font-weight: bold; font-size: 11pt;
+hi CompItem[selected] color: #458588; background: #3C3836;
+hi CompItem           color: #EBDBB2; width: 50%;
+hi CompDesc           color: #D3869B;
+
+hi Title     color: #EBDBB2;
+hi Indicator color: #b58900;
+hi String    color: #EBDBB2;
+hi Number    color: #EBDBB2;
+hi Object    color: #2aa198;
+hi Function  color: #268bd2;
+hi URL       color: #B8BB26;
+
+hi TabNumber  color: #002b36; font-weight: bold; font-size:10pt;
+" }}}
+" CSS {{{
+" ---------
+" ┌─┐┐─┐┐─┐
+" │  └─┐└─┐
+" └─┘──┘──┘
+" ---------
+style -name user chrome://* <<EOM
+@namespace html url(http://www.w3.org/1999/xhtml);
+@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+/*
+    Author: Twily (modified by Roosta [https://github.com/roosta])
+    Description: Fork of "Twily's Powerline Firefox CSS" https://userstyles.org/styles/102262/twily-s-powerline-firefox-css
+    Compitability: Firefox Nightly v31.0a1 - v32.0a1 (Australis)
+      CSS Variables were introduced to Firefox in v29.0a1
+    Note: CSS was written with this addon in mind:
+      https://addons.mozilla.org/en-us/firefox/addon/tree-style-tab
+*/
+:root {
+  /* TAB VARIABLES */
+  --bg-light: #32302F;
+  --bg-dark: #272727;
+  --fg-light: #458588;
+  --fg-dark: #A89984;
+  --tab-triangle-correction: -1px;
+  --tab-height: 22px;
+  --tab-icon-size: 10px;
+  --tab-strip-margin: -11px;
+  --tab-overlap: -2px;
+  --tab-fonts: "Terminess Powerline","monospace";
+  --tab-font-size: 14px;
+  --tab-text-align: left; /* left | center | right */
+  --tab-triangle: block; /* block | none */
+
+  /* URL VARIABLES */
+  --url-background: var(--bg-light);
+  --url-color: var(--fg-light);
+  --url-height: 18px;
+  --url-right-margin: 5px;
+  --url-fonts: "Terminess Powerline",monospace;
+  --url-font-size: 11px;
+  --url-text-align: left; /* left | center | right */
+  --url-position: absolute; /* absolute == top (under tabs) || fixed == bottom of browser */
+
+  margin-bottom: 0 /* var(--url-height) */ !important;
+}
+
+
+@-moz-document url(chrome://browser/content/browser.xul) {
+
+  /* URL-BAR */
+  #back-button, #forward-button, #back-button *, #forward-button *, #identity-box, #urlbar-reload-button, #urlbar-stop-button, #urlbar-go-button,
+  #PanelUI-button, #bookmarks-menu-button, #downloads-button, #home-button, #stylish-toolbar-button, #abp-toolbarbutton,
+  #notification-popup-box, #new-tab-button, #private-browsing-indicator, #search-container, #nav-bar-overflow-button,
+  .tabs-newtab-button, .tab-close-button, .tab-close, .tab-throbber, .tab-background-start, .tab-background-end,
+  #window-controls /*, #alltabs-button, #tabview-button, .tab-icon-image */, .tab-icon-image:not([pinned]) {
+    display: none !important;
+  }
+
+  .tab-drop-indicator {
+    margin-bottom: 0 !important;
+  }
+
+  #nav-bar {
+    position: var(--url-position) !important; bottom: 0 !important;
+    width: 100% !important; height: var(--url-height) !important;
+    min-height: var(--url-height) !important; max-height: var(--url-height) !important;
+    margin: 0 0 0 0 !important;
+  }
+
+  #nav-bar-customization-target {
+    width: 100% !important;
+  }
+
+  #urlbar-wrapper {
+    width: 100% !important; margin-top: -0px !important; /* --- adjust margin-top to ~ -5px if you experience gap --- */
+    position: absolute !important; top: 0 !important; left: 0 !important;
+    border-bottom: 0px solid var(--bg-light) !important;
+  }
+  #urlbar {
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 0 0 0 !important;
+    padding: 0 2px 0 2px !important;
+    width: calc(100% + var(--url-right-margin)) !important;
+    height: var(--url-height) !important;
+    min-height: var(--url-height) !important;
+    background: var(--url-background) !important;
+    color: var(--url-color) !important;
+    font-family: var(--url-fonts) !important;
+    font-size: var(--url-font-size) !important;
+    text-align: var(--url-text-align) !important;
+  }
+
+  #nav-bar {
+    width: 0 !important;
+    height: 0 !important;
+    position: fixed !important;
+    left: -1px !important;
+    top: -1px !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+
+  /* TABS */
+  .tabbrowser-tab[fadein]:not([pinned]) {
+    min-width: 50px !important;
+    max-width: 100% !important; /*180px*/
+  }
+
+  tab {
+    font-family: var(--tab-fonts) !important;
+    height: var(--tab-height) !important;
+    min-height: var(--tab-height) !important;
+    background: var(--bg-dark) !important;
+    color: var(--fg-dark) !important;
+    font-size: var(--tab-font-size) !important;
+    text-shadow: none !important;
+    text-align: var(--tab-text-align) !important;
+  }
+
+  .tabbrowser-tab label {
+    padding: 0 14px 0 14px !important;
+  }
+
+  #tabbrowser-tabs .tabbrowser-tab[pinned] {
+    width: 38px !important;
+  }
+
+  #tabbrowser-tabs .tabbrowser-tab[pinned] label {
+    display: none !important;
+  }
+
+  #tabbrowser-tabs .tabbrowser-tab .tab-icon-image {
+    margin: 0 -10px 0 14px !important;
+    width: var(--tab-icon-size) !important;
+    height: var(--tab-icon-size) !important;
+  }
+
+  .tabbrowser-tab *, .tabs-newtab-button * {
+    background: none !important;
+    list-style-image: none !important;
+    margin: 0 0 0 0 !important;
+    padding: 0 0 0 0 !important;
+    -moz-appearance: none !important;
+  }
+
+  #tabbrowser-tabs .tabbrowser-tab[pinned] .tab-stack {
+    height: var(--tab-height) !important;
+    width: 100% !important;
+  }
+
+  #tabbrowser-tabs .tabbrowser-arrowscrollbox .box-inherit.scrollbox-innerbox {
+    max-height: var(--tab-height) !important;
+  }
+
+  .scrollbutton-up, .scrollbutton-down {
+    border: none !important;
+  }
+
+  .tabbrowser-tab[selected="true"] .tab-stack {
+    background: var(--bg-light) !important;
+    color: var(--fg-light) !important;
+    border-radius: 0px !important;
+    position: relative !important;
+    /*border-top: 1px solid #dc52a5 !important;/**/
+  }
+
+  .tabbrowser-tab[selected="true"]:before { /* Left Triangle (of selected tab) */
+    content: '' !important;
+    display: var(--tab-triangle);
+    position: absolute !important;
+    top: 0 !important;
+    left: var(--tab-overlap) !important;
+    width: 0 !important;
+    height: 0 !important;
+    border: none !important;
+    z-index: 2 !important;
+
+    border-left: calc(var(--tab-height)/2) solid var(--bg-dark) !important;
+    border-top: calc((var(--tab-height)/2) - var(--tab-triangle-correction)) solid var(--bg-light) !important;
+    border-bottom: calc((var(--tab-height)/2) + var(--tab-triangle-correction)) solid var(--bg-light) !important;
+
+    /*border-top: var(--tab-height) solid var(--bg-dark) !important;*/
+    /*border-right: calc(var(--tab-height)/2) solid var(--bg-light) !important;*/
+  }
+
+  .tabbrowser-tab[selected="true"]:after { /* Right Triangle (of selected tab) */
+    content: '' !important;
+    display: var(--tab-triangle);
+    position: absolute !important;
+    top: 0 !important;
+    right: var(--tab-overlap) !important;
+    width: 0 !important;
+    height: 0 !important;
+    border: none !important;
+    z-index: 2 !important;
+
+    border-right: calc(var(--tab-height)/2) solid var(--fg-light) !important;
+    border-top: calc((var(--tab-height)/2) - var(--tab-triangle-correction)) solid var(--bg-light) !important;
+    border-bottom: calc((var(--tab-height)/2) + var(--tab-triangle-correction)) solid var(--bg-light) !important;
+
+    /*border-top: var(--tab-height) solid var(--bg-dark) !important;*/
+    /*border-left: calc(var(--tab-height)/2) solid var(--bg-light) !important;*/
+  }
+
+  #TabsToolbar, #tabbrowser-tabs {
+    -moz-appearance: none !important;
+    height: var(--tab-height) !important;
+    min-height: var(--tab-height)!important;
+    margin: 0 var(--tab-strip-margin) !important;
+    background: var(--bg-dark) !important;
+  }
+  #TabsToolbar::after {
+    display: none !important;
+  }
+
+  .tabbrowser-tab::before, .tabbrowser-tab::after {
+    background: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /*browser, #navigator-toolbox { -moz-appearance: none !important; background: transparent !important; }*/
+
+  #navigator-toolbox::after {
+    height: 0px !important;
+    background: var(--bg-light) !important;
+  }
+
+  #liberator-separator {
+    height: 0px !important;
+    background: var(--bg-light) !important;
+    border-top: 0 !important;
+  }
+
+  /* MENUS */
+  menuitem + menuseparator, menu + menuseparator/*, .menu-iconic-left*/ {
+    display: none !important;
+  }
+
+ /* menuitem > label {                          */
+ /*  margin-left: var(--tab-height) !important; */
+ /*}                                            */
+
+
+  menubar, menubutton, menulist, menu, menuitem {
+    font-family: var(--tab-fonts) !important;
+    font-size: var(--tab-font-size);
+    height: var(--tab-height) !important;
+  }
+
+  /* HIDE ORANGE MENU BUTTON */
+  #appmenu-toolbar-button, #appmenu-button-container { display: none !important; }
+
+  /* HIDE STATUS BAR */
+  #status-bar, #statusbar-display, statuspanel { display: none !important; }
+
+  /* PRIVATE BROWSING ICON HIDE */
+  #main-window[privatebrowsingmode=temporary] #private-browsing-indicator,
+  #main-window[privatebrowsingmode=temporary] #private-browsing-indicator-titlebar { display: none !important; }
+
+  /* Vimperator icon style */
+  #liberator-statusline:not([customizing="true"]) {
+    margin: -2px -2px !important;
+    padding: 0 0 !important;
+    height: 24px !important;
+    z-index: 1 !important;
+  }
+
+  #liberator* {
+    z-index: 4 !important;
+  }
+
+  #liberator-statusline:not([customizing="true"]) :-moz-any(toolbarbutton) { height: 100% !important; }
+
+  #tabview-button {
+    /* 16x16 px image */
+    /* list-style-image: url(http://twily.info/img/tabview-button.png?v=2) !important; */
+    -moz-image-region: rect(0, 0, 0, 0) !important;
+  }
+
+  /*     #liberator-completions { background: var(--bg-dark) !important; } */
+
+  /* Tabgroup margin top fix */
+  #tab-view-deck #tab-view {
+    margin: 24px 12px 12px 12px !important;
+  }
+
+  #tab-view-deck {
+    background: var(--bg-light) !important;
+  }
+
+  window[sizemode="fullscreen"] #liberator-statusline {
+    display: none !important;
+  }
+
+  window[sizemode="fullscreen"] #liberator-bottombar  {
+    margin-top: -24px !important;
+    transition: 1s ease !important;
+    transition-delay: .3s !important;
+  }
+}
+
+
+/* Tab Group Page Style (Ctrl+Shift+E) */
+@-moz-document url(chrome://browser/content/tabview.html) {
+  #content #bg, #actions, body { background: var(--bg-light) !important; }
+  body * { color: var(--fg-light) !important; }
+
+  body .groupItem, #content #actions, body .undo {
+    background: var(--bg-dark) !important;
+    border: 0 !important; border-radius: 0 !important; box-shadow: 0 0 0 0 !important;
+  }
+  #content #actions {
+    opacity: 0 !important; display: none !important; /* block | none */
+    transition: .3s ease-out !important;
+  }
+  #content #actions:hover { opacity: 1 !important; }
+
+  body .appTabTrayContainer { border: 0 !important; }
+  body .tab, body .tab .thumb {
+    box-shadow: 0 0 0 0 !important; border: 0 !important; border-radius: 0 !important;
+    background: transparent !important; padding : 0 !important;
+  }
+  body .tab .favicon { display: none !important; }
+  body .groupItem .name { border: 0 !important; }
+  body .tab .tab-title { padding-top: 2px !important; }
+}
+
+
+/* AGENT_SHEET */
+@-moz-document url-prefix(http://), url-prefix(https://), url-prefix(chrome://liberator/), url-prefix(file:///) {
+  /* SCROLLBAR */
+  scrollbar[orient="vertical"], scrollbar thumb[orient="vertical"],
+  scrollbar[orient="horizontal"], scrollbar thumb[orient="horizontal"] {
+    display: none !important; /* none = hide || block = show */
+  }
+}
+
+
+/* background color around/behind pictures opened in firefox (require html namespace on top) */
+@-moz-document regexp("(https?://|file:///)(.*)\\.(jpeg|jpg|gif|png|apng|svg|bmp|webm|webp)") {
+  body {
+    background: var(--bg-light) !important;
+  }
+
+  img.decoded {
+    background-color: transparent !important;
+  }
+}
+
+
+/* About:Blank background */
+@-moz-document url(about:blank) {
+  html,body {
+    background: var(--bg-light) !important;
+  }
+}
+
+/* about:stylish-edit toolbar style */
+@-moz-document regexp("about:stylish-edit.*") {
+  #main-area, textbox {
+    background: var(--bg-light) !important;
+  }
+
+  textbox, grid, columns, rows, separator {
+    border: 0 !important;
+  }
+
+  .devtools-toolbarbutton {
+    background: var(--bg-dark) !important;
+    color: var(--fg-light) !important;
+  }
+}
+
+/*----- Fix for white flash on new tab -----*/
+tabbrowser tabpanels, #appcontent > #content {
+  background: var(--bg-light) !important;
+}
+EOM
+" }}}
+" vim:ft=vim:ts=2:sw=2:fdm=marker
+

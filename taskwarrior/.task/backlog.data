@@ -72,3 +72,5 @@
 {"description":"fix zgen startup directory","entry":"20151125T091347Z","modified":"20151125T091347Z","status":"pending","tags":["shell"],"uuid":"e3fe2ab3-667f-49db-8a50-48967103346a"}
 {"description":"seaf passwd","end":"20151125T091415Z","entry":"20151104T110317Z","modified":"20151125T091418Z","status":"deleted","tags":["sec"],"uuid":"81eba438-9693-4248-819c-1458b39f0894"}
 {"description":"create statusbar script for DPMS","end":"20151125T091435Z","entry":"20151030T192717Z","modified":"20151125T091436Z","status":"deleted","tags":["general"],"uuid":"d9c7b54b-1dc6-423a-ad79-162cc4eced73"}
+{"description":"setup left tab bar","entry":"20151127T092903Z","modified":"20151127T092903Z","status":"pending","tags":["firefox"],"uuid":"14698076-23fd-4aab-aa44-af646407aa6e"}
+{"description":"fix highlighting","entry":"20151128T140821Z","modified":"20151128T140821Z","status":"pending","tags":["vimperator"],"uuid":"dba77449-fa25-4a24-8b21-931795d0f1b3"}

@@ -17,3 +17,5 @@
 [description:"fix twinview" entry:"1447195186" modified:"1447195186" status:"pending" tags:"multihead" uuid:"306458eb-4e5f-4c19-b712-29a10919b058"]
 [description:"fix error exit code in prompt" entry:"1447772673" modified:"1447772673" status:"pending" tags:"shell" uuid:"0c577a35-8640-4e02-84ee-f1465f327d92"]
 [description:"fix zgen startup directory" entry:"1448442827" modified:"1448442827" status:"pending" tags:"shell" uuid:"e3fe2ab3-667f-49db-8a50-48967103346a"]
+[description:"setup left tab bar" entry:"1448616543" modified:"1448616543" status:"pending" tags:"firefox" uuid:"14698076-23fd-4aab-aa44-af646407aa6e"]
+[description:"fix highlighting" entry:"1448719701" modified:"1448719701" status:"pending" tags:"vimperator" uuid:"dba77449-fa25-4a24-8b21-931795d0f1b3"]

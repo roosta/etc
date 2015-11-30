@@ -56,3 +56,4 @@ eval $( dircolors -b $HOME/.dircolors )
 # plugin handled externally with vim-plug
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+source /usr/share/doc/pkgfile/command-not-found.zsh

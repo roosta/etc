@@ -56,10 +56,10 @@ rofi.kb-secondary-paste:             Control+v,Insert
 rofi.kb-clear-line:                  Control+u
 rofi.kb-move-front:                  Control+a
 rofi.kb-move-end:                    Control+e
-rofi.kb-move-word-back:              Alt+b
-rofi.kb-move-word-forward:           Alt+f
-rofi.kb-move-char-back:              Control+Left,Control+b
-rofi.kb-move-char-forward:           Control+Right,Control+f
+rofi.kb-move-word-back:              Control+Left
+rofi.kb-move-word-forward:           Control+Right
+rofi.kb-move-char-back:              Control+b
+rofi.kb-move-char-forward:           Control+f
 rofi.kb-remove-word-back:            Control+Alt+h
 rofi.kb-remove-word-forward:         Control+Alt+d
 rofi.kb-remove-char-forward:         Delete,Control+d

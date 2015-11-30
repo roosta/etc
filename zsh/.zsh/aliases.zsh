@@ -30,6 +30,7 @@ alias vivimp="vim ~/.vimperatorrc"
 alias vigtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
 alias vivimp="vim ~/.vimperatorrc"
 alias vilein="vim ~/.lein/profiles.clj"
+alias viterm="vim ~/.urxvt.xresources"
 
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │
@@ -93,7 +94,7 @@ alias -g .....='../../../..'
 alias -g ......='../../../../..'
 
 ## dirstack movement: needs some extra config, see dirstack.sh
-alias stack='dirs -v'
+alias dirs='dirs -v'
 alias 1='cd -'
 alias 2='cd -2'
 alias 3='cd -3'

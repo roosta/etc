@@ -50,6 +50,7 @@ interval=5
 [cpu_temp]
 color=#B7BA25
 #label=CPU 
+command=/usr/lib/i3blocks/temperature
 label=CPU:
 interval=10
 
@@ -66,6 +67,7 @@ interval=30
 [cpu_usage]
 label=Ï
 interval=10
+command=/usr/lib/i3blocks/$BLOCK_NAME
 color=#679C69
 min_width=100.00%
 

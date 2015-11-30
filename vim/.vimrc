@@ -146,29 +146,56 @@ map <leader>tc :tabclose<CR>
 " map <leader>tm :tabmove
 
 " Switch between Vim window splits
-nmap <silent> <A-Up>    :wincmd k<CR>
-nmap <silent> <A-Down>  :wincmd j<CR>
-nmap <silent> <A-Left>  :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
+nnoremap <silent> <A-Up>    :wincmd k<CR>
+nnoremap <silent> <A-Down>  :wincmd j<CR>
+nnoremap <silent> <A-Left>  :wincmd h<CR>
+nnoremap <silent> <A-Right> :wincmd l<CR>
 
-" resize splits
-"nnoremap <C-w>Up    :exe "resize " .          (winheight(0) * 3/2)<CR>
-"nnoremap <C-w>Down  :exe "resize " .          (winheight(0) * 2/3)<CR>
-"nnoremap <C-w>Left  :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-"nnoremap <C-w>Right :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+" Maps Alt-[h,j,k,l] to resizing a window split
+nnoremap <silent> <A-S-Left> 5<C-w><
+nnoremap <silent> <A-S-Down> 5<C-W>-
+nnoremap <silent> <A-S-Up> 5<C-W>+
+nnoremap <silent> <A-S-Right> 5<C-w>>
 
-"nnoremap <A-Up>    :normal <c-r>=SwitchWindow('+')<CR><CR>
-"nnoremap <A-Down>  :normal <c-r>=SwitchWindow('-')<CR><CR>
-"nnoremap <A-Left>  :normal <c-r>=SwitchWindow('<')<CR><CR>
-"nnoremap <A-Right> :normal <c-r>=SwitchWindow('>')<CR><CR>
+noremap <C-Up> {
+noremap <C-Down> }
 " }}}
-" PLUGINS {{{1
-" -------------------
-" ┬─┐┬  ┬ ┐┌─┐o┌┐┐┐─┐
-" │─┘│  │ ││ ┬││││└─┐
-" ┆  ┆─┘┆─┘┆─┘┆┆└┘──┘
-" -------------------
-" PLUGIN MANAGER {{{2
+" FUNCTIONS {{{
+" -------------------------
+" ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
+" ├─ │ │││││   │ ││ ││││└─┐
+" ┆  ┆─┘┆└┘└─┘ ┆ ┆┘─┘┆└┘──┘
+" -------------------------
+" https://github.com/tpope/vim-fireplace/pull/222
+"command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
+
+" if working with splits, set cursorline only on active window,
+" to give an indication other than airline which split is active
+augroup BgHighlight
+  autocmd!
+  "autocmd WinEnter * set number
+  "autocmd WinLeave * set nonumber
+  autocmd WinEnter * :set relativenumber
+  autocmd WinLeave * :set number
+  autocmd WinEnter * set cursorline
+  autocmd WinLeave * set nocursorline
+augroup END
+
+" attempt to close quickfix when deleting buffer
+nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
+cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <leader><C-n> :call NumberToggle()<cr>
+
+" }}}
+" PLUGIN MANAGER {{{1
 " -------------------
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
@@ -191,7 +218,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-Plug 'terryma/vim-expand-region'
+"Plug 'terryma/vim-expand-region'
 
 " compl/lint
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
@@ -217,11 +244,12 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'gorodinskiy/vim-coloresque'
 
 " cloujure
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-static'
+"Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve'
@@ -239,7 +267,7 @@ call plug#end()
 syntax on
 filetype plugin indent on
 "}}}
-" SYNTASTIC {{{2
+" SYNTASTIC {{{1
 " --------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -251,14 +279,14 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
 "}}}
-" VIM-MULTIPLE-CURSOR {{{2
+" VIM-MULTIPLE-CURSOR {{{1
 " -------------------
 let g:multi_cursor_next_key='<C-d>'
 let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 " }}}
-" FZF.VIM {{{2
+" FZF.VIM {{{1
 " -------
 " https://github.com/junegunn/fzf.vim
 
@@ -282,7 +310,7 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 " }}}
-" EASYMOTION {{{2
+" EASYMOTION {{{1
 " ---------------
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
@@ -314,7 +342,7 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 " set ctrl-v to paste in easymotion command line
 "EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
 " }}}
-" QUICKSCOPE {{{2
+" QUICKSCOPE {{{1
 " ---------------
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
 let g:qs_first_occurrence_highlight_color = 155       " terminal vim
@@ -325,20 +353,29 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " }}}
-" AIRLINE {{{2
+" AIRLINE {{{1
 " ------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#bufferline#overwrite_variables = 1
+
 "}}}
-" BUFFERLINE {{{2
+" BUFFERLINE {{{1
 " ---------------
-let g:bufferline_modified = '+'
+"
+"let g:bufferline_active_buffer_left = ''
+"let g:bufferline_active_buffer_right = ''
+"let g:bufferline_modified = '+'
 let g:bufferline_show_bufnr = 0
 let g:bufferline_solo_highlight = 1
 let g:bufferline_echo = 0
+"let g:bufferline_inactive_highlight = 'StatusLine'
+"let g:bufferline_active_highlight = 'StatusLineNC'
+
 "}}}
-" EASYCLIP {{{2
+" EASYCLIP {{{1
 " -------------
+
 " remap mark to gm since EasyClip cut shadows m key
 nnoremap gm m
 imap <c-v> <plug>EasyClipInsertModePaste
@@ -353,8 +390,9 @@ set clipboard=unnamed,unnamedplus
 "nmap ]y <plug>EasyClipSwapPasteForward
 "nmap [y <plug>EasyClipSwapPasteBackwards
 let g:EasyClipShareYanks = 1
+
 " }}}
-" GRUVBOX {{{2
+" GRUVBOX {{{1
 " ------------
 
 " Set theme
@@ -363,15 +401,17 @@ let g:gruvbox_italic = 1
 "let g:gruvbox_contrast_dark = "hard"
 colorscheme gruvbox
 set background=dark
+
 " }}}
-" RAINBOW PARENTHESIS {{{2
+" RAINBOW PARENTHESIS {{{1
 " ------------------------
 
 au VimEnter * RainbowParentheses
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 "let g:rbpt_loadcmd_toggle = 0
+
 " }}}
-" NERDTREE {{{2
+" NERDTREE {{{1
 " -------------
 map <leader>nt :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
@@ -385,14 +425,14 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 "}}}}
-" NERDCOMMENT {{{2
+" NERDCOMMENT {{{1
 " ----------------
 " mirror tpope commentary keys.
 nmap gcc <plug>NERDCommenterToggle
 vmap gc <plug>NERDCommenterToggle
 
 "}}}
-" PAREDIT {{{2
+" PAREDIT {{{1
 " -----------
 
 let g:paredit_electric_return = 0
@@ -400,7 +440,7 @@ let g:paredit_leader = '\'
 "let g:paredit_disable_clojure = 0
 
 " }}}
-" EASY-ALIGN {{{2
+" EASY-ALIGN {{{1
 " ---------------
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -409,73 +449,20 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " }}}
-" INDENT GUIDES {{{2
+" INDENT GUIDES {{{1
 " ------------------
 
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
 " }}}
-" ACK.VIM {{{2
+" ACK.VIM {{{1
 " ------------
 let g:ackprg = 'ag --vimgrep'
 "}}}
-" UNDOTREE {{{2
+" UNDOTREE {{{1
 nnoremap <leader>ut :UndotreeToggle<cr>
 "}}}
-"}}}
-" FUNCTIONS {{{
-" -------------------------
-" ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
-" ├─ │ │││││   │ ││ ││││└─┐
-" ┆  ┆─┘┆└┘└─┘ ┆ ┆┘─┘┆└┘──┘
-" -------------------------
-" https://github.com/tpope/vim-fireplace/pull/222
-command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
-
-" if working with splits, set cursorline only on active window,
-" to give an indication other than airline which split is active
-augroup BgHighlight
-  autocmd!
-  "autocmd WinEnter * set number
-  "autocmd WinLeave * set nonumber
-  autocmd WinEnter * :set relativenumber
-  autocmd WinLeave * :set number
-  autocmd WinEnter * set cursorline
-  autocmd WinLeave * set nocursorline
-augroup END
-
-" attempt to close quickfix when deleting buffer
-nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
-cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
-
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
-
-nnoremap <leader><C-n> :call NumberToggle()<cr>
-
-" window switch function. Binds are added at keybinds sections
-function! SwitchWindow(dir)
-  let this = winnr()
-  if '+' == a:dir
-    execute "normal \<c-w>k"
-    elseif '-' == a:dir
-    execute "normal \<c-w>j"
-    elseif '>' == a:dir
-    execute "normal \<c-w>l"
-    elseif '<' == a:dir
-    execute "normal \<c-w>h"
-  else
-    echo "oops. check your ~/.vimrc"
-    return ""
-  endif
-endfunction
-" }}}
 " INACTIVE {{{
 " --------------------
 " o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
