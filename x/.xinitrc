@@ -82,8 +82,6 @@ xbindkeys &
 # │ ││└─┐│─┘│  │─┤└┌┘
 # ┆─┘┆──┘┆  ┆─┘┘ ┆ ┆
 
-$HOME/bin/chmon desk &
-
 # screen locker
 xss-lock -- xscreensaver-command -lock &
 
