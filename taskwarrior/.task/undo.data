@@ -259,3 +259,14 @@ new [description:"setup left tab bar" entry:"1448616543" modified:"1448616543" s
 time 1448719701
 new [description:"fix highlighting" entry:"1448719701" modified:"1448719701" status:"pending" tags:"vimperator" uuid:"dba77449-fa25-4a24-8b21-931795d0f1b3"]
 ---
+time 1448915700
+new [description:"display tab icons" entry:"1448915700" modified:"1448915700" status:"pending" tags:"firefox" uuid:"b5c3fd20-b2a6-4f7a-b9f2-3f66df7f7090"]
+---
+time 1448915719
+old [description:"setup left tab bar" entry:"1448616543" modified:"1448616543" status:"pending" tags:"firefox" uuid:"14698076-23fd-4aab-aa44-af646407aa6e"]
+new [description:"setup left tab bar" end:"1448915719" entry:"1448616543" modified:"1448915719" status:"completed" tags:"firefox" uuid:"14698076-23fd-4aab-aa44-af646407aa6e"]
+---
+time 1448915744
+old [description:"fix twinview" entry:"1447195186" modified:"1447195186" status:"pending" tags:"multihead" uuid:"306458eb-4e5f-4c19-b712-29a10919b058"]
+new [description:"fix twinview" end:"1448915744" entry:"1447195186" modified:"1448915744" status:"completed" tags:"multihead" uuid:"306458eb-4e5f-4c19-b712-29a10919b058"]
+---

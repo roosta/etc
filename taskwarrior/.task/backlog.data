@@ -74,3 +74,6 @@
 {"description":"create statusbar script for DPMS","end":"20151125T091435Z","entry":"20151030T192717Z","modified":"20151125T091436Z","status":"deleted","tags":["general"],"uuid":"d9c7b54b-1dc6-423a-ad79-162cc4eced73"}
 {"description":"setup left tab bar","entry":"20151127T092903Z","modified":"20151127T092903Z","status":"pending","tags":["firefox"],"uuid":"14698076-23fd-4aab-aa44-af646407aa6e"}
 {"description":"fix highlighting","entry":"20151128T140821Z","modified":"20151128T140821Z","status":"pending","tags":["vimperator"],"uuid":"dba77449-fa25-4a24-8b21-931795d0f1b3"}
+{"description":"display tab icons","entry":"20151130T203500Z","modified":"20151130T203500Z","status":"pending","tags":["firefox"],"uuid":"b5c3fd20-b2a6-4f7a-b9f2-3f66df7f7090"}
+{"description":"setup left tab bar","end":"20151130T203519Z","entry":"20151127T092903Z","modified":"20151130T203519Z","status":"completed","tags":["firefox"],"uuid":"14698076-23fd-4aab-aa44-af646407aa6e"}
+{"description":"fix twinview","end":"20151130T203544Z","entry":"20151110T223946Z","modified":"20151130T203544Z","status":"completed","tags":["multihead"],"uuid":"306458eb-4e5f-4c19-b712-29a10919b058"}

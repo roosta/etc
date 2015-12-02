@@ -1,3 +1,5 @@
+[description:"fix twinview" end:"1448915744" entry:"1447195186" modified:"1448915744" status:"completed" tags:"multihead" uuid:"306458eb-4e5f-4c19-b712-29a10919b058"]
+[description:"setup left tab bar" end:"1448915719" entry:"1448616543" modified:"1448915719" status:"completed" tags:"firefox" uuid:"14698076-23fd-4aab-aa44-af646407aa6e"]
 [description:"create statusbar script for DPMS" end:"1448442875" entry:"1446233237" modified:"1448442876" status:"deleted" tags:"general" uuid:"d9c7b54b-1dc6-423a-ad79-162cc4eced73"]
 [description:"seaf passwd" end:"1448442855" entry:"1446634997" modified:"1448442858" status:"deleted" tags:"sec" uuid:"81eba438-9693-4248-819c-1458b39f0894"]
 [description:"fix check for exec tasksh" end:"1447773067" entry:"1446406084" modified:"1447773068" status:"deleted" tags:"ansible" uuid:"ce6d3fb0-5e49-4f21-9dc8-d1a429c649b5"]
