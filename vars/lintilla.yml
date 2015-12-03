@@ -4,23 +4,20 @@ home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
 # define host monitors and layout
-output0: "DVI-I-1" # primary desktop
-output1: "DVI-D-0" # left desktop
-output2: "HDMI-0"  # television
+outputs: [{display: "DVI-I-1", bar_id: "bar-primary", stat_conf: "lintilla-0.conkyrc"},
+          {display: "DVI-D-0", bar_id: "bar-secondary", stat_conf: "lintilla-1.conkyrc"},
+          {display: "HDMI-0", bar_id: "bar-tv", stat_conf: "lintilla-2.conkyrc"}]
 
 # Used in xinit. This is a dynamic layout that is changed with chdisp <https://github.com/roosta/scripts/blob/master/chdisp.sh>
 #output_layout: "xrandr --output DVI-I-1 --primary --auto --pos 0x0 --output DVI-D-0 --auto --left-of DVI-I-1 --output HDMI-0 --off &"
 output_layout: "DVI-I-1: nvidia-auto-select +1920+0 { ForceFullCompositionPipeline = on }, DVI-D-0: nvidia-auto-select +0+0"
 
 # define fonts used in i3-wm
-i3_font: "pango: Essential PragmataPro 12px"
-i3_status_font: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
+i3_font: "pango:Essential PragmataPro 9"
+i3_status_font: "pango:Essential PragmataPro 9"
+i3_status_command: "$HOME/.i3/script/conky-i3bar"
+
 font_location: "{{home}}/.fonts/misc"
 
-# define i3bar status commands.
-# Currently using i3blocks <https://github.com/vivien/i3blocks>
-status0: "i3blocks -c ~/.i3/i3blocks/lintilla/output0.i3b"
-status1: "i3blocks -c ~/.i3/i3blocks/lintilla/output1.i3b"
-status2: "i3blocks -c ~/.i3/i3blocks/lintilla/output2.i3b"
 # vim:ft=yaml:ts=2:sw=2
 

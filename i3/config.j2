@@ -125,12 +125,12 @@ bindsym $mod+Shift+F7 move workspace $FWS7
 bindsym $mod+Shift+F8 move workspace $FWS8
 
 # assign workspaces to outputs
-workspace $PWS1_TRM output {{ output0 }}
-workspace $PWS3_WWW output {{ output0 }}
-workspace $PWS2_DEV output {{ output0 }}
-workspace $SWS1_AUX output {{ output1 }}
-workspace $SWS3_DBG output {{ output1 }}
-workspace $SWS2_COM output {{ output1 }}
+workspace $PWS1_TRM output {{ outputs[0].display }}
+workspace $PWS3_WWW output {{ outputs[0].display }}
+workspace $PWS2_DEV output {{ outputs[0].display }}
+workspace $SWS1_AUX output {{ outputs[1].display }}
+workspace $SWS3_DBG output {{ outputs[1].display }}
+workspace $SWS2_COM output {{ outputs[1].display }}
 
 # Options
 focus_follows_mouse no
@@ -391,14 +391,14 @@ client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{
 client.placeholder      {{ bright_aqua }} {{ neutral_aqua }} {{ dark0 }} {{ bright_purple }}
 
 {# macro that renders status bars based on host spesific variables as args #}
-{% macro render_bar(_id, _output, _status, _tray='none', _pos='top') %}
+{% macro render_bar(display, bar_id, stat_conf) %}
 bar {
-  id {{ _id }}
-  output {{ _output }}
-  status_command {{ _status }}
+  id {{ bar_id }}
+  output {{ display }}
+  status_command {{ i3_status_command }} {{ stat_conf }}
   font {{ i3_status_font }}
-  position {{ _pos }}
-  tray_output {{ _tray }}
+  position top
+  tray_output primary
   strip_workspace_numbers yes
   separator_symbol "|"
   colors {
@@ -415,20 +415,8 @@ bar {
 }
 {% endmacro %}
 
-{# call on render_bar macro and use variables defined in ../host_vars #}
-{%- if ansible_hostname == "lintilla" %}
-{{ render_bar("bar-0", output0, status0, output0) }}
-{{ render_bar("bar-1", output1, status1) }}
-{{ render_bar("bar-2", output2, status2) }}
-{% endif -%}
+{% for output in outputs %}
+{{ render_bar(output.display, output.bar_id, output.stat_conf) }}
+{% endfor %}
 
-{%- if ansible_hostname == "allitnil" %}
-{{ render_bar("bar-0", output0, status0, output0) }}
-{{ render_bar("bar-1", output1, status1) }}
-{% endif -%}
-
-{%- if ansible_hostname == "poodoo" %}
-{{ render_bar("bar-0", output0, status0, output0) }}
-{{ render_bar("bar-1", output1, status0, 'none', 'bottom') }}
-{% endif -%}
 # vim:ft=i3:ts=2:sw=2:fdm=marker
