@@ -3,20 +3,21 @@ user: roosta
 home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
-# define host monitors and layout
-outputs: [{display: "DVI-I-1", bar_id: "bar-primary", stat_conf: "lintilla-0.conkyrc"},
-          {display: "DVI-D-0", bar_id: "bar-secondary", stat_conf: "lintilla-1.conkyrc"},
-          {display: "HDMI-0", bar_id: "bar-tv", stat_conf: "lintilla-2.conkyrc"}]
+# define host outputs and various associated vars
+outputs: [{display: "DVI-I-1", bar_id: "bar-primary", stat_conf: "lintilla-0.conkyrc", bar_pos: "top", tray_out: "primary"},
+          {display: "DVI-D-0", bar_id: "bar-secondary", stat_conf: "lintilla-1.conkyrc", bar_pos: "top", tray_out: "primary"},
+          {display: "HDMI-0", bar_id: "bar-tv", stat_conf: "lintilla-2.conkyrc", bar_pos: "top", tray_out: "primary"}]
 
-# Used in xinit. This is a dynamic layout that is changed with chdisp <https://github.com/roosta/scripts/blob/master/chdisp.sh>
+# Used in xinit. This is a dynamic layout that is changed with chdisp <https://github.com/roosta/scripts/blob/master/chmon.sh>
 #output_layout: "xrandr --output DVI-I-1 --primary --auto --pos 0x0 --output DVI-D-0 --auto --left-of DVI-I-1 --output HDMI-0 --off &"
 output_layout: "DVI-I-1: nvidia-auto-select +1920+0 { ForceFullCompositionPipeline = on }, DVI-D-0: nvidia-auto-select +0+0"
 
-# define fonts used in i3-wm
+# i3 variables.
 i3_font: "pango:Essential PragmataPro 9"
 i3_status_font: "pango:Essential PragmataPro 9"
 i3_status_command: "$HOME/.i3/script/conky-i3bar"
 
+# define where to put the tracked fonts
 font_location: "{{home}}/.fonts/misc"
 
 # vim:ft=yaml:ts=2:sw=2

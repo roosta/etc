@@ -33,8 +33,8 @@ set $term urxvtc
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
 
 # generate new config with ansible and reload i3
-set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg restart"
-set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg reload"
+set $fullrestart "fatline i3 && i3-msg restart"
+set $fullreload "fatline i3 && i3-msg reload"
 
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
 # │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
@@ -124,10 +124,13 @@ bindsym $mod+Shift+F6 move workspace $FWS6
 bindsym $mod+Shift+F7 move workspace $FWS7
 bindsym $mod+Shift+F8 move workspace $FWS8
 
-# assign workspaces to outputs
+## assign workspaces to outputs
+# primary
 workspace $PWS1_TRM output {{ outputs[0].display }}
 workspace $PWS3_WWW output {{ outputs[0].display }}
 workspace $PWS2_DEV output {{ outputs[0].display }}
+
+# secondary
 workspace $SWS1_AUX output {{ outputs[1].display }}
 workspace $SWS3_DBG output {{ outputs[1].display }}
 workspace $SWS2_COM output {{ outputs[1].display }}
@@ -304,6 +307,7 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # ┌┌┐┬─┐┌┐┐┬ ┐┐─┐
 # │││├─ ││││ │└─┐
 # ┘ ┆┴─┘┆└┘┆─┘──┘
+# ---------------
 
 # RESIZE
 # resize windows with either vi keys or arrows.
@@ -378,6 +382,7 @@ bindsym $mod+Home mode "$mode_chmon"
 # ┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┌┐┐┌─┐┬─┐
 # │─┤│─┘│─┘├─ │─┤│┬┘│─┤││││  ├─
 # ┘ ┆┆  ┆  ┴─┘┘ ┆┆└┘┘ ┆┆└┘└─┘┴─┘
+# ------------------------------
 
 # generated from template
 # set primary font
@@ -391,14 +396,14 @@ client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{
 client.placeholder      {{ bright_aqua }} {{ neutral_aqua }} {{ dark0 }} {{ bright_purple }}
 
 {# macro that renders status bars based on host spesific variables as args #}
-{% macro render_bar(display, bar_id, stat_conf) %}
+{% macro render_bar(display, bar_id, stat_conf, bar_pos, tray_out) %}
 bar {
   id {{ bar_id }}
   output {{ display }}
   status_command {{ i3_status_command }} {{ stat_conf }}
   font {{ i3_status_font }}
-  position top
-  tray_output primary
+  position {{ bar_pos }}
+  tray_output {{ tray_out }}
   strip_workspace_numbers yes
   separator_symbol "|"
   colors {
@@ -415,8 +420,9 @@ bar {
 }
 {% endmacro %}
 
+{# loop through each output and generate a bar config for each #}
 {% for output in outputs %}
-{{ render_bar(output.display, output.bar_id, output.stat_conf) }}
+{{ render_bar(output.display, output.bar_id, output.stat_conf, output.bar_pos, output.tray_out) }}
 {% endfor %}
 
 # vim:ft=i3:ts=2:sw=2:fdm=marker
