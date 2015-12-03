@@ -17,7 +17,7 @@ short_units yes
 # How strict should if_up be when testing an interface for being up?
 # The value is one of up, link or address, to check for the interface
 # being solely up, being up and having link or being up, having link
-# and an assigned IP address. 
+# and an assigned IP address.
 if_up_strictness address
 
 # Add spaces to keep things from moving about?  This only affects certain objects.
@@ -36,6 +36,11 @@ TEXT
 
 # JSON for i3bar
 
- [{ "full_text" : "Home ${fs_free /home} Free" , "color" : "\#ffffff" },
-  { "full_text" : "RAM ${memperc}%" , "color" :
-    ${if_match ${memperc}<90}"\#ffffff"${else}"\#ff0000"${endif} }],
+ [{ "full_text" : "home: ${fs_free /home}" , "color" : "\#ffffff" },
+  { "full_text" : "root: ${fs_free /}" , "color" : "\#ffffff" },
+  { "full_text" : "var: ${fs_free /var}" , "color" : "\#ffffff" },
+  { "full_text" : "archive: ${fs_free /mnt/archive}" , "color" : "\#ffffff" },
+  { "full_text" : "depo: ${fs_free /mnt/depo}" , "color" : "\#ffffff" },
+  { "full_text" : "games: ${fs_free /mnt/games}" , "color" : "\#ffffff" },
+  { "full_text" : "backup: ${fs_free /mnt/netbackup}" , "color" : "\#ffffff" },
+  { "full_text" : "media: ${fs_free /mnt/netmedia}" , "color" : "\#ffffff" }],

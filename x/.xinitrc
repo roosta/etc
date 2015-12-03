@@ -49,10 +49,9 @@ if [ -x $hostconf ] ; then
 fi
 
 # set X font locations
-#xset +fp $HOME/.fonts/nerd-fonts &
-#xset +fp $HOME/.fonts/restricted &
-#xset +fp $HOME/.fonts/misc &
-#xset fp rehash &
+xset +fp $HOME/.fonts/restricted &
+xset +fp $HOME/.fonts/misc &
+xset fp rehash &
 
 # init gnome-keyring.
 #eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

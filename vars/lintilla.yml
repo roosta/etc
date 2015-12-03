@@ -13,8 +13,8 @@ outputs: [{display: "DVI-I-1", bar_id: "bar-primary", stat_conf: "lintilla-0.con
 output_layout: "DVI-I-1: nvidia-auto-select +1920+0 { ForceFullCompositionPipeline = on }, DVI-D-0: nvidia-auto-select +0+0"
 
 # i3 variables.
-i3_font: "pango:Essential PragmataPro 9"
-i3_status_font: "pango:Essential PragmataPro 9"
+i3_font: "-*-terminesspowerline-*-*-*-*-12-*-*-*-*-*-*-*"
+i3_status_font: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
 i3_status_command: "$HOME/.i3/script/conky-i3bar"
 
 # define where to put the tracked fonts

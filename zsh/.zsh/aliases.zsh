@@ -31,6 +31,8 @@ alias vigtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
 alias vivimp="vim ~/.vimperatorrc"
 alias vilein="vim ~/.lein/profiles.clj"
 alias viterm="vim ~/.urxvt.xresources"
+alias vime="vim ~/.dotfiles/vars/$(hostname).yml"
+alias vii3tmp="vim ~/.i3/config.gen"
 
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │
