@@ -1,16 +1,29 @@
-# ┌───────────────────────────────────────────────────────────┐
-# │░▀▀█░█▀▀░█░█░░░░░█▀█░█░░░█░█░█▀▀░▀█▀░█▀█░░░█▀▀░█▀█░█▀█░█▀▀░│
-# │░▄▀░░▀▀█░█▀█░░▀░░█▀▀░█░░░█░█░█░█░░█░░█░█░░░█░░░█░█░█░█░█▀▀░│
-# │░▀▀▀░▀▀▀░▀░▀░░▀░░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀▀▀░▀▀▀░▀░▀░▀░░░│
-# └───────────────────────────────────────────────────────────┘
+# ┏━┓┓━┓┳ ┳ ┳━┓┳  ┳ ┓┏━┓o┏┓┓┓━┓
+# ┏━┛┗━┓┃━┫o┃━┛┃  ┃ ┃┃ ┳┃┃┃┃┗━┓
+# ┗━┛━━┛┇ ┻o┇  ┇━┛┇━┛┇━┛┇┇┗┛━━┛
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-# Alias every command that doesn't exist.
-source /usr/share/doc/pkgfile/command-not-found.zsh
+# ┬  ┐─┐   ┌─┐┌─┐┬  ┌─┐┬─┐┐─┐
+# │  └─┐   │  │ ││  │ ││┬┘└─┐
+# ┆─┘──┘───└─┘┘─┘┆─┘┘─┘┆└┘──┘
+# https://github.com/trapd00r/LS_COLORS
+eval $(dircolors -b $HOME/.dircolors)
+
+# ┌─┐┬ ┬┬─┐┌─┐┬┌   ┬─┐┌┐┐┬─┐  ┐─┐┌─┐┬ ┐┬─┐┌─┐┬─┐
+# │  │─┤├─ │  ├┴┐  │─┤││││ │  └─┐│ ││ ││┬┘│  ├─
+# └─┘┆ ┴┴─┘└─┘┆ ┘  ┘ ┆┆└┘┆─┘  ──┘┘─┘┆─┘┆└┘└─┘┴─┘
+plugin_location=$HOME/.zsh/plugins
+[ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
+[ -f $plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source $plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh
+[ -f $plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ┬─┐┬─┐┐─┐┬─┐
 # ├─ │─┤└─┐│ │
 # ┆  ┘ ┆──┘┆─┘
-
+# https://github.com/clvv/fasd
+# Installed via AUR
+eval "$(fasd --init auto)"
+#
 # fasd plugin aliases
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
@@ -47,6 +60,9 @@ bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directorie
 # ┬─┐┬ ┐┌─┐┌─┐┐ ┬  ┬─┐o┌┐┐┬─┐┬─┐┬─┐
 # ├─ │ │┌─┘┌─┘└┌┘──├─ │││││ │├─ │┬┘
 # ┆  ┆─┘└─┘└─┘ ┆   ┆  ┆┆└┘┆─┘┴─┘┆└┘
+
+# plugin handled externally with vim-plug
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Respecting .gitignore, .hgignore, and svn:ignore
 # Setting ag as the default source for fzf

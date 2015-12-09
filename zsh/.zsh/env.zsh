@@ -8,6 +8,8 @@
 export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
 
+fpath=("$HOME/.zsh.d" $fpath)
+
 # locate
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8

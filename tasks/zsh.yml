@@ -21,3 +21,23 @@
     - .zshrc
     - .zprofile
     - .zshenv
+
+- name: check for/create directories
+  file: path={{ dotfiles }}/zsh/.zsh/plugins state=directory mode=0755
+
+- name: check for fpath dir
+  file: path={{ home }}/.zsh.d state=directory mode=0755
+
+- name: clone / update external libraries
+  git: repo={{ item.repo }} dest={{ item.dest }} clone=yes update=yes
+  with_items:
+    - { repo: "https://github.com/zsh-users/zsh-syntax-highlighting", dest: "{{ dotfiles }}/zsh/.zsh/plugins/zsh-syntax-highlighting" }
+    - { repo: "https://github.com/zsh-users/zsh-completions", dest: "{{ dotfiles }}/zsh/.zsh/plugins/zsh-completions" }
+    - { repo: "https://github.com/zsh-users/zsh-history-substring-search", dest: "{{ dotfiles }}/zsh/.zsh/plugins/zsh-history-substring-search" }
+    - { repo: "https://github.com/roosta/pure", dest: "{{ dotfiles }}/zsh/.zsh/plugins/pure" }
+
+- name: symlink fpath files
+  file: src={{ dotfiles }}/zsh/.zsh/plugins/pure/{{ item.src }} dest={{ home }}/.zsh.d/{{ item.dest }} state=link
+  with_items:
+    - { src: "pure.zsh", dest: "prompt_pure_setup" }
+    - { src: "async.zsh", dest: "async" }

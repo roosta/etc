@@ -34,6 +34,7 @@ SublimeGit.sublime-settings
 # shell
 base-16
 .bash_history
+zsh/.zsh/plugins
 
 # GUI
 gtk/*/bookmarks

@@ -9,7 +9,7 @@
 # init
 autoload -Uz compinit
 compinit
-autoload -U ~/.zsh/completion/*(:t)
+autoload -U ~/.zsh/plugins/zsh-completions/*(:t)
 
 # do not autoselect the first completion entry
 unsetopt menu_complete
