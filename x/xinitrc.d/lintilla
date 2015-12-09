@@ -1,1 +1,6 @@
 $HOME/bin/chmon desk &
+
+# xbox controller drivers.
+#xboxdrv -D --config $HOME/.xboxdrv
+
+# vim:ft=sh:ts=2:sw=2:fdm=marker

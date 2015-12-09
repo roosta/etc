@@ -53,10 +53,6 @@ xset +fp $HOME/.fonts/restricted &
 xset +fp $HOME/.fonts/misc &
 xset fp rehash &
 
-# init gnome-keyring.
-#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-#export SSH_AUTH_SOCK
-
 # o┌┐┐┬─┐┬ ┐┌┐┐┐─┐
 # │││││─┘│ │ │ └─┐
 # ┆┆└┘┆  ┆─┘ ┆ ──┘
@@ -70,12 +66,6 @@ numlockx &
 
 # bind various custom keys. see .xbindkeysrx
 xbindkeys &
-
-# xbox controller drivers. Currently using steamos-xpad
-#xboxdrv -D --config $HOME/.xboxdrv
-
-# initially diable touchpad on laptop
-#$HOME/.scripts/touchpad-toggle.sh
 
 # ┬─┐o┐─┐┬─┐┬  ┬─┐┐ ┬
 # │ ││└─┐│─┘│  │─┤└┌┘
@@ -102,6 +92,7 @@ urxvtd -q -f -o &
 compton -b &
 xscreensaver -no-splash &
 dunst &
+dropbox &
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
 # ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘
