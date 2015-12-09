@@ -21,7 +21,7 @@
 # urgent
 
 # Global properties
-command=~/.i3/scripts/$BLOCK_NAME
+command=~/.i3/script/$BLOCK_NAME
 color=#c0b18b
 
 [keyboard_layout]
@@ -50,7 +50,6 @@ interval=5
 [cpu_temp]
 color=#B7BA25
 #label=CPU 
-#command=/usr/lib/i3blocks/temperature
 label=CPU:
 interval=10
 
