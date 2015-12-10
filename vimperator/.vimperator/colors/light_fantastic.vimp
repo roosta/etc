@@ -2,7 +2,6 @@
 " name: light_fantastic
 " url: https://github.com/roosta/dotfiles/tree/master/vimperator
 " --------------------------------------------------------------
-"
 " colortable {{{
 " Gruvbox - Pavel Pertsev
 " https://github.com/morhetz/gruvbox
@@ -100,5 +99,6 @@ hi Function  color: #268bd2;
 hi URL       color: #B8BB26;
 
 hi TabNumber  color: #002b36; font-weight: bold; font-size:10pt;
+
 " vim:ft=vim:ts=2:sw=2:fdm=marker
 
