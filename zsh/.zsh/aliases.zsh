@@ -242,8 +242,8 @@ alias paggaborder="toilet -t -f pagga -F border"
 
 # systemctl query
 alias sysstat='systemctl status'
-alias systype='systemctl --type='
-alias sysstate='systemctl --state='
+alias systype='systemctl -t'
+alias sysfailed='systemctl --state=failed'
 alias syslsu='systemctl list-units'
 alias syslsuf='systemctl list-unit-files'
 alias syslssoc='systemctl list-sockets'

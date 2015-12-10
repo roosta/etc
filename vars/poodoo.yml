@@ -3,19 +3,16 @@ user: roosta
 home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
-# define displays
-output0: "HDMI1"
-output1: "VGA1"
+outputs: [{display: "HDMI1", bar_id: "bar-primary", stat_conf: "$HOME/.i3/status/poodoo_0.i3blocks", bar_pos: "top", tray_out: "primary"},
+          {display: "VGA1", bar_id: "bar-secondary", stat_conf: "$HOME/.i3/status/poodoo_1.i3blocks", bar_pos: "bottom", tray_out: "primary"}]
 
 font_location: "{{home}}/.fonts/misc"
 
 # i3-wm
 # -----
-i3_font: "pango: Essential PragmataPro 12px"
+i3_font: "-*-terminesspowerline-*-*-*-*-12-*-*-*-*-*-*-*"
 i3_status_font: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
-
-status0: "i3blocks -c ~/.i3/i3blocks/poodoo/output0.i3b"
-#status1: "i3blocks -c ~/.i3/i3blocks/poodoo/output1.i3b"
+i3_status_command: "i3blocks -c "
 
 # vim:ft=yaml:ts=2:sw=2
 

@@ -1,6 +1,4 @@
-{:user {:plugins [[cider/cider-nrepl "0.9.1"]
-                  [jonase/eastwood "0.2.2"]
-                  [venantius/ultra "0.4.0"]]}}
+{:user {:plugins [[cider/cider-nrepl "0.9.1"]]}}
 
         ;:ultra {:color-scheme :solarized_dark}}}
         ;:ultra {:color-scheme {:delimiter [:red]
