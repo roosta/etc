@@ -9,8 +9,6 @@
 .DS_Store
 backup/*
 /**/tmp
-gimp/sessionrc*
-gimp/gimpswap.*
 
 # ranger
 ranger/bookmarks
@@ -80,7 +78,10 @@ idea/config/options/ClojureUsageStatistics.xml
 
 
 parasiterc
-gimp/menurc
+gimp/*rc
+gimp/tags.xml
+gimp/gimpswap.*
+gimp/tool-options
 idea/config/options/dimensions.xml
 idea/config/options/extensionsRootType.xml
 idea/config/plugins/availables.xml
