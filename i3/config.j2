@@ -33,8 +33,8 @@ set $term urxvtc
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
 
 # generate new config with ansible and reload i3
-set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg restart"
-set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg reload"
+set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3"
+#set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg reload"
 
 # ┬─┐┬ ┐┌┐┐┌─┐┐─┐┌┐┐┬─┐┬─┐┌┐┐
 # │─┤│ │ │ │ │└─┐ │ │─┤│┬┘ │
@@ -163,7 +163,7 @@ assign [class="(?i)steam"]                 $TWS2_GAM
 
 # -> media
 assign [class="(?i)spotify"]               $TWS1_MED
-assign [class="(?i)google-chrome-stable$"] $TWS1_MED
+assign [class="(?i)google-chrome-stable"] $TWS1_MED
 
 # -> Comms
 assign [class="(?i)pidgin"]                $SWS2_COM
@@ -188,8 +188,6 @@ for_window [title="(?i)Friends"]                 floating enable
 for_window [class="(?i)Linphone"]                floating enable
 for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
 for_window [class="(?i)Pidgin"]                  floating enable
-#for_window [class="(?i)thunderbird"]            floating enable
-for_window [class="(?i)google-chrome-stable"]    layout tabbed
 
 # WINDOW SIZE
 # -----------
@@ -197,7 +195,7 @@ for_window [class="(?i)Pidgin"]                  floating_maximum_size 50 x 75
 
 # BORDER
 # ------
-#for_window [class="(?i)firefox"]                border none
+#for_window [class="(?i)firefox"]               border none
 for_window [class="(?i)google-chrome$"]         border none
 for_window [class="(?i)PrisonArchitect.x86_64"] border none
 
@@ -266,7 +264,7 @@ bindsym $mod+Control+Shift+r exec --no-startup-id $fullrestart
 bindsym $mod+Shift+c reload
 
 # regenerate i3 config and reload
-bindsym $mod+Control+Shift+c exec --no-startup-id $fullreload
+#bindsym $mod+Control+Shift+c exec --no-startup-id $fullreload
 
 # border changing
 bindsym $mod+b border toggle
