@@ -13,3 +13,4 @@
     - .urxvt.xresources
     - .rofi.xresources
     - .fonts.xresources
+    - .xinitrc.d
