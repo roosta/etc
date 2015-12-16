@@ -129,9 +129,9 @@ alias lsp='lsp -p'
 # ──┘┴─┘└─┘┆─┘┆└┘┆ ┆  ┆
 
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
-alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l $HOME/.tmp/clamscan.log $HOME"
-alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected /"
-alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected ."
+alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME"
+alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME /"
+alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected -l /home/rootsa/.tmp/clamscan.log $HOME ."
 
 # ┬─┐┬─┐┌─┐┌┌┐┬─┐┌┐┐
 # │─┘│─┤│  ││││─┤│││
@@ -274,18 +274,6 @@ alias gits='git status'
 alias gitd='git diff'
 alias gitdc='git diff --cached'
 alias gitout='git checkout'
-
-# show short log
-alias gitls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
-
-# show long log
-alias gitll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
-
-alias gita='git add'
-alias gitaa='git add -A'
-alias gitc='git commit'
-alias commit='git commit'
-alias gitca='git commit -a'
 alias gitsubupd='git submodule foreach git pull origin master'
 
 # --- svn ---
@@ -326,7 +314,7 @@ alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 # ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
 
 alias lein='rlwrap lein'
-
+alias figwheel='lein do clean, figwheel'
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
 

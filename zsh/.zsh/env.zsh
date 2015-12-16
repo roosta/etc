@@ -37,6 +37,8 @@ export LESS=-R
 alias less=$PAGER
 alias zless=$PAGER
 
+export STEAM_RUNTIME=0
+
 # set env to tell ranger not to use default config
 export RANGER_LOAD_DEFAULT_RC="false"
 

@@ -218,7 +218,6 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-"Plug 'terryma/vim-expand-region'
 
 " compl/lint
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
@@ -244,7 +243,6 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/rainbow_parentheses.vim'
-"Plug 'gorodinskiy/vim-coloresque'
 
 " cloujure
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }
@@ -252,9 +250,11 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight'
 "Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve'
-"Plug 'venantius/vim-cljfmt'
+Plug 'venantius/vim-cljfmt'
 
 " inactive
+"Plug 'terryma/vim-expand-region'
+"Plug 'gorodinskiy/vim-coloresque'
 "Plug 'guns/vim-clojure-static'
 "Plug 'kien/ctrlp.vim'
 "Plug 'tpope/vim-commentary'
@@ -452,10 +452,8 @@ nmap ga <Plug>(EasyAlign)
 " }}}
 " INDENT GUIDES {{{1
 " ------------------
-
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
-
 " }}}
 " ACK.VIM {{{1
 " ------------
