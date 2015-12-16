@@ -152,7 +152,7 @@ assign [class="(?i)jetbrains-idea"]        $PWS2_DEV
 assign [class="(?i)atom"]                  $PWS2_DEV
 
 # -> debug
-assign [class="(?i)google-chrome-beta$"]   $SWS3_DBG
+assign [class="(?i)google-chrome-beta"]    $SWS3_DBG
 assign [instance="^Devtools$$"]            $SWS3_DBG
 
 # -> www
@@ -162,8 +162,8 @@ assign [class="(?i)firefox"]               $PWS3_WWW
 assign [class="(?i)steam"]                 $TWS2_GAM
 
 # -> media
-assign [class="(?i)spotify"]               $TWS1_MED
-assign [class="(?i)google-chrome-stable"] $TWS1_MED
+assign [class="(?i)Spotify"]               $TWS1_MED
+assign [class="(?i)google-chrome"]         $TWS1_MED
 
 # -> Comms
 assign [class="(?i)pidgin"]                $SWS2_COM
@@ -255,10 +255,9 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-
+#bindsym $mod+Shift+r restart
 # regenerate configuration from template and restart i3
-bindsym $mod+Control+Shift+r exec --no-startup-id $fullrestart
+bindsym $mod+Shift+r exec --no-startup-id $fullrestart
 
 # reload i3 configuration
 bindsym $mod+Shift+c reload

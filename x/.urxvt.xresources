@@ -28,11 +28,11 @@ URxvt.matcher.rend.0:       Uline Bold fg5
 URxvt.cursorColor: #D3869B
 URxvt.cursorBlink: false
 
-URxvt.iso14755: false
-URxvt.iso14755_52: false
+!URxvt.iso14755: false
+!URxvt.iso14755_52: false
 
 ! Meta (Alt) + keypress to set the 8th bit
-URxvt*meta8: true
+!URxvt*meta8: true
 
 ! scroll single lines with shift+up/down
 ! http://unix.stackexchange.com/questions/44756/urxvt-scroll-just-one-line

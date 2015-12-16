@@ -1,5 +1,7 @@
-{:user {:plugins [[cider/cider-nrepl "0.9.1"]]}}
+{:user {:dependencies [[cljfmt "0.3.0"]]
+        :plugins [[cider/cider-nrepl "0.10.0"]]}}
 
+        ;[cider/cider-nrepl "0.9.1"]
         ;:ultra {:color-scheme :solarized_dark}}}
         ;:ultra {:color-scheme {:delimiter [:red]
                                ;:tag [:red]

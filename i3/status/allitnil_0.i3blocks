@@ -21,12 +21,11 @@
 # urgent
 
 # Global properties
-command=~/.i3/scripts/$BLOCK_NAME
+command=~/.i3/script/$BLOCK_NAME
 color=#c0b18b
 
 [battery]
 label=Battery:
-command=/usr/lib/i3blocks/battery
 color=#B7BA25
 interval=10
 
@@ -53,32 +52,34 @@ instance=enp0s20u2
 color=#679C69
 interval=5
 
+[bandwidth]
+instance=wlp2s0
+color=#679C69
+interval=5
+
 [cpu_temp]
 color=#B7BA25
 #label=CPU 
 label=CPU:
 interval=10
 
-[gpu_temp]
-label=GPU:
-interval=10
+#[gpu_temp]
+#label=GPU:
+#interval=10
 
 [memory]
 label=Þ
-command=/usr/lib/i3blocks/$BLOCK_NAME
 color=#82A497
 interval=30
 
 [cpu_usage]
 label=Ï
-#command=/usr/lib/i3blocks/$BLOCK_NAME
 interval=10
 color=#679C69
 min_width=100.00%
 
 [load_average]
 label=Ù
-command=/usr/lib/i3blocks/$BLOCK_NAME
 color=#8DBF7B
 interval=10
 
