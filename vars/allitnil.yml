@@ -1,21 +1,21 @@
 ---
-user: daniel
+user: roosta
 home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
-# define displays
-output0: "HDMI2"
-output1: "eDP1"
+# define host outputs and various associated vars
+outputs: [{display: "eDP1", bar_id: "bar-primary", stat_conf: "~/.i3/status/allitnil_0.i3blocks", bar_pos: "top", tray_out: "primary"},
+          {display: "HDMI1", bar_id: "bar-secondary", stat_conf: "~/.i3/status/allitnil_1.i3blocks", bar_pos: "top", tray_out: "primary"}]
 
-font_location: "{{home}}/.fonts/misc"
+output_layout: "xrandr --output eDP1 --mode 1600x900 --primary"
 
-# i3-wm
-# -----
-i3_font: "pango: Essential PragmataPro 12px"
+# i3 variables.
+i3_font: "-*-terminesspowerline-*-*-*-*-12-*-*-*-*-*-*-*"
 i3_status_font: "-*-terminusicons2-*-*-*-*-12-*-*-*-*-*-*-*"
+i3_status_command: "i3blocks -c"
 
-status0: "i3blocks -c ~/.i3/i3blocks/allitnil/output0.i3b"
-status1: "i3blocks -c ~/.i3/i3blocks/allitnil/output1.i3b"
+# define where to put the tracked fonts
+font_location: "{{home}}/.fonts/misc"
 
 # vim:ft=yaml:ts=2:sw=2
 
