@@ -146,15 +146,15 @@ map <leader>tc :tabclose<CR>
 " map <leader>tm :tabmove
 
 " Switch between Vim window splits
-nnoremap <silent> <A-Up>    :wincmd k<CR>
-nnoremap <silent> <A-Down>  :wincmd j<CR>
-nnoremap <silent> <A-Left>  :wincmd h<CR>
-nnoremap <silent> <A-Right> :wincmd l<CR>
+noremap <silent> <A-Up>    :wincmd k<CR>
+noremap <silent> <A-Down>  :wincmd j<CR>
+noremap <silent> <A-Left>  :wincmd h<CR>
+noremap <silent> <A-Right> :wincmd l<CR>
 
 " Maps Alt-[h,j,k,l] to resizing a window split
-nnoremap <silent> <A-S-Left> 5<C-w><
-nnoremap <silent> <A-S-Down> 5<C-W>-
-nnoremap <silent> <A-S-Up> 5<C-W>+
+nnoremap <silent> <A-S-Left>  5<C-w><
+nnoremap <silent> <A-S-Down>  5<C-W>-
+nnoremap <silent> <A-S-Up>    5<C-W>+
 nnoremap <silent> <A-S-Right> 5<C-w>>
 
 noremap <C-Up> {

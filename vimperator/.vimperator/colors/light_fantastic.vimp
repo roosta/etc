@@ -2,6 +2,7 @@
 " name: light_fantastic
 " url: https://github.com/roosta/dotfiles/tree/master/vimperator
 " --------------------------------------------------------------
+"
 " colortable {{{
 " Gruvbox - Pavel Pertsev
 " https://github.com/morhetz/gruvbox
