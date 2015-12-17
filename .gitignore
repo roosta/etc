@@ -89,3 +89,5 @@ fasd.data
 fasd.log
 idea/config/options/ClojureUsageStatisticsSettings.xml
 idea/config/options/recentProjects.xml
+gimprc
+pluginrc
