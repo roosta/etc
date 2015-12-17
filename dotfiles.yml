@@ -55,6 +55,7 @@
     - include: tasks/taskwarrior.yml tags=tasks,taskwarrior,full
     - include: tasks/ncmpcpp.yml     tags=ncmpcpp,full
     - include: tasks/gimp.yml        tags=gimp,full
+    - include: tasks/inkscape.yml    tags=inkscape,full
     - include: tasks/xboxdrv.yml     tags=xbox,full
     - include: tasks/krita.yml       tags=krita,full
 

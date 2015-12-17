@@ -1,0 +1,3 @@
+---
+- name: Symlink "gimp" configuration
+  file: src={{ dotfiles }}/inkscape dest={{ home }}/.config/inkscape state=link

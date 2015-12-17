@@ -91,3 +91,4 @@ idea/config/options/ClojureUsageStatisticsSettings.xml
 idea/config/options/recentProjects.xml
 gimprc
 pluginrc
+extension-errors.log
