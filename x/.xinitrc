@@ -92,6 +92,7 @@ urxvtd -q -f -o &
 compton -b &
 xscreensaver -no-splash &
 dunst &
+nm-applet &
 dropbox &
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
