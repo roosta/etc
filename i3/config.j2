@@ -19,7 +19,8 @@
 # └┘ ┘ ┆┆└┘┆┘ ┆┆─┘┆─┘┴─┘──┘
 # -------------------------
 # fast way to reach power settings for system. Requires polkit.
-set $locker xscreensaver-command --lock
+#set $locker xscreensaver-command --lock
+set $locker i3lock --image=$HOME/.background/pattern-01.png -t && sleep 1
 
 # tmux session management
 # tmux new-session -n$USER -s$USER@$HOSTNAME
@@ -328,15 +329,15 @@ mode "$mode_resize" {
   bindsym Shift+l resize grow   width  30 px or 30 ppt
 
   # assign the same for arrows
-  bindsym Left resize shrink width  10 px or 10 ppt
-  bindsym Down resize grow   height 10 px or 10 ppt
-  bindsym Up resize shrink   height 10 px or 10 ppt
-  bindsym Right resize grow  width  10 px or 10 ppt
+  bindsym Left  resize shrink width  10 px or 10 ppt
+  bindsym Down  resize grow   height 10 px or 10 ppt
+  bindsym Up    resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow   width  10 px or 10 ppt
 
-  bindsym Shift+Left resize shrink width  30 px or 30 ppt
-  bindsym Shift+Down resize grow   height 30 px or 30 ppt
-  bindsym Shift+Up resize shrink   height 30 px or 30 ppt
-  bindsym Shift+Right resize grow  width  30 px or 30 ppt
+  bindsym Shift+Left  resize shrink width  30 px or 30 ppt
+  bindsym Shift+Down  resize grow   height 30 px or 30 ppt
+  bindsym Shift+Up    resize shrink height 30 px or 30 ppt
+  bindsym Shift+Right resize grow   width  30 px or 30 ppt
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
@@ -346,7 +347,6 @@ bindsym $mod+r mode "$mode_resize"
 
 # SYSTEM
 # https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
-#set $locker i3lock --image=$HOME/.backgrounds/pattern-01.png -t && sleep 1
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
   bindsym l       exec --no-startup-id $locker, mode "default"

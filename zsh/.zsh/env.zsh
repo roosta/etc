@@ -37,6 +37,8 @@ export LESS=-R
 alias less=$PAGER
 alias zless=$PAGER
 
+# Use native runtime for steam.
+# See https://wiki.archlinux.org/index.php/Unofficial_user_repositories#alucryd-multilib
 export STEAM_RUNTIME=0
 
 # set env to tell ranger not to use default config

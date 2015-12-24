@@ -72,7 +72,9 @@ xbindkeys &
 # ┆─┘┆──┘┆  ┆─┘┘ ┆ ┆
 
 # screen locker
-xss-lock -- xscreensaver-command -lock &
+#xss-lock -- xscreensaver-command -lock &
+#xscreensaver -no-splash &
+xss-lock -- i3lock -t -n -i /home/roosta/.background/pattern-01.png &
 
 # disable screensaver when certain fullscreen apps are active
 # see https://github.com/iye/lightsOn/blob/master/lightsOn.sh
@@ -90,7 +92,6 @@ $HOME/.fehbg &
 
 urxvtd -q -f -o &
 compton -b &
-xscreensaver -no-splash &
 dunst &
 nm-applet &
 dropbox &
