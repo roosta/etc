@@ -63,6 +63,7 @@ mutt/smime/keys/*
 **/tags
 *.jar
 icons/
+!/inkscape/icons
 *.gen
 mpd/.config/mpd/mpd.log
 ncmpcpp/error.log

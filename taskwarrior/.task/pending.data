@@ -18,3 +18,4 @@
 [description:"fix zgen startup directory" entry:"1448442827" modified:"1448442827" status:"pending" tags:"shell" uuid:"e3fe2ab3-667f-49db-8a50-48967103346a"]
 [description:"fix highlighting" entry:"1448719701" modified:"1448719701" status:"pending" tags:"vimperator" uuid:"dba77449-fa25-4a24-8b21-931795d0f1b3"]
 [description:"display tab icons" entry:"1448915700" modified:"1448915700" status:"pending" tags:"firefox" uuid:"b5c3fd20-b2a6-4f7a-b9f2-3f66df7f7090"]
+[description:"live wallpaper" entry:"1450617113" modified:"1450617113" status:"pending" tags:"lintilla" uuid:"5004a332-3fc4-42e6-88b8-7beb1e0166a3"]
