@@ -86,15 +86,15 @@ bindsym $mod+Shift+d move workspace $SWS3_DBG
 # Tertiary workspaces
 set $TWS1_MED "7:1:Media"
 set $TWS2_GAM "8:2:Games"
-set $TWS3_MSC "9:3:Misc"
+set $TWS3_ART "9:3:Art"
 
 bindsym $mod+1 workspace $TWS1_MED
 bindsym $mod+2 workspace $TWS2_GAM
-bindsym $mod+3 workspace $TWS3_MSC
+bindsym $mod+3 workspace $TWS3_ART
 
 bindsym $mod+Shift+1 move workspace $TWS1_MED
 bindsym $mod+Shift+2 move workspace $TWS2_GAM
-bindsym $mod+Shift+3 move workspace $TWS3_MSC
+bindsym $mod+Shift+3 move workspace $TWS3_ART
 
 # Auxiliary workspaces
 set $FWS1 "9[F1]"
@@ -160,10 +160,15 @@ assign [class="(?i)firefox"]               $PWS3_WWW
 
 # -> games
 assign [class="(?i)steam"]                 $TWS2_GAM
+assign [title="(?i)friends"]               $TWS2_GAM
 
 # -> media
-assign [class="(?i)Spotify"]               $TWS1_MED
+assign [class="(?i)spotify"]               $TWS1_MED
 assign [class="(?i)google-chrome"]         $TWS1_MED
+
+assign [class="(?i)inkscape"]              $TWS3_ART
+assign [class="(?i)gimp"]                  $TWS3_ART
+assign [class="(?i)krita"]                 $TWS3_ART
 
 # -> Comms
 assign [class="(?i)pidgin"]                $SWS2_COM
