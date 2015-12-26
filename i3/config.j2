@@ -298,14 +298,9 @@ bindsym $mod+Shift+p focus child
 bindsym --release Print exec scrot $screenshot
 bindsym --release Shift+Print exec scrot -s $screenshot
 
-# send a signal to i3blocks on caps to toggle layout
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-
-# send signal to i3blocks on volume change and update volume script.
-# currently unoprable since xbindkeys hijacks these keys for reasons I haven't looked into
-#bindsym 123 exec pkill -SIGRTMIN+12 i3blocks
-#bindsym 122 exec pkill -SIGRTMIN+12 i3blocks
-#bindsym 121 exec pkill -SIGRTMIN+12 i3blocks
+# send a signal to i3status on caps to toggle layout
+#bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Caps_Lock exec killall -USR1 py3status
 
 # ┌┌┐┬─┐┌┐┐┬ ┐┐─┐
 # │││├─ ││││ │└─┐
@@ -410,7 +405,7 @@ bar {
   separator_symbol "|"
   colors {
     background {{ dark0 }}
-    separator  {{ dark0_soft }}
+    separator  {{ neutral_blue }}
     statusline {{ light1 }}
 
     # <workclass> <border> <background> <foreground>

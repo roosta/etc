@@ -11,6 +11,7 @@
 # │ o┌┐┐o┌┐┐o┬─┐┬  o┌─┐┬─┐
 # │ │││││ │ ││─┤│  │┌─┘├─
 # ┆ ┆┆└┘┆ ┆ ┆┘ ┆┆─┘┆└─┘┴─┘
+# ------------------------
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
@@ -56,7 +57,7 @@ xset fp rehash &
 # o┌┐┐┬─┐┬ ┐┌┐┐┐─┐
 # │││││─┘│ │ │ └─┐
 # ┆┆└┘┆  ┆─┘ ┆ ──┘
-
+# ----------------
 # Set keyboard layouts and options.
 # Switch layout with caps and terminate x session with ctrl alt backspace
 setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp &
@@ -70,7 +71,7 @@ xbindkeys &
 # ┬─┐o┐─┐┬─┐┬  ┬─┐┐ ┬
 # │ ││└─┐│─┘│  │─┤└┌┘
 # ┆─┘┆──┘┆  ┆─┘┘ ┆ ┆
-
+# -------------------
 # screen locker
 #xss-lock -- xscreensaver-command -lock &
 #xscreensaver -no-splash &
@@ -89,7 +90,7 @@ $HOME/.fehbg &
 # ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
 # │ ││─┤├─ ││││ ││││└─┐
 # ┆─┘┘ ┆┴─┘┘ ┆┘─┘┆└┘──┘
-
+# ---------------------
 urxvtd -q -f -o &
 compton -b &
 dunst &
@@ -99,7 +100,7 @@ dropbox &
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
 # ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘
 # └┴┆┆┆└┘┆─┘┘─┘└┴┆  ┘ ┆┘ ┆┆└┘┘ ┆┆─┘┴─┘┆└┘
-
+# ---------------------------------------
 # easy wm-switcher, given arg from ~/.xserverrc
 # https://wiki.archlinux.org/index.php/Xinitrc#Making_a_DE.2FWM_choice
 session=${1:-i3} # Here i3wm is kept as default
