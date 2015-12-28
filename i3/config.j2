@@ -192,7 +192,7 @@ for_window [class="(?i)Jitsi"]                   floating enable
 for_window [class="(?i)SessionManager"]          floating enable
 for_window [title="(?i)Friends"]                 floating enable
 for_window [class="(?i)Linphone"]                floating enable
-for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
+#for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
 for_window [class="(?i)Pidgin"]                  floating enable
 
 # WINDOW SIZE
@@ -202,7 +202,7 @@ for_window [class="(?i)Pidgin"]                  floating_maximum_size 50 x 75
 # BORDER
 # ------
 #for_window [class="(?i)firefox"]               border none
-for_window [class="(?i)google-chrome$"]         border none
+#for_window [class="(?i)google-chrome$"]         border none
 for_window [class="(?i)PrisonArchitect.x86_64"] border none
 
 # ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐┐─┐
@@ -387,11 +387,11 @@ bindsym $mod+Home mode "$mode_chmon"
 font {{ i3_font }}
 
 # <class>               <border> <background> <foreground> <indicator>
-client.focused          {{ neutral_blue }} {{ neutral_blue }} {{ dark0 }} {{ neutral_aqua }}
-client.focused_inactive {{ dark1 }} {{ dark0 }} {{ light1 }} {{ dark0_soft }}
-client.unfocused        {{ neutral_blue }} {{ dark1 }} {{ gray_245 }} {{ neutral_aqua }}
-client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{ neutral_orange }}
-client.placeholder      {{ bright_aqua }} {{ neutral_aqua }} {{ dark0 }} {{ bright_purple }}
+client.focused          {{ faded_green }} {{ faded_green }} {{ dark0 }} {{ neutral_purple }}
+client.focused_inactive {{ dark1 }} {{ dark0 }} {{ light1 }} {{ neutral_purple }}
+client.unfocused        {{ faded_green }} {{ dark1 }} {{ gray_245 }} {{ neutral_purple }}
+client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{ neutral_purple }}
+client.placeholder      {{ bright_aqua }} {{ neutral_aqua }} {{ dark0 }} {{ neutral_purple }}
 
 {# macro that renders status bars based on host spesific variables as args #}
 {% macro render_bar(display, bar_id, stat_conf, bar_pos, tray_out) %}
@@ -410,7 +410,7 @@ bar {
     statusline {{ light1 }}
 
     # <workclass>      <border> <background> <foreground>
-    focused_workspace  {{ dark0 }} {{ dark0 }} {{ bright_blue }}
+    focused_workspace  {{ dark0 }} {{ dark0 }} {{ bright_green }}
     active_workspace   {{ dark0 }} {{ dark0 }} {{ light1 }}
     inactive_workspace {{ dark0 }} {{ dark0 }} {{ gray_245 }}
     urgent_workspace   {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }}
