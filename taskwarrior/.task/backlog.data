@@ -80,3 +80,8 @@
 {"description":"live wallpaper","entry":"20151220T131153Z","modified":"20151220T131153Z","status":"pending","tags":["lintilla"],"uuid":"5004a332-3fc4-42e6-88b8-7beb1e0166a3"}
 {"description":"setup vpn","entry":"20151220T131206Z","modified":"20151220T131206Z","status":"pending","tags":["heart"],"uuid":"428448c5-2f20-414e-ac9d-22aa397448b0"}
 {"description":"setup vpn","end":"20151220T143546Z","entry":"20151220T131206Z","modified":"20151220T143546Z","status":"completed","tags":["heart"],"uuid":"428448c5-2f20-414e-ac9d-22aa397448b0"}
+{"description":"do a writeup on zsh prompt\/vimode","entry":"20151226T205201Z","modified":"20151226T205201Z","status":"pending","tags":["dotfiles"],"uuid":"5f634f4a-fc05-49fb-8c5a-9265237add93"}
+{"description":"check out etckeeper","entry":"20151227T103549Z","modified":"20151227T103549Z","status":"pending","tags":["dotfiles"],"uuid":"29e8f3ae-29ba-4275-a29f-232ea995b73c"}
+{"description":"fix ssh","entry":"20151227T103611Z","modified":"20151227T103611Z","status":"pending","tags":["IMPORTANT"],"uuid":"12cd4f09-b821-4bde-a3e4-55aac8494e54"}
+{"description":"update userchrome with blue colors and 5px border - bottom","end":"20151227T105801Z","entry":"20151101T192643Z","modified":"20151227T105801Z","status":"completed","tags":["general"],"uuid":"c46f206c-56e6-472c-9420-ae7491383e20"}
+{"description":"fix zgen startup directory","end":"20151227T130733Z","entry":"20151125T091347Z","modified":"20151227T130734Z","status":"deleted","tags":["shell"],"uuid":"e3fe2ab3-667f-49db-8a50-48967103346a"}

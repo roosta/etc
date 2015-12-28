@@ -1,3 +1,5 @@
+[description:"fix zgen startup directory" end:"1451221653" entry:"1448442827" modified:"1451221654" status:"deleted" tags:"shell" uuid:"e3fe2ab3-667f-49db-8a50-48967103346a"]
+[description:"update userchrome with blue colors and 5px border - bottom" end:"1451213881" entry:"1446406003" modified:"1451213881" status:"completed" tags:"general" uuid:"c46f206c-56e6-472c-9420-ae7491383e20"]
 [description:"setup vpn" end:"1450622146" entry:"1450617126" modified:"1450622146" status:"completed" tags:"heart" uuid:"428448c5-2f20-414e-ac9d-22aa397448b0"]
 [description:"fix twinview" end:"1448915744" entry:"1447195186" modified:"1448915744" status:"completed" tags:"multihead" uuid:"306458eb-4e5f-4c19-b712-29a10919b058"]
 [description:"setup left tab bar" end:"1448915719" entry:"1448616543" modified:"1448915719" status:"completed" tags:"firefox" uuid:"14698076-23fd-4aab-aa44-af646407aa6e"]

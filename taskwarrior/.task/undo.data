@@ -280,3 +280,20 @@ time 1450622146
 old [description:"setup vpn" entry:"1450617126" modified:"1450617126" status:"pending" tags:"heart" uuid:"428448c5-2f20-414e-ac9d-22aa397448b0"]
 new [description:"setup vpn" end:"1450622146" entry:"1450617126" modified:"1450622146" status:"completed" tags:"heart" uuid:"428448c5-2f20-414e-ac9d-22aa397448b0"]
 ---
+time 1451163121
+new [description:"do a writeup on zsh prompt\/vimode" entry:"1451163121" modified:"1451163121" status:"pending" tags:"dotfiles" uuid:"5f634f4a-fc05-49fb-8c5a-9265237add93"]
+---
+time 1451212549
+new [description:"check out etckeeper" entry:"1451212549" modified:"1451212549" status:"pending" tags:"dotfiles" uuid:"29e8f3ae-29ba-4275-a29f-232ea995b73c"]
+---
+time 1451212571
+new [description:"fix ssh" entry:"1451212571" modified:"1451212571" status:"pending" tags:"IMPORTANT" uuid:"12cd4f09-b821-4bde-a3e4-55aac8494e54"]
+---
+time 1451213881
+old [description:"update userchrome with blue colors and 5px border - bottom" entry:"1446406003" modified:"1446406003" status:"pending" tags:"general" uuid:"c46f206c-56e6-472c-9420-ae7491383e20"]
+new [description:"update userchrome with blue colors and 5px border - bottom" end:"1451213881" entry:"1446406003" modified:"1451213881" status:"completed" tags:"general" uuid:"c46f206c-56e6-472c-9420-ae7491383e20"]
+---
+time 1451221654
+old [description:"fix zgen startup directory" entry:"1448442827" modified:"1448442827" status:"pending" tags:"shell" uuid:"e3fe2ab3-667f-49db-8a50-48967103346a"]
+new [description:"fix zgen startup directory" end:"1451221653" entry:"1448442827" modified:"1451221654" status:"deleted" tags:"shell" uuid:"e3fe2ab3-667f-49db-8a50-48967103346a"]
+---
