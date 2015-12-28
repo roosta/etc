@@ -79,7 +79,7 @@ xss-lock -- i3lock -t -n -i /home/roosta/.background/pattern-01.png &
 
 # disable screensaver when certain fullscreen apps are active
 # see https://github.com/iye/lightsOn/blob/master/lightsOn.sh
-$HOME/bin/lightsOn 590 &
+lightsOn 590 &
 
 # load nvidia-settings on startup
 nvidia-settings --load-config-only &
@@ -95,7 +95,6 @@ urxvtd -q -f -o &
 compton -b &
 dunst &
 nm-applet &
-dropbox &
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
 # ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘
