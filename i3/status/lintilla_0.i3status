@@ -1,57 +1,97 @@
-# i3status configuration file.
-# see "man i3status" for documentation.
-
-# It is important that this file is edited as UTF-8.
-# The following line should contain a sharp s:
-# ß
-# If the above line is not correctly displayed, fix your editor first!
-
 general {
-        colors = true
-        interval = 5
+  output_format = "i3bar"
+  colors = true
+  interval = 5
+  color_bad = "#FB4934"
+  color_good = "#B8BB26"
+  color_degraded = "#D65D0E"
+  color_separator = "#458588"
 }
 
-order += "ipv6"
-order += "disk /"
-order += "run_watch DHCP"
-order += "run_watch VPN"
-order += "wireless _first_"
-order += "ethernet _first_"
-order += "battery 0"
-order += "load"
+#order += "ipv6"
+#order += "disk /"
+#order += "disk /home"
+order += "window_title"
+#order += "spotify"
+order += "keyboard_layout"
+order += "volume_status"
+#order += "run_watch DHCP"
+order += "path_exists VPN"
+order += "net_rate"
+order += "sysdata"
+#order += "wireless wlp2s0"
+order += "ethernet enp9s0"
+order += "cpu_temperature 0"
+order += "nvidia_temp"
+#order += "load"
+order += "dropboxd_status"
 order += "tztime local"
 
-wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+window_title {
+  "align": "left"
+  "min_width": 300
 }
 
-#ethernet _first_ {
-        ## if you use %speed, i3status requires root privileges
-        #format_up = "E: %ip (%speed)"
-        #format_down = "E: down"
-#}
+net_rate {
+  format = " {down}  {up}"
+}
 
-battery 0 {
-        format = "%status %percentage %remaining"
+spotify {
+  format = "{title} by {artist} -> {time}"
+}
+
+sysdata {
+  format = "CPU: {cpu_usage}%, Mem: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
+}
+
+keyboard_layout {
+  format = " {layout}"
+  colors = "us=#B8BB26, no=#FE8019"
+}
+
+volume_status {
+  format = " {percentage}%"
+  format_muted = ""
+}
+
+ethernet eth0 {
+  # if you use %speed, i3status requires the cap_net_admin capability
+  format_up = "E: %ip (%speed)"
+  format_down = "E: down"
 }
 
 run_watch DHCP {
-        pidfile = "/var/run/dhclient*.pid"
+  pidfile = "/var/run/dhclient*.pid"
 }
 
-run_watch VPN {
-        pidfile = "/var/run/vpnc/pid"
+run_watch VPNC {
+# file containing the PID of a vpnc process
+  pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+# path exists when a VPN tunnel launched by nmcli/nm-applet is active
+  path = "/proc/sys/net/ipv4/conf/tun0"
 }
 
 tztime local {
-        format = "%Y-%m-%d %H:%M:%S"
+  format = " %Y-%m-%d  %H:%M:%S"
 }
 
 load {
-        format = "%1min"
+  format = " %5min"
+}
+
+cpu_temperature 0 {
+  format = "CPU: %degrees°C"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
 }
 
 disk "/" {
-        format = "%avail"
+  format = "ROOT: %free"
 }
+
+disk "/home" {
+  format = "HOME: %free"
+}
+# vim:ft=config:ts=2:sw=2:fdm=marker

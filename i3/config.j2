@@ -59,9 +59,9 @@ exec $term
 # In each bar numbers are stripped. See bar config below.
 
 # primary workspaces
-set $PWS1_TRM "1Q:Term"
-set $PWS2_DEV "2W:Devel"
-set $PWS3_WWW "3E:Web"
+set $PWS1_TRM "1|Q:TRM|"
+set $PWS2_DEV "2|W:DEV|"
+set $PWS3_WWW "3|E:WWW|"
 
 bindsym $mod+q workspace $PWS1_TRM
 bindsym $mod+w workspace $PWS2_DEV
@@ -72,9 +72,9 @@ bindsym $mod+Shift+w move workspace $PWS2_DEV
 bindsym $mod+Shift+e move workspace $PWS3_WWW
 
 # secondary workspaces
-set $SWS1_AUX "4A:Aux"
-set $SWS2_COM "5S:Comms"
-set $SWS3_DBG "6D:Debug"
+set $SWS1_AUX "4|A:AUX|"
+set $SWS2_COM "5|S:COM|"
+set $SWS3_DBG "6|D:DBG|"
 
 bindsym $mod+a workspace $SWS1_AUX
 bindsym $mod+s workspace $SWS2_COM
@@ -85,9 +85,9 @@ bindsym $mod+Shift+s move workspace $SWS2_COM
 bindsym $mod+Shift+d move workspace $SWS3_DBG
 
 # Tertiary workspaces
-set $TWS1_MED "7:1:Media"
-set $TWS2_GAM "8:2:Games"
-set $TWS3_ART "9:3:Art"
+set $TWS1_MED "7|1:MED|"
+set $TWS2_GAM "8|2:GAM|"
+set $TWS3_ART "9|3:ART|"
 
 bindsym $mod+1 workspace $TWS1_MED
 bindsym $mod+2 workspace $TWS2_GAM
@@ -98,14 +98,14 @@ bindsym $mod+Shift+2 move workspace $TWS2_GAM
 bindsym $mod+Shift+3 move workspace $TWS3_ART
 
 # Auxiliary workspaces
-set $FWS1 "9[F1]"
-set $FWS2 "10[F2]"
-set $FWS3 "11[F3]"
-set $FWS4 "12[F4]"
-set $FWS5 "13[F5]"
-set $FWS6 "14[F6]"
-set $FWS7 "15[F7]"
-set $FWS8 "16[F8]"
+set $FWS1  "9|F1|"
+set $FWS2 "10|F2|"
+set $FWS3 "11|F3|"
+set $FWS4 "12|F4|"
+set $FWS5 "13|F5|"
+set $FWS6 "14|F6|"
+set $FWS7 "15|F7|"
+set $FWS8 "16|F8|"
 
 bindsym $mod+F1 workspace $FWS1
 bindsym $mod+F2 workspace $FWS2
@@ -148,34 +148,34 @@ hide_edge_borders none
 # WINDOW WORKSPACE ASSIGNMENT
 # ---------------------------
 # -> devel
-assign [class="(?i)subl3"]                 $PWS2_DEV
-assign [class="(?i)jetbrains-idea"]        $PWS2_DEV
-assign [class="(?i)atom"]                  $PWS2_DEV
+assign [class="(?i)subl3"]              $PWS2_DEV
+assign [class="(?i)jetbrains-idea"]     $PWS2_DEV
+assign [class="(?i)atom"]               $PWS2_DEV
 
 # -> debug
-assign [class="(?i)google-chrome-beta"]    $SWS3_DBG
-assign [instance="^Devtools$$"]            $SWS3_DBG
+assign [class="(?i)google-chrome-beta"] $SWS3_DBG
+assign [instance="^Devtools$$"]         $SWS3_DBG
 
 # -> www
-assign [class="(?i)firefox"]               $PWS3_WWW
+assign [class="(?i)firefox"]            $PWS3_WWW
 
 # -> games
-assign [class="(?i)steam"]                 $TWS2_GAM
-assign [title="(?i)friends"]               $TWS2_GAM
+assign [class="(?i)steam"]              $TWS2_GAM
+assign [title="(?i)friends"]            $TWS2_GAM
 
 # -> media
-assign [class="(?i)spotify"]               $TWS1_MED
-assign [class="(?i)google-chrome"]         $TWS1_MED
+assign [class="(?i)spotify"]            $TWS1_MED
+assign [class="(?i)google-chrome"]      $TWS1_MED
 
-assign [class="(?i)inkscape"]              $TWS3_ART
-assign [class="(?i)gimp"]                  $TWS3_ART
-assign [class="(?i)krita"]                 $TWS3_ART
+assign [class="(?i)inkscape"]           $TWS3_ART
+assign [class="(?i)gimp"]               $TWS3_ART
+assign [class="(?i)krita"]              $TWS3_ART
 
 # -> Comms
-assign [class="(?i)pidgin"]                $SWS2_COM
-assign [class="(?i)linphone"]              $SWS2_COM
-assign [class="(?i)scudcloud"]             $SWS2_COM
-assign [class="(?i)thunderbird"]           $SWS2_COM
+assign [class="(?i)pidgin"]             $SWS2_COM
+assign [class="(?i)linphone"]           $SWS2_COM
+assign [class="(?i)skype"]              $SWS2_COM
+assign [class="(?i)thunderbird"]        $SWS2_COM
 
 # WINDOW BEHAVIOUR
 # ----------------
@@ -261,9 +261,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-#bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r restart
+
 # regenerate configuration from template and restart i3
-bindsym $mod+Shift+r exec --no-startup-id $fullrestart
+bindsym $mod+Control+Shift+r exec --no-startup-id $fullrestart
 
 # reload i3 configuration
 bindsym $mod+Shift+c reload
@@ -361,7 +362,7 @@ bindsym $mod+End mode "$mode_system"
 # OUTPUT
 # Quickly switch output based on presets
 # Script is in the submodule "scripts". Alternativly http://github.com/roosta/scripts
-set $changeto ~/bin/chmon
+set $changeto chmon
 set $mode_chmon Layout: (d) desk, (t) TV, (a) all
 mode "$mode_chmon" {
   bindsym d exec --no-startup-id $changeto desk, mode "default"
@@ -385,7 +386,7 @@ bindsym $mod+Home mode "$mode_chmon"
 # set primary font
 font {{ i3_font }}
 
-# <class> <border> <background> <foreground> <indicator>
+# <class>               <border> <background> <foreground> <indicator>
 client.focused          {{ neutral_blue }} {{ neutral_blue }} {{ dark0 }} {{ neutral_aqua }}
 client.focused_inactive {{ dark1 }} {{ dark0 }} {{ light1 }} {{ dark0_soft }}
 client.unfocused        {{ neutral_blue }} {{ dark1 }} {{ gray_245 }} {{ neutral_aqua }}
@@ -408,10 +409,10 @@ bar {
     separator  {{ neutral_blue }}
     statusline {{ light1 }}
 
-    # <workclass> <border> <background> <foreground>
-    focused_workspace  {{ dark0_hard }} {{ dark1 }} {{ neutral_blue }}
-    active_workspace   {{ dark1 }} {{ dark0_soft }} {{ light1 }}
-    inactive_workspace {{ dark0_hard }} {{ dark1 }} {{ gray_245 }}
+    # <workclass>      <border> <background> <foreground>
+    focused_workspace  {{ dark0 }} {{ dark0 }} {{ bright_blue }}
+    active_workspace   {{ dark0 }} {{ dark0 }} {{ light1 }}
+    inactive_workspace {{ dark0 }} {{ dark0 }} {{ gray_245 }}
     urgent_workspace   {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }}
   }
 }

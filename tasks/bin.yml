@@ -10,19 +10,25 @@
     - { repo: "https://github.com/fidian/ansi", dest: "ansi" }
     - { repo: "https://github.com/iye/lightsOn", dest: "lightsOn" }
     - { repo: "https://github.com/nonpop/xkblayout-state", dest: "xkblayout-state" }
+    - { repo: "https://github.com/sampson-chen/sack", dest: "sack" }
 
 - name: build xkblayout-state
   command: make
   args:
     chdir: "{{ home }}/library/xkblayout-state"
 
+- name: install sack
+  command: ./install_sack.sh
+  args:
+    chdir: "{{ home }}/library/sack"
+
 - name: symlink local binaries
-  file: src={{ item.src }} dest={{ home }}/{{ item.dest }} state=link
+  file: src={{ item.src }} dest=/usr/local/bin/{{ item.dest }} state=link
   with_items:
-    - { src: "{{ home }}/library/ansi/ansi", dest: "bin/ansi" }
-    - { src: "{{ home }}/library/lightsOn/lightsOn.sh", dest: "bin/lightsOn" }
-    - { src: "{{ home }}/.scripts/chmon.sh", dest: "bin/chmon" }
-    - { src: "{{ home }}/.scripts/bakc.sh", dest: "bin/bakc" }
-    - { src: "{{ dotfiles }}/fatline/fatline.sh", dest: "bin/fatline" }
-    - { src: "{{ home }}/.scripts/touchpad-toggle.sh", dest: "bin/touchpad-toggle" }
-    - { src: "{{ home }}/library/xkblayout-state/xkblayout-state", dest: "bin/xkblayout-state" }
+    - { src: "{{ home }}/library/ansi/ansi", dest: "ansi" }
+    - { src: "{{ home }}/library/lightsOn/lightsOn.sh", dest: "lightsOn" }
+    - { src: "{{ home }}/.scripts/chmon.sh", dest: "chmon" }
+    - { src: "{{ home }}/.scripts/bakc.sh", dest: "bakc" }
+    - { src: "{{ dotfiles }}/fatline/fatline.sh", dest: "fatline" }
+    - { src: "{{ home }}/.scripts/touchpad-toggle.sh", dest: "touchpad-toggle" }
+    - { src: "{{ home }}/library/xkblayout-state/xkblayout-state", dest: "xkblayout-state" }

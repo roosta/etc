@@ -6,7 +6,7 @@
   file: src={{ dotfiles }}/scripts dest={{ home }}/.scripts state=link
 
 - name: symlink binaries to ~/bin
-  file: src={{ dotfiles }}/scripts/{{ item.src }} dest={{ home }}/bin/{{ item.dest }} state=link
+  file: src={{ dotfiles }}/scripts/{{ item.src }} dest=/usr/local/{{ item.dest }} state=link
   with_items:
     - { src: 'bakc.sh', dest: 'bakc' }
     - { src: 'chmon.sh', dest: 'chmon' }
