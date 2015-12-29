@@ -297,3 +297,6 @@ time 1451221654
 old [description:"fix zgen startup directory" entry:"1448442827" modified:"1448442827" status:"pending" tags:"shell" uuid:"e3fe2ab3-667f-49db-8a50-48967103346a"]
 new [description:"fix zgen startup directory" end:"1451221653" entry:"1448442827" modified:"1451221654" status:"deleted" tags:"shell" uuid:"e3fe2ab3-667f-49db-8a50-48967103346a"]
 ---
+time 1451396906
+new [description:"move all package manager files to \/usr\/local\/lib" entry:"1451396906" modified:"1451396906" status:"pending" tags:"system" uuid:"b733b077-e655-408f-ba4b-6fbbc6289ccc"]
+---

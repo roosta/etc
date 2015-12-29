@@ -20,3 +20,4 @@
 [description:"do a writeup on zsh prompt\/vimode" entry:"1451163121" modified:"1451163121" status:"pending" tags:"dotfiles" uuid:"5f634f4a-fc05-49fb-8c5a-9265237add93"]
 [description:"check out etckeeper" entry:"1451212549" modified:"1451212549" status:"pending" tags:"dotfiles" uuid:"29e8f3ae-29ba-4275-a29f-232ea995b73c"]
 [description:"fix ssh" entry:"1451212571" modified:"1451212571" status:"pending" tags:"IMPORTANT" uuid:"12cd4f09-b821-4bde-a3e4-55aac8494e54"]
+[description:"move all package manager files to \/usr\/local\/lib" entry:"1451396906" modified:"1451396906" status:"pending" tags:"system" uuid:"b733b077-e655-408f-ba4b-6fbbc6289ccc"]

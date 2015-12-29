@@ -85,3 +85,4 @@
 {"description":"fix ssh","entry":"20151227T103611Z","modified":"20151227T103611Z","status":"pending","tags":["IMPORTANT"],"uuid":"12cd4f09-b821-4bde-a3e4-55aac8494e54"}
 {"description":"update userchrome with blue colors and 5px border - bottom","end":"20151227T105801Z","entry":"20151101T192643Z","modified":"20151227T105801Z","status":"completed","tags":["general"],"uuid":"c46f206c-56e6-472c-9420-ae7491383e20"}
 {"description":"fix zgen startup directory","end":"20151227T130733Z","entry":"20151125T091347Z","modified":"20151227T130734Z","status":"deleted","tags":["shell"],"uuid":"e3fe2ab3-667f-49db-8a50-48967103346a"}
+{"description":"move all package manager files to \/usr\/local\/lib","entry":"20151229T134826Z","modified":"20151229T134826Z","status":"pending","tags":["system"],"uuid":"b733b077-e655-408f-ba4b-6fbbc6289ccc"}

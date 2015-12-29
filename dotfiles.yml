@@ -50,6 +50,7 @@
     - include: tasks/tig.yml         tags=tig,dev,full
     - include: tasks/vim.yml         tags=vim,dev,full
     - include: tasks/sublime.yml     tags=st3,subl3,sublime,dev,full
+    - include: tasks/ruby.yml        tags=ruby,dev,full
 
       # misc
     - include: tasks/taskwarrior.yml tags=tasks,taskwarrior,full

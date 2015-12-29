@@ -5,16 +5,20 @@
 # └──────────────────────────────────────────────────┘
 
 # set paths.
-export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$PATH
+export PATH=$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
 
 fpath=("$HOME/.zsh.d" $fpath)
+
+export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
 
 # locate
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export TERM="xterm-256color"
 export TERMINAL=urxvtc
+
+#export GEM_HOME="/usr/local/lib/ruby/gems/2.2.0"
 
 # uniform qt/gtk look.
 export DESKTOP_SESSION=gnome
