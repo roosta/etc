@@ -25,7 +25,8 @@ URxvt.url-select.underline: true
 URxvt.url-launcher:         /usr/bin/firefox
 URxvt.matcher.rend.0:       Uline Bold fg5
 
-URxvt.cursorColor: #D3869B
+! set cursorcolor to lightgrey
+URxvt.cursorColor: #a89984
 URxvt.cursorBlink: false
 
 !URxvt.iso14755: false

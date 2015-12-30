@@ -7,9 +7,17 @@
 #PURE_PROMPT_SYMBOL_VIINS="%F{blue}%f%F{magenta%f"
 #PURE_PROMPT_SYMBOL_VICMD="%F{blue}%f%F{magenta}%f"
 
-PROMPT_SYMBOL_VIINS="%F{blue}%f%F{magenta%f "
-PROMPT_SYMBOL_VICMD="%F{blue}%f%F{magenta}%f "
+# Define mode prompts. Both turn red on non-zero exit code
+PROMPT_SYMBOL_VIINS="%(?.%F{white}.%F{red})%f%F{magenta}%f "
+PROMPT_SYMBOL_VICMD="%(?.%F{white}.%F{red})%f%F{magenta}%f "
+
+#PROMPT_SYMBOL_VIINS="%K{magenta}%{$fg[white]%}%{$reset_color%}%{$fg[magenta]%}%k%{$reset_color%} "
+#PROMPT_SYMBOL_VICMD="%F{white}%f%F{magenta}%f "
+
+# enable colors before setting prompt variable
+autoload -U colors && colors
 PROMPT=$PROMPT_SYMBOL_VIINS
+RPROMPT="%(?.[%j].%F{red}[%?]%f [%j]%f"
 
 function zle-line-init () {
   # Make sure the terminal is in application mode, when zle is
