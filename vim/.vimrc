@@ -21,14 +21,20 @@ endif
 " maintain undo history between sessions
 set undofile
 set undodir=~/.vim/undo
+
+" disable swapfile
 "set noswapfile
 
+" set shell, grants alias usage among other things. 
 "set shell=zsh\ -i
 
 " wild*
-set wildmenu " command line completion
-set wildmode=longest,list,full
-set wildignorecase
+set wildmenu " give menu on completion
+set wildmode=longest,list,full " define wildmode appearance
+set wildignorecase " ignore case on completion
+
+" define various ignored folders when using fzf/ctrlp/whatever else uses
+" wildmode
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
                \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
                \*/_site/*
@@ -43,20 +49,24 @@ set showtabline=1 " Always display the tabline, even if there is only one tab
 set showcmd " show partial command in last line of screen
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set shortmess+=I " dont display startup message
-set scrolloff=7
+set scrolloff=7 "	Minimal number of screen lines to keep above and below the cursor.
 set t_Co=256 " force 256colors
 set lazyredraw " stop unnecessary rendering
 
 " Highlights
 set cursorline " highlight current line
-set wrap " show line numbers
 set number " show line numbers
 set matchtime=2 " time to display matching brackets
 set showmatch " show matching brackets/parenthesis
+set relativenumber " use relative line numbers. See functions for quick switch back to normal
 
-" line up soft-wrap prefix with the line numbers
-set showbreak=\ \ \ \ \ \ ↳\
-set cpoptions+=n " show line numbers
+" linewrap
+set wrap " wrap long lines.
+set linebreak " break on chars defined in "breakat"
+set breakindent "match indent on break
+set breakat=" ^I!@*-+;:,./?"
+set showbreak=↳\ 
+set cpoptions+=n " dont show linenumbers on wrap
 
 " Indentation
 set expandtab " tabs are spaces
@@ -65,16 +75,14 @@ set tabstop=2 " use indents of 2 spaces
 set softtabstop=2 " let backspace delete indent
 
 " SEARCHING
-set incsearch
-set ignorecase
+set incsearch " match while typing
 set smartcase
-set magic
+set magic " :help magic
 set gdefault " the /g flag on :s substitutions by default
 
-set mouse=a
-set fo-=o
-set relativenumber
-set tags+=./.tags
+set mouse=a " enable mouse
+set fo-=o " disable auto comment by removing format option. Still happens so suspect one of my plugins...
+set tags+=./.tags " used with ctags. Defines tag files.
 "}}}
 " CURSOR {{{1
 " ------------------
