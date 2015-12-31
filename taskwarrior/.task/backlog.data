@@ -86,3 +86,7 @@
 {"description":"update userchrome with blue colors and 5px border - bottom","end":"20151227T105801Z","entry":"20151101T192643Z","modified":"20151227T105801Z","status":"completed","tags":["general"],"uuid":"c46f206c-56e6-472c-9420-ae7491383e20"}
 {"description":"fix zgen startup directory","end":"20151227T130733Z","entry":"20151125T091347Z","modified":"20151227T130734Z","status":"deleted","tags":["shell"],"uuid":"e3fe2ab3-667f-49db-8a50-48967103346a"}
 {"description":"move all package manager files to \/usr\/local\/lib","entry":"20151229T134826Z","modified":"20151229T134826Z","status":"pending","tags":["system"],"uuid":"b733b077-e655-408f-ba4b-6fbbc6289ccc"}
+{"description":"add exerpt","entry":"20151230T131521Z","modified":"20151230T131521Z","status":"pending","tags":["roosta.sh"],"uuid":"d4a60627-23e5-457a-a910-0516da4b2ec5"}
+{"description":"add dotfiles project page","entry":"20151230T131531Z","modified":"20151230T131531Z","status":"pending","tags":["roosta.sh"],"uuid":"96349619-b9a2-4aaa-9350-aac89f3cf369"}
+{"description":"contact bsr","entry":"20151230T192522Z","modified":"20151230T192522Z","status":"pending","tags":["general"],"uuid":"ba23ad25-3ec5-48f0-8eea-1c23c0e42c23"}
+{"description":"add dotfile commit legend","entry":"20151231T135722Z","modified":"20151231T135722Z","status":"pending","tags":["general"],"uuid":"e27c0eb8-a84a-4acc-9407-a3f8aafb5eb3"}

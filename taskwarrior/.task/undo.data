@@ -300,3 +300,15 @@ new [description:"fix zgen startup directory" end:"1451221653" entry:"1448442827
 time 1451396906
 new [description:"move all package manager files to \/usr\/local\/lib" entry:"1451396906" modified:"1451396906" status:"pending" tags:"system" uuid:"b733b077-e655-408f-ba4b-6fbbc6289ccc"]
 ---
+time 1451481321
+new [description:"add exerpt" entry:"1451481321" modified:"1451481321" status:"pending" tags:"roosta.sh" uuid:"d4a60627-23e5-457a-a910-0516da4b2ec5"]
+---
+time 1451481331
+new [description:"add dotfiles project page" entry:"1451481331" modified:"1451481331" status:"pending" tags:"roosta.sh" uuid:"96349619-b9a2-4aaa-9350-aac89f3cf369"]
+---
+time 1451503522
+new [description:"contact bsr" entry:"1451503522" modified:"1451503522" status:"pending" tags:"general" uuid:"ba23ad25-3ec5-48f0-8eea-1c23c0e42c23"]
+---
+time 1451570242
+new [description:"add dotfile commit legend" entry:"1451570242" modified:"1451570242" status:"pending" tags:"general" uuid:"e27c0eb8-a84a-4acc-9407-a3f8aafb5eb3"]
+---
