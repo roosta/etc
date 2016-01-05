@@ -1,0 +1,97 @@
+general {
+  output_format = "i3bar"
+  colors = true
+  interval = 5
+  color_bad = "#FB4934"
+  color_good = "#B8BB26"
+  color_degraded = "#D65D0E"
+  color_separator = "#458588"
+}
+
+#order += "ipv6"
+#order += "disk /"
+#order += "disk /home"
+order += "window_title"
+#order += "spotify"
+order += "keyboard_layout"
+order += "volume_status"
+#order += "run_watch DHCP"
+order += "path_exists VPN"
+order += "net_rate"
+order += "sysdata"
+#order += "wireless wlp2s0"
+order += "ethernet enp9s0"
+order += "cpu_temperature 0"
+order += "nvidia_temp"
+#order += "load"
+order += "dropboxd_status"
+order += "tztime local"
+
+window_title {
+  "align": "left"
+  "min_width": 300
+}
+
+net_rate {
+  format = " {down}  {up}"
+}
+
+spotify {
+  format = "{title} by {artist} -> {time}"
+}
+
+sysdata {
+  format = "CPU: {cpu_usage}%, Mem: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
+}
+
+keyboard_layout {
+  format = " {layout}"
+  colors = "us=#B8BB26, no=#FE8019"
+}
+
+volume_status {
+  format = " {percentage}%"
+  format_muted = ""
+}
+
+ethernet eth0 {
+  # if you use %speed, i3status requires the cap_net_admin capability
+  format_up = "E: %ip (%speed)"
+  format_down = "E: down"
+}
+
+run_watch DHCP {
+  pidfile = "/var/run/dhclient*.pid"
+}
+
+run_watch VPNC {
+# file containing the PID of a vpnc process
+  pidfile = "/var/run/vpnc/pid"
+}
+
+path_exists VPN {
+# path exists when a VPN tunnel launched by nmcli/nm-applet is active
+  path = "/proc/sys/net/ipv4/conf/tun0"
+}
+
+tztime local {
+  format = " %Y-%m-%d  %H:%M:%S"
+}
+
+load {
+  format = " %5min"
+}
+
+cpu_temperature 0 {
+  format = "CPU: %degrees°C"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input"
+}
+
+disk "/" {
+  format = "ROOT: %free"
+}
+
+disk "/home" {
+  format = "HOME: %free"
+}
+# vim:ft=config:ts=2:sw=2:fdm=marker
