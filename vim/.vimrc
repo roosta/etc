@@ -76,12 +76,12 @@ set softtabstop=2 " let backspace delete indent
 
 " SEARCHING
 set incsearch " match while typing
-set smartcase
+set ignorecase
 set magic " :help magic
 set gdefault " the /g flag on :s substitutions by default
 
 set mouse=a " enable mouse
-set fo-=o " disable auto comment by removing format option. Still happens so suspect one of my plugins...
+set fo-=o " disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
 set tags+=./.tags " used with ctags. Defines tag files.
 "}}}
 " CURSOR {{{1
@@ -131,8 +131,8 @@ endif
 " ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘──┘
 " ----------------------
 " Move across wrapped lines like regular lines
-"noremap 0 ^ " Go to the first non-blank character of a line
-"noremap ^ 0 " Just in case you need to go to the very beginning of a line
+noremap 0 ^ " Go to the first non-blank character of a line
+noremap ^ 0 " Just in case you need to go to the very beginning of a line
 
 " remove all trailing whitespace
 noremap <leader>cw :StripWhitespace<CR>
@@ -167,6 +167,8 @@ nnoremap <silent> <A-S-Right> 5<C-w>>
 
 noremap <C-Up> {
 noremap <C-Down> }
+
+noremap :Q :q
 " }}}
 " FUNCTIONS {{{
 " -------------------------
@@ -229,7 +231,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
 " compl/lint
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
 " navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

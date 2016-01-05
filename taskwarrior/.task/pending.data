@@ -25,3 +25,7 @@
 [description:"add dotfiles project page" entry:"1451481331" modified:"1451481331" status:"pending" tags:"roosta.sh" uuid:"96349619-b9a2-4aaa-9350-aac89f3cf369"]
 [description:"contact bsr" entry:"1451503522" modified:"1451503522" status:"pending" tags:"general" uuid:"ba23ad25-3ec5-48f0-8eea-1c23c0e42c23"]
 [description:"add dotfile commit legend" entry:"1451570242" modified:"1451570242" status:"pending" tags:"general" uuid:"e27c0eb8-a84a-4acc-9407-a3f8aafb5eb3"]
+[description:"nice" entry:"1451589129" modified:"1451589129" status:"pending" tags:"questions" uuid:"3f405665-81f4-47e5-a8d0-c132b3ee6276"]
+[description:"multiple procs" entry:"1451589151" modified:"1451589151" status:"pending" tags:"questions" uuid:"e6ba1fce-81fd-4193-9aba-f00b8d2f1a4f"]
+[description:"En man ved navn ove" entry:"1451740871" modified:"1451740871" status:"pending" tags:"movie" uuid:"8f089fd3-2064-40e1-9f0f-84d94a6da1be"]
+[description:"add ssh keys to auth list" entry:"1452014078" modified:"1452014078" status:"pending" tags:"IMPORTANT" uuid:"660fc9ef-546a-489a-8b09-2748e893b660"]

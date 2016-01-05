@@ -1,3 +1,4 @@
+[description:"Swap out anon functions with #() and replace aget and js-obj with react interop $()" end:"1452014023" entry:"1452013923" modified:"1452014024" status:"deleted" tags:"clojure" uuid:"e06fe0d4-17d3-4311-9ab3-5fcbab4af058"]
 [description:"fix zgen startup directory" end:"1451221653" entry:"1448442827" modified:"1451221654" status:"deleted" tags:"shell" uuid:"e3fe2ab3-667f-49db-8a50-48967103346a"]
 [description:"update userchrome with blue colors and 5px border - bottom" end:"1451213881" entry:"1446406003" modified:"1451213881" status:"completed" tags:"general" uuid:"c46f206c-56e6-472c-9420-ae7491383e20"]
 [description:"setup vpn" end:"1450622146" entry:"1450617126" modified:"1450622146" status:"completed" tags:"heart" uuid:"428448c5-2f20-414e-ac9d-22aa397448b0"]
