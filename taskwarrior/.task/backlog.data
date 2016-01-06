@@ -90,3 +90,10 @@
 {"description":"add dotfiles project page","entry":"20151230T131531Z","modified":"20151230T131531Z","status":"pending","tags":["roosta.sh"],"uuid":"96349619-b9a2-4aaa-9350-aac89f3cf369"}
 {"description":"contact bsr","entry":"20151230T192522Z","modified":"20151230T192522Z","status":"pending","tags":["general"],"uuid":"ba23ad25-3ec5-48f0-8eea-1c23c0e42c23"}
 {"description":"add dotfile commit legend","entry":"20151231T135722Z","modified":"20151231T135722Z","status":"pending","tags":["general"],"uuid":"e27c0eb8-a84a-4acc-9407-a3f8aafb5eb3"}
+{"description":"nice","entry":"20151231T191209Z","modified":"20151231T191209Z","status":"pending","tags":["questions"],"uuid":"3f405665-81f4-47e5-a8d0-c132b3ee6276"}
+{"description":"multiple procs","entry":"20151231T191231Z","modified":"20151231T191231Z","status":"pending","tags":["questions"],"uuid":"e6ba1fce-81fd-4193-9aba-f00b8d2f1a4f"}
+{"description":"En man ved navn ove","entry":"20160102T132111Z","modified":"20160102T132111Z","status":"pending","tags":["move"],"uuid":"8f089fd3-2064-40e1-9f0f-84d94a6da1be"}
+{"description":"Swap out anon functions with","entry":"20160105T170857Z","modified":"20160105T170857Z","status":"pending","tags":["clojure"],"uuid":"cf8a1e56-4d9a-48e1-833e-361f1fb4a840"}
+{"description":"Swap out anon functions with #() and replace aget and js-obj with react interop $()","entry":"20160105T171203Z","modified":"20160105T171203Z","status":"pending","tags":["clojure"],"uuid":"e06fe0d4-17d3-4311-9ab3-5fcbab4af058"}
+{"description":"Swap out anon functions with #() and replace aget and js-obj with react interop $()","end":"20160105T171343Z","entry":"20160105T171203Z","modified":"20160105T171344Z","status":"deleted","tags":["clojure"],"uuid":"e06fe0d4-17d3-4311-9ab3-5fcbab4af058"}
+{"description":"add ssh keys to auth list","entry":"20160105T171438Z","modified":"20160105T171438Z","status":"pending","tags":["IMPORTANT"],"uuid":"660fc9ef-546a-489a-8b09-2748e893b660"}

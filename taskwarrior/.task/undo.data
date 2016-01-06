@@ -312,3 +312,25 @@ new [description:"contact bsr" entry:"1451503522" modified:"1451503522" status:"
 time 1451570242
 new [description:"add dotfile commit legend" entry:"1451570242" modified:"1451570242" status:"pending" tags:"general" uuid:"e27c0eb8-a84a-4acc-9407-a3f8aafb5eb3"]
 ---
+time 1451589129
+new [description:"nice" entry:"1451589129" modified:"1451589129" status:"pending" tags:"questions" uuid:"3f405665-81f4-47e5-a8d0-c132b3ee6276"]
+---
+time 1451589151
+new [description:"multiple procs" entry:"1451589151" modified:"1451589151" status:"pending" tags:"questions" uuid:"e6ba1fce-81fd-4193-9aba-f00b8d2f1a4f"]
+---
+time 1451740871
+new [description:"En man ved navn ove" entry:"1451740871" modified:"1451740871" status:"pending" tags:"move" uuid:"8f089fd3-2064-40e1-9f0f-84d94a6da1be"]
+---
+time 1452013737
+new [description:"Swap out anon functions with" entry:"1452013737" modified:"1452013737" status:"pending" tags:"clojure" uuid:"cf8a1e56-4d9a-48e1-833e-361f1fb4a840"]
+---
+time 1452013923
+new [description:"Swap out anon functions with #() and replace aget and js-obj with react interop $()" entry:"1452013923" modified:"1452013923" status:"pending" tags:"clojure" uuid:"e06fe0d4-17d3-4311-9ab3-5fcbab4af058"]
+---
+time 1452014024
+old [description:"Swap out anon functions with #() and replace aget and js-obj with react interop $()" entry:"1452013923" modified:"1452013923" status:"pending" tags:"clojure" uuid:"e06fe0d4-17d3-4311-9ab3-5fcbab4af058"]
+new [description:"Swap out anon functions with #() and replace aget and js-obj with react interop $()" end:"1452014023" entry:"1452013923" modified:"1452014024" status:"deleted" tags:"clojure" uuid:"e06fe0d4-17d3-4311-9ab3-5fcbab4af058"]
+---
+time 1452014078
+new [description:"add ssh keys to auth list" entry:"1452014078" modified:"1452014078" status:"pending" tags:"IMPORTANT" uuid:"660fc9ef-546a-489a-8b09-2748e893b660"]
+---
