@@ -12,11 +12,6 @@ general {
 order += "ethernet enp9s0"
 order += "disk /"
 order += "disk /home"
-order += "disk /mnt/data"
-order += "disk /mnt/games"
-order += "disk /mnt/archive"
-order += "disk /mnt/netmedia"
-order += "disk /mnt/netbackup"
 order += "tztime local"
 
 
@@ -26,14 +21,10 @@ wireless wlp2s0 {
   format_down = " down"
 }
 
-ethernet enp9s0 {
+ethernet enp5s0 {
   # if you use %speed, i3status requires the cap_net_admin capability
   format_up = "E: %ip (%speed)"
   format_down = "E: down"
-}
-
-tztime local {
-  format = " %Y-%m-%d  %H:%M:%S"
 }
 
 disk "/" {
@@ -44,24 +35,8 @@ disk "/home" {
   format = "Home: %free"
 }
 
-disk "/mnt/data" {
-  format = "Data: %free"
-}
-
-disk "/mnt/games" {
-  format = "Games: %free"
-}
-
-disk "/mnt/archive" {
-  format = "Archive: %free"
-}
-
-disk "/mnt/netmedia" {
-  format = "Netmedia: %free"
-}
-
-disk "/mnt/netbackup" {
-  format = "netbackup: %free"
+tztime local {
+  format = " %Y-%m-%d  %H:%M:%S"
 }
 
 # vim:ft=config:ts=2:sw=2:fdm=marker

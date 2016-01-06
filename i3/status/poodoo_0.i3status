@@ -20,9 +20,9 @@ order += "path_exists VPN"
 order += "net_rate"
 order += "sysdata"
 #order += "wireless wlp2s0"
-order += "ethernet enp9s0"
+#order += "ethernet enp5s0"
 order += "cpu_temperature 0"
-order += "nvidia_temp"
+#order += "nvidia_temp"
 #order += "load"
 order += "dropboxd_status"
 order += "tztime local"
@@ -84,7 +84,7 @@ load {
 
 cpu_temperature 0 {
   format = "CPU: %degrees°C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon0/temp1_input"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
 }
 
 disk "/" {

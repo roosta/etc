@@ -4,7 +4,7 @@ home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
 outputs: [{display: "HDMI1", bar_id: "bar-primary", stat_conf: "$HOME/.i3/status/poodoo_0.i3status", bar_pos: "top", tray_out: "primary"},
-          {display: "VGA1", bar_id: "bar-secondary", stat_conf: "$HOME/.i3/status/poodoo_1.i3status", bar_pos: "bottom", tray_out: "primary"}]
+          {display: "VGA1", bar_id: "bar-secondary", stat_conf: "$HOME/.i3/status/poodoo_1.i3status", bar_pos: "top", tray_out: "primary"}]
 
 font_location: "{{home}}/.fonts/misc"
 
