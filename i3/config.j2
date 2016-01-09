@@ -19,8 +19,8 @@
 # └┘ ┘ ┆┆└┘┆┘ ┆┆─┘┆─┘┴─┘──┘
 # -------------------------
 # fast way to reach power settings for system. Requires polkit.
-#set $locker xscreensaver-command --lock
-set $locker i3lock --image=$HOME/.background/pattern-01.png -t && sleep 1
+set $locker xscreensaver-command --lock
+#set $locker i3lock --image=$HOME/.background/pattern-01.png -t && sleep 1
 
 # tmux session management
 # tmux new-session -n$USER -s$USER@$HOSTNAME
@@ -148,53 +148,55 @@ hide_edge_borders none
 # WINDOW WORKSPACE ASSIGNMENT
 # ---------------------------
 # -> devel
-assign [class="(?i)subl3"]              $PWS2_DEV
-assign [class="(?i)jetbrains-idea"]     $PWS2_DEV
-assign [class="(?i)atom"]               $PWS2_DEV
+assign [class="(?i)subl3"] $PWS2_DEV
+assign [class="(?i)jetbrains-idea"] $PWS2_DEV
+assign [class="(?i)atom"] $PWS2_DEV
 
 # -> debug
 assign [class="(?i)google-chrome-beta"] $SWS3_DBG
-assign [instance="^Devtools$$"]         $SWS3_DBG
+assign [instance="^Devtools$$"] $SWS3_DBG
 
 # -> www
-assign [class="(?i)firefox"]            $PWS3_WWW
+assign [class="(?i)firefox"] $PWS3_WWW
 
 # -> games
-assign [class="(?i)steam"]              $TWS2_GAM
-assign [title="(?i)friends"]            $TWS2_GAM
+assign [class="(?i)steam(.*)"] $TWS2_GAM
+#assign [title="(?i)friends"] $TWS2_GAM
 
 # -> media
-assign [class="(?i)spotify"]            $TWS1_MED
-assign [class="(?i)google-chrome"]      $TWS1_MED
+assign [class="(?i)spotify"] $TWS1_MED
+assign [class="(?i)google-chrome"] $TWS1_MED
+assign [class="(?i)smplayer"] $TWS1_MED
 
-assign [class="(?i)inkscape"]           $TWS3_ART
-assign [class="(?i)gimp"]               $TWS3_ART
-assign [class="(?i)krita"]              $TWS3_ART
+assign [class="(?i)inkscape"] $TWS3_ART
+assign [class="(?i)gimp"] $TWS3_ART
+assign [class="(?i)krita"] $TWS3_ART
 
 # -> Comms
-assign [class="(?i)pidgin"]             $SWS2_COM
-assign [class="(?i)linphone"]           $SWS2_COM
-assign [class="(?i)skype"]              $SWS2_COM
-assign [class="(?i)thunderbird"]        $SWS2_COM
+assign [class="(?i)pidgin"] $SWS2_COM
+assign [class="(?i)linphone"] $SWS2_COM
+assign [class="(?i)skype"] $SWS2_COM
+assign [class="(?i)slack"] $SWS2_COM
+assign [class="(?i)thunderbird"] $SWS2_COM
 
 # WINDOW BEHAVIOUR
 # ----------------
 # create some rules to force floating on certain roles/classes
-for_window [window_role="pop-up"]                floating enable
-for_window [window_role="task_dialog"]           floating enable
-for_window [window_role="bubble"]                floating enable
-for_window [title="Preferences$"]                floating enable
-for_window [window_role="Preferences"]           floating enable
-for_window [title="Preferences$"]                floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [title="Preferences$"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [title="Preferences$"] floating enable
 
 # application spesific
-for_window [class="(?i)Jitsi"]                   floating enable
-for_window [class="(?i)SessionManager"]          floating enable
-for_window [title="(?i)Friends"]                 floating enable
-for_window [class="(?i)Linphone"]                floating enable
+for_window [class="(?i)Jitsi"] floating enable
+for_window [class="(?i)SessionManager"] floating enable
+for_window [class="(?i)Linphone"] floating enable
+for_window [title="(?i)Friends"] floating enable
 #for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
-for_window [class="(?i)Pidgin"]                  floating enable
-for_window [class="(?i)yad"]                     floating enable
+for_window [class="(?i)Pidgin"] floating enable
+for_window [class="(?i)yad"] floating enable
 
 # WINDOW SIZE
 # -----------
