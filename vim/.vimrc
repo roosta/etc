@@ -231,7 +231,9 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
 " compl/lint
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
-Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
+
+" Using AUR to simplify build process on Arch
+"Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
 " navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
