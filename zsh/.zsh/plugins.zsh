@@ -75,9 +75,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # COMMAND HISTORY
 # -------------------
 # fh - repeat history
-fh() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
+#fh() {
+  #eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+#}
 
 # fh - repeat history
 fh() {
@@ -88,15 +88,15 @@ fh() {
 # ---------------------
 
 # fd - cd to selected directory
-fd() {
-  local dir
-  dir=$(find ${1:-*} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
-}
+#fd() {
+  #local dir
+  #dir=$(find ${1:-*} -path '*/\.*' -prune \
+                  #-o -type d -print 2> /dev/null | fzf +m) &&
+  #cd "$dir"
+#}
 
-# fda - including hidden directories
-fda() {
+# fd - including hidden directories
+fd() {
   local dir
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
@@ -142,12 +142,12 @@ fo() {
 # ---------
 
 # fbr - checkout git branch
-fbr() {
-  local branches branch
-  branches=$(git branch -vv) &&
-  branch=$(echo "$branches" | fzf +m) &&
-  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
-}
+#fbr() {
+  #local branches branch
+  #branches=$(git branch -vv) &&
+  #branch=$(echo "$branches" | fzf +m) &&
+  #git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+#}
 
 # fbr - checkout git branch (including remote branches)
 fbr() {

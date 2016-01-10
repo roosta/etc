@@ -79,7 +79,7 @@ xss-lock -- xscreensaver-command -lock &
 
 # disable screensaver when certain fullscreen apps are active
 # see https://github.com/iye/lightsOn/blob/master/lightsOn.sh
-lightsOn 590 &
+$HOME/bin/lightsOn 590 &
 
 # load nvidia-settings on startup
 nvidia-settings --load-config-only &
