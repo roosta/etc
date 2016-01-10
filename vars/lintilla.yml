@@ -15,7 +15,7 @@ output_layout: "DVI-I-1: nvidia-auto-select +1920+0 { ForceFullCompositionPipeli
 # i3 variables.
 i3_font: "pango:Essential PragmataPro 9"
 i3_status_font: "pango:Essential PragmataPro, FontAwesome 9"
-i3_status_command: "py3status -c"
+i3_status_command: "py3status -c "
 
 # define where to put the tracked fonts
 font_location: "{{home}}/.fonts/misc"

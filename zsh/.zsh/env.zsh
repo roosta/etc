@@ -5,7 +5,7 @@
 # └──────────────────────────────────────────────────┘
 
 # set paths.
-export PATH=$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$HOME/.pip/bin:$HOME/.npm/bin:$PATH
+export PATH=$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$HOME/.npm/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
 
 fpath=("$HOME/.zsh.d" $fpath)
@@ -62,4 +62,4 @@ PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
 
 # set site.USERBASE for pip installs
-export PYTHONUSERBASE=$HOME/.pip
+#export PYTHONUSERBASE=/usr/local/lib/pip
