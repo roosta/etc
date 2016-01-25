@@ -10,6 +10,7 @@ augroup filetypedetect
   au! BufNewFile,BufRead */irssi/config setf config
   au! BufNewFile,BufRead *.i3blocks setf config
   au! BufNewFile,BufRead *.j2 setf config
+  au! BufNewFile,BufRead *.pxi set filetype=clojure
 augroup END
 
 augroup filetypeplugin

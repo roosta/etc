@@ -32,7 +32,7 @@ alias vivimp="vim ~/.vimperatorrc"
 alias vilein="vim ~/.lein/profiles.clj"
 alias viterm="vim ~/.urxvt.xresources"
 alias vime="vim ~/.dotfiles/vars/$(hostname).yml"
-alias vii3tmp="vim ~/.i3/config.gen"
+alias vii3gen="vim ~/.i3/config.gen"
 alias vienv="vim ~/.zsh/env.zsh"
 
 # ┬─┐o┌┐┐┬─┐
@@ -130,9 +130,9 @@ alias lsp='lsp -p'
 # ──┘┴─┘└─┘┆─┘┆└┘┆ ┆  ┆
 
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
-alias scanhome="sudo freshclam && clamscan -v --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME"
-alias scanroot="sudo freshclam && sudo clamscan -v --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME /"
-alias scanhere="sudo freshclam && sudo clamscan -v --recursive=yes --infected -l /home/rootsa/.tmp/clamscan.log $HOME ."
+alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME"
+alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME /"
+alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/rootsa/.tmp/clamscan.log $HOME ."
 
 # ┬─┐┬─┐┌─┐┌┌┐┬─┐┌┐┐
 # │─┘│─┤│  ││││─┤│││
@@ -319,6 +319,7 @@ alias lein='rlwrap lein'
 alias figwheel='lein do clean, figwheel'
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
+alias dust='rlwrap dust'
 
 
 # ┌┌┐o┐─┐┌─┐

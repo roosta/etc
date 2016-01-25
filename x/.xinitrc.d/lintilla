@@ -1,4 +1,4 @@
-$HOME/bin/chmon desk &
+#$HOME/bin/chmon desk &
 
 # xbox controller drivers.
 #xboxdrv -D --config $HOME/.xboxdrv

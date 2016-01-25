@@ -334,3 +334,43 @@ new [description:"Swap out anon functions with #() and replace aget and js-obj w
 time 1452014078
 new [description:"add ssh keys to auth list" entry:"1452014078" modified:"1452014078" status:"pending" tags:"IMPORTANT" uuid:"660fc9ef-546a-489a-8b09-2748e893b660"]
 ---
+time 1453048373
+old [description:"add ssh keys to auth list" entry:"1452014078" modified:"1452014078" status:"pending" tags:"IMPORTANT" uuid:"660fc9ef-546a-489a-8b09-2748e893b660"]
+new [description:"add ssh keys to auth list" end:"1453048373" entry:"1452014078" modified:"1453048373" status:"completed" tags:"IMPORTANT" uuid:"660fc9ef-546a-489a-8b09-2748e893b660"]
+---
+time 1453048402
+old [description:"Encrypt restricted fonts?" entry:"1446234175" modified:"1446234175" status:"pending" tags:"ansible" uuid:"bf929cec-df80-47e5-b9b0-1710a4981579"]
+new [description:"Encrypt restricted fonts?" end:"1453048402" entry:"1446234175" modified:"1453048402" status:"completed" tags:"ansible" uuid:"bf929cec-df80-47e5-b9b0-1710a4981579"]
+---
+time 1453048433
+old [description:"fix error exit code in prompt" entry:"1447772673" modified:"1447772673" status:"pending" tags:"shell" uuid:"0c577a35-8640-4e02-84ee-f1465f327d92"]
+new [description:"fix error exit code in prompt" end:"1453048433" entry:"1447772673" modified:"1453048433" status:"completed" tags:"shell" uuid:"0c577a35-8640-4e02-84ee-f1465f327d92"]
+---
+time 1453048451
+old [description:"fix ssh" entry:"1451212571" modified:"1451212571" status:"pending" tags:"IMPORTANT" uuid:"12cd4f09-b821-4bde-a3e4-55aac8494e54"]
+new [description:"fix ssh" end:"1453048451" entry:"1451212571" modified:"1453048451" status:"completed" tags:"IMPORTANT" uuid:"12cd4f09-b821-4bde-a3e4-55aac8494e54"]
+---
+time 1453048473
+old [description:"add exerpt" entry:"1451481321" modified:"1451481321" status:"pending" tags:"roosta.sh" uuid:"d4a60627-23e5-457a-a910-0516da4b2ec5"]
+new [description:"add exerpt" end:"1453048473" entry:"1451481321" modified:"1453048473" status:"completed" tags:"roosta.sh" uuid:"d4a60627-23e5-457a-a910-0516da4b2ec5"]
+---
+time 1453048490
+new [description:"change name" entry:"1453048490" modified:"1453048490" status:"pending" tags:"monoxie" uuid:"5eaea493-b64b-4f35-83a3-f98dc54dd95a"]
+---
+time 1453048519
+new [description:"get po box" entry:"1453048519" modified:"1453048519" status:"pending" tags:"monoxie" uuid:"78056d2f-61c3-4830-b7d7-ae20389bc971"]
+---
+time 1453048558
+new [description:"change internet subscription" entry:"1453048558" modified:"1453048558" status:"pending" tags:"IMPORTANT" uuid:"2be9abea-768d-4f3b-9f64-096d976627fc"]
+---
+time 1453048581
+new [description:"sync with google tasks" entry:"1453048581" modified:"1453048581" status:"pending" tags:"tasks" uuid:"ce2e8ecf-0708-450b-aa11-b164e1e48856"]
+---
+time 1453049756
+old [description:"get po box" entry:"1453048519" modified:"1453048519" status:"pending" tags:"monoxie" uuid:"78056d2f-61c3-4830-b7d7-ae20389bc971"]
+new [description:"get po box" end:"1453049755" entry:"1453048519" modified:"1453049756" status:"deleted" tags:"monoxie" uuid:"78056d2f-61c3-4830-b7d7-ae20389bc971"]
+---
+time 1453049766
+old [description:"change name" entry:"1453048490" modified:"1453048490" status:"pending" tags:"monoxie" uuid:"5eaea493-b64b-4f35-83a3-f98dc54dd95a"]
+new [description:"change name" end:"1453049766" entry:"1453048490" modified:"1453049766" status:"completed" tags:"monoxie" uuid:"5eaea493-b64b-4f35-83a3-f98dc54dd95a"]
+---
