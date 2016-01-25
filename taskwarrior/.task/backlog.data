@@ -97,3 +97,14 @@
 {"description":"Swap out anon functions with #() and replace aget and js-obj with react interop $()","entry":"20160105T171203Z","modified":"20160105T171203Z","status":"pending","tags":["clojure"],"uuid":"e06fe0d4-17d3-4311-9ab3-5fcbab4af058"}
 {"description":"Swap out anon functions with #() and replace aget and js-obj with react interop $()","end":"20160105T171343Z","entry":"20160105T171203Z","modified":"20160105T171344Z","status":"deleted","tags":["clojure"],"uuid":"e06fe0d4-17d3-4311-9ab3-5fcbab4af058"}
 {"description":"add ssh keys to auth list","entry":"20160105T171438Z","modified":"20160105T171438Z","status":"pending","tags":["IMPORTANT"],"uuid":"660fc9ef-546a-489a-8b09-2748e893b660"}
+{"description":"add ssh keys to auth list","end":"20160117T163253Z","entry":"20160105T171438Z","modified":"20160117T163253Z","status":"completed","tags":["IMPORTANT"],"uuid":"660fc9ef-546a-489a-8b09-2748e893b660"}
+{"description":"Encrypt restricted fonts?","end":"20160117T163322Z","entry":"20151030T194255Z","modified":"20160117T163322Z","status":"completed","tags":["ansible"],"uuid":"bf929cec-df80-47e5-b9b0-1710a4981579"}
+{"description":"fix error exit code in prompt","end":"20160117T163353Z","entry":"20151117T150433Z","modified":"20160117T163353Z","status":"completed","tags":["shell"],"uuid":"0c577a35-8640-4e02-84ee-f1465f327d92"}
+{"description":"fix ssh","end":"20160117T163411Z","entry":"20151227T103611Z","modified":"20160117T163411Z","status":"completed","tags":["IMPORTANT"],"uuid":"12cd4f09-b821-4bde-a3e4-55aac8494e54"}
+{"description":"add exerpt","end":"20160117T163433Z","entry":"20151230T131521Z","modified":"20160117T163433Z","status":"completed","tags":["roosta.sh"],"uuid":"d4a60627-23e5-457a-a910-0516da4b2ec5"}
+{"description":"change name","entry":"20160117T163450Z","modified":"20160117T163450Z","status":"pending","tags":["monoxie"],"uuid":"5eaea493-b64b-4f35-83a3-f98dc54dd95a"}
+{"description":"get po box","entry":"20160117T163519Z","modified":"20160117T163519Z","status":"pending","tags":["monoxie"],"uuid":"78056d2f-61c3-4830-b7d7-ae20389bc971"}
+{"description":"change internet subscription","entry":"20160117T163558Z","modified":"20160117T163558Z","status":"pending","tags":["IMPORTANT"],"uuid":"2be9abea-768d-4f3b-9f64-096d976627fc"}
+{"description":"sync with google tasks","entry":"20160117T163621Z","modified":"20160117T163621Z","status":"pending","tags":["tasks"],"uuid":"ce2e8ecf-0708-450b-aa11-b164e1e48856"}
+{"description":"get po box","end":"20160117T165555Z","entry":"20160117T163519Z","modified":"20160117T165556Z","status":"deleted","tags":["monoxie"],"uuid":"78056d2f-61c3-4830-b7d7-ae20389bc971"}
+{"description":"change name","end":"20160117T165606Z","entry":"20160117T163450Z","modified":"20160117T165606Z","status":"completed","tags":["monoxie"],"uuid":"5eaea493-b64b-4f35-83a3-f98dc54dd95a"}
