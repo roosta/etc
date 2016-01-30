@@ -20,6 +20,17 @@
 # ├─┤ https://github.com/xero/dotfiles
 # ├─┤ https://dotfiles.github.io/
 # ┆ ┆
+
+# set colors in virtual console from color resources
+if [ "$TERM" = "linux" ]; then
+  _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
+  for i in $(sed -n "$_SEDCMD" $HOME/.colors/xcolors/gruvbox-dark.xresources | \
+    awk '$1 < 16 {printf "\\e]P%X%s", $1, $2}'); do
+  echo -en "$i"
+done
+clear
+fi
+
 for config (~/.zsh/*.zsh) source $config
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
