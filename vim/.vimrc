@@ -25,7 +25,7 @@ set undodir=~/.vim/undo
 " disable swapfile
 "set noswapfile
 
-" set shell, grants alias usage among other things. 
+" set shell, grants alias usage among other things.
 "set shell=zsh\ -i
 
 " wild*
@@ -65,7 +65,7 @@ set wrap " wrap long lines.
 set linebreak " break on chars defined in "breakat"
 set breakindent "match indent on break
 set breakat=" ^I!@*-+;:,./?"
-set showbreak=↳\ 
+set showbreak=↳\
 set cpoptions+=n " dont show linenumbers on wrap
 
 " Indentation
@@ -248,7 +248,8 @@ Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
 " GUI
 Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+"Plug 'bling/vim-airline'
 
 " syntax:
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -369,6 +370,7 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " AIRLINE {{{1
 " ------------
 let g:airline_powerline_fonts = 1
+let g:airline_theme='gruvbox'
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
 
