@@ -3,5 +3,4 @@
   file: src={{dotfiles}}/fasd/{{ item }} dest={{home}}/{{ item }} state=link
   with_items:
     - .fasdrc
-    - .fasd
 

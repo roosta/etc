@@ -7,9 +7,9 @@
   tasks:
       # init group
       # this group is the most essential. To use the rest these need to be run first
-    - include: tasks/ansible.yml     tags=ansible,init,full
-    - include: tasks/zsh.yml         tags=zsh,init,full
-    - include: tasks/bin.yml         tags=bin,init,full
+    - include: tasks/ansible.yml     #tags=ansible,init,full
+    - include: tasks/zsh.yml         #tags=zsh,init,full
+    - include: tasks/bin.yml         #tags=bin,init,full
     #- include: tasks/packages.yml    tags=packages,init
 
       # browser group
@@ -21,7 +21,7 @@
     - include: tasks/themes.yml      tags=themes,desktop,gtk,full
     - include: tasks/gtk.yml         tags=gtk,desktop,full
     - include: tasks/dunst.yml       tags=dunst,desktop,full
-    - include: tasks/i3.yml          tags=i3,i3wm,i3-wm,desktop,full
+    - include: tasks/i3.yml          #tags=i3,i3wm,i3-wm,desktop,full
     - include: tasks/background.yml  tags=background,bg,full
     - include: tasks/compton.yml     tags=compton,desktop,full
     - include: tasks/fonts.yml       tags=fonts,desktop,full
@@ -59,4 +59,5 @@
     - include: tasks/inkscape.yml    tags=inkscape,full
     - include: tasks/xboxdrv.yml     tags=xbox,full
     - include: tasks/krita.yml       tags=krita,full
+    - include: tasks/test.yml        tags=test
 

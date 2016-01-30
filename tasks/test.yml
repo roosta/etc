@@ -1,0 +1,3 @@
+---
+- name: restart i3 with new config
+  command: echo {{ ansible_hostname }}

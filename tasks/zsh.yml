@@ -7,6 +7,10 @@
   # ansible. In this case, we want it to always be false, as we are just
   # retrieving information.
   changed_when: False
+  tags:
+    - zsh
+    - shell
+    - init
 
 # TODO: fix this (docs are down ATM so this waits)
 # set zsh as the default shell, unless it is already the default.
@@ -21,12 +25,27 @@
     - .zshrc
     - .zprofile
     - .zshenv
+  tags:
+    - zsh
+    - shell
+    - symlink
+    - init
 
 - name: check for/create directories
   file: path={{ dotfiles }}/zsh/.zsh/plugins state=directory mode=0755
+  tags:
+    - zsh
+    - shell
+    - missing
+    - init
 
 - name: check for fpath dir
   file: path={{ home }}/.zsh.d state=directory mode=0755
+  tags:
+    - zsh
+    - shell
+    - missing
+    - init
 
 - name: clone / update external libraries
   git: repo={{ item.repo }} dest={{ item.dest }} clone=yes update=yes
@@ -35,9 +54,21 @@
     - { repo: "https://github.com/zsh-users/zsh-completions", dest: "{{ dotfiles }}/zsh/.zsh/plugins/zsh-completions" }
     - { repo: "https://github.com/zsh-users/zsh-history-substring-search", dest: "{{ dotfiles }}/zsh/.zsh/plugins/zsh-history-substring-search" }
     - { repo: "https://github.com/roosta/pure", dest: "{{ dotfiles }}/zsh/.zsh/plugins/pure" }
+  tags:
+    - zsh
+    - shell
+    - libs
+    - init
 
 - name: symlink fpath files
   file: src={{ dotfiles }}/zsh/.zsh/plugins/pure/{{ item.src }} dest={{ home }}/.zsh.d/{{ item.dest }} state=link
   with_items:
     - { src: "pure.zsh", dest: "prompt_pure_setup" }
     - { src: "async.zsh", dest: "async" }
+  tags:
+    - zsh
+    - shell
+    - symlink
+    - init
+
+

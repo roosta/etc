@@ -5,3 +5,9 @@
     - { src: '.ansible.cfg', dest: '.ansible.cfg' }
     - { src: 'library', dest: '.ansible/library' }
     - { src: 'hosts', dest: '.ansible/hosts' }
+  tags:
+    - ansible
+    - symlink
+    - init
+    - full
+
