@@ -1,6 +1,16 @@
 ---
 - name: check for and/or create directory
+  tags:
+    - subl
+    - st3
+    - sublime
+    - dev
   file: path={{ home }}/.config/sublime-text-3/Packages state=directory mode=0755
 
 - name: Symlink Sublime text 3 configuration
+  tags:
+    - subl
+    - st3
+    - sublime
+    - dev
   file: src={{ dotfiles }}/sublime_text dest={{ home }}/.config/sublime-text-3/Packages/User state=link

@@ -7,7 +7,5 @@
     - { src: 'hosts', dest: '.ansible/hosts' }
   tags:
     - ansible
-    - symlink
     - init
-    - full
 

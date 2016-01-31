@@ -7,57 +7,56 @@
   tasks:
       # init group
       # this group is the most essential. To use the rest these need to be run first
-    - include: tasks/ansible.yml     #tags=ansible,init,full
-    - include: tasks/zsh.yml         #tags=zsh,init,full
-    - include: tasks/bin.yml         #tags=bin,init,full
-    #- include: tasks/packages.yml    tags=packages,init
+    - include: tasks/ansible.yml
+    - include: tasks/zsh.yml
+    - include: tasks/bin.yml
+    #- include: tasks/packages.yml
 
       # browser group
-    - include: tasks/firefox.yml     tags=firefox,browser,full
-    - include: tasks/pentadactyl.yml tags=pentadactyl,browser,full
-    - include: tasks/vimperator.yml  tags=vimperator,browser,full
+    - include: tasks/firefox.yml
+    - include: tasks/pentadactyl.yml
+    - include: tasks/vimperator.yml
 
-      # desktop group
-    - include: tasks/themes.yml      tags=themes,desktop,gtk,full
-    - include: tasks/gtk.yml         tags=gtk,desktop,full
-    - include: tasks/dunst.yml       tags=dunst,desktop,full
-    - include: tasks/i3.yml          #tags=i3,i3wm,i3-wm,desktop,full
-    - include: tasks/background.yml  tags=background,bg,full
-    - include: tasks/compton.yml     tags=compton,desktop,full
-    - include: tasks/fonts.yml       tags=fonts,desktop,full
-    - include: tasks/x.yml           tags=x,xorg,desktop,full
-    - include: tasks/ranger.yml      tags=ranger,desktop,full
+      # window manager group
+    - include: tasks/themes.yml
+    - include: tasks/gtk.yml
+    - include: tasks/dunst.yml
+    - include: tasks/i3.yml
+    - include: tasks/feh.yml
+    - include: tasks/compton.yml
+    - include: tasks/fonts.yml
+    - include: tasks/x.yml
 
       # shell group
-    - include: tasks/dircolors.yml   tags=dircolors,full
-    - include: tasks/colors.yml      tags=colors,shell,term,full
-    - include: tasks/scripts.yml     tags=scripts,shell,term,full
-    - include: tasks/ls++.yml        tags=ls++,dircolors,shell,full
-    - include: tasks/bash.yml        tags=bash,shell,full
-    - include: tasks/boxes.yml       tags=boxes,shell,full
-    - include: tasks/fasd.yml        tags=fasd,shell,full
-    - include: tasks/tmux.yml        tags=tmux,shell,full
-    - include: tasks/screen.yml      tags=screen,shell,full
-    - include: tasks/termite.yml     tags=termite,shell,full
+    - include: tasks/dircolors.yml
+    - include: tasks/colors.yml
+    - include: tasks/scripts.yml
+    - include: tasks/ls++.yml
+    - include: tasks/bash.yml
+    - include: tasks/boxes.yml
+    - include: tasks/fasd.yml
+    - include: tasks/tmux.yml
+    - include: tasks/screen.yml
+    - include: tasks/termite.yml
+    - include: tasks/ranger.yml
 
       # dev group
-    - include: tasks/lein.yml        tags=lein,leiningen,dev,full
-    - include: tasks/npm.yml         tags=npm,dev,full
-    - include: tasks/ctags.yml       tags=ctags,dev,full
-    - include: tasks/git.yml         tags=git,dev,full
-    - include: tasks/subversion.yml  tags=subversion,svn,dev,full
-    - include: tasks/idea.yml        tags=idea,intellij,dev,full
-    - include: tasks/tig.yml         tags=tig,dev,full
-    - include: tasks/vim.yml         tags=vim,dev,full
-    - include: tasks/sublime.yml     tags=st3,subl3,sublime,dev,full
-    - include: tasks/ruby.yml        tags=ruby,dev,full
+    - include: tasks/lein.yml
+    - include: tasks/npm.yml
+    - include: tasks/ctags.yml
+    - include: tasks/git.yml
+    - include: tasks/subversion.yml
+    - include: tasks/idea.yml
+    - include: tasks/tig.yml
+    - include: tasks/vim.yml
+    - include: tasks/sublime.yml
+    - include: tasks/ruby.yml
 
       # misc
-    - include: tasks/taskwarrior.yml tags=tasks,taskwarrior,full
-    - include: tasks/ncmpcpp.yml     tags=ncmpcpp,full
-    - include: tasks/gimp.yml        tags=gimp,full
-    - include: tasks/inkscape.yml    tags=inkscape,full
-    - include: tasks/xboxdrv.yml     tags=xbox,full
-    - include: tasks/krita.yml       tags=krita,full
-    - include: tasks/test.yml        tags=test
+    - include: tasks/taskwarrior.yml
+    - include: tasks/ncmpcpp.yml
+    - include: tasks/gimp.yml
+    - include: tasks/inkscape.yml
+    - include: tasks/xboxdrv.yml
+    - include: tasks/krita.yml
 

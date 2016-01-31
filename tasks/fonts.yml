@@ -1,26 +1,50 @@
 
 ---
 - name: check for/create font directories
+  tags:
+    - fonts
+    - wm
   file: path={{ home }}/.fonts state=directory mode=0755
 
 - name: Symlink fonts
+  tags:
+    - fonts
+    - wm
   file: dest={{ font_location }} src={{ dotfiles }}/fonts state=link
 
 - name: create font.dir
+  tags:
+    - fonts
+    - wm
   command: mkfontdir {{ font_location }}
 
 - name: create font.scale
+  tags:
+    - fonts
+    - wm
   command: mkfontscale {{ font_location }}
 
 - name: Symlink local fontconfig
+  tags:
+    - fonts
+    - wm
   file: path={{home}}/.config/fontconfig src={{dotfiles}}/fontconfig state=link
 
 - name: Set X font
+  tags:
+    - fonts
+    - wm
   command: xset +fp {{ font_location }}
 
 - name: Rehash X fonts
+  tags:
+    - fonts
+    - wm
   command: xset fp rehash
 
 - name: Re-generate font cache
+  tags:
+    - fonts
+    - wm
   command: fc-cache -f
 

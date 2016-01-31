@@ -9,7 +9,6 @@
   changed_when: False
   tags:
     - zsh
-    - shell
     - init
 
 # TODO: fix this (docs are down ATM so this waits)
@@ -27,24 +26,18 @@
     - .zshenv
   tags:
     - zsh
-    - shell
-    - symlink
     - init
 
 - name: check for/create directories
   file: path={{ dotfiles }}/zsh/.zsh/plugins state=directory mode=0755
   tags:
     - zsh
-    - shell
-    - missing
     - init
 
 - name: check for fpath dir
   file: path={{ home }}/.zsh.d state=directory mode=0755
   tags:
     - zsh
-    - shell
-    - missing
     - init
 
 - name: clone / update external libraries
@@ -56,8 +49,6 @@
     - { repo: "https://github.com/roosta/pure", dest: "{{ dotfiles }}/zsh/.zsh/plugins/pure" }
   tags:
     - zsh
-    - shell
-    - libs
     - init
 
 - name: symlink fpath files
@@ -67,8 +58,6 @@
     - { src: "async.zsh", dest: "async" }
   tags:
     - zsh
-    - shell
-    - symlink
     - init
 
 
