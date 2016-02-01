@@ -25,7 +25,7 @@ set undodir=~/.vim/undo
 " disable swapfile
 "set noswapfile
 
-" set shell, grants alias usage among other things. 
+" set shell, grants alias usage among other things.
 "set shell=zsh\ -i
 
 " wild*
@@ -65,7 +65,7 @@ set wrap " wrap long lines.
 set linebreak " break on chars defined in "breakat"
 set breakindent "match indent on break
 set breakat=" ^I!@*-+;:,./?"
-set showbreak=↳\ 
+set showbreak=↳\
 set cpoptions+=n " dont show linenumbers on wrap
 
 " Indentation
@@ -138,7 +138,7 @@ noremap ^ 0 " Just in case you need to go to the very beginning of a line
 noremap <leader>cw :StripWhitespace<CR>
 
 " source config on demand
-" Note that this cause some plugin conf not to load properly if it has init logic
+" Note that this may cause some plugins not to load properly if it has init logic
 noremap <c-w>r :source $MYVIMRC<CR>
 
 " Close all the buffers
@@ -159,14 +159,27 @@ noremap <silent> <A-Down>  :wincmd j<CR>
 noremap <silent> <A-Left>  :wincmd h<CR>
 noremap <silent> <A-Right> :wincmd l<CR>
 
+noremap <silent> <A-k> :wincmd k<CR>
+noremap <silent> <A-j> :wincmd j<CR>
+noremap <silent> <A-h> :wincmd h<CR>
+noremap <silent> <A-l> :wincmd l<CR>
+
 " Maps Alt-[h,j,k,l] to resizing a window split
 nnoremap <silent> <A-S-Left>  5<C-w><
 nnoremap <silent> <A-S-Down>  5<C-W>-
 nnoremap <silent> <A-S-Up>    5<C-W>+
 nnoremap <silent> <A-S-Right> 5<C-w>>
 
+nnoremap <silent> <A-S-h> 5<C-w><
+nnoremap <silent> <A-S-j> 5<C-W>-
+nnoremap <silent> <A-S-k> 5<C-W>+
+nnoremap <silent> <A-S-l> 5<C-w>>
+
+" jump paragraphs with ctrl-{movement}
 noremap <C-Up> {
 noremap <C-Down> }
+noremap <C-k> {
+noremap <C-j> }
 
 noremap :Q :q
 " }}}
@@ -248,7 +261,8 @@ Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
 " GUI
 Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+"Plug 'bling/vim-airline'
 
 " syntax:
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -260,7 +274,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight'
-"Plug 'venantius/vim-eastwood'
+Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve'
 Plug 'venantius/vim-cljfmt'
 
@@ -369,6 +383,7 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " AIRLINE {{{1
 " ------------
 let g:airline_powerline_fonts = 1
+let g:airline_theme='gruvbox'
 let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
 

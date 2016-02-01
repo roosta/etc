@@ -82,7 +82,7 @@ xss-lock -- xscreensaver-command -lock &
 lightsOn 590 &
 
 # load nvidia-settings on startup
-nvidia-settings --load-config-only &
+#nvidia-settings --load-config-only &
 
 # set background with feh
 $HOME/.fehbg &
@@ -95,7 +95,6 @@ urxvtd -q -f -o &
 compton -b &
 dunst &
 nm-applet &
-lxqt-policykit-agent &
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
 # ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘

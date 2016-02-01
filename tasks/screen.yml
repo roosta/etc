@@ -1,3 +1,6 @@
 ---
 - name: Symlink GNU-Screen configuration.
+  tags:
+    - screen
+    - shell
   file: src={{ dotfiles }}/screen/.screenrc dest={{ home }}/.screenrc state=link

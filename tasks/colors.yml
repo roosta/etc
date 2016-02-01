@@ -1,3 +1,6 @@
 ---
 - name: Symlink color configuration
+  tags:
+    - colors
+    - shell
   file: src={{dotfiles}}/colors dest={{home}}/.colors state=link

@@ -1,8 +1,12 @@
+---
 - name: check for/create library and bin directory
   file: path={{ home }}/{{ item }} state=directory mode=0755
   with_items:
     - library
     - bin
+  tags:
+    - bin
+    - init
 
 - name: clone / update external libraries
   git: repo={{ item.repo }} dest={{ home }}/library/{{ item.dest }} clone=yes update=yes
@@ -11,16 +15,25 @@
     - { repo: "https://github.com/iye/lightsOn", dest: "lightsOn" }
     - { repo: "https://github.com/nonpop/xkblayout-state", dest: "xkblayout-state" }
     - { repo: "https://github.com/sampson-chen/sack", dest: "sack" }
+  tags:
+    - bin
+    - init
 
 - name: build xkblayout-state
   command: make
   args:
     chdir: "{{ home }}/library/xkblayout-state"
+  tags:
+    - bin
+    - init
 
 - name: install sack
   command: ./install_sack.sh
   args:
     chdir: "{{ home }}/library/sack"
+  tags:
+    - bin
+    - init
 
 - name: symlink local binaries
   file: src={{ item.src }} dest=/usr/local/bin/{{ item.dest }} state=link
@@ -32,3 +45,6 @@
     - { src: "{{ dotfiles }}/fatline/fatline.sh", dest: "fatline" }
     - { src: "{{ home }}/.scripts/touchpad-toggle.sh", dest: "touchpad-toggle" }
     - { src: "{{ home }}/library/xkblayout-state/xkblayout-state", dest: "xkblayout-state" }
+  tags:
+    - bin
+    - init

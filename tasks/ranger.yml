@@ -5,4 +5,7 @@
     #- ranger
 
 - name: Symlink ranger config...
+  tags:
+    - ranger
+    - shell
   file: dest={{ home }}/.config/ranger src={{ dotfiles }}/ranger state=link

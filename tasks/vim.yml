@@ -1,10 +1,16 @@
 ---
 - name: Symlinking vim config.
+  tags:
+    - vim
+    - dev
   file: dest={{ home }}/{{ item }} src={{ dotfiles }}/vim/{{ item }} state=link
   with_items:
     - .vimrc
     - .vim
 
 - name: Install plugins using vim-plug
+  tags:
+    - vim
+    - dev
   shell: vim +PlugInstall +qall &
 

@@ -1,4 +1,7 @@
 ---
 # Setup ls++ config. Relies on AUR package!
 - name: Symlink "ls++" configuration
+  tags:
+    - ls++
+    - shell
   file: dest={{ home }}/.ls++.conf src={{ dotfiles }}/ls++/.ls++.conf state=link

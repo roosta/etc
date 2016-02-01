@@ -1,5 +1,8 @@
 ---
 - name: Symlink tmux config...
+  tags:
+    - tmux
+    - shell
   file: dest={{ home }}/{{ item }} src={{ dotfiles }}/tmux/{{ item }} state=link
   with_items:
     - .tmux.conf

@@ -1,9 +1,21 @@
 ---
 - name: Create i3 config from template
   template: src={{ dotfiles }}/i3/config.j2 dest={{ dotfiles }}/i3/config.gen backup=no
+  tags:
+    - i3
+    - i3_gen
+    - full
 
 - name: Symlink i3 configuration
   file: dest={{ home }}/.i3 src={{ dotfiles }}/i3 state=link
+  tags:
+    - i3
+    - symlink
+    - full
 
 - name: restart i3 with new config
   command: i3-msg -q restart
+  tags:
+    - i3
+    - i3_reload
+    - full

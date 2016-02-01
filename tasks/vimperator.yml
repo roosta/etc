@@ -1,5 +1,8 @@
 ---
 - name: Symlinking vim config...
+  tags:
+    - vimperator
+    - browser
   file: dest={{ home }}/{{ item }} src={{ dotfiles }}/vimperator/{{ item }} state=link
   with_items:
     - .vimperatorrc

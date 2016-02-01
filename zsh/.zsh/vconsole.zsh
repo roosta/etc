@@ -24,5 +24,6 @@ if [ "$TERM" = "linux" ]; then
   "
   # get rid of artifacts
   clear
+  tmux
 fi
 

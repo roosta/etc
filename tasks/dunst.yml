@@ -1,4 +1,7 @@
 ---
 # Setup compton. Relies on AUR package!
 - name: Symlink "dunst" configuration
+  tags:
+    - dunst
+    - wm
   file: path={{ home }}/.config/dunst src={{ dotfiles }}/dunst state=link

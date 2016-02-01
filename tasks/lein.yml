@@ -1,7 +1,13 @@
 ---
 - name: check for and/or create directory
+  tags:
+    - lein
+    - dev
   file: path={{ home }}/.lein state=directory mode=0755
 
 # Setup leiningen config. Relies on AUR package!
 - name: Symlink "lein" configuration
+  tags:
+    - lein
+    - dev
   file: dest={{ home }}/.lein/profiles.clj src={{ dotfiles }}/lein/profiles.clj state=link

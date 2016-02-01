@@ -1,3 +1,6 @@
 ---
 - name: Symlink GNU-Screen configuration.
+  tags:
+    - termite
+    - shell
   file: src={{ dotfiles }}/termite dest={{ home }}/.config/termite state=link

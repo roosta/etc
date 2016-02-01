@@ -1,11 +1,20 @@
 ---
 - name: create ~/bin if not present
+  tags:
+    - scripts
+    - shell
   file: path={{ home }}/bin state=directory
 
 - name: symlink scripts repo to home
+  tags:
+    - scripts
+    - shell
   file: src={{ dotfiles }}/scripts dest={{ home }}/.scripts state=link
 
 - name: symlink binaries to ~/bin
+  tags:
+    - scripts
+    - shell
   file: src={{ dotfiles }}/scripts/{{ item.src }} dest=/usr/local/bin/{{ item.dest }} state=link
   with_items:
     - { src: 'bakc.sh', dest: 'bakc' }
