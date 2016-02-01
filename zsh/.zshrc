@@ -21,6 +21,7 @@
 # ├─┤ https://dotfiles.github.io/
 # ┆ ┆
 
+## some options/scripts needs to be run prior to sourcing anything else
 # set colors in virtual console from color resources
 if [ "$TERM" = "linux" ]; then
   _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
@@ -31,6 +32,13 @@ done
 clear
 fi
 
+# start tmux on every shell login
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+
+# source remaining config
 for config (~/.zsh/*.zsh) source $config
 
+# source fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
