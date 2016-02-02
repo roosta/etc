@@ -15,7 +15,8 @@ export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
 # locate
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-export TERM="xterm-256color"
+#export TERM="xterm-screen-256color"
+#export TERM="xterm-256color"
 export TERMINAL=urxvtc
 
 #export GEM_HOME="/usr/local/lib/ruby/gems/2.2.0"
@@ -50,10 +51,10 @@ export RANGER_LOAD_DEFAULT_RC="false"
 
 # https://wiki.archlinux.org/index.php/NVIDIA#Gaming_using_TwinView
 # attempt to fix vsync issue with nvidia multiple displays
-export SDL_VIDEO_FULLSCREEN_HEAD=1
-export __GL_SYNC_TO_VBLANK=1
-export __GL_SYNC_DISPLAY_DEVICE=DFP-0
-export __VDPAU_NVIDIA_SYNC_DISPLAY_DEVICE=DFP-0
+#export SDL_VIDEO_FULLSCREEN_HEAD=1
+#export __GL_SYNC_TO_VBLANK=1
+#export __GL_SYNC_DISPLAY_DEVICE=DFP-0
+#export __VDPAU_NVIDIA_SYNC_DISPLAY_DEVICE=DFP-0
 #
 # cpan stuff
 PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;

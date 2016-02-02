@@ -13,9 +13,9 @@ URxvt*saveLines: 12000
 URxvt*scrollBar: false
 
 !! Alt+Esc enables vi select mode
-URxvt.perl-ext-common: default,url-select,selection-to-clipboard,keyboard-select
-URxvt.keysym.M-s:      perl:keyboard-select:search
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
+!URxvt.perl-ext-common: default,url-select,selection-to-clipboard,keyboard-select
+!URxvt.keysym.M-s:      perl:keyboard-select:search
+!URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 !URL matching, use alt-u to enter select mode
 !URxvt.perl-ext-common: default,url-select,selection-to-clipboard

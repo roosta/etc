@@ -52,6 +52,7 @@ set shortmess+=I " dont display startup message
 set scrolloff=7 "	Minimal number of screen lines to keep above and below the cursor.
 set t_Co=256 " force 256colors
 set lazyredraw " stop unnecessary rendering
+set ttyfast " improve drawing in tmux
 
 " Highlights
 set cursorline " highlight current line
@@ -153,6 +154,10 @@ map <leader>to :tabonly<CR>
 map <leader>tc :tabclose<CR>
 " map <leader>tm :tabmove
 
+"
+"noremap <S-Left> b
+"noremap <S-Right> e
+
 " Switch between Vim window splits
 noremap <silent> <A-Up>    :wincmd k<CR>
 noremap <silent> <A-Down>  :wincmd j<CR>
@@ -180,8 +185,6 @@ noremap <C-Up> {
 noremap <C-Down> }
 noremap <C-k> {
 noremap <C-j> }
-
-noremap :Q :q
 " }}}
 " FUNCTIONS {{{
 " -------------------------

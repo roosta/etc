@@ -191,7 +191,7 @@ alias watchff="watch progress -wc firefox" # watch firefox download progress.
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
 alias ports="netstat -tulanp" # list open ports
 alias pip="sudo -H pip" # set home variable when running pip
-alias tmux="tmux -2"
+#alias tmux="tmux -2"
 alias ufw="sudo ufw"
 alias make="colormake"
 
