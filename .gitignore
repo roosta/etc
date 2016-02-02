@@ -5,7 +5,7 @@
 *.old
 *.bak
 *.*~
-.*.swp
+*.swp
 .DS_Store
 backup/*
 /**/tmp

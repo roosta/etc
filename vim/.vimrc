@@ -28,6 +28,8 @@ set undodir=~/.vim/undo
 " set shell, grants alias usage among other things.
 "set shell=zsh\ -i
 
+set t_Co=256
+
 " wild*
 set wildmenu " give menu on completion
 set wildmode=longest,list,full " define wildmode appearance
@@ -92,9 +94,14 @@ set tags+=./.tags " used with ctags. Defines tag files.
 " └─┘┆─┘┆└┘──┘┘─┘┆└┘
 " ------------------
 " change cursor depending on mode (VTE compatible terminals)
-let &t_SI = "\<Esc>[6 q"
-let &t_SR = "\<Esc>[4 q"
-let &t_EI = "\<Esc>[2 q"
+"let &t_SI = "\<Esc>[6 q"
+"let &t_SR = "\<Esc>[4 q"
+"let &t_EI = "\<Esc>[2 q"
+
+" change cursor using tmux,urxvtc and zsh
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
 " 1 or 0 -> blinking block
 " 3 -> blinking underscore
 " Recent versions of xterm (282 or above) also support
