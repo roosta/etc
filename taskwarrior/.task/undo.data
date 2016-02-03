@@ -374,3 +374,6 @@ time 1453049766
 old [description:"change name" entry:"1453048490" modified:"1453048490" status:"pending" tags:"monoxie" uuid:"5eaea493-b64b-4f35-83a3-f98dc54dd95a"]
 new [description:"change name" end:"1453049766" entry:"1453048490" modified:"1453049766" status:"completed" tags:"monoxie" uuid:"5eaea493-b64b-4f35-83a3-f98dc54dd95a"]
 ---
+time 1454430794
+new [description:"add if tmux in vimrc and prompt.zsh" entry:"1454430794" modified:"1454430794" status:"pending" tags:"shell" uuid:"70134a7d-94ab-4414-86bf-4c026c80990b"]
+---

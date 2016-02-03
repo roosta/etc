@@ -26,3 +26,4 @@
 [description:"En man ved navn ove" entry:"1451740871" modified:"1451740871" status:"pending" tags:"movie" uuid:"8f089fd3-2064-40e1-9f0f-84d94a6da1be"]
 [description:"change internet subscription" entry:"1453048558" modified:"1453048558" status:"pending" tags:"IMPORTANT" uuid:"2be9abea-768d-4f3b-9f64-096d976627fc"]
 [description:"sync with google tasks" entry:"1453048581" modified:"1453048581" status:"pending" tags:"tasks" uuid:"ce2e8ecf-0708-450b-aa11-b164e1e48856"]
+[description:"add if tmux in vimrc and prompt.zsh" entry:"1454430794" modified:"1454430794" status:"pending" tags:"shell" uuid:"70134a7d-94ab-4414-86bf-4c026c80990b"]

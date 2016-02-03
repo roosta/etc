@@ -81,7 +81,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # fh - repeat history
 fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf-tmux +s --tac | sed 's/ *[0-9]* *//')
 }
 
 # CHANGING DIRECTORY
@@ -98,14 +98,14 @@ fh() {
 # fd - including hidden directories
 fd() {
   local dir
-  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf-tmux +m) && cd "$dir"
 }
 
 
 # KILL
 # -----------
 fkill() {
-  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+  pid=$(ps -ef | sed 1d | fzf-tmux -m | awk '{print $2}')
 
   if [ "x$pid" != "x" ]
   then
@@ -121,7 +121,7 @@ fkill() {
 #   - Exit if there's no match (--exit-0)
 fe() {
   local file
-  file=$(fzf --query="$1" --select-1 --exit-0)
+  file=$(fzf-tmux --query="$1" --select-1 --exit-0)
   [ -n "$file" ] && ${EDITOR:-vim} "$file"
 }
 
@@ -145,7 +145,7 @@ fo() {
 #fbr() {
   #local branches branch
   #branches=$(git branch -vv) &&
-  #branch=$(echo "$branches" | fzf +m) &&
+  #branch=$(echo "$branches" | fzf-tmux +m) &&
   #git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
 #}
 
@@ -177,7 +177,7 @@ fco() {
 fcoc() {
   local commits commit
   commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
-  commit=$(echo "$commits" | fzf --tac +s +m -e) &&
+  commit=$(echo "$commits" | fzf-tmux --tac +s +m -e) &&
   git checkout $(echo "$commit" | sed "s/ .*//")
 }
 
@@ -185,7 +185,7 @@ fcoc() {
 fshow() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
+  fzf-tmux --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
       --bind "ctrl-m:execute:
                 echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
                 xargs -I % sh -c 'git show --color=always % | less -R'"
@@ -196,7 +196,7 @@ fshow() {
 fcs() {
   local commits commit
   commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
-  commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
+  commit=$(echo "$commits" | fzf-tmux --tac +s +m -e --ansi --reverse) &&
   echo -n $(echo "$commit" | sed "s/ .*//")
 }
 
@@ -209,7 +209,7 @@ fstash() {
   local out q k sha
     while out=$(
       git stash list --pretty="%C(yellow)%h %>(14)%Cgreen%cr %C(blue)%gs" |
-      fzf --ansi --no-sort --query="$q" --print-query \
+      fzf-tmux --ansi --no-sort --query="$q" --print-query \
           --expect=ctrl-d,ctrl-b);
     do
       q=$(head -1 <<< "$out")
@@ -235,7 +235,7 @@ ftags() {
   [ -e tags ] &&
   line=$(
     awk 'BEGIN { FS="\t" } !/^!/ {print toupper($4)"\t"$1"\t"$2"\t"$3}' tags |
-    cut -c1-80 | fzf --nth=1,2
+    cut -c1-80 | fzf-tmux --nth=1,2
   ) && $EDITOR $(cut -f3 <<< "$line") -c "set nocst" \
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }

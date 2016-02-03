@@ -4,9 +4,9 @@ home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
 # define host outputs and various associated vars
-outputs: [{display: "DVI-I-2", bar_id: "bar-primary",   stat_conf: "~/.i3/status/lintilla_0.i3status", bar_pos: "top", tray_out: "primary"},
-          {display: "DVI-I-3", bar_id: "bar-secondary", stat_conf: "~/.i3/status/lintilla_1.i3status", bar_pos: "top", tray_out: "primary"},
-          {display: "HDMI-0",  bar_id: "bar-tv",        stat_conf: "~/.i3/status/lintilla_2.i3status", bar_pos: "top", tray_out: "primary"}]
+outputs: [{display: "DVI-I-1", bar_id: "bar-primary",   stat_conf: "~/.i3/status/lintilla_0.i3status", bar_pos: "top", tray_out: "primary"},
+          {display: "VGA-1", bar_id: "bar-secondary", stat_conf: "~/.i3/status/lintilla_1.i3status", bar_pos: "top", tray_out: "primary"},
+          {display: "HDMI-1",  bar_id: "bar-tv",        stat_conf: "~/.i3/status/lintilla_2.i3status", bar_pos: "top", tray_out: "primary"}]
 
 # Used in xinit. This is a dynamic layout that is changed with chdisp <https://github.com/roosta/scripts/blob/master/chmon.sh>
 #output_layout: "xrandr --output DVI-I-1 --primary --auto --pos 0x0 --output DVI-D-0 --auto --left-of DVI-I-1 --output HDMI-0 --off &"
