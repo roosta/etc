@@ -108,3 +108,4 @@
 {"description":"sync with google tasks","entry":"20160117T163621Z","modified":"20160117T163621Z","status":"pending","tags":["tasks"],"uuid":"ce2e8ecf-0708-450b-aa11-b164e1e48856"}
 {"description":"get po box","end":"20160117T165555Z","entry":"20160117T163519Z","modified":"20160117T165556Z","status":"deleted","tags":["monoxie"],"uuid":"78056d2f-61c3-4830-b7d7-ae20389bc971"}
 {"description":"change name","end":"20160117T165606Z","entry":"20160117T163450Z","modified":"20160117T165606Z","status":"completed","tags":["monoxie"],"uuid":"5eaea493-b64b-4f35-83a3-f98dc54dd95a"}
+{"description":"add if tmux in vimrc and prompt.zsh","entry":"20160202T163314Z","modified":"20160202T163314Z","status":"pending","tags":["shell"],"uuid":"70134a7d-94ab-4414-86bf-4c026c80990b"}

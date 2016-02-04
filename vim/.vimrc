@@ -93,20 +93,20 @@ set tags+=./.tags " used with ctags. Defines tag files.
 " │  │ ││┬┘└─┐│ ││┬┘
 " └─┘┆─┘┆└┘──┘┘─┘┆└┘
 " ------------------
-" change cursor depending on mode (VTE compatible terminals)
-"let &t_SI = "\<Esc>[6 q"
-"let &t_SR = "\<Esc>[4 q"
-"let &t_EI = "\<Esc>[2 q"
-
-" change cursor using tmux,urxvtc and zsh
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
-let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
 " 1 or 0 -> blinking block
 " 3 -> blinking underscore
 " Recent versions of xterm (282 or above) also support
 " 5 -> blinking vertical bar
 " 6 -> solid vertical bar
+" change cursor depending on mode (VTE compatible terminals running tmux)
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
+
+" change cursor depending on mode (VTE compatible terminals)
+"let &t_SI = "\<Esc>[6 q"
+"let &t_SR = "\<Esc>[4 q"
+"let &t_EI = "\<Esc>[2 q"
 
 " Always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside
@@ -160,10 +160,6 @@ map <leader>tn :tabnew<CR>
 map <leader>to :tabonly<CR>
 map <leader>tc :tabclose<CR>
 " map <leader>tm :tabmove
-
-"
-"noremap <S-Left> b
-"noremap <S-Right> e
 
 " Switch between Vim window splits
 noremap <silent> <A-Up>    :wincmd k<CR>
