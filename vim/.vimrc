@@ -192,6 +192,9 @@ noremap <C-Up> {
 noremap <C-Down> }
 noremap <C-k> {
 noremap <C-j> }
+
+noremap <leader>ccl :cclose<CR>
+noremap <leader>lcl :lclose<CR>
 " }}}
 " FUNCTIONS {{{
 " -------------------------

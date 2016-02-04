@@ -45,13 +45,17 @@ function prompt_mode() {
   case $KEYMAP in
     vicmd)
       #print -n -- "\E[2 q" # block cursor
+
+      # block cursor with tmux escape codes added
+      # huge thanks to: http://blog.yjl.im/2014/12/passing-escape-codes-for-changing-font.html
       print -n -- "\EPtmux;\E\E[2 q\E\\" # block cursor
       PROMPT=$PROMPT_SYMBOL_VICMD
       ;;
     viins|main)
       #print -n -- "\E[6 q" # line cursor
 
-      # line cursor using with tmux escapes
+      # line cursor using with tmux escape codes added
+      # huge thanks to: http://blog.yjl.im/2014/12/passing-escape-codes-for-changing-font.html
       print -n -- "\EPtmux;\E\E[6 q\E\\"
       PROMPT=$PROMPT_SYMBOL_VIINS
       ;;
