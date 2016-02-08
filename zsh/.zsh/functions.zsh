@@ -27,9 +27,9 @@ bindkey . rationalise-dot
 
 # syntax highlighted cat
 # http://superuser.com/questions/84426/are-there-any-options-to-let-cat-output-with-color
-ccat () {
-  src-hilite-lesspipe.sh $1
-}
+#ccat () {
+  #src-hilite-lesspipe.sh $1
+#}
 
 # do a quick spellcheck in terminal
 spell () {

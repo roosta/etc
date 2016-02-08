@@ -278,7 +278,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight'
-Plug 'venantius/vim-eastwood'
+"Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve'
 Plug 'venantius/vim-cljfmt'
 

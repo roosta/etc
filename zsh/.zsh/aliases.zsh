@@ -320,7 +320,9 @@ alias figwheel='lein do clean, figwheel'
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
 alias dust='rlwrap dust'
-
+alias ccat='pygmentize -g -O style=colorful'
+#alias ccat='pygmentize -g -O style=colorful,linenos=1'
+alias cats='highlight -O ansi'
 
 # ┌┌┐o┐─┐┌─┐
 # ││││└─┐│
