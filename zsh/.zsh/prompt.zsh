@@ -33,7 +33,8 @@ function zle-line-finish () {
   if (( ${+terminfo[rmkx]} )); then
     printf '%s' "${terminfo[rmkx]}"
   fi
-  print -n -- "\ePtmux;\e\e[2 q\e\\" # return to block on command
+  #print -n -- "\E[2 q" # return to block on command
+  print -n -- "\EPtmux;\E\E[2 q\E\\" # return to block on command
 }
 function zle-keymap-select () {
   prompt_mode
@@ -43,11 +44,19 @@ function prompt_mode() {
   # change prompt in VTE compatible terminals
   case $KEYMAP in
     vicmd)
-      print -n -- "\ePtmux;\e\e[2 q\e\\" # block cursor
+      #print -n -- "\E[2 q" # block cursor
+
+      # block cursor with tmux escape codes added
+      # huge thanks to: http://blog.yjl.im/2014/12/passing-escape-codes-for-changing-font.html
+      print -n -- "\EPtmux;\E\E[2 q\E\\" # block cursor
       PROMPT=$PROMPT_SYMBOL_VICMD
       ;;
     viins|main)
-      print -n -- "\ePtmux;\e\e[6 q\e\\" # line cursor
+      #print -n -- "\E[6 q" # line cursor
+
+      # line cursor using with tmux escape codes added
+      # huge thanks to: http://blog.yjl.im/2014/12/passing-escape-codes-for-changing-font.html
+      print -n -- "\EPtmux;\E\E[6 q\E\\"
       PROMPT=$PROMPT_SYMBOL_VIINS
       ;;
   esac

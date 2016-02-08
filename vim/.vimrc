@@ -28,6 +28,8 @@ set undodir=~/.vim/undo
 " set shell, grants alias usage among other things.
 "set shell=zsh\ -i
 
+set t_Co=256
+
 " wild*
 set wildmenu " give menu on completion
 set wildmode=longest,list,full " define wildmode appearance
@@ -186,6 +188,9 @@ noremap <C-Up> {
 noremap <C-Down> }
 noremap <C-k> {
 noremap <C-j> }
+
+noremap <leader>ccl :cclose<CR>
+noremap <leader>lcl :lclose<CR>
 " }}}
 " FUNCTIONS {{{
 " -------------------------
