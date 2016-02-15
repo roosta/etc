@@ -84,7 +84,7 @@ load {
 
 cpu_temperature 0 {
   format = "CPU: %degrees°C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
 }
 
 disk "/" {
