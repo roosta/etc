@@ -285,7 +285,7 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 "Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
-Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+"Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'guns/vim-sexp'
 
 " inactive
@@ -498,6 +498,10 @@ let g:ackprg = 'ag --vimgrep'
 "}}}
 " UNDOTREE {{{1
 nnoremap <leader>ut :UndotreeToggle<cr>
+"}}}
+" BETTER-WHITESPACE {{{1
+" strip whitespace on save
+autocmd BufWritePre * StripWhitespace
 "}}}
 " INACTIVE {{{
 " --------------------
