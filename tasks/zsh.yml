@@ -47,6 +47,7 @@
     - { repo: "https://github.com/zsh-users/zsh-completions", dest: "{{ dotfiles }}/zsh/.zsh/plugins/zsh-completions" }
     - { repo: "https://github.com/zsh-users/zsh-history-substring-search", dest: "{{ dotfiles }}/zsh/.zsh/plugins/zsh-history-substring-search" }
     - { repo: "https://github.com/roosta/pure", dest: "{{ dotfiles }}/zsh/.zsh/plugins/pure" }
+    - { repo: "https://github.com/bobthecow/git-flow-completion", dest: "{{ dotfiles }}/zsh/.zsh/plugins/git-flow-completion" }
   tags:
     - zsh
     - init

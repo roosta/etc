@@ -281,6 +281,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 
 " cloujure
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }
+"Plug 'bhurlow/vim-parinfer', { 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight'
 "Plug 'venantius/vim-eastwood'
