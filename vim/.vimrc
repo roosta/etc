@@ -156,9 +156,9 @@ map <leader>bp :bprevious<CR>
 map <leader>bd :bdelete<CR>
 
 " Tab management
-map <leader>tn :tabnew<CR>
-map <leader>to :tabonly<CR>
-map <leader>tc :tabclose<CR>
+"map <leader>tn :tabnew<CR>
+"map <leader>to :tabonly<CR>
+"map <leader>tc :tabclose<CR>
 " map <leader>tm :tabmove
 
 " Switch between Vim window splits
@@ -244,6 +244,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'svermeulen/vim-easyclip'
@@ -339,7 +340,11 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nmap <leader>f  :Files<CR>
-nmap <leader>bb  :Buffers<cr>
+nmap <leader>bb :Buffers<cr>
+nmap <leader>t :Tags<cr>
+nmap <leader>y  :BTags<cr>
+nmap <leader>c :Commits<cr>
+nmap <leader>v :BCommits<cr>
 
 " This is the default extra key bindings
 let g:fzf_action = {
