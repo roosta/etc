@@ -272,7 +272,6 @@ Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
 Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
-"Plug 'bling/vim-airline'
 
 " syntax:
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -281,13 +280,14 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/rainbow_parentheses.vim'
 
 " cloujure
-Plug 'kovisoft/paredit',    { 'for': 'clojure' }
-"Plug 'bhurlow/vim-parinfer', { 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
+"Plug 'kovisoft/paredit',    { 'for': 'clojure' }
+Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-highlight'
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 "Plug 'venantius/vim-eastwood'
-Plug 'tpope/vim-salve'
-Plug 'venantius/vim-cljfmt'
+Plug 'tpope/vim-salve', { 'for': 'clojure' }
+"Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+Plug 'guns/vim-sexp'
 
 " inactive
 "Plug 'terryma/vim-expand-region'
@@ -503,6 +503,10 @@ let g:ackprg = 'ag --vimgrep'
 "}}}
 " UNDOTREE {{{1
 nnoremap <leader>ut :UndotreeToggle<cr>
+"}}}
+" BETTER-WHITESPACE {{{1
+" strip whitespace on save
+autocmd BufWritePre * StripWhitespace
 "}}}
 " INACTIVE {{{
 " --------------------
