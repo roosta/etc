@@ -22,18 +22,10 @@ endif
 set undofile
 set undodir=~/.vim/undo
 
-" disable swapfile
-"set noswapfile
-
-" set shell, grants alias usage among other things.
-"set shell=zsh\ -i
-
-set t_Co=256
-
 " wild*
-set wildmenu " give menu on completion
+set wildmenu                   " give menu on completion
 set wildmode=longest,list,full " define wildmode appearance
-set wildignorecase " ignore case on completion
+set wildignorecase             " ignore case on completion
 
 " define various ignored folders when using fzf/ctrlp/whatever else uses
 " wildmode
@@ -45,47 +37,47 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
 set backspace=indent,eol,start
 
 " interface
-set timeoutlen=1000 ttimeoutlen=0 " adjust timeouts for escaping normal mode.
-set laststatus=2 " Always display the statusline in all windows
-set showtabline=1 " Always display the tabline, even if there is only one tab
-set showcmd " show partial command in last line of screen
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-set shortmess+=I " dont display startup message
-set scrolloff=7 "	Minimal number of screen lines to keep above and below the cursor.
-set t_Co=256 " force 256colors
-set lazyredraw " stop unnecessary rendering
-set ttyfast " improve drawing in tmux
+"set timeoutlen=1000 ttimeoutlen=0 " adjust timeouts for escaping normal mode.
+set laststatus=2   " Always display the statusline in all windows
+set showtabline=1  " Always display the tabline, even if there is only one tab
+set showcmd        " show partial command in last line of screen
+set noshowmode     " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set shortmess+=I   " dont display startup message
+set scrolloff=7    "	Minimal number of screen lines to keep above and below the cursor.
+set t_Co=256       " force 256colors
+set lazyredraw     " stop unnecessary rendering
+set ttyfast        " improve drawing in tmux
 
 " Highlights
-set cursorline " highlight current line
-set number " show line numbers
-set matchtime=2 " time to display matching brackets
-set showmatch " show matching brackets/parenthesis
+set cursorline     " highlight current line
+set number         " show line numbers
+set matchtime=2    " time to display matching brackets
+set showmatch      " show matching brackets/parenthesis
 set relativenumber " use relative line numbers. See functions for quick switch back to normal
 
 " linewrap
-set wrap " wrap long lines.
-set linebreak " break on chars defined in "breakat"
-set breakindent "match indent on break
+set wrap           " wrap long lines.
+set linebreak      " break on chars defined in "breakat"
+set breakindent    "match indent on break
 set breakat=" ^I!@*-+;:,./?"
 set showbreak=↳\
-set cpoptions+=n " dont show linenumbers on wrap
+set cpoptions+=n   " dont show linenumbers on wrap
 
 " Indentation
-set expandtab " tabs are spaces
-set shiftwidth=2 " use indents of 2 spaces
-set tabstop=2 " use indents of 2 spaces
-set softtabstop=2 " let backspace delete indent
+set expandtab      " tabs are spaces
+set shiftwidth=2   " use indents of 2 spaces
+set tabstop=2      " use indents of 2 spaces
+set softtabstop=2  " let backspace delete indent
 
 " SEARCHING
-set incsearch " match while typing
+set incsearch      " match while typing
 set ignorecase
-set magic " :help magic
-set gdefault " the /g flag on :s substitutions by default
+set magic          " :help magic
+set gdefault       " the /g flag on :s substitutions by default
 
-set mouse=a " enable mouse
-set fo-=o " disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
-set tags+=./.tags " used with ctags. Defines tag files.
+set mouse=a        " enable mouse
+set fo-=o          " disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
+set tags+=./.tags  " used with ctags. Defines tag files.
 "}}}
 " CURSOR {{{1
 " ------------------
@@ -138,9 +130,12 @@ endif
 " ├┴┐├─ └┌┘│─││││││ │└─┐
 " ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘──┘
 " ----------------------
+
+let mapleader = "\<SPACE>"
+
 " Move across wrapped lines like regular lines
-noremap 0 ^ " Go to the first non-blank character of a line
-noremap ^ 0 " Just in case you need to go to the very beginning of a line
+"noremap 0 ^ " Go to the first non-blank character of a line
+"noremap ^ 0 " Just in case you need to go to the very beginning of a line
 
 " remove all trailing whitespace
 noremap <leader>cw :StripWhitespace<CR>
@@ -149,11 +144,11 @@ noremap <leader>cw :StripWhitespace<CR>
 " Note that this may cause some plugins not to load properly if it has init logic
 noremap <c-w>r :source $MYVIMRC<CR>
 
-" Close all the buffers
+"" use unimpared
 "map <leader>ba :%bdelete<CR>
-map <leader>bn :bnext<CR>
-map <leader>bp :bprevious<CR>
-map <leader>bd :bdelete<CR>
+"map <leader>bn :bnext<CR>
+"map <leader>bp :bprevious<CR>
+"map <leader>bd :bdelete<CR>
 
 " Tab management
 "map <leader>tn :tabnew<CR>
@@ -251,6 +246,8 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sensible'
 
 " compl/lint
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
@@ -274,22 +271,21 @@ Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
 
 " syntax:
-Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'sheerun/vim-polyglot'
-Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'junegunn/rainbow_parentheses.vim'
 
 " cloujure
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }
-Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
+"Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-"Plug 'venantius/vim-eastwood'
+Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
-"Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 "Plug 'guns/vim-sexp'
 
 " inactive
+"Plug 'PotatoesMaster/i3-vim-syntax'
 "Plug 'terryma/vim-expand-region'
 "Plug 'gorodinskiy/vim-coloresque'
 "Plug 'guns/vim-clojure-static'
@@ -300,6 +296,7 @@ Plug 'tpope/vim-salve', { 'for': 'clojure' }
 "Plug 'jgdavey/tslime.vim'
 "Plug 'edkolev/promptline.vim'
 "Plug 'edkolev/tmuxline.vim'
+"Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()
 
 syntax on
@@ -341,10 +338,10 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nmap <leader>f  :Files<CR>
 nmap <leader>bb :Buffers<cr>
-nmap <leader>t :Tags<cr>
+nmap <leader>t  :Tags<cr>
 nmap <leader>y  :BTags<cr>
-nmap <leader>c :Commits<cr>
-nmap <leader>v :BCommits<cr>
+nmap <leader>c  :Commits<cr>
+nmap <leader>v  :BCommits<cr>
 
 " This is the default extra key bindings
 let g:fzf_action = {
