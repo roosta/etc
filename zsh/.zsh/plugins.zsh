@@ -64,7 +64,9 @@ bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directorie
 # ┆  ┆─┘└─┘└─┘ ┆   ┆  ┆┆└┘┆─┘┴─┘┆└┘
 
 # plugin handled externally with vim-plug
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#export FZF_DEFAULT_OPTS='--no-256'
 
 # Respecting .gitignore, .hgignore, and svn:ignore
 # Setting ag as the default source for fzf
