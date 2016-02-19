@@ -341,10 +341,11 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nmap <leader>f  :Files<CR>
 nmap <leader>bb :Buffers<cr>
-nmap <leader>t :Tags<cr>
+nmap <leader>t  :Tags<cr>
 nmap <leader>y  :BTags<cr>
-nmap <leader>c :Commits<cr>
-nmap <leader>v :BCommits<cr>
+nmap <leader>gc :Commits<cr>
+nmap <leader>gb :BCommits<cr>
+nmap <leader>gs :Gstatus<cr>
 
 " This is the default extra key bindings
 let g:fzf_action = {
