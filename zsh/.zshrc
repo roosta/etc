@@ -34,8 +34,8 @@ fi
 
 # start tmux on every shell login
 # If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
+#[[ $- != *i* ]] && return
+#[[ -z "$TMUX" ]] && exec tmux
 
 # source remaining config
 for config (~/.zsh/*.zsh) source $config
