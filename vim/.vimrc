@@ -91,14 +91,17 @@ set tags+=./.tags  " used with ctags. Defines tag files.
 " 5 -> blinking vertical bar
 " 6 -> solid vertical bar
 " change cursor depending on mode (VTE compatible terminals running tmux)
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
-let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
 
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
+  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
+else
 " change cursor depending on mode (VTE compatible terminals)
-"let &t_SI = "\<Esc>[6 q"
-"let &t_SR = "\<Esc>[4 q"
-"let &t_EI = "\<Esc>[2 q"
+  let &t_SI = "\<Esc>[6 q"
+  let &t_SR = "\<Esc>[4 q"
+  let &t_EI = "\<Esc>[2 q"
+endif
 
 " Always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside
@@ -273,6 +276,9 @@ Plug 'vim-airline/vim-airline'
 " syntax:
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'tpope/vim-liquid'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'PotatoesMaster/i3-vim-syntax'
 
 " cloujure
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }
