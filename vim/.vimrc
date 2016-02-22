@@ -237,7 +237,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" editing
+" General
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
@@ -251,12 +251,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
-
-" compl/lint
-Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
-
-" Using AUR to simplify build process on Arch
-"Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
+Plug 'tpope/vim-tbone'
 
 " navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -273,14 +268,17 @@ Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
 
-" syntax:
+" Language:
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-liquid'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
+" Using AUR to simplify build process on Arch
+"Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
-" cloujure
+" Clojure
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 "Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }

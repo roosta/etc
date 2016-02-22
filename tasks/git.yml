@@ -8,3 +8,4 @@
   with_items:
     - .gitconfig
     - .gitignore
+    - .git_template
