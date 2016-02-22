@@ -316,7 +316,7 @@ alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 # ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
 
 alias lein='rlwrap lein'
-alias figwheel='lein do clean, figwheel'
+#alias figwheel='lein do clean, figwheel'
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
 alias dust='rlwrap dust'
