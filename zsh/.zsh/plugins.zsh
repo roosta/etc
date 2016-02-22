@@ -33,12 +33,12 @@ eval "$(fasd --init auto)"
 alias f='fasd -f'        # file
 alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+#alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias c='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zi='fasd_cd -d -i' # cd with interactive selection
-alias ci='fasd_cd -d -i' # cd with interactive selection
+#alias zi='fasd_cd -d -i' # cd with interactive selection
+#alias ci='fasd_cd -d -i' # cd with interactive selection
 #alias v='f -e vim'       # quick opening files with vim
-alias v='f -t -e vim -b viminfo' # mimic 'v'
+#alias v='f -t -e vim -b viminfo' # mimic 'v'
 
 # add fasd completion shortcuts
 bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (fils and directories)
@@ -67,6 +67,9 @@ bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directorie
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #export FZF_DEFAULT_OPTS='--no-256'
+
+#alias fzf='TERM=screen-256color fzf'
+#alias fzf-tmux='TERM=screen-256color fzf'
 
 # Respecting .gitignore, .hgignore, and svn:ignore
 # Setting ag as the default source for fzf
@@ -243,3 +246,61 @@ ftags() {
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }
 
+fs() {
+  local session
+  session=$(tmux list-sessions -F "#{session_name}" | \
+    fzf --query="$1" --select-1 --exit-0) &&
+    tmux switch-client -t "$session"
+}
+
+v() {
+  local file
+  file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
+}
+
+# ┬─┐┌─┐┬─┐ ╷┌┐┐┌┌┐┬ ┐┐ │
+# ├─ ┌─┘├─ ┌┘ │ ││││ │┌┼┘
+# ┆  └─┘┆  ╵  ┆ ┘ ┆┆─┘┆ └
+# fs [FUZZY PATTERN] - Select selected tmux session
+#   - Bypass fuzzy finder if there's only one match (--select-1)
+#   - Exit if there's no match (--exit-0)
+fs() {
+  local session
+  session=$(tmux list-sessions -F "#{session_name}" | \
+    fzf-tmux --query="$1" --select-1 --exit-0) &&
+    tmux switch-client -t "$session"
+}
+
+# ftpane - switch pane (@george-b)
+# In tmux.conf
+# bind-key 0 run "tmux split-window -l 12 'bash -ci ftpane'"
+ftpane() {
+  local panes current_window current_pane target target_window target_pane
+  panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
+  current_pane=$(tmux display-message -p '#I:#P')
+  current_window=$(tmux display-message -p '#I')
+
+  target=$(echo "$panes" | grep -v "$current_pane" | fzf +m --reverse) || return
+
+  target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
+  target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
+
+  if [[ $current_window -eq $target_window ]]; then
+    tmux select-pane -t ${target_window}.${target_pane}
+  else
+    tmux select-pane -t ${target_window}.${target_pane} &&
+      tmux select-window -t $target_window
+  fi
+}
+
+
+# With fasd.
+v() {
+  local file
+  file="$(fasd -Rfl "$1" | fzf-tmux -1 -0 --no-sort +m)" && vi "${file}" || return 1
+}
+
+z() {
+  local dir
+  dir="$(fasd -Rdl "$1" | fzf-tmux -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+}

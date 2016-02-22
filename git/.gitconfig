@@ -17,3 +17,6 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
   rmc = rm --cached
+	ctags = !.git/hooks/ctags
+[init]
+	templatedir = ~/.git_template

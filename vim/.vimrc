@@ -91,14 +91,17 @@ set tags+=./.tags  " used with ctags. Defines tag files.
 " 5 -> blinking vertical bar
 " 6 -> solid vertical bar
 " change cursor depending on mode (VTE compatible terminals running tmux)
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
-let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
 
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
+  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>[2 q\<Esc>\\"
+else
 " change cursor depending on mode (VTE compatible terminals)
-"let &t_SI = "\<Esc>[6 q"
-"let &t_SR = "\<Esc>[4 q"
-"let &t_EI = "\<Esc>[2 q"
+  let &t_SI = "\<Esc>[6 q"
+  let &t_SR = "\<Esc>[4 q"
+  let &t_EI = "\<Esc>[2 q"
+endif
 
 " Always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside
@@ -234,7 +237,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" editing
+" General
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
@@ -248,12 +251,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
-
-" compl/lint
-Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
-
-" Using AUR to simplify build process on Arch
-"Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
+Plug 'tpope/vim-tbone'
 
 " navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -270,11 +268,17 @@ Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
 
-" syntax:
+" Language:
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'tpope/vim-liquid'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
+" Using AUR to simplify build process on Arch
+"Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
-" cloujure
+" Clojure
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 "Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
