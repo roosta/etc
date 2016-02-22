@@ -74,7 +74,7 @@ xbindkeys &
 # -------------------
 # screen locker
 xscreensaver -no-splash &
-xss-lock -- xscreensaver-command -lock &
+xss-lock -- xscreensaver-command --lock &
 #xss-lock -- i3lock -t -d -n -i /home/roosta/.background/pattern-01.png &
 
 # disable screensaver when certain fullscreen apps are active
@@ -83,6 +83,8 @@ lightsOn 590 &
 
 # load nvidia-settings on startup
 #nvidia-settings --load-config-only &
+
+dropbox-cli start &
 
 # set background with feh
 $HOME/.fehbg &

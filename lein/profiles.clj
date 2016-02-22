@@ -1,4 +1,5 @@
 {:user {:dependencies [[cljfmt "0.3.0"]
+                       [lein-ancient "0.6.8"]
                        ;[jonase/eastwood "0.2.3" :exclusions [org.clojure/clojure]]
                        ]
         :plugins [[cider/cider-nrepl "0.10.2"]
