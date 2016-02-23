@@ -283,7 +283,7 @@ Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 "Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'venantius/vim-eastwood'
+"Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 "Plug 'guns/vim-sexp'
