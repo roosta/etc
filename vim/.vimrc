@@ -77,7 +77,7 @@ set gdefault       " the /g flag on :s substitutions by default
 
 set mouse=a        " enable mouse
 set fo-=o          " disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
-set tags+=./.tags  " used with ctags. Defines tag files.
+set tags+=./.git/.tags  " used with ctags. Defines tag files.
 "}}}
 " CURSOR {{{1
 " ------------------
