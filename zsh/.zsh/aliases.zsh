@@ -316,11 +316,14 @@ alias svnaddall="svn status | grep '?' | sed 's/^.* /svn add /' | bash"
 alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 #alias svnaddall="svn add `svn status . | awk '/^[?]/{print $2}'`"
 
+alias sa="ssh-add ~/.ssh/id_rsa"
+
 # ┬─┐┬─┐┐ ┬┬─┐┬  ┌─┐┬─┐
 # │ │├─ │┌┘├─ │  │ ││─┘
 # ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
 
 alias lein='rlwrap lein'
+alias leindeps='lein deps :tree'
 #alias figwheel='lein do clean, figwheel'
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;

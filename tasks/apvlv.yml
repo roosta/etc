@@ -1,0 +1,10 @@
+---
+# zsh being the preferred shell, I still track these
+- name: Symlink apvlv pdf viewer config to home
+  tags:
+    - apvlv
+    - misc
+  file: dest={{home}}/{{item}} src={{dotfiles}}/apvlv/{{item}} state=link
+  with_items:
+    - .apvlv
+
