@@ -286,6 +286,7 @@ Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 "Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+Plug 'jgdavey/tslime.vim'
 "Plug 'guns/vim-sexp'
 
 " inactive
@@ -514,6 +515,14 @@ autocmd BufWritePre * StripWhitespace
 " strip whitespace on save
 let g:clj_fmt_autosave = 0
 "}}}
+" TSLIME {{{1
+"let g:tslime_always_current_session = 1
+"let g:tslime_always_current_window = 1
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuxVars"
+"}}}
+
 " INACTIVE {{{
 " --------------------
 " o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
