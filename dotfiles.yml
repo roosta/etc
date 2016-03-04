@@ -59,4 +59,5 @@
     - include: tasks/inkscape.yml
     - include: tasks/xboxdrv.yml
     - include: tasks/krita.yml
+    - include: tasks/apvlv.yml
 

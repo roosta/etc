@@ -281,7 +281,8 @@ alias gits='git status'
 alias gitd='git diff'
 alias gitdc='git diff --cached'
 alias gitout='git checkout'
-alias gitsubupd='git submodule foreach git pull origin master'
+alias gitsu='git submodule foreach git pull origin master'
+alias gitb='git branch'
 
 # --- svn ---
 alias svn='colorsvn'
@@ -316,11 +317,14 @@ alias svnaddall="svn status | grep '?' | sed 's/^.* /svn add /' | bash"
 alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 #alias svnaddall="svn add `svn status . | awk '/^[?]/{print $2}'`"
 
+alias sa="ssh-add ~/.ssh/id_rsa"
+
 # ┬─┐┬─┐┐ ┬┬─┐┬  ┌─┐┬─┐
 # │ │├─ │┌┘├─ │  │ ││─┘
 # ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
 
 alias lein='rlwrap lein'
+alias leindeps='lein deps :tree'
 #alias figwheel='lein do clean, figwheel'
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;

@@ -8,6 +8,8 @@ set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position
 source! /home/roosta/.vimperatorrc.local
 
+"let mapleader = <Space>
+
 " map l and h to tab movement
 " this removes horizontal h&l movement but arrows still work
 noremap l gt
@@ -15,6 +17,8 @@ noremap h gT
 
 noremap } gt
 noremap { gT
+
+map <leader>R :source ~/.vimperatorrc
 
 " go to last active tab.
 noremap gp <C-^>
