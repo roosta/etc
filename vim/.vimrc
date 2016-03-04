@@ -510,6 +510,10 @@ nnoremap <leader>ut :UndotreeToggle<cr>
 " strip whitespace on save
 autocmd BufWritePre * StripWhitespace
 "}}}
+" VIM-CLJFMT {{{1
+" strip whitespace on save
+let g:clj_fmt_autosave = 0
+"}}}
 " INACTIVE {{{
 " --------------------
 " o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
