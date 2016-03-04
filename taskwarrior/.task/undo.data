@@ -377,3 +377,17 @@ new [description:"change name" end:"1453049766" entry:"1453048490" modified:"145
 time 1454430794
 new [description:"add if tmux in vimrc and prompt.zsh" entry:"1454430794" modified:"1454430794" status:"pending" tags:"shell" uuid:"70134a7d-94ab-4414-86bf-4c026c80990b"]
 ---
+time 1456983832
+new [description:"fix pulseaudio 7.1 issue" entry:"1456983832" modified:"1456983832" status:"pending" tags:"lintilla" uuid:"cb2224bb-197d-4f9f-b8c0-b733173df618"]
+---
+time 1456983852
+old [description:"change internet subscription" entry:"1453048558" modified:"1453048558" status:"pending" tags:"IMPORTANT" uuid:"2be9abea-768d-4f3b-9f64-096d976627fc"]
+new [description:"change internet subscription" end:"1456983852" entry:"1453048558" modified:"1456983852" status:"completed" tags:"IMPORTANT" uuid:"2be9abea-768d-4f3b-9f64-096d976627fc"]
+---
+time 1456983868
+old [description:"add dotfile commit legend" entry:"1451570242" modified:"1451570242" status:"pending" tags:"general" uuid:"e27c0eb8-a84a-4acc-9407-a3f8aafb5eb3"]
+new [description:"add dotfile commit legend" end:"1456983868" entry:"1451570242" modified:"1456983868" status:"completed" tags:"general" uuid:"e27c0eb8-a84a-4acc-9407-a3f8aafb5eb3"]
+---
+time 1457120455
+new [description:"fix google tasks + taskwarrior sync" entry:"1457120455" modified:"1457120455" status:"pending" tags:"general" uuid:"2affe8a9-c861-4887-ba8f-9b60a3734a39"]
+---
