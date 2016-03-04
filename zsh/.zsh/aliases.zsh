@@ -281,7 +281,8 @@ alias gits='git status'
 alias gitd='git diff'
 alias gitdc='git diff --cached'
 alias gitout='git checkout'
-alias gitsubupd='git submodule foreach git pull origin master'
+alias gitsu='git submodule foreach git pull origin master'
+alias gitb='git branch'
 
 # --- svn ---
 alias svn='colorsvn'
