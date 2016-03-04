@@ -13,9 +13,9 @@ URxvt*saveLines: 12000
 URxvt*scrollBar: false
 
 !! Alt+Esc enables vi select mode
-!URxvt.perl-ext-common: default,url-select,selection-to-clipboard,keyboard-select
-!URxvt.keysym.M-s:      perl:keyboard-select:search
-!URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.perl-ext-common: default,url-select,selection-to-clipboard,keyboard-select
+URxvt.keysym.M-s:      perl:keyboard-select:search
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 !URL matching, use alt-u to enter select mode
 !URxvt.perl-ext-common: default,url-select,selection-to-clipboard
@@ -37,8 +37,8 @@ URxvt.cursorBlink: false
 
 ! scroll single lines with shift+up/down
 ! http://unix.stackexchange.com/questions/44756/urxvt-scroll-just-one-line
-!URxvt.keysym.C-Page_Up:   command:\033]720;1\007
-!URxvt.keysym.C-Page_Down: command:\033]721;1\007
+URxvt.keysym.C-Page_Up:   command:\033]720;1\007
+URxvt.keysym.C-Page_Down: command:\033]721;1\007
 
 !! fix pager scrolling issue
 !! https://wiki.archlinux.org/index.php/Rxvt-unicode#Scrollback_buffer_in_secondary_screen
