@@ -96,3 +96,4 @@ extension-errors.log
 inkscape/preferences.xml
 ycm_build
 i3/log/**
+tmux/.tmux/plugins

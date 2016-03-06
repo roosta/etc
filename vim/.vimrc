@@ -252,6 +252,8 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-tbone'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'jgdavey/tslime.vim'
 
 " navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -273,6 +275,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-liquid'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'tmux-plugins/vim-tmux'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 " Using AUR to simplify build process on Arch
@@ -286,7 +289,6 @@ Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 "Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-Plug 'jgdavey/tslime.vim'
 "Plug 'guns/vim-sexp'
 
 " inactive

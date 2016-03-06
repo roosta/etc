@@ -1,4 +1,14 @@
 ---
+
+- name: clone / update tmux plugin manager
+  git: repo={{ item.repo }} dest={{ home }}/.tmux/plugins/{{ item.dest }} clone=yes update=yes
+  with_items:
+    - { repo: "https://github.com/tmux-plugins/tpm", dest: "tpm" }
+  tags:
+    - tmux
+    - shell
+
+
 - name: Symlink tmux config...
   tags:
     - tmux
