@@ -391,3 +391,6 @@ new [description:"add dotfile commit legend" end:"1456983868" entry:"1451570242"
 time 1457120455
 new [description:"fix google tasks + taskwarrior sync" entry:"1457120455" modified:"1457120455" status:"pending" tags:"general" uuid:"2affe8a9-c861-4887-ba8f-9b60a3734a39"]
 ---
+time 1457120523
+new [description:"update i3bar" entry:"1457120523" modified:"1457120523" status:"pending" uuid:"06ac6b97-d20c-47f5-ba73-5c895b38dad8"]
+---

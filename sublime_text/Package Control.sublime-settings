@@ -2,10 +2,19 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"Haxe",
+		"Open URL",
+		"Origami",
+		"PlainTasks",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-annotations",
+		"Theme - itg.flat",
+		"TodoReview",
+		"Vintageous"
 	],
 	"installed_packages":
 	[
-		"AAAPackageDev",
 		"Autoprefixer",
 		"BracketHighlighter",
 		"Comment-Snippets",
@@ -19,6 +28,7 @@
 		"Open URL",
 		"Origami",
 		"Package Control",
+		"PackageDev",
 		"PackageResourceViewer",
 		"PlainTasks",
 		"SideBarEnhancements",
