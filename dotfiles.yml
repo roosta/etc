@@ -39,6 +39,7 @@
     - include: tasks/screen.yml
     - include: tasks/termite.yml
     - include: tasks/ranger.yml
+    - include: tasks/terminfo.yml
 
       # dev group
     - include: tasks/lein.yml
