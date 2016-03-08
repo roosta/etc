@@ -282,14 +282,14 @@ Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 "Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
 " Clojure
-Plug 'kovisoft/paredit',    { 'for': 'clojure' }
+"Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 "Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 "Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-"Plug 'guns/vim-sexp'
+Plug 'guns/vim-sexp'
 
 " inactive
 "Plug 'PotatoesMaster/i3-vim-syntax'
@@ -507,6 +507,7 @@ let g:indent_guides_start_level = 2
 let g:ackprg = 'ag --vimgrep'
 "}}}
 " UNDOTREE {{{1
+" -------------
 nnoremap <leader>ut :UndotreeToggle<cr>
 "}}}
 " BETTER-WHITESPACE {{{1
@@ -525,6 +526,14 @@ nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars"
 "}}}
 
+" VIM-SEXP {{{1
+let g:sexp_mappings = {
+      \ 'sexp_emit_head_element':         '<leader><Down>',
+      \ 'sexp_emit_tail_element':         '<leader><Up>',
+      \ 'sexp_capture_prev_element':      '<leader><Left>',
+      \ 'sexp_capture_next_element':      '<leader><Right>',
+      \}
+"}}}
 " INACTIVE {{{
 " --------------------
 " o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
