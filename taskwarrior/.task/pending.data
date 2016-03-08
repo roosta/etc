@@ -28,3 +28,4 @@
 [description:"fix pulseaudio 7.1 issue" entry:"1456983832" modified:"1456983832" status:"pending" tags:"lintilla" uuid:"cb2224bb-197d-4f9f-b8c0-b733173df618"]
 [description:"fix google tasks + taskwarrior sync" entry:"1457120455" modified:"1457120455" status:"pending" tags:"general" uuid:"2affe8a9-c861-4887-ba8f-9b60a3734a39"]
 [description:"update i3bar" entry:"1457120523" modified:"1457120523" status:"pending" uuid:"06ac6b97-d20c-47f5-ba73-5c895b38dad8"]
+[description:"fix sidebar z-index issue" entry:"1457432527" modified:"1457432527" status:"pending" tags:"firefox" uuid:"6162eddd-1d24-41fb-852f-90a9f27d0631"]

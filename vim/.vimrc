@@ -254,6 +254,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-tbone'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jgdavey/tslime.vim'
+Plug 'wesQ3/vim-windowswap'
 
 " navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -380,11 +381,11 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
 " line movement
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+"map <Leader>l <Plug>(easymotion-lineforward)
+"map <Leader>j <Plug>(easymotion-j)
+"map <Leader>k <Plug>(easymotion-k)
+"map <Leader>h <Plug>(easymotion-linebackward)
+"let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 " set ctrl-v to paste in easymotion command line
 "EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste

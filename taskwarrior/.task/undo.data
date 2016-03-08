@@ -394,3 +394,6 @@ new [description:"fix google tasks + taskwarrior sync" entry:"1457120455" modifi
 time 1457120523
 new [description:"update i3bar" entry:"1457120523" modified:"1457120523" status:"pending" uuid:"06ac6b97-d20c-47f5-ba73-5c895b38dad8"]
 ---
+time 1457432527
+new [description:"fix sidebar z-index issue" entry:"1457432527" modified:"1457432527" status:"pending" tags:"firefox" uuid:"6162eddd-1d24-41fb-852f-90a9f27d0631"]
+---
