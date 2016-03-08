@@ -33,7 +33,10 @@ alias vilein="vim ~/.lein/profiles.clj"
 alias viterm="vim ~/.urxvt.xresources"
 alias vime="vim ~/.dotfiles/vars/$(hostname).yml"
 alias vii3gen="vim ~/.i3/config.gen"
-alias vienv="vim ~/.zsh/env.zsh"
+alias vizenv="vim ~/.zsh/env.zsh"
+alias vizopts="vim ~/.zsh/options.zsh"
+alias vizplugs="vim ~/.zsh/plugins.zsh"
+alias vizrc="vim ~/.zshrc"
 
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │

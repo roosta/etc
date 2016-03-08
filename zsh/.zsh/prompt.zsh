@@ -17,7 +17,7 @@ PROMPT_SYMBOL_VICMD="%(?.%F{white}.%F{red})%f%F{magenta}%f "
 # enable colors before setting prompt variable
 autoload -U colors && colors
 PROMPT=$PROMPT_SYMBOL_VIINS
-RPROMPT="%(?.[%j].%F{red}[%?]%f [%j]%f"
+RPROMPT="%(?.%j.%F{red}%?%f %j%f"
 
 function zle-line-init () {
   # Make sure the terminal is in application mode, when zle is
