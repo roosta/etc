@@ -30,12 +30,14 @@ if [ "$TERM" = "linux" ]; then
   echo -en "$i"
 done
 clear
+tmux new-session -s vconsole
 fi
 
 # start tmux on every shell login
-# If not running interactively, do not do anything
-#[[ $- != *i* ]] && return
-#[[ -z "$TMUX" ]] && exec tmux
+#if which tmux >/dev/null 2>&1; then
+    ##if not inside a tmux session, and if no session is started, start a new session
+    #test -z "$TMUX" && (tmux attach || tmux new-session -s main)
+#fi
 
 # source remaining config
 for config (~/.zsh/*.zsh) source $config

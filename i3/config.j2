@@ -23,12 +23,10 @@ set $locker xscreensaver-command --lock
 #set $locker i3lock --image=$HOME/.background/pattern-01.png -t && sleep 1
 
 # tmux session management
-# tmux new-session -n$USER -s$USER@$HOSTNAME
-#set $term urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session"
-#set $term urxvtc -e zsh -c "tmux -2 new-session"
+set $term urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -s main"
 
 # set terminal command.
-set $term urxvtc
+#set $term urxvtc
 
 # set scrot/screenshot file arguments
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
