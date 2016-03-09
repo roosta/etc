@@ -9,6 +9,7 @@
 .DS_Store
 backup/*
 /**/tmp
+*.retry
 
 # ranger
 ranger/bookmarks

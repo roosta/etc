@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --bg-tile '/home/roosta/.background/wood_1.png' 
+feh  --bg-fill '/home/roosta/.background/EiKYeRl.jpg' 
