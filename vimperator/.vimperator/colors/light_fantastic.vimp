@@ -86,8 +86,8 @@ hi Tag        color: CornflowerBlue;
 hi Number     color: CornflowerBlue;
 
 hi CompTitle          background: #3C3836;
-hi CompTitle>*        color: #458588; padding-bottom: 1px; padding-left: 10px; font-weight: bold; font-size: 11pt;
-hi CompItem[selected] color: #458588; background: #3C3836;
+hi CompTitle>*        color: #458588; padding-bottom: 1px; padding-left: 10px; font-weight: bold; font-size: 10pt; border-top: 1px dashed #458588; border-bottom: 1px dashed #458588;
+hi CompItem[selected] color: #282828; background: #83A598;
 hi CompItem           color: #EBDBB2; width: 50%;
 hi CompDesc           color: #D3869B;
 

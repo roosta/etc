@@ -8,7 +8,26 @@ set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position
 source! /home/roosta/.vimperatorrc.local
 
-"let mapleader = <Space>
+
+" To Enable map <Space>
+"js <<EOM
+"window.addEventListener('keypress',function (event) {
+    "var code=event.charCode;
+    "if ((liberator.mode === modes.INSERT && modes.extended === modes.MENU)
+        "||(liberator.mode ==modes.NORMAL && code==32)
+        "||(liberator.mode ==modes.COMMAND_LINE && code !=32)){
+    "let map = mappings.get(liberator.mode, events.toString(event));
+    "if (map) {
+    "event.preventDefault();
+    "event.stopPropagation();
+    "map.execute();
+    "}
+    "}
+    "},false);
+"EOM
+
+"" My Customization
+"map <Space> <Leader>
 
 " map l and h to tab movement
 " this removes horizontal h&l movement but arrows still work
@@ -18,7 +37,7 @@ noremap h gT
 noremap } gt
 noremap { gT
 
-map <leader>R :source ~/.vimperatorrc
+map <leader>R :source ~/.vimperatorrc<CR>
 
 " go to last active tab.
 noremap gp <C-^>
@@ -75,5 +94,6 @@ noremap <leader>sp :stylish popup<CR>
 " note: use shift-movement to move in command history
 cmap <Down> <Tab>
 cmap <Up> <S-Tab>
+
 
 " vim:ft=vimperator:sw=2:ts=2

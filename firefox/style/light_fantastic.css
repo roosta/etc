@@ -36,7 +36,7 @@
 
  neutral_red      #cc241d   [   ]  [   ]   124 [ 1][ 1]   204- 36- 29   190- 15- 23   #be0f17
  neutral_green    #98971a   [   ]  [   ]   106 [ 2][ 2]   152-151- 26   134-135- 21   #868715
- neutral_yellow   #d79921   [   ]  [   ]   172 [ 3][ 3]   215-153- 33   204-136- 26   #cc881a
+ neutral_yellow   #d79921   [   ]  [   ]   172 [ 3][ 3]   215-153-33   204-136- 26   #cc881a
  neutral_blue     #458588   [   ]  [   ]    66 [ 4][ 4]    69-133-136    55-115-117   #377375
  neutral_purple   #b16286   [   ]  [   ]   132 [ 5][ 5]   177- 98-134   160- 75-115   #a04b73
  neutral_aqua     #689d6a   [   ]  [   ]    72 [ 6][ 6]   104-157-106    87-142- 87   #578e57
@@ -66,6 +66,10 @@
       https://addons.mozilla.org/en-us/firefox/addon/tree-style-tab
 */
 :root {
+
+  --bright_blue: #83A598;
+  --neutral_blue: #458588;
+
   /* TAB VARIABLES */
   --bg-light: #32302F;
   --bg-dark: #272727;
@@ -166,6 +170,7 @@
     font-size: var(--tab-font-size) !important;
     text-shadow: none !important;
     text-align: var(--tab-text-align) !important;
+
   }
 
   .tabbrowser-tab label {
@@ -212,13 +217,13 @@
     color: var(--fg-light) !important;
     border-radius: 0px !important;
     position: relative !important;
-    /*border-top: 1px solid #dc52a5 !important;/**/
+    /*border-top: 1px solid #dc52a5 !important; */
   }
 
   .tabbrowser-tab[selected="true"]:before { /* Left Triangle (of selected tab) */
     content: '' !important;
     display: var(--tab-triangle);
-    position: absolute !important;
+/*     position: absolute !important; */
     top: 0 !important;
     left: var(--tab-overlap) !important;
     width: 0 !important;
@@ -237,7 +242,7 @@
   .tabbrowser-tab[selected="true"]:after { /* Right Triangle (of selected tab) */
     content: '' !important;
     display: var(--tab-triangle);
-    position: absolute !important;
+/*     position: absolute !important; */
     top: 0 !important;
     right: var(--tab-overlap) !important;
     width: 0 !important;
@@ -253,13 +258,17 @@
     /*border-left: calc(var(--tab-height)/2) solid var(--bg-light) !important;*/
   }
 
+/*   tab toolbar canvas */
   #TabsToolbar, #tabbrowser-tabs {
     -moz-appearance: none !important;
     height: var(--tab-height) !important;
     min-height: var(--tab-height)!important;
     margin: 0 var(--tab-strip-margin) !important;
     background: var(--bg-dark) !important;
+    border-right: 1px dashed var(--neutral_blue) !important;
+/*     border-bottom: 1px solid var(--fg-dark) !important; */
   }
+
   #TabsToolbar::after {
     display: none !important;
   }
@@ -280,7 +289,7 @@
   #liberator-separator {
     height: 0px !important;
     background: var(--bg-light) !important;
-    border-top: 0 !important;
+    border-top: 1px dashed var(--neutral_blue) !important;
   }
 
   /* MENUS */
@@ -317,11 +326,13 @@
     z-index: 1 !important;
   }
 
-  #liberator* {
+  #liberator * {
     z-index: 4 !important;
   }
 
-  #liberator-statusline:not([customizing="true"]) :-moz-any(toolbarbutton) { height: 100% !important; }
+  #liberator-statusline:not([customizing="true"]) :-moz-any(toolbarbutton) {
+    height: 100% !important;
+  }
 
   #tabview-button {
     /* 16x16 px image */
@@ -353,8 +364,13 @@
 
 /* Tab Group Page Style (Ctrl+Shift+E) */
 @-moz-document url(chrome://browser/content/tabview.html) {
-  #content #bg, #actions, body { background: var(--bg-light) !important; }
-  body * { color: var(--fg-light) !important; }
+  #content #bg, #actions, body {
+    background: var(--bg-light) !important;
+  }
+
+  body * {
+    color: var(--fg-light) !important;
+  }
 
   body .groupItem, #content #actions, body .undo {
     background: var(--bg-dark) !important;
@@ -423,5 +439,6 @@
 tabbrowser tabpanels, #appcontent > #content {
   background: var(--bg-light) !important;
 }
+/*
 " vim:ft=css:ts=2:sw=2:fdm=marker
-
+*/
