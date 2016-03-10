@@ -19,7 +19,8 @@ order += "keyboard_layout"
 #order += "run_watch DHCP"
 order += "path_exists VPN"
 order += "net_rate"
-order += "sysdata"
+order += "sysdata cpu"
+order += "sysdata mem"
 #order += "wireless wlp2s0"
 #order += "ethernet bridge0"
 order += "cpu_temperature 0"
@@ -48,14 +49,24 @@ net_rate {
 }
 
 spotify {
+  on_click 1 = "exec ~/.i3/script/run_spotify.sh"
   format = "  {title} by {artist}"
+  format_down = " Spotify"
+  format_stopped = "  Stopped"
 }
 
-sysdata {
-  format = " {cpu_usage}% |  {mem_used}/{mem_total} GB ({mem_used_percent}%)"
+sysdata cpu{
+  format = "CPU: {cpu_usage}%"
   on_click 1 = "exec i3-sensible-terminal -e glances"
   on_click 3 = "exec killall glances"
 }
+
+sysdata mem{
+  format = "MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
+  on_click 1 = "exec i3-sensible-terminal -e glances"
+  on_click 3 = "exec killall glances"
+}
+
 
 # print current keyboard layout, with color codes for language
 keyboard_layout {

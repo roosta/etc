@@ -9,7 +9,8 @@ general {
 }
 
 #order += "ipv6"
-order += "ethernet enp9s0"
+order += "whatismyip"
+order += "ethernet bridge0"
 order += "disk /"
 order += "disk /home"
 order += "disk /mnt/data"
@@ -20,10 +21,20 @@ order += "disk /mnt/netbackup"
 order += "tztime local"
 
 
+whatismyip {
+  format = "P: {ip}"
+}
+
 wireless wlp2s0 {
   format_up = " %quality @ %essid"
   #format_up = "W: (%quality at %essid, %bitrate) %ip"
   format_down = " down"
+}
+
+ethernet bridge0 {
+  # if you use %speed, i3status requires the cap_net_admin capability
+  format_up = "E: %ip"
+  format_down = "E: down"
 }
 
 ethernet enp9s0 {
@@ -56,11 +67,11 @@ disk "/mnt/archive" {
   format = "Archive: %free"
 }
 
-disk "/mnt/netmedia" {
+disk "/media/netmedia" {
   format = "Netmedia: %free"
 }
 
-disk "/mnt/netbackup" {
+disk "/media/netbackup" {
   format = "netbackup: %free"
 }
 
