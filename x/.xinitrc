@@ -65,7 +65,7 @@ setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:c
 # enable numlock at startup
 numlockx &
 
-# bind various custom keys. see .xbindkeysrx
+# bind various custom keys. see .xbindkeysrc
 xbindkeys &
 
 # ┬─┐o┐─┐┬─┐┬  ┬─┐┐ ┬
@@ -82,9 +82,9 @@ xss-lock -- xscreensaver-command --lock &
 lightsOn 590 &
 
 # load nvidia-settings on startup
-#nvidia-settings --load-config-only &
+nvidia-settings --load-config-only &
 
-dropbox-cli start &
+#dropbox-cli start &
 
 # set background with feh
 $HOME/.fehbg &
