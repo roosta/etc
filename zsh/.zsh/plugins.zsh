@@ -59,6 +59,17 @@ bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directorie
 #tcsh-alias           # define aliases for tcsh
 #tcsh-hook            # setup tcsh precmd alias
 
+# fzf + fasd.
+v() {
+  local file
+  file="$(fasd -Rfl "$1" | fzf-tmux -1 -0 --no-sort +m)" && vi "${file}" || return 1
+}
+
+z() {
+  local dir
+  dir="$(fasd -Rdl "$1" | fzf-tmux -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+}
+
 # ┬─┐┬ ┐┌─┐┌─┐┐ ┬  ┬─┐o┌┐┐┬─┐┬─┐┬─┐
 # ├─ │ │┌─┘┌─┘└┌┘──├─ │││││ │├─ │┬┘
 # ┆  ┆─┘└─┘└─┘ ┆   ┆  ┆┆└┘┆─┘┴─┘┆└┘
@@ -80,29 +91,17 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # COMMAND HISTORY
 # -------------------
-# fh - repeat history
-#fh() {
-  #eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-#}
 
 # fh - repeat history
-fh() {
+fhist() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf-tmux +s --tac | sed 's/ *[0-9]* *//')
 }
 
 # CHANGING DIRECTORY
 # ---------------------
 
-# fd - cd to selected directory
-#fd() {
-  #local dir
-  #dir=$(find ${1:-*} -path '*/\.*' -prune \
-                  #-o -type d -print 2> /dev/null | fzf +m) &&
-  #cd "$dir"
-#}
-
 # fd - including hidden directories
-fd() {
+fdir() {
   local dir
   dir=$(find ${1:-.} -type d 2> /dev/null | fzf-tmux +m) && cd "$dir"
 }
@@ -146,14 +145,6 @@ fo() {
 
 # GIT
 # ---------
-
-# fbr - checkout git branch
-#fbr() {
-  #local branches branch
-  #branches=$(git branch -vv) &&
-  #branch=$(echo "$branches" | fzf-tmux +m) &&
-  #git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
-#}
 
 # fbr - checkout git branch (including remote branches)
 fbr() {
@@ -199,7 +190,7 @@ fshow() {
 
 # fcs - get git commit sha
 # example usage: git rebase -i `fcs`
-fcs() {
+fsha() {
   local commits commit
   commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
   commit=$(echo "$commits" | fzf-tmux --tac +s +m -e --ansi --reverse) &&
@@ -246,25 +237,12 @@ ftags() {
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }
 
-fs() {
-  local session
-  session=$(tmux list-sessions -F "#{session_name}" | \
-    fzf --query="$1" --select-1 --exit-0) &&
-    tmux switch-client -t "$session"
-}
-
-v() {
-  local file
-  file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vi "${file}" || return 1
-}
-
-# ┬─┐┌─┐┬─┐ ╷┌┐┐┌┌┐┬ ┐┐ │
-# ├─ ┌─┘├─ ┌┘ │ ││││ │┌┼┘
-# ┆  └─┘┆  ╵  ┆ ┘ ┆┆─┘┆ └
+# TMUX
+# ---------------
 # fs [FUZZY PATTERN] - Select selected tmux session
 #   - Bypass fuzzy finder if there's only one match (--select-1)
 #   - Exit if there's no match (--exit-0)
-fs() {
+fts() {
   local session
   session=$(tmux list-sessions -F "#{session_name}" | \
     fzf-tmux --query="$1" --select-1 --exit-0) &&
@@ -274,7 +252,7 @@ fs() {
 # ftpane - switch pane (@george-b)
 # In tmux.conf
 # bind-key 0 run "tmux split-window -l 12 'bash -ci ftpane'"
-ftpane() {
+fpane() {
   local panes current_window current_pane target target_window target_pane
   panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
   current_pane=$(tmux display-message -p '#I:#P')
@@ -293,14 +271,3 @@ ftpane() {
   fi
 }
 
-
-# With fasd.
-v() {
-  local file
-  file="$(fasd -Rfl "$1" | fzf-tmux -1 -0 --no-sort +m)" && vi "${file}" || return 1
-}
-
-z() {
-  local dir
-  dir="$(fasd -Rdl "$1" | fzf-tmux -1 -0 --no-sort +m)" && cd "${dir}" || return 1
-}

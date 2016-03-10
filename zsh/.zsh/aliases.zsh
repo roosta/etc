@@ -45,20 +45,19 @@ alias vizrc="vim ~/.zshrc"
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias grep="ag"
 
-alias galias="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
-alias ghist="cat ~/.histfile | grep" # grep command history quickly
-alias gproc="ps -aux|grep" # grep processes
+alias algrep="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
+alias hgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
 # locate file at working dir
-alias gls='lsa | grep'
-alias glsr='lsa -R | grep'
+alias lsgrep='lsa | grep'
+alias lsrgrep='lsa -R | grep'
 
 # list pulseaudio sinks
 alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
 # recursive grep through filetypes
-alias greclj='grep -R --include="*.clj*"'
+alias cljgrep='grep -R --include="*.clj*"'
 
 # yes
 alias awk='gawk'
@@ -346,6 +345,8 @@ alias xrload="xrdb -load ~/.Xresources"
 alias zrefresh="source $HOME/.zshrc"
 
 alias _="sudo"
+
+#alias startwin="sudo systemctl restart libvirtd.service && sudo virsh start win8"
 
 # quit aliases
 alias :q="exit"
