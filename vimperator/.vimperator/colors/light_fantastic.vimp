@@ -58,13 +58,13 @@
 " │─┤││ ┬│─┤│  ││ ┬│─┤ │
 " ┆ ┴┆┆─┘┆ ┴┆─┘┆┆─┘┆ ┴ ┆
 " -----------------------
-hi Hint       font-family: "Terminess Powerline"; font-size: 15px; font-weight: normal; color: #dc322f; background-color: #002b36; border-color: #839496; border-width: 0px; border-style: solid; padding: 0px 5px 0px 5px; text-transform: uppercase;
-hi HintElem   background-color: #073642; color: #b58900;
-hi HintActive background-color: #dc322f; color: #073642;
+hi Hint       font-family: "Terminess Powerline"; font-size: 15px; font-weight: normal; color: #1D2021; background-color: #8EC07C; border: 1px solid #1D2021; padding: 0px 5px 0px 5px; text-transform: uppercase;
+hi HintElem   background-color: #458588; color: #3C3836;
+hi HintActive background-color: #B8BB26; color: #282828;
 
-hi -append Hint         background-color: rgba(253, 246, 227, 0.7); border: 1px solid #fdf6e3; -moz-border-radius: 4px; -moz-box-shadow: 0px 0px 1px black;
-hi -append HintElem     text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #002b36;
-hi -append HintActive   text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #002b36;
+hi -append Hint         background-color: rgba(251, 241, 199, 0.7); -moz-border-radius: 4px; -moz-box-shadow: 0px 0px 1px black;
+hi -append HintElem     text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #FBF1C7;
+hi -append HintActive   text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #FBF1C7;
 
 hi StatusLine     color: #EBDBB2; background: #282828; font-weight: normal; font-size: 10pt; font-family: Terminess Powerline;
 "hi StatusLineBroken   color:  #93a1a1; background: #ffffd7; font-weight: normal; font-size: 12pt;
@@ -79,15 +79,15 @@ hi MoreMsg    color: #859900; background: #282828; font-size: 10pt; font-family:
 hi LineNr     color: #FE8019; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
 hi Question   color: #FABD2F; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
 hi WarningMsg color: #D65D0E; background: #282828; font-size: 10pt; font-family: Terminess Powerline;
-hi ErrorMsg   color: #CC241D; background: #282828; font-size: 10pt; font-family: Terminess Powerline; font-weight: bold;
+hi ErrorMsg   color: #FB4934; background: #282828; font-size: 10pt; font-family: Terminess Powerline; font-weight: bold;
 hi NonText    background: #282828;
-hi Null       color: CornflowerBlue;
-hi Tag        color: CornflowerBlue;
-hi Number     color: CornflowerBlue;
+hi Null       color: #B8BB26;
+hi Tag        color: #B8BB26;
+hi Number     color: #B8BB26;
 
 hi CompTitle          background: #3C3836;
 hi CompTitle>*        color: #458588; padding-bottom: 1px; padding-left: 10px; font-weight: bold; font-size: 10pt; border-top: 1px dashed #458588; border-bottom: 1px dashed #458588;
-hi CompItem[selected] color: #282828; background: #83A598;
+hi CompItem[selected] color: #458588; background: #3C3836;
 hi CompItem           color: #EBDBB2; width: 50%;
 hi CompDesc           color: #D3869B;
 
@@ -99,7 +99,7 @@ hi Object    color: #2aa198;
 hi Function  color: #268bd2;
 hi URL       color: #B8BB26;
 
-hi TabNumber  color: #002b36; font-weight: bold; font-size:10pt;
+hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:10pt;
 
 " vim:ft=vim:ts=2:sw=2:fdm=marker
 
