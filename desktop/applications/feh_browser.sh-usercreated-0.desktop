@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=feh_browser.sh
+Exec=~/.scripts/feh_browser.sh %f -F -Z
+MimeType=image/png
+Icon=exec
+NoDisplay=true
