@@ -115,3 +115,10 @@
 {"description":"fix google tasks + taskwarrior sync","entry":"20160304T194055Z","modified":"20160304T194055Z","status":"pending","tags":["general"],"uuid":"2affe8a9-c861-4887-ba8f-9b60a3734a39"}
 {"description":"update i3bar","entry":"20160304T194203Z","modified":"20160304T194203Z","status":"pending","uuid":"06ac6b97-d20c-47f5-ba73-5c895b38dad8"}
 {"description":"fix sidebar z-index issue","entry":"20160308T102207Z","modified":"20160308T102207Z","status":"pending","tags":["firefox"],"uuid":"6162eddd-1d24-41fb-852f-90a9f27d0631"}
+{"description":"move pip user repos to home","entry":"20160309T192616Z","modified":"20160309T192616Z","status":"pending","tags":["general"],"uuid":"d05c783d-6a60-4626-8f07-8085aeee4a60"}
+{"description":"create workspace background switcher","entry":"20160309T195739Z","modified":"20160309T195739Z","status":"pending","tags":["wm"],"uuid":"33907c1c-8340-4adc-b9a9-904e5c283e28"}
+{"description":"update i3bar","end":"20160309T195749Z","entry":"20160304T194203Z","modified":"20160309T195749Z","status":"completed","uuid":"06ac6b97-d20c-47f5-ba73-5c895b38dad8"}
+{"description":"move thunderbird mail to \/home\/roosta\/.mail","entry":"20160309T195950Z","modified":"20160309T195950Z","status":"pending","tags":["mail"],"uuid":"6dd0a4ac-8a74-41ff-b13e-e67887c57f10"}
+{"description":"fix rofi background colors","entry":"20160310T083402Z","modified":"20160310T083402Z","status":"pending","tags":["general"],"uuid":"8a77feda-c7e6-4aa4-8158-3e9948516c71"}
+{"description":"fix rofi background colors","end":"20160310T091117Z","entry":"20160310T083402Z","modified":"20160310T091117Z","status":"completed","tags":["general"],"uuid":"8a77feda-c7e6-4aa4-8158-3e9948516c71"}
+{"description":"move thunderbird mail to \/home\/roosta\/.mail","end":"20160310T091128Z","entry":"20160309T195950Z","modified":"20160310T091129Z","status":"deleted","tags":["mail"],"uuid":"6dd0a4ac-8a74-41ff-b13e-e67887c57f10"}

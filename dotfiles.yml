@@ -26,6 +26,7 @@
     - include: tasks/compton.yml
     - include: tasks/fonts.yml
     - include: tasks/x.yml
+    - include: tasks/desktop.yml
 
       # shell group
     - include: tasks/dircolors.yml

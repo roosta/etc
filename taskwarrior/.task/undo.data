@@ -397,3 +397,27 @@ new [description:"update i3bar" entry:"1457120523" modified:"1457120523" status:
 time 1457432527
 new [description:"fix sidebar z-index issue" entry:"1457432527" modified:"1457432527" status:"pending" tags:"firefox" uuid:"6162eddd-1d24-41fb-852f-90a9f27d0631"]
 ---
+time 1457551576
+new [description:"move pip user repos to home" entry:"1457551576" modified:"1457551576" status:"pending" tags:"general" uuid:"d05c783d-6a60-4626-8f07-8085aeee4a60"]
+---
+time 1457553459
+new [description:"create workspace background switcher" entry:"1457553459" modified:"1457553459" status:"pending" tags:"wm" uuid:"33907c1c-8340-4adc-b9a9-904e5c283e28"]
+---
+time 1457553469
+old [description:"update i3bar" entry:"1457120523" modified:"1457120523" status:"pending" uuid:"06ac6b97-d20c-47f5-ba73-5c895b38dad8"]
+new [description:"update i3bar" end:"1457553469" entry:"1457120523" modified:"1457553469" status:"completed" uuid:"06ac6b97-d20c-47f5-ba73-5c895b38dad8"]
+---
+time 1457553590
+new [description:"move thunderbird mail to \/home\/roosta\/.mail" entry:"1457553590" modified:"1457553590" status:"pending" tags:"mail" uuid:"6dd0a4ac-8a74-41ff-b13e-e67887c57f10"]
+---
+time 1457598842
+new [description:"fix rofi background colors" entry:"1457598842" modified:"1457598842" status:"pending" tags:"general" uuid:"8a77feda-c7e6-4aa4-8158-3e9948516c71"]
+---
+time 1457601077
+old [description:"fix rofi background colors" entry:"1457598842" modified:"1457598842" status:"pending" tags:"general" uuid:"8a77feda-c7e6-4aa4-8158-3e9948516c71"]
+new [description:"fix rofi background colors" end:"1457601077" entry:"1457598842" modified:"1457601077" status:"completed" tags:"general" uuid:"8a77feda-c7e6-4aa4-8158-3e9948516c71"]
+---
+time 1457601089
+old [description:"move thunderbird mail to \/home\/roosta\/.mail" entry:"1457553590" modified:"1457553590" status:"pending" tags:"mail" uuid:"6dd0a4ac-8a74-41ff-b13e-e67887c57f10"]
+new [description:"move thunderbird mail to \/home\/roosta\/.mail" end:"1457601088" entry:"1457553590" modified:"1457601089" status:"deleted" tags:"mail" uuid:"6dd0a4ac-8a74-41ff-b13e-e67887c57f10"]
+---
