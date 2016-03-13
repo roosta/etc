@@ -149,7 +149,7 @@ alias pacss="pacman -Ss" # Search for package(s) in the repositories
 alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
 alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
 alias pacinsd="pacman -S --asdeps" # Install given package(s) as dependencies
-alias pacu="pacman -U" # Install specific package not from the repositories but from a file
+alias pacsu="pacman -U" # Install specific package not from the repositories but from a file
 
 # cleaning
 alias pacr="pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
@@ -178,9 +178,10 @@ alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as expli
 alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
 
 # Updating
-alias pacupd="pacman -Syu" # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacupdf="pacman -Syua --noconfirm"
-alias pacupdff="pacman -Syua --noconfirm --devel"
+alias pacu="pacman -Syu" # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacuf="pacman --noconfirm"
+alias pacuaf="pacman -Syua --noconfirm --devel"
+alias pacua="pacman -Syua --devel"
 alias getmirror="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
 alias pacmirupd="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
 alias pacmir="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
