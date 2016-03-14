@@ -2,27 +2,29 @@ general {
   output_format = "i3bar"
   colors = true
   interval = 5
-  color_bad = "#FB4934"
+  color_bad = "#D65D0E"
   color_good = "#B8BB26"
-  color_degraded = "#D65D0E"
+  color_degraded = "#FABD2F"
   color_separator = "#458588"
 }
 
 #order += "ipv6"
 #order += "disk /"
 #order += "disk /home"
-order += "window_title"
-#order += "spotify"
-order += "keyboard_layout"
+#order += "window_title"
+order += "spotify"
 order += "volume_status"
+order += "arch_updates"
+order += "keyboard_layout"
 #order += "run_watch DHCP"
 order += "path_exists VPN"
 order += "net_rate"
-order += "sysdata"
+order += "sysdata cpu"
+order += "sysdata mem"
 #order += "wireless wlp2s0"
-#order += "ethernet enp5s0"
+#order += "ethernet bridge0"
 order += "cpu_temperature 0"
-#order += "nvidia_temp"
+order += "nvidia_temp"
 #order += "load"
 order += "dropboxd_status"
 order += "tztime local"
@@ -32,31 +34,65 @@ window_title {
   "min_width": 300
 }
 
+dropboxd_status {
+  format = " {}"
+  on_click 1 = "exec spacefm ~/Dropbox"
+}
+
+arch_updates {
+  include_aur = 1
+  format = "UPD: {pacman} / {aur}"
+}
+
 net_rate {
   format = " {down}  {up}"
 }
 
 spotify {
-  format = "{title} by {artist} -> {time}"
+  on_click 1 = "exec ~/.i3/script/run_spotify.sh"
+  format = "  {title} by {artist}"
+  format_down = " Spotify"
+  format_stopped = "  Stopped"
 }
 
-sysdata {
-  format = "CPU: {cpu_usage}%, Mem: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
+sysdata cpu{
+  format = "CPU: {cpu_usage}%"
+  on_click 1 = "exec i3-sensible-terminal -e glances"
+  on_click 3 = "exec killall glances"
 }
 
+sysdata mem{
+  format = "MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
+  on_click 1 = "exec i3-sensible-terminal -e glances"
+  on_click 3 = "exec killall glances"
+}
+
+
+# print current keyboard layout, with color codes for language
 keyboard_layout {
   format = " {layout}"
   colors = "us=#B8BB26, no=#FE8019"
 }
 
+# control the volume with your mouse (need >i3-4.8)
+# launch alsamixer when I left click
+# kill it when I right click
+# toggle mute/unmute when I middle click
+# increase the volume when I scroll the mouse wheel up
+# decrease the volume when I scroll the mouse wheel down
 volume_status {
   format = " {percentage}%"
   format_muted = ""
+  on_click 1 = "exec i3-sensible-terminal -e alsamixer"
+  on_click 2 = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle"
+  on_click 3 = "exec killall alsamixer"
+  on_click 4 = "exec pactl set-sink-volume @DEFAULT_SINK@ +5%"
+  on_click 5 = "exec pactl set-sink-volume @DEFAULT_SINK@ -5%"
 }
 
-ethernet eth0 {
+ethernet bridge0 {
   # if you use %speed, i3status requires the cap_net_admin capability
-  format_up = "E: %ip (%speed)"
+  format_up = "E: %ip"
   format_down = "E: down"
 }
 
@@ -71,6 +107,7 @@ run_watch VPNC {
 
 path_exists VPN {
 # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+  format = "VPN"
   path = "/proc/sys/net/ipv4/conf/tun0"
 }
 
@@ -84,7 +121,7 @@ load {
 
 cpu_temperature 0 {
   format = "CPU: %degrees°C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
 }
 
 disk "/" {
