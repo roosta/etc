@@ -45,7 +45,7 @@ alias vizrc="vim ~/.zshrc"
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias grep="ag"
 
-alias algrep="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
+alias agrep="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
 alias hgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
@@ -183,9 +183,9 @@ alias pacua="pacman -Syua"
 alias pacuaf="pacman -Syua --noconfirm"
 alias pacuad="pacman -Syua --devel"
 alias pacuadf="pacman -Syua --devel --noconfirm"
-alias getmirror="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
-alias pacmirupd="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
-alias pacmir="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
+alias pacm="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
+alias pacmu="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
+alias pacmr="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
 # ┬ ┐┌┐┐o┬  ┐─┐
 # │ │ │ ││  └─┐

@@ -290,7 +290,7 @@ Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 "Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-Plug 'guns/vim-sexp'
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
 
 " inactive
 "Plug 'PotatoesMaster/i3-vim-syntax'
