@@ -225,7 +225,7 @@ endfunc
 nnoremap <leader><C-n> :call NumberToggle()<cr>
 
 " }}}
-" PLUGIN MANAGER {{{1
+" PLUGINS {{{1
 " -------------------
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
@@ -283,14 +283,16 @@ Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 "Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
 " Clojure
-"Plug 'kovisoft/paredit',    { 'for': 'clojure' }
-"Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-"Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-Plug 'guns/vim-sexp', { 'for': 'clojure' }
+"Plug 'guns/vim-sexp', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'kovisoft/paredit',    { 'for': 'clojure' }
+"Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
+"Plug 'venantius/vim-eastwood'
+"Plug 'venantius/vim-eastwood'
 
 " inactive
 "Plug 'PotatoesMaster/i3-vim-syntax'
@@ -309,8 +311,8 @@ call plug#end()
 
 syntax on
 filetype plugin indent on
-"}}}
-" SYNTASTIC {{{1
+
+" SYNTASTIC {{{2
 " --------------
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -322,14 +324,14 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
 "}}}
-" VIM-MULTIPLE-CURSOR {{{1
+" VIM-MULTIPLE-CURSOR {{{2
 " -------------------
 let g:multi_cursor_next_key='<C-d>'
 let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 " }}}
-" FZF.VIM {{{1
+" FZF.VIM {{{2
 " -------
 " https://github.com/junegunn/fzf.vim
 
@@ -358,7 +360,7 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 " }}}
-" EASYMOTION {{{1
+" EASYMOTION {{{2
 " ---------------
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
@@ -390,7 +392,7 @@ map  N <Plug>(easymotion-prev)
 " set ctrl-v to paste in easymotion command line
 "EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
 " }}}
-" QUICKSCOPE {{{1
+" QUICKSCOPE {{{2
 " ---------------
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
 let g:qs_first_occurrence_highlight_color = 155       " terminal vim
@@ -401,7 +403,7 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " }}}
-" AIRLINE {{{1
+" AIRLINE {{{2
 " ------------
 let g:airline_powerline_fonts = 1
 let g:airline_theme='gruvbox'
@@ -409,7 +411,7 @@ let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
 
 "}}}
-" BUFFERLINE {{{1
+" BUFFERLINE {{{2
 " ---------------
 "
 "let g:bufferline_active_buffer_left = ''
@@ -422,7 +424,7 @@ let g:bufferline_echo = 0
 "let g:bufferline_active_highlight = 'StatusLineNC'
 
 "}}}
-" EASYCLIP {{{1
+" EASYCLIP {{{2
 " -------------
 
 " remap mark to gm since EasyClip cut shadows m key
@@ -441,7 +443,7 @@ set clipboard=unnamed,unnamedplus
 let g:EasyClipShareYanks = 1
 
 " }}}
-" GRUVBOX {{{1
+" GRUVBOX {{{2
 " ------------
 
 " Set theme
@@ -452,7 +454,7 @@ colorscheme gruvbox
 set background=dark
 
 " }}}
-" RAINBOW PARENTHESIS {{{1
+" RAINBOW PARENTHESIS {{{2
 " ------------------------
 
 au VimEnter * RainbowParentheses
@@ -460,7 +462,7 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 "let g:rbpt_loadcmd_toggle = 0
 
 " }}}
-" NERDTREE {{{1
+" NERDTREE {{{2
 " -------------
 map <leader>nt :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
@@ -474,14 +476,14 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 "}}}}
-" NERDCOMMENT {{{1
+" NERDCOMMENT {{{2
 " ----------------
 " mirror tpope commentary keys.
 nmap gcc <plug>NERDCommenterToggle
 vmap gc <plug>NERDCommenterToggle
 
 "}}}
-" PAREDIT {{{1
+" PAREDIT {{{2
 " -----------
 
 let g:paredit_electric_return = 0
@@ -489,7 +491,7 @@ let g:paredit_leader = '\'
 "let g:paredit_disable_clojure = 0
 
 " }}}
-" EASY-ALIGN {{{1
+" EASY-ALIGN {{{2
 " ---------------
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -498,33 +500,33 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " }}}
-" INDENT GUIDES {{{1
+" INDENT GUIDES {{{2
 " ------------------
 
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 " }}}
-" ACK.VIM {{{1
+" ACK.VIM {{{2
 " ------------
 
 let g:ackprg = 'ag --vimgrep'
 "}}}
-" UNDOTREE {{{1
+" UNDOTREE {{{2
 " -------------
 
 nnoremap <leader>ut :UndotreeToggle<cr>
 "}}}
-" BETTER-WHITESPACE {{{1
+" BETTER-WHITESPACE {{{2
 " strip whitespace on save
-autocmd BufWritePre * StripWhitespace
+"autocmd BufWritePre * StripWhitespace
 "}}}
-" VIM-CLJFMT {{{1
+" VIM-CLJFMT {{{2
 " ---------------
 
 " strip whitespace on save
 let g:clj_fmt_autosave = 0
 "}}}
-" TSLIME {{{1
+" TSLIME {{{2
 " -----------
 
 "let g:tslime_always_current_session = 1
@@ -533,8 +535,10 @@ vmap <C-c><C-c> <Plug>SendSelectionToTmux
 nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars"
 "}}}
-" VIM-SEXP {{{1
+" VIM-SEXP {{{2
 " -------------
+" Disable some irritating mappings
+let g:sexp_enable_insert_mode_mappings = 0
 
 let g:sexp_mappings = {
       \ 'sexp_emit_head_element':         '<leader><Down>',
@@ -543,7 +547,18 @@ let g:sexp_mappings = {
       \ 'sexp_capture_next_element':      '<leader><Right>',
       \}
 "}}}
-" INACTIVE {{{
+" CLOJURE_HIGHLIGHT {{{2
+" -----------------
+
+" This should enable Emacs like indentation
+let g:clojure_fuzzy_indent=1
+let g:clojure_align_multiline_strings = 1
+
+" Add some words which should be indented like defn etc: Compojure/compojure-api, midje and schema stuff mostly.
+let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY', '^HEAD', '^PATCH', '^OPTIONS', '^def']
+autocmd FileType clojure setlocal lispwords+=describe,it,testing,facts,fact,provided
+" }}}
+" INACTIVE {{{2
 " --------------------
 " o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
 " │││││─┤│   │ ││┌┘├─
@@ -637,7 +652,14 @@ let g:sexp_mappings = {
 "let g:ctrlp_prompt_mappings = {
 "\   'PrtClearCache()': ['<F5>'],
 "\}
-
+"}}}
+"}}}
+" LANGUAGE {{{1
+" --------
+" ┬  ┬─┐┌┐┐┌─┐┬ ┐┬─┐┌─┐┬─┐
+" │  │─┤││││ ┬│ ││─┤│ ┬├─
+" ┆─┘┘ ┆┆└┘┆─┘┆─┘┘ ┆┆─┘┴─┘
 
 "}}}
+
 " vim: fdm=marker:sw=2
