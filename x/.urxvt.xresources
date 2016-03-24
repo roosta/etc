@@ -2,11 +2,11 @@
 ! │┬┘┌┼┘│┌┘ │ ──│ ││││││  │ ││ │├─
 ! ┆└┘┆ └└┘  ┆   ┆─┘┆└┘┆└─┘┘─┘┆─┘┴─┘
 
-URxvt.font:           FONT_NORMAL
-URxvt.imFont:         FONT_NORMAL
-URxvt.boldFont:       FONT_BOLD
-URxvt.italicFont:     FONT_ITALIC
-URxvt.boldItalicFont: FONT_BOLDITALIC
+URxvt.font           : FONT_NORMAL
+URxvt.imFont         : FONT_NORMAL
+URxvt.boldFont       : FONT_BOLD
+URxvt.italicFont     : FONT_ITALIC
+URxvt.boldItalicFont : FONT_BOLDITALIC
 
 !URxvt*letterSpace: -1
 URxvt*saveLines: 12000
@@ -26,7 +26,7 @@ URxvt.url-launcher:         /usr/bin/firefox
 URxvt.matcher.rend.0:       Uline Bold fg5
 
 ! set cursorcolor to lightgrey
-URxvt.cursorColor: #a89984
+URxvt.cursorColor: #D3869B
 URxvt.cursorBlink: false
 
 !URxvt.iso14755: false

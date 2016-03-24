@@ -78,7 +78,11 @@ set gdefault       " the /g flag on :s substitutions by default
 set mouse=a        " enable mouse
 set fo-=o          " disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
 set tags+=./.git/.tags  " used with ctags. Defines tag files.
+
+set clipboard=unnamedplus
+
 "}}}
+
 " CURSOR {{{1
 " ------------------
 " ┌─┐┬ ┐┬─┐┐─┐┌─┐┬─┐
@@ -111,6 +115,7 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 "}}}
+
 " GVIM {{{1
 " ----------
 " ┌─┐┐ ┬o┌┌┐
@@ -127,6 +132,7 @@ if has('gui_running')
   set guiheadroom=0
 endif
 "}}}
+
 " KEYBINDS {{{1
 " ----------------------
 " ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐┐─┐
@@ -140,12 +146,9 @@ let mapleader = "\<SPACE>"
 "noremap 0 ^ " Go to the first non-blank character of a line
 "noremap ^ 0 " Just in case you need to go to the very beginning of a line
 
-" remove all trailing whitespace
-noremap <leader>cw :StripWhitespace<CR>
-
 " source config on demand
 " Note that this may cause some plugins not to load properly if it has init logic
-noremap <c-w>r :source $MYVIMRC<CR>
+noremap <leader>R :source $MYVIMRC<CR>
 
 "" use unimpared
 "map <leader>ba :%bdelete<CR>
@@ -160,26 +163,26 @@ noremap <c-w>r :source $MYVIMRC<CR>
 " map <leader>tm :tabmove
 
 " Switch between Vim window splits
-noremap <silent> <A-Up>    :wincmd k<CR>
-noremap <silent> <A-Down>  :wincmd j<CR>
-noremap <silent> <A-Left>  :wincmd h<CR>
-noremap <silent> <A-Right> :wincmd l<CR>
+noremap <silent> <leader><Up>    :wincmd k<CR>
+noremap <silent> <leader><Down>  :wincmd j<CR>
+noremap <silent> <leader><Left>  :wincmd h<CR>
+noremap <silent> <leader><Right> :wincmd l<CR>
 
-noremap <silent> <A-k> :wincmd k<CR>
-noremap <silent> <A-j> :wincmd j<CR>
-noremap <silent> <A-h> :wincmd h<CR>
-noremap <silent> <A-l> :wincmd l<CR>
+noremap <silent> <leader>k :wincmd k<CR>
+noremap <silent> <leader>j :wincmd j<CR>
+noremap <silent> <leader>h :wincmd h<CR>
+noremap <silent> <leader>l :wincmd l<CR>
 
 " Maps Alt-[h,j,k,l] to resizing a window split
-nnoremap <silent> <A-S-Left>  5<C-w><
-nnoremap <silent> <A-S-Down>  5<C-W>-
-nnoremap <silent> <A-S-Up>    5<C-W>+
-nnoremap <silent> <A-S-Right> 5<C-w>>
+nnoremap <silent> <M-S-Left>  5<C-w><
+nnoremap <silent> <M-S-Down>  5<C-W>-
+nnoremap <silent> <M-S-Up>    5<C-W>+
+nnoremap <silent> <M-S-Right> 5<C-w>>
 
-nnoremap <silent> <A-S-h> 5<C-w><
-nnoremap <silent> <A-S-j> 5<C-W>-
-nnoremap <silent> <A-S-k> 5<C-W>+
-nnoremap <silent> <A-S-l> 5<C-w>>
+nnoremap <silent> <M-S-h> 5<C-w><
+nnoremap <silent> <M-S-j> 5<C-W>-
+nnoremap <silent> <M-S-k> 5<C-W>+
+nnoremap <silent> <M-S-l> 5<C-w>>
 
 " jump paragraphs with ctrl-{movement}
 noremap <C-Up> {
@@ -189,7 +192,18 @@ noremap <C-j> }
 
 noremap <leader>ccl :cclose<CR>
 noremap <leader>lcl :lclose<CR>
+
+" use c-c and c-p to call system clipboard
+"vmap <silent> <leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+"nmap <silent> <leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+
+" map leader+y/p to use system clipboard
+"map <leader>y "+y
+"map <leader>p "+p
+"map <leader>Y "+Y
+"map <leader>P "+P
 " }}}
+
 " FUNCTIONS {{{
 " -------------------------
 " ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
@@ -225,7 +239,8 @@ endfunc
 nnoremap <leader><C-n> :call NumberToggle()<cr>
 
 " }}}
-" PLUGINS {{{1
+
+" PLUGIN MANAGER {{{
 " -------------------
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
@@ -244,9 +259,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-Plug 'svermeulen/vim-easyclip'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'godlygeek/tabular'
+"Plug 'svermeulen/vim-easyclip'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'tpope/vim-unimpaired'
@@ -255,6 +269,8 @@ Plug 'tpope/vim-tbone'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jgdavey/tslime.vim'
 Plug 'wesQ3/vim-windowswap'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 " navigation
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -292,25 +308,15 @@ Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 Plug 'kovisoft/paredit',    { 'for': 'clojure' }
 "Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 "Plug 'venantius/vim-eastwood'
-"Plug 'venantius/vim-eastwood'
 
-" inactive
-"Plug 'PotatoesMaster/i3-vim-syntax'
-"Plug 'terryma/vim-expand-region'
-"Plug 'gorodinskiy/vim-coloresque'
-"Plug 'guns/vim-clojure-static'
-"Plug 'kien/ctrlp.vim'
-"Plug 'tpope/vim-commentary'
-"Plug 'vim-scripts/YankRing.vim'
-"Plug 'tpope/vim-classpath'
-"Plug 'jgdavey/tslime.vim'
-"Plug 'edkolev/promptline.vim'
-"Plug 'edkolev/tmuxline.vim'
-"Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()
 
 syntax on
 filetype plugin indent on
+
+"}}}
+
+"PLUGIN CONFIG {{{1
 
 " SYNTASTIC {{{2
 " --------------
@@ -324,6 +330,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
 "}}}
+
 " VIM-MULTIPLE-CURSOR {{{2
 " -------------------
 let g:multi_cursor_next_key='<C-d>'
@@ -331,6 +338,7 @@ let g:multi_cursor_prev_key='<C-l>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 " }}}
+
 " FZF.VIM {{{2
 " -------
 " https://github.com/junegunn/fzf.vim
@@ -348,8 +356,8 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nmap <leader>f  :Files<CR>
 nmap <leader>bb :Buffers<cr>
-nmap <leader>t  :Tags<cr>
-nmap <leader>y  :BTags<cr>
+nmap <leader>T  :Tags<cr>
+nmap <leader>t  :BTags<cr>
 nmap <leader>gc :Commits<cr>
 nmap <leader>gb :BCommits<cr>
 nmap <leader>gs :Gstatus<cr>
@@ -360,8 +368,10 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 " }}}
+
 " EASYMOTION {{{2
 " ---------------
+
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
 " resoning is that EM takes up such a huge amount of binds I wanted it to have
@@ -379,6 +389,8 @@ nmap <leader>s <Plug>(easymotion-s2)
 " use easymotion searching
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
+map  ? <Plug>(easymotion-sn)
+omap ? <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
@@ -390,8 +402,9 @@ map  N <Plug>(easymotion-prev)
 "let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 " set ctrl-v to paste in easymotion command line
-"EMCommandLineNoreMap <c-v> <plug>EasyClipCommandModePaste
+autocmd VimEnter,BufEnter * EMCommandLineNoreMap <c-v> :YRPaste<CR>
 " }}}
+
 " QUICKSCOPE {{{2
 " ---------------
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
@@ -403,6 +416,7 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " }}}
+
 " AIRLINE {{{2
 " ------------
 let g:airline_powerline_fonts = 1
@@ -411,6 +425,7 @@ let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
 
 "}}}
+
 " BUFFERLINE {{{2
 " ---------------
 "
@@ -424,25 +439,7 @@ let g:bufferline_echo = 0
 "let g:bufferline_active_highlight = 'StatusLineNC'
 
 "}}}
-" EASYCLIP {{{2
-" -------------
 
-" remap mark to gm since EasyClip cut shadows m key
-nnoremap gm m
-imap <c-v> <plug>EasyClipInsertModePaste
-cmap <c-v> <plug>EasyClipCommandModePaste
-
-" set common register in vim+x
-set clipboard=unnamed,unnamedplus
-
-"let g:EasyClipUsePasteToggleDefaults = 0
-"nmap <c-.> <plug>EasyClipSwapPasteForward
-"nmap <c-,> <plug>EasyClipSwapPasteBackwards
-"nmap ]y <plug>EasyClipSwapPasteForward
-"nmap [y <plug>EasyClipSwapPasteBackwards
-let g:EasyClipShareYanks = 1
-
-" }}}
 " GRUVBOX {{{2
 " ------------
 
@@ -454,6 +451,7 @@ colorscheme gruvbox
 set background=dark
 
 " }}}
+
 " RAINBOW PARENTHESIS {{{2
 " ------------------------
 
@@ -462,6 +460,7 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 "let g:rbpt_loadcmd_toggle = 0
 
 " }}}
+
 " NERDTREE {{{2
 " -------------
 map <leader>nt :NERDTreeToggle<CR>
@@ -476,6 +475,7 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 "}}}}
+
 " NERDCOMMENT {{{2
 " ----------------
 " mirror tpope commentary keys.
@@ -483,6 +483,7 @@ nmap gcc <plug>NERDCommenterToggle
 vmap gc <plug>NERDCommenterToggle
 
 "}}}
+
 " PAREDIT {{{2
 " -----------
 
@@ -491,41 +492,36 @@ let g:paredit_leader = '\'
 "let g:paredit_disable_clojure = 0
 
 " }}}
-" EASY-ALIGN {{{2
-" ---------------
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-" }}}
-" INDENT GUIDES {{{2
-" ------------------
-
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
-" }}}
 " ACK.VIM {{{2
 " ------------
 
 let g:ackprg = 'ag --vimgrep'
 "}}}
+
 " UNDOTREE {{{2
 " -------------
 
 nnoremap <leader>ut :UndotreeToggle<cr>
 "}}}
+
 " BETTER-WHITESPACE {{{2
+" ----------------------
 " strip whitespace on save
-"autocmd BufWritePre * StripWhitespace
+autocmd BufWritePre * StripWhitespace
+
+" remove all trailing whitespace
+noremap <leader>cw :StripWhitespace<CR>
+
 "}}}
+
 " VIM-CLJFMT {{{2
 " ---------------
 
 " strip whitespace on save
 let g:clj_fmt_autosave = 0
 "}}}
+
 " TSLIME {{{2
 " -----------
 
@@ -535,6 +531,7 @@ vmap <C-c><C-c> <Plug>SendSelectionToTmux
 nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars"
 "}}}
+
 " VIM-SEXP {{{2
 " -------------
 " Disable some irritating mappings
@@ -547,6 +544,7 @@ nmap <C-c>r <Plug>SetTmuxVars"
       "\ 'sexp_capture_next_element':      '<leader><Right>',
       "\}
 "}}}
+
 " CLOJURE_HIGHLIGHT {{{2
 " -----------------
 
@@ -558,14 +556,83 @@ let g:clojure_align_multiline_strings = 1
 let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY', '^HEAD', '^PATCH', '^OPTIONS', '^def']
 autocmd FileType clojure setlocal lispwords+=describe,it,testing,facts,fact,provided
 " }}}
+
+" YANKRING {{{2
+" -----------------
+nnoremap <silent> <F11> :YRShow<CR>
+let g:yankring_history_dir = '~/.vim'
+"imap <c-v> gp
+"cmap <c-v> gp
+
+" }}}
+
+" TMUX-NAVIGATOR {{{2
+" -----------------
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <A-Left>  : TmuxNavigateLeft<cr>
+nnoremap <silent> <A-Down>  : TmuxNavigateDown<cr>
+nnoremap <silent> <A-Up>    : TmuxNavigateUp<cr>
+nnoremap <silent> <A-Right> : TmuxNavigateRight<cr>
+nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
+" }}}
+
 " INACTIVE {{{2
 " --------------------
+" inactive
 " o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
 " │││││─┤│   │ ││┌┘├─
 " ┆┆└┘┘ ┆└─┘ ┆ ┆└┘ ┴─┘
 " --------------------
 " Old configuration that I keep here for posterity
 " ------------------------------------------------
+
+" Plugins
+" -----------------------------
+"Plug 'yggdroot/indentline'
+"Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+"Plug 'PotatoesMaster/i3-vim-syntax'
+"Plug 'terryma/vim-expand-region'
+"Plug 'gorodinskiy/vim-coloresque'
+"Plug 'guns/vim-clojure-static'
+"Plug 'kien/ctrlp.vim'
+"Plug 'tpope/vim-commentary'
+"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'vim-scripts/YankRing.vim'
+"Plug 'tpope/vim-classpath'
+"Plug 'jgdavey/tslime.vim'
+"Plug 'edkolev/promptline.vim'
+"Plug 'edkolev/tmuxline.vim'
+"Plug 'Glench/Vim-Jinja2-Syntax'
+
+
+" EASYCLIP
+" --------
+
+" remap mark to gm since EasyClip cut shadows m key
+"nnoremap gm m
+"imap <c-v> <plug>EasyClipInsertModePaste
+"cmap <c-v> <plug>EasyClipCommandModePaste
+
+"" set common register in vim+x
+"set clipboard=unnamed,unnamedplus
+
+""let g:EasyClipUsePasteToggleDefaults = 0
+""nmap <c-.> <plug>EasyClipSwapPasteForward
+""nmap <c-,> <plug>EasyClipSwapPasteBackwards
+""nmap ]y <plug>EasyClipSwapPasteForward
+""nmap [y <plug>EasyClipSwapPasteBackwards
+"let g:EasyClipShareYanks = 1
+
+
+
+" EASY-ALIGN
+" ---------------
+"" Start interactive EasyAlign in visual mode (e.g. vipga)
+"xmap ga <Plug>(EasyAlign)
+
+"" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+"nmap ga <Plug>(EasyAlign)
 
 " OPTIONS
 " -------
@@ -652,8 +719,15 @@ autocmd FileType clojure setlocal lispwords+=describe,it,testing,facts,fact,prov
 "let g:ctrlp_prompt_mappings = {
 "\   'PrtClearCache()': ['<F5>'],
 "\}
-"}}}
-"}}}
+
+" INDENT GUIDES
+" -------------
+
+"let g:indent_guides_guide_size = 1
+"let g:indent_guides_start_level = 2
+"2}}}
+"1}}}
+
 " LANGUAGE {{{1
 " --------
 " ┬  ┬─┐┌┐┐┌─┐┬ ┐┬─┐┌─┐┬─┐
@@ -661,5 +735,4 @@ autocmd FileType clojure setlocal lispwords+=describe,it,testing,facts,fact,prov
 " ┆─┘┘ ┆┆└┘┆─┘┆─┘┘ ┆┆─┘┴─┘
 
 "}}}
-
 " vim: fdm=marker:sw=2
