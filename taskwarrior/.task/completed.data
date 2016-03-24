@@ -1,3 +1,7 @@
+[description:"fix highlighting" end:"1458814825" entry:"1448719701" modified:"1458814825" status:"completed" tags:"vimperator" uuid:"dba77449-fa25-4a24-8b21-931795d0f1b3"]
+[description:"fix google tasks + taskwarrior sync" end:"1458814781" entry:"1457120455" modified:"1458814782" status:"deleted" tags:"general" uuid:"2affe8a9-c861-4887-ba8f-9b60a3734a39"]
+[description:"create workspace background switcher" end:"1458814769" entry:"1457553459" modified:"1458814770" status:"deleted" tags:"wm" uuid:"33907c1c-8340-4adc-b9a9-904e5c283e28"]
+[description:"sync with google tasks" end:"1458814759" entry:"1453048581" modified:"1458814762" status:"deleted" tags:"tasks" uuid:"ce2e8ecf-0708-450b-aa11-b164e1e48856"]
 [description:"move thunderbird mail to \/home\/roosta\/.mail" end:"1457601088" entry:"1457553590" modified:"1457601089" status:"deleted" tags:"mail" uuid:"6dd0a4ac-8a74-41ff-b13e-e67887c57f10"]
 [description:"fix rofi background colors" end:"1457601077" entry:"1457598842" modified:"1457601077" status:"completed" tags:"general" uuid:"8a77feda-c7e6-4aa4-8158-3e9948516c71"]
 [description:"update i3bar" end:"1457553469" entry:"1457120523" modified:"1457553469" status:"completed" uuid:"06ac6b97-d20c-47f5-ba73-5c895b38dad8"]
