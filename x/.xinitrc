@@ -86,8 +86,11 @@ lightsOn 590 &
 
 #dropbox-cli start &
 
+# set background with nitrogen
+nitrogen --restore &
+
 # set background with feh
-$HOME/.fehbg &
+#$HOME/.fehbg &
 
 # ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
 # │ ││─┤├─ ││││ ││││└─┐
