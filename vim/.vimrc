@@ -538,14 +538,14 @@ nmap <C-c>r <Plug>SetTmuxVars"
 " VIM-SEXP {{{2
 " -------------
 " Disable some irritating mappings
-let g:sexp_enable_insert_mode_mappings = 0
+"let g:sexp_enable_insert_mode_mappings = 0
 
-let g:sexp_mappings = {
-      \ 'sexp_emit_head_element':         '<leader><Down>',
-      \ 'sexp_emit_tail_element':         '<leader><Up>',
-      \ 'sexp_capture_prev_element':      '<leader><Left>',
-      \ 'sexp_capture_next_element':      '<leader><Right>',
-      \}
+"let g:sexp_mappings = {
+      "\ 'sexp_emit_head_element':         '<leader><Down>',
+      "\ 'sexp_emit_tail_element':         '<leader><Up>',
+      "\ 'sexp_capture_prev_element':      '<leader><Left>',
+      "\ 'sexp_capture_next_element':      '<leader><Right>',
+      "\}
 "}}}
 " CLOJURE_HIGHLIGHT {{{2
 " -----------------
