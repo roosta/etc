@@ -1,5 +1,5 @@
 ! rofi config, merged with .Xresources
-rofi.modi:                       window,run,ssh
+rofi.modi:                       run
 rofi.opacity:                    100
 rofi.width:                      100
 rofi.lines:                      5
@@ -49,7 +49,7 @@ rofi.lazy-filter-limit:          5000
 rofi.eh:                         1
 rofi.auto-select:                false
 rofi.parse-hosts:                false
-rofi.combi-modi:                 window,run,ssh
+rofi.combi-modi:                 window,run,drun
 rofi.fuzzy:                      true
 rofi.m:                          -1
 rofi.line-margin:                3

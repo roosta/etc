@@ -20,7 +20,6 @@ order += "keyboard_layout"
 order += "path_exists VPN"
 order += "net_rate"
 order += "sysdata cpu"
-order += "sysdata mem"
 #order += "wireless wlp2s0"
 #order += "ethernet bridge0"
 order += "cpu_temperature 0"
@@ -56,16 +55,17 @@ spotify {
 }
 
 sysdata cpu{
-  format = "CPU: {cpu_usage}%"
+  format = "CPU: {cpu_usage}% MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
+  med_threshold = 25
   on_click 1 = "exec i3-sensible-terminal -e glances"
   on_click 3 = "exec killall glances"
 }
 
-sysdata mem{
-  format = "MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
-  on_click 1 = "exec i3-sensible-terminal -e glances"
-  on_click 3 = "exec killall glances"
-}
+#sysdata mem{
+  #format = "MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
+  #on_click 1 = "exec i3-sensible-terminal -e glances"
+  #on_click 3 = "exec killall glances"
+#}
 
 
 # print current keyboard layout, with color codes for language
