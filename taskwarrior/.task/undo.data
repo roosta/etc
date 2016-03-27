@@ -437,3 +437,27 @@ time 1458814825
 old [description:"fix highlighting" entry:"1448719701" modified:"1448719701" status:"pending" tags:"vimperator" uuid:"dba77449-fa25-4a24-8b21-931795d0f1b3"]
 new [description:"fix highlighting" end:"1458814825" entry:"1448719701" modified:"1458814825" status:"completed" tags:"vimperator" uuid:"dba77449-fa25-4a24-8b21-931795d0f1b3"]
 ---
+time 1458905007
+old [description:"check out freemind" entry:"1446391262" modified:"1446391262" status:"pending" tags:"general" uuid:"217dc856-0133-4829-9f2f-569bba673b16"]
+new [description:"check out freemind" end:"1458905006" entry:"1446391262" modified:"1458905007" status:"deleted" tags:"general" uuid:"217dc856-0133-4829-9f2f-569bba673b16"]
+---
+time 1458905434
+old [description:"move all package manager files to \/usr\/local\/lib" entry:"1451396906" modified:"1451396906" status:"pending" tags:"system" uuid:"b733b077-e655-408f-ba4b-6fbbc6289ccc"]
+new [description:"move all package manager files to \/usr\/local\/lib" end:"1458905433" entry:"1451396906" modified:"1458905434" status:"deleted" tags:"system" uuid:"b733b077-e655-408f-ba4b-6fbbc6289ccc"]
+---
+time 1458905453
+old [description:"contact bsr" entry:"1451503522" modified:"1451503522" status:"pending" tags:"general" uuid:"ba23ad25-3ec5-48f0-8eea-1c23c0e42c23"]
+new [description:"contact bsr" end:"1458905453" entry:"1451503522" modified:"1458905453" status:"deleted" tags:"general" uuid:"ba23ad25-3ec5-48f0-8eea-1c23c0e42c23"]
+---
+time 1458905496
+old [description:"Finish df webpage" entry:"1446233148" modified:"1446234075" status:"pending" tags:"general" uuid:"3c0eea39-df95-43bf-a19c-1178e1ca94ea"]
+new [description:"Finish df webpage" end:"1458905495" entry:"1446233148" modified:"1458905496" status:"deleted" tags:"general" uuid:"3c0eea39-df95-43bf-a19c-1178e1ca94ea"]
+---
+time 1458905507
+old [description:"add if tmux in vimrc and prompt.zsh" entry:"1454430794" modified:"1454430794" status:"pending" tags:"shell" uuid:"70134a7d-94ab-4414-86bf-4c026c80990b"]
+new [description:"add if tmux in vimrc and prompt.zsh" end:"1458905507" entry:"1454430794" modified:"1458905507" status:"completed" tags:"shell" uuid:"70134a7d-94ab-4414-86bf-4c026c80990b"]
+---
+time 1458906082
+old [description:"check out etckeeper" entry:"1451212549" modified:"1451212549" status:"pending" tags:"dotfiles" uuid:"29e8f3ae-29ba-4275-a29f-232ea995b73c"]
+new [description:"check out etckeeper" end:"1458906082" entry:"1451212549" modified:"1458906082" status:"completed" tags:"dotfiles" uuid:"29e8f3ae-29ba-4275-a29f-232ea995b73c"]
+---
