@@ -110,6 +110,13 @@
     display: none !important;
   }
 
+  /* fix input text boxes color/background color being the same */
+  textarea, input, select {
+    -moz-appearance: none !important;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+  }
+
   .tab-drop-indicator {
     margin-bottom: 0 !important;
   }
