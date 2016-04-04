@@ -424,7 +424,9 @@ bar {
 
 {# loop through each output and generate a bar config for each #}
 {% for output in outputs %}
-{{ render_bar(output.display, output.bar_id, output.stat_conf, output.bar_pos, output.tray_out) }}
+{% if output %}
+  {{ render_bar(output.display, output.bar_id, output.stat_conf, output.bar_pos, output.tray_out) }}
+{% endif %}
 {% endfor %}
 
 # vim:ft=i3:ts=2:sw=2:fdm=marker
