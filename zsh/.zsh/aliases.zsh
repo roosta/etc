@@ -33,7 +33,7 @@ alias vilein="vim ~/.lein/profiles.clj"
 alias viterm="vim ~/.urxvt.xresources"
 alias vime="vim ~/.dotfiles/vars/$(hostname).yml"
 alias vii3gen="vim ~/.i3/config.gen"
-alias vizenv="vim ~/.zsh/env.zsh"
+alias vienv="vim ~/.zsh/env.zsh"
 alias vizopts="vim ~/.zsh/options.zsh"
 alias vizplugs="vim ~/.zsh/plugins.zsh"
 alias vizrc="vim ~/.zshrc"
@@ -45,7 +45,7 @@ alias vizrc="vim ~/.zshrc"
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias grep="ag"
 
-alias algrep="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
+alias agrep="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
 alias hgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
@@ -154,6 +154,7 @@ alias pacsu="pacman -U" # Install specific package not from the repositories but
 # cleaning
 alias pacr="pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
 alias pacrns="pacman -Rns" # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias pacrns="pacman -Rcs" # Remove the specified package(s), and recursivly remove and unneeded dependencies
 alias pacrs="pacman -Rs" # Remove the specified package(s) and its dependencies
 alias pacc="pacman -Scc" # Clean cache - delete all the package files in the cache
 
@@ -183,9 +184,9 @@ alias pacua="pacman -Syua"
 alias pacuaf="pacman -Syua --noconfirm"
 alias pacuad="pacman -Syua --devel"
 alias pacuadf="pacman -Syua --devel --noconfirm"
-alias getmirror="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
-alias pacmirupd="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
-alias pacmir="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
+alias pacm="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
+alias pacmu="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
+alias pacmr="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
 # ┬ ┐┌┐┐o┬  ┐─┐
 # │ │ │ ││  └─┐

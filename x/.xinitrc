@@ -82,12 +82,15 @@ xss-lock -- xscreensaver-command --lock &
 lightsOn 590 &
 
 # load nvidia-settings on startup
-nvidia-settings --load-config-only &
+#nvidia-settings --load-config-only &
 
 #dropbox-cli start &
 
+# set background with nitrogen
+nitrogen --restore &
+
 # set background with feh
-$HOME/.fehbg &
+#$HOME/.fehbg &
 
 # ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
 # │ ││─┤├─ ││││ ││││└─┐

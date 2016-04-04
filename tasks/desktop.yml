@@ -1,4 +1,4 @@
-- name: Symlink local .desktop files
-  file: path={{home}}/.local/share/applications src={{dotfiles}}/desktop/applications state=link
-  tags:
-    - desktop
+#- name: Symlink local .desktop files
+  #file: path={{home}}/.local/share/applications src={{dotfiles}}/desktop/applications state=link
+  #tags:
+    #- desktop

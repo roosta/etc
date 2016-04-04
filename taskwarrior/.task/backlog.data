@@ -122,3 +122,13 @@
 {"description":"fix rofi background colors","entry":"20160310T083402Z","modified":"20160310T083402Z","status":"pending","tags":["general"],"uuid":"8a77feda-c7e6-4aa4-8158-3e9948516c71"}
 {"description":"fix rofi background colors","end":"20160310T091117Z","entry":"20160310T083402Z","modified":"20160310T091117Z","status":"completed","tags":["general"],"uuid":"8a77feda-c7e6-4aa4-8158-3e9948516c71"}
 {"description":"move thunderbird mail to \/home\/roosta\/.mail","end":"20160310T091128Z","entry":"20160309T195950Z","modified":"20160310T091129Z","status":"deleted","tags":["mail"],"uuid":"6dd0a4ac-8a74-41ff-b13e-e67887c57f10"}
+{"description":"sync with google tasks","end":"20160324T101919Z","entry":"20160117T163621Z","modified":"20160324T101922Z","status":"deleted","tags":["tasks"],"uuid":"ce2e8ecf-0708-450b-aa11-b164e1e48856"}
+{"description":"create workspace background switcher","end":"20160324T101929Z","entry":"20160309T195739Z","modified":"20160324T101930Z","status":"deleted","tags":["wm"],"uuid":"33907c1c-8340-4adc-b9a9-904e5c283e28"}
+{"description":"fix google tasks + taskwarrior sync","end":"20160324T101941Z","entry":"20160304T194055Z","modified":"20160324T101942Z","status":"deleted","tags":["general"],"uuid":"2affe8a9-c861-4887-ba8f-9b60a3734a39"}
+{"description":"fix highlighting","end":"20160324T102025Z","entry":"20151128T140821Z","modified":"20160324T102025Z","status":"completed","tags":["vimperator"],"uuid":"dba77449-fa25-4a24-8b21-931795d0f1b3"}
+{"description":"check out freemind","end":"20160325T112326Z","entry":"20151101T152102Z","modified":"20160325T112327Z","status":"deleted","tags":["general"],"uuid":"217dc856-0133-4829-9f2f-569bba673b16"}
+{"description":"move all package manager files to \/usr\/local\/lib","end":"20160325T113033Z","entry":"20151229T134826Z","modified":"20160325T113034Z","status":"deleted","tags":["system"],"uuid":"b733b077-e655-408f-ba4b-6fbbc6289ccc"}
+{"description":"contact bsr","end":"20160325T113053Z","entry":"20151230T192522Z","modified":"20160325T113053Z","status":"deleted","tags":["general"],"uuid":"ba23ad25-3ec5-48f0-8eea-1c23c0e42c23"}
+{"description":"Finish df webpage","end":"20160325T113135Z","entry":"20151030T192548Z","modified":"20160325T113136Z","status":"deleted","tags":["general"],"uuid":"3c0eea39-df95-43bf-a19c-1178e1ca94ea"}
+{"description":"add if tmux in vimrc and prompt.zsh","end":"20160325T113147Z","entry":"20160202T163314Z","modified":"20160325T113147Z","status":"completed","tags":["shell"],"uuid":"70134a7d-94ab-4414-86bf-4c026c80990b"}
+{"description":"check out etckeeper","end":"20160325T114122Z","entry":"20151227T103549Z","modified":"20160325T114122Z","status":"completed","tags":["dotfiles"],"uuid":"29e8f3ae-29ba-4275-a29f-232ea995b73c"}

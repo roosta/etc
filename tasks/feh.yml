@@ -1,18 +1,12 @@
 ---
-- name: Symlink background folder
+- name: Symlink feh autostart script
   tags:
     - feh
     - wm
-  file: path={{home}}/.background src={{dotfiles}}/background/images state=link
+  file: path={{home}}/.fehbg src={{dotfiles}}/feh/.fehbg state=link
 
-- name: Symlink background folder
-  tags:
-    - feh
-    - wm
-  file: path={{home}}/.fehbg src={{dotfiles}}/background/.fehbg state=link
-
-- name: Set background with feh script
-  tags:
-    - feh
-    - wm
-  shell: "{{home}}/.fehbg"
+#- name: Set background with feh script
+  #tags:
+    #- feh
+    #- wm
+  #shell: "{{home}}/.fehbg"

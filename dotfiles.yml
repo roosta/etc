@@ -23,6 +23,8 @@
     - include: tasks/dunst.yml
     - include: tasks/i3.yml
     - include: tasks/feh.yml
+    - include: tasks/nitrogen.yml
+    - include: tasks/background.yml
     - include: tasks/compton.yml
     - include: tasks/fonts.yml
     - include: tasks/x.yml

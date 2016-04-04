@@ -1,7 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=feh_browser.sh
-Exec=/home/daniel/.scripts/feh_browser.sh -Z
-MimeType=image/png
-Icon=exec
-NoDisplay=true

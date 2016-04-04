@@ -10,6 +10,7 @@ export PATH=$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:/usr/local/bi
 
 fpath=("$HOME/.zsh.d" $fpath)
 
+# set ruby gems install location to home
 export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
 
 # locate
@@ -48,7 +49,7 @@ alias zless=$PAGER
 # See https://wiki.archlinux.org/index.php/Unofficial_user_repositories#alucryd-multilib
 #export STEAM_RUNTIME=0
 
-# set env to tell ranger not to use default config
+# tell ranger not to use default config
 export RANGER_LOAD_DEFAULT_RC="false"
 
 # https://wiki.archlinux.org/index.php/NVIDIA#Gaming_using_TwinView
@@ -64,5 +65,6 @@ PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}
 PERL_MB_OPT="--install_base \"${HOME}/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
 
-# set site.USERBASE for pip installs
-#export PYTHONUSERBASE=/usr/local/lib/pip
+# set site.USERBASE for pip user installs
+export PYTHONUSERBASE=$HOME/.pip
+
