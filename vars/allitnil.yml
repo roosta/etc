@@ -4,8 +4,7 @@ home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
 # define host outputs and various associated vars
-outputs: [{display: "eDP1", bar_id: "bar-primary", stat_conf: "~/.i3/status/allitnil_0.i3status", bar_pos: "top", tray_out: "primary"},
-          {display: "HDMI1", bar_id: "bar-secondary", stat_conf: "~/.i3/status/allitnil_1.i3status", bar_pos: "top", tray_out: "primary"}]
+outputs: [{display: "eDP1", bar_id: "bar-primary", stat_conf: "~/.i3/status/allitnil_0.i3status", bar_pos: "top", tray_out: "primary"}, false]
 
 output_layout: "xrandr --output eDP1 --mode 1600x900 --primary"
 
