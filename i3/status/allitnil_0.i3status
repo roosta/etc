@@ -14,7 +14,7 @@ general {
 #order += "disk /home"
 #order += "window_title"
 #order += "spotify"
-#order += "battery_level"
+order += "battery_level"
 order += "wifi"
 order += "volume_status"
 order += "arch_updates"
@@ -35,6 +35,11 @@ order += "tztime local"
 window_title {
   "align": "left"
   "min_width": 300
+}
+
+battery_level {
+  format = "Battery: {percent}%"
+  battery_id = "all"
 }
 
 wifi {
