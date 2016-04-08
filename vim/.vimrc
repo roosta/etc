@@ -259,7 +259,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'godlygeek/tabular'
+"Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 "Plug 'svermeulen/vim-easyclip'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
@@ -547,6 +548,15 @@ nmap <C-c>r <Plug>SetTmuxVars"
       "\}
 "}}}
 
+" EASY-ALIGN {{{2
+" ---------------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" }}}
+
 " CLOJURE_HIGHLIGHT {{{2
 " -----------------
 
@@ -626,7 +636,12 @@ nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
 ""nmap [y <plug>EasyClipSwapPasteBackwards
 "let g:EasyClipShareYanks = 1
 
-
+" OPTIONS
+" -------
+"set clipboard=unnamed " set same clipboard for vim and X: using EasyClip. See Plugins
+"set paste
+"set hlsearch " using easymotion for hl
+"set autowrite
 
 " EASY-ALIGN
 " ---------------
@@ -635,13 +650,6 @@ nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
 
 "" Start interactive EasyAlign for a motion/text object (e.g. gaip)
 "nmap ga <Plug>(EasyAlign)
-
-" OPTIONS
-" -------
-"set clipboard=unnamed " set same clipboard for vim and X: using EasyClip. See Plugins
-"set paste
-"set hlsearch " using easymotion for hl
-"set autowrite
 
 
 " Promptline (used to generate a prompt for terminal to match airline.
