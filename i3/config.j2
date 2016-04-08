@@ -166,7 +166,11 @@ assign [class="(?i)steam(.*)"] $TWS2_GAM
 #assign [title="(?i)friends"] $TWS2_GAM
 
 # -> media
-assign [class="(?i)Spotify"] $TWS1_MED
+# workaround for spotify WS assignment
+# see: https://github.com/i3/i3/issues/2060
+#assign [class="(?i)Spotify"] $TWS1_MED
+for_window [class="Spotify"] move to workspace $TWS1_MED
+
 assign [class="(?i)google-chrome"] $TWS1_MED
 assign [class="(?i)smplayer"] $TWS1_MED
 
