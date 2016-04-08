@@ -489,7 +489,9 @@ vmap gc <plug>NERDCommenterToggle
 
 let g:paredit_electric_return = 0
 let g:paredit_leader = '\'
-"let g:paredit_disable_clojure = 0
+let g:paredit_smartjump = 1
+let g:paredit_shortmaps = 0
+
 
 " }}}
 
