@@ -20,3 +20,6 @@
 [description:"fix pulseaudio 7.1 issue" entry:"1456983832" modified:"1456983832" status:"pending" tags:"lintilla" uuid:"cb2224bb-197d-4f9f-b8c0-b733173df618"]
 [description:"fix sidebar z-index issue" entry:"1457432527" modified:"1457432527" status:"pending" tags:"firefox" uuid:"6162eddd-1d24-41fb-852f-90a9f27d0631"]
 [description:"move pip user repos to home" entry:"1457551576" modified:"1457551576" status:"pending" tags:"general" uuid:"d05c783d-6a60-4626-8f07-8085aeee4a60"]
+[description:"edit arc-theme" entry:"1460204443" modified:"1460204443" status:"pending" uuid:"8b4b7d3d-d985-481c-a72e-d5ddf6bd68d3"]
+[description:"setup spacemacs" entry:"1460204449" modified:"1460204449" status:"pending" uuid:"be8f832b-336d-4335-b3c5-85149f7e5930"]
+[description:"setup dirac" entry:"1460204461" modified:"1460204461" status:"pending" uuid:"8eae25b2-5e58-4395-a53a-b4c783ef40b9"]
