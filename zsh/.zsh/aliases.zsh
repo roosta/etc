@@ -180,6 +180,7 @@ alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non e
 
 # Updating
 alias pacu="pacman -Syu" # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacuf="pacman -Syu --noconfirm"
 alias pacua="pacman -Syua"
 alias pacuaf="pacman -Syua --noconfirm"
 alias pacuad="pacman -Syua --devel"
