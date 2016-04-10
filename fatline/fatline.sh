@@ -17,6 +17,9 @@ run () {
         usage
       fi
       ;;
+    "vars")
+      vim ~/.dotfiles/vars/$(hostname).yml
+      ;;
     "help")
       usage
       ;;
@@ -38,6 +41,7 @@ Usage: fatline command option
 commands:
   no command            Run task/playbook with supplied name
   edit [option]         use vim to edit config task
+  vars                  Edit current hosts vars
   help                  show help (this)
 options:
   config-name           Name of app to setup
