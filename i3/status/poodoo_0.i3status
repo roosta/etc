@@ -20,11 +20,11 @@ order += "keyboard_layout"
 order += "path_exists VPN"
 order += "net_rate"
 order += "sysdata cpu"
-order += "sysdata mem"
+#order += "sysdata mem"
 #order += "wireless wlp2s0"
 #order += "ethernet bridge0"
-order += "cpu_temperature 0"
-order += "nvidia_temp"
+#order += "cpu_temperature 0"
+#order += "nvidia_temp"
 #order += "load"
 order += "dropboxd_status"
 order += "tztime local"
@@ -57,14 +57,14 @@ spotify {
 
 sysdata cpu{
   format = "CPU: {cpu_usage}%"
-  on_click 1 = "exec i3-sensible-terminal -e glances"
-  on_click 3 = "exec killall glances"
+  on_click 1 = "exec i3-sensible-terminal -e htop"
+  on_click 3 = "exec killall htop"
 }
 
 sysdata mem{
   format = "MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
-  on_click 1 = "exec i3-sensible-terminal -e glances"
-  on_click 3 = "exec killall glances"
+  on_click 1 = "exec i3-sensible-terminal -e htop"
+  on_click 3 = "exec killall htop"
 }
 
 
