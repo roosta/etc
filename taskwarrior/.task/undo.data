@@ -470,3 +470,6 @@ new [description:"setup spacemacs" entry:"1460204449" modified:"1460204449" stat
 time 1460204461
 new [description:"setup dirac" entry:"1460204461" modified:"1460204461" status:"pending" uuid:"8eae25b2-5e58-4395-a53a-b4c783ef40b9"]
 ---
+time 1460219481
+new [description:"py3status spotify module needs python-dbus to run" entry:"1460219481" modified:"1460219481" status:"pending" tags:"issues" uuid:"769adeed-d582-4ad5-8504-f1134f93ba0a"]
+---
