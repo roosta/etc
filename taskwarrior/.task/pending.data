@@ -20,3 +20,4 @@
 [description:"fix pulseaudio 7.1 issue" entry:"1456983832" modified:"1456983832" status:"pending" tags:"lintilla" uuid:"cb2224bb-197d-4f9f-b8c0-b733173df618"]
 [description:"fix sidebar z-index issue" entry:"1457432527" modified:"1457432527" status:"pending" tags:"firefox" uuid:"6162eddd-1d24-41fb-852f-90a9f27d0631"]
 [description:"move pip user repos to home" entry:"1457551576" modified:"1457551576" status:"pending" tags:"general" uuid:"d05c783d-6a60-4626-8f07-8085aeee4a60"]
+[description:"move xresources to .xresources.d" entry:"1460392891" modified:"1460392891" status:"pending" tags:"dotfiles" uuid:"09e81880-c01c-4608-b328-57aa1cf763d4"]

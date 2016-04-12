@@ -1,2 +1,2 @@
-xrandr --output eDP1 --mode 1600x900 --primary &
+xrandr --dpi 120 --output eDP1 --mode 1920x1080 --primary &
 $HOME/bin/touchpad-toggle &

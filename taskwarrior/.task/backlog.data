@@ -132,3 +132,4 @@
 {"description":"Finish df webpage","end":"20160325T113135Z","entry":"20151030T192548Z","modified":"20160325T113136Z","status":"deleted","tags":["general"],"uuid":"3c0eea39-df95-43bf-a19c-1178e1ca94ea"}
 {"description":"add if tmux in vimrc and prompt.zsh","end":"20160325T113147Z","entry":"20160202T163314Z","modified":"20160325T113147Z","status":"completed","tags":["shell"],"uuid":"70134a7d-94ab-4414-86bf-4c026c80990b"}
 {"description":"check out etckeeper","end":"20160325T114122Z","entry":"20151227T103549Z","modified":"20160325T114122Z","status":"completed","tags":["dotfiles"],"uuid":"29e8f3ae-29ba-4275-a29f-232ea995b73c"}
+{"description":"move xresources to .xresources.d","entry":"20160411T164131Z","modified":"20160411T164131Z","status":"pending","tags":["dotfiles"],"uuid":"09e81880-c01c-4608-b328-57aa1cf763d4"}
