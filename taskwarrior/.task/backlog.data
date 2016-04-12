@@ -136,3 +136,5 @@
 {"description":"setup spacemacs","entry":"20160409T122049Z","modified":"20160409T122049Z","status":"pending","uuid":"be8f832b-336d-4335-b3c5-85149f7e5930"}
 {"description":"setup dirac","entry":"20160409T122101Z","modified":"20160409T122101Z","status":"pending","uuid":"8eae25b2-5e58-4395-a53a-b4c783ef40b9"}
 {"description":"py3status spotify module needs python-dbus to run","entry":"20160409T163121Z","modified":"20160409T163121Z","status":"pending","tags":["issues"],"uuid":"769adeed-d582-4ad5-8504-f1134f93ba0a"}
+{"description":"list tasks","entry":"20160410T114311Z","modified":"20160410T114311Z","status":"pending","tags":["fatline"],"uuid":"6cf2bbd1-fbab-4fe5-8fc8-2ad9217b7af4"}
+{"description":"make private github repo for secure settings + blackboxing files","entry":"20160410T131314Z","modified":"20160410T131314Z","status":"pending","tags":["dotfiles"],"uuid":"ee934ba2-d830-4744-b1d4-656a2f4fd261"}
