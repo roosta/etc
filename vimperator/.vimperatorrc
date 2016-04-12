@@ -26,7 +26,7 @@ window.addEventListener('keypress',function (event) {
 },false);
 EOM
 
-map <Space> <Leader>
+"map <Space> <Leader>
 
 " map l and h to tab movement
 " this removes horizontal h&l movement but arrows still work
@@ -86,8 +86,8 @@ noremap <c-a> i<c-a>
 noremap <leader>R :source ~/.vimperatorrc<CR>
 
 noremap <leader>ds :nohlsearch<CR>
-noremap <leader>st :stylish toggle<CR>
-noremap <leader>sp :stylish popup<CR>
+"noremap <leader>st :stylish toggle<CR>
+"noremap <leader>sp :stylish popup<CR>
 
 " use up/down when in cmdmode to select completions
 " note: use shift-movement to move in command history

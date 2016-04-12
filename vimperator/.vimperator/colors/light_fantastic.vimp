@@ -103,3 +103,44 @@ hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:10pt;
 
 " vim:ft=vim:ts=2:sw=2:fdm=marker
 
+" CSS {{{
+style -name tab chrome://* <<EOM
+.tabbrowser-tab[selected=false] { }
+.tabbrowser-tab[selected=true] { }
+
+.tabbrowser-strip {
+}
+
+#tabbrowser-tabs {
+  /*background-color: #282828;*/
+}
+
+.tabbrowser-tab {
+  /*border-radius: 0px !important;*/
+}
+
+.tabs-newtab-button {
+  /*display: none !important;*/
+}
+
+EOM
+
+style -name nav-bar chrome://* <<EOM
+#nav-bar, #urlbar-container, #search-container, #openLocation {
+  display:none!important;
+}
+EOM
+
+style -name liberator chrome://* <<EOM
+#liberator-statusline:not([customizing="true"]) {
+  margin: -2px -2px !important;
+  padding: 0 0 !important;
+  height: 24px !important;
+}
+EOM
+
+"style -name statusbar chrome://* <<EOM
+"EOM
+
+" }}}
+
