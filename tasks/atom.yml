@@ -1,0 +1,7 @@
+- name: Symlink "Atom Editor" configuration
+  tags:
+    - atom
+    - dev
+  file: dest={{ home }}/.atom/{{ item.dest }} src={{ dotfiles }}/atom/{{ item.src }} state=link
+  with_items:
+    - { src: 'config.cson', dest: 'config.cson' }
