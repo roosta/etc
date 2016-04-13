@@ -13,8 +13,8 @@
 #include "/home/roosta/.rofi.xresources"
 #include "/home/roosta/.xscreensaver.xresources"
 
-#include "/home/roosta/.colors/xcolors/gruvbox-dark.xresources"
-#include "/home/roosta/.colors/xcolors/gruvbox-urxvt256.xresources"
+#include "/home/roosta/colors/xcolors/gruvbox-dark.xresources"
+#include "/home/roosta/colors/xcolors/gruvbox-urxvt256.xresources"
 
 !Xcursor.theme: Numix-Cursor
 
