@@ -14,10 +14,10 @@
 !#define FONT_ITALIC     xft:PragmataPro\ for\ Powerline:size=10:style=Italic
 !#define FONT_BOLDITALIC xft:PragmataPro\ for\ Powerline:size=10:style=Bold\ Italic
 
-#define FONT_NORMAL     xft:Essential PragmataPro:size=12:style=Regular
-#define FONT_BOLD       xft:Essential PragmataPro:size=12:style=Bold
-#define FONT_ITALIC     xft:Essential PragmataPro:size=12:style=Italic
-#define FONT_BOLDITALIC xft:Essential PragmataPro:size=12:style=Bold Italic
+#define FONT_NORMAL     xft:Essential PragmataPro:size=10:style=Regular
+#define FONT_BOLD       xft:Essential PragmataPro:size=10:style=Bold
+#define FONT_ITALIC     xft:Essential PragmataPro:size=10:style=Italic
+#define FONT_BOLDITALIC xft:Essential PragmataPro:size=10:style=Bold Italic
 
 ! Ttyp0 <allitnil: 1600x900>
 !#define FONT_NORMAL -uw-ttyp0-medium-r-normal--17-160-75-75-c-90-iso10646-1
@@ -34,7 +34,7 @@
 ! define xft fallbacks
 Xft.antialias: 0
 Xft.autohint:  0
-Xft.dpi:       120
+Xft.dpi:       96
 Xft.hinting:   1
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
