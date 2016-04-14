@@ -60,7 +60,6 @@
     - { src: "{{ home }}/.scripts/touchpad-toggle.sh", dest: "touchpad-toggle" }
     - { src: "{{ home }}/library/xkblayout-state/xkblayout-state", dest: "xkblayout-state" }
     - { src: "{{ home }}/library/lein-repls/bin/cljsh", dest: "cljsh" }
-    - { src: "{{ home }}/library/tmux-extra/tmx", dest: "tmx" }
   tags:
     - bin
     - init

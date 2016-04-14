@@ -1,7 +1,7 @@
 ---
 - name: Symlink Dropbox background folder
   tags:
-    - feh
+    - background
     - wm
   file: path={{home}}/.background src={{ home }}/Dropbox/background state=link
 
