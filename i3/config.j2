@@ -140,7 +140,7 @@ workspace $SWS2_COM output {{ outputs[1].display }}
 
 # Options
 focus_follows_mouse no
-new_window pixel 1
+new_window pixel 2
 hide_edge_borders none
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┬─┐┬ ┐┬  ┬─┐┐─┐
@@ -397,7 +397,7 @@ bindsym $mod+Home mode "$mode_chmon"
 font {{ i3_font }}
 
 # <class>               <border> <background> <foreground> <indicator>
-client.focused          {{ light2 }} {{ light2 }} {{ dark0 }} {{ neutral_purple }}
+client.focused          {{ bright_green }} {{ bright_green }} {{ dark0 }} {{ neutral_purple }}
 client.focused_inactive {{ dark2 }} {{ light4 }} {{ dark0 }} {{ neutral_purple }}
 client.unfocused        {{ dark2 }} {{ dark2 }} {{ gray_245 }} {{ neutral_purple }}
 client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{ neutral_purple }}
