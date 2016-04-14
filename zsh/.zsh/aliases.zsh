@@ -31,7 +31,6 @@ alias vigtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
 alias vivimp="vim ~/.vimperatorrc"
 alias vilein="vim ~/.lein/profiles.clj"
 alias viterm="vim ~/.urxvt.xresources"
-alias vime="vim ~/.dotfiles/vars/$(hostname).yml"
 alias vii3gen="vim ~/.i3/config.gen"
 alias vienv="vim ~/.zsh/env.zsh"
 alias vizopts="vim ~/.zsh/options.zsh"
@@ -154,7 +153,7 @@ alias pacsu="pacman -U" # Install specific package not from the repositories but
 # cleaning
 alias pacr="pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
 alias pacrns="pacman -Rns" # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrns="pacman -Rcs" # Remove the specified package(s), and recursivly remove and unneeded dependencies
+alias pacrcs="pacman -Rcs" # Remove the specified package(s), and recursivly remove unneeded dependencies
 alias pacrs="pacman -Rs" # Remove the specified package(s) and its dependencies
 alias pacc="pacman -Scc" # Clean cache - delete all the package files in the cache
 
@@ -180,6 +179,7 @@ alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non e
 
 # Updating
 alias pacu="pacman -Syu" # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacuf="pacman -Syu --noconfirm"
 alias pacua="pacman -Syua"
 alias pacuaf="pacman -Syua --noconfirm"
 alias pacuad="pacman -Syua --devel"

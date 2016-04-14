@@ -461,6 +461,20 @@ time 1458906082
 old [description:"check out etckeeper" entry:"1451212549" modified:"1451212549" status:"pending" tags:"dotfiles" uuid:"29e8f3ae-29ba-4275-a29f-232ea995b73c"]
 new [description:"check out etckeeper" end:"1458906082" entry:"1451212549" modified:"1458906082" status:"completed" tags:"dotfiles" uuid:"29e8f3ae-29ba-4275-a29f-232ea995b73c"]
 ---
-time 1460392891
-new [description:"move xresources to .xresources.d" entry:"1460392891" modified:"1460392891" status:"pending" tags:"dotfiles" uuid:"09e81880-c01c-4608-b328-57aa1cf763d4"]
+time 1460204443
+new [description:"edit arc-theme" entry:"1460204443" modified:"1460204443" status:"pending" uuid:"8b4b7d3d-d985-481c-a72e-d5ddf6bd68d3"]
+---
+time 1460204449
+new [description:"setup spacemacs" entry:"1460204449" modified:"1460204449" status:"pending" uuid:"be8f832b-336d-4335-b3c5-85149f7e5930"]
+---
+time 1460204461
+new [description:"setup dirac" entry:"1460204461" modified:"1460204461" status:"pending" uuid:"8eae25b2-5e58-4395-a53a-b4c783ef40b9"]
+---
+time 1460219481
+new [description:"py3status spotify module needs python-dbus to run" entry:"1460219481" modified:"1460219481" status:"pending" tags:"issues" uuid:"769adeed-d582-4ad5-8504-f1134f93ba0a"]
+time 1460288591
+new [description:"list tasks" entry:"1460288591" modified:"1460288591" status:"pending" tags:"fatline" uuid:"6cf2bbd1-fbab-4fe5-8fc8-2ad9217b7af4"]
+---
+time 1460293994
+new [description:"make private github repo for secure settings + blackboxing files" entry:"1460293994" modified:"1460293994" status:"pending" tags:"dotfiles" uuid:"ee934ba2-d830-4744-b1d4-656a2f4fd261"]
 ---

@@ -23,7 +23,8 @@ set $locker xscreensaver-command --lock
 #set $locker i3lock --image=$HOME/.background/pattern-01.png -t && sleep 1
 
 # tmux session management
-set $term urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -s main"
+set $term urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec mux dev"
+#set $term urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -s main"
 
 # set terminal command.
 #set $term urxvtc
@@ -166,7 +167,11 @@ assign [class="(?i)steam(.*)"] $TWS2_GAM
 #assign [title="(?i)friends"] $TWS2_GAM
 
 # -> media
-assign [class="(?i)Spotify"] $TWS1_MED
+# workaround for spotify WS assignment
+# see: https://github.com/i3/i3/issues/2060
+#assign [class="(?i)Spotify"] $TWS1_MED
+for_window [class="Spotify"] move to workspace $TWS1_MED
+
 assign [class="(?i)google-chrome"] $TWS1_MED
 assign [class="(?i)smplayer"] $TWS1_MED
 
