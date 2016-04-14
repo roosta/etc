@@ -31,7 +31,7 @@
     - include: tasks/desktop.yml
 
       # shell group
-    - include: tasks/dircolors.yml
+    #- include: tasks/dircolors.yml
     - include: tasks/colors.yml
     - include: tasks/scripts.yml
     - include: tasks/ls++.yml
@@ -65,4 +65,5 @@
     - include: tasks/xboxdrv.yml
     - include: tasks/krita.yml
     - include: tasks/apvlv.yml
+    - include: tasks/projects.yml
 
