@@ -2,18 +2,3 @@
 # deeply tied to the dotfiles to made sense to include as modules.
 
 # generic shell scripts repo.
-[submodule "scripts"]
-	path = scripts
-	url = https://github.com/roosta/scripts.git
-
-# collection of color related variables
-[submodule "colors"]
-	path = colors
-	url = https://github.com/roosta/colors.git
-
-# fork of trapd00rs LS_COLORS.
-[submodule "dircolors"]
-	path = dircolors
-	url = https://github.com/roosta/LS_COLORS.git
-
-# zsh plugins
