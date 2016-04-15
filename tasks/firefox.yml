@@ -6,5 +6,5 @@
   file: dest={{home}}/.mozilla/{{item}} src={{dotfiles}}/firefox/{{item}} state=link
   with_items:
     - conf
-    - style
+    - chrome
 

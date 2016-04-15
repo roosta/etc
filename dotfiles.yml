@@ -9,6 +9,7 @@
       # this group is the most essential. To use the rest these need to be run first
     - include: tasks/ansible.yml
     - include: tasks/zsh.yml
+    - include: tasks/projects.yml
     - include: tasks/bin.yml
     #- include: tasks/packages.yml
 
@@ -32,8 +33,8 @@
 
       # shell group
     #- include: tasks/dircolors.yml
-    - include: tasks/colors.yml
-    - include: tasks/scripts.yml
+    #- include: tasks/colors.yml
+    #- include: tasks/scripts.yml
     - include: tasks/ls++.yml
     - include: tasks/bash.yml
     - include: tasks/boxes.yml
@@ -65,5 +66,4 @@
     - include: tasks/xboxdrv.yml
     - include: tasks/krita.yml
     - include: tasks/apvlv.yml
-    - include: tasks/projects.yml
 
