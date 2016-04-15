@@ -1,0 +1,29 @@
+---
+- name: check for/create projects and bin directory
+  file: path={{ home }}/{{ item }} state=directory mode=0755
+  with_items:
+    - projects
+  tags:
+    - projects
+
+- name: clone / update external libraries
+  git: repo={{ item.repo }} dest={{ home }}/projects/{{ item.dest }} clone=yes update=yes
+  with_items:
+    - { repo: "git@github.com:roosta/scripts.git", dest: "scripts" }
+    - { repo: "git@github.com:roosta/LS_COLORS.git", dest: "LS_COLORS" }
+    - { repo: "git@github.com:roosta/colors.git", dest: "colors" }
+  tags:
+    - projects
+
+- name: symlink to home for easy access
+  file: src={{ item.src }} dest={{ home }}/{{ item.dest }} state=link
+  with_items:
+    - { src: "{{ home }}/projects/scripts", dest: "scripts" }
+    - { src: "{{ home }}/projects/colors", dest: "colors" }
+    - { src: "{{ home }}/projects/LS_COLORS/LS_COLORS", dest: ".dircolors" }
+    - { src: "{{ home }}/scripts/chdisp.sh", dest: "bin/chdisp" }
+    - { src: "{{ home }}/scripts/bakc.sh", dest: "bin/bakc" }
+    - { src: "{{ dotfiles }}/fatline/fatline.sh", dest: "bin/fatline" }
+    - { src: "{{ home }}/scripts/touchpad-toggle.sh", dest: "bin/touchpad-toggle" }
+  tags:
+    - projects

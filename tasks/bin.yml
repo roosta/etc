@@ -1,15 +1,15 @@
 ---
-- name: check for/create library and bin directory
+- name: check for/create lib and bin directory
   file: path={{ home }}/{{ item }} state=directory mode=0755
   with_items:
-    - library
+    - lib
     - bin
   tags:
     - bin
     - init
 
 - name: clone / update external libraries
-  git: repo={{ item.repo }} dest={{ home }}/library/{{ item.dest }} clone=yes update=yes
+  git: repo={{ item.repo }} dest={{ home }}/lib/{{ item.dest }} clone=yes update=yes
   with_items:
     - { repo: "https://github.com/fidian/ansi", dest: "ansi" }
     - { repo: "https://github.com/iye/lightsOn", dest: "lightsOn" }
@@ -24,7 +24,7 @@
 - name: build xkblayout-state
   command: make
   args:
-    chdir: "{{ home }}/library/xkblayout-state"
+    chdir: "{{ home }}/lib/xkblayout-state"
   tags:
     - bin
     - init
@@ -32,35 +32,24 @@
 - name: install sack
   command: ./install_sack.sh
   args:
-    chdir: "{{ home }}/library/sack"
+    chdir: "{{ home }}/lib/sack"
   tags:
     - bin
     - init
 
 - name: set perissions for cljsh binary
-  file: path={{ home }}/library/lein-repls/bin/cljsh mode=0755
+  file: path={{ home }}/lib/lein-repls/bin/cljsh mode=0755
   tags:
     - bin
     - init
 
-#- name: set permissions for tmx binary
-  #file: path={{ home }}/library/tmux-extra/tmx mode=0755
-  #tags:
-    #- bin
-    #- init
-
 - name: symlink local binaries
-  file: src={{ item.src }} dest=/usr/local/bin/{{ item.dest }} state=link
+  file: src={{ item.src }} dest={{ home }}/bin/{{ item.dest }} state=link
   with_items:
-    - { src: "{{ home }}/library/ansi/ansi", dest: "ansi" }
-    - { src: "{{ home }}/library/lightsOn/lightsOn.sh", dest: "lightsOn" }
-    - { src: "{{ home }}/.scripts/chmon.sh", dest: "chmon" }
-    - { src: "{{ home }}/.scripts/bakc.sh", dest: "bakc" }
-    - { src: "{{ dotfiles }}/fatline/fatline.sh", dest: "fatline" }
-    - { src: "{{ home }}/.scripts/touchpad-toggle.sh", dest: "touchpad-toggle" }
-    - { src: "{{ home }}/library/xkblayout-state/xkblayout-state", dest: "xkblayout-state" }
-    - { src: "{{ home }}/library/lein-repls/bin/cljsh", dest: "cljsh" }
-    - { src: "{{ home }}/library/tmux-extra/tmx", dest: "tmx" }
+    - { src: "{{ home }}/lib/ansi/ansi", dest: "ansi" }
+    - { src: "{{ home }}/lib/lightsOn/lightsOn.sh", dest: "lightsOn" }
+    - { src: "{{ home }}/lib/xkblayout-state/xkblayout-state", dest: "xkblayout-state" }
+    - { src: "{{ home }}/lib/lein-repls/bin/cljsh", dest: "cljsh" }
   tags:
     - bin
     - init

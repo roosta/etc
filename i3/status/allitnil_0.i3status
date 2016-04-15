@@ -14,6 +14,8 @@ general {
 #order += "disk /home"
 #order += "window_title"
 #order += "spotify"
+order += "battery_level"
+order += "wifi"
 order += "volume_status"
 order += "arch_updates"
 order += "keyboard_layout"
@@ -25,7 +27,7 @@ order += "sysdata mem"
 #order += "wireless wlp2s0"
 #order += "ethernet bridge0"
 order += "cpu_temperature 0"
-order += "nvidia_temp"
+#order += "nvidia_temp"
 #order += "load"
 order += "dropboxd_status"
 order += "tztime local"
@@ -33,6 +35,17 @@ order += "tztime local"
 window_title {
   "align": "left"
   "min_width": 300
+}
+
+battery_level {
+  format = "Battery: {percent}%"
+  battery_id = "all"
+}
+
+wifi {
+  device = "wlp2s0"
+  format_up = " {ssid}: {signal_percent}%"
+  format_down = "wifi down"
 }
 
 dropboxd_status {
@@ -122,7 +135,7 @@ load {
 
 cpu_temperature 0 {
   format = ": %degrees°C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input"
 }
 
 disk "/" {

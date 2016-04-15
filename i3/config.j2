@@ -140,7 +140,7 @@ workspace $SWS2_COM output {{ outputs[1].display }}
 
 # Options
 focus_follows_mouse no
-new_window pixel 1
+new_window pixel 2
 hide_edge_borders none
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┬─┐┬ ┐┬  ┬─┐┐─┐
@@ -372,20 +372,19 @@ bindsym $mod+End mode "$mode_system"
 # OUTPUT
 # Quickly switch output based on presets
 # Script is in the submodule "scripts". Alternativly http://github.com/roosta/scripts
-set $changeto chmon
-set $mode_chmon Layout: (d) desk, (t) TV, (a) all
-mode "$mode_chmon" {
-  bindsym d exec --no-startup-id $changeto desk, mode "default"
-  bindsym t exec --no-startup-id $changeto tv, mode "default"
-  bindsym a exec --no-startup-id $changeto all, mode "default"
+set $mode_chdisp Layout: (d) desk, (t) TV, (a) all
+mode "$mode_chdisp" {
+  bindsym d exec --no-startup-id chdisp desk, mode "default"
+  bindsym t exec --no-startup-id chdisp tv, mode "default"
+  bindsym a exec --no-startup-id chdisp all, mode "default"
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
 # bind FN home key to menu
-bindsym XF86HomePage mode "$mode_chmon"
-bindsym $mod+Home mode "$mode_chmon"
+bindsym XF86HomePage mode "$mode_chdisp"
+bindsym $mod+Home mode "$mode_chdisp"
 
 # ┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┬─┐┌┐┐┌─┐┬─┐
 # │─┤│─┘│─┘├─ │─┤│┬┘│─┤││││  ├─
@@ -397,7 +396,7 @@ bindsym $mod+Home mode "$mode_chmon"
 font {{ i3_font }}
 
 # <class>               <border> <background> <foreground> <indicator>
-client.focused          {{ light2 }} {{ light2 }} {{ dark0 }} {{ neutral_purple }}
+client.focused          {{ bright_green }} {{ bright_green }} {{ dark0 }} {{ neutral_purple }}
 client.focused_inactive {{ dark2 }} {{ light4 }} {{ dark0 }} {{ neutral_purple }}
 client.unfocused        {{ dark2 }} {{ dark2 }} {{ gray_245 }} {{ neutral_purple }}
 client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{ neutral_purple }}
@@ -429,10 +428,8 @@ bar {
 {% endmacro %}
 
 {# loop through each output and generate a bar config for each #}
-{% for output in outputs %}
-{% if output %}
+{% for output in outputs if output.display %}
   {{ render_bar(output.display, output.bar_id, output.stat_conf, output.bar_pos, output.tray_out) }}
-{% endif %}
 {% endfor %}
 
 # vim:ft=i3:ts=2:sw=2:fdm=marker

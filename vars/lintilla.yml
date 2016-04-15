@@ -20,5 +20,7 @@ i3_status_command: "py3status -c "
 # define where to put the tracked fonts
 font_location: "{{home}}/.fonts/misc"
 
+library_folder: "{{home}}/library"
+
 # vim:ft=yaml:ts=2:sw=2
 
