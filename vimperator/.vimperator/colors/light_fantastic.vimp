@@ -101,7 +101,7 @@ hi URL       color: #B8BB26;
 
 hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:10pt;
 " }}}
-" chrome {{{
+" CSS {{{
 style -name tab chrome://* <<EOM
 
 /* tabs container */

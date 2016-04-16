@@ -26,7 +26,7 @@ window.addEventListener('keypress',function (event) {
 },false);
 EOM
 
-"map <Space> <Leader>
+map <Space> <Leader>
 
 " map l and h to tab movement
 " this removes horizontal h&l movement but arrows still work
