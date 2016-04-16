@@ -9,13 +9,13 @@
   tags:
     - scripts
     - shell
-  file: src={{ dotfiles }}/scripts dest={{ home }}/.scripts state=link
+  file: src={{ home }}/projects/scripts dest={{ home }}/scripts state=link
 
 - name: symlink binaries to ~/bin
   tags:
     - scripts
     - shell
-  file: src={{ dotfiles }}/scripts/{{ item.src }} dest=/usr/local/bin/{{ item.dest }} state=link
+  file: src={{ home }}/projects/scripts/{{ item.src }} dest={{ home }}/bin/{{ item.dest }} state=link
   with_items:
     - { src: 'bakc.sh', dest: 'bakc' }
-    - { src: 'chmon.sh', dest: 'chmon' }
+    - { src: 'chdisp.sh', dest: 'chdisp' }

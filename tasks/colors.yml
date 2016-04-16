@@ -3,4 +3,4 @@
   tags:
     - colors
     - shell
-  file: src={{dotfiles}}/colors dest={{home}}/.colors state=link
+  file: src={{home}}/projects/colors dest={{home}}/colors state=link
