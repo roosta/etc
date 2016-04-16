@@ -102,73 +102,78 @@ hi URL       color: #B8BB26;
 hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:10pt;
 " }}}
 " CSS {{{
+
+" tab styles
 style -name tab chrome://* <<EOM
+  #TabsToolbar {
+    border-top: 1px dashed 1px dashed #458588 !important;
+    background-color: #282828 !important;
+  }
 
-/* tabs container */
-.tabbrowser-tabs {
-  border-right: none !important;
-  background-color: #282828 !important;
-}
+  .tabbrowser-tab {
+    -moz-border-top-colors: none !important;
+    -moz-border-left-colors: none !important;
+    -moz-border-right-colors: none !important;
+    -moz-border-bottom-colors: none !important;
+    border-style: solid !important;
+    border-color: #282828 !important;
+    border-width: 1px 1px 0 1px !important;
+    height: 24px !important;
+    background-color: #3C3836 !important;
+    color: #FBF1C7 !important;
+  }
 
-.tabbrowser-tab {
-  -moz-border-top-colors: none !important;
-  -moz-border-left-colors: none !important;
-  -moz-border-right-colors: none !important;
-  -moz-border-bottom-colors: none !important;
-  border-style: solid !important;
-  border-color: #282828 !important;
-  border-width: 1px 1px 0 1px !important;
-  height: 24px !important;
-  background-color: #3C3836 !important;
-  color: #FBF1C7 !important;
-}
+  .tabbrowser-tab:hover {
+    background-color: #665C54 !important;
+  }
 
-.tabbrowser-tab:hover {
-  background-color: #665C54 !important;
-}
+  /*.tabbrowser-tab[pinned=true]:after {*/
+    /*background-color: #32302F !important;*/
+  /*}*/
 
-.tabbrowser-tab[selected=true] {
-  color: #282828 !important;
-  background-color: #98971A !important;
-}
+  .tabbrowser-tab[selected=true] {
+    color: #282828 !important;
+    background-color: #98971A !important;
+  }
 
-.tabs-newtab-button {
-  border-style: solid !important;
-  border-color: #282828 !important;
-  border-width: 1px 1px 0 1px !important;
-  background-color: #3C3836 !important;
-  color: #FBF1C7 !important;
-}
+  .tabs-newtab-button {
+    border-style: solid !important;
+    border-color: #282828 !important;
+    border-width: 1px 1px 0 1px !important;
+    background-color: #3C3836 !important;
+    color: #FBF1C7 !important;
+  }
 
-.tabs-newtab-button:hover {
-  background-color: #665C54 !important;
-  color: #FBF1C7 !important;
-}
-
+  .tabs-newtab-button:hover {
+    background-color: #665C54 !important;
+    color: #FBF1C7 !important;
+  }
 EOM
 
-" Hide firefox navbar
+" firefox navbar
 style -name nav-bar chrome://* <<EOM
-#nav-bar, #urlbar-container, #search-container, #openLocation {
-  display:none!important;
-}
+
+  #nav-bar, #urlbar-container, #search-container, #openLocation {
+    display:none!important;
+  }
+
 EOM
 
-" Liberator bar style
+" Liberator bar
 style -name liberator chrome://* <<EOM
-#liberator-statusline:not([customizing="true"]) {
-  margin: -2px -2px !important;
-  padding: 0 0 !important;
-  height: 24px !important;
-}
 
-#liberator-separator {
-  height: 0px !important;
-  border-top: 1px dashed 1px dashed #458588 !important;
-}
+  #liberator-statusline:not([customizing="true"]) {
+    margin: -2px -2px !important;
+    padding: 0 0 !important;
+    height: 24px !important;
+  }
+
+  #liberator-separator {
+    height: 0px !important;
+    border-top: 1px dashed 1px dashed #458588 !important;
+  }
 
 EOM
-
 " }}}
 
 " vim:ft=vimperator:ts=2:sw=2:fdm=marker
