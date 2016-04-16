@@ -149,15 +149,15 @@ hide_edge_borders none
 # ---------------------------------
 # WINDOW WORKSPACE ASSIGNMENT
 # ---------------------------
-# -> devel
-assign [class="(?i)subl3"] $PWS2_DEV
-assign [class="(?i)jetbrains-idea"] $PWS2_DEV
-assign [class="(?i)atom"] $PWS2_DEV
-
-# -> debug
+# -> develop
 assign [class="(?i)google-chrome-beta"] $SWS3_DBG
 assign [class="(?i)google-chrome-unstable"] $SWS3_DBG
 assign [instance="^Devtools$$"] $SWS3_DBG
+assign [class="(?i)firefox-developer"] $SWS3_DBG
+assign [class="(?i)subl3"] $PWS2_DEV
+assign [class="(?i)jetbrains-idea"] $PWS2_DEV
+assign [class="(?i)atom"] $PWS2_DEV
+assign [class="(?i)emacs"] $PWS2_DEV
 
 # -> www
 assign [class="(?i)firefox"] $PWS3_WWW
@@ -372,11 +372,12 @@ bindsym $mod+End mode "$mode_system"
 # OUTPUT
 # Quickly switch output based on presets
 # Script is in the submodule "scripts". Alternativly http://github.com/roosta/scripts
+set $changeto ~/scripts/chdisp
 set $mode_chdisp Layout: (d) desk, (t) TV, (a) all
 mode "$mode_chdisp" {
-  bindsym d exec --no-startup-id chdisp desk, mode "default"
-  bindsym t exec --no-startup-id chdisp tv, mode "default"
-  bindsym a exec --no-startup-id chdisp all, mode "default"
+  bindsym d exec --no-startup-id $changeto desk, mode "default"
+  bindsym t exec --no-startup-id $changeto tv, mode "default"
+  bindsym a exec --no-startup-id $changeto all, mode "default"
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
