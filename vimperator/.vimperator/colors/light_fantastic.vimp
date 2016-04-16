@@ -100,47 +100,75 @@ hi Function  color: #268bd2;
 hi URL       color: #B8BB26;
 
 hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:10pt;
-
-" vim:ft=vim:ts=2:sw=2:fdm=marker
-
-" CSS {{{
+" }}}
+" chrome {{{
 style -name tab chrome://* <<EOM
-.tabbrowser-tab[selected=false] { }
-.tabbrowser-tab[selected=true] { }
 
-.tabbrowser-strip {
-}
-
-#tabbrowser-tabs {
-  /*background-color: #282828;*/
+/* tabs container */
+.tabbrowser-tabs {
+  border-right: none !important;
+  background-color: #282828 !important;
 }
 
 .tabbrowser-tab {
-  /*border-radius: 0px !important;*/
+  -moz-border-top-colors: none !important;
+  -moz-border-left-colors: none !important;
+  -moz-border-right-colors: none !important;
+  -moz-border-bottom-colors: none !important;
+  border-style: solid !important;
+  border-color: #282828 !important;
+  border-width: 1px 1px 0 1px !important;
+  height: 24px !important;
+  background-color: #3C3836 !important;
+  color: #FBF1C7 !important;
+}
+
+.tabbrowser-tab:hover {
+  background-color: #665C54 !important;
+}
+
+.tabbrowser-tab[selected=true] {
+  color: #282828 !important;
+  background-color: #98971A !important;
 }
 
 .tabs-newtab-button {
-  /*display: none !important;*/
+  border-style: solid !important;
+  border-color: #282828 !important;
+  border-width: 1px 1px 0 1px !important;
+  background-color: #3C3836 !important;
+  color: #FBF1C7 !important;
+}
+
+.tabs-newtab-button:hover {
+  background-color: #665C54 !important;
+  color: #FBF1C7 !important;
 }
 
 EOM
 
+" Hide firefox navbar
 style -name nav-bar chrome://* <<EOM
 #nav-bar, #urlbar-container, #search-container, #openLocation {
   display:none!important;
 }
 EOM
 
+" Liberator bar style
 style -name liberator chrome://* <<EOM
 #liberator-statusline:not([customizing="true"]) {
   margin: -2px -2px !important;
   padding: 0 0 !important;
   height: 24px !important;
 }
-EOM
 
-"style -name statusbar chrome://* <<EOM
-"EOM
+#liberator-separator {
+  height: 0px !important;
+  border-top: 1px dashed 1px dashed #458588 !important;
+}
+
+EOM
 
 " }}}
 
+" vim:ft=vimperator:ts=2:sw=2:fdm=marker
