@@ -97,7 +97,7 @@ nitrogen --restore &
 # ┆─┘┘ ┆┴─┘┘ ┆┘─┘┆└┘──┘
 # ---------------------
 urxvtd -q -f -o &
-#compton -b &
+compton -b &
 dunst &
 nm-applet &
 

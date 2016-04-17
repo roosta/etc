@@ -44,3 +44,5 @@ for config (~/.zsh/*.zsh) source $config
 
 # source fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"

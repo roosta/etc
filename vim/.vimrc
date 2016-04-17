@@ -447,7 +447,7 @@ let g:bufferline_echo = 0
 
 " Set theme
 "let g:gruvbox_italicize_comments = 0
-let g:gruvbox_italic = 1
+let g:gruvbox_italic = 0
 "let g:gruvbox_contrast_dark = "hard"
 colorscheme gruvbox
 set background=dark
