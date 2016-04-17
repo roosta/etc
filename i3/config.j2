@@ -372,7 +372,7 @@ bindsym $mod+End mode "$mode_system"
 # OUTPUT
 # Quickly switch output based on presets
 # Script is in the submodule "scripts". Alternativly http://github.com/roosta/scripts
-set $changeto ~/scripts/chdisp
+set $changeto ~/bin/chdisp
 set $mode_chdisp Layout: (d) desk, (t) TV, (a) all
 mode "$mode_chdisp" {
   bindsym d exec --no-startup-id $changeto desk, mode "default"
