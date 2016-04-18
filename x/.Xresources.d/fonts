@@ -14,6 +14,11 @@
 !#define FONT_ITALIC     xft:PragmataPro\ for\ Powerline:size=10:style=Italic
 !#define FONT_BOLDITALIC xft:PragmataPro\ for\ Powerline:size=10:style=Bold\ Italic
 
+!#define FONT_NORMAL     xft:PragmataPro for Powerline:size=10:style=Regular
+!#define FONT_BOLD       xft:PragmataPro Bold for Powerline:size=10:style=Bold
+!#define FONT_ITALIC     xft:PragmataPro Italic for Powerline:size=10:style=Italic
+!#define FONT_BOLDITALIC xft:PragmataPro Bold Italic for Powerline:size=10:style=Bold Italic
+
 #define FONT_NORMAL     xft:Essential PragmataPro:size=10:style=Regular
 #define FONT_BOLD       xft:Essential PragmataPro:size=10:style=Bold
 #define FONT_ITALIC     xft:Essential PragmataPro:size=10:style=Italic
@@ -39,4 +44,6 @@ Xft.hinting:   1
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcddefault
 Xft.rgba:      rgb
+
+! vim:ft=xdefaults:ts=2:sw=2:fdm=marker
 

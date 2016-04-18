@@ -54,6 +54,7 @@
     - include: tasks/idea.yml
     - include: tasks/tig.yml
     - include: tasks/vim.yml
+    - include: tasks/emacs.yml
     - include: tasks/sublime.yml
     - include: tasks/atom.yml
     - include: tasks/ruby.yml

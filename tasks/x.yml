@@ -10,11 +10,8 @@
   file: src={{ dotfiles }}/x/{{ item }} dest={{ home }}/{{ item }} state=link
   with_items:
     - .Xresources
-    - .xscreensaver.xresources
     - .xbindkeysrc
     - .xinitrc
     - .xserverrc
-    - .urxvt.xresources
-    - .rofi.xresources
-    - .fonts.xresources
     - .xinitrc.d
+    - .Xresources.d

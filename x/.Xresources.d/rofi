@@ -99,3 +99,5 @@ rofi.key-window:
 rofi.key-run:
 rofi.key-ssh:
 
+! vim:ft=xdefaults:ts=2:sw=2:fdm=marker
+

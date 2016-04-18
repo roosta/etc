@@ -31,3 +31,5 @@ xscreensaver.passwd.thermometer.width:      10
 !datestamp format--see the strftime(3) manual page for details
 xscreensaver.dateFormat: %I:%M%P %a %b %d, %Y
 
+! vim:ft=xdefaults:ts=2:sw=2:fdm=marker
+
