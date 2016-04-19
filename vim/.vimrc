@@ -332,6 +332,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
+let g:syntastic_javascript_checkers = ['eslint']
 "}}}
 
 " VIM-MULTIPLE-CURSOR {{{2
@@ -448,7 +449,7 @@ let g:bufferline_echo = 0
 
 " Set theme
 "let g:gruvbox_italicize_comments = 0
-let g:gruvbox_italic = 1
+let g:gruvbox_italic = 0
 "let g:gruvbox_contrast_dark = "hard"
 colorscheme gruvbox
 set background=dark

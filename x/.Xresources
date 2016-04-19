@@ -8,13 +8,13 @@
 ! Github : https://github.com/roosta
 ! ----------------------------------------
 
-#include "/home/roosta/.fonts.xresources"
-#include "/home/roosta/.urxvt.xresources"
-#include "/home/roosta/.rofi.xresources"
-#include "/home/roosta/.xscreensaver.xresources"
-
-#include "/home/roosta/colors/xcolors/gruvbox-dark.xresources"
-#include "/home/roosta/colors/xcolors/gruvbox-urxvt256.xresources"
+#include ".Xresources.d/fonts"
+#include ".Xresources.d/urxvt"
+#include ".Xresources.d/rofi"
+#include ".Xresources.d/xscreensaver"
+#include "colors/xcolors/gruvbox-dark.xresources"
+!#include "/home/roosta/colors/xcolors/gruvbox-urxvt256.xresources"
 
 !Xcursor.theme: Numix-Cursor
 
+! vim:ft=xdefaults:ts=2:sw=2:fdm=marker
