@@ -481,3 +481,9 @@ new [description:"make private github repo for secure settings + blackboxing fil
 time 1460567676
 new [description:"contact 123spill removal" entry:"1460567676" modified:"1460567676" status:"pending" uuid:"f5ef967e-6578-441c-bb88-c31bf39fa694"]
 ---
+time 1461181813
+new [description:"subkey" entry:"1461181813" modified:"1461181813" status:"pending" uuid:"eb178c31-3275-4bf9-8b63-20c075d3ef88"]
+---
+time 1461181828
+new [description:"gh gnupg" entry:"1461181828" modified:"1461181828" status:"pending" uuid:"8a5fd27a-08c2-472c-927d-7afd2a8e4c6c"]
+---

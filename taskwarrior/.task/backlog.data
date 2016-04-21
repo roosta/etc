@@ -139,3 +139,5 @@
 {"description":"list tasks","entry":"20160410T114311Z","modified":"20160410T114311Z","status":"pending","tags":["fatline"],"uuid":"6cf2bbd1-fbab-4fe5-8fc8-2ad9217b7af4"}
 {"description":"make private github repo for secure settings + blackboxing files","entry":"20160410T131314Z","modified":"20160410T131314Z","status":"pending","tags":["dotfiles"],"uuid":"ee934ba2-d830-4744-b1d4-656a2f4fd261"}
 {"description":"contact 123spill removal","entry":"20160413T171436Z","modified":"20160413T171436Z","status":"pending","uuid":"f5ef967e-6578-441c-bb88-c31bf39fa694"}
+{"description":"subkey","entry":"20160420T195013Z","modified":"20160420T195013Z","status":"pending","uuid":"eb178c31-3275-4bf9-8b63-20c075d3ef88"}
+{"description":"gh gnupg","entry":"20160420T195028Z","modified":"20160420T195028Z","status":"pending","uuid":"8a5fd27a-08c2-472c-927d-7afd2a8e4c6c"}

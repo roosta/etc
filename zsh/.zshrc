@@ -25,7 +25,7 @@
 # set colors in virtual console from color resources
 if [ "$TERM" = "linux" ]; then
   _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
-  for i in $(sed -n "$_SEDCMD" $HOME/.colors/xcolors/gruvbox-dark.xresources | \
+  for i in $(sed -n "$_SEDCMD" $HOME/colors/xcolors/gruvbox-dark.xresources | \
     awk '$1 < 16 {printf "\\e]P%X%s", $1, $2}'); do
   echo -en "$i"
 done
@@ -33,18 +33,13 @@ clear
 tmux new-session -s vconsole
 fi
 
-# source colorscheme
-source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+for config (~/.zsh/*.zsh) source $config && \
+  source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh" && \
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # start tmux on every shell login
 #if which tmux >/dev/null 2>&1; then
     ##if not inside a tmux session, and if no session is started, start a new session
     #test -z "$TMUX" && (tmux attach || tmux new-session -s main)
 #fi
-
-# source remaining config
-for config (~/.zsh/*.zsh) source $config
-
-# source fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

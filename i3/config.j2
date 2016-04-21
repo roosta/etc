@@ -428,7 +428,7 @@ bar {
 }
 {% endmacro %}
 
-{# loop through each output and generate a bar config for each #}
+{# loop through each output and generate a bar config #}
 {% for output in outputs if output.display %}
   {{ render_bar(output.display, output.bar_id, output.stat_conf, output.bar_pos, output.tray_out) }}
 {% endfor %}

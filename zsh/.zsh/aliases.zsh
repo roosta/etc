@@ -30,7 +30,7 @@ alias vivimp="vim ~/.vimperatorrc"
 alias vigtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
 alias vivimp="vim ~/.vimperatorrc"
 alias vilein="vim ~/.lein/profiles.clj"
-alias viterm="vim ~/.urxvt.xresources"
+alias viterm="vim ~/.Xresources.d/urxvt"
 alias vii3gen="vim ~/.i3/config.gen"
 alias vienv="vim ~/.zsh/env.zsh"
 alias vizopts="vim ~/.zsh/options.zsh"
@@ -44,8 +44,8 @@ alias vizrc="vim ~/.zshrc"
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias grep="ag"
 
-alias agrep="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
-alias hgrep="cat ~/.histfile | grep" # grep command history quickly
+alias aliasgrep="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
+alias histgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
 # locate file at working dir
