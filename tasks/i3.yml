@@ -1,4 +1,12 @@
 ---
+  # i3 needs the log directory otherwise WM will crash at startup
+- name: check for/create i3 & log directory
+  file: path={{ home }}/{{ item }} state=directory mode=0755
+  with_items:
+    - .i3/log
+  tags:
+    - i3
+
 - name: Create i3 config from template
   template: src={{ dotfiles }}/i3/config.j2 dest={{ dotfiles }}/i3/config.tmp backup=no
   tags:
