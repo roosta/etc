@@ -8,7 +8,7 @@ URxvt.boldFont       : FONT_BOLD
 URxvt.italicFont     : FONT_ITALIC
 URxvt.boldItalicFont : FONT_BOLDITALIC
 
-URxvt*letterSpace: -1
+!URxvt*letterSpace: -1
 URxvt*saveLines: 12000
 URxvt*scrollBar: false
 

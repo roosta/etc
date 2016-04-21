@@ -288,7 +288,7 @@ Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
 
-" Language:
+" Language
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-liquid'
@@ -296,6 +296,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
+Plug 'mattn/emmet-vim'
 " Using AUR to simplify build process on Arch
 "Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
@@ -588,6 +589,11 @@ nnoremap <silent> <A-Down>  : TmuxNavigateDown<cr>
 nnoremap <silent> <A-Up>    : TmuxNavigateUp<cr>
 nnoremap <silent> <A-Right> : TmuxNavigateRight<cr>
 nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
+" }}}
+
+" EMMET-VIM {{{2
+" -----------------
+let g:user_emmet_leader_key='<C-A>'
 " }}}
 
 " INACTIVE {{{2
