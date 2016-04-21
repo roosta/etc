@@ -193,6 +193,8 @@ noremap <C-j> }
 noremap <leader>ccl :cclose<CR>
 noremap <leader>lcl :lclose<CR>
 
+cnoremap Q q
+
 " use c-c and c-p to call system clipboard
 "vmap <silent> <leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
 "nmap <silent> <leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p

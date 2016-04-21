@@ -6,7 +6,6 @@
     - bin
   tags:
     - bin
-    - init
 
 - name: clone / update external libraries
   git: repo={{ item.repo }} dest={{ home }}/lib/{{ item.dest }} clone=yes update=yes
