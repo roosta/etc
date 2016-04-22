@@ -185,10 +185,10 @@ nnoremap <silent> <M-S-k> 5<C-W>+
 nnoremap <silent> <M-S-l> 5<C-w>>
 
 " jump paragraphs with ctrl-{movement}
-noremap <C-Up> {
-noremap <C-Down> }
-noremap <C-k> {
-noremap <C-j> }
+"noremap <C-Up> {
+"noremap <C-Down> }
+"noremap <C-k> {
+"noremap <C-j> }
 
 noremap <leader>ccl :cclose<CR>
 noremap <leader>lcl :lclose<CR>

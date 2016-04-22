@@ -50,7 +50,7 @@
     - include: tasks/npm.yml
     - include: tasks/ctags.yml
     - include: tasks/git.yml
-    - include: tasks/subversion.yml
+    #- include: tasks/subversion.yml
     - include: tasks/idea.yml
     - include: tasks/tig.yml
     - include: tasks/vim.yml
