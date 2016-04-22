@@ -35,18 +35,18 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     history-substring-search-down
 [[ -n "${key[left]}"     ]]  && bindkey  "${key[left]}"     backward-char
 [[ -n "${key[right]}"    ]]  && bindkey  "${key[right]}"    forward-char
-#[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
-#[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
+[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
+[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
 
 # bind k and j for VI mode hist substring search
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 bindkey ' ' magic-space # [Space] - do history expansion
-#bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
-#bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
-#bindkey -M vicmd '^[[1;5C' forward-word
-#bindkey -M vicmd '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
+bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
+bindkey -M vicmd '^[[1;5C' forward-word
+bindkey -M vicmd '^[[1;5D' backward-word
 
 # [Shift-Tab] - move through the completion menu backwards
 if [[ "${terminfo[kcbt]}" != "" ]]; then

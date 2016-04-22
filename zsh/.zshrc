@@ -33,13 +33,8 @@ clear
 tmux new-session -s vconsole
 fi
 
-for config (~/.zsh/*.zsh) source $config && \
-  source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh" && \
-  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
-# start tmux on every shell login
-#if which tmux >/dev/null 2>&1; then
-    ##if not inside a tmux session, and if no session is started, start a new session
-    #test -z "$TMUX" && (tmux attach || tmux new-session -s main)
-#fi
+for config (~/.zsh/*.zsh) source $config
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

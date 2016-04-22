@@ -36,6 +36,7 @@ alias vienv="vim ~/.zsh/env.zsh"
 alias vizopts="vim ~/.zsh/options.zsh"
 alias vizplugs="vim ~/.zsh/plugins.zsh"
 alias vizrc="vim ~/.zshrc"
+alias vixfont="vim ~/.Xresources.d/fonts"
 
 # ┬─┐o┌┐┐┬─┐
 # ├─ │││││ │

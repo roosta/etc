@@ -27,7 +27,7 @@ export TERMINAL=urxvtc
 # uniform qt/gtk look.
 export DESKTOP_SESSION=gnome
 export QT_STYLE_OVERRIDE=GTK+
-export GDK_DPI_SCALE=1.25
+#export GDK_DPI_SCALE=1.25
 
 # editor
 export EDITOR=vim
@@ -53,13 +53,6 @@ alias zless=$PAGER
 # tell ranger not to use default config
 export RANGER_LOAD_DEFAULT_RC="false"
 
-# https://wiki.archlinux.org/index.php/NVIDIA#Gaming_using_TwinView
-# attempt to fix vsync issue with nvidia multiple displays
-#export SDL_VIDEO_FULLSCREEN_HEAD=1
-#export __GL_SYNC_TO_VBLANK=1
-#export __GL_SYNC_DISPLAY_DEVICE=DFP-0
-#export __VDPAU_NVIDIA_SYNC_DISPLAY_DEVICE=DFP-0
-#
 # cpan stuff
 PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
