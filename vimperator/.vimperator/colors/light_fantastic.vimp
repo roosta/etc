@@ -108,6 +108,8 @@ style -name tab chrome://* <<EOM
   #TabsToolbar {
     border-top: 1px dashed 1px dashed #458588 !important;
     background-color: #282828 !important;
+    font-family: "Essential PragmataPro";
+    font-size: 12px;
   }
 
   .tabbrowser-tab {

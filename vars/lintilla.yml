@@ -4,30 +4,38 @@ home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
 # define host outputs and various associated vars
-outputs: [{display: "DVI-I-3",
-           bar_id: "bar-primary",
-           stat_conf: "~/.i3/status/lintilla_0.i3status",
-           bar_pos: "top",
-           tray_out: "primary"},
-          {display: "DVI-I-2",
-           bar_id: "bar-secondary",
-           stat_conf: "~/.i3/status/lintilla_1.i3status",
-           bar_pos: "top",
-           tray_out: "primary"}]
+outputs: [
+  {
+    display: "DVI-I-3",
+    bar_id: "bar-primary",
+    stat_conf: "~/.i3/status/lintilla_0.i3status",
+    bar_pos: "top",
+    tray_out: "primary"
+  },
+  {
+    display: "DVI-I-2",
+    bar_id: "bar-secondary",
+    stat_conf: "~/.i3/status/lintilla_1.i3status",
+    bar_pos: "top",
+    tray_out: "primary"
+  }
+]
 
-  # Used in xinit. This is a dynamic layout that is changed with chdisp <https://github.com/roosta/scripts/blob/master/chmon.sh>
-  #output_layout: "xrandr --output DVI-I-1 --primary --auto --pos 0x0 --output DVI-D-0 --auto --left-of DVI-I-1 --output HDMI-0 --off &"
-  #output_layout: "DVI-I-1: nvidia-auto-select +1920+0 { ForceFullCompositionPipeline = on }, DVI-D-0: nvidia-auto-select +0+0"
+# Used in xinit. This is a dynamic layout that is changed with chdisp <https://github.com/roosta/scripts/blob/master/chmon.sh>
+#output_layout: "xrandr --output DVI-I-1 --primary --auto --pos 0x0 --output DVI-D-0 --auto --left-of DVI-I-1 --output HDMI-0 --off &"
+#output_layout: "DVI-I-1: nvidia-auto-select +1920+0 { ForceFullCompositionPipeline = on }, DVI-D-0: nvidia-auto-select +0+0"
 
-  # i3 variables.
-  i3_font: "pango:Essential PragmataPro 9"
-  i3_status_font: "pango:Essential PragmataPro, FontAwesome 9"
-  i3_status_command: "py3status -c "
+# i3 variables.
+i3_font: "pango:Essential PragmataPro 8"
+i3_status_font: "pango:Essential PragmataPro, FontAwesome 8"
 
-    # define various folders to put its respective files
-  font_dir: "{{home}}/.fonts/misc"
-  bin_dir: "{{home}}/bin"
-  lib_dir: "{{home}}/lib"
+# NOTICE: leave in final whitespace!
+i3_status_command: "py3status -c "
+
+ # define various folders to put its respective files
+font_dir: "{{home}}/.fonts/misc"
+bin_dir: "{{home}}/bin"
+lib_dir: "{{home}}/lib"
 
 # vim:ft=yaml:ts=2:sw=2
 
