@@ -27,7 +27,7 @@ export TERMINAL=urxvtc
 # uniform qt/gtk look.
 export DESKTOP_SESSION=gnome
 export QT_STYLE_OVERRIDE=GTK+
-#export GDK_DPI_SCALE=1.25
+#export GDK_DPI_SCALE=0.5
 
 # editor
 export EDITOR=vim

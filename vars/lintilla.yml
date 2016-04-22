@@ -4,12 +4,12 @@ home: "/home/{{user}}"
 dotfiles: "{{home}}/.dotfiles"
 
 # define host outputs and various associated vars
-outputs: [{display: "DVI-I-2",
+outputs: [{display: "DVI-I-3",
            bar_id: "bar-primary",
            stat_conf: "~/.i3/status/lintilla_0.i3status",
            bar_pos: "top",
            tray_out: "primary"},
-          {display: "DVI-I-1",
+          {display: "DVI-I-2",
            bar_id: "bar-secondary",
            stat_conf: "~/.i3/status/lintilla_1.i3status",
            bar_pos: "top",
