@@ -9,7 +9,7 @@
 - name: clone / update external libraries
   git: repo={{ item.repo }} dest={{ home }}/projects/{{ item.dest }} clone=yes update=yes
   with_items:
-    - { repo: "git@github.com:roosta/scripts.git", dest: "scripts" }
+    - { repo: "git@github.com:roosta/scripts.git", dest: "scripts", branch: "dev"}
     - { repo: "git@github.com:roosta/LS_COLORS.git", dest: "LS_COLORS" }
     - { repo: "git@github.com:roosta/colors.git", dest: "colors" }
   tags:
@@ -21,8 +21,8 @@
     - { src: "{{ home }}/projects/scripts", dest: "scripts" }
     - { src: "{{ home }}/projects/colors", dest: "colors" }
     - { src: "{{ home }}/projects/LS_COLORS/LS_COLORS", dest: ".dircolors" }
-    - { src: "{{ home }}/scripts/chdisp-xrandr.sh", dest: "bin/chdisp" }
-    - { src: "{{ home }}/scripts/bakc.sh", dest: "bin/bakc" }
+    - { src: "{{ home }}/projects/scripts/chdisp-xrandr.sh", dest: "bin/chdisp" }
+    - { src: "{{ home }}/projects/scripts/bakc.sh", dest: "bin/bakc" }
     - { src: "{{ dotfiles }}/fatline/fatline.sh", dest: "bin/fatline" }
     - { src: "{{ home }}/scripts/touchpad-toggle.sh", dest: "bin/touchpad-toggle" }
   tags:

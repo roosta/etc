@@ -6,13 +6,18 @@ dotfiles: "{{home}}/.dotfiles"
 outputs: [{display: "HDMI1", bar_id: "bar-primary", stat_conf: "$HOME/.i3/status/poodoo_0.i3status", bar_pos: "top", tray_out: "primary"},
           {display: "VGA1", bar_id: "bar-secondary", stat_conf: "$HOME/.i3/status/poodoo_1.i3status", bar_pos: "top", tray_out: "primary"}]
 
-font_location: "{{home}}/.fonts/misc"
-
 # i3-wm
-# -----
 i3_font: "pango:Essential PragmataPro 9"
 i3_status_font: "pango:Essential PragmataPro, FontAwesome 9"
 i3_status_command: "py3status -c"
+
+# user locations
+lib_dir: "{{home}}/lib"
+bin_dir: "{{home}}/bin"
+font_dir: "{{home}}/.fonts/misc"
+
+# define host gfx-card driver
+driver: "nouveau"
 
 # vim:ft=yaml:ts=2:sw=2
 
