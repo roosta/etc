@@ -30,11 +30,10 @@ run () {
 
 usage() {
 	cat >&2 <<EOL
-┳━┓┳━┓┏┓┓┳  o┏┓┓┳━┓
-┣━ ┃━┫ ┃ ┃  ┃┃┃┃┣━
-┇  ┛ ┇ ┇ ┇━┛┇┇┗┛┻━┛
--------------------
-Simple wrapper for Ansible to facilitate using it as a dotfile manager
+FATLINE
+───────
+Simple wrapper for Ansible,
+facilitate using it as a dotfile manager
 
 Usage: fatline command option
 
