@@ -487,3 +487,30 @@ new [description:"subkey" entry:"1461181813" modified:"1461181813" status:"pendi
 time 1461181828
 new [description:"gh gnupg" entry:"1461181828" modified:"1461181828" status:"pending" uuid:"8a5fd27a-08c2-472c-927d-7afd2a8e4c6c"]
 ---
+time 1461525251
+new [description:"use .zsh.d as split conf location" entry:"1461525251" modified:"1461525251" status:"pending" uuid:"ab8b091b-aba1-4f90-94c7-28a23923cd7c"]
+---
+time 1461525305
+old [description:"fix sidebar z-index issue" entry:"1457432527" modified:"1457432527" status:"pending" tags:"firefox" uuid:"6162eddd-1d24-41fb-852f-90a9f27d0631"]
+new [description:"fix sidebar z-index issue" end:"1461525305" entry:"1457432527" modified:"1461525305" status:"completed" tags:"firefox" uuid:"6162eddd-1d24-41fb-852f-90a9f27d0631"]
+---
+time 1461525313
+old [description:"move pip user repos to home" entry:"1457551576" modified:"1457551576" status:"pending" tags:"general" uuid:"d05c783d-6a60-4626-8f07-8085aeee4a60"]
+new [description:"move pip user repos to home" end:"1461525313" entry:"1457551576" modified:"1461525313" status:"completed" tags:"general" uuid:"d05c783d-6a60-4626-8f07-8085aeee4a60"]
+---
+time 1461525325
+old [description:"make private github repo for secure settings + blackboxing files" entry:"1460293994" modified:"1460293994" status:"pending" tags:"dotfiles" uuid:"ee934ba2-d830-4744-b1d4-656a2f4fd261"]
+new [description:"make private github repo for secure settings + blackboxing files" end:"1461525325" entry:"1460293994" modified:"1461525325" status:"completed" tags:"dotfiles" uuid:"ee934ba2-d830-4744-b1d4-656a2f4fd261"]
+---
+time 1461525340
+old [description:"multiple procs" entry:"1451589151" modified:"1451589151" status:"pending" tags:"questions" uuid:"e6ba1fce-81fd-4193-9aba-f00b8d2f1a4f"]
+new [description:"multiple procs" end:"1461525338" entry:"1451589151" modified:"1461525340" status:"deleted" tags:"questions" uuid:"e6ba1fce-81fd-4193-9aba-f00b8d2f1a4f"]
+---
+time 1461525347
+old [description:"display tab icons" entry:"1448915700" modified:"1448915700" status:"pending" tags:"firefox" uuid:"b5c3fd20-b2a6-4f7a-b9f2-3f66df7f7090"]
+new [description:"display tab icons" end:"1461525347" entry:"1448915700" modified:"1461525347" status:"completed" tags:"firefox" uuid:"b5c3fd20-b2a6-4f7a-b9f2-3f66df7f7090"]
+---
+time 1461525370
+old [description:"setup specialized conf for compton" entry:"1447195164" modified:"1447195164" status:"pending" tags:"general" uuid:"f911b594-c17c-4b82-afc9-576ca0a09816"]
+new [description:"setup specialized conf for compton" end:"1461525368" entry:"1447195164" modified:"1461525370" status:"deleted" tags:"general" uuid:"f911b594-c17c-4b82-afc9-576ca0a09816"]
+---

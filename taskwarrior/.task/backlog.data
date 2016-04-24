@@ -141,3 +141,10 @@
 {"description":"contact 123spill removal","entry":"20160413T171436Z","modified":"20160413T171436Z","status":"pending","uuid":"f5ef967e-6578-441c-bb88-c31bf39fa694"}
 {"description":"subkey","entry":"20160420T195013Z","modified":"20160420T195013Z","status":"pending","uuid":"eb178c31-3275-4bf9-8b63-20c075d3ef88"}
 {"description":"gh gnupg","entry":"20160420T195028Z","modified":"20160420T195028Z","status":"pending","uuid":"8a5fd27a-08c2-472c-927d-7afd2a8e4c6c"}
+{"description":"use .zsh.d as split conf location","entry":"20160424T191411Z","modified":"20160424T191411Z","status":"pending","uuid":"ab8b091b-aba1-4f90-94c7-28a23923cd7c"}
+{"description":"fix sidebar z-index issue","end":"20160424T191505Z","entry":"20160308T102207Z","modified":"20160424T191505Z","status":"completed","tags":["firefox"],"uuid":"6162eddd-1d24-41fb-852f-90a9f27d0631"}
+{"description":"move pip user repos to home","end":"20160424T191513Z","entry":"20160309T192616Z","modified":"20160424T191513Z","status":"completed","tags":["general"],"uuid":"d05c783d-6a60-4626-8f07-8085aeee4a60"}
+{"description":"make private github repo for secure settings + blackboxing files","end":"20160424T191525Z","entry":"20160410T131314Z","modified":"20160424T191525Z","status":"completed","tags":["dotfiles"],"uuid":"ee934ba2-d830-4744-b1d4-656a2f4fd261"}
+{"description":"multiple procs","end":"20160424T191538Z","entry":"20151231T191231Z","modified":"20160424T191540Z","status":"deleted","tags":["questions"],"uuid":"e6ba1fce-81fd-4193-9aba-f00b8d2f1a4f"}
+{"description":"display tab icons","end":"20160424T191547Z","entry":"20151130T203500Z","modified":"20160424T191547Z","status":"completed","tags":["firefox"],"uuid":"b5c3fd20-b2a6-4f7a-b9f2-3f66df7f7090"}
+{"description":"setup specialized conf for compton","end":"20160424T191608Z","entry":"20151110T223924Z","modified":"20160424T191610Z","status":"deleted","tags":["general"],"uuid":"f911b594-c17c-4b82-afc9-576ca0a09816"}
