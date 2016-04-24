@@ -10,23 +10,23 @@ source! /home/roosta/.vimperatorrc.local
 
 
 " To Enable map <Space>
-js <<EOM
-window.addEventListener('keypress',function (event) {
-    var code=event.charCode;
-    if ((liberator.mode === modes.INSERT && modes.extended === modes.MENU)
-        ||(liberator.mode ==modes.NORMAL && code==32)
-        ||(liberator.mode ==modes.COMMAND_LINE && code !=32)){
-    let map = mappings.get(liberator.mode, events.toString(event));
-    if (map) {
-      event.preventDefault();
-      event.stopPropagation();
-      map.execute();
-    }
-  }
-},false);
-EOM
+"js <<EOM
+"window.addEventListener('keypress',function (event) {
+    "var code=event.charCode;
+    "if ((liberator.mode === modes.INSERT && modes.extended === modes.MENU)
+        "||(liberator.mode ==modes.NORMAL && code==32)
+        "||(liberator.mode ==modes.COMMAND_LINE && code !=32)){
+    "let map = mappings.get(liberator.mode, events.toString(event));
+    "if (map) {
+      "event.preventDefault();
+      "event.stopPropagation();
+      "map.execute();
+    "}
+  "}
+"},false);
+"EOM
 
-map <Space> <Leader>
+"map <Space> <Leader>
 
 " map l and h to tab movement
 " this removes horizontal h&l movement but arrows still work

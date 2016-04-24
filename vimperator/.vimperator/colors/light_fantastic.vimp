@@ -58,7 +58,7 @@
 " │─┤││ ┬│─┤│  ││ ┬│─┤ │
 " ┆ ┴┆┆─┘┆ ┴┆─┘┆┆─┘┆ ┴ ┆
 " -----------------------
-hi Hint       font-family: "Terminess Powerline"; font-size: 15px; font-weight: normal; color: #1D2021; background-color: #8EC07C; border: 1px solid #1D2021; padding: 0px 5px 0px 5px; text-transform: uppercase;
+hi Hint font-family: "Terminess Powerline"; font-size: 15px; font-weight: normal; color: #1D2021; background-color: #8EC07C; border: 1px solid #1D2021; padding: 0px 5px 0px 5px; text-transform: uppercase;
 hi HintElem   background-color: #458588; color: #3C3836;
 hi HintActive background-color: #B8BB26; color: #282828;
 
@@ -86,7 +86,7 @@ hi Tag        color: #B8BB26;
 hi Number     color: #B8BB26;
 
 hi CompTitle          background: #3C3836;
-hi CompTitle>*        color: #458588; padding-bottom: 1px; padding-left: 10px; font-weight: bold; font-size: 10pt; border-top: 1px dashed #458588; border-bottom: 1px dashed #458588;
+hi CompTitle>*        color: #458588; padding-bottom: 1px; padding-left: 10px; font-weight: bold; font-size: 10pt; border-top: 1px solid #504945; border-bottom: 1px solid #504945;
 hi CompItem[selected] color: #458588; background: #3C3836;
 hi CompItem           color: #EBDBB2; width: 50%;
 hi CompDesc           color: #D3869B;
@@ -172,7 +172,7 @@ style -name liberator chrome://* <<EOM
 
   #liberator-separator {
     height: 0px !important;
-    border-top: 1px dashed 1px dashed #458588 !important;
+    border-top: 1px dashed 1px solid #458588 !important;
   }
 
 EOM
