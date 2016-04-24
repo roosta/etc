@@ -149,7 +149,8 @@ hide_edge_borders none
 # ---------------------------------
 # WINDOW WORKSPACE ASSIGNMENT
 # ---------------------------
-# -> develop
+
+# W:DEV
 assign [class="(?i)google-chrome-beta"] $SWS3_DBG
 assign [class="(?i)google-chrome-unstable"] $SWS3_DBG
 assign [instance="^Devtools$$"] $SWS3_DBG
@@ -159,27 +160,29 @@ assign [class="(?i)jetbrains-idea"] $PWS2_DEV
 assign [class="(?i)atom"] $PWS2_DEV
 assign [class="(?i)emacs"] $PWS2_DEV
 
-# -> www
+# E:WWW
 assign [class="(?i)firefox"] $PWS3_WWW
 
-# -> games
+# 2:GAM
 assign [class="(?i)steam(.*)"] $TWS2_GAM
 #assign [title="(?i)friends"] $TWS2_GAM
 
-# -> media
+# 1:MED
 # workaround for spotify WS assignment
 # see: https://github.com/i3/i3/issues/2060
-#assign [class="(?i)Spotify"] $TWS1_MED
 for_window [class="Spotify"] move to workspace $TWS1_MED
 
 assign [class="(?i)google-chrome"] $TWS1_MED
 assign [class="(?i)smplayer"] $TWS1_MED
+assign [class="(?i)clementine"] $TWS1_MED
 
+
+# 3:ART
 assign [class="(?i)inkscape"] $TWS3_ART
 assign [class="(?i)gimp"] $TWS3_ART
 assign [class="(?i)krita"] $TWS3_ART
 
-# -> Comms
+# S:COM
 assign [class="(?i)pidgin"] $SWS2_COM
 assign [class="(?i)linphone"] $SWS2_COM
 assign [class="(?i)skype"] $SWS2_COM
