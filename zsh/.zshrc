@@ -10,19 +10,15 @@
 # ┆├──────┬┬─────────────────────────────────────┤┆
 #  ┆ info:├┘                                     ┆
 # ┌───────┘
-# │ Zsh config files. Configs are modularized in ~/.zsh/*
-# │ Config is picked up here and there and crediting all the places I got snippets is a lost cause.
-# ┆ But large thanks to Xero who's zsh conf influenced me the most and I'll add attribution where appropriate
-# ┆ and/or where I can remember I got it from.
+# │ Zsh run commands. Configs are split in ~/.zsh/*.zsh
 # └───────────────────────────────┬┬──────────────────────────── ── ── ─
-#  thanks/help/inspiration/source:├┘
+#  thanks/help/inspiration/source ├┘
 # ┌─┬─────────────────────────────┘
 # ├─┤ https://github.com/xero/dotfiles
 # ├─┤ https://dotfiles.github.io/
 # ┆ ┆
 
-## some options/scripts needs to be run prior to sourcing anything else
-# set colors in virtual console from color resources
+# set colors and start tmux for tty
 if [ "$TERM" = "linux" ]; then
   _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
   for i in $(sed -n "$_SEDCMD" $HOME/colors/xcolors/gruvbox-dark.xresources | \
@@ -33,8 +29,15 @@ clear
 tmux new-session -s vconsole
 fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+# forcibly set color palette
+# https://github.com/morhetz/gruvbox/wiki/Terminal-specific
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
+# source user completion
+for compl (~/.zsh/completion/*.zsh) source $compl
+
+# source user conf
 for config (~/.zsh/*.zsh) source $config
+
+# see vim-fzf plugin
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
