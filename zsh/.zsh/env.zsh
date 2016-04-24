@@ -5,7 +5,7 @@
 # └──────────────────────────────────────────────────┘
 
 # set paths.
-export PATH=$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$HOME/.npm/bin:$PATH
+export PATH=$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$HOME/.npm/bin:$HOME/.pip/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
 
 fpath=("$HOME/.zsh.d" $fpath)

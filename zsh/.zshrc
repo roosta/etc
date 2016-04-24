@@ -33,6 +33,8 @@ clear
 tmux new-session -s vconsole
 fi
 
-for config (~/.zsh/*.zsh) source $config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+
+for config (~/.zsh/*.zsh) source $config
