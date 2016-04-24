@@ -81,6 +81,7 @@ set tags+=./.git/.tags  " used with ctags. Defines tag files.
 
 set clipboard=unnamedplus
 
+
 "}}}
 
 " CURSOR {{{1
@@ -289,6 +290,8 @@ Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
 Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
+Plug 'sjl/badwolf'
+"Plug 'nanotech/jellybeans.vim'
 
 " Language
 Plug 'sheerun/vim-polyglot'
@@ -449,12 +452,24 @@ let g:bufferline_echo = 0
 " ------------
 
 " Set theme
-"let g:gruvbox_italicize_comments = 0
+let g:gruvbox_italicize_comments = 0
 let g:gruvbox_italic = 0
+
 "let g:gruvbox_contrast_dark = "hard"
-colorscheme gruvbox
 set background=dark
 
+colorscheme gruvbox
+" }}}
+
+" BADWOLF {{{2
+" ------------
+" Make the gutters darker than the background.
+"let g:badwolf_darkgutter = 1
+
+" Turn on CSS properties highlighting
+"let g:badwolf_css_props_highlight = 1
+
+"colorscheme badwold
 " }}}
 
 " RAINBOW PARENTHESIS {{{2
@@ -754,4 +769,5 @@ let g:user_emmet_leader_key='<C-A>'
 " ┆─┘┘ ┆┆└┘┆─┘┆─┘┘ ┆┆─┘┴─┘
 
 "}}}
+
 " vim: fdm=marker:sw=2
