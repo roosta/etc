@@ -19,7 +19,6 @@
     - include: tasks/vimperator.yml
 
       # window manager group
-    - include: tasks/themes.yml
     - include: tasks/gtk.yml
     - include: tasks/dunst.yml
     - include: tasks/i3.yml

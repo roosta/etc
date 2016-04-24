@@ -1,6 +1,0 @@
----
-- name: Symlink themes
-  tags:
-    - themes
-    - wm
-  file: path={{home}}/.themes src={{dotfiles}}/themes state=link
