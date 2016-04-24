@@ -19,5 +19,6 @@
 	last = log -1 HEAD
   rmc = rm --cached
 	ctags = !.git/hooks/ctags
+  comm = commit -m
 [init]
 	templatedir = ~/.git_template
