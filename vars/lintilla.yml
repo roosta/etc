@@ -6,14 +6,14 @@ dotfiles: "{{home}}/.dotfiles"
 # define host outputs and various associated vars
 outputs: [
   {
-    display: "DVI-I-3",
+    display: "DVI-I-2",
     bar_id: "bar-primary",
     stat_conf: "~/.i3/status/lintilla_0.i3status",
     bar_pos: "top",
     tray_out: "primary"
   },
   {
-    display: "DVI-I-2",
+    display: "DVI-I-3",
     bar_id: "bar-secondary",
     stat_conf: "~/.i3/status/lintilla_1.i3status",
     bar_pos: "top",
@@ -26,8 +26,8 @@ outputs: [
 #output_layout: "DVI-I-1: nvidia-auto-select +1920+0 { ForceFullCompositionPipeline = on }, DVI-D-0: nvidia-auto-select +0+0"
 
 # i3 variables.
-i3_font: "pango:Essential PragmataPro 8"
-i3_status_font: "pango:Essential PragmataPro, FontAwesome 8"
+i3_font: "pango:Essential PragmataPro 9"
+i3_status_font: "pango:Essential PragmataPro, FontAwesome 9"
 
 # NOTICE: leave in final whitespace!
 i3_status_command: "py3status -c "

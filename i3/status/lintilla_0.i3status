@@ -3,7 +3,7 @@ general {
   colors = true
   interval = 5
   color_bad = "#D65D0E"
-  color_good = "#B8BB26"
+  color_good = "#EBDBB2"
   color_degraded = "#FABD2F"
   color_separator = "#458588"
 }
@@ -12,7 +12,7 @@ general {
 #order += "disk /"
 #order += "disk /home"
 #order += "window_title"
-order += "clementine"
+#order += "clementine"
 order += "spotify"
 order += "volume_status"
 order += "arch_updates"
@@ -23,7 +23,7 @@ order += "net_rate"
 order += "sysdata cpu"
 #order += "wireless wlp2s0"
 #order += "ethernet bridge0"
-order += "cpu_temperature 0"
+#order += "cpu_temperature 0"
 order += "nvidia_temp"
 #order += "load"
 #order += "dropboxd_status"
@@ -56,7 +56,7 @@ spotify {
 }
 
 sysdata cpu{
-  format = "CPU: {cpu_usage}%, MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
+  format = "CPU: {cpu_usage}%, TEMP: {cpu_temp}, MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
   med_threshold = 25
   on_click 1 = "exec i3-sensible-terminal -e glances"
   on_click 3 = "exec killall glances"
@@ -72,7 +72,7 @@ sysdata cpu{
 # print current keyboard layout, with color codes for language
 keyboard_layout {
   format = " {layout}"
-  colors = "us=#B8BB26, no=#FE8019"
+  colors = "us=#EBDBB2, no=#FE8019"
 }
 
 # control the volume with your mouse (need >i3-4.8)
