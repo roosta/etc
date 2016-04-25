@@ -302,6 +302,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 Plug 'mattn/emmet-vim'
+Plug 'jplaut/vim-arduino-ino'
 " Using AUR to simplify build process on Arch
 "Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 

@@ -10,7 +10,9 @@ augroup filetypedetect
   au! BufNewFile,BufRead */irssi/config setf config
   au! BufNewFile,BufRead *.i3blocks setf config
   au! BufNewFile,BufRead *.j2 setf config
-  au! BufNewFile,BufRead *.pxi set filetype=clojure
+  au! BufNewFile,BufRead *.pde,*.ino setf arduino
+  au! BufNewFile,BufRead *.pxi setf clojure
+  au! BufNewFile,BufRead *vimperatorrc*,*.vimp setf vimperator
 augroup END
 
 augroup filetypeplugin
