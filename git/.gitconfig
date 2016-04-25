@@ -1,30 +1,30 @@
 [user]
-	email = mail@roosta.sh
-	name = Daniel Berg
+  email = mail@roosta.sh
+  name = Daniel Berg
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore
+  editor = vim
+  excludesfile = ~/.gitignore
 [push]
-	default = simple
+  default = simple
 [credential]
-	helper = cache
+  helper = cache
 [alias]
   precommit = diff --cached --diff-algorithm=minimal -w
   logs      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   logd      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
-	logl      = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  logl      = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   graph     = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
-	;graph     = log --graph --oneline --decorate
+  ;graph     = log --graph --oneline --decorate
   branches  = branch -a
   tags      = tag
   stashes   = stash list
-	alias     = "!git config -l | grep alias | cut -c 7-"
-	unstage   = reset HEAD --
+  alias     = "!git config -l | grep alias | cut -c 7-"
+  unstage   = reset HEAD --
   discard   = checkout -- .
   fuck      = !git reset --hard HEAD && git clean -d -f
   uncommit  = reset --mixed HEAD~
   amend     = commit --amend
-	last      = log -1 HEAD
-	ctags     = !.git/hooks/ctags
+  last      = log -1 HEAD
+  ctags     = !.git/hooks/ctags
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
