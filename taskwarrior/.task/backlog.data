@@ -141,6 +141,7 @@
 {"description":"contact 123spill removal","entry":"20160413T171436Z","modified":"20160413T171436Z","status":"pending","uuid":"f5ef967e-6578-441c-bb88-c31bf39fa694"}
 {"description":"subkey","entry":"20160420T195013Z","modified":"20160420T195013Z","status":"pending","uuid":"eb178c31-3275-4bf9-8b63-20c075d3ef88"}
 {"description":"gh gnupg","entry":"20160420T195028Z","modified":"20160420T195028Z","status":"pending","uuid":"8a5fd27a-08c2-472c-927d-7afd2a8e4c6c"}
+{"description":"change ssh session color in prompt","entry":"20160422T111940Z","modified":"20160422T111940Z","status":"pending","uuid":"d0ebd6de-b6aa-4cd3-97ab-eb5c74aa22f2"}
 {"description":"use .zsh.d as split conf location","entry":"20160424T191411Z","modified":"20160424T191411Z","status":"pending","uuid":"ab8b091b-aba1-4f90-94c7-28a23923cd7c"}
 {"description":"fix sidebar z-index issue","end":"20160424T191505Z","entry":"20160308T102207Z","modified":"20160424T191505Z","status":"completed","tags":["firefox"],"uuid":"6162eddd-1d24-41fb-852f-90a9f27d0631"}
 {"description":"move pip user repos to home","end":"20160424T191513Z","entry":"20160309T192616Z","modified":"20160424T191513Z","status":"completed","tags":["general"],"uuid":"d05c783d-6a60-4626-8f07-8085aeee4a60"}

@@ -487,6 +487,8 @@ new [description:"subkey" entry:"1461181813" modified:"1461181813" status:"pendi
 time 1461181828
 new [description:"gh gnupg" entry:"1461181828" modified:"1461181828" status:"pending" uuid:"8a5fd27a-08c2-472c-927d-7afd2a8e4c6c"]
 ---
+time 1461323980
+new [description:"change ssh session color in prompt" entry:"1461323980" modified:"1461323980" status:"pending" uuid:"d0ebd6de-b6aa-4cd3-97ab-eb5c74aa22f2"]
 time 1461525251
 new [description:"use .zsh.d as split conf location" entry:"1461525251" modified:"1461525251" status:"pending" uuid:"ab8b091b-aba1-4f90-94c7-28a23923cd7c"]
 ---
