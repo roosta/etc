@@ -194,6 +194,17 @@ nnoremap <silent> <M-S-l> 5<C-w>>
 noremap <leader>ccl :cclose<CR>
 noremap <leader>lcl :lclose<CR>
 
+" disable arrowkeys for cursor movement temporarily
+"inoremap  <Up>     <NOP>
+"inoremap  <Down>   <NOP>
+"inoremap  <Left>   <NOP>
+"inoremap  <Right>  <NOP>
+"noremap   <Up>     <NOP>
+"noremap   <Down>   <NOP>
+"noremap   <Left>   <NOP>
+"noremap   <Right>  <NOP>
+
+" this typo!
 cnoremap Q q
 
 " use c-c and c-p to call system clipboard
@@ -229,7 +240,7 @@ augroup BgHighlight
 augroup END
 
 " attempt to close quickfix when deleting buffer
-nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
+"nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
 
 function! NumberToggle()
@@ -280,7 +291,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
@@ -337,15 +348,15 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['jshint']
 "}}}
 
 " VIM-MULTIPLE-CURSOR {{{2
 " -------------------
-let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-l>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+"let g:multi_cursor_next_key='<C-d>'
+"let g:multi_cursor_prev_key='<C-l>'
+"let g:multi_cursor_skip_key='<C-x>'
+"let g:multi_cursor_quit_key='<Esc>'
 " }}}
 
 " FZF.VIM {{{2
