@@ -6,13 +6,11 @@
     - { repo: "https://github.com/tmux-plugins/tpm", dest: "tpm" }
   tags:
     - tmux
-    - shell
 
 
 - name: Symlink tmux config...
   tags:
     - tmux
-    - shell
   file: dest={{ home }}/{{ item }} src={{ dotfiles }}/tmux/{{ item }} state=link
   with_items:
     - .tmux.conf
@@ -22,6 +20,4 @@
 - name: Symlink tmuxinator config...
   tags:
     - tmux
-    - mux
-    - shell
   file: dest={{ home }}/.tmuxinator src={{ dotfiles }}/tmuxinator state=link
