@@ -30,11 +30,14 @@ source! /home/roosta/.vimperatorrc.local
 
 " map l and h to tab movement
 " this removes horizontal h&l movement but arrows still work
-noremap l gt
-noremap h gT
+"noremap l gt
+"noremap h gT
 
-noremap } gt
-noremap { gT
+noremap <C-]> gt
+noremap <C-[> gT
+
+noremap } 24j
+noremap { 24k
 
 map <leader>R :source ~/.vimperatorrc<CR>
 
@@ -64,6 +67,8 @@ nnoremap d<PageUp>   :bd -select left<CR>
 nnoremap d<PageDown> :bd -select right<CR>
 nnoremap dh          :bd -select left<CR>
 nnoremap dl          :bd -select right<CR>
+nnoremap d[          :bd -select left<CR>
+nnoremap d]          :bd -select right<CR>
 
 " escape cancle tab delete
 nnoremap d<Escape> <Nop>
