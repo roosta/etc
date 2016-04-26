@@ -284,12 +284,7 @@ alias sysdis='sudo systemctl disable'
 alias diff='colordiff'
 
 # --- git ---
-alias gits='git status'
-alias gitd='git diff'
-alias gitdc='git diff --cached'
-alias gitout='git checkout'
-alias gitsu='git submodule foreach git pull origin master'
-alias gitb='git branch'
+# use .gitconfig
 
 # --- svn ---
 alias svn='colorsvn'
