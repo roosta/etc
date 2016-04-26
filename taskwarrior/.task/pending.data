@@ -31,3 +31,4 @@
 [description:"gh gnupg" entry:"1461181828" modified:"1461181828" status:"pending" uuid:"8a5fd27a-08c2-472c-927d-7afd2a8e4c6c"]
 [description:"change ssh session color in prompt" entry:"1461323980" modified:"1461323980" status:"pending" uuid:"d0ebd6de-b6aa-4cd3-97ab-eb5c74aa22f2"]
 [description:"use .zsh.d as split conf location" entry:"1461525251" modified:"1461525251" status:"pending" uuid:"ab8b091b-aba1-4f90-94c7-28a23923cd7c"]
+[description:"map c-kj to tab movement in firefox" entry:"1461663517" modified:"1461663517" status:"pending" tags:"firefox" uuid:"e47309f2-fae9-4903-856d-0f71d3811576"]

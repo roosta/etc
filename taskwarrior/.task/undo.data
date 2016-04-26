@@ -516,3 +516,6 @@ time 1461525370
 old [description:"setup specialized conf for compton" entry:"1447195164" modified:"1447195164" status:"pending" tags:"general" uuid:"f911b594-c17c-4b82-afc9-576ca0a09816"]
 new [description:"setup specialized conf for compton" end:"1461525368" entry:"1447195164" modified:"1461525370" status:"deleted" tags:"general" uuid:"f911b594-c17c-4b82-afc9-576ca0a09816"]
 ---
+time 1461663517
+new [description:"map c-kj to tab movement in firefox" entry:"1461663517" modified:"1461663517" status:"pending" tags:"firefox" uuid:"e47309f2-fae9-4903-856d-0f71d3811576"]
+---
