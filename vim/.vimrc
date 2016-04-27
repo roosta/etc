@@ -266,13 +266,11 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" General
+" MISC
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug 'ntpeters/vim-better-whitespace'
 "Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 "Plug 'svermeulen/vim-easyclip'
@@ -280,18 +278,25 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
+Plug 'wesQ3/vim-windowswap'
+Plug 'vim-scripts/YankRing.vim'
+
+" MULTIPLEXING
 Plug 'tpope/vim-tbone'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jgdavey/tslime.vim'
-Plug 'wesQ3/vim-windowswap'
-Plug 'vim-scripts/YankRing.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
-" navigation
+" VCS
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'ntpeters/vim-better-whitespace'
+
+" NAVIGATION
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-"Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
@@ -301,10 +306,10 @@ Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
 Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
-Plug 'sjl/badwolf'
+"Plug 'sjl/badwolf'
 "Plug 'nanotech/jellybeans.vim'
 
-" Language
+" LANGUAGE
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-liquid'
@@ -317,7 +322,7 @@ Plug 'jplaut/vim-arduino-ino'
 " Using AUR to simplify build process on Arch
 "Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
-" Clojure
+" CLOJURE
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
@@ -353,10 +358,10 @@ let g:syntastic_javascript_checkers = ['jshint']
 
 " VIM-MULTIPLE-CURSOR {{{2
 " -------------------
-"let g:multi_cursor_next_key='<C-d>'
-"let g:multi_cursor_prev_key='<C-l>'
-"let g:multi_cursor_skip_key='<C-x>'
-"let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_next_key='<C-d>'
+let g:multi_cursor_prev_key='<C-l>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 " }}}
 
 " FZF.VIM {{{2
