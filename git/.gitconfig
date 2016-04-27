@@ -9,6 +9,11 @@
 [credential]
   helper = cache
 [alias]
+  s = status
+  cc = commit
+  ca = commit --amend
+  d = diff
+  dc = diff --cached
   precommit = diff --cached --diff-algorithm=minimal -w
   logs      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   logd      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
@@ -26,5 +31,6 @@
   amend     = commit --amend
   last      = log -1 HEAD
   ctags     = !.git/hooks/ctags
+
 [init]
   templatedir = ~/.git_template

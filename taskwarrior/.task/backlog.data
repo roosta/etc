@@ -149,3 +149,4 @@
 {"description":"multiple procs","end":"20160424T191538Z","entry":"20151231T191231Z","modified":"20160424T191540Z","status":"deleted","tags":["questions"],"uuid":"e6ba1fce-81fd-4193-9aba-f00b8d2f1a4f"}
 {"description":"display tab icons","end":"20160424T191547Z","entry":"20151130T203500Z","modified":"20160424T191547Z","status":"completed","tags":["firefox"],"uuid":"b5c3fd20-b2a6-4f7a-b9f2-3f66df7f7090"}
 {"description":"setup specialized conf for compton","end":"20160424T191608Z","entry":"20151110T223924Z","modified":"20160424T191610Z","status":"deleted","tags":["general"],"uuid":"f911b594-c17c-4b82-afc9-576ca0a09816"}
+{"description":"map c-kj to tab movement in firefox","entry":"20160426T093837Z","modified":"20160426T093837Z","status":"pending","tags":["firefox"],"uuid":"e47309f2-fae9-4903-856d-0f71d3811576"}

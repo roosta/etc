@@ -194,6 +194,17 @@ nnoremap <silent> <M-S-l> 5<C-w>>
 noremap <leader>ccl :cclose<CR>
 noremap <leader>lcl :lclose<CR>
 
+" disable arrowkeys for cursor movement temporarily
+"inoremap  <Up>     <NOP>
+"inoremap  <Down>   <NOP>
+"inoremap  <Left>   <NOP>
+"inoremap  <Right>  <NOP>
+"noremap   <Up>     <NOP>
+"noremap   <Down>   <NOP>
+"noremap   <Left>   <NOP>
+"noremap   <Right>  <NOP>
+
+" this typo!
 cnoremap Q q
 
 " use c-c and c-p to call system clipboard
@@ -229,7 +240,7 @@ augroup BgHighlight
 augroup END
 
 " attempt to close quickfix when deleting buffer
-nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
+"nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
 cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
 
 function! NumberToggle()
@@ -255,13 +266,11 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" General
+" MISC
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug 'ntpeters/vim-better-whitespace'
 "Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 "Plug 'svermeulen/vim-easyclip'
@@ -269,14 +278,21 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
+Plug 'wesQ3/vim-windowswap'
+Plug 'vim-scripts/YankRing.vim'
+
+" MULTIPLEXING
 Plug 'tpope/vim-tbone'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jgdavey/tslime.vim'
-Plug 'wesQ3/vim-windowswap'
-Plug 'vim-scripts/YankRing.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
-" navigation
+" VCS
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'ntpeters/vim-better-whitespace'
+
+" NAVIGATION
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
@@ -290,10 +306,10 @@ Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
 Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
-Plug 'sjl/badwolf'
+"Plug 'sjl/badwolf'
 "Plug 'nanotech/jellybeans.vim'
 
-" Language
+" LANGUAGE
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-liquid'
@@ -306,7 +322,7 @@ Plug 'jplaut/vim-arduino-ino'
 " Using AUR to simplify build process on Arch
 "Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
-" Clojure
+" CLOJURE
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
@@ -337,7 +353,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['jshint']
 "}}}
 
 " VIM-MULTIPLE-CURSOR {{{2
