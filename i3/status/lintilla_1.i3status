@@ -48,11 +48,11 @@ tztime local {
 }
 
 disk "/" {
-  format = "Root: %free"
+  format = "/ %free"
 }
 
 disk "/home" {
-  format = "Home: %free"
+  format = "~ %free"
 }
 
 disk "/mnt/data" {
