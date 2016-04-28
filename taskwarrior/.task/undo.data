@@ -519,3 +519,6 @@ new [description:"setup specialized conf for compton" end:"1461525368" entry:"14
 time 1461663517
 new [description:"map c-kj to tab movement in firefox" entry:"1461663517" modified:"1461663517" status:"pending" tags:"firefox" uuid:"e47309f2-fae9-4903-856d-0f71d3811576"]
 ---
+time 1461849968
+new [description:"add click to swap page" entry:"1461849968" modified:"1461849968" status:"pending" tags:"datorder" uuid:"616dae74-ad79-42e5-8afb-0478bb714474"]
+---
