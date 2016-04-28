@@ -409,7 +409,7 @@ let g:fzf_action = {
 let g:EasyMotion_smartcase = 1
 
 " map two letter motion to s
-nmap <leader>s <Plug>(easymotion-s2)
+nmap s <Plug>(easymotion-s2)
 
 " use easymotion searching
 map  / <Plug>(easymotion-sn)
