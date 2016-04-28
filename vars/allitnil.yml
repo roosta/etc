@@ -14,7 +14,13 @@ i3_status_font: "pango:Essential PragmataPro, FontAwesome 8"
 i3_status_command: "py3status -c"
 
 # define where to put the tracked fonts
-font_location: "{{home}}/.fonts/misc"
+font_dir: "{{home}}/.fonts/misc"
+lib_dir: "{{home}}/lib"
+proj_dir: "{{home}}/projects"
+bin_dir: "{{home}}/bin"
+sbin_dir: "{{home}}/sbin"
+colors_dir: "{{home}}/colors"
+scripts_dir: "{{home}}/scripts"
 
 # vim:ft=yaml:ts=2:sw=2
 
