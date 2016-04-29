@@ -7,18 +7,12 @@
 # ├┤ Author : Roosta <mail@roosta.sh>            ├┤
 # ├┤ Site   : http://dotfiles.roosta.sh          ├┤
 # ├┤ Github : https://github.com/roosta          ├┤
-# ┆├──────┬┬─────────────────────────────────────┤┆
-#  ┆ info:├┘                                     ┆
-# ┌───────┘
-# │ Zsh run commands. Configs are split in ~/.zsh/*.zsh
-# └───────────────────────────────┬┬──────────────────────────── ── ── ─
-#  thanks/help/inspiration/source ├┘
-# ┌─┬─────────────────────────────┘
-# ├─┤ https://github.com/xero/dotfiles
-# ├─┤ https://dotfiles.github.io/
-# ┆ ┆
-
-# set colors and start tmux for tty
+# ┆└───────────────────────────────────────┬┬┬┬┬─┤┆
+# │ Zsh run commands.                      ├┤┆├┴─┤
+# │                                      ┌─┼┼─┤  ┆
+# └──────────────────────────────────────┴─┴┴─┤
+#                                             ┆
+# VIRTUAL CONSOLE
 if [ "$TERM" = "linux" ]; then
   _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
   for i in $(sed -n "$_SEDCMD" $HOME/colors/xcolors/gruvbox-dark.xresources | \
@@ -29,15 +23,28 @@ clear
 tmux new-session -s vconsole
 fi
 
-# forcibly set color palette
+# 256 COLOR PALETTE
 # https://github.com/morhetz/gruvbox/wiki/Terminal-specific
 source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
 
-# source user completion
+# init completion
 for compl (~/.zsh/completion/*.zsh) source $compl
 
-# source user conf
+# CONF
 for config (~/.zsh/*.zsh) source $config
+for cfg (~/.zsh/plugin_conf/*.zsh) source $cfg
 
-# see vim-fzf plugin
+# FUNCTIONS
+for function (~/.zsh/functions/*.zsh) source $function
+
+# PLUGINS
+plugin_location=$HOME/.zsh/plugins
+[ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
+
+[ -f $plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source $plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+[ -f $plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f $plugin_location/git-flow-completion/git-flow-completion.zsh ] && source $plugin_location/git-flow-completion/git-flow-completion.zsh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

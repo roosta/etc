@@ -1,4 +1,5 @@
 # web_search from terminal
+# copied from oh-my-zsh. TODO: Add attribution
 
 function web_search() {
   emulate -L zsh
@@ -42,24 +43,4 @@ function web_search() {
   nohup $open_cmd "$url" &>/dev/null
 }
 
-
-alias google='web_search google'
-alias ddg='web_search duckduckgo'
-alias duck='web_search duckduckgo'
-alias github='web_search github'
-alias devdocs='web_search devdocs'
-alias docs='devdocs'
-
-#add your own !bang searches here
-alias wiki='web_search duckduckgo \!w'
-alias news='web_search duckduckgo \!n'
-alias youtube='web_search duckduckgo \!yt'
-alias yt='web_search duckduckgo \!yt'
-alias map='web_search duckduckgo \!m'
-alias image='web_search duckduckgo \!i'
-alias bang='web_search duckduckgo \!'
-alias arch='web_search duckduckgo \!aw'
-alias aw='web_search duckduckgo \!aw'
-alias aur='web_search duckduckgo \!aur'
-alias apkg='web_search duckduckgo \!apkg'
 

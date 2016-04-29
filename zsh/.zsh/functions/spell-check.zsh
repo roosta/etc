@@ -1,0 +1,7 @@
+# do a quick spellcheck in terminal
+# if none are suggested, word is probably spelled correctly
+spell () {
+  echo "$*"|aspell -a --suggest
+}
+
+
