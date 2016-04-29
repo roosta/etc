@@ -151,3 +151,15 @@
 {"description":"setup specialized conf for compton","end":"20160424T191608Z","entry":"20151110T223924Z","modified":"20160424T191610Z","status":"deleted","tags":["general"],"uuid":"f911b594-c17c-4b82-afc9-576ca0a09816"}
 {"description":"map c-kj to tab movement in firefox","entry":"20160426T093837Z","modified":"20160426T093837Z","status":"pending","tags":["firefox"],"uuid":"e47309f2-fae9-4903-856d-0f71d3811576"}
 {"description":"add click to swap page","entry":"20160428T132608Z","modified":"20160428T132608Z","status":"pending","tags":["datorder"],"uuid":"616dae74-ad79-42e5-8afb-0478bb714474"}
+{"description":"pacman is being run at exec tasksh startup.","entry":"20160429T200941Z","modified":"20160429T200941Z","status":"pending","uuid":"51d721b8-41cb-4cf1-81e0-55fce6263834"}
+{"description":"fix sidebar z-index issue","end":"20160429T201210Z","entry":"20160308T102207Z","modified":"20160429T201210Z","status":"completed","tags":["firefox"],"uuid":"6162eddd-1d24-41fb-852f-90a9f27d0631"}
+{"description":"nice","end":"20160429T201225Z","entry":"20151231T191209Z","modified":"20160429T201228Z","status":"deleted","tags":["questions"],"uuid":"3f405665-81f4-47e5-a8d0-c132b3ee6276"}
+{"description":"multiple procs","end":"20160429T201228Z","entry":"20151231T191231Z","modified":"20160429T201230Z","status":"deleted","tags":["questions"],"uuid":"e6ba1fce-81fd-4193-9aba-f00b8d2f1a4f"}
+{"description":"setup specialized conf for compton","end":"20160429T201249Z","entry":"20151110T223924Z","modified":"20160429T201250Z","status":"deleted","tags":["general"],"uuid":"f911b594-c17c-4b82-afc9-576ca0a09816"}
+{"description":"finish fatline first draft","end":"20160429T201328Z","entry":"20151102T214330Z","modified":"20160429T201328Z","status":"completed","tags":["ansible"],"uuid":"c5b37cbd-37a6-4292-807b-610b400eda43"}
+{"description":"display tab icons","end":"20160429T201334Z","entry":"20151130T203500Z","modified":"20160429T201334Z","status":"completed","tags":["firefox"],"uuid":"b5c3fd20-b2a6-4f7a-b9f2-3f66df7f7090"}
+{"description":"make private github repo for secure settings + blackboxing files","end":"20160429T201355Z","entry":"20160410T131314Z","modified":"20160429T201355Z","status":"completed","tags":["dotfiles"],"uuid":"ee934ba2-d830-4744-b1d4-656a2f4fd261"}
+{"description":"move pip user repos to home","end":"20160429T201404Z","entry":"20160309T192616Z","modified":"20160429T201404Z","status":"completed","tags":["general"],"uuid":"d05c783d-6a60-4626-8f07-8085aeee4a60"}
+{"description":"fix pulseaudio 7.1 issue","end":"20160429T201411Z","entry":"20160303T054352Z","modified":"20160429T201411Z","status":"completed","tags":["lintilla"],"uuid":"cb2224bb-197d-4f9f-b8c0-b733173df618"}
+{"description":"fix gtk - 2.0 gruvix colors","end":"20160429T201427Z","entry":"20151105T111052Z","modified":"20160429T201429Z","status":"deleted","tags":["general"],"uuid":"2ca617ed-143c-4962-b5b5-b4219f439585"}
+{"description":"list tasks","end":"20160429T201443Z","entry":"20160410T114311Z","modified":"20160429T201443Z","status":"deleted","tags":["fatline"],"uuid":"6cf2bbd1-fbab-4fe5-8fc8-2ad9217b7af4"}
