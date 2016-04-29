@@ -8,6 +8,10 @@
 # │█░░  Site   : http://dotfiles.roosta.sh ░░█│
 # │█░░  Github : https://github.com/roosta ░░█│
 # └───────────────────────────────────────────┘
+
+# Set up nohup so that it can deal with an argument that is itself an alias name:
+alias nohup="nohup "
+
 ## QUICK EDITS {{{1
 ## ----------------
 
@@ -33,6 +37,7 @@ alias vizopts="vim ~/.zsh/options.zsh"
 alias vizplugs="vim ~/.zsh/plugins.zsh"
 alias vizrc="vim ~/.zshrc"
 alias vixfont="vim ~/.Xresources.d/fonts"
+
 #}}}
 ## FIND {{{1
 ## ---------
@@ -40,7 +45,7 @@ alias vixfont="vim ~/.Xresources.d/fonts"
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias grep="ag"
 
-alias aliasgrep="cat ~/.zsh/aliases.zsh | grep" # locate an alias quickly
+alias aliasgrep="cats ~/.zsh/aliases.zsh | grep" # locate an alias quickly
 alias histgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
@@ -52,10 +57,56 @@ alias lsrgrep='lsa -R | grep'
 alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
 # recursive grep through filetypes
-alias cljgrep='grep -R --include="*.clj*"'
-
-# yes
 alias awk='gawk'
+#}}}
+## WEB-SEARCH {{{1
+
+# see ~/.zsh/web_search.zsh
+alias google='web_search google'
+alias ddg='web_search duckduckgo'
+alias duck='web_search duckduckgo'
+alias github='web_search github'
+alias devdocs='web_search devdocs'
+alias docs='devdocs'
+
+# leverage duckduckgo's bang functionaliy.
+alias wiki='web_search duckduckgo \!w'
+alias news='web_search duckduckgo \!n'
+alias youtube='web_search duckduckgo \!yt'
+alias yt='web_search duckduckgo \!yt'
+alias map='web_search duckduckgo \!m'
+alias image='web_search duckduckgo \!i'
+alias bang='web_search duckduckgo \!'
+alias arch='web_search duckduckgo \!aw'
+alias aw='web_search duckduckgo \!aw'
+alias aur='web_search duckduckgo \!aur'
+alias apkg='web_search duckduckgo \!apkg'
+
+#}}}
+
+## GLOBAL {{{1
+## -----------
+
+#alias -g ...='../..'
+#alias -g ....='../../..'
+#alias -g .....='../../../..'
+#alias -g ......='../../../../..'
+
+
+#}}}
+## SUFFIX {{{1
+## -----------
+
+alias -s cljs=vim
+alias -s sh=vim
+alias -s clj=vim
+alias -s tex=vim
+alias -s html=vim
+alias -s md=atom -n
+alias -s org=firefox
+alias -s net=firefox
+alias -s com=firefox
+
 #}}}
 ## SAFETY {{{1
 ## -----------
@@ -82,13 +133,10 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 # create parents, be verbose
 alias mkdir='mkdir -pv'
 #}}}
-# MOVEMENT {{{1
-# -------------
+## MOVEMENT {{{1
+## -------------
+
 alias cd..='cd ..'
-alias -g ...='../..'
-alias -g ....='../../..'
-alias -g .....='../../../..'
-alias -g ......='../../../../..'
 
 ## dirstack movement: needs some extra config, see dirstack.sh
 alias dirs='dirs -v'
@@ -111,8 +159,9 @@ alias 16='cd -16'
 alias 17='cd -17'
 alias 18='cd -18'
 alias 19='cd -19'
+#}}}
+## LISTS {{{1
 
-# lists
 alias lsa="\ls -lAhpk --color=auto --group-directories-first"
 alias ls='ls++ -lAhpk'
 #alias dir='ls'
@@ -125,13 +174,13 @@ alias lsp='lsp -p'
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
 alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME"
 alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME /"
-alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/rootsa/.tmp/clamscan.log $HOME ."
+alias scan.="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/rootsa/.tmp/clamscan.log $HOME ."
 #}}}
 ## PACKAGES {{{1
 ## --------------------
 
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
-alias pacman='yaourt --color=always' # use yaourt as a pacman wrapper
+alias pacman="sudo pacmatic --color=always"
 
 # iNSTALLING
 alias pacs="pacman -S" # Install specific package(s) from the repositories
@@ -140,8 +189,15 @@ alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
 alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
 alias pacinsd="pacman -S --asdeps" # Install given package(s) as dependencies
 alias pacsu="pacman -U" # Install specific package not from the repositories but from a file
+
+# AUR
 alias aurs="yaourt -S" #install from AUR
 alias aurss="yaourt -Ss" #search from AUR
+alias aurua="yaourt -Syua" # update aur packages
+alias auruaf="yaourt -Syua --noconfirm" # update aur with no confirm
+alias auruad="yaourt -Syua --devel" # update all, including git packages
+alias auruadf="yaourt -Syua --devel --noconfirm" # Update all without confirming
+
 
 # CLEANING
 alias pacr="pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
@@ -172,13 +228,6 @@ alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non e
 
 # UPDATING
 alias pacu="pacman -Syu" # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-
-alias aurua="yaourt -Syua" # update aur packages
-alias auruaf="yaourt -Syua --noconfirm" # update aur with no confirm
-alias auruad="yaourt -Syua --devel" # update all, including git packages
-alias auruadf="yaourt -Syua --devel --noconfirm" # Update all without confirming
-
-alias
 
 alias pacm="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
 alias pacmu="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
@@ -325,6 +374,7 @@ alias dust='rlwrap dust'
 alias ccat='pygmentize -g -O style=colorful'
 #alias ccat='pygmentize -g -O style=colorful,linenos=1'
 alias cats='highlight -O ansi'
+alias cljgrep='ag -R --include="*.clj*"'
 #}}}
 ## MISC {{{1
 ## ---------
@@ -333,6 +383,7 @@ alias cats='highlight -O ansi'
 alias xrmerge="xrdb -merge ~/.Xresources"
 alias xrload="xrdb -load ~/.Xresources"
 alias zrefresh="source $HOME/.zshrc"
+alias zref="zrefresh"
 
 alias _="sudo"
 
