@@ -1,21 +1,17 @@
 # ┌───────────────────────────────────────────┐
-# │▀▀▀░░░░░█▀█░█░░░▀█▀░█▀█░█▀▀░█▀▀░█▀▀░░░░░▀▀▀│
-# │▀▀▀▀░░░░█▀█░█░░░░█░░█▀█░▀▀█░█▀▀░▀▀█░░░░▀▀▀▀│
-# │█▀▀▀▀▀░░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀▀▀░░▀▀▀▀▀█│
+# │▀▀▀▀▀▀░░█▀█░█░░░▀█▀░█▀█░█▀▀░█▀▀░█▀▀░░▀▀▀▀▀▀│
+# │▀▀▀▀▀▀░░█▀█░█░░░ █ ░█▀█░▀▀█░█▀▀░▀▀█░░▀▀▀▀▀▀│
+# │█▀▀▀▀▀░░▀ ▀░▀▀▀░▀▀▀░▀ ▀░▀▀▀░▀▀▀░▀▀▀░░▀▀▀▀▀█│
+# │█     ░░ ░ ░   ░   ░ ░ ░   ░   ░   ░░     █│
 # │█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█│
 # │█░░  Author : Roosta <mail@roosta.sh>   ░░█│
 # │█░░  Site   : http://dotfiles.roosta.sh ░░█│
 # │█░░  Github : https://github.com/roosta ░░█│
-# └───────────┬───────────────────────────────┘
-#  thanks to: │
-# ┌───────────┘
-# │ ┐ ┬o┌┌┐
-# │ │┌┘││││
-# ┆ └┘ ┆┘ ┆
+# └───────────────────────────────────────────┘
+## QUICK EDITS {{{1
+## ----------------
 
 alias vi="vim"
-
-# quick edits
 alias vigit="vim ~/.gitconfig"
 alias vissh="vim ~/.ssh/config"
 alias vii3="vim ~/.i3/config.j2"
@@ -37,10 +33,9 @@ alias vizopts="vim ~/.zsh/options.zsh"
 alias vizplugs="vim ~/.zsh/plugins.zsh"
 alias vizrc="vim ~/.zshrc"
 alias vixfont="vim ~/.Xresources.d/fonts"
-
-# ┬─┐o┌┐┐┬─┐
-# ├─ │││││ │
-# ┆  ┆┆└┘┆─┘
+#}}}
+## FIND {{{1
+## ---------
 
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias grep="ag"
@@ -61,10 +56,9 @@ alias cljgrep='grep -R --include="*.clj*"'
 
 # yes
 alias awk='gawk'
-
-# ┐─┐┬─┐┬─┐┬─┐┌┐┐┐ ┬
-# └─┐│─┤├─ ├─  │ └┌┘
-# ──┘┘ ┆┆  ┴─┘ ┆  ┆
+#}}}
+## SAFETY {{{1
+## -----------
 
 alias mv=' timeout 8 mv -iv'
 alias rm=' timeout 3 rm -Iv --one-file-system'
@@ -87,11 +81,9 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
 # create parents, be verbose
 alias mkdir='mkdir -pv'
-
-# ┌┌┐┌─┐┐ ┬┬─┐┌┌┐┬─┐┌┐┐┌┐┐
-# ││││ ││┌┘├─ │││├─ │││ │
-# ┘ ┆┘─┘└┘ ┴─┘┘ ┆┴─┘┆└┘ ┆
-
+#}}}
+# MOVEMENT {{{1
+# -------------
 alias cd..='cd ..'
 alias -g ...='../..'
 alias -g ....='../../..'
@@ -126,47 +118,47 @@ alias ls='ls++ -lAhpk'
 #alias dir='ls'
 alias lsr='ls -R'
 alias lsp='lsp -p'
-
-# ┐─┐┬─┐┌─┐┬ ┐┬─┐o┌┐┐┐ ┬
-# └─┐├─ │  │ ││┬┘│ │ └┌┘
-# ──┘┴─┘└─┘┆─┘┆└┘┆ ┆  ┆
+#}}}
+## SECURITY {{{1
+## -------------
 
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
 alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME"
 alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME /"
 alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/rootsa/.tmp/clamscan.log $HOME ."
-
-# ┬─┐┬─┐┌─┐┌┌┐┬─┐┌┐┐
-# │─┘│─┤│  ││││─┤│││
-# ┆  ┘ ┆└─┘┘ ┆┘ ┆┆└┘
+#}}}
+## PACKAGES {{{1
+## --------------------
 
 # source: https://wiki.archlinux.org/index.php/Pacman_tips
-alias pacman='yaourt' # use yaourt as a pacman wrapper
+alias pacman='yaourt --color=always' # use yaourt as a pacman wrapper
 
-# Installing
+# iNSTALLING
 alias pacs="pacman -S" # Install specific package(s) from the repositories
 alias pacss="pacman -Ss" # Search for package(s) in the repositories
 alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
 alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
 alias pacinsd="pacman -S --asdeps" # Install given package(s) as dependencies
 alias pacsu="pacman -U" # Install specific package not from the repositories but from a file
+alias aurs="yaourt -S" #install from AUR
+alias aurss="yaourt -Ss" #search from AUR
 
-# cleaning
+# CLEANING
 alias pacr="pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
 alias pacrns="pacman -Rns" # Remove the specified package(s), its configuration(s) and unneeded dependencies
 alias pacrcs="pacman -Rcs" # Remove the specified package(s), and recursivly remove unneeded dependencies
 alias pacrs="pacman -Rs" # Remove the specified package(s) and its dependencies
 alias pacc="pacman -Scc" # Clean cache - delete all the package files in the cache
 
-# orphans
+# ORPHANS
 alias pacorm="pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
 alias paco="pacman -Qdt" # List all packages which are orphaned
 
-# query
+# QUERY
 alias pacqs="pacman -Qs" # Search for package(s) in the local database
 alias pacqi="pacman -Qi" # Display information about a given package in the local database
 
-# lists/info
+# LISTS/INFO
 alias pacsi="pacman -Si" # Display information about a given package in the repositories
 alias pacls="pacman -Qet" # list all packages explicitly installed and not required as dependencies
 alias paclss="pacman -Ql" # List all files installed by a given package
@@ -174,24 +166,26 @@ alias paclsl="pacman -Qen" # list all packages from official repos
 alias pacals="pacman -Qem" # list explicit packages not from official repos
 alias pacown="pacman -Qo" # Show package(s) owning the specified file(s)
 
-# mark
+# MARK
 alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
 alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
 
-# Updating
+# UPDATING
 alias pacu="pacman -Syu" # Synchronize with repositories and then upgrade packages that are out of date on the local system.
-alias pacuf="pacman -Syu --noconfirm"
-alias pacua="pacman -Syua"
-alias pacuaf="pacman -Syua --noconfirm"
-alias pacuad="pacman -Syua --devel"
-alias pacuadf="pacman -Syua --devel --noconfirm"
+
+alias aurua="yaourt -Syua" # update aur packages
+alias auruaf="yaourt -Syua --noconfirm" # update aur with no confirm
+alias auruad="yaourt -Syua --devel" # update all, including git packages
+alias auruadf="yaourt -Syua --devel --noconfirm" # Update all without confirming
+
+alias
+
 alias pacm="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
 alias pacmu="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
 alias pacmr="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
-
-# ┬ ┐┌┐┐o┬  ┐─┐
-# │ │ │ ││  └─┐
-# ┆─┘ ┆ ┆┆─┘──┘
+#}}}
+## UTILS {{{1
+## ----------
 
 alias watchff="watch progress -wc firefox" # watch firefox download progress.
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
@@ -249,10 +243,9 @@ alias rusto="toilet -t -f rusto"
 alias rustofat="toilet -t -f rustofat"
 alias pagga="toilet -t -f pagga"
 alias paggaborder="toilet -t -f pagga -F border"
-
-# ┐─┐┐ ┬┐─┐┌┐┐┬─┐┌┌┐
-# └─┐└┌┘└─┐ │ ├─ │││
-# ──┘ ┆ ──┘ ┆ ┴─┘┘ ┆
+#}}}
+## SYSTEM {{{1
+## -----------
 
 # systemctl query
 alias sysstat='systemctl status'
@@ -276,10 +269,9 @@ alias sysrest='sudo systemctl restart'
 alias syscan='sudo systemctl cancel'
 alias sysedit='sudo systemctl edit'
 alias sysdis='sudo systemctl disable'
-
-# ┐ ┬┌─┐┐─┐
-# │┌┘│  └─┐
-# └┘ └─┘──┘
+#}}}
+## VCS {{{1
+## --------
 
 alias diff='colordiff'
 
@@ -320,10 +312,9 @@ alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 #alias svnaddall="svn add `svn status . | awk '/^[?]/{print $2}'`"
 
 alias sa="ssh-add ~/.ssh/id_rsa"
-
-# ┬─┐┬─┐┐ ┬┬─┐┬  ┌─┐┬─┐
-# │ │├─ │┌┘├─ │  │ ││─┘
-# ┆─┘┴─┘└┘ ┴─┘┆─┘┘─┘┆
+#}}}
+## DEVELOP {{{1
+## ------------
 
 alias lein='rlwrap lein'
 alias leindeps='lein deps :tree'
@@ -334,10 +325,9 @@ alias dust='rlwrap dust'
 alias ccat='pygmentize -g -O style=colorful'
 #alias ccat='pygmentize -g -O style=colorful,linenos=1'
 alias cats='highlight -O ansi'
-
-# ┌┌┐o┐─┐┌─┐
-# ││││└─┐│
-# ┘ ┆┆──┘└─┘
+#}}}
+## MISC {{{1
+## ---------
 
 # delete and or refresh shell confs
 alias xrmerge="xrdb -merge ~/.Xresources"
@@ -362,3 +352,7 @@ alias virsh='sudo virsh'
 # see: https://wiki.archlinux.org/index.php/Steam#Using_native_runtime
 alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc++.so*" -o -name "libxcb.so*" \) -print -delete'
 
+# cleanly shut down firefox
+alias ffs="wmctrl -c firefox"
+#}}}
+# vim: fdm=marker:sw=2
