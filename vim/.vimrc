@@ -347,35 +347,44 @@ let g:fzf_action = {
 " }}}
 " EASYMOTION {{{2
 " ---------------
-" easymotion is generally <leader><leader> motion
-" but in some cases map single leader to most used functions
-" resoning is that EM takes up such a huge amount of binds I wanted it to have
-" its own 'space' so that single leader leaves room for other stuff
-
-"let g:EasyMotion_do_mapping = 0 " Disable default mappings
-" define my own prefix (default <leader><leader>
-"map , <Plug>(easymotion-prefix)
 
 let g:EasyMotion_smartcase = 1
 
-" map two letter motion to s
-map  <Leader>f <Plug>(easymotion-lineforward)
-nmap <Leader>F <Plug>(easymotion-overwin-f)
-map  <Leader>j <Plug>(easymotion-j)
-map  <Leader>k <Plug>(easymotion-k)
-let  g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+map s <Plug>(easymotion-s)
+map <leader>s <Plug>(easymotion-s2)
 
-" use easymotion searching
-"map  / <Plug>(easymotion-sn)
-"omap / <Plug>(easymotion-tn)
-"map  ? <Plug>(easymotion-sn)
-"omap ? <Plug>(easymotion-tn)
-"map  n <Plug>(easymotion-next)
-"map  N <Plug>(easymotion-prev)
+" mirror some vim movements
+map <Leader>f <Plug>(easymotion-lineforward)
+map <Leader>F <Plug>(easymotion-linebackward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
 
 " set ctrl-v to paste in easymotion command line
 "autocmd VimEnter,BufEnter * EMCommandLineNoreMap <c-v> :YRPaste<CR>
 " }}}
+" INCSEARCH {{{2
+" -----------------
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+map <leader>/ <Plug>(incsearch-easymotion-/)
+map <leader>? <Plug>(incsearch-easymotion-?)
+map <leader>g/ <Plug>(incsearch-easymotion-stay)
+
+" :h g:incsearch#auto_nohlsearch
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+"}}}
 " QUICKSCOPE {{{2
 " ---------------
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
@@ -558,27 +567,6 @@ nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
 let g:user_emmet_leader_key='<C-A>'
 
 " }}}
-
-" INCSEARCH {{{2
-" -----------------
-
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-map <leader>/ <Plug>(incsearch-easymotion-/)
-map <leader>? <Plug>(incsearch-easymotion-?)
-map <leader>g/ <Plug>(incsearch-easymotion-stay)
-
-" :h g:incsearch#auto_nohlsearch
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
 " INACTIVE {{{2
 " --------------------
 " inactive
