@@ -8,10 +8,12 @@
 # │█░░  Site   : http://dotfiles.roosta.sh ░░█│
 # │█░░  Github : https://github.com/roosta ░░█│
 # └───────────────────────────────────────────┘
+## SYSTEM {{{1
 
 # Set up nohup so that it can deal with an argument that is itself an alias name:
 alias nohup="nohup "
 
+#}}}
 ## QUICK EDITS {{{1
 ## ----------------
 
@@ -34,9 +36,9 @@ alias viterm="vim ~/.Xresources.d/urxvt"
 alias vii3tmp="vim ~/.i3/config.tmp"
 alias vienv="vim ~/.zsh/env.zsh"
 alias vizopts="vim ~/.zsh/options.zsh"
-alias vizplugs="vim ~/.zsh/plugins.zsh"
 alias vizrc="vim ~/.zshrc"
 alias vixfont="vim ~/.Xresources.d/fonts"
+alias zshrc='vim ~/.zshrc'
 
 #}}}
 ## FIND {{{1
@@ -44,6 +46,8 @@ alias vixfont="vim ~/.Xresources.d/fonts"
 
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
 alias grep="ag"
+
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
 alias aliasgrep="cats ~/.zsh/aliases.zsh | grep" # locate an alias quickly
 alias histgrep="cat ~/.histfile | grep" # grep command history quickly
@@ -83,20 +87,31 @@ alias aur='web_search duckduckgo \!aur'
 alias apkg='web_search duckduckgo \!apkg'
 
 #}}}
-
 ## GLOBAL {{{1
 ## -----------
+
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
 
 #alias -g ...='../..'
 #alias -g ....='../../..'
 #alias -g .....='../../../..'
 #alias -g ......='../../../../..'
 
-
 #}}}
 ## SUFFIX {{{1
 ## -----------
+## example: type 'test.clj' opens vim with test.clj as active buffer.
 
+alias -s zsh=vim
 alias -s cljs=vim
 alias -s sh=vim
 alias -s clj=vim
@@ -173,22 +188,20 @@ alias lsp='lsp -p'
 
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
 alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME"
-alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME /"
-alias scan.="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/rootsa/.tmp/clamscan.log $HOME ."
+alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log /"
+alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/rootsa/.tmp/clamscan.log ."
 #}}}
 ## PACKAGES {{{1
-## --------------------
-
-# source: https://wiki.archlinux.org/index.php/Pacman_tips
-alias pacman="sudo pacmatic --color=always"
+## -------------
+alias pacman="pacmatic --color='always'"
 
 # iNSTALLING
-alias pacs="pacman -S" # Install specific package(s) from the repositories
+alias pacs="sudo pacman -S" # Install specific package(s) from the repositories
 alias pacss="pacman -Ss" # Search for package(s) in the repositories
 alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
 alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
-alias pacinsd="pacman -S --asdeps" # Install given package(s) as dependencies
-alias pacsu="pacman -U" # Install specific package not from the repositories but from a file
+alias pacinsd="sudo pacman -S --asdeps" # Install given package(s) as dependencies
+alias pacsu="sudo pacman -U" # Install specific package not from the repositories but from a file
 
 # AUR
 alias aurs="yaourt -S" #install from AUR
@@ -198,16 +211,15 @@ alias auruaf="yaourt -Syua --noconfirm" # update aur with no confirm
 alias auruad="yaourt -Syua --devel" # update all, including git packages
 alias auruadf="yaourt -Syua --devel --noconfirm" # Update all without confirming
 
-
 # CLEANING
-alias pacr="pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrns="pacman -Rns" # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrcs="pacman -Rcs" # Remove the specified package(s), and recursivly remove unneeded dependencies
-alias pacrs="pacman -Rs" # Remove the specified package(s) and its dependencies
-alias pacc="pacman -Scc" # Clean cache - delete all the package files in the cache
+alias pacr="sudo pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
+alias pacrns="sudo pacman -Rns" # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias pacrcs="sudo pacman -Rcs" # Remove the specified package(s), and recursivly remove unneeded dependencies
+alias pacrs="sudo pacman -Rs" # Remove the specified package(s) and its dependencies
+alias pacc="sudo pacman -Scc" # Clean cache - delete all the package files in the cache
 
 # ORPHANS
-alias pacorm="pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
+alias pacorm="sudo pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
 alias paco="pacman -Qdt" # List all packages which are orphaned
 
 # QUERY
@@ -223,11 +235,11 @@ alias pacals="pacman -Qem" # list explicit packages not from official repos
 alias pacown="pacman -Qo" # Show package(s) owning the specified file(s)
 
 # MARK
-alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
-alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
+alias pacexpl="sudo pacman -D --asexp" # Mark one or more installed packages as explicitly installed
+alias pacimpl="sudo pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
 
 # UPDATING
-alias pacu="pacman -Syu" # Synchronize with repositories and then upgrade packages that are out of date on the local system.
+alias pacu="sudo pacman -Syu" # Synchronize with repositories and then upgrade packages that are out of date on the local system.
 
 alias pacm="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
 alias pacmu="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
