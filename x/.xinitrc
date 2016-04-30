@@ -45,10 +45,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # execute host based config
-if [ -x $hostconf ] ; then
-  . "$hostconf"
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+  [ -x "$hostconf" ] && . "$hostconf"
+  unset hostconf
 fi
-
 # set X font locations
 xset +fp $HOME/.fonts/restricted &
 xset +fp $HOME/.fonts/misc &
