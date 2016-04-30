@@ -23,10 +23,6 @@ clear
 tmux new-session -s vconsole
 fi
 
-# 256 COLOR PALETTE
-# https://github.com/morhetz/gruvbox/wiki/Terminal-specific
-source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
-
 # init completion
 for compl (~/.zsh/completion/*.zsh) source $compl
 
@@ -48,3 +44,7 @@ plugin_location=$HOME/.zsh/plugins
 [ -f $plugin_location/git-flow-completion/git-flow-completion.zsh ] && source $plugin_location/git-flow-completion/git-flow-completion.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# 256 COLOR PALETTE
+# https://github.com/morhetz/gruvbox/wiki/Terminal-specific
+source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
