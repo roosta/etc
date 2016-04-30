@@ -77,7 +77,10 @@ set mouse=a        " enable mouse
 
 set tags+=./.git/.tags  " used with ctags. Defines tag files.
 
+" use system clipboard
 set clipboard=unnamedplus
+
+set shell=zsh
 
 "}}}
 " CURSOR {{{1
