@@ -8,11 +8,8 @@
 "│█ github : https://github.com/roosta █│
 "└──────────────────────────────────────┘
 " OPTIONS {{{1
-" -------------------
-" ┌─┐┬─┐┌┐┐o┌─┐┌┐┐┐─┐
-" │ ││─┘ │ ││ ││││└─┐
-" ┘─┘┆   ┆ ┆┘─┘┆└┘──┘
-" -------------------
+" ------------
+
 " must be first, because it changes other options as a side effect
 if &compatible
   set nocompatible
@@ -30,8 +27,8 @@ set wildignorecase             " ignore case on completion
 " define various ignored folders when using fzf/ctrlp/whatever else uses
 " wildmode
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
-               \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
-               \*/_site/*
+                \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
+                \*/_site/*
 
 " fix backspace behaviour
 set backspace=indent,eol,start
@@ -76,27 +73,21 @@ set magic          " :help magic
 set gdefault       " the /g flag on :s substitutions by default
 
 set mouse=a        " enable mouse
-set fo-=o          " disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
+
 set tags+=./.git/.tags  " used with ctags. Defines tag files.
 
 set clipboard=unnamedplus
 
-
 "}}}
-
 " CURSOR {{{1
-" ------------------
-" ┌─┐┬ ┐┬─┐┐─┐┌─┐┬─┐
-" │  │ ││┬┘└─┐│ ││┬┘
-" └─┘┆─┘┆└┘──┘┘─┘┆└┘
-" ------------------
+" -----------
+
 " 1 or 0 -> blinking block
 " 3 -> blinking underscore
 " Recent versions of xterm (282 or above) also support
 " 5 -> blinking vertical bar
 " 6 -> solid vertical bar
 " change cursor depending on mode (VTE compatible terminals running tmux)
-
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>[6 q\<Esc>\\"
   let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>[4 q\<Esc>\\"
@@ -116,13 +107,9 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 "}}}
-
 " GVIM {{{1
 " ----------
-" ┌─┐┐ ┬o┌┌┐
-" │ ┬│┌┘││││
-" ┆─┘└┘ ┆┘ ┆
-" ----------
+
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -132,14 +119,10 @@ if has('gui_running')
   set guifont=Essential\ PragmataPro\ 14px
   set guiheadroom=0
 endif
-"}}}
 
-" KEYBINDS {{{1
-" ----------------------
-" ┬┌ ┬─┐┐ ┬┬─┐o┌┐┐┬─┐┐─┐
-" ├┴┐├─ └┌┘│─││││││ │└─┐
-" ┆ ┘┴─┘ ┆ ┆─┘┆┆└┘┆─┘──┘
-" ----------------------
+"}}}
+" KEYBINDS/KEYBINDS {{{1
+" -------------
 
 let mapleader = "\<SPACE>"
 
@@ -195,17 +178,20 @@ noremap <leader>ccl :cclose<CR>
 noremap <leader>lcl :lclose<CR>
 
 " disable arrowkeys for cursor movement temporarily
-"inoremap  <Up>     <NOP>
-"inoremap  <Down>   <NOP>
-"inoremap  <Left>   <NOP>
-"inoremap  <Right>  <NOP>
-"noremap   <Up>     <NOP>
-"noremap   <Down>   <NOP>
-"noremap   <Left>   <NOP>
-"noremap   <Right>  <NOP>
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
 
-" this typo!
+" correct annoying typo!
 cnoremap Q q
+
+" Example of repeat integration
+"silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 " use c-c and c-p to call system clipboard
 "vmap <silent> <leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
@@ -217,13 +203,9 @@ cnoremap Q q
 "map <leader>Y "+Y
 "map <leader>P "+P
 " }}}
+" AUTOCMD {{{
+" -------------------------
 
-" FUNCTIONS {{{
-" -------------------------
-" ┬─┐┬ ┐┌┐┐┌─┐┌┐┐o┌─┐┌┐┐┐─┐
-" ├─ │ │││││   │ ││ ││││└─┐
-" ┆  ┆─┘┆└┘└─┘ ┆ ┆┘─┘┆└┘──┘
-" -------------------------
 " https://github.com/tpope/vim-fireplace/pull/222
 "command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
@@ -233,15 +215,15 @@ augroup BgHighlight
   autocmd!
   "autocmd WinEnter * set number
   "autocmd WinLeave * set nonumber
-  autocmd WinEnter * :set relativenumber
-  autocmd WinLeave * :set number
+  autocmd WinEnter * set relativenumber
+  autocmd WinLeave * set number
   autocmd WinEnter * set cursorline
   autocmd WinLeave * set nocursorline
 augroup END
 
 " attempt to close quickfix when deleting buffer
 "nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
-cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
+"cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -252,8 +234,11 @@ function! NumberToggle()
 endfunc
 nnoremap <leader><C-n> :call NumberToggle()<cr>
 
-" }}}
 
+" disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" }}}
 " PLUGIN MANAGER {{{
 " -------------------
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
@@ -263,7 +248,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
-
 call plug#begin('~/.vim/plugged')
 
 " MISC
@@ -296,7 +280,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
@@ -339,11 +323,10 @@ syntax on
 filetype plugin indent on
 
 "}}}
-
 "PLUGIN CONFIG {{{1
-
 " SYNTASTIC {{{2
 " --------------
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -354,16 +337,15 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_javascript_checkers = ['jshint']
-"}}}
 
+"}}}
 " VIM-MULTIPLE-CURSOR {{{2
 " -------------------
-let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-l>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+"let g:multi_cursor_next_key='<C-d>'
+"let g:multi_cursor_prev_key='<C-l>'
+"let g:multi_cursor_skip_key='<C-x>'
+"let g:multi_cursor_quit_key='<Esc>'
 " }}}
-
 " FZF.VIM {{{2
 " -------
 " https://github.com/junegunn/fzf.vim
@@ -379,7 +361,7 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-nmap <leader>f  :Files<CR>
+nmap <leader>o  :Files<CR>
 nmap <leader>bb :Buffers<cr>
 nmap <leader>T  :Tags<cr>
 nmap <leader>t  :BTags<cr>
@@ -393,10 +375,8 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 " }}}
-
 " EASYMOTION {{{2
 " ---------------
-
 " easymotion is generally <leader><leader> motion
 " but in some cases map single leader to most used functions
 " resoning is that EM takes up such a huge amount of binds I wanted it to have
@@ -409,7 +389,7 @@ let g:fzf_action = {
 let g:EasyMotion_smartcase = 1
 
 " map two letter motion to s
-nmap s <Plug>(easymotion-s2)
+nmap <leader>f <Plug>(easymotion-s)
 
 " use easymotion searching
 map  / <Plug>(easymotion-sn)
@@ -420,16 +400,15 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
 " line movement
-"map <Leader>l <Plug>(easymotion-lineforward)
-"map <Leader>j <Plug>(easymotion-j)
-"map <Leader>k <Plug>(easymotion-k)
-"map <Leader>h <Plug>(easymotion-linebackward)
-"let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 " set ctrl-v to paste in easymotion command line
 autocmd VimEnter,BufEnter * EMCommandLineNoreMap <c-v> :YRPaste<CR>
 " }}}
-
 " QUICKSCOPE {{{2
 " ---------------
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
@@ -441,7 +420,6 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " }}}
-
 " AIRLINE {{{2
 " ------------
 let g:airline_powerline_fonts = 1
@@ -450,7 +428,6 @@ let g:airline#extensions#bufferline#enabled = 1
 let g:airline#extensions#bufferline#overwrite_variables = 1
 
 "}}}
-
 " BUFFERLINE {{{2
 " ---------------
 "
@@ -464,7 +441,6 @@ let g:bufferline_echo = 0
 "let g:bufferline_active_highlight = 'StatusLineNC'
 
 "}}}
-
 " GRUVBOX {{{2
 " ------------
 
@@ -477,7 +453,6 @@ set background=dark
 
 colorscheme gruvbox
 " }}}
-
 " BADWOLF {{{2
 " ------------
 " Make the gutters darker than the background.
@@ -488,7 +463,6 @@ colorscheme gruvbox
 
 "colorscheme badwold
 " }}}
-
 " RAINBOW PARENTHESIS {{{2
 " ------------------------
 
@@ -497,7 +471,6 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 "let g:rbpt_loadcmd_toggle = 0
 
 " }}}
-
 " NERDTREE {{{2
 " -------------
 map <leader>nt :NERDTreeToggle<CR>
@@ -512,7 +485,6 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 "}}}}
-
 " NERDCOMMENT {{{2
 " ----------------
 " mirror tpope commentary keys.
@@ -520,7 +492,6 @@ nmap gcc <plug>NERDCommenterToggle
 vmap gc <plug>NERDCommenterToggle
 
 "}}}
-
 " PAREDIT {{{2
 " -----------
 
@@ -531,19 +502,16 @@ let g:paredit_shortmaps = 0
 
 
 " }}}
-
 " ACK.VIM {{{2
 " ------------
 
 let g:ackprg = 'ag --vimgrep'
 "}}}
-
 " UNDOTREE {{{2
 " -------------
 
 nnoremap <leader>ut :UndotreeToggle<cr>
 "}}}
-
 " BETTER-WHITESPACE {{{2
 " ----------------------
 " strip whitespace on save
@@ -553,14 +521,12 @@ autocmd BufWritePre * StripWhitespace
 noremap <leader>cw :StripWhitespace<CR>
 
 "}}}
-
 " VIM-CLJFMT {{{2
 " ---------------
 
 " strip whitespace on save
 let g:clj_fmt_autosave = 0
 "}}}
-
 " TSLIME {{{2
 " -----------
 
@@ -570,7 +536,6 @@ vmap <C-c><C-c> <Plug>SendSelectionToTmux
 nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars"
 "}}}
-
 " VIM-SEXP {{{2
 " -------------
 " Disable some irritating mappings
@@ -583,7 +548,6 @@ nmap <C-c>r <Plug>SetTmuxVars"
       "\ 'sexp_capture_next_element':      '<leader><Right>',
       "\}
 "}}}
-
 " EASY-ALIGN {{{2
 " ---------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -592,7 +556,6 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 " }}}
-
 " CLOJURE_HIGHLIGHT {{{2
 " -----------------
 
@@ -604,7 +567,6 @@ let g:clojure_align_multiline_strings = 1
 let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY', '^HEAD', '^PATCH', '^OPTIONS', '^def']
 autocmd FileType clojure setlocal lispwords+=describe,it,testing,facts,fact,provided
 " }}}
-
 " YANKRING {{{2
 " -----------------
 nnoremap <silent> <F11> :YRShow<CR>
@@ -613,7 +575,6 @@ let g:yankring_history_dir = '~/.vim'
 "cmap <c-v> gp
 
 " }}}
-
 " TMUX-NAVIGATOR {{{2
 " -----------------
 let g:tmux_navigator_no_mappings = 1
@@ -624,12 +585,10 @@ nnoremap <silent> <A-Up>    : TmuxNavigateUp<cr>
 nnoremap <silent> <A-Right> : TmuxNavigateRight<cr>
 nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
 " }}}
-
 " EMMET-VIM {{{2
 " -----------------
 let g:user_emmet_leader_key='<C-A>'
 " }}}
-
 " INACTIVE {{{2
 " --------------------
 " inactive
@@ -778,7 +737,6 @@ let g:user_emmet_leader_key='<C-A>'
 "let g:indent_guides_start_level = 2
 "2}}}
 "1}}}
-
 " LANGUAGE {{{1
 " --------
 " ┬  ┬─┐┌┐┐┌─┐┬ ┐┬─┐┌─┐┬─┐
@@ -786,5 +744,4 @@ let g:user_emmet_leader_key='<C-A>'
 " ┆─┘┘ ┆┆└┘┆─┘┆─┘┘ ┆┆─┘┴─┘
 
 "}}}
-
 " vim: fdm=marker:sw=2
