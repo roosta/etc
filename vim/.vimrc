@@ -204,42 +204,6 @@ cnoremap Q q
 "map <leader>Y "+Y
 "map <leader>P "+P
 " }}}
-" AUTOCMD {{{
-" -------------------------
-
-" https://github.com/tpope/vim-fireplace/pull/222
-"command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
-
-" if working with splits, set cursorline only on active window,
-" to give an indication other than airline which split is active
-augroup BgHighlight
-  autocmd!
-  "autocmd WinEnter * set number
-  "autocmd WinLeave * set nonumber
-  autocmd WinEnter * set relativenumber
-  autocmd WinLeave * set number
-  autocmd WinEnter * set cursorline
-  autocmd WinLeave * set nocursorline
-augroup END
-
-" attempt to close quickfix when deleting buffer
-"nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
-"cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
-
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
-nnoremap <leader><C-n> :call NumberToggle()<cr>
-
-
-" disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" }}}
 " PLUGIN MANAGER {{{
 " -------------------
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
@@ -760,11 +724,40 @@ map g# <Plug>(incsearch-nohl-g#)
 "let g:indent_guides_start_level = 2
 "2}}}
 "1}}}
-" LANGUAGE {{{1
-" --------
-" ┬  ┬─┐┌┐┐┌─┐┬ ┐┬─┐┌─┐┬─┐
-" │  │─┤││││ ┬│ ││─┤│ ┬├─
-" ┆─┘┘ ┆┆└┘┆─┘┆─┘┘ ┆┆─┘┴─┘
+" AUTOCMD {{{
+" -------------------------
 
-"}}}
+" https://github.com/tpope/vim-fireplace/pull/222
+"command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
+
+" if working with splits, set cursorline only on active window,
+" to give an indication other than airline which split is active
+augroup BgHighlight
+  autocmd!
+  "autocmd WinEnter * set number
+  "autocmd WinLeave * set nonumber
+  autocmd WinEnter * set relativenumber
+  autocmd WinLeave * set number
+  autocmd WinEnter * set cursorline
+  autocmd WinLeave * set nocursorline
+augroup END
+
+" attempt to close quickfix when deleting buffer
+"nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
+"cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+nnoremap <leader><C-n> :call NumberToggle()<cr>
+
+
+" disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" }}}
 " vim: fdm=marker:sw=2
