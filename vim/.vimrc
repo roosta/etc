@@ -51,6 +51,7 @@ set number         " show line numbers
 set matchtime=2    " time to display matching brackets
 set showmatch      " show matching brackets/parenthesis
 set relativenumber " use relative line numbers. See functions for quick switch back to normal
+"set hlsearch
 
 " linewrap
 set wrap           " wrap long lines.
@@ -283,8 +284,10 @@ Plug 'mileszs/ack.vim'
 "Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
-Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
+"Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
 
 " GUI
 Plug 'morhetz/gruvbox'
@@ -389,25 +392,22 @@ let g:fzf_action = {
 let g:EasyMotion_smartcase = 1
 
 " map two letter motion to s
-nmap <leader>f <Plug>(easymotion-s)
+map  <Leader>f <Plug>(easymotion-lineforward)
+nmap <Leader>F <Plug>(easymotion-overwin-f)
+map  <Leader>j <Plug>(easymotion-j)
+map  <Leader>k <Plug>(easymotion-k)
+let  g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 " use easymotion searching
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  ? <Plug>(easymotion-sn)
-omap ? <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
-" line movement
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+"map  / <Plug>(easymotion-sn)
+"omap / <Plug>(easymotion-tn)
+"map  ? <Plug>(easymotion-sn)
+"omap ? <Plug>(easymotion-tn)
+"map  n <Plug>(easymotion-next)
+"map  N <Plug>(easymotion-prev)
 
 " set ctrl-v to paste in easymotion command line
-autocmd VimEnter,BufEnter * EMCommandLineNoreMap <c-v> :YRPaste<CR>
+"autocmd VimEnter,BufEnter * EMCommandLineNoreMap <c-v> :YRPaste<CR>
 " }}}
 " QUICKSCOPE {{{2
 " ---------------
@@ -587,8 +587,31 @@ nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
 " }}}
 " EMMET-VIM {{{2
 " -----------------
+
 let g:user_emmet_leader_key='<C-A>'
+
 " }}}
+
+" INCSEARCH {{{2
+" -----------------
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+map <leader>/ <Plug>(incsearch-easymotion-/)
+map <leader>? <Plug>(incsearch-easymotion-?)
+map <leader>g/ <Plug>(incsearch-easymotion-stay)
+
+" :h g:incsearch#auto_nohlsearch
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 " INACTIVE {{{2
 " --------------------
 " inactive
