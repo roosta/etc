@@ -15,7 +15,12 @@ export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
 
 # locate
 export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
+
+# only define LC_CTYPE if undefined
+if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
+	export LC_CTYPE=${LANG%%:*} # pick the first entry from LANG
+fi
+
 #export TERM="xterm-screen-256color"
 #export TERM="xterm-256color"
 #export TERM="rxvt-unicode-256color"
