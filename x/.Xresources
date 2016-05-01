@@ -12,7 +12,8 @@
 #include ".Xresources.d/urxvt"
 #include ".Xresources.d/rofi"
 #include ".Xresources.d/xscreensaver"
-#include "colors/xcolors/gruvbox-dark.xresources"
+#include "colors/xcolors/light-fantastic-dark.xresources"
+!#include "colors/xcolors/gruvbox-dark.xresources"
 !#include "/home/roosta/colors/xcolors/gruvbox-urxvt256.xresources"
 
 !Xcursor.theme: Numix-Cursor

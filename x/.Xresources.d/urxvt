@@ -26,7 +26,6 @@ URxvt.url-launcher:         /usr/bin/firefox
 URxvt.matcher.rend.0:       Uline Bold fg5
 
 ! set cursorcolor to lightgrey
-URxvt.cursorColor: #D3869B
 URxvt.cursorBlink: false
 
 !URxvt*skipBuiltinGlyphs: true
