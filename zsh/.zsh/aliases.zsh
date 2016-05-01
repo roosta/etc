@@ -282,6 +282,9 @@ alias pacu="sudo pacman -Syu" # Synchronize with repositories and then upgrade p
 alias pacm="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
 alias pacmu="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
 alias pacmr="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
+
+# update locate db and find all pacnew, pacsave files.
+alias pacnews="sudo updatedb && locate --existing --regex '\.pac(new|save)$'"
 #}}}
 ## UTILS {{{1
 ## ----------
