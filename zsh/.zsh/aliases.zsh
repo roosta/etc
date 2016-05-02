@@ -12,6 +12,7 @@
 
 # Set up nohup so that it can deal with an argument that is itself an alias name:
 alias nohup="nohup "
+alias su="su -"
 
 #}}}
 ## QUICK EDITS {{{1
