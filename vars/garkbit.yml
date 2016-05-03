@@ -1,0 +1,34 @@
+---
+user: roosta
+home: "/home/{{user}}"
+dotfiles: "{{home}}/.dotfiles"
+
+# define host outputs and various associated vars
+outputs:
+  - display: "HDMI2"
+    bar_id: "bar-primary"
+    stat_conf: "~/.i3/status/garkbit_0.i3status"
+    bar_pos: "top"
+    tray_out: "primary"
+
+  - display: "HDMI1"
+    bar_id: "bar-secondary"
+    stat_conf: "~/.i3/status/garkbit_1.i3status"
+    bar_pos: "top"
+    tray_out: "primary"
+
+# i3-wm
+i3_font: "pango:Essential PragmataPro 9"
+i3_status_font: "pango:Essential PragmataPro, FontAwesome 9"
+i3_status_command: "py3status -c"
+
+# user locations
+lib_dir: "{{home}}/lib"
+bin_dir: "{{home}}/bin"
+font_dir: "{{home}}/.fonts/misc"
+
+# define host gfx-card driver
+driver: "intel"
+
+# vim:ft=yaml:ts=2:sw=2
+

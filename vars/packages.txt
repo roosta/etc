@@ -48,7 +48,6 @@ dfc
 dina-font
 discord
 docker
-dwarffortress
 dzen2
 emacs
 envoy
@@ -135,8 +134,6 @@ nmap
 ntop
 ntp
 numlockx
-nvidia
-openttd
 otf-fira-mono
 otf-fira-sans
 otf-neris
