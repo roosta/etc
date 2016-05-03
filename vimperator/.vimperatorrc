@@ -1,4 +1,4 @@
-colorscheme dark_fantastic
+colorscheme dark-fantastic
 set noscrollbars
 set loadplugins
 set complete=ltsS
