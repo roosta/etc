@@ -37,6 +37,13 @@
 !#define FONT_BOLDITALIC xft: PragmataPro\ for\ Powerline:pixelsize=14:style=Bold\ Italic
 
 ! define xft fallbacks
+!Xft.antialias: 0
+!Xft.autohint:  0
+!Xft.hinting:   1
+!Xft.hintstyle: hintslight
+!Xft.lcdfilter: lcddefault
+!Xft.rgba:      rgb
+
 Xft.antialias: 0
 Xft.autohint:  0
 Xft.hinting:   1
