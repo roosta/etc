@@ -4,6 +4,7 @@
   with_items:
     - lib
     - bin
+    - sbin
   tags:
     - bin
 
