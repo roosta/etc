@@ -100,7 +100,7 @@ urxvtd -q -f -o &
 #compton -b &
 dunst &
 nm-applet &
-cryptkeeper &
+#cryptkeeper &
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
 # ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘
