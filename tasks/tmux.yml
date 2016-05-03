@@ -1,13 +1,4 @@
 ---
-
-- name: clone / update tmux plugin manager
-  git: repo={{ item.repo }} dest={{ home }}/.tmux/plugins/{{ item.dest }} clone=yes update=yes
-  with_items:
-    - { repo: "https://github.com/tmux-plugins/tpm", dest: "tpm" }
-  tags:
-    - tmux
-
-
 - name: Symlink tmux config...
   tags:
     - tmux
@@ -21,3 +12,12 @@
   tags:
     - tmux
   file: dest={{ home }}/.tmuxinator src={{ dotfiles }}/tmuxinator state=link
+
+- name: clone / update tmux plugin manager
+  git: repo={{ item.repo }} dest={{ home }}/.tmux/plugins/{{ item.dest }} clone=yes update=yes
+  with_items:
+    - { repo: "https://github.com/tmux-plugins/tpm", dest: "tpm" }
+  tags:
+    - tmux
+
+
