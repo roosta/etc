@@ -1,10 +1,7 @@
 ---
 - name: Symlink taskwarrior data
   tags:
-    - tasks
     - taskwarrior
-    - misc
-  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/taskwarrior/{{ item }} state=link
+  file: dest={{ home }}/{{ item }} src={{ item }} state=link
   with_items:
-    - .taskrc
-    - .task
+    - {{ dotfiles }}/taskwarrior/.taskrc

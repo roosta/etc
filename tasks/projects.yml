@@ -6,6 +6,7 @@
   tags:
     - projects
 
+    # TODO: add bootsrap https repos here.
 - name: clone / update external libraries
   git: repo={{ item.repo }} dest={{ home }}/projects/{{ item.dest }} clone=yes update=yes
   with_items:

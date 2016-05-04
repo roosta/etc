@@ -140,7 +140,7 @@ workspace $SWS2_COM output {{ outputs[1].display }}
 
 # Options
 focus_follows_mouse no
-new_window pixel 2
+new_window pixel 1
 hide_edge_borders none
 
 # ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┬─┐┬ ┐┬  ┬─┐┐─┐
@@ -400,11 +400,11 @@ bindsym $mod+Home mode "$mode_chdisp"
 font {{ i3_font }}
 
 # <class>               <border> <background> <foreground> <indicator>
-client.focused          {{ bright_green }} {{ bright_green }} {{ dark0 }} {{ neutral_purple }}
-client.focused_inactive {{ dark2 }} {{ light4 }} {{ dark0 }} {{ neutral_purple }}
-client.unfocused        {{ dark2 }} {{ dark2 }} {{ gray_245 }} {{ neutral_purple }}
-client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{ neutral_purple }}
-client.placeholder      {{ bright_aqua }} {{ neutral_aqua }} {{ dark0 }} {{ neutral_purple }}
+client.focused          {{ neutral_blue }} {{ neutral_blue }} {{ dark0 }} {{ neutral_magenta }}
+client.focused_inactive {{ dark2 }} {{ light4 }} {{ dark0 }} {{ neutral_magenta }}
+client.unfocused        {{ dark2 }} {{ dark2 }} {{ gray_245 }} {{ neutral_magenta }}
+client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{ neutral_magenta }}
+client.placeholder      {{ bright_cyan }} {{ neutral_cyan }} {{ dark0 }} {{ neutral_magenta }}
 
 {# macro that renders status bars based on host spesific variables as args #}
 {% macro render_bar(display, bar_id, stat_conf, bar_pos, tray_out) %}
@@ -423,7 +423,7 @@ bar {
     statusline {{ light1 }}
 
     # <workclass>      <border> <background> <foreground>
-    focused_workspace  {{ dark0 }} {{ dark0 }} {{ bright_green }}
+    focused_workspace  {{ dark0 }} {{ dark0 }} {{ bright_cyan }}
     active_workspace   {{ dark0 }} {{ dark0 }} {{ light1 }}
     inactive_workspace {{ dark0 }} {{ dark0 }} {{ gray_245 }}
     urgent_workspace   {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }}
