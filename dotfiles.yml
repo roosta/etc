@@ -3,7 +3,7 @@
 - hosts: all
   vars_files:
     - vars/{{ ansible_hostname }}.yml
-    - vars/gruvbox_palette.yml
+    - vars/dark-fantastic-palette.yml
   tasks:
       # init group
       # this group is the most essential. To use the rest these need to be run first
@@ -59,7 +59,7 @@
     - include: tasks/ruby.yml
 
       # misc
-    - include: tasks/taskwarrior.yml
+    #- include: tasks/taskwarrior.yml
     - include: tasks/ncmpcpp.yml
     - include: tasks/gimp.yml
     - include: tasks/inkscape.yml
