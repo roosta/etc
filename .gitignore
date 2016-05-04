@@ -103,3 +103,4 @@ nitrogen
 */**/fonts.dir
 */**/fonts.scale
 vim/.vim/autoload
+*/**/port.lock
