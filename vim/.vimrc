@@ -350,8 +350,8 @@ let g:fzf_action = {
 
 let g:EasyMotion_smartcase = 1
 
-map s <Plug>(easymotion-s)
-map <leader>s <Plug>(easymotion-s2)
+map <leader>s <Plug>(easymotion-s)
+map <leader><leader>s <Plug>(easymotion-s2)
 
 " mirror some vim movements
 map <Leader>f <Plug>(easymotion-lineforward)

@@ -2,10 +2,10 @@ general {
   output_format = "i3bar"
   colors = true
   interval = 5
-  color_bad = "#FF9100"
-  color_good = "#549FBE"
-  color_degraded = "#FA6E9E"
-  color_separator = "#FF9100"
+  color_bad = "#FF5751"
+  color_good = "#DEDDC7"
+  color_degraded = "#FF9100"
+  color_separator = "#DEDDC7"
 }
 
 #order += "ipv6"
@@ -71,7 +71,7 @@ sysdata cpu{
 # print current keyboard layout, with color codes for language
 keyboard_layout {
   format = " {layout}"
-  colors = "us=#549FBE, no=#FA6E9E"
+  colors = "us=#DEDDC7, no=#FF9100"
 }
 
 # control the volume with your mouse (need >i3-4.8)
