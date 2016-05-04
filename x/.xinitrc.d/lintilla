@@ -1,4 +1,4 @@
-chdisp desk &
+/home/roosta/bin/chdisp desk &
 
 # xbox controller drivers.
 #xboxdrv -D --config $HOME/.xboxdrv

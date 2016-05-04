@@ -245,10 +245,12 @@ alias pacsu="sudo pacman -U" # Install specific package not from the repositorie
 # AUR
 alias aurs="yaourt -S" #install from AUR
 alias aurss="yaourt -Ss" #search from AUR
-alias aurua="yaourt -Syua" # update aur packages
-alias auruaf="yaourt -Syua --noconfirm" # update aur with no confirm
-alias auruad="yaourt -Syua --devel" # update all, including git packages
-alias auruadf="yaourt -Syua --devel --noconfirm" # Update all without confirming
+alias auru="yaourt -Syua" # update aur packages
+alias auruf="yaourt -Syua --noconfirm" # update aur with no confirm
+alias aurud="yaourt -Syua --devel" # update all, including git packages
+alias aurudf="yaourt -Syua --devel --noconfirm" # Update all without confirming
+alias aursi="yaourt -Si"
+alias auro="yaourt -Qdt"
 
 # CLEANING
 alias pacr="sudo pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
