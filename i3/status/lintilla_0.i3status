@@ -26,7 +26,7 @@ order += "sysdata cpu"
 #order += "cpu_temperature 0"
 order += "nvidia_temp"
 #order += "load"
-#order += "dropboxd_status"
+order += "dropboxd_status"
 order += "tztime local"
 
 window_title {
