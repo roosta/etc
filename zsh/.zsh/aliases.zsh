@@ -453,7 +453,7 @@ alias :Q="exit"
 # common typo
 alias claer='clear'
 alias cl='clear'
-alias virsh='sudo virsh'
+#alias virsh='sudo virsh'
 
 # quick alias to remove steam runtime and use native
 # see: https://wiki.archlinux.org/index.php/Steam#Using_native_runtime
