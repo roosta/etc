@@ -8,8 +8,6 @@
   default = simple
 [credential]
   helper = cache
-[diff]
-  tool = vimdiff
 [alias]
   s = status
   cc = commit

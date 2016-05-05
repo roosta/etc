@@ -232,7 +232,7 @@ alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l /h
 #}}}
 ## PACKAGES {{{1
 ## -------------
-alias pacman="pacmatic --color='always'"
+alias pacman="yaourt"
 
 # iNSTALLING
 alias pacs="sudo pacman -S" # Install specific package(s) from the repositories
@@ -241,16 +241,17 @@ alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
 alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
 alias pacinsd="sudo pacman -S --asdeps" # Install given package(s) as dependencies
 alias pacsu="sudo pacman -U" # Install specific package not from the repositories but from a file
+alias pacsso="sudo \pacman -Ss" # search only in official repos
 
 # AUR
-alias aurs="yaourt -S" #install from AUR
-alias aurss="yaourt -Ss" #search from AUR
-alias auru="yaourt -Syua" # update aur packages
-alias auruf="yaourt -Syua --noconfirm" # update aur with no confirm
-alias aurud="yaourt -Syua --devel" # update all, including git packages
-alias aurudf="yaourt -Syua --devel --noconfirm" # Update all without confirming
-alias aursi="yaourt -Si"
-alias auro="yaourt -Qdt"
+#alias aurs="yaourt -S" #install from AUR
+#alias aurss="yaourt -Ss" #search from AUR
+#alias auru="yaourt -Syua" # update aur packages
+#alias auruf="yaourt -Syua --noconfirm" # update aur with no confirm
+#alias aurud="yaourt -Syua --devel" # update all, including git packages
+#alias aurudf="yaourt -Syua --devel --noconfirm" # Update all without confirming
+#alias aursi="yaourt -Si"
+#alias auro="yaourt -Qdt"
 
 # CLEANING
 alias pacr="sudo pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
