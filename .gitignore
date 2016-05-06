@@ -94,7 +94,7 @@ idea/config/options/recentProjects.xml
 gimprc
 pluginrc
 extension-errors.log
-inkscape/preferences.xml
+#inkscape/preferences.xml
 ycm_build
 i3/log/**
 tmux/.tmux/plugins
