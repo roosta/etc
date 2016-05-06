@@ -6,18 +6,13 @@
 #│█ author: roosta <mail@roosta.sh>   █│
 #│█ site  : http://dotfiles.roosta.sh █│
 #│█ github: https://github.com/roosta █│
-#└───────────┬─────────────────────────┘
-# ┌──────────┘
-# │ o┌┐┐o┌┐┐o┬─┐┬  o┌─┐┬─┐
-# │ │││││ │ ││─┤│  │┌─┘├─
-# ┆ ┆┆└┘┆ ┆ ┆┘ ┆┆─┘┆└─┘┴─┘
-# ------------------------
+#└─────────────────────────────────────┘
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
-hostconf=$HOME/.xinitrc.d/$(hostname)
+localrc=$HOME/.xinitrc.local
 
 # merge in defaults and keymaps
 if [ -f $sysresources ]; then
@@ -44,20 +39,14 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
   unset f
 fi
 
-# execute host based config
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-  [ -x "$hostconf" ] && . "$hostconf"
-  unset hostconf
-fi
+# set local config
+[ -x "$localrc" ] && . "$localrc"
+
 # set X font locations
 xset +fp $HOME/.fonts/restricted &
 xset +fp $HOME/.fonts/misc &
 xset fp rehash &
 
-# o┌┐┐┬─┐┬ ┐┌┐┐┐─┐
-# │││││─┘│ │ │ └─┐
-# ┆┆└┘┆  ┆─┘ ┆ ──┘
-# ----------------
 # Set keyboard layouts and options.
 # Switch layout with caps and terminate x session with ctrl alt backspace
 setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp &
@@ -65,13 +54,8 @@ setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:c
 # enable numlock at startup
 numlockx &
 
-# bind various custom keys. see .xbindkeysrc
 xbindkeys &
 
-# ┬─┐o┐─┐┬─┐┬  ┬─┐┐ ┬
-# │ ││└─┐│─┘│  │─┤└┌┘
-# ┆─┘┆──┘┆  ┆─┘┘ ┆ ┆
-# -------------------
 # screen locker
 xscreensaver -no-splash &
 xss-lock -- xscreensaver-command --lock &
@@ -81,31 +65,25 @@ xss-lock -- xscreensaver-command --lock &
 # see https://github.com/iye/lightsOn/blob/master/lightsOn.sh
 lightsOn 590 &
 
-# load nvidia-settings on startup
-#nvidia-settings --load-config-only &
-
-#dropbox-cli start &
-
 # set background with nitrogen
 nitrogen --restore &
 
 # set background with feh
 #$HOME/.fehbg &
 
-# ┬─┐┬─┐┬─┐┌┌┐┌─┐┌┐┐┐─┐
-# │ ││─┤├─ ││││ ││││└─┐
-# ┆─┘┘ ┆┴─┘┘ ┆┘─┘┆└┘──┘
-# ---------------------
 urxvtd -q -f -o &
-#compton -b &
-dunst &
-nm-applet &
-#cryptkeeper &
 
-# ┐ ┬o┌┐┐┬─┐┌─┐┐ ┬  ┌┌┐┬─┐┌┐┐┬─┐┌─┐┬─┐┬─┐
-# ││││││││ ││ ││││  ││││─┤││││─┤│ ┬├─ │┬┘
-# └┴┆┆┆└┘┆─┘┘─┘└┴┆  ┘ ┆┘ ┆┆└┘┘ ┆┆─┘┴─┘┆└┘
-# ---------------------------------------
+#compton -b &
+
+dunst &
+
+nm-applet &
+
+lxqt-policykit-agent &
+
+## WINDOW MANAGER
+## --------------
+
 # easy wm-switcher, given arg from ~/.xserverrc
 # https://wiki.archlinux.org/index.php/Xinitrc#Making_a_DE.2FWM_choice
 session=${1:-i3} # Here i3wm is kept as default

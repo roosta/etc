@@ -1,8 +1,0 @@
-/home/roosta/bin/chdisp desk &
-
-# xbox controller drivers.
-#xboxdrv -D --config $HOME/.xboxdrv
-
-lxqt-policykit-agent &
-
-# vim:ft=sh:ts=2:sw=2:fdm=marker
