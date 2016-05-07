@@ -47,4 +47,4 @@ plugin_location=$HOME/.zsh.d/plugins
 
 # 256 COLOR PALETTE
 # https://github.com/morhetz/gruvbox/wiki/Terminal-specific
-source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+#source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
