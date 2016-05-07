@@ -98,7 +98,7 @@ case $session in
   fluxbox           ) exec startfluxbox;;
   gnome             ) exec gnome-session;;
   gnome-classic     ) exec gnome-session --session=gnome-classic;;
-  i3|i3wm           ) exec i3 -c $HOME/.i3/config.tmp -V >> ~/.i3/log/i3log-$(date +'%F-%k-%M-%S') 2>&1;;
+  i3|i3wm           ) exec i3 -c $HOME/.i3/config -V >> ~/.i3/log/i3log-$(date +'%F-%k-%M-%S') 2>&1;;
   icewm             ) exec icewm-session;;
   jwm               ) exec jwm;;
   kde               ) exec startkde;;
