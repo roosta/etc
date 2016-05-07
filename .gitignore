@@ -97,6 +97,7 @@ extension-errors.log
 #inkscape/preferences.xml
 ycm_build
 i3/log/**
+!i3/log/.gitkeep
 tmux/.tmux/plugins
 yankring_history_v2.txt
 nitrogen
