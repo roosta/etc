@@ -749,6 +749,14 @@ nnoremap <leader><C-n> :call NumberToggle()<cr>
 
 " disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
 " }}}
+" VIMPAGER {{{
+" -------------------------
+
+let g:vimpager_disable_x11 = 1
+let g:vimpager_scrolloff = 5
+let g:vimpager_less_mode = 0
+"let g:vimpager_passthrough = 0
+set clipboard^=unnamed
+"}}}
 " vim: fdm=marker:sw=2
