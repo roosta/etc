@@ -8,7 +8,7 @@
 export PATH=$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$HOME/.npm/bin:$HOME/.pip/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
 
-fpath=("$HOME/.zsh.d" $fpath)
+fpath=("$HOME/.zsh.d/functions" $fpath)
 
 # set ruby gems install location to home
 export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")

@@ -105,3 +105,4 @@ nitrogen
 vim/.vim/autoload
 */**/port.lock
 apvlv/.test-file-remove
+ko_palettes.blacklist

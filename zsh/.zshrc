@@ -24,17 +24,17 @@ tmux new-session -s vconsole
 fi
 
 # init completion
-for compl (~/.zsh/completion/*.zsh) source $compl
+for compl (~/.zsh.d/completion/*.zsh) source $compl
 
 # CONF
-for config (~/.zsh/*.zsh) source $config
-for cfg (~/.zsh/plugin_conf/*.zsh) source $cfg
+for config (~/.zsh.d/*.zsh) source $config
+for cfg (~/.zsh.d/plugin_conf/*.zsh) source $cfg
 
 # FUNCTIONS
-for function (~/.zsh/functions/*.zsh) source $function
+for function (~/.zsh.d/functions/*.zsh) source $function
 
 # PLUGINS
-plugin_location=$HOME/.zsh/plugins
+plugin_location=$HOME/.zsh.d/plugins
 [ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 [ -f $plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source $plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh
