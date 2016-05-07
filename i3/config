@@ -113,17 +113,17 @@ bindsym $mod+Shift+F8 move workspace $FWS8
 
 ## assign workspaces to outputs
 # primary
-workspace $PWS1_TRM output {{ outputs[0].display }}
-workspace $PWS3_WWW output {{ outputs[0].display }}
-workspace $PWS2_DEV output {{ outputs[0].display }}
+workspace $PWS1_TRM output DVI-I-2
+workspace $PWS3_WWW output DVI-I-2
+workspace $PWS2_DEV output DVI-I-2
 
-workspace $TWS1_MED output {{ outputs[0].display }}
-workspace $TWS3_GAM output {{ outputs[0].display }}
-workspace $TWS2_ART output {{ outputs[0].display }}
+workspace $TWS1_MED output DVI-I-2
+workspace $TWS3_GAM output DVI-I-2
+workspace $TWS2_ART output DVI-I-2
 # secondary
-workspace $SWS1_AUX output {{ outputs[1].display }}
-workspace $SWS3_DBG output {{ outputs[1].display }}
-workspace $SWS2_COM output {{ outputs[1].display }}
+workspace $SWS1_AUX output DVI-I-3
+workspace $SWS3_DBG output DVI-I-3
+workspace $SWS2_COM output DVI-I-3
 
 # Options
 focus_follows_mouse no
@@ -373,43 +373,59 @@ bindsym $mod+Home mode "$mode_chdisp"
 ## ----------
 # generated from template
 # set primary font
-font {{ i3_font }}
+font pango:Essential PragmataPro 9
 
 # <class>               <border> <background> <foreground> <indicator>
-client.focused          {{ neutral_blue }} {{ neutral_blue }} {{ light1 }} {{ neutral_magenta }}
-client.focused_inactive {{ dark2 }} {{ light4 }} {{ dark0 }} {{ neutral_magenta }}
-client.unfocused        {{ dark2 }} {{ dark2 }} {{ gray_245 }} {{ neutral_magenta }}
-client.urgent           {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }} {{ neutral_magenta }}
-client.placeholder      {{ neutral_magenta }} {{ neutral_cyan }} {{ dark0 }} {{ neutral_magenta }}
+client.focused          #2583AA #2583AA #DEDDC7 #D2448D
+client.focused_inactive #3B3B3B #98958E #282828 #D2448D
+client.unfocused        #3B3B3B #3B3B3B #7B817C #D2448D
+client.urgent           #FF9100 #FF9100 #282828 #D2448D
+client.placeholder      #D2448D #3D8E7A #282828 #D2448D
 
-{# macro that renders status bars based on host spesific variables as args #}
-{% macro render_bar(display, bar_id, stat_conf, bar_pos, tray_out) %}
-bar {
-  id {{ bar_id }}
-  output {{ display }}
-  status_command {{ i3_status_command }} {{ stat_conf }}
-  font {{ i3_status_font }}
-  position {{ bar_pos }}
-  tray_output {{ tray_out }}
+
+  bar {
+  id bar-primary
+  output DVI-I-2
+  status_command py3status -c  ~/.i3/status/lintilla_0.i3status
+  font pango:Essential PragmataPro, FontAwesome 9
+  position top
+  tray_output primary
   strip_workspace_numbers yes
   separator_symbol "▋"
   colors {
-    background {{ dark0 }}
-    separator  {{ dark3 }}
-    statusline {{ light1 }}
+    background #282828
+    separator  #4D4D4D
+    statusline #DEDDC7
 
     # <workclass>      <border> <background> <foreground>
-    focused_workspace  {{ faded_blue }} {{ faded_blue }} {{ light1 }}
-    active_workspace   {{ dark0 }} {{ dark0 }} {{ light1 }}
-    inactive_workspace {{ dark0 }} {{ dark0 }} {{ gray_245 }}
-    urgent_workspace   {{ neutral_orange }} {{ neutral_orange }} {{ dark0 }}
+    focused_workspace  #104F6A #104F6A #DEDDC7
+    active_workspace   #282828 #282828 #DEDDC7
+    inactive_workspace #282828 #282828 #7B817C
+    urgent_workspace   #FF9100 #FF9100 #282828
   }
 }
-{% endmacro %}
 
-{# loop through each output and generate a bar config #}
-{% for output in outputs if output.display %}
-  {{ render_bar(output.display, output.bar_id, output.stat_conf, output.bar_pos, output.tray_out) }}
-{% endfor %}
+  bar {
+  id bar-secondary
+  output DVI-I-3
+  status_command py3status -c  ~/.i3/status/lintilla_1.i3status
+  font pango:Essential PragmataPro, FontAwesome 9
+  position top
+  tray_output primary
+  strip_workspace_numbers yes
+  separator_symbol "▋"
+  colors {
+    background #282828
+    separator  #4D4D4D
+    statusline #DEDDC7
+
+    # <workclass>      <border> <background> <foreground>
+    focused_workspace  #104F6A #104F6A #DEDDC7
+    active_workspace   #282828 #282828 #DEDDC7
+    inactive_workspace #282828 #282828 #7B817C
+    urgent_workspace   #FF9100 #FF9100 #282828
+  }
+}
+
 
 # vim:ft=i3:ts=2:sw=2:fdm=marker
