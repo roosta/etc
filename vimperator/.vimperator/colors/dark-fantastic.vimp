@@ -66,27 +66,27 @@ hi -append Hint         background-color: rgba(251, 241, 199, 0.7); -moz-border-
 hi -append HintElem     text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #FBF1C7;
 hi -append HintActive   text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #FBF1C7;
 
-hi StatusLine     color: #EBDBB2; background: #282828; font-weight: normal; font-size: 9pt; font-family: Essential PragmataPro;
+hi StatusLine     color: #EBDBB2; background: #282828; font-weight: normal; font-size: 11px; font-family: Essential PragmataPro;
 "hi StatusLineBroken   color:  #93a1a1; background: #ffffd7; font-weight: normal; font-size: 12pt;
 "hi StatusLineExtended color:  #93a1a1; background: #af005f; font-weight: normal; font-size: 12pt;
 "hi StatusLineSecure   color:  #93a1a1; background: #b58900; font-weight: normal; font-size: 12pt;
 
-hi Normal     color: #EBDBB2; background: #282828; font-size: 9pt; font-family: Terminess Powerline;
-hi CmdLine    color: #EBDBB2; background: #282828; font-size: 9pt; font-family: Terminess Powerline;
-hi InfoMsg    color: #EBDBB2; background: #282828; font-size: 9pt; font-family: Terminess Powerline;
-hi ModeMsg    color: #EBDBB2; background: #282828; font-size: 9pt; font-family: Terminess Powerline;
-hi MoreMsg    color: #859900; background: #282828; font-size: 9pt; font-family: Terminess Powerline;
-hi LineNr     color: #FE8019; background: #282828; font-size: 9pt; font-family: Terminess Powerline;
-hi Question   color: #FABD2F; background: #282828; font-size: 9pt; font-family: Terminess Powerline;
-hi WarningMsg color: #D65D0E; background: #282828; font-size: 9pt; font-family: Terminess Powerline;
-hi ErrorMsg   color: #FB4934; background: #282828; font-size: 9pt; font-family: Terminess Powerline; font-weight: bold;
+hi Normal     color: #EBDBB2; background: #282828; font-size: 11px; font-family: Terminess Powerline;
+hi CmdLine    color: #EBDBB2; background: #282828; font-size: 11px; font-family: Terminess Powerline;
+hi InfoMsg    color: #EBDBB2; background: #282828; font-size: 11px; font-family: Terminess Powerline;
+hi ModeMsg    color: #EBDBB2; background: #282828; font-size: 11px; font-family: Terminess Powerline;
+hi MoreMsg    color: #859900; background: #282828; font-size: 11px; font-family: Terminess Powerline;
+hi LineNr     color: #FE8019; background: #282828; font-size: 11px; font-family: Terminess Powerline;
+hi Question   color: #FABD2F; background: #282828; font-size: 11px; font-family: Terminess Powerline;
+hi WarningMsg color: #D65D0E; background: #282828; font-size: 11px; font-family: Terminess Powerline;
+hi ErrorMsg   color: #FB4934; background: #282828; font-size: 11px; font-family: Terminess Powerline; font-weight: bold;
 hi NonText    background: #282828;
 hi Null       color: #B8BB26;
 hi Tag        color: #B8BB26;
 hi Number     color: #B8BB26;
 
 hi CompTitle          background: #3C3836;
-hi CompTitle>*        color: #458588; padding-bottom: 1px; padding-left: 11px; font-weight: bold; font-size: 9pt; border-top: 1px solid #504945; border-bottom: 1px solid #504945;
+hi CompTitle>*        color: #458588; padding-bottom: 1px; padding-left: 11px; font-weight: bold; font-size: 11px; border-top: 1px solid #504945; border-bottom: 1px solid #504945;
 hi CompItem[selected] color: #458588; background: #3C3836;
 hi CompItem           color: #EBDBB2; width: 50%;
 hi CompDesc           color: #D3869B;
@@ -99,7 +99,7 @@ hi Object    color: #2aa198;
 hi Function  color: #268bd2;
 hi URL       color: #B8BB26;
 
-hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:9pt;
+hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:11px;
 " }}}
 " CSS {{{
 
