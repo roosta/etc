@@ -1,7 +1,0 @@
----
-# Setup compton. Relies on AUR package
-- name: Symlink compton configuration
-  tags:
-    - compton
-    - wm
-  file: dest={{ home }}/.compton.conf src={{ dotfiles }}/compton/.compton.conf state=link

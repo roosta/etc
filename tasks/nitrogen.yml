@@ -1,6 +1,0 @@
----
-- name: Symlink nitrogen config
-  tags:
-    - feh
-    - wm
-  file: path={{ home }}/.config/nitrogen src={{ dotfiles }}/nitrogen state=link

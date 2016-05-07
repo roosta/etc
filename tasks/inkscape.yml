@@ -1,6 +1,0 @@
----
-- name: Symlink "gimp" configuration
-  tags:
-    - inkscape
-    - misc
-  file: src={{ dotfiles }}/inkscape dest={{ home }}/.config/inkscape state=link

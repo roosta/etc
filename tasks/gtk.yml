@@ -1,9 +1,0 @@
----
-- name: Symlink gtk configuration
-  tags:
-    - gtk
-    - wm
-  file: dest={{home}}/{{item.dest}} src={{dotfiles}}/gtk/{{item.src}} state=link
-  with_items:
-    - { dest: '.config/gtk-3.0', src: 'gtk-3.0' }
-    - { dest: '.gtkrc-2.0', src: '.gtkrc-2.0' }

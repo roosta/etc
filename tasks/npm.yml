@@ -1,7 +1,0 @@
----
-# Setup ls++ config. Relies on AUR package!
-- name: Symlink "npm" configuration
-  tags:
-    - npm
-    - dev
-  file: dest={{ home }}/.npmrc src={{ dotfiles }}/npm/.npmrc state=link

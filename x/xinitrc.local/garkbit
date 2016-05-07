@@ -1,5 +1,0 @@
-lxqt-policykit-agent &
-
-$HOME/.screenlayout/main.sh &
-
-# vim:ft=sh:ts=2:sw=2:fdm=marker

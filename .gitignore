@@ -13,18 +13,18 @@ backup/*
 *.cache
 
 # ranger
-ranger/bookmarks
-ranger/colorschemes/__init__.py
-ranger/colorschemes/__pycache__/**
-ranger/history
-ranger/tagged
+*bookmarks*
+**/__init__.py
+*cache**
+*history*
+*tagged*
 
 # vim/perator/pentadactyl
-vim/.vim/undo/*
-vim/.vim/plugged/*
-vim/.vim/.netrwhist
-vim/backup/*
-vimperator/.vimperator/info/**
+.vim/undo/*
+.vim/plugged/*
+.netrwhist
+*backup/*
+.vimperator/info/**
 
 # sublime text
 *.last-run
@@ -34,11 +34,11 @@ SublimeGit.sublime-settings
 # shell
 base-16
 .bash_history
-zsh/.zsh/plugins
+*/**/plugins
 
 # GUI
-gtk/*/bookmarks
-gtk/*/gtkfilechooser.ini
+*/**/bookmarks
+*/**/gtkfilechooser.ini
 
 # fonts
 *PragmataPro*
@@ -54,7 +54,7 @@ gnupg/random*
 gnupg/*~
 
 # Comms
-irssi/.irssi/*.pem
+*/**/*.pem
 centerim/*/
 centerim/pid
 mutt/cache/*
@@ -73,24 +73,24 @@ subversion/README.txt
 svn/*/README.txt
 
 # IntelliJ
-/idea/config/eval/*
-idea/config/options/usage.statistics.xml
-idea/config/options/statistics.application.usages.xml
-idea/config/options/feature.usage.statistics.xml
-idea/config/options/ClojureUsageStatistics.xml
+intellij/config/eval/*
+intellij/config/options/usage.statistics.xml
+intellij/config/options/statistics.application.usages.xml
+intellij/config/options/feature.usage.statistics.xml
+intellij/config/options/ClojureUsageStatistics.xml
 
 parasiterc
 gimp/*rc
 gimp/tags.xml
 gimp/gimpswap.*
 gimp/tool-options
-idea/config/options/dimensions.xml
-idea/config/options/extensionsRootType.xml
-idea/config/plugins/availables.xml
+intellij/config/options/dimensions.xml
+intellij/config/options/extensionsRootType.xml
+intellij/config/plugins/availables.xml
 fasd.data
 fasd.log
-idea/config/options/ClojureUsageStatisticsSettings.xml
-idea/config/options/recentProjects.xml
+intellij/config/options/ClojureUsageStatisticsSettings.xml
+intellij/config/options/recentProjects.xml
 gimprc
 pluginrc
 extension-errors.log
@@ -98,12 +98,11 @@ extension-errors.log
 ycm_build
 i3/log/**
 !i3/log/.gitkeep
-tmux/.tmux/plugins
+.tmux/plugins
 yankring_history_v2.txt
 nitrogen
 */**/fonts.dir
 */**/fonts.scale
-vim/.vim/autoload
+*/**/autoload
 */**/port.lock
-apvlv/.test-file-remove
 ko_palettes.blacklist

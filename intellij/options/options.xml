@@ -1,0 +1,25 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlDoctype.MigrateToHtml5" value="true" />
+    <property name="DefaultHtmlDoctype.Refreshed" value="2" />
+    <property name="evlsprt3.15" value="13" />
+    <property name="installed.kotlin.plugin.version" value="1.0.0-beta-1103-IJ143-27" />
+    <property name="installation.uid" value="3a24f7a5-e64c-421b-8708-8fcd98207c49" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/projects/mango-lp&#10;/home/roosta/projects/mango-landing/project.clj&#10;/usr/lib/jvm/java-8-openjdk&#10;/home/roosta/projects/mango-landing" />
+    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
+    <property name="lastTip" value="21" />
+    <property name="KEYMAP" value="height&#10;tab&#10;move caret to previ&#10;find previous&#10;move caret to code block end" />
+    <property name="selected.color.option.type" value="Head symbol" />
+    <property name="PLUGIN_FILTER" value="cursive&#10;vim" />
+    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
+    <property name="ChangesViewManager.DETAILS_SPLITTER_PROPORTION" value="0.5" />
+    <property name="last.imported.location" value="$USER_HOME$/projects/mango-lp" />
+    <property name="ExpandBeforeRunStepsPanel" value="true" />
+    <property name="settings.code.style.selected.tab.JavaScript" value="Wrapping and Braces" />
+    <property name="settings.code.style.selected.tab.HTML" value="Tabs and Indents" />
+    <property name="settings.code.style.selected.tab.JSON" value="Tabs and Indents" />
+    <property name="ColorChooser.RecentColors" value="251-73-52-255" />
+    <property name="create.project.preferred.importer" value="Leiningen" />
+    <property name="cursive.selected.keybindings" value="Cursive" />
+  </component>
+</application>

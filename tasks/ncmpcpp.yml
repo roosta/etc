@@ -1,7 +1,0 @@
----
-# Setup ls++ config. Relies on AUR package!
-- name: Symlink "ncmpcpp" configuration
-  tags:
-    - ncmpcpp
-    - misc
-  file: dest={{ home }}/.ncmpcpp src={{ dotfiles }}/ncmpcpp state=link

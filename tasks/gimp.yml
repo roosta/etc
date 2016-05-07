@@ -1,6 +1,0 @@
----
-- name: Symlink "gimp" configuration
-  tags:
-    - gimp
-    - misc
-  file: path={{home}}/.gimp-2.8 src={{dotfiles}}/gimp state=link

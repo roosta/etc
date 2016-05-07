@@ -1,6 +1,0 @@
-#---
-#- name: Symlink LS_COLORS config
-  #tags:
-    #- dircolors
-    #- shell
-  #file: path={{home}}/.dircolors src={{dotfiles}}/dircolors/LS_COLORS state=link

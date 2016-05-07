@@ -1,6 +1,0 @@
----
-- name: Symlink ctags config
-  tags:
-    - ctags
-    - dev
-  file: path={{home}}/.ctags src={{dotfiles}}/ctags/.ctags state=link

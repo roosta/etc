@@ -1,8 +1,0 @@
-- name: symlink Rudy/Bundler config
-  tags:
-    - ruby
-    - dev
-  file: src={{ dotfiles }}/ruby/{{ item }} dest={{ home }}/{{ item }} state=link
-  with_items:
-    - .bundle
-    - .gemrc

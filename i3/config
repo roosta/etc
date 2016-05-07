@@ -376,11 +376,11 @@ bindsym $mod+Home mode "$mode_chdisp"
 font pango:Essential PragmataPro 9
 
 # <class>               <border> <background> <foreground> <indicator>
-client.focused          #2583AA #2583AA #DEDDC7 #D2448D
-client.focused_inactive #3B3B3B #98958E #282828 #D2448D
-client.unfocused        #3B3B3B #3B3B3B #7B817C #D2448D
-client.urgent           #FF9100 #FF9100 #282828 #D2448D
-client.placeholder      #D2448D #3D8E7A #282828 #D2448D
+client.focused          #458588 #458588 #ebdbb2 #b16286
+client.focused_inactive #504945 #a89984 #282828 #b16286
+client.unfocused        #504945 #504945 #928374 #b16286
+client.urgent           #d65d0e #d65d0e #282828 #b16286
+client.placeholder      #b16286 #689d6a #282828 #b16286
 
 
   bar {
@@ -394,14 +394,14 @@ client.placeholder      #D2448D #3D8E7A #282828 #D2448D
   separator_symbol "▋"
   colors {
     background #282828
-    separator  #4D4D4D
-    statusline #DEDDC7
+    separator  #665c54
+    statusline #ebdbb2
 
     # <workclass>      <border> <background> <foreground>
-    focused_workspace  #104F6A #104F6A #DEDDC7
-    active_workspace   #282828 #282828 #DEDDC7
-    inactive_workspace #282828 #282828 #7B817C
-    urgent_workspace   #FF9100 #FF9100 #282828
+    focused_workspace  #076678 #076678 #ebdbb2
+    active_workspace   #282828 #282828 #ebdbb2
+    inactive_workspace #282828 #282828 #928374
+    urgent_workspace   #d65d0e #d65d0e #282828
   }
 }
 
@@ -416,14 +416,14 @@ client.placeholder      #D2448D #3D8E7A #282828 #D2448D
   separator_symbol "▋"
   colors {
     background #282828
-    separator  #4D4D4D
-    statusline #DEDDC7
+    separator  #665c54
+    statusline #ebdbb2
 
     # <workclass>      <border> <background> <foreground>
-    focused_workspace  #104F6A #104F6A #DEDDC7
-    active_workspace   #282828 #282828 #DEDDC7
-    inactive_workspace #282828 #282828 #7B817C
-    urgent_workspace   #FF9100 #FF9100 #282828
+    focused_workspace  #076678 #076678 #ebdbb2
+    active_workspace   #282828 #282828 #ebdbb2
+    inactive_workspace #282828 #282828 #928374
+    urgent_workspace   #d65d0e #d65d0e #282828
   }
 }
 

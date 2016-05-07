@@ -1,9 +1,0 @@
----
-- name: Symlink "pentadactyl" config to home
-  tags:
-    - pantadactyl
-    - browser
-  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/pentadactyl/{{ item }} state=link
-  with_items:
-    - .pentadactylrc
-    - .pentadactyl

@@ -1,7 +1,0 @@
----
-# Setup ls++ config. Relies on AUR package!
-- name: Symlink terminfo configuration
-  tags:
-    - terminfo
-    - shell
-  file: dest={{ home }}/.terminfo src={{ dotfiles }}/terminfo/.terminfo state=link

@@ -1,7 +1,0 @@
----
-- name: Symlinking emacs config.
-  tags:
-    - emacs
-  file: dest={{ home }}/{{ item }} src={{ dotfiles }}/emacs/{{ item }} state=link
-  with_items:
-    - .spacemacs

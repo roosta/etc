@@ -1,9 +1,0 @@
----
-- name: Symlink "firefox" configs to ".mozilla" folder
-  tags:
-    - firefox
-  file: dest={{home}}/.mozilla/{{item}} src={{dotfiles}}/firefox/{{item}} state=link
-  with_items:
-    - conf
-    - chrome
-
