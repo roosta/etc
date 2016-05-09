@@ -50,7 +50,7 @@ alias grep="ag"
 
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
-alias aliasgrep="cats ~/.zsh/aliases.zsh | grep" # locate an alias quickly
+alias aliasgrep="cats ~/.zsh.d/aliases.zsh | grep" # locate an alias quickly
 alias histgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 

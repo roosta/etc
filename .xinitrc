@@ -7,6 +7,7 @@
 #│█ site  : http://dotfiles.roosta.sh █│
 #│█ github: https://github.com/roosta █│
 #└─────────────────────────────────────┘
+$HOME/.monicarc   #monitor calibration
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
