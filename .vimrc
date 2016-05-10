@@ -283,7 +283,7 @@ Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 "Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'kovisoft/paredit',    { 'for': 'clojure' }
+Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
 "Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 "Plug 'venantius/vim-eastwood'
 
@@ -475,7 +475,6 @@ let g:paredit_electric_return = 0
 let g:paredit_leader = '\'
 let g:paredit_smartjump = 1
 let g:paredit_shortmaps = 0
-
 
 " }}}
 " ACK.VIM {{{2
