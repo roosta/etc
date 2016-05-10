@@ -218,6 +218,10 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 
+
+" TODO: http://sjl.bitbucket.org/gundo.vim/
+" TODO: http://vimawesome.com/plugin/supertab
+" TODO: Figure out what that parens selector plugin was called
 " MISC
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -247,7 +251,8 @@ Plug 'ntpeters/vim-better-whitespace'
 " NAVIGATION
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
+"Plug 'mileszs/ack.vim'
+Plug 'rking/ag.vim'
 "Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
@@ -263,18 +268,21 @@ Plug 'vim-airline/vim-airline'
 "Plug 'sjl/badwolf'
 "Plug 'nanotech/jellybeans.vim'
 
-" LANGUAGE
-Plug 'sheerun/vim-polyglot'
+" LANGUAGE FEATURES
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'tpope/vim-liquid'
-Plug 'Glench/Vim-Jinja2-Syntax'
+"Plug 'tpope/vim-liquid'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 Plug 'mattn/emmet-vim'
 Plug 'jplaut/vim-arduino-ino'
 " Using AUR to simplify build process on Arch
 "Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
+
+" SYNTAX
+Plug 'vimperator/vimperator.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 " CLOJURE
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }

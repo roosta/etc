@@ -1,1 +1,0 @@
-/home/roosta/lib/vimperator-labs/vimperator/contrib/vim/syntax/vimperator.vim
