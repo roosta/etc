@@ -10,23 +10,23 @@ source! /home/roosta/.vimperatorrc.local
 
 
 " To Enable map <Space>
-"js <<EOM
-"window.addEventListener('keypress',function (event) {
-    "var code=event.charCode;
-    "if ((liberator.mode === modes.INSERT && modes.extended === modes.MENU)
-        "||(liberator.mode ==modes.NORMAL && code==32)
-        "||(liberator.mode ==modes.COMMAND_LINE && code !=32)){
-    "let map = mappings.get(liberator.mode, events.toString(event));
-    "if (map) {
-      "event.preventDefault();
-      "event.stopPropagation();
-      "map.execute();
-    "}
-  "}
-"},false);
-"EOM
+js <<EOM
+window.addEventListener('keypress',function (event) {
+    var code=event.charCode;
+    if ((liberator.mode === modes.INSERT && modes.extended === modes.MENU)
+        ||(liberator.mode ==modes.NORMAL && code==32)
+        ||(liberator.mode ==modes.COMMAND_LINE && code !=32)){
+    let map = mappings.get(liberator.mode, events.toString(event));
+    if (map) {
+      event.preventDefault();
+      event.stopPropagation();
+      map.execute();
+    }
+  }
+},false);
+EOM
 
-"map <Space> <Leader>
+noremap <Space> <Leader>
 
 " map l and h to tab movement
 " this removes horizontal h&l movement but arrows still work
@@ -48,14 +48,14 @@ noremap L  <C-^>
 " some quick vertical movement maps
 nnoremap j        8j
 nnoremap k        8k
-nnoremap J        16j
-nnoremap K        16k
-nnoremap <C-j>    24j
-nnoremap <C-k>    24k
-nnoremap <C-S-j>  40j
-nnoremap <C-S-k>  40k
-nnoremap <C-Up>   24k
-nnoremap <C-Down> 24j
+"nnoremap J        16j
+"nnoremap K        16k
+"nnoremap <C-j>    24j
+"nnoremap <C-k>    24k
+"nnoremap <C-S-j>  40j
+"nnoremap <C-S-k>  40k
+"nnoremap <C-Up>   24k
+"nnoremap <C-Down> 24j
 
 " change delete tab behaviour.
 " choose direction to go with movement after deleting a tab
