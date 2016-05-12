@@ -21,6 +21,7 @@ backup/*
 
 # vim/perator/pentadactyl
 .vim/undo/*
+!.vim/undo/.gitkeep
 .vim/plugged/*
 .netrwhist
 *backup/*
@@ -106,3 +107,4 @@ nitrogen
 */**/autoload
 */**/port.lock
 ko_palettes.blacklist
+i3/config
