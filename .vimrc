@@ -127,7 +127,6 @@ endif
 "}}}
 " KEYBINDS/KEYBINDS {{{1
 " -------------
-
 let mapleader = "\<SPACE>"
 
 " Move across wrapped lines like regular lines
@@ -151,32 +150,27 @@ noremap <leader>R :source $MYVIMRC<CR>
 " map <leader>tm :tabmove
 
 " Switch between Vim window splits
-noremap <silent> <leader><Up>    :wincmd k<CR>
-noremap <silent> <leader><Down>  :wincmd j<CR>
-noremap <silent> <leader><Left>  :wincmd h<CR>
-noremap <silent> <leader><Right> :wincmd l<CR>
+noremap <silent> <M-Up>    :wincmd k<CR>
+noremap <silent> <M-Down>  :wincmd j<CR>
+noremap <silent> <M-Left>  :wincmd h<CR>
+noremap <silent> <M-Right> :wincmd l<CR>
 
-noremap <silent> <leader>k :wincmd k<CR>
-noremap <silent> <leader>j :wincmd j<CR>
-noremap <silent> <leader>h :wincmd h<CR>
-noremap <silent> <leader>l :wincmd l<CR>
+noremap <silent> <M-k> :wincmd k<CR>
+noremap <silent> <M-j> :wincmd j<CR>
+noremap <silent> <M-h> :wincmd h<CR>
+noremap <silent> <M-l> :wincmd l<CR>
 
 " Maps Alt-[h,j,k,l] to resizing a window split
-nnoremap <silent> <M-S-Left>  5<C-w><
-nnoremap <silent> <M-S-Down>  5<C-W>-
-nnoremap <silent> <M-S-Up>    5<C-W>+
-nnoremap <silent> <M-S-Right> 5<C-w>>
+nnoremap <silent> <M-C-Left>  5<C-w><
+nnoremap <silent> <M-C-Down>  5<C-W>-
+nnoremap <silent> <M-C-Up>    5<C-W>+
+nnoremap <silent> <M-C-Right> 5<C-w>>
 
-nnoremap <silent> <M-S-h> 5<C-w><
-nnoremap <silent> <M-S-j> 5<C-W>-
-nnoremap <silent> <M-S-k> 5<C-W>+
-nnoremap <silent> <M-S-l> 5<C-w>>
+nnoremap <silent> <M-C-h> 5<C-w><
+nnoremap <silent> <M-C-j> 5<C-W>-
+nnoremap <silent> <M-C-k> 5<C-W>+
+nnoremap <silent> <M-C-l> 5<C-w>>
 
-" jump paragraphs with ctrl-{movement}
-"noremap <C-Up> {
-"noremap <C-Down> }
-"noremap <C-k> {
-"noremap <C-j> }
 
 noremap <leader>ccl :cclose<CR>
 noremap <leader>lcl :lclose<CR>
@@ -239,12 +233,12 @@ Plug 'junegunn/fzf.vim'
 "Plug 'mileszs/ack.vim'
 Plug 'rking/ag.vim'
 "Plug 'terryma/vim-multiple-cursors'
-Plug 'easymotion/vim-easymotion'
+"Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
 "Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
 "Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
 Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
+"Plug 'haya14busa/incsearch-easymotion.vim'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -290,7 +284,6 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jgdavey/tslime.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
-
 
 call plug#end()
 
@@ -523,10 +516,10 @@ nmap <C-c>r <Plug>SetTmuxVars"
 let g:sexp_enable_insert_mode_mappings = 0
 
 let g:sexp_mappings = {
-      \ 'sexp_emit_head_element':         '<leader><Down>',
-      \ 'sexp_emit_tail_element':         '<leader><Up>',
-      \ 'sexp_capture_prev_element':      '<leader><Left>',
-      \ 'sexp_capture_next_element':      '<leader><Right>',
+      \ 'sexp_emit_head_element':    '<leader><Down>',
+      \ 'sexp_emit_tail_element':    '<leader><Up>',
+      \ 'sexp_capture_prev_element': '<leader><Left>',
+      \ 'sexp_capture_next_element': '<leader><Right>',
       \}
 "}}}
 " EASY-ALIGN {{{2
