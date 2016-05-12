@@ -279,10 +279,10 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-"Plug 'guns/vim-sexp', { 'for': 'clojure' }
+Plug 'guns/vim-sexp'
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'vim-scripts/paredit.vim' ", { 'for': 'clojure' }
+"Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
 "Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 "Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-tbone'
@@ -355,14 +355,15 @@ let g:fzf_action = {
 
 let g:EasyMotion_smartcase = 1
 
-map <leader>s <Plug>(easymotion-s)
-map <leader><leader>s <Plug>(easymotion-s2)
+map <leader>s <Plug>(easymotion-s2)
+"map <leader><leader>s <Plug>(easymotion-s2)
 
-" mirror some vim movements
 map <Leader>f <Plug>(easymotion-lineforward)
 map <Leader>F <Plug>(easymotion-linebackward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
+
 let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
 
 " set ctrl-v to paste in easymotion command line
@@ -519,14 +520,14 @@ nmap <C-c>r <Plug>SetTmuxVars"
 " VIM-SEXP {{{2
 " -------------
 " Disable some irritating mappings
-"let g:sexp_enable_insert_mode_mappings = 0
+let g:sexp_enable_insert_mode_mappings = 0
 
-"let g:sexp_mappings = {
-      "\ 'sexp_emit_head_element':         '<leader><Down>',
-      "\ 'sexp_emit_tail_element':         '<leader><Up>',
-      "\ 'sexp_capture_prev_element':      '<leader><Left>',
-      "\ 'sexp_capture_next_element':      '<leader><Right>',
-      "\}
+let g:sexp_mappings = {
+      \ 'sexp_emit_head_element':         '<leader><Down>',
+      \ 'sexp_emit_tail_element':         '<leader><Up>',
+      \ 'sexp_capture_prev_element':      '<leader><Left>',
+      \ 'sexp_capture_next_element':      '<leader><Right>',
+      \}
 "}}}
 " EASY-ALIGN {{{2
 " ---------------
