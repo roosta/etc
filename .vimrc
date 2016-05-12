@@ -218,11 +218,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 
-
 " TODO: http://sjl.bitbucket.org/gundo.vim/
 " TODO: http://vimawesome.com/plugin/supertab
-" TODO: Figure out what that parens selector plugin was called
-" MISC
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
@@ -236,19 +233,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
 Plug 'wesQ3/vim-windowswap'
 Plug 'vim-scripts/YankRing.vim'
-
-" MULTIPLEXING
-Plug 'tpope/vim-tbone'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'jgdavey/tslime.vim'
-Plug 'christoomey/vim-tmux-navigator'
-
-" VCS
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'ntpeters/vim-better-whitespace'
-
-" NAVIGATION
+Plug 'terryma/vim-expand-region'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "Plug 'mileszs/ack.vim'
@@ -261,7 +246,12 @@ Plug 'unblevable/quick-scope'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 
-" GUI
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'ntpeters/vim-better-whitespace'
+
+" gui
 Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
@@ -271,29 +261,36 @@ Plug 'vim-airline/vim-airline'
 " LANGUAGE FEATURES
 Plug 'junegunn/rainbow_parentheses.vim'
 "Plug 'tpope/vim-liquid'
-Plug 'tmux-plugins/vim-tmux'
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 Plug 'mattn/emmet-vim'
 Plug 'jplaut/vim-arduino-ino'
 " Using AUR to simplify build process on Arch
 "Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
-" SYNTAX
+" syntax
+" ------
 Plug 'vimperator/vimperator.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Glench/Vim-Jinja2-Syntax'
 
-" CLOJURE
+" clojure/lisp/tmux
+" -----------------
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 "Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
+Plug 'vim-scripts/paredit.vim' ", { 'for': 'clojure' }
 "Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
 "Plug 'venantius/vim-eastwood'
+Plug 'tpope/vim-tbone'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'jgdavey/tslime.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tmux-plugins/vim-tmux'
+
 
 call plug#end()
 
@@ -482,7 +479,7 @@ vmap gc <plug>NERDCommenterToggle
 let g:paredit_electric_return = 0
 let g:paredit_leader = '\'
 let g:paredit_smartjump = 1
-let g:paredit_shortmaps = 0
+"let g:paredit_shortmaps = 0
 
 " }}}
 " ACK.VIM {{{2
