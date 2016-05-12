@@ -326,6 +326,7 @@ alias logcolor="ccze"
 # utput from a command with xclip when this is piped in
 #alias copy='xsel -i -p -b'
 alias copy="clipcopy" # see functions
+alias paste="clippaste" # see functions
 
 # print date in various formats
 alias gettime='date +"%T"'
