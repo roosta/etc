@@ -239,7 +239,14 @@ Plug 'unblevable/quick-scope'
 "Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
 Plug 'haya14busa/incsearch.vim'
 "Plug 'haya14busa/incsearch-easymotion.vim'
-
+Plug 'junegunn/rainbow_parentheses.vim'
+"Plug 'tpope/vim-liquid'
+Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
+Plug 'mattn/emmet-vim'
+Plug 'jplaut/vim-arduino-ino'
+" Using AUR to simplify build process on Arch
+"Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
+Plug 'ervandew/supertab'
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -251,15 +258,6 @@ Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
 "Plug 'sjl/badwolf'
 "Plug 'nanotech/jellybeans.vim'
-
-" LANGUAGE FEATURES
-Plug 'junegunn/rainbow_parentheses.vim'
-"Plug 'tpope/vim-liquid'
-Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
-Plug 'mattn/emmet-vim'
-Plug 'jplaut/vim-arduino-ino'
-" Using AUR to simplify build process on Arch
-"Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 
 " syntax
 " ------
