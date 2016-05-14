@@ -81,6 +81,12 @@ set tags+=./.git/.tags  " used with ctags. Defines tag files.
 set clipboard=unnamedplus
 
 set shell=zsh
+" inactive {{{2
+"set clipboard=unnamed " set same clipboard for vim and X: using EasyClip. See Plugins
+"set paste
+"set hlsearch " using easymotion for hl
+"set autowrite
+" }}}
 
 "}}}
 " CURSOR {{{1
@@ -129,25 +135,9 @@ endif
 " -------------
 let mapleader = "\<SPACE>"
 
-" Move across wrapped lines like regular lines
-"noremap 0 ^ " Go to the first non-blank character of a line
-"noremap ^ 0 " Just in case you need to go to the very beginning of a line
-
 " source config on demand
 " Note that this may cause some plugins not to load properly if it has init logic
 noremap <leader>R :source $MYVIMRC<CR>
-
-"" use unimpared
-"map <leader>ba :%bdelete<CR>
-"map <leader>bn :bnext<CR>
-"map <leader>bp :bprevious<CR>
-"map <leader>bd :bdelete<CR>
-
-" Tab management
-"map <leader>tn :tabnew<CR>
-"map <leader>to :tabonly<CR>
-"map <leader>tc :tabclose<CR>
-" map <leader>tm :tabmove
 
 " Switch between Vim window splits
 noremap <silent> <M-Up>    :wincmd k<CR>
@@ -187,9 +177,21 @@ noremap   <Right>  <NOP>
 
 " correct annoying typo!
 cnoremap Q q
-
+" Inactive {{{2
 " Example of repeat integration
 "silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+
+"" use unimpared
+"map <leader>ba :%bdelete<CR>
+"map <leader>bn :bnext<CR>
+"map <leader>bp :bprevious<CR>
+"map <leader>bd :bdelete<CR>
+
+" Tab management
+"map <leader>tn :tabnew<CR>
+"map <leader>to :tabonly<CR>
+"map <leader>tc :tabclose<CR>
+" map <leader>tm :tabmove
 
 " use c-c and c-p to call system clipboard
 "vmap <silent> <leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
@@ -200,6 +202,24 @@ cnoremap Q q
 "map <leader>p "+p
 "map <leader>Y "+Y
 "map <leader>P "+P
+
+" press enter to exit search highlight
+"nnoremap <CR> :nohlsearch<CR><CR>
+
+" access x clipboard with leader+p/y
+"nnoremap <leader>y "+y
+"nnoremap <leader>yy "+yy
+"vnoremap <leader>y "+y
+"vnoremap <leader>yy "+yy
+"vnoremap <leader>p "+p
+"nnoremap <leader>p "+p
+"nnoremap <leader>P "+p
+" Move across wrapped lines like regular lines
+
+" Move across wrapped lines like regular lines
+"noremap 0 ^ " Go to the first non-blank character of a line
+"noremap ^ 0 " Just in case you need to go to the very beginning of a line
+" }}}
 " }}}
 " PLUGIN MANAGER {{{
 " -------------------
@@ -213,14 +233,11 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " TODO: http://sjl.bitbucket.org/gundo.vim/
-" TODO: http://vimawesome.com/plugin/supertab
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
-"Plug 'godlygeek/tabular'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-"Plug 'svermeulen/vim-easyclip'
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'tpope/vim-unimpaired'
@@ -230,23 +247,15 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'mileszs/ack.vim'
 Plug 'rking/ag.vim'
-"Plug 'terryma/vim-multiple-cursors'
-"Plug 'easymotion/vim-easymotion'
 Plug 'unblevable/quick-scope'
-"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
-"Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
 Plug 'haya14busa/incsearch.vim'
-"Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
-"Plug 'tpope/vim-liquid'
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 Plug 'mattn/emmet-vim'
 Plug 'jplaut/vim-arduino-ino'
-" Using AUR to simplify build process on Arch
-"Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
 Plug 'ervandew/supertab'
+
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -256,33 +265,56 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'morhetz/gruvbox'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
-"Plug 'sjl/badwolf'
-"Plug 'nanotech/jellybeans.vim'
 
 " syntax
-" ------
 Plug 'vimperator/vimperator.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Glench/Vim-Jinja2-Syntax'
 
 " clojure/lisp/tmux
-" -----------------
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'guns/vim-sexp'
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-"Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
-"Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
-"Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-tbone'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jgdavey/tslime.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
 
+"Plug 'godlygeek/tabular'
+"Plug 'svermeulen/vim-easyclip'
+"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
+"Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
+"Plug 'haya14busa/incsearch-easymotion.vim'
+"Plug 'tpope/vim-liquid'
+"Plug 'mileszs/ack.vim'
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'easymotion/vim-easymotion'
+"Plug 'sjl/badwolf'
+"Plug 'nanotech/jellybeans.vim'
+"Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
+"Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
+"Plug 'venantius/vim-eastwood'
+"Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
+"Plug 'yggdroot/indentline'
+"Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+"Plug 'PotatoesMaster/i3-vim-syntax'
+"Plug 'terryma/vim-expand-region'
+"Plug 'gorodinskiy/vim-coloresque'
+"Plug 'guns/vim-clojure-static'
+"Plug 'kien/ctrlp.vim'
+"Plug 'tpope/vim-commentary'
+"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'vim-scripts/YankRing.vim'
+"Plug 'tpope/vim-classpath'
+"Plug 'jgdavey/tslime.vim'
+"Plug 'edkolev/promptline.vim'
+"Plug 'edkolev/tmuxline.vim'
+"Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()
 
 syntax on
@@ -344,18 +376,18 @@ let g:fzf_action = {
 " EASYMOTION {{{2
 " ---------------
 
-let g:EasyMotion_smartcase = 1
+"let g:EasyMotion_smartcase = 1
 
-map <leader>s <Plug>(easymotion-s2)
-"map <leader><leader>s <Plug>(easymotion-s2)
+"map <leader>s <Plug>(easymotion-s2)
+""map <leader><leader>s <Plug>(easymotion-s2)
 
-map <Leader>f <Plug>(easymotion-lineforward)
-map <Leader>F <Plug>(easymotion-linebackward)
+"map <Leader>f <Plug>(easymotion-lineforward)
+"map <Leader>F <Plug>(easymotion-linebackward)
 
-map <Leader><Leader>j <Plug>(easymotion-j)
-map <Leader><Leader>k <Plug>(easymotion-k)
+"map <Leader><Leader>j <Plug>(easymotion-j)
+"map <Leader><Leader>k <Plug>(easymotion-k)
 
-let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
+"let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
 
 " set ctrl-v to paste in easymotion command line
 "autocmd VimEnter,BufEnter * EMCommandLineNoreMap <c-v> :YRPaste<CR>
@@ -563,36 +595,7 @@ nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
 let g:user_emmet_leader_key='<C-A>'
 
 " }}}
-" INACTIVE {{{2
-" --------------------
-" inactive
-" o┌┐┐┬─┐┌─┐┌┐┐o┐ ┬┬─┐
-" │││││─┤│   │ ││┌┘├─
-" ┆┆└┘┘ ┆└─┘ ┆ ┆└┘ ┴─┘
-" --------------------
-" Old configuration that I keep here for posterity
-" ------------------------------------------------
-
-" Plugins
-" -----------------------------
-"Plug 'yggdroot/indentline'
-"Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-"Plug 'PotatoesMaster/i3-vim-syntax'
-"Plug 'terryma/vim-expand-region'
-"Plug 'gorodinskiy/vim-coloresque'
-"Plug 'guns/vim-clojure-static'
-"Plug 'kien/ctrlp.vim'
-"Plug 'tpope/vim-commentary'
-"Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'vim-scripts/YankRing.vim'
-"Plug 'tpope/vim-classpath'
-"Plug 'jgdavey/tslime.vim'
-"Plug 'edkolev/promptline.vim'
-"Plug 'edkolev/tmuxline.vim'
-"Plug 'Glench/Vim-Jinja2-Syntax'
-
-
-" EASYCLIP
+" EASYCLIP {{{2
 " --------
 
 " remap mark to gm since EasyClip cut shadows m key
@@ -610,22 +613,17 @@ let g:user_emmet_leader_key='<C-A>'
 ""nmap [y <plug>EasyClipSwapPasteBackwards
 "let g:EasyClipShareYanks = 1
 
-" OPTIONS
-" -------
-"set clipboard=unnamed " set same clipboard for vim and X: using EasyClip. See Plugins
-"set paste
-"set hlsearch " using easymotion for hl
-"set autowrite
-
-" EASY-ALIGN
+" }}}
+" EASY-ALIGN {{{2
 " ---------------
 "" Start interactive EasyAlign in visual mode (e.g. vipga)
 "xmap ga <Plug>(EasyAlign)
 
 "" Start interactive EasyAlign for a motion/text object (e.g. gaip)
 "nmap ga <Plug>(EasyAlign)
-
-
+" }}}
+" PROMPTLINE {{{2
+" ----------
 " Promptline (used to generate a prompt for terminal to match airline.
 "let g:promptline_preset = {
   "\'a' : [ '$vim_mode' ],
@@ -637,21 +635,8 @@ let g:user_emmet_leader_key='<C-A>'
   "\'z' : [ '$(date +%H:%M:%S)' ]}
 ": PromptlineSnapshot ~/.zsh/plugins/promptline.zsh airline_insert
 
-"  Keybinds
-" press enter to exit search highlight
-"nnoremap <CR> :nohlsearch<CR><CR>
-
-" access x clipboard with leader+p/y
-"nnoremap <leader>y "+y
-"nnoremap <leader>yy "+yy
-"vnoremap <leader>y "+y
-"vnoremap <leader>yy "+yy
-"vnoremap <leader>p "+p
-"nnoremap <leader>p "+p
-"nnoremap <leader>P "+p
-" Move across wrapped lines like regular lines
-
-" Vaxe
+"}}}
+" VAXE {{{2
 " ───────────────────
 "let g:vaxe_cache_server = 1
 "let g:vaxe_prefer_lime = 1
@@ -662,13 +647,13 @@ let g:user_emmet_leader_key='<C-A>'
 
 "autocmd BufNewFile,BufRead /project/* vaxe#ProjectLime("/project/project.lime")
 " map <leader>vi :call vaxe#ImportClass()<CR>
-
-" Tagbar
+" }}}
+" TAGBAR {{{2
 " --------
 " nmap <leader>t :TagbarToggle<CR>
-
-" CTRL-P
-" -------
+" }}}
+" CTRL-P {{{2
+" ------
 "let g:ctrlp_use_caching = 1
 "let g:ctrlp_follow_symlinks = 1
 "let g:ctrlp_show_hidden = 1
@@ -703,14 +688,14 @@ let g:user_emmet_leader_key='<C-A>'
 "let g:ctrlp_prompt_mappings = {
 "\   'PrtClearCache()': ['<F5>'],
 "\}
-
-" INDENT GUIDES
+" }}}
+" INDENT GUIDES {{{2
 " -------------
 
 "let g:indent_guides_guide_size = 1
 "let g:indent_guides_start_level = 2
-"2}}}
-"1}}}
+"}}}
+"}}}
 " AUTOCMD {{{
 " -------------------------
 
