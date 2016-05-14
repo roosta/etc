@@ -5,7 +5,7 @@ set complete=ltsS
 set focuscontent
 set defsearch=duckduckgo
 set hintmatching=fuzzy
-set status=ssl,input,location,bookmark,history,tabcount,position
+set status=ssl,input,location,bookmark,history,tabcount,position,zoomlevel
 source! /home/roosta/.vimperatorrc.local
 
 

@@ -85,7 +85,7 @@ hi Tag        color: #B8BB26;
 hi Number     color: #B8BB26;
 
 hi CompTitle          background: #3C3836;
-hi CompTitle>*        color: #458588; padding-bottom: 1px; padding-left: 12px; font-weight: bold; font-size: 12px; border-top: 1px solid #504945; border-bottom: 1px solid #504945;
+hi CompTitle>*        color: #EBDBB2; padding-bottom: 2px; padding-top: 2px; padding-left: 12px; font-weight: bold; font-size: 12px; border-top: 1px dotted #83A598; border-bottom: 1px dotted #83A598;
 hi CompItem[selected] color: #458588; background: #3C3836;
 hi CompItem           color: #EBDBB2; width: 50%;
 hi CompDesc           color: #D3869B;
@@ -155,28 +155,38 @@ EOM
 style -name nav-bar chrome://* <<EOM
 
   #nav-bar, #urlbar-container, #search-container, #openLocation {
-    display:none!important;
-  }
-
-EOM
-
-" Liberator bar
-style -name liberator chrome://* <<EOM
-
-  #liberator-statusline:not([customizing="true"]) {
-    margin: -2px -2px !important;
-    padding: 0 0 !important;
-    height: 24px !important;
-  }
-
-  #liberator-separator {
-    height: 0px !important;
-    border-top: 1px dashed 1px solid #458588 !important;
+    display: none !important;
   }
 
 EOM
 "}}}
-" Input boxes fix {{{2
+" Liberator bar {{{2
+style -name liberator chrome://* <<EOM
+
+  #liberator-statusline {
+    margin: -2px -2px !important;
+    padding: 0 0 !important;
+    border: none !important;
+    height: 24px !important;
+  }
+  #liberator-status-position {
+    color: #8EC07C;
+  }
+  #liberator-status-tabcount {
+    color: #D3869B;
+  }
+  #liberator-separator {
+    height: 0px !important;
+  }
+  #liberator-status-zoomlevel {
+    color: #FE8019;
+  }
+  #liberator-status-bookmark {
+    color: #FB4934;
+  }
+EOM
+"}}}
+" Input fields fix {{{2
 style -name input-fix chrome://* <<EOM
   input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']) {
     -moz-appearance: none !important;
