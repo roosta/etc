@@ -2,7 +2,6 @@
 " name: light_fantastic
 " url: https://github.com/roosta/dotfiles/tree/master/vimperator
 " --------------------------------------------------------------
-"
 " colortable {{{
 " Gruvbox - Pavel Pertsev
 " https://github.com/morhetz/gruvbox
@@ -176,6 +175,30 @@ style -name liberator chrome://* <<EOM
 
 EOM
 "}}}
+" Input boxes fix {{{2
+style -name input-fix chrome://* <<EOM
+  input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']) {
+    -moz-appearance: none !important;
+    background-color: white;
+    color: black;
+  }
+
+  #downloads-indicator-counter {
+    color: white;
+  }
+
+  textarea {
+    -moz-appearance: none !important;
+    background-color: white;
+    color: black;
+  }
+
+  select {
+    -moz-appearance: none !important;
+    background-color: white;
+    color: black;
+  }
+EOM
 " arch-linux-wiki {{{2
 style -name arch-wiki https://wiki.archlinux.org/* <<EOM
 
@@ -193,7 +216,7 @@ style -name arch-wiki https://wiki.archlinux.org/* <<EOM
   --fg-dark: #A89984;
   --ln-fg: #458588;
   --ln-hover: #83A598;
-  --font: "Terminess Powerline","monospace";
+  --font: "Essential PragmataPro","sans-serif";
 }
 @-moz-document domain("archlinux.org") {
   * {
