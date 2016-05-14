@@ -104,7 +104,8 @@ hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:12px;
 " Tabs {{{2
 style -name tab chrome://* <<EOM
   #TabsToolbar {
-    border-top: 1px dashed 1px solid #458588 !important;
+    border: none !important;
+    border-right: 1px dotted #458588 !important;
     background-color: #282828 !important;
     font-family: "Essential PragmataPro";
     font-size: 12px;
