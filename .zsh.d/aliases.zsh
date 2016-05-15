@@ -170,6 +170,7 @@ alias rm=' timeout 3 rm -Iv --one-file-system'
 alias rmr='rm -r'
 alias rmrf="rm -rf"
 alias cp='cp -i'
+alias cpr='cp -r'
 alias ln='ln -i'
 
 # Parenting changing perms on / #
