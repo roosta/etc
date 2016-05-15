@@ -46,7 +46,6 @@ alias zshrc='vim ~/.zshrc'
 ## ---------
 
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
-alias grep="ag"
 
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
@@ -61,7 +60,6 @@ alias lsrgrep='lsa -R | grep'
 # list pulseaudio sinks
 alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
-# recursive grep through filetypes
 alias awk='gawk'
 #}}}
 ## WEB-SEARCH {{{1
