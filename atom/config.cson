@@ -15,5 +15,7 @@
   "one-dark-ui": {}
   "vim-mode":
     useSmartcaseForSearch: true
+  "vim-surround":
+    surroundCommand: "S"
   welcome:
     showOnStartup: false
