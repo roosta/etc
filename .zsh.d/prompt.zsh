@@ -2,17 +2,9 @@
 # > ┃━┛┃┳┛┃ ┃┃┃┃┃━┛ ┃
 # > ┇  ┇┗┛┛━┛┛ ┇┇   ┇
 
-# define prompt symbol values.
-# Note this only works with my pure-prompt fork (github.com/roosta/pure/tree/vimode)
-#PURE_PROMPT_SYMBOL_VIINS="%F{blue}%f%F{magenta%f"
-#PURE_PROMPT_SYMBOL_VICMD="%F{blue}%f%F{magenta}%f"
-
 # Define mode prompts. Both turn red on non-zero exit code
 PROMPT_SYMBOL_VIINS="%(?.%F{white}.%F{red})%f%F{magenta}%f "
 PROMPT_SYMBOL_VICMD="%(?.%F{white}.%F{red})%f%F{magenta}%f "
-
-#PROMPT_SYMBOL_VIINS="%K{magenta}%{$fg[white]%}%{$reset_color%}%{$fg[magenta]%}%k%{$reset_color%} "
-#PROMPT_SYMBOL_VICMD="%F{white}%f%F{magenta}%f "
 
 # enable colors before setting prompt variable
 autoload -U colors && colors
@@ -34,39 +26,44 @@ function zle-line-finish () {
     printf '%s' "${terminfo[rmkx]}"
   fi
 
-  # VTE
-  # print -n -- "\E[2 q" # return to block on command
+  # return to block on command
+  if [ -z ${TMUX+x} ]; then
+     print -n -- "\E[2 q"
+  else
+     print -n -- "\EPtmux;\E\E[2 q\E\\"
+  fi
 
-  # TMUX
-  # print -n -- "\EPtmux;\E\E[2 q\E\\" # return to block on command
 }
 function zle-keymap-select () {
   prompt_mode
 }
 
+# change cursor and or prompt based on prompt mode.
+# big thanks to: http://blog.yjl.im/2014/12/passing-escape-codes-for-changing-font.html
 function prompt_mode() {
   # change prompt in VTE compatible terminals
   case $KEYMAP in
     vicmd)
-      # VTE compatible terms
-      #print -n -- "\E[2 q" # block cursor
 
-      # block cursor with tmux escape codes added
-      # huge thanks to: http://blog.yjl.im/2014/12/passing-escape-codes-for-changing-font.html
-      #print -n -- "\EPtmux;\E\E[2 q\E\\" # block cursor
+      # change to block cursor
+      if [ -z ${TMUX+x} ]; then
+        print -n -- "\E[2 q"
+      else
+        print -n -- "\EPtmux;\E\E[2 q\E\\"
+      fi
       PROMPT=$PROMPT_SYMBOL_VICMD
       ;;
     viins|main)
-      # VTE compatible terms
-      #print -n -- "\E[6 q" # line cursor
 
-      # line cursor using with tmux escape codes added
-      # huge thanks to: http://blog.yjl.im/2014/12/passing-escape-codes-for-changing-font.html
-      #print -n -- "\EPtmux;\E\E[6 q\E\\"
+      # change to line cursor
+      if [ -z ${TMUX+x} ]; then
+        print -n -- "\E[6 q"
+      else
+        print -n -- "\EPtmux;\E\E[6 q\E\\"
+      fi
       PROMPT=$PROMPT_SYMBOL_VIINS
       ;;
   esac
-
   zle reset-prompt
   zle -R
 }
