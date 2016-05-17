@@ -27,11 +27,11 @@ function zle-line-finish () {
   fi
 
   # return to block on command
-  if [ -z ${TMUX+x} ]; then
-     print -n -- "\E[2 q"
-  else
-     print -n -- "\EPtmux;\E\E[2 q\E\\"
-  fi
+  #if [ -z ${TMUX+x} ]; then
+     #print -n -- "\E[2 q"
+  #else
+     #print -n -- "\EPtmux;\E\E[2 q\E\\"
+  #fi
 
 }
 function zle-keymap-select () {
@@ -44,23 +44,21 @@ function prompt_mode() {
   # change prompt in VTE compatible terminals
   case $KEYMAP in
     vicmd)
-
       # change to block cursor
-      if [ -z ${TMUX+x} ]; then
-        print -n -- "\E[2 q"
-      else
-        print -n -- "\EPtmux;\E\E[2 q\E\\"
-      fi
+      #if [ -z ${TMUX+x} ]; then
+        #print -n -- "\E[2 q"
+      #else
+        #print -n -- "\EPtmux;\E\E[2 q\E\\"
+      #fi
       PROMPT=$PROMPT_SYMBOL_VICMD
       ;;
     viins|main)
-
       # change to line cursor
-      if [ -z ${TMUX+x} ]; then
-        print -n -- "\E[6 q"
-      else
-        print -n -- "\EPtmux;\E\E[6 q\E\\"
-      fi
+      #if [ -z ${TMUX+x} ]; then
+        #print -n -- "\E[6 q"
+      #else
+        #print -n -- "\EPtmux;\E\E[6 q\E\\"
+      #fi
       PROMPT=$PROMPT_SYMBOL_VIINS
       ;;
   esac
