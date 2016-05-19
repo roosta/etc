@@ -81,6 +81,8 @@ set tags+=./.git/.tags  " used with ctags. Defines tag files.
 set clipboard=unnamedplus
 
 set shell=zsh
+
+set spelllang=en,nb
 " inactive {{{2
 "set clipboard=unnamed " set same clipboard for vim and X: using EasyClip. See Plugins
 "set paste
