@@ -6,7 +6,6 @@ set focuscontent
 set defsearch=duckduckgo
 set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position,zoomlevel
-source! /home/roosta/.vimperatorrc.local
 
 
 " To Enable map <Space>
@@ -100,7 +99,7 @@ cmap <Down> <Tab>
 cmap <Up> <S-Tab>
 
 " add user styles
-source ~/.vimperator/styles/arch-linux.vimp
+source ~/.vimperator/styles/arch-wiki.vimp
 source ~/.vimperator/styles/input-field.vimp
 source ~/.vimperator/styles/wikipedia.vimp
 

@@ -3,7 +3,6 @@ style -name arch-wiki https://wiki.archlinux.org/* <<EOM
    * Originally created by: tjwoosta (https://userstyles.org/styles/33584/arch-linux-kiss)
    * Modified by: roosta (2016-02-03)
    */
-  @namespace url(http://www.w3.org/1999/xhtml);
   :root {
     --bg-light: #32302F;
     --bg-arch: #333;
