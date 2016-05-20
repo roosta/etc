@@ -6,7 +6,6 @@ set focuscontent
 set defsearch=duckduckgo
 set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position,zoomlevel
-source! /home/roosta/.vimperatorrc.local
 
 
 " To Enable map <Space>
@@ -99,9 +98,9 @@ noremap <leader>ds :nohlsearch<CR>
 cmap <Down> <Tab>
 cmap <Up> <S-Tab>
 
-" add user chrome
-"source ~/.vimperator/chrome/arch-linux.vimp
-"source ~/.vimperator/chrome/input-field.vimp
-"source ~/.vimperator/chrome/wikipedia.vimp
+" add user styles
+source ~/.vimperator/styles/arch-wiki.vimp
+source ~/.vimperator/styles/input-field.vimp
+source ~/.vimperator/styles/wikipedia.vimp
 
 " vim:ft=vimperator:sw=2:ts=2

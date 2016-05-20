@@ -1,4 +1,4 @@
-style -name input-fix chrome://* <<EOM
+style -name input-fix * <<EOM
   input:not(.urlbar-input):not(.textbox-input):not(.form-control):not([type='checkbox']) {
     -moz-appearance: none !important;
     background-color: white;

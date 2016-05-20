@@ -1,11 +1,7 @@
-style -name arch-wiki https://wikipedia.org/* <<EOM
-@namespace url(http://www.w3.org/1999/xhtml);
-
-@-moz-document domain(wikipedia.org) {
-
+style -name arch-wiki https://en.wikipedia.org/* <<EOM
+  @namespace url(http://www.w3.org/1999/xhtml);
 
   /* *** Basic *** */
-
   *{
      background-color: transparent !important;
      color: #bcbcbc !important;
@@ -158,6 +154,4 @@ style -name arch-wiki https://wikipedia.org/* <<EOM
      border: 1px white solid !important;
      padding: 5px !important;
   }
-
-}
 EOM
