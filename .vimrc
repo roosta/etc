@@ -265,6 +265,7 @@ Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 Plug 'mattn/emmet-vim'
 Plug 'jplaut/vim-arduino-ino'
 Plug 'ervandew/supertab'
+Plug 'wellle/targets.vim'
 
 " git
 Plug 'tpope/vim-fugitive'
