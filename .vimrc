@@ -177,6 +177,14 @@ noremap   <Right>  <NOP>
 
 " correct annoying typo!
 cnoremap Q q
+
+" Make Ctrl-e jump to the end of the current line in the insert mode.
+inoremap <C-e> <C-o>$
+
+" Remove ANSI color escape codes for the edited file. This is handy when
+" piping colored text into Vim.
+nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g<CR>
+
 " Inactive {{{2
 " Example of repeat integration
 "silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
