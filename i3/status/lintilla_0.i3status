@@ -3,7 +3,7 @@ general {
   colors = true
   interval = 5
   color_bad = "#C83D37"
-  color_good = "#DEDDC7"
+  color_good = "#EBDBB2"
   color_degraded = "#F59E4F"
   color_separator = "#458588"
 }
@@ -20,7 +20,7 @@ order += "keyboard_layout"
 #order += "run_watch DHCP"
 order += "path_exists VPN"
 order += "net_rate"
-order += "sysdata cpu"
+order += "sysdata"
 #order += "wireless wlp2s0"
 #order += "ethernet bridge0"
 #order += "cpu_temperature 0"
@@ -55,19 +55,12 @@ spotify {
   format_stopped = "  Stopped"
 }
 
-sysdata cpu{
+sysdata {
   format = "CPU: {cpu_usage}%, TEMP: {cpu_temp}, MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
   med_threshold = 25
   on_click 1 = "exec i3-sensible-terminal -e glances"
   on_click 3 = "exec killall glances"
 }
-
-#sysdata mem{
-  #format = "MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
-  #on_click 1 = "exec i3-sensible-terminal -e glances"
-  #on_click 3 = "exec killall glances"
-#}
-
 
 # print current keyboard layout, with color codes for language
 keyboard_layout {
