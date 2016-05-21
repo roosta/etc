@@ -82,7 +82,10 @@ set clipboard=unnamedplus
 
 set shell=zsh
 
+" spellchecking
 set spelllang=en,nb
+
+set cm=blowfish2
 " inactive {{{2
 "set clipboard=unnamed " set same clipboard for vim and X: using EasyClip. See Plugins
 "set paste
@@ -754,6 +757,9 @@ nnoremap <leader><C-n> :call NumberToggle()<cr>
 
 " disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" remove leaks for encrypted files
+autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
 " }}}
 " VIMPAGER {{{
 " -------------------------
