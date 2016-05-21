@@ -34,7 +34,7 @@ alias vigtk="vim ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini"
 alias vivimp="vim ~/.vimperatorrc"
 alias vilein="vim ~/.lein/profiles.clj"
 alias viterm="vim ~/.Xresources.d/urxvt"
-alias vii3tmp="vim ~/.i3/config.tmp"
+alias vii3tmp="vim ~/.i3/config"
 alias vienv="vim ~/.zsh.d/env.zsh"
 alias vizopts="vim ~/.zsh.d/options.zsh"
 alias vizrc="vim ~/.zshrc"
@@ -329,7 +329,7 @@ alias paste="clippaste" # see functions
 
 # print date in various formats
 alias gettime='date +"%T"'
-alias getdatef='date +%Y-%m-%d@%H-%M-%S'
+alias getdatef='date +"%Y-%m-%d@%T"'
 alias getdate='date +"%Y-%m-%d"'
 
 # ignore case always
