@@ -5,7 +5,7 @@
 # │█     ░░ ░ ░   ░   ░ ░ ░   ░   ░   ░░     █│
 # │█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█│
 # │█░░  Author : Roosta <mail@roosta.sh>   ░░█│
-# │█░░  Site   : http://dotfiles.roosta.sh ░░█│
+# │█░░  Site   : https://www.roosta.sh     ░░█│
 # │█░░  Github : https://github.com/roosta ░░█│
 # └───────────────────────────────────────────┘
 ## SYSTEM {{{1
