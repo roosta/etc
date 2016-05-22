@@ -207,7 +207,7 @@ Plug 'tpope/vim-sensible'
 Plug 'wesQ3/vim-windowswap'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'terryma/vim-expand-region'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
 Plug 'unblevable/quick-scope'
@@ -218,7 +218,7 @@ Plug 'mattn/emmet-vim'
 Plug 'jplaut/vim-arduino-ino'
 "Plug 'ervandew/supertab'
 Plug 'wellle/targets.vim'
-
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -248,36 +248,6 @@ Plug 'jgdavey/tslime.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
 
-"Plug 'godlygeek/tabular'
-"Plug 'svermeulen/vim-easyclip'
-"Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'    }
-"Plug 'majutsushi/tagbar' ", { 'on': 'TagbarToggle'      }
-"Plug 'haya14busa/incsearch-easymotion.vim'
-"Plug 'tpope/vim-liquid'
-"Plug 'mileszs/ack.vim'
-"Plug 'terryma/vim-multiple-cursors'
-"Plug 'easymotion/vim-easymotion'
-"Plug 'sjl/badwolf'
-"Plug 'nanotech/jellybeans.vim'
-"Plug 'vim-scripts/paredit.vim', { 'for': 'clojure' }
-"Plug 'bhurlow/vim-parinfer', { 'for': ['clojure', 'scheme'], 'dir': '~/.vim/plugged/vim-parinfer', 'do': 'npm install' }
-"Plug 'venantius/vim-eastwood'
-"Plug 'Valloric/YouCompleteMe' , { 'do': './install.py' }
-"Plug 'yggdroot/indentline'
-"Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-"Plug 'PotatoesMaster/i3-vim-syntax'
-"Plug 'terryma/vim-expand-region'
-"Plug 'gorodinskiy/vim-coloresque'
-"Plug 'guns/vim-clojure-static'
-"Plug 'kien/ctrlp.vim'
-"Plug 'tpope/vim-commentary'
-"Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'vim-scripts/YankRing.vim'
-"Plug 'tpope/vim-classpath'
-"Plug 'jgdavey/tslime.vim'
-"Plug 'edkolev/promptline.vim'
-"Plug 'edkolev/tmuxline.vim'
-"Plug 'Glench/Vim-Jinja2-Syntax'
 call plug#end()
 
 syntax on
@@ -297,7 +267,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eshint']
+
+"}}}
+" YOUCOMPLETEME {{{2
+" --------------
+
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 "}}}
 " FZF.VIM {{{2
@@ -546,8 +522,8 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 "}}}
 "}}}
-" AUTOCMD {{{
-" -------------------------
+" FUNCTIONS/AUTOCMD {{{
+" ---------------------
 
 " https://github.com/tpope/vim-fireplace/pull/222
 "command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
