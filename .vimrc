@@ -9,7 +9,6 @@
 "└──────────────────────────────────────┘
 " OPTIONS {{{1
 " ------------
-
 " must be first, because it changes other options as a side effect
 if &compatible
   set nocompatible
@@ -55,8 +54,8 @@ set relativenumber " use relative line numbers. See functions for quick switch b
 
 " linewrap
 set wrap           " wrap long lines.
-set linebreak      " break on chars defined in "breakat"
-set breakindent    "match indent on break
+set linebreak      " break on chars defined in 'breakat'
+set breakindent    " match indent on break
 set breakat=" ^I!@*-+;:,./?"
 set showbreak=↳\
 set cpoptions+=n   " dont show linenumbers on wrap
@@ -86,13 +85,6 @@ set shell=zsh
 set spelllang=en,nb
 
 set cm=blowfish2
-" inactive {{{2
-"set clipboard=unnamed " set same clipboard for vim and X: using EasyClip. See Plugins
-"set paste
-"set hlsearch " using easymotion for hl
-"set autowrite
-" }}}
-
 "}}}
 " CURSOR {{{1
 " -----------
@@ -166,7 +158,6 @@ nnoremap <silent> <M-C-j> 5<C-W>-
 nnoremap <silent> <M-C-k> 5<C-W>+
 nnoremap <silent> <M-C-l> 5<C-w>>
 
-
 noremap <leader>ccl :cclose<CR>
 noremap <leader>lcl :lclose<CR>
 
@@ -190,49 +181,6 @@ inoremap <C-e> <C-o>$
 " piping colored text into Vim.
 nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g<CR>
 
-" Inactive {{{2
-" Example of repeat integration
-"silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
-
-"" use unimpared
-"map <leader>ba :%bdelete<CR>
-"map <leader>bn :bnext<CR>
-"map <leader>bp :bprevious<CR>
-"map <leader>bd :bdelete<CR>
-
-" Tab management
-"map <leader>tn :tabnew<CR>
-"map <leader>to :tabonly<CR>
-"map <leader>tc :tabclose<CR>
-" map <leader>tm :tabmove
-
-" use c-c and c-p to call system clipboard
-"vmap <silent> <leader>y y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-"nmap <silent> <leader>p :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
-
-" map leader+y/p to use system clipboard
-"map <leader>y "+y
-"map <leader>p "+p
-"map <leader>Y "+Y
-"map <leader>P "+P
-
-" press enter to exit search highlight
-"nnoremap <CR> :nohlsearch<CR><CR>
-
-" access x clipboard with leader+p/y
-"nnoremap <leader>y "+y
-"nnoremap <leader>yy "+yy
-"vnoremap <leader>y "+y
-"vnoremap <leader>yy "+yy
-"vnoremap <leader>p "+p
-"nnoremap <leader>p "+p
-"nnoremap <leader>P "+p
-" Move across wrapped lines like regular lines
-
-" Move across wrapped lines like regular lines
-"noremap 0 ^ " Go to the first non-blank character of a line
-"noremap ^ 0 " Just in case you need to go to the very beginning of a line
-" }}}
 " }}}
 " PLUGIN MANAGER {{{
 " -------------------
@@ -267,7 +215,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 Plug 'mattn/emmet-vim'
 Plug 'jplaut/vim-arduino-ino'
-Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'
 Plug 'wellle/targets.vim'
 
 " git
@@ -351,13 +299,6 @@ let g:syntastic_enable_perl_checker = 1
 let g:syntastic_javascript_checkers = ['jshint']
 
 "}}}
-" VIM-MULTIPLE-CURSOR {{{2
-" -------------------
-"let g:multi_cursor_next_key='<C-d>'
-"let g:multi_cursor_prev_key='<C-l>'
-"let g:multi_cursor_skip_key='<C-x>'
-"let g:multi_cursor_quit_key='<Esc>'
-" }}}
 " FZF.VIM {{{2
 " -------
 " https://github.com/junegunn/fzf.vim
@@ -386,25 +327,6 @@ let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
-" }}}
-" EASYMOTION {{{2
-" ---------------
-
-"let g:EasyMotion_smartcase = 1
-
-"map <leader>s <Plug>(easymotion-s2)
-""map <leader><leader>s <Plug>(easymotion-s2)
-
-"map <Leader>f <Plug>(easymotion-lineforward)
-"map <Leader>F <Plug>(easymotion-linebackward)
-
-"map <Leader><Leader>j <Plug>(easymotion-j)
-"map <Leader><Leader>k <Plug>(easymotion-k)
-
-"let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
-
-" set ctrl-v to paste in easymotion command line
-"autocmd VimEnter,BufEnter * EMCommandLineNoreMap <c-v> :YRPaste<CR>
 " }}}
 " INCSEARCH {{{2
 " -----------------
@@ -621,106 +543,6 @@ vnoremap <silent> # :<C-U>
   \gvy?<C-R><C-R>=substitute(
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
-"}}}
-" EASYCLIP {{{2
-" --------
-
-" remap mark to gm since EasyClip cut shadows m key
-"nnoremap gm m
-"imap <c-v> <plug>EasyClipInsertModePaste
-"cmap <c-v> <plug>EasyClipCommandModePaste
-
-"" set common register in vim+x
-"set clipboard=unnamed,unnamedplus
-
-""let g:EasyClipUsePasteToggleDefaults = 0
-""nmap <c-.> <plug>EasyClipSwapPasteForward
-""nmap <c-,> <plug>EasyClipSwapPasteBackwards
-""nmap ]y <plug>EasyClipSwapPasteForward
-""nmap [y <plug>EasyClipSwapPasteBackwards
-"let g:EasyClipShareYanks = 1
-
-" }}}
-" EASY-ALIGN {{{2
-" ---------------
-"" Start interactive EasyAlign in visual mode (e.g. vipga)
-"xmap ga <Plug>(EasyAlign)
-
-"" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-"nmap ga <Plug>(EasyAlign)
-" }}}
-" PROMPTLINE {{{2
-" ----------
-" Promptline (used to generate a prompt for terminal to match airline.
-"let g:promptline_preset = {
-  "\'a' : [ '$vim_mode' ],
-  "\'b' : [ promptline#slices#cwd() ],
-  "\'c' : [ promptline#slices#jobs() ],
-  "\'warn' : [ promptline#slices#last_exit_code() ],
-  "\'x' : [ promptline#slices#vcs_branch(), promptline#slices#git_status() ],
-  "\'y' : [ promptline#slices#host() ],
-  "\'z' : [ '$(date +%H:%M:%S)' ]}
-": PromptlineSnapshot ~/.zsh/plugins/promptline.zsh airline_insert
-
-"}}}
-" VAXE {{{2
-" ───────────────────
-"let g:vaxe_cache_server = 1
-"let g:vaxe_prefer_lime = 1
-" let g:vaxe_lime_target = 'html5 -debug'
-"let g:vaxe_cache_server_autostart = 1
-"let g:vaxe_completion_prevent_bufwrite_events = 1
-"let g:vaxe_completion_disable_optimizations = 1
-
-"autocmd BufNewFile,BufRead /project/* vaxe#ProjectLime("/project/project.lime")
-" map <leader>vi :call vaxe#ImportClass()<CR>
-" }}}
-" TAGBAR {{{2
-" --------
-" nmap <leader>t :TagbarToggle<CR>
-" }}}
-" CTRL-P {{{2
-" ------
-"let g:ctrlp_use_caching = 1
-"let g:ctrlp_follow_symlinks = 1
-"let g:ctrlp_show_hidden = 1
-"let g:ctrlp_working_path_mode = '0' " use the current folder, not repo root
-
-""let g:ctrlp_working_path_mode = 'r'
-""let g:ctrlp_map = '<c-p>'
-""let g:ctrlp_cmd = 'CtrlP'
-""let g:ctrlp_reuse_window = 1
-
-"" Find in your current directory
-"nmap <leader>p :CtrlP<cr>
-
-"" Find within all your open buffers.
-"nmap <leader>bb :CtrlPBuffer<cr>
-"nmap <c-b> :CtrlPBuffer<cr>
-
-"" Find within all your open buffers sorted by Most Recently Used (MRU).
-"nmap <leader>bm :CtrlPMixed<cr>
-
-"" Find with a mix of all the above.
-"nmap <leader>bs :CtrlPMRU<cr>
-
-"let g:ctrlp_root_markers = ['project.xml', 'project.lime', '.project', '.proj', '.git', 'project.clj']
-
-"let g:ctrlp_custom_ignore = {
-  "\ 'dir':  '\v[\/](\.(git|hg|svn|cljs_rhino_repl|repl|)|\_site|\build|\node_modules|dist|undo|out)$',
-  "\ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|tags)$',
-"\}
-
-"" thank you: https://github.com/sykora/etc/blob/master/vim/vimrc
-"let g:ctrlp_prompt_mappings = {
-"\   'PrtClearCache()': ['<F5>'],
-"\}
-" }}}
-" INDENT GUIDES {{{2
-" -------------
-
-"let g:indent_guides_guide_size = 1
-"let g:indent_guides_start_level = 2
 "}}}
 "}}}
 " AUTOCMD {{{
