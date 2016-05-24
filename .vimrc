@@ -69,9 +69,10 @@ set softtabstop=2  " let backspace delete indent
 
 " SEARCHING
 set incsearch      " match while typing
-set ignorecase
+set smartcase
 set magic          " :help magic
 set gdefault       " the /g flag on :s substitutions by default
+
 
 set mouse=a        " enable mouse
 
@@ -163,14 +164,14 @@ noremap <leader>ccl :cclose<CR>
 noremap <leader>lcl :lclose<CR>
 
 " disable arrowkeys for cursor movement temporarily
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
-noremap   <Up>     <NOP>
-noremap   <Down>   <NOP>
-noremap   <Left>   <NOP>
-noremap   <Right>  <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+noremap  <Up>    <NOP>
+noremap  <Down>  <NOP>
+noremap  <Left>  <NOP>
+noremap  <Right> <NOP>
 
 " correct annoying typo!
 cnoremap Q q
