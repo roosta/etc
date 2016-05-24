@@ -26,6 +26,7 @@ fi
 #export TERM="rxvt-unicode-256color"
 export TERM="screen-256color"
 export TERMINAL=urxvtc
+export BROWSER=firefox
 
 #export GEM_HOME="/usr/local/lib/ruby/gems/2.2.0"
 
