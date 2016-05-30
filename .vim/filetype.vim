@@ -17,5 +17,6 @@ augroup END
 
 augroup filetypeplugin
   au! BufNewFile,BufRead *.i3 setlocal commentstring=#\ %s
+  au! BufNewFile,BufRead *.py setlocal shiftwidth=4 tabstop=4 softtabstop=4
 augroup END
 

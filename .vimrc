@@ -54,12 +54,14 @@ set relativenumber " use relative line numbers. See functions for quick switch b
 "set hlsearch
 
 " linewrap
-set wrap           " wrap long lines.
-set linebreak      " break on chars defined in 'breakat'
-set breakindent    " match indent on break
-set breakat=" ^I!@*-+;:,./?"
+set wrap                     " wrap long lines.
+set linebreak                " break on chars defined in 'breakat'
+set breakindent              " match indent on break
+set breakat=" ^I!@*-+;:,./?" " define symbols that create a 'natural' line break
+set cpoptions+=n             " dont show linenumbers on wrap
+
+" break character symbol
 set showbreak=↳\
-set cpoptions+=n   " dont show linenumbers on wrap
 
 " Indentation
 set expandtab      " tabs are spaces
@@ -73,10 +75,9 @@ set smartcase
 set magic          " :help magic
 set gdefault       " the /g flag on :s substitutions by default
 
-
 set mouse=a        " enable mouse
 
-set tags+=./.git/.tags  " used with ctags. Defines tag files.
+set tags+=./.git/.tags,./tags
 
 " use system clipboard
 set clipboard=unnamedplus

@@ -55,7 +55,8 @@ alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
 # locate file at working dir
 alias lsgrep='lsa | grep'
-alias lsrgrep='lsa -R | grep'
+#alias lsrgrep='lsa -R | grep'
+alias treegrep='tree -f -i -h --matchdirs -P'
 
 # list pulseaudio sinks
 alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
@@ -165,8 +166,6 @@ alias -s com=firefox
 
 alias mv=' timeout 8 mv -iv'
 alias rm=' timeout 3 rm -Iv --one-file-system'
-alias rmr='rm -r'
-alias rmrf="rm -rf"
 alias cp='cp -i'
 alias cpr='cp -r'
 alias ln='ln -i'
@@ -224,7 +223,7 @@ alias lsp='lsp -p'
 ## SECURITY {{{1
 ## -------------
 
-alias checkrootkits="sudo rkhunter --update && sudo rkhunter --propupd && sudo rkhunter --check --sk"
+alias checkrootkits="sudo rkhunter --update && sudo rkhunter --check --sk && sudo rkhunter --propupd"
 alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME"
 alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log /"
 alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/rootsa/.tmp/clamscan.log ."
@@ -296,6 +295,7 @@ alias pacnews="sudo updatedb && locate --existing --regex '\.pac(new|save)$'"
 ## UTILS {{{1
 ## ----------
 
+alias tree="tree -ah"
 alias watchff="watch progress -wc firefox" # watch firefox download progress.
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
 alias ports="netstat -tulanp" # list open ports
