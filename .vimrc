@@ -209,7 +209,8 @@ Plug 'tpope/vim-sensible'
 Plug 'wesQ3/vim-windowswap'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'terryma/vim-expand-region'
-Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
 Plug 'unblevable/quick-scope'
@@ -227,7 +228,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ntpeters/vim-better-whitespace'
 
 " gui
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
+Plug '~/dev/gruvbox'
 Plug 'bling/vim-bufferline'
 Plug 'vim-airline/vim-airline'
 
