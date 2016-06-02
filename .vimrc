@@ -209,8 +209,8 @@ Plug 'tpope/vim-sensible'
 Plug 'wesQ3/vim-windowswap'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'terryma/vim-expand-region'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
 Plug 'unblevable/quick-scope'
