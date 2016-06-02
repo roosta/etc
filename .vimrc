@@ -88,6 +88,7 @@ set shell=zsh
 set spelllang=en,nb
 
 set cm=blowfish2
+
 "}}}
 " CURSOR {{{1
 " -----------
@@ -128,6 +129,7 @@ if has('gui_running')
   set lines=60 columns=108 linespace=0
   set guifont=Essential\ PragmataPro\ 14px
   set guiheadroom=0
+  set background=dark
 endif
 
 "}}}
@@ -248,10 +250,13 @@ Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 Plug 'tpope/vim-tbone'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'jgdavey/tslime.vim'
+Plug 'jpalardy/vim-slime'
+"Plug 'jgdavey/tslime.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
 
+" python
+"Plug 'nvie/vim-flake8'
 call plug#end()
 
 syntax on
@@ -412,20 +417,16 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 " mirror tpope commentary keys.
 nmap gcc <plug>NERDCommenterToggle
 vmap gc <plug>NERDCommenterToggle
-
 "}}}
 " PAREDIT {{{2
 " -----------
-
-let g:paredit_electric_return = 0
-let g:paredit_leader = '\'
-let g:paredit_smartjump = 1
+"let g:paredit_electric_return = 0
+"let g:paredit_leader = '\'
+"let g:paredit_smartjump = 1
 "let g:paredit_shortmaps = 0
-
 " }}}
 " ACK.VIM {{{2
 " ------------
-
 let g:ackprg = 'ag --vimgrep'
 "}}}
 " UNDOTREE {{{2
@@ -450,12 +451,20 @@ let g:clj_fmt_autosave = 0
 "}}}
 " TSLIME {{{2
 " -----------
-
 "let g:tslime_always_current_session = 1
 "let g:tslime_always_current_window = 1
-vmap <C-c><C-c> <Plug>SendSelectionToTmux
-nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-nmap <C-c>r <Plug>SetTmuxVars"
+"vmap <C-c><C-c> <Plug>SendSelectionToTmux
+"nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+"nmap <C-c>r <Plug>SetTmuxVars"
+"let g:tslime_always_current_session = 1
+"let g:tslime_always_current_window = 1
+"}}}
+" VIM-SLIME {{{2
+" -----------
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_python_ipython = 1
 "}}}
 " VIM-SEXP {{{2
 " -------------
@@ -563,6 +572,16 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " remove leaks for encrypted files
 autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
+
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 " }}}
 " VIMPAGER {{{
 " -------------------------
