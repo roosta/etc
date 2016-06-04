@@ -106,7 +106,6 @@ nitrogen
 */**/autoload
 */**/port.lock
 ko_palettes.blacklist
-i3/config
 .vim/spell/*
 gimp/sessionrc
 gimp/menurc
