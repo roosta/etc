@@ -12,12 +12,12 @@
 #include ".Xresources.d/urxvt"
 #include ".Xresources.d/rofi"
 #include ".Xresources.d/xscreensaver"
+#include ".Xresources.d/16-colors"
+#include ".Xresources.d/urxvt-256-colors"
+
 !#include "colors/xcolors/dark-fantastic.xresources"
-#include "colors/xcolors/sourcery.xresources"
 !#include "colors/xcolors/gruvbox-dark.xresources"
 !#include "/home/roosta/colors/xcolors/gruvbox-urxvt256.xresources"
-#include "/home/roosta/colors/xcolors/sourcery-urxvt256.xresources"
-
 !Xcursor.theme: Numix-Cursor
 
 ! vim:ft=xdefaults:ts=2:sw=2:fdm=marker
