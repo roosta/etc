@@ -22,10 +22,10 @@ URxvt.color96:  #B32357
 URxvt.color100: #495F18
 
 ! bright_cyan
-URxvt.color108: #55E0D8
+URxvt.color108: #34BEDA
 
 ! bright_blue
-URxvt.color109: #98A7BF
+URxvt.color109: #6D9CBE
 
 ! bright_magenta
 URxvt.color130: #E35682
@@ -37,16 +37,16 @@ URxvt.color136: #C17209
 URxvt.color142: #98BC37
 
 ! bright_red
-URxvt.color167: #FC503C
+URxvt.color167: #DA4939
 
 ! bright_magenta
 URxvt.color175: #E35682
 
 ! bright_orange
-URxvt.color208: #F2550B
+URxvt.color208: #CC7833
 
 ! bright_yellow
-URxvt.color214: #FF9D2C
+URxvt.color214: #FFC66D
 
 ! fg1/light1/bg1
 URxvt.color223: #FCE8C3
