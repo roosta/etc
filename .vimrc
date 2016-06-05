@@ -506,7 +506,7 @@ autocmd FileType clojure setlocal lispwords+=describe,it,testing,facts,fact,prov
 " YANKRING {{{2
 " -----------------
 nnoremap <silent> <F11> :YRShow<CR>
-let g:yankring_history_dir = '~/.vim'
+let g:yankring_history_dir = '~/var'
 "imap <c-v> gp
 "cmap <c-v> gp
 
