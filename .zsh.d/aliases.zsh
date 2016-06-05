@@ -224,9 +224,9 @@ alias lsp='lsp -p'
 ## -------------
 
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --check --sk && sudo rkhunter --propupd"
-alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log $HOME"
-alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/roosta/.tmp/clamscan.log /"
-alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/rootsa/.tmp/clamscan.log ."
+alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l /home/roosta/var/clamscan.log $HOME"
+alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/roosta/var/clamscan.log /"
+alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l /home/rootsa/var/clamscan.log ."
 #}}}
 ## PACKAGES {{{1
 ## -------------
