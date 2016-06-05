@@ -384,17 +384,17 @@ font pango:Essential PragmataPro 9
 
 # <class>               <border> <background> <foreground> <indicator>
 client.focused          #5573A3 #5573A3 #FCE8C3 #E02C6D
-client.focused_inactive #3B3B3B #98958E #1C1B19 #E02C6D
-client.unfocused        #282828 #282828 #443D33 #E02C6D
-client.urgent           #CE4809 #CE4809 #1C1B19 #E02C6D
-client.placeholder      #E02C6D #12827C #1C1B19 #E02C6D
+client.focused_inactive #504945 #6C6050 #1C1B19 #E02C6D
+client.unfocused        #282828 #282828 #928374 #E02C6D
+client.urgent           #FF6600 #FF6600 #1C1B19 #E02C6D
+client.placeholder      #E02C6D #1693A5 #1C1B19 #E02C6D
 
 
   bar {
   id bar-primary
   output DVI-I-2
   output HDMI-0
-  status_command py3status -c  ~/.i3/status/lintilla_0.i3status
+  status_command py3status -c ~/.i3/status/lintilla_0.py3status
   font pango:Essential PragmataPro, FontAwesome 9
   position top
   tray_output primary
@@ -402,21 +402,21 @@ client.placeholder      #E02C6D #12827C #1C1B19 #E02C6D
   #separator_symbol "▋"
   colors {
     background #1C1B19
-    separator  #4D4D4D
+    separator  #665C54
     statusline #FCE8C3
 
     # <workclass>      <border> <background> <foreground>
     focused_workspace  #37517B #37517B #FCE8C3
     active_workspace   #1C1B19 #1C1B19 #FCE8C3
-    inactive_workspace #1C1B19 #1C1B19 #98958E
-    urgent_workspace   #CE4809 #CE4809 #1C1B19
+    inactive_workspace #1C1B19 #1C1B19 #6C6050
+    urgent_workspace   #FF6600 #FF6600 #1C1B19
   }
 }
 
   bar {
   id bar-secondary
   output DVI-I-3
-  status_command py3status -c  ~/.i3/status/lintilla_1.i3status
+  status_command py3status -c ~/.i3/status/lintilla_1.py3status
   font pango:Essential PragmataPro, FontAwesome 9
   position top
   tray_output primary
@@ -424,14 +424,14 @@ client.placeholder      #E02C6D #12827C #1C1B19 #E02C6D
   #separator_symbol "▋"
   colors {
     background #1C1B19
-    separator  #4D4D4D
+    separator  #665C54
     statusline #FCE8C3
 
     # <workclass>      <border> <background> <foreground>
     focused_workspace  #37517B #37517B #FCE8C3
     active_workspace   #1C1B19 #1C1B19 #FCE8C3
-    inactive_workspace #1C1B19 #1C1B19 #98958E
-    urgent_workspace   #CE4809 #CE4809 #1C1B19
+    inactive_workspace #1C1B19 #1C1B19 #6C6050
+    urgent_workspace   #FF6600 #FF6600 #1C1B19
   }
 }
 
