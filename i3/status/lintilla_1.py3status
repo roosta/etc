@@ -70,7 +70,7 @@ sysdata {
 # print current keyboard layout, with color codes for language
 keyboard_layout {
   format = " {layout}"
-  colors = "us=#519F50, no=#FF6600"
+  colors = "us=#FCE8C3, no=#FF6600"
 }
 
 # control the volume with your mouse (need >i3-4.8)
