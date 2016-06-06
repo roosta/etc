@@ -115,17 +115,17 @@ bindsym $mod+Shift+F8 move workspace $FWS8
 
 ## assign workspaces to outputs
 # primary
-workspace $PWS1_TRM output DVI-I-2
-workspace $PWS3_WWW output DVI-I-2
-workspace $PWS2_DEV output DVI-I-2
+workspace $PWS1_TRM output HDMI2
+workspace $PWS3_WWW output HDMI2
+workspace $PWS2_DEV output HDMI2
 
-workspace $TWS1_MED output DVI-I-2
-workspace $TWS3_GAM output DVI-I-2
-workspace $TWS2_ART output DVI-I-2
+workspace $TWS1_MED output HDMI2
+workspace $TWS3_GAM output HDMI2
+workspace $TWS2_ART output HDMI2
 # secondary
-workspace $SWS1_AUX output DVI-I-3
-workspace $SWS3_DBG output DVI-I-3
-workspace $SWS2_COM output DVI-I-3
+workspace $SWS1_AUX output HDMI1
+workspace $SWS3_DBG output HDMI1
+workspace $SWS2_COM output HDMI1
 
 # Options
 focus_follows_mouse no
@@ -392,9 +392,8 @@ client.placeholder      #E02C6D #1693A5 #1C1B19 #E02C6D
 
   bar {
   id bar-primary
-  output DVI-I-2
-  output HDMI-0
-  status_command py3status -c ~/.i3/status/lintilla_0.py3status
+  output HDMI2
+  status_command py3status -c ~/.i3/status/garkbit_0.i3status
   font pango:Essential PragmataPro, FontAwesome 9
   position top
   tray_output primary
@@ -415,8 +414,8 @@ client.placeholder      #E02C6D #1693A5 #1C1B19 #E02C6D
 
   bar {
   id bar-secondary
-  output DVI-I-3
-  status_command py3status -c ~/.i3/status/lintilla_1.py3status
+  output HDMI1
+  status_command py3status -c ~/.i3/status/garkbit_1.i3status
   font pango:Essential PragmataPro, FontAwesome 9
   position top
   tray_output primary
