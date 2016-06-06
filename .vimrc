@@ -41,7 +41,7 @@ set showcmd        " show partial command in last line of screen
 set noshowmode     " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set shortmess+=I   " dont display startup message
 set scrolloff=7    "	Minimal number of screen lines to keep above and below the cursor.
-set t_Co=256       " force 256colors
+"set t_Co=256       " force 256colors
 set lazyredraw     " stop unnecessary rendering
 set ttyfast        " improve drawing in tmux
 
@@ -186,6 +186,8 @@ inoremap <C-e> <C-o>$
 " piping colored text into Vim.
 nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g<CR>
 
+" execute current python buffer.
+nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 " }}}
 " PLUGIN MANAGER {{{
 " -------------------
@@ -240,23 +242,27 @@ Plug 'vimperator/vimperator.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'hdima/python-syntax'
 
-" clojure/lisp/tmux
+" clojure/lisp
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'guns/vim-sexp'
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'tpope/vim-tbone'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+
+" tmux
 Plug 'jpalardy/vim-slime'
 "Plug 'jgdavey/tslime.vim'
+Plug 'tpope/vim-tbone'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
 
 " python
 "Plug 'nvie/vim-flake8'
+Plug 'jmcantrell/vim-virtualenv'
 call plug#end()
 
 syntax on
@@ -266,7 +272,6 @@ filetype plugin indent on
 "PLUGIN CONFIG {{{1
 " SYNTASTIC {{{2
 " --------------
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -277,6 +282,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_javascript_checkers = ['eshint']
+let g:ycm_python_binary_path = '/usr/bin/python3'
 
 "}}}
 " YOUCOMPLETEME {{{2
@@ -500,7 +506,7 @@ autocmd FileType clojure setlocal lispwords+=describe,it,testing,facts,fact,prov
 " YANKRING {{{2
 " -----------------
 nnoremap <silent> <F11> :YRShow<CR>
-let g:yankring_history_dir = '~/.vim'
+let g:yankring_history_dir = '~/var'
 "imap <c-v> gp
 "cmap <c-v> gp
 
@@ -534,12 +540,14 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 "}}}
+" PYTHON.VIM {{{2
+let python_highlight_all = 1
+"}}}
 "}}}
 " FUNCTIONS/AUTOCMD {{{
 " ---------------------
-
 " https://github.com/tpope/vim-fireplace/pull/222
-"command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
+command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
 " if working with splits, set cursorline only on active window,
 " to give an indication other than airline which split is active
@@ -572,20 +580,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " remove leaks for encrypted files
 autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 " }}}
 " VIMPAGER {{{
 " -------------------------
-
 let g:vimpager_disable_x11 = 1
 let g:vimpager_scrolloff = 5
 let g:vimpager_less_mode = 0
