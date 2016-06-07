@@ -109,3 +109,4 @@ ko_palettes.blacklist
 .vim/spell/*
 gimp/sessionrc
 gimp/menurc
+i3/config
