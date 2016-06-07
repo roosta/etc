@@ -115,17 +115,17 @@ bindsym $mod+Shift+F8 move workspace $FWS8
 
 ## assign workspaces to outputs
 # primary
-workspace $PWS1_TRM output HDMI2
-workspace $PWS3_WWW output HDMI2
-workspace $PWS2_DEV output HDMI2
+workspace $PWS1_TRM output eDP1
+workspace $PWS3_WWW output eDP1
+workspace $PWS2_DEV output eDP1
 
-workspace $TWS1_MED output HDMI2
-workspace $TWS3_GAM output HDMI2
-workspace $TWS2_ART output HDMI2
+workspace $TWS1_MED output eDP1
+workspace $TWS3_GAM output eDP1
+workspace $TWS2_ART output eDP1
 # secondary
-workspace $SWS1_AUX output HDMI1
-workspace $SWS3_DBG output HDMI1
-workspace $SWS2_COM output HDMI1
+workspace $SWS1_AUX output False
+workspace $SWS3_DBG output False
+workspace $SWS2_COM output False
 
 # Options
 focus_follows_mouse no
@@ -281,7 +281,7 @@ bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
 # toggle touchpad
-bindsym XF86TouchpadToggle exec --no-startup-id ~/bin/touchpad-toggle
+bindsym XF86TouchpadToggle exec --no-startup-id ~/bin/touchpad_toggle
 
 # move to last workspace
 bindsym $mod+z workspace back_and_forth
@@ -392,30 +392,8 @@ client.placeholder      #E02C6D #1693A5 #1C1B19 #E02C6D
 
   bar {
   id bar-primary
-  output HDMI2
-  status_command py3status -c ~/.i3/status/garkbit_0.i3status
-  font pango:Essential PragmataPro, FontAwesome 9
-  position top
-  tray_output primary
-  strip_workspace_numbers yes
-  #separator_symbol "▋"
-  colors {
-    background #1C1B19
-    separator  #665C54
-    statusline #FCE8C3
-
-    # <workclass>      <border> <background> <foreground>
-    focused_workspace  #37517B #37517B #FCE8C3
-    active_workspace   #1C1B19 #1C1B19 #FCE8C3
-    inactive_workspace #1C1B19 #1C1B19 #6C6050
-    urgent_workspace   #FF6600 #FF6600 #1C1B19
-  }
-}
-
-  bar {
-  id bar-secondary
-  output HDMI1
-  status_command py3status -c ~/.i3/status/garkbit_1.i3status
+  output eDP1
+  status_command py3status -c ~/.i3/status/allitnil_0.i3status
   font pango:Essential PragmataPro, FontAwesome 9
   position top
   tray_output primary
