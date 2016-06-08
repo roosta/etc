@@ -61,8 +61,8 @@ spotify {
 sysdata {
   format = "CPU: {cpu_usage}%, TEMP: {cpu_temp}, MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
   med_threshold = 25
-  on_click 1 = "exec i3-sensible-terminal -e glances"
-  on_click 3 = "exec killall glances"
+  on_click 1 = "exec i3-sensible-terminal -e htop"
+  on_click 3 = "exec killall htop"
 }
 
 # print current keyboard layout, with color codes for language
