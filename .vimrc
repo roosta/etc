@@ -1,13 +1,13 @@
-" ┌─────────────────────────────────────────┐
-" │█▀▀▀▀▀▀▀▀▀▀▀█░░█░█░▀█▀░█▄█░░█▀▀▀▀▀▀▀▀▀▀▀█│
-" │█▀▀▀▀▀▀▀▀▀▀▀█░░▀▄▀░ █ ░█ █░░█▀▀▀▀▀▀▀▀▀▀▀█│
-" │█▀▀▀▀▀▀▀▀▀▀▀▀░░ ▀ ░▀▀▀░▀░▀░░▀▀▀▀▀▀▀▀▀▀▀▀█│
-" │█            ░░░ ░░   ░ ░ ░░            █│
-" │█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█│
-" │█░░Author : Roosta <mail@roosta.sh>   ░░█│
-" │█░░Site   : https://www.roosta.sh     ░░█│
-" │█░░Github : https://github.com/roosta ░░█│
-" └─────────────────────────────────────────┘
+"┌─────────────────────────────────────────┐
+"│█▀▀▀▀▀▀▀▀▀▀▀█░░█░█░▀█▀░█▄█░░█▀▀▀▀▀▀▀▀▀▀▀█│
+"│█▀▀▀▀▀▀▀▀▀▀▀█░░▀▄▀░ █ ░█ █░░█▀▀▀▀▀▀▀▀▀▀▀█│
+"│█▀▀▀▀▀▀▀▀▀▀▀▀░░ ▀ ░▀▀▀░▀░▀░░▀▀▀▀▀▀▀▀▀▀▀▀█│
+"│█            ░░░ ░░   ░ ░ ░░            █│
+"│█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█│
+"│█░░Author : Roosta <mail@roosta.sh>   ░░█│
+"│█░░Site   : https://www.roosta.sh     ░░█│
+"│█░░Github : https://github.com/roosta ░░█│
+"└─────────────────────────────────────────┘
 " OPTIONS {{{1
 " ------------
 " must be first, because it changes other options as a side effect
@@ -89,10 +89,10 @@ set spelllang=en,nb
 
 set cm=blowfish2
 
+set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 "}}}
 " CURSOR {{{1
 " -----------
-
 " 1 or 0 -> blinking block
 " 3 -> blinking underscore
 " Recent versions of xterm (282 or above) also support
@@ -120,7 +120,6 @@ autocmd BufReadPost *
 "}}}
 " GVIM {{{1
 " ----------
-
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -131,7 +130,6 @@ if has('gui_running')
   set guiheadroom=0
   set background=dark
 endif
-
 "}}}
 " KEYBINDS/KEYBINDS {{{1
 " -------------
@@ -225,6 +223,16 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " remove leaks for encrypted files
 autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
+
+function! StripTrailingWhitespace()
+  if !&binary && &filetype != 'diff'
+    normal mz
+    normal Hmy
+    %s/\s\+$//e
+    normal 'yz<CR>
+    normal `z
+  endif
+endfunction
 " }}}
 " VIMPAGER {{{
 " ------------
@@ -250,14 +258,14 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
-Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+" Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+" Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
 "Plug 'wesQ3/vim-windowswap'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'terryma/vim-expand-region'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
@@ -269,35 +277,50 @@ Plug 'wellle/targets.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug '~/dev/srcery'
-Plug 'bling/vim-bufferline'
-"Plug 'vim-airline/vim-airline'
-Plug 'vimperator/vimperator.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'hdima/python-syntax'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'tpope/vim-salve', { 'for': 'clojure' }
-Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+" Plug 'bling/vim-bufferline'
+" Plug 'vim-airline/vim-airline'
 Plug 'guns/vim-sexp'
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jpalardy/vim-slime'
 "Plug 'jgdavey/tslime.vim'
 Plug 'tpope/vim-tbone'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jmcantrell/vim-virtualenv'
+
+
+" clojure
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'tpope/vim-salve', { 'for': 'clojure' }
+Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+
+" new
+Plug 'tommcdo/vim-lion'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'ajh17/VimCompletesMe'
+Plug 'tpope/vim-rsi'
+Plug 'vim-commentary'
+Plug 'justinmk/vim-dirvish'
+Plug 'justinmk/vim-sneak'
+Plug 'tpope/vim-abolish'
+Plug 'romainl/vim-qf'
+Plug 'romainl/vim-qlist'
+
+" syntax
+Plug 'sheerun/vim-polyglot'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'hdima/python-syntax'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'vimperator/vimperator.vim'
 call plug#end()
 
 syntax on
 filetype plugin indent on
-
 "}}}
 "PLUGIN CONFIG {{{1
-
-" fzf.vim 
+" fzf.vim
 " -------
 " https://github.com/junegunn/fzf.vim
 
@@ -326,7 +349,7 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-" incsearch 
+" Incsearch
 " ---------
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -346,7 +369,7 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
-" quickscope 
+" Quickscope
 " ----------
 let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
 let g:qs_first_occurrence_highlight_color = 155       " terminal vim
@@ -357,7 +380,7 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" srcery 
+" Srcery
 " ------
 " Set theme
 let g:srcery_italicize_comments = 0
@@ -368,22 +391,18 @@ set background=dark
 
 colorscheme srcery
 
-" rainbow parenthesis 
+" rainbow parenthesis
 " -------------------
 
 au VimEnter * RainbowParentheses
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 "let g:rbpt_loadcmd_toggle = 0
 
-" ack.vim 
-" --------
-let g:ackprg = 'ag --vimgrep'
-
-" undotree 
+" undotree
 " --------
 nnoremap <leader>ut :UndotreeToggle<cr>
 
-" vim-slime 
+" vim-slime
 " -----------
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
@@ -411,14 +430,14 @@ let g:clojure_align_multiline_strings = 1
 " Add some words which should be indented like defn etc: Compojure/compojure-api, midje and schema stuff mostly.
 let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY', '^HEAD', '^PATCH', '^OPTIONS', '^def']
 
-" yankring 
+" yankring
 " --------
 nnoremap <silent> <F11> :YRShow<CR>
 let g:yankring_history_dir = '~/var'
 "imap <c-v> gp
 "cmap <c-v> gp
 
-" tmux-navigator 
+" tmux-navigator
 " ---------------
 let g:tmux_navigator_no_mappings = 1
 
@@ -428,11 +447,11 @@ nnoremap <silent> <A-Up>    : TmuxNavigateUp<cr>
 nnoremap <silent> <A-Right> : TmuxNavigateRight<cr>
 nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
 
-" emmet-vim 
+" emmet-vim
 " ---------
 let g:user_emmet_leader_key='<C-A>'
 
-" vsearch 
+" vsearch
 " -------
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -450,5 +469,4 @@ vnoremap <silent> # :<C-U>
 " ------
 let python_highlight_all = 1
 " }}}
-
 " vim: fdm=marker:sw=2

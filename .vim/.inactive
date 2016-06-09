@@ -194,7 +194,9 @@ let g:syntastic_enable_perl_checker = 1
 let g:syntastic_javascript_checkers = ['eshint']
 let g:ycm_python_binary_path = '/usr/bin/python3'
 
-"}}}
+" ack.vim 
+" --------
+let g:ackprg = 'ag --vimgrep'
 
 " EASYMOTION
 " -----------
