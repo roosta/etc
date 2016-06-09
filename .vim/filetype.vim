@@ -16,6 +16,7 @@ augroup filetypedetect
 augroup END
 
 augroup filetypeplugin
+  au! FileType clojure setlocal lispwords+=describe,it,testing,facts,fact,provided
   au! BufNewFile,BufRead *.i3 setlocal commentstring=#\ %s
   au! BufNewFile,BufRead *.py
         \ setlocal

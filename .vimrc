@@ -189,365 +189,10 @@ nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g
 " execute current python buffer.
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 " }}}
-" PLUGIN MANAGER {{{
-" -------------------
-" Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
-" download vim-plug if not present in 'autoload'
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
-call plug#begin('~/.vim/plugged')
-
-" TODO: http://sjl.bitbucket.org/gundo.vim/
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-dispatch'
-Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-Plug 'scrooloose/nerdcommenter'
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-sensible'
-Plug 'wesQ3/vim-windowswap'
-Plug 'vim-scripts/YankRing.vim'
-Plug 'terryma/vim-expand-region'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
-Plug 'junegunn/fzf.vim'
-Plug 'rking/ag.vim'
-Plug 'unblevable/quick-scope'
-Plug 'haya14busa/incsearch.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
-Plug 'mattn/emmet-vim'
-Plug 'jplaut/vim-arduino-ino'
-"Plug 'ervandew/supertab'
-Plug 'wellle/targets.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
-" git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'ntpeters/vim-better-whitespace'
-
-" gui
-"Plug 'morhetz/gruvbox'
-Plug '~/dev/gruvbox'
-Plug 'bling/vim-bufferline'
-Plug 'vim-airline/vim-airline'
-
-" syntax
-Plug 'vimperator/vimperator.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'hdima/python-syntax'
-
-" clojure/lisp
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'tpope/vim-salve', { 'for': 'clojure' }
-Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-Plug 'guns/vim-sexp'
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'tmux-plugins/vim-tmux-focus-events'
-
-" tmux
-Plug 'jpalardy/vim-slime'
-"Plug 'jgdavey/tslime.vim'
-Plug 'tpope/vim-tbone'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'tmux-plugins/vim-tmux'
-
-" python
-"Plug 'nvie/vim-flake8'
-Plug 'jmcantrell/vim-virtualenv'
-call plug#end()
-
-syntax on
-filetype plugin indent on
-
-"}}}
-"PLUGIN CONFIG {{{1
-" SYNTASTIC {{{2
-" --------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_javascript_checkers = ['eshint']
-let g:ycm_python_binary_path = '/usr/bin/python3'
-
-"}}}
-" YOUCOMPLETEME {{{2
-" --------------
-
-let g:ycm_collect_identifiers_from_tags_files = 1
-
-"}}}
-" FZF.VIM {{{2
-" -------
-" https://github.com/junegunn/fzf.vim
-
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-nmap <leader>o  :Files<CR>
-nmap <leader>bb :Buffers<cr>
-nmap <leader>T  :Tags<cr>
-nmap <leader>t  :BTags<cr>
-nmap <leader>gc :Commits<cr>
-nmap <leader>gb :BCommits<cr>
-nmap <leader>gs :Gstatus<cr>
-
-" This is the default extra key bindings
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-" }}}
-" INCSEARCH {{{2
-" -----------------
-
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-map <leader>/ <Plug>(incsearch-easymotion-/)
-map <leader>? <Plug>(incsearch-easymotion-?)
-map <leader>g/ <Plug>(incsearch-easymotion-stay)
-
-" :h g:incsearch#auto_nohlsearch
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
-
-"}}}
-" QUICKSCOPE {{{2
-" ---------------
-let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
-let g:qs_first_occurrence_highlight_color = 155       " terminal vim
-
-let g:qs_second_occurrence_highlight_color = '#5fffff'  " gui vim
-let g:qs_second_occurrence_highlight_color = 81         " terminal vim
-
-" Trigger a highlight in the appropriate direction when pressing these keys:
-"let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-" }}}
-" AIRLINE {{{2
-" ------------
-let g:airline_powerline_fonts = 1
-let g:airline_theme='gruvbox'
-let g:airline#extensions#bufferline#enabled = 1
-let g:airline#extensions#bufferline#overwrite_variables = 1
-
-"}}}
-" BUFFERLINE {{{2
-" ---------------
-"
-"let g:bufferline_active_buffer_left = ''
-"let g:bufferline_active_buffer_right = ''
-"let g:bufferline_modified = '+'
-let g:bufferline_show_bufnr = 0
-let g:bufferline_solo_highlight = 1
-let g:bufferline_echo = 0
-"let g:bufferline_inactive_highlight = 'StatusLine'
-"let g:bufferline_active_highlight = 'StatusLineNC'
-
-"}}}
-" GRUVBOX {{{2
-" ------------
-
-" Set theme
-let g:gruvbox_italicize_comments = 0
-let g:gruvbox_italic = 0
-
-"let g:gruvbox_contrast_dark = "hard"
-set background=dark
-
-colorscheme gruvbox
-" }}}
-" BADWOLF {{{2
-" ------------
-" Make the gutters darker than the background.
-"let g:badwolf_darkgutter = 1
-
-" Turn on CSS properties highlighting
-"let g:badwolf_css_props_highlight = 1
-
-"colorscheme badwold
-" }}}
-" RAINBOW PARENTHESIS {{{2
-" ------------------------
-
-au VimEnter * RainbowParentheses
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-"let g:rbpt_loadcmd_toggle = 0
-
-" }}}
-" NERDTREE {{{2
-" -------------
-map <leader>nt :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-let NERDTreeShowBookmarks=1
-let NERDTreeQuitOnOpen=1
-
-" close vim if nerdtree is only window remaining
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-"}}}}
-" NERDCOMMENT {{{2
-" ----------------
-" mirror tpope commentary keys.
-nmap gcc <plug>NERDCommenterToggle
-vmap gc <plug>NERDCommenterToggle
-"}}}
-" PAREDIT {{{2
-" -----------
-"let g:paredit_electric_return = 0
-"let g:paredit_leader = '\'
-"let g:paredit_smartjump = 1
-"let g:paredit_shortmaps = 0
-" }}}
-" ACK.VIM {{{2
-" ------------
-let g:ackprg = 'ag --vimgrep'
-"}}}
-" UNDOTREE {{{2
-" -------------
-
-nnoremap <leader>ut :UndotreeToggle<cr>
-"}}}
-" BETTER-WHITESPACE {{{2
-" ----------------------
-" strip whitespace on save
-autocmd BufWritePre * StripWhitespace
-
-" remove all trailing whitespace
-noremap <leader>cw :StripWhitespace<CR>
-
-"}}}
-" VIM-CLJFMT {{{2
-" ---------------
-
-" strip whitespace on save
-let g:clj_fmt_autosave = 0
-"}}}
-" TSLIME {{{2
-" -----------
-"let g:tslime_always_current_session = 1
-"let g:tslime_always_current_window = 1
-"vmap <C-c><C-c> <Plug>SendSelectionToTmux
-"nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-"nmap <C-c>r <Plug>SetTmuxVars"
-"let g:tslime_always_current_session = 1
-"let g:tslime_always_current_window = 1
-"}}}
-" VIM-SLIME {{{2
-" -----------
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
-let g:slime_paste_file = "$HOME/.slime_paste"
-let g:slime_python_ipython = 1
-"}}}
-" VIM-SEXP {{{2
-" -------------
-" Disable some irritating mappings
-"let g:sexp_enable_insert_mode_mappings = 1
-
-let g:sexp_mappings = {
-      \ 'sexp_emit_head_element':    '<leader><Down>',
-      \ 'sexp_emit_tail_element':    '<leader><Up>',
-      \ 'sexp_capture_prev_element': '<leader><Left>',
-      \ 'sexp_capture_next_element': '<leader><Right>',
-      \}
-"}}}
-" EASY-ALIGN {{{2
-" ---------------
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-" }}}
-" CLOJURE_HIGHLIGHT {{{2
-" -----------------
-
-" This should enable Emacs like indentation
-let g:clojure_fuzzy_indent=1
-let g:clojure_align_multiline_strings = 1
-
-" Add some words which should be indented like defn etc: Compojure/compojure-api, midje and schema stuff mostly.
-let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY', '^HEAD', '^PATCH', '^OPTIONS', '^def']
-autocmd FileType clojure setlocal lispwords+=describe,it,testing,facts,fact,provided
-" }}}
-" YANKRING {{{2
-" -----------------
-nnoremap <silent> <F11> :YRShow<CR>
-let g:yankring_history_dir = '~/var'
-"imap <c-v> gp
-"cmap <c-v> gp
-
-" }}}
-" TMUX-NAVIGATOR {{{2
-" -----------------
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> <A-Left>  : TmuxNavigateLeft<cr>
-nnoremap <silent> <A-Down>  : TmuxNavigateDown<cr>
-nnoremap <silent> <A-Up>    : TmuxNavigateUp<cr>
-nnoremap <silent> <A-Right> : TmuxNavigateRight<cr>
-nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
-" }}}
-" EMMET-VIM {{{2
-" -----------------
-
-let g:user_emmet_leader_key='<C-A>'
-
-" }}}
-" VSEARCH {{{2
-" Search for selected text, forwards or backwards.
-vnoremap <silent> * :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy/<C-R><C-R>=substitute(
-  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
-vnoremap <silent> # :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy?<C-R><C-R>=substitute(
-  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
-"}}}
-" PYTHON.VIM {{{2
-let python_highlight_all = 1
-"}}}
-"}}}
 " FUNCTIONS/AUTOCMD {{{
 " ---------------------
 " https://github.com/tpope/vim-fireplace/pull/222
-command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
+" command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
 " if working with splits, set cursorline only on active window,
 " to give an indication other than airline which split is active
@@ -582,11 +227,228 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
 " }}}
 " VIMPAGER {{{
-" -------------------------
+" ------------
 let g:vimpager_disable_x11 = 1
 let g:vimpager_scrolloff = 5
 let g:vimpager_less_mode = 0
 "let g:vimpager_passthrough = 0
 set clipboard^=unnamed
 "}}}
+" PLUGIN MANAGER {{{
+" -------------------
+" Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
+" download vim-plug if not present in 'autoload'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+call plug#begin('~/.vim/plugged')
+
+" TODO: http://sjl.bitbucket.org/gundo.vim/
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-dispatch'
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sensible'
+"Plug 'wesQ3/vim-windowswap'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'terryma/vim-expand-region'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'
+Plug 'rking/ag.vim'
+Plug 'unblevable/quick-scope'
+Plug 'haya14busa/incsearch.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'mattn/emmet-vim'
+Plug 'wellle/targets.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug '~/dev/srcery'
+Plug 'bling/vim-bufferline'
+"Plug 'vim-airline/vim-airline'
+Plug 'vimperator/vimperator.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'hdima/python-syntax'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'tpope/vim-salve', { 'for': 'clojure' }
+Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+Plug 'guns/vim-sexp'
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'jpalardy/vim-slime'
+"Plug 'jgdavey/tslime.vim'
+Plug 'tpope/vim-tbone'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jmcantrell/vim-virtualenv'
+call plug#end()
+
+syntax on
+filetype plugin indent on
+
+"}}}
+"PLUGIN CONFIG {{{1
+
+" fzf.vim 
+" -------
+" https://github.com/junegunn/fzf.vim
+
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nmap <leader>o  :Files<CR>
+nmap <leader>bb :Buffers<cr>
+nmap <leader>T  :Tags<cr>
+nmap <leader>t  :BTags<cr>
+nmap <leader>gc :Commits<cr>
+nmap <leader>gb :BCommits<cr>
+nmap <leader>gs :Gstatus<cr>
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" incsearch 
+" ---------
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+map <leader>/ <Plug>(incsearch-easymotion-/)
+map <leader>? <Plug>(incsearch-easymotion-?)
+map <leader>g/ <Plug>(incsearch-easymotion-stay)
+
+" :h g:incsearch#auto_nohlsearch
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+" quickscope 
+" ----------
+let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
+let g:qs_first_occurrence_highlight_color = 155       " terminal vim
+
+let g:qs_second_occurrence_highlight_color = '#5fffff'  " gui vim
+let g:qs_second_occurrence_highlight_color = 81         " terminal vim
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+"let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" srcery 
+" ------
+" Set theme
+let g:srcery_italicize_comments = 0
+let g:srcery_italic = 0
+
+"let g:srcery_contrast_dark = "hard"
+set background=dark
+
+colorscheme srcery
+
+" rainbow parenthesis 
+" -------------------
+
+au VimEnter * RainbowParentheses
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+"let g:rbpt_loadcmd_toggle = 0
+
+" ack.vim 
+" --------
+let g:ackprg = 'ag --vimgrep'
+
+" undotree 
+" --------
+nnoremap <leader>ut :UndotreeToggle<cr>
+
+" vim-slime 
+" -----------
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_python_ipython = 1
+
+" vim-sexp
+" --------
+" Disable some irritating mappings
+"let g:sexp_enable_insert_mode_mappings = 1
+
+let g:sexp_mappings = {
+      \ 'sexp_emit_head_element':    '<leader><Down>',
+      \ 'sexp_emit_tail_element':    '<leader><Up>',
+      \ 'sexp_capture_prev_element': '<leader><Left>',
+      \ 'sexp_capture_next_element': '<leader><Right>',
+      \}
+
+" clojure_highlight
+" -----------------
+" This should enable Emacs like indentation
+let g:clojure_fuzzy_indent=1
+let g:clojure_align_multiline_strings = 1
+
+" Add some words which should be indented like defn etc: Compojure/compojure-api, midje and schema stuff mostly.
+let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY', '^HEAD', '^PATCH', '^OPTIONS', '^def']
+
+" yankring 
+" --------
+nnoremap <silent> <F11> :YRShow<CR>
+let g:yankring_history_dir = '~/var'
+"imap <c-v> gp
+"cmap <c-v> gp
+
+" tmux-navigator 
+" ---------------
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <A-Left>  : TmuxNavigateLeft<cr>
+nnoremap <silent> <A-Down>  : TmuxNavigateDown<cr>
+nnoremap <silent> <A-Up>    : TmuxNavigateUp<cr>
+nnoremap <silent> <A-Right> : TmuxNavigateRight<cr>
+nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
+
+" emmet-vim 
+" ---------
+let g:user_emmet_leader_key='<C-A>'
+
+" vsearch 
+" -------
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+" python
+" ------
+let python_highlight_all = 1
+" }}}
+
 " vim: fdm=marker:sw=2
