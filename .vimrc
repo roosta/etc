@@ -14,7 +14,7 @@ if &compatible
   set nocompatible
 endif
 set undofile
-set undodir=~/var/undo
+set undodir=~/.var/undo
 set wildmenu
 set wildmode=longest,list,full
 set wildignorecase
@@ -402,7 +402,7 @@ let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY',
 " yankring
 " ---------------
 nnoremap <silent> <F11> :YRShow<CR>
-let g:yankring_history_dir = '~/var'
+let g:yankring_history_dir = '~/.var'
 "imap <c-v> gp
 "cmap <c-v> gp
 
