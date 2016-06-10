@@ -16,42 +16,42 @@ endif
 set undofile
 set undodir=~/var/undo
 set wildmenu
-set wildmode=longest,list,full 
-set wildignorecase           
+set wildmode=longest,list,full
+set wildignorecase
 
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
                 \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
                 \*/_site/*
 
 set backspace=indent,eol,start
-set laststatus=2   
-set showtabline=1 
-set showcmd      
-set showmode    
-set shortmess+=I 
-set scrolloff=7 
-set t_Co=256   
+set laststatus=2
+set showtabline=1
+set showcmd
+set showmode
+set shortmess+=I
+set scrolloff=7
+set t_Co=256
 set lazyredraw
-set ttyfast  
-set cursorline    
-set number       
-set matchtime=2 
-set showmatch  
-set relativenumber 
+set ttyfast
+set cursorline
+set number
+set matchtime=2
+set showmatch
+set relativenumber
 "set hlsearch
-set wrap                 
-set linebreak             
-set breakindent            
+set wrap
+set linebreak
+set breakindent
 set breakat=" ^I!@*-+;:,./?"
 set cpoptions+=n  " dont show linenumbers on wrap
 set showbreak=↳\
-set expandtab 
-set shiftwidth=2 
-set tabstop=2 
+set expandtab
+set shiftwidth=2
+set tabstop=2
 set softtabstop=2
 set incsearch
 set smartcase
-set magic   
+set magic
 set gdefault
 set mouse=a
 set tags+=./.git/.tags,./tags
@@ -367,7 +367,7 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 " --------
 nnoremap <leader>ut :UndotreeToggle<cr>
 
-" -------------------- 
+" --------------------
 " vim-slime
 " --------------------
 let g:slime_target = "tmux"
