@@ -76,6 +76,8 @@ urxvtd -q -f -o &
 
 #compton -b &
 
+dropbox-cli start &
+
 dunst &
 
 nm-applet &
