@@ -83,6 +83,12 @@ noremap ^ 0 " Just in case you need to go to the very beginning of a line
 "Plug 'ntpeters/vim-better-whitespace'
 "Plug 'scrooloose/syntastic' ", { 'on': 'SyntasticCheck' }
 "Plug 'scrooloose/nerdcommenter'
+"Plug 'bling/vim-bufferline'
+"Plug 'vim-airline/vim-airline'
+"Plug 'jgdavey/tslime.vim'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+"Plug 'wesQ3/vim-windowswap'
 
 "}}}
 " PLUGIN CONFIG {{{

@@ -38,10 +38,10 @@ set backspace=indent,eol,start
 set laststatus=2   " Always display the statusline in all windows
 set showtabline=1  " Always display the tabline, even if there is only one tab
 set showcmd        " show partial command in last line of screen
-set noshowmode     " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+set showmode       " show current mode below status line
 set shortmess+=I   " dont display startup message
 set scrolloff=7    "	Minimal number of screen lines to keep above and below the cursor.
-"set t_Co=256       " force 256colors
+set t_Co=256       " force 256colors
 set lazyredraw     " stop unnecessary rendering
 set ttyfast        " improve drawing in tmux
 
@@ -89,7 +89,24 @@ set spelllang=en,nb
 
 set cm=blowfish2
 
-set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+" %< Where to truncate
+" %n buffer number
+" %F Full path
+" %m Modified flag: [+], [-]
+" %r Readonly flag: [RO]
+" %y Type:          [vim]
+" fugitive#statusline()
+" %= Separator
+" %-14.(...)
+" %l Line
+" %c Column
+" %V Virtual column
+" %P Percentage
+" %#HighlightGroup#
+set statusline=%<[%n]\ %F\ %m%r%y\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}\ %=%-14.(%l,%c%V%)\ %P
+
+" set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+
 "}}}
 " CURSOR {{{1
 " -----------
@@ -139,42 +156,27 @@ let mapleader = "\<SPACE>"
 " Note that this may cause some plugins not to load properly if it has init logic
 noremap <leader>R :source $MYVIMRC<CR>
 
-" Switch between Vim window splits
-noremap <silent> <M-Up>    :wincmd k<CR>
-noremap <silent> <M-Down>  :wincmd j<CR>
-noremap <silent> <M-Left>  :wincmd h<CR>
-noremap <silent> <M-Right> :wincmd l<CR>
+" switch between splits
+noremap <silent> <leader>k :wincmd k<CR>
+noremap <silent> <leader>j :wincmd j<CR>
+noremap <silent> <leader>h :wincmd h<CR>
+noremap <silent> <leader>l :wincmd l<CR>
+noremap <silent> <leader><Up>    :wincmd k<CR>
+noremap <silent> <leader><Down>  :wincmd j<CR>
+noremap <silent> <leader><Left>  :wincmd h<CR>
+noremap <silent> <leader><Right> :wincmd l<CR>
 
-noremap <silent> <M-k> :wincmd k<CR>
-noremap <silent> <M-j> :wincmd j<CR>
-noremap <silent> <M-h> :wincmd h<CR>
-noremap <silent> <M-l> :wincmd l<CR>
+" Resize splits
+nnoremap <silent> <M-S-Left>  10<C-w><
+nnoremap <silent> <M-S-Down>  10<C-W>-
+nnoremap <silent> <M-S-Up>    10<C-W>+
+nnoremap <silent> <M-S-Right> 10<C-w>>
+nnoremap <silent> <M-C-h> 10<C-w><
+nnoremap <silent> <M-C-j> 10<C-W>-
+nnoremap <silent> <M-C-k> 10<C-W>+
+nnoremap <silent> <M-C-l> 10<C-w>>
 
-" Maps Alt-[h,j,k,l] to resizing a window split
-nnoremap <silent> <M-C-Left>  5<C-w><
-nnoremap <silent> <M-C-Down>  5<C-W>-
-nnoremap <silent> <M-C-Up>    5<C-W>+
-nnoremap <silent> <M-C-Right> 5<C-w>>
-
-nnoremap <silent> <M-C-h> 5<C-w><
-nnoremap <silent> <M-C-j> 5<C-W>-
-nnoremap <silent> <M-C-k> 5<C-W>+
-nnoremap <silent> <M-C-l> 5<C-w>>
-
-noremap <leader>ccl :cclose<CR>
-noremap <leader>lcl :lclose<CR>
-
-" disable arrowkeys for cursor movement temporarily
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
-noremap  <Up>    <NOP>
-noremap  <Down>  <NOP>
-noremap  <Left>  <NOP>
-noremap  <Right> <NOP>
-
-" correct annoying typo!
+" correct annoying typo
 cnoremap Q q
 
 " Make Ctrl-e jump to the end of the current line in the insert mode.
@@ -258,14 +260,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-dispatch'
-" Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-" Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
-"Plug 'wesQ3/vim-windowswap'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'terryma/vim-expand-region'
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
@@ -277,12 +276,9 @@ Plug 'wellle/targets.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug '~/dev/srcery'
-" Plug 'bling/vim-bufferline'
-" Plug 'vim-airline/vim-airline'
 Plug 'guns/vim-sexp'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jpalardy/vim-slime'
-"Plug 'jgdavey/tslime.vim'
 Plug 'tpope/vim-tbone'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jmcantrell/vim-virtualenv'
@@ -296,11 +292,10 @@ Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 
 " new
-Plug 'tommcdo/vim-lion'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'ajh17/VimCompletesMe'
 Plug 'tpope/vim-rsi'
-Plug 'vim-commentary'
+Plug 'tpope/vim-commentary'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-abolish'
@@ -391,9 +386,9 @@ set background=dark
 
 colorscheme srcery
 
+" -------------------
 " rainbow parenthesis
 " -------------------
-
 au VimEnter * RainbowParentheses
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 "let g:rbpt_loadcmd_toggle = 0
@@ -402,15 +397,17 @@ let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 " --------
 nnoremap <leader>ut :UndotreeToggle<cr>
 
+" -------------------- 
 " vim-slime
-" -----------
+" --------------------
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_python_ipython = 1
 
+" -----------------
 " vim-sexp
-" --------
+" -----------------
 " Disable some irritating mappings
 "let g:sexp_enable_insert_mode_mappings = 1
 
@@ -421,6 +418,7 @@ let g:sexp_mappings = {
       \ 'sexp_capture_next_element': '<leader><Right>',
       \}
 
+" -----------------
 " clojure_highlight
 " -----------------
 " This should enable Emacs like indentation
@@ -430,15 +428,17 @@ let g:clojure_align_multiline_strings = 1
 " Add some words which should be indented like defn etc: Compojure/compojure-api, midje and schema stuff mostly.
 let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY', '^HEAD', '^PATCH', '^OPTIONS', '^def']
 
+" ---------------
 " yankring
-" --------
+" ---------------
 nnoremap <silent> <F11> :YRShow<CR>
 let g:yankring_history_dir = '~/var'
 "imap <c-v> gp
 "cmap <c-v> gp
 
-" tmux-navigator
-" ---------------
+" --------------------
+" Tmux-navigator
+" --------------------
 let g:tmux_navigator_no_mappings = 1
 
 nnoremap <silent> <A-Left>  : TmuxNavigateLeft<cr>
@@ -447,8 +447,9 @@ nnoremap <silent> <A-Up>    : TmuxNavigateUp<cr>
 nnoremap <silent> <A-Right> : TmuxNavigateRight<cr>
 nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
 
+" ---------------
 " emmet-vim
-" ---------
+" ---------------
 let g:user_emmet_leader_key='<C-A>'
 
 " vsearch
