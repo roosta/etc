@@ -10,83 +10,54 @@
 "└─────────────────────────────────────────┘
 " OPTIONS {{{1
 " ------------
-" must be first, because it changes other options as a side effect
 if &compatible
   set nocompatible
 endif
-
-" maintain undo history between sessions
 set undofile
-set undodir=~/.vim/undo
+set undodir=~/var/undo
+set wildmenu
+set wildmode=longest,list,full 
+set wildignorecase           
 
-" wild*
-set wildmenu                   " give menu on completion
-set wildmode=longest,list,full " define wildmode appearance
-set wildignorecase             " ignore case on completion
-
-" define various ignored folders when using fzf/ctrlp/whatever else uses
-" wildmode
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
                 \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
                 \*/_site/*
 
-" fix backspace behaviour
 set backspace=indent,eol,start
-
-" interface
-"set timeoutlen=1000 ttimeoutlen=0 " adjust timeouts for escaping normal mode.
-set laststatus=2   " Always display the statusline in all windows
-set showtabline=1  " Always display the tabline, even if there is only one tab
-set showcmd        " show partial command in last line of screen
-set showmode       " show current mode below status line
-set shortmess+=I   " dont display startup message
-set scrolloff=7    "	Minimal number of screen lines to keep above and below the cursor.
-set t_Co=256       " force 256colors
-set lazyredraw     " stop unnecessary rendering
-set ttyfast        " improve drawing in tmux
-
-" Highlights
-set cursorline     " highlight current line
-set number         " show line numbers
-set matchtime=2    " time to display matching brackets
-set showmatch      " show matching brackets/parenthesis
-set relativenumber " use relative line numbers. See functions for quick switch back to normal
+set laststatus=2   
+set showtabline=1 
+set showcmd      
+set showmode    
+set shortmess+=I 
+set scrolloff=7 
+set t_Co=256   
+set lazyredraw
+set ttyfast  
+set cursorline    
+set number       
+set matchtime=2 
+set showmatch  
+set relativenumber 
 "set hlsearch
-
-" linewrap
-set wrap                     " wrap long lines.
-set linebreak                " break on chars defined in 'breakat'
-set breakindent              " match indent on break
-set breakat=" ^I!@*-+;:,./?" " define symbols that create a 'natural' line break
-set cpoptions+=n             " dont show linenumbers on wrap
-
-" break character symbol
+set wrap                 
+set linebreak             
+set breakindent            
+set breakat=" ^I!@*-+;:,./?"
+set cpoptions+=n  " dont show linenumbers on wrap
 set showbreak=↳\
-
-" Indentation
-set expandtab      " tabs are spaces
-set shiftwidth=2   " use indents of 2 spaces
-set tabstop=2      " use indents of 2 spaces
-set softtabstop=2  " let backspace delete indent
-
-" SEARCHING
-set incsearch      " match while typing
+set expandtab 
+set shiftwidth=2 
+set tabstop=2 
+set softtabstop=2
+set incsearch
 set smartcase
-set magic          " :help magic
-set gdefault       " the /g flag on :s substitutions by default
-
-set mouse=a        " enable mouse
-
+set magic   
+set gdefault
+set mouse=a
 set tags+=./.git/.tags,./tags
-
-" use system clipboard
 set clipboard=unnamedplus
-
 set shell=zsh
-
-" spellchecking
 set spelllang=en,nb
-
 set cm=blowfish2
 
 " %< Where to truncate
@@ -218,7 +189,6 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <leader><C-n> :call NumberToggle()<cr>
-
 
 " disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
