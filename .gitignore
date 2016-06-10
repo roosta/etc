@@ -110,3 +110,5 @@ ko_palettes.blacklist
 gimp/sessionrc
 gimp/menurc
 i3/config
+tags.lock
+tags.temp
