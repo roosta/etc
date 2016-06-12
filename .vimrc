@@ -8,26 +8,24 @@
 "│█░░Site   : https://www.roosta.sh     ░░█│
 "│█░░Github : https://github.com/roosta ░░█│
 "└─────────────────────────────────────────┘
-" OPTIONS {{{1
-" ------------
+" Options: {{{1
+""""""""""""""
 if &compatible
   set nocompatible
 endif
+
 set undofile
-set undodir=~/.var/undo
+set undodir=~/var/undo
 set wildmenu
 set wildmode=longest,list,full
 set wildignorecase
-
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
                 \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
                 \*/_site/*
-
 set backspace=indent,eol,start
 set laststatus=2
 set showtabline=1
 set showcmd
-set showmode
 set shortmess+=I
 set scrolloff=7
 set t_Co=256
@@ -39,26 +37,41 @@ set matchtime=2
 set showmatch
 set relativenumber
 "set hlsearch
+set clipboard=unnamedplus
+set shell=zsh
+set spelllang=en,nb
+set cm=blowfish2
+set autoindent 
+set smartindent
+
+" line break
 set wrap
 set linebreak
 set breakindent
 set breakat=" ^I!@*-+;:,./?"
 set cpoptions+=n  " dont show linenumbers on wrap
 set showbreak=↳\
+
+" tabs
 set expandtab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
+
+" search
 set incsearch
+" set ignorecase
 set smartcase
 set magic
-set gdefault
-set mouse=a
-set tags+=./.git/.tags,./tags
-set clipboard=unnamedplus
-set shell=zsh
-set spelllang=en,nb
-set cm=blowfish2
+set gdefault "substitute global flag always on
+
+set tags=tags;/ " search recursively up for tags
+" set tags+=./.git/.tags,./tags
+"}}}
+" Statusline:{{{
+""""""""""""""""
+
+set showmode
 
 " %< Where to truncate
 " %n buffer number
@@ -74,13 +87,13 @@ set cm=blowfish2
 " %V Virtual column
 " %P Percentage
 " %#HighlightGroup#
-set statusline=%<[%n]\ %F\ %m%r%y\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}\ %=%-14.(%l,%c%V%)\ %P
-
+set statusline=%<[%n]\ [%F]\ %m%r%y\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}\ %=%-14.(%l,%c%V%)\ %P
 " set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
 "}}}
-" CURSOR {{{1
-" -----------
+" Cursor: {{{1
+"""""""""""""
+
 " 1 or 0 -> blinking block
 " 3 -> blinking underscore
 " Recent versions of xterm (282 or above) also support
@@ -106,8 +119,9 @@ autocmd BufReadPost *
       \   exe "normal g`\"" |
       \ endif
 "}}}
-" GVIM {{{1
-" ----------
+" Gvim: {{{1
+""""""""""""
+
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -118,9 +132,12 @@ if has('gui_running')
   set guiheadroom=0
   set background=dark
 endif
+
 "}}}
-" KEYBINDS/KEYBINDS {{{1
-" -------------
+" Keybinds: {{{1
+"""""""""""""""
+
+set mouse=a
 let mapleader = "\<SPACE>"
 
 " source config on demand
@@ -128,10 +145,10 @@ let mapleader = "\<SPACE>"
 noremap <leader>R :source $MYVIMRC<CR>
 
 " switch between splits
-noremap <silent> <leader>k :wincmd k<CR>
-noremap <silent> <leader>j :wincmd j<CR>
-noremap <silent> <leader>h :wincmd h<CR>
-noremap <silent> <leader>l :wincmd l<CR>
+noremap <silent> <leader>k       :wincmd k<CR>
+noremap <silent> <leader>j       :wincmd j<CR>
+noremap <silent> <leader>h       :wincmd h<CR>
+noremap <silent> <leader>l       :wincmd l<CR>
 noremap <silent> <leader><Up>    :wincmd k<CR>
 noremap <silent> <leader><Down>  :wincmd j<CR>
 noremap <silent> <leader><Left>  :wincmd h<CR>
@@ -142,10 +159,10 @@ nnoremap <silent> <M-S-Left>  10<C-w><
 nnoremap <silent> <M-S-Down>  10<C-W>-
 nnoremap <silent> <M-S-Up>    10<C-W>+
 nnoremap <silent> <M-S-Right> 10<C-w>>
-nnoremap <silent> <M-C-h> 10<C-w><
-nnoremap <silent> <M-C-j> 10<C-W>-
-nnoremap <silent> <M-C-k> 10<C-W>+
-nnoremap <silent> <M-C-l> 10<C-w>>
+nnoremap <silent> <M-C-h>     10<C-w><
+nnoremap <silent> <M-C-j>     10<C-W>-
+nnoremap <silent> <M-C-k>     10<C-W>+
+nnoremap <silent> <M-C-l>     10<C-w>>
 
 " correct annoying typo
 cnoremap Q q
@@ -159,9 +176,10 @@ nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g
 
 " execute current python buffer.
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+
 " }}}
-" FUNCTIONS/AUTOCMD {{{
-" ---------------------
+" Cmd:{{{
+"""""""""""""""""""""""
 " https://github.com/tpope/vim-fireplace/pull/222
 " command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
@@ -176,10 +194,6 @@ augroup BgHighlight
   autocmd WinEnter * set cursorline
   autocmd WinLeave * set nocursorline
 augroup END
-
-" attempt to close quickfix when deleting buffer
-"nnoremap <silent> <C-d> :lclose<CR>:bdelete<CR>
-"cabbrev <silent> bd <C-r>=(getcmdtype()==#':' && getcmdpos()==1 ? 'lclose\|bdelete' : 'bd')<CR>
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -206,16 +220,18 @@ function! StripTrailingWhitespace()
   endif
 endfunction
 " }}}
-" VIMPAGER {{{
-" ------------
+" Vimpager: {{{
+"""""""""""""""
+
 let g:vimpager_disable_x11 = 1
 let g:vimpager_scrolloff = 5
 let g:vimpager_less_mode = 0
 "let g:vimpager_passthrough = 0
 set clipboard^=unnamed
 "}}}
-" PLUGIN MANAGER {{{
-" -------------------
+" Plugin Manager: {{{
+"""""""""""""""""""""
+
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -238,7 +254,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
-Plug 'unblevable/quick-scope'
+" Plug 'unblevable/quick-scope'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'mattn/emmet-vim'
@@ -271,6 +287,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-abolish'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
+" Plug 'itchyny/lightline.vim'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
@@ -284,7 +301,14 @@ call plug#end()
 syntax on
 filetype plugin indent on
 "}}}
-"PLUGIN CONFIG {{{1
+"Plugin Config: {{{1
+"""""""""""""""""""
+
+" ---------------
+"  colorscheme
+" --------------
+colorscheme srcery
+
 " fzf.vim
 " -------
 " https://github.com/junegunn/fzf.vim
@@ -347,14 +371,6 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 
 " Srcery
 " ------
-" Set theme
-let g:srcery_italicize_comments = 0
-let g:srcery_italic = 0
-
-"let g:srcery_contrast_dark = "hard"
-set background=dark
-
-colorscheme srcery
 
 " -------------------
 " rainbow parenthesis
@@ -402,7 +418,7 @@ let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY',
 " yankring
 " ---------------
 nnoremap <silent> <F11> :YRShow<CR>
-let g:yankring_history_dir = '~/.var'
+let g:yankring_history_dir = '~/var'
 "imap <c-v> gp
 "cmap <c-v> gp
 
@@ -436,8 +452,22 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
+" ----------------
+" easy_align
+" ----------------
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" ---------------
 " python
-" ------
+" ---------------
 let python_highlight_all = 1
+
+" -------------------- 
+" Lightline
+" -------------------- 
 " }}}
 " vim: fdm=marker:sw=2
