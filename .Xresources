@@ -8,12 +8,11 @@
 ! Github : https://github.com/roosta
 ! ----------------------------------------
 
-#include ".Xresources.d/fonts"
-#include ".Xresources.d/urxvt"
-#include ".Xresources.d/rofi"
-#include ".Xresources.d/xscreensaver"
-#include ".Xresources.d/16-colors"
-#include ".Xresources.d/urxvt-256-colors"
+#include ".Xresources.d/fonts.xresources"
+#include ".Xresources.d/urxvt.xresources"
+#include ".Xresources.d/rofi.xresources"
+#include ".Xresources.d/xscreensaver.xresources"
+#include ".Xresources.d/colors.xresources"
 
 !Xcursor.theme: Numix-Cursor
 
