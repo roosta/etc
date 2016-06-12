@@ -33,7 +33,6 @@
   amend     = commit --amend
   last      = log -1 HEAD
   ctags     = !.git/hooks/ctags
-
 [init]
   templatedir = ~/.git_template
 [merge]
