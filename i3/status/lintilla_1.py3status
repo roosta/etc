@@ -2,10 +2,10 @@ general {
   output_format = "i3bar"
   colors = true
   interval = 5
-  color_bad = #F2550B
+  color_bad = #FF3128
   color_good = #FCE8C3
-  color_degraded = #FF6600
-  color_separator = #D5C4A1
+  color_degraded = #FBB829
+  color_separator = #918175
 }
 
 order += "whatismyip"
@@ -40,37 +40,37 @@ wifi {
 }
 
 dropboxd_status {
-  format = " {}"
+  format = "[ {}]"
   on_click 1 = "exec spacefm ~/Dropbox"
 }
 
 arch_updates {
   include_aur = 1
-  format = "UPD: {pacman} / {aur}"
+  format = "[UPD: {pacman} / {aur}]"
 }
 
 net_rate {
-  format = " {down}  {up}"
+  format = "[ {down}  {up}]"
 }
 
 spotify {
   on_click 1 = "exec ~/.i3/script/run_spotify.sh"
-  format = "  {title} by {artist}"
-  format_down = ""
-  format_stopped = "  Stopped"
+  format = "[  {title} by {artist}]"
+  format_down = "[]"
+  format_stopped = "[  Stopped]"
 }
 
 sysdata {
-  format = "CPU: {cpu_usage}%, TEMP: {cpu_temp}, MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)"
+  format = "[CPU: {cpu_usage}%, TEMP: {cpu_temp}] [MEM: {mem_used}/{mem_total} GB ({mem_used_percent}%)]"
   med_threshold = 25
-  on_click 1 = "exec i3-sensible-terminal -e glances"
-  on_click 3 = "exec killall glances"
+  on_click 1 = "exec i3-sensible-terminal -e htop"
+  on_click 3 = "exec killall htop"
 }
 
 # print current keyboard layout, with color codes for language
 keyboard_layout {
-  format = " {layout}"
-  colors = "us=#FCE8C3, no=#FF6600"
+  format = "[ {layout}]"
+  colors = "us=#FCE8C3, no=#FBB829"
 }
 
 # control the volume with your mouse (need >i3-4.8)
@@ -80,8 +80,8 @@ keyboard_layout {
 # increase the volume when I scroll the mouse wheel up
 # decrease the volume when I scroll the mouse wheel down
 volume_status {
-  format = " {percentage}%"
-  format_muted = ""
+  format = "[ {percentage}%]"
+  format_muted = "[]"
   on_click 1 = "exec i3-sensible-terminal -e alsamixer"
   on_click 2 = "exec pactl set-sink-mute @DEFAULT_SINK@ toggle"
   on_click 3 = "exec killall alsamixer"
@@ -107,6 +107,7 @@ run_watch DHCP {
 
 run_watch VPNC {
 # file containing the PID of a vpnc process
+  # format = "[{}]
   pidfile = "/var/run/vpnc/pid"
 }
 
@@ -117,7 +118,7 @@ path_exists VPN {
 }
 
 tztime local {
-  format = " %Y-%m-%d  %H:%M:%S"
+  format = "[ %Y-%m-%d] [ %H:%M:%S]"
 }
 
 load {
