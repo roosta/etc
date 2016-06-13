@@ -6,8 +6,8 @@
 #PROMPT_SYMBOL_VIINS="%(?.%F{white}.%F{red})%f%F{magenta}%f "
 #PROMPT_SYMBOL_VICMD="%(?.%F{white}.%F{red})%f%F{magenta}%f "
 
-PROMPT_SYMBOL_VIINS="%(?.%F{white}.%F{red})❯%f%F{magenta}❯%f "
-PROMPT_SYMBOL_VICMD="%(?.%F{white}.%F{red})*%f%F{magenta}❯%f "
+PROMPT_SYMBOL_VIINS="%F{magenta}❯%f%(?.%F{white}.%F{red})❯%f "
+PROMPT_SYMBOL_VICMD="%F{magenta}*%f%(?.%F{white}.%F{red})❯%f "
 
 # enable colors before setting prompt variable
 autoload -U colors && colors
