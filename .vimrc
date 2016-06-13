@@ -65,7 +65,7 @@ set smartcase
 set magic
 set gdefault "substitute global flag always on
 
-set tags=tags;/ " search recursively up for tags
+" set tags=tags;/ " search recursively up for tags
 " set tags+=./.git/.tags,./tags
 "}}}
 " Statusline:{{{
