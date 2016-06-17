@@ -73,15 +73,10 @@ nitrogen --restore &
 #$HOME/.fehbg &
 
 urxvtd -q -f -o &
-
 #compton -b &
-
 dropbox-cli start &
-
 dunst &
-
 nm-applet &
-
 lxqt-policykit-agent &
 
 ## WINDOW MANAGER
