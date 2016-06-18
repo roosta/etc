@@ -271,7 +271,7 @@ Plug 'jmcantrell/vim-virtualenv'
 
 
 " clojure
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug '~dev/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
