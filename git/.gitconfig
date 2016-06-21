@@ -37,3 +37,5 @@
   templatedir = ~/.git_template
 [merge]
 	tool = vimdiff
+[commit]
+	verbose = true
