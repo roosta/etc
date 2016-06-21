@@ -60,7 +60,7 @@ set softtabstop=2
 
 " search
 set incsearch
-" set ignorecase
+set ignorecase
 set smartcase
 set magic
 set gdefault "substitute global flag always on
@@ -219,6 +219,10 @@ function! StripTrailingWhitespace()
     normal `z
   endif
 endfunction
+
+" Evaluate Clojure buffers on load
+autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
+
 " }}}
 " Vimpager: {{{
 """""""""""""""
@@ -262,6 +266,7 @@ Plug 'wellle/targets.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug '~/dev/srcery'
+" Plug '~/dev/gruvbox'
 Plug 'guns/vim-sexp'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jpalardy/vim-slime'
@@ -272,6 +277,7 @@ Plug 'jmcantrell/vim-virtualenv'
 
 " clojure
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+" Plug '~/dev/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 " Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
