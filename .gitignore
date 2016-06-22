@@ -113,3 +113,4 @@ i3/config
 tags.lock
 tags.temp
 sublime-text-3/Package Control.sublime-settings
+i3/status/py3status
