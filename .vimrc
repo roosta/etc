@@ -375,9 +375,6 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-" Srcery
-" ------
-
 " -------------------
 " rainbow parenthesis
 " -------------------
