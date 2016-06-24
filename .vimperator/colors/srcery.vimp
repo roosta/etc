@@ -1,0 +1,140 @@
+" VimperatorColorSchema/firefox userChrome.css
+" name: light_fantastic
+" url: https://github.com/roosta/dotfiles/tree/master/vimperator
+" --------------------------------------------------------------
+" highlight settings {{{
+" -----------------------
+" ┬ ┬o┌─┐┬ ┬┬  o┌─┐┬ ┬┌┐┐
+" │─┤││ ┬│─┤│  ││ ┬│─┤ │
+" ┆ ┴┆┆─┘┆ ┴┆─┘┆┆─┘┆ ┴ ┆
+" -----------------------
+hi Hint font-family: "Terminess Powerline"; font-size: 15px; font-weight: normal; color: #1D2021; background-color: #8EC07C; border: 1px solid #1D2021; padding: 0px 5px 0px 5px; text-transform: uppercase;
+hi HintElem   background-color: #458588; color: #3C3836;
+hi HintActive background-color: #B8BB26; color: #282828;
+
+hi -append Hint         background-color: rgba(251, 241, 199, 0.7); -moz-border-radius: 4px; -moz-box-shadow: 0px 0px 1px black;
+hi -append HintElem     text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #FBF1C7;
+hi -append HintActive   text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #FBF1C7;
+
+hi StatusLine     color: #EBDBB2; background: #282828; font-weight: normal; font-size: 12px; font-family: Essential PragmataPro;
+"hi StatusLineBroken   color:  #93a1a1; background: #ffffd7; font-weight: normal; font-size: 12pt;
+"hi StatusLineExtended color:  #93a1a1; background: #af005f; font-weight: normal; font-size: 12pt;
+"hi StatusLineSecure   color:  #93a1a1; background: #b58900; font-weight: normal; font-size: 12pt;
+
+hi Normal     color: #EBDBB2; background: #282828; font-size: 12px; font-family: Terminess Powerline;
+hi CmdLine    color: #EBDBB2; background: #282828; font-size: 12px; font-family: Terminess Powerline;
+hi InfoMsg    color: #EBDBB2; background: #282828; font-size: 12px; font-family: Terminess Powerline;
+hi ModeMsg    color: #EBDBB2; background: #282828; font-size: 12px; font-family: Terminess Powerline;
+hi MoreMsg    color: #859900; background: #282828; font-size: 12px; font-family: Terminess Powerline;
+hi LineNr     color: #FE8019; background: #282828; font-size: 12px; font-family: Terminess Powerline;
+hi Question   color: #FABD2F; background: #282828; font-size: 12px; font-family: Terminess Powerline;
+hi WarningMsg color: #D65D0E; background: #282828; font-size: 12px; font-family: Terminess Powerline;
+hi ErrorMsg   color: #FB4934; background: #282828; font-size: 12px; font-family: Terminess Powerline; font-weight: bold;
+hi NonText    background: #282828;
+hi Null       color: #B8BB26;
+hi Tag        color: #B8BB26;
+hi Number     color: #B8BB26;
+
+hi CompTitle          background: #3C3836;
+hi CompTitle>*        color: #EBDBB2; padding-bottom: 2px; padding-top: 2px; padding-left: 12px; font-weight: bold; font-size: 12px; border-top: 1px dotted #83A598; border-bottom: 1px dotted #83A598;
+hi CompItem[selected] color: #458588; background: #3C3836;
+hi CompItem           color: #EBDBB2; width: 50%;
+hi CompDesc           color: #D3869B;
+
+hi Title     color: #EBDBB2;
+hi Indicator color: #b58900;
+hi String    color: #EBDBB2;
+hi Number    color: #EBDBB2;
+hi Object    color: #2aa198;
+hi Function  color: #268bd2;
+hi URL       color: #B8BB26;
+
+hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:12px;
+" }}}
+" CSS {{{1
+" Tabs {{{2
+style -name tab chrome://* <<EOM
+  #TabsToolbar {
+    border: none !important;
+    border-right: 1px dotted #458588 !important;
+    background-color: #282828 !important;
+    font-family: "Essential PragmataPro";
+    font-size: 12px;
+  }
+
+  .tabbrowser-tab {
+    -moz-border-top-colors: none !important;
+    -moz-border-left-colors: none !important;
+    -moz-border-right-colors: none !important;
+    -moz-border-bottom-colors: none !important;
+    border-style: solid !important;
+    border-color: #282828 !important;
+    border-width: 1px 1px 0 1px !important;
+    height: 24px !important;
+    background-color: #3C3836 !important;
+    color: #FBF1C7 !important;
+  }
+
+  .tabbrowser-tab:hover {
+    background-color: #665C54 !important;
+  }
+
+  /*.tabbrowser-tab[pinned=true]:after {*/
+    /*background-color: #32302F !important;*/
+  /*}*/
+
+  .tabbrowser-tab[selected=true] {
+    color: #282828 !important;
+    background-color: #98971A !important;
+  }
+
+  .tabs-newtab-button {
+    border-style: solid !important;
+    border-color: #282828 !important;
+    border-width: 1px 1px 0 1px !important;
+    background-color: #3C3836 !important;
+    color: #FBF1C7 !important;
+  }
+
+  .tabs-newtab-button:hover {
+    background-color: #665C54 !important;
+    color: #FBF1C7 !important;
+  }
+EOM
+" }}}
+" Navbar {{{2
+style -name nav-bar chrome://* <<EOM
+
+  #nav-bar, #urlbar-container, #search-container, #openLocation {
+    display: none !important;
+  }
+
+EOM
+"}}}
+" Liberator bar {{{2
+style -name liberator chrome://* <<EOM
+
+  #liberator-statusline {
+    margin: -2px -2px !important;
+    padding: 0 0 !important;
+    border: none !important;
+    height: 24px !important;
+  }
+  #liberator-status-position {
+    color: #8EC07C;
+  }
+  #liberator-status-tabcount {
+    color: #D3869B;
+  }
+  #liberator-separator {
+    height: 0px !important;
+  }
+  #liberator-status-zoomlevel {
+    color: #FE8019;
+  }
+  #liberator-status-bookmark {
+    color: #FB4934;
+  }
+EOM
+"}}}
+" vim:ft=vimperator:ts=2:sw=2:fdm=marker
