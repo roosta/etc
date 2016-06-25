@@ -273,7 +273,8 @@ Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-tbone'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jmcantrell/vim-virtualenv'
-
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
 
 " clojure
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
