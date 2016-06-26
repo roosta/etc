@@ -39,7 +39,7 @@ set relativenumber
 "set hlsearch
 set clipboard=unnamedplus
 set shell=zsh
-set spelllang=en,nb
+set spelllang=en_us,nb
 set cm=blowfish2
 set autoindent 
 set smartindent
