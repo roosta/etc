@@ -91,7 +91,20 @@ set showmode
 " %V Virtual column
 " %P Percentage
 " %#HighlightGroup#
-set statusline=%<[%n]\ [%F]\ %m%r%y\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}\%{HasPaste()}\ %=%-14.(%l,%c%V%)\ %P
+set statusline=
+set statusline+=%<[%n]\ 
+set statusline+=[%F]\ 
+set statusline+=%m
+set statusline+=%r
+set statusline+=%y\ 
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\ 
+set statusline+=%{HasPaste()}\ 
+set statusline+=%=
+set statusline+=%-10.(%l,%c%V%)\ 
+set statusline+=%P
+
+" set statusline+=[%{strlen(&fenc)?&fenc:'none'}]\  "file encoding
+" set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
 " set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
 "}}}
@@ -166,10 +179,10 @@ nnoremap <silent> <M-S-Left>  10<C-w><
 nnoremap <silent> <M-S-Down>  10<C-W>-
 nnoremap <silent> <M-S-Up>    10<C-W>+
 nnoremap <silent> <M-S-Right> 10<C-w>>
-nnoremap <silent> <M-C-h>     10<C-w><
-nnoremap <silent> <M-C-j>     10<C-W>-
-nnoremap <silent> <M-C-k>     10<C-W>+
-nnoremap <silent> <M-C-l>     10<C-w>>
+nnoremap <silent> <M-S-h>     10<C-w><
+nnoremap <silent> <M-S-j>     10<C-W>-
+nnoremap <silent> <M-S-k>     10<C-W>+
+nnoremap <silent> <M-S-l>     10<C-w>>
 
 " correct annoying typo
 cnoremap Q q
