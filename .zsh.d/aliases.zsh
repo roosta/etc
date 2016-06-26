@@ -40,6 +40,7 @@ alias vizopts="vim ~/.zsh.d/options.zsh"
 alias vizrc="vim ~/.zshrc"
 alias vixfont="vim ~/.Xresources.d/fonts"
 alias zshrc='vim ~/.zshrc'
+alias org='vim ~/org'
 
 #}}}
 ## FIND {{{1
