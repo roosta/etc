@@ -67,6 +67,10 @@ set gdefault "substitute global flag always on
 
 set tags=tags;/ " search recursively up for tags
 " set tags+=./.git/.tags,./tags
+
+" Use Unix as the standard file type
+" set ffs=unix,dos,mac
+
 "}}}
 " Statusline:{{{
 """"""""""""""""
@@ -87,7 +91,7 @@ set showmode
 " %V Virtual column
 " %P Percentage
 " %#HighlightGroup#
-set statusline=%<[%n]\ [%F]\ %m%r%y\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}\ %=%-14.(%l,%c%V%)\ %P
+set statusline=%<[%n]\ [%F]\ %m%r%y\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}\%{HasPaste()}\ %=%-14.(%l,%c%V%)\ %P
 " set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
 "}}}
@@ -118,6 +122,7 @@ autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
       \   exe "normal g`\"" |
       \ endif
+
 "}}}
 " Gvim: {{{1
 """"""""""""
@@ -138,7 +143,9 @@ endif
 """""""""""""""
 
 set mouse=a
+
 let mapleader = "\<SPACE>"
+let maplocalleader = "\\"
 
 " source config on demand
 " Note that this may cause some plugins not to load properly if it has init logic
@@ -177,9 +184,22 @@ nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g
 " execute current python buffer.
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 
+" Treat long lines as break lines (useful when moving around in them)
+" map j gj
+" map k gk
+
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" Quickly open a buffer for scripbble
+map <leader>q :e ~/buffer<cr>
+
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
+
 " }}}
 " Cmd:{{{
-"""""""""""""""""""""""
+""""""""""
 " https://github.com/tpope/vim-fireplace/pull/222
 " command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
@@ -222,6 +242,14 @@ endfunction
 
 " Evaluate Clojure buffers on load
 autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
+
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    en
+    return ''
+endfunction
 
 " }}}
 " Vimpager: {{{
