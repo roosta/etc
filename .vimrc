@@ -373,7 +373,7 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nmap <leader>o  :Files<CR>
-nmap <leader>bb :Buffers<cr>
+nmap <leader>b :Buffers<cr>
 nmap <leader>T  :Tags<cr>
 nmap <leader>t  :BTags<cr>
 nmap <leader>gc :Commits<cr>
