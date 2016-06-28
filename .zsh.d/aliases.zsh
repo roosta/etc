@@ -39,7 +39,8 @@ alias vienv="vim ~/.zsh.d/env.zsh"
 alias vizopts="vim ~/.zsh.d/options.zsh"
 alias vizrc="vim ~/.zshrc"
 alias vixfont="vim ~/.Xresources.d/fonts"
-alias zshrc='vim ~/.zshrc'
+alias vizrc='vim ~/.zshrc'
+alias viorg='vim ~/org'
 
 #}}}
 ## FIND {{{1

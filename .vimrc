@@ -39,7 +39,7 @@ set relativenumber
 "set hlsearch
 set clipboard=unnamedplus
 set shell=zsh
-set spelllang=en,nb
+set spelllang=en_us,nb
 set cm=blowfish2
 set autoindent 
 set smartindent
@@ -60,13 +60,17 @@ set softtabstop=2
 
 " search
 set incsearch
-" set ignorecase
+set ignorecase
 set smartcase
 set magic
 set gdefault "substitute global flag always on
 
 set tags=tags;/ " search recursively up for tags
 " set tags+=./.git/.tags,./tags
+
+" Use Unix as the standard file type
+" set ffs=unix,dos,mac
+
 "}}}
 " Statusline:{{{
 """"""""""""""""
@@ -87,7 +91,20 @@ set showmode
 " %V Virtual column
 " %P Percentage
 " %#HighlightGroup#
-set statusline=%<[%n]\ [%F]\ %m%r%y\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}\ %=%-14.(%l,%c%V%)\ %P
+set statusline=
+set statusline+=%<[%n]\ 
+set statusline+=[%F]\ 
+set statusline+=%m
+set statusline+=%r
+set statusline+=%y\ 
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\ 
+set statusline+=%{HasPaste()}\ 
+set statusline+=%=
+set statusline+=%-10.(%l,%c%V%)\ 
+set statusline+=%P
+
+" set statusline+=[%{strlen(&fenc)?&fenc:'none'}]\  "file encoding
+" set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
 " set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 
 "}}}
@@ -118,6 +135,7 @@ autocmd BufReadPost *
       \ if line("'\"") > 0 && line("'\"") <= line("$") |
       \   exe "normal g`\"" |
       \ endif
+
 "}}}
 " Gvim: {{{1
 """"""""""""
@@ -138,7 +156,9 @@ endif
 """""""""""""""
 
 set mouse=a
+
 let mapleader = "\<SPACE>"
+let maplocalleader = "\\"
 
 " source config on demand
 " Note that this may cause some plugins not to load properly if it has init logic
@@ -159,10 +179,10 @@ nnoremap <silent> <M-S-Left>  10<C-w><
 nnoremap <silent> <M-S-Down>  10<C-W>-
 nnoremap <silent> <M-S-Up>    10<C-W>+
 nnoremap <silent> <M-S-Right> 10<C-w>>
-nnoremap <silent> <M-C-h>     10<C-w><
-nnoremap <silent> <M-C-j>     10<C-W>-
-nnoremap <silent> <M-C-k>     10<C-W>+
-nnoremap <silent> <M-C-l>     10<C-w>>
+nnoremap <silent> <M-S-h>     10<C-w><
+nnoremap <silent> <M-S-j>     10<C-W>-
+nnoremap <silent> <M-S-k>     10<C-W>+
+nnoremap <silent> <M-S-l>     10<C-w>>
 
 " correct annoying typo
 cnoremap Q q
@@ -177,9 +197,22 @@ nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g
 " execute current python buffer.
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 
+" Treat long lines as break lines (useful when moving around in them)
+" map j gj
+" map k gk
+
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" Quickly open a buffer for scripbble
+map <leader>q :e ~/buffer<cr>
+
+" Toggle paste mode on and off
+map <leader>pp :setlocal paste!<cr>
+
 " }}}
 " Cmd:{{{
-"""""""""""""""""""""""
+""""""""""
 " https://github.com/tpope/vim-fireplace/pull/222
 " command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
@@ -219,6 +252,18 @@ function! StripTrailingWhitespace()
     normal `z
   endif
 endfunction
+
+" Evaluate Clojure buffers on load
+autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
+
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    en
+    return ''
+endfunction
+
 " }}}
 " Vimpager: {{{
 """""""""""""""
@@ -262,16 +307,19 @@ Plug 'wellle/targets.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug '~/dev/srcery'
+" Plug '~/dev/gruvbox'
 Plug 'guns/vim-sexp'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-tbone'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jmcantrell/vim-virtualenv'
-
+Plug 'jceb/vim-orgmode'
+Plug 'tpope/vim-speeddating'
 
 " clojure
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+" Plug '~/dev/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 " Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
@@ -325,7 +373,7 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nmap <leader>o  :Files<CR>
-nmap <leader>bb :Buffers<cr>
+nmap <leader>b :Buffers<cr>
 nmap <leader>T  :Tags<cr>
 nmap <leader>t  :BTags<cr>
 nmap <leader>gc :Commits<cr>
@@ -368,9 +416,6 @@ let g:qs_second_occurrence_highlight_color = 81         " terminal vim
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
 "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-" Srcery
-" ------
 
 " -------------------
 " rainbow parenthesis
