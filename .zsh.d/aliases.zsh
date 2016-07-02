@@ -14,6 +14,29 @@
 alias nohup="nohup "
 alias su="su -"
 
+# systemctl query
+alias sysstat='systemctl status'
+alias systype='systemctl -t'
+alias sysfailed='systemctl --state=failed'
+alias syslsu='systemctl list-units'
+alias syslsuf='systemctl list-unit-files'
+alias syslssoc='systemctl list-sockets'
+alias syslsser='systemctl list-services'
+alias sysise='systemctl is-enabled'
+alias sysisa='systemctl is-enabled'
+alias sysisf='systemctl is-failed'
+alias syscat='sudo systemctl cat'
+
+# systemctl modify
+alias sysresd='sudo systemctl daemon-reload'
+alias sysenable='sudo systemctl enable'
+alias sysstart='sudo systemctl start'
+alias sysstop='sudo systemctl stop'
+alias sysrest='sudo systemctl restart'
+alias syscan='sudo systemctl cancel'
+alias sysedit='sudo systemctl edit'
+alias sysdis='sudo systemctl disable'
+
 #}}}
 ## QUICK EDITS {{{1
 ## ----------------
@@ -354,32 +377,9 @@ alias rusto="toilet -t -f rusto"
 alias rustofat="toilet -t -f rustofat"
 alias pagga="toilet -t -f pagga"
 alias paggaborder="toilet -t -f pagga -F border"
-#}}}
-## SYSTEM {{{1
-## -----------
 
-# systemctl query
-alias sysstat='systemctl status'
-alias systype='systemctl -t'
-alias sysfailed='systemctl --state=failed'
-alias syslsu='systemctl list-units'
-alias syslsuf='systemctl list-unit-files'
-alias syslssoc='systemctl list-sockets'
-alias syslsser='systemctl list-services'
-alias sysise='systemctl is-enabled'
-alias sysisa='systemctl is-enabled'
-alias sysisf='systemctl is-failed'
-alias syscat='sudo systemctl cat'
+alias pgrep='pgrep -ia'
 
-# systemctl modify
-alias sysresd='sudo systemctl daemon-reload'
-alias sysenable='sudo systemctl enable'
-alias sysstart='sudo systemctl start'
-alias sysstop='sudo systemctl stop'
-alias sysrest='sudo systemctl restart'
-alias syscan='sudo systemctl cancel'
-alias sysedit='sudo systemctl edit'
-alias sysdis='sudo systemctl disable'
 #}}}
 ## VCS {{{1
 ## --------
