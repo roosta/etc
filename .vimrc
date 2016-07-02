@@ -41,7 +41,7 @@ set clipboard=unnamedplus
 set shell=zsh
 set spelllang=en_us,nb
 set cm=blowfish2
-set autoindent 
+set autoindent
 set smartindent
 
 " line break
@@ -92,15 +92,15 @@ set showmode
 " %P Percentage
 " %#HighlightGroup#
 set statusline=
-set statusline+=%<[%n]\ 
-set statusline+=[%F]\ 
+set statusline+=%<[%n]\
+set statusline+=[%F]\
 set statusline+=%m
 set statusline+=%r
-set statusline+=%y\ 
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\ 
-set statusline+=%{HasPaste()}\ 
+set statusline+=%y\
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\
+set statusline+=%{HasPaste()}\
 set statusline+=%=
-set statusline+=%-10.(%l,%c%V%)\ 
+set statusline+=%-10.(%l,%c%V%)\
 set statusline+=%P
 
 " set statusline+=[%{strlen(&fenc)?&fenc:'none'}]\  "file encoding
@@ -198,11 +198,11 @@ nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 
 " Treat long lines as break lines (useful when moving around in them)
-" map j gj
-" map k gk
+map j gj
+map k gk
 
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+" noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scripbble
 map <leader>q :e ~/buffer<cr>
@@ -210,6 +210,13 @@ map <leader>q :e ~/buffer<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+nnoremap <leader>sw :call StripTrailingWhitespace()<cr>
+
+" switch to laste buffer used.
+nnoremap <leader>q :b#<cr>
+
+" uses the Ilist function from qlist.
+nnoremap <leader>i :Ilist<space>
 " }}}
 " Cmd:{{{
 """"""""""
@@ -373,12 +380,15 @@ imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
 nmap <leader>o  :Files<CR>
-nmap <leader>b :Buffers<cr>
+nmap <leader>b  :Buffers<cr>
 nmap <leader>T  :Tags<cr>
 nmap <leader>t  :BTags<cr>
-nmap <leader>gc :Commits<cr>
-nmap <leader>gb :BCommits<cr>
+nmap <leader>gC :Commits<cr>
+nmap <leader>gc :BCommits<cr>
 nmap <leader>gs :Gstatus<cr>
+nmap <leader>a  :Ag<cr>
+nmap <leader>m  :Marks<cr>
+nmap <leader>H  :Helptags<cr>
 
 " This is the default extra key bindings
 let g:fzf_action = {
@@ -391,10 +401,6 @@ let g:fzf_action = {
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-
-map <leader>/ <Plug>(incsearch-easymotion-/)
-map <leader>? <Plug>(incsearch-easymotion-?)
-map <leader>g/ <Plug>(incsearch-easymotion-stay)
 
 " :h g:incsearch#auto_nohlsearch
 set hlsearch
@@ -511,8 +517,8 @@ nmap ga <Plug>(EasyAlign)
 " ---------------
 let python_highlight_all = 1
 
-" -------------------- 
+" --------------------
 " Lightline
-" -------------------- 
+" --------------------
 " }}}
 " vim: fdm=marker:sw=2
