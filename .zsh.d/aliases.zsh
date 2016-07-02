@@ -64,6 +64,8 @@ alias vizrc="vim ~/.zshrc"
 alias vixfont="vim ~/.Xresources.d/fonts"
 alias vizrc='vim ~/.zshrc'
 alias viorg='vim ~/org'
+alias viorgw='vim ~/org/Work.org'
+alias viorgd='vim ~/org/Dev.org'
 
 #}}}
 ## FIND {{{1
