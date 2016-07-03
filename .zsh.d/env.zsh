@@ -54,7 +54,7 @@ alias zless=$PAGER
 
 # Use native runtime for steam.
 # See https://wiki.archlinux.org/index.php/Unofficial_user_repositories#alucryd-multilib
-export STEAM_RUNTIME=0
+# export STEAM_RUNTIME=0
 
 # tell ranger not to use default config
 export RANGER_LOAD_DEFAULT_RC="false"
@@ -67,3 +67,7 @@ PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
 
 # set site.USERBASE for pip user installs
 export PYTHONUSERBASE=$HOME/.pip
+
+export ARDUINO_DIR=/usr/share/arduino
+export ARDMK_DIR=$HOME/lib/Arduino-Makefile
+
