@@ -80,7 +80,7 @@ alias histgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
 # locate file at working dir
-alias lsgrep='lsa | grep'
+alias lsgrep='lsa | grep -i'
 #alias lsrgrep='lsa -R | grep'
 alias treegrep='tree -f -i -h --matchdirs -P'
 
@@ -381,6 +381,8 @@ alias pagga="toilet -t -f pagga"
 alias paggaborder="toilet -t -f pagga -F border"
 
 alias pgrep='pgrep -ia'
+
+alias fehp='feh -g 640x480 -d -S filename'
 
 #}}}
 ## VCS {{{1
