@@ -69,7 +69,9 @@ set tags=tags;/ " search recursively up for tags
 " set tags+=./.git/.tags,./tags
 
 " Use Unix as the standard file type
-" set ffs=unix,dos,mac
+set ffs=unix,dos,mac
+
+set foldmethod=marker
 
 "}}}
 " Statusline:{{{
@@ -92,15 +94,15 @@ set showmode
 " %P Percentage
 " %#HighlightGroup#
 set statusline=
-set statusline+=%<[%n]\
-set statusline+=[%F]\
+set statusline+=%<[%n]\ 
+set statusline+=[%F]\ 
 set statusline+=%m
 set statusline+=%r
-set statusline+=%y\
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\
-set statusline+=%{HasPaste()}\
+set statusline+=%y\ 
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\ 
+set statusline+=%{HasPaste()}\ 
 set statusline+=%=
-set statusline+=%-10.(%l,%c%V%)\
+set statusline+=%-10.(%l,%c%V%)\ 
 set statusline+=%P
 
 " set statusline+=[%{strlen(&fenc)?&fenc:'none'}]\  "file encoding
@@ -210,13 +212,19 @@ map <leader>q :e ~/buffer<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-nnoremap <leader>sw :call StripTrailingWhitespace()<cr>
+" call userdefined functions..
+command! White call StripTrailingWhitespace()<cr>
+command! Mode call AppendModeline()
 
 " switch to laste buffer used.
 nnoremap <leader>q :b#<cr>
 
 " uses the Ilist function from qlist.
 nnoremap <leader>i :Ilist<space>
+
+imap <c-v> gp
+cmap <c-v> gp
+
 " }}}
 " Cmd:{{{
 """"""""""
@@ -269,6 +277,16 @@ function! HasPaste()
         return 'PASTE MODE  '
     en
     return ''
+endfunction
+
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
+        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
 endfunction
 
 " }}}
@@ -351,6 +369,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'hdima/python-syntax'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vimperator/vimperator.vim'
+Plug 'sudar/vim-arduino-syntax'
 call plug#end()
 
 syntax on
@@ -386,7 +405,7 @@ nmap <leader>t  :BTags<cr>
 nmap <leader>gC :Commits<cr>
 nmap <leader>gc :BCommits<cr>
 nmap <leader>gs :Gstatus<cr>
-nmap <leader>a  :Ag<cr>
+" nmap <leader>a  :Ag<cr>
 nmap <leader>m  :Marks<cr>
 nmap <leader>H  :Helptags<cr>
 
@@ -470,8 +489,6 @@ let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY',
 " ---------------
 nnoremap <silent> <F11> :YRShow<CR>
 let g:yankring_history_dir = '~/var'
-"imap <c-v> gp
-"cmap <c-v> gp
 
 " --------------------
 " Tmux-navigator
