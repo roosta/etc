@@ -69,5 +69,4 @@ PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
 export PYTHONUSERBASE=$HOME/.pip
 
 export ARDUINO_DIR=/usr/share/arduino
-export ARDMK_DIR=$HOME/lib/Arduino-Makefile
 
