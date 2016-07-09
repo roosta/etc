@@ -381,7 +381,7 @@ alias pagga="toilet -t -f pagga"
 alias paggaborder="toilet -t -f pagga -F border"
 
 alias pgrep='pgrep -ia'
-
+alias grep='grep -i'
 alias fehp='feh -g 640x480 -d -S filename'
 
 #}}}

@@ -24,6 +24,7 @@ fi
 #export TERM="xterm-screen-256color"
 #export TERM="xterm-256color"
 #export TERM="rxvt-unicode-256color"
+# export TERM="screen-256color"
 export TERM="screen-256color"
 export TERMINAL=urxvtc
 export BROWSER=firefox
