@@ -2,8 +2,7 @@
 " name: light_fantastic
 " url: https://github.com/roosta/dotfiles/tree/master/vimperator
 " --------------------------------------------------------------
-" highlight settings {{{
-" -----------------------
+
 " ┬ ┬o┌─┐┬ ┬┬  o┌─┐┬ ┬┌┐┐
 " │─┤││ ┬│─┤│  ││ ┬│─┤ │
 " ┆ ┴┆┆─┘┆ ┴┆─┘┆┆─┘┆ ┴ ┆
@@ -50,72 +49,14 @@ hi Function  color: #268bd2;
 hi URL       color: #B8BB26;
 
 hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:12px;
-" }}}
-" CSS {{{1
-" Tabs {{{2
-style -name tab chrome://* <<EOM
-  #TabsToolbar {
-    border: none !important;
-    border-right: 1px dotted #458588 !important;
-    background-color: #282828 !important;
-    font-family: "Essential PragmataPro";
-    font-size: 12px;
-  }
 
-  .tabbrowser-tab {
-    -moz-border-top-colors: none !important;
-    -moz-border-left-colors: none !important;
-    -moz-border-right-colors: none !important;
-    -moz-border-bottom-colors: none !important;
-    border-style: solid !important;
-    border-color: #282828 !important;
-    border-width: 1px 1px 0 1px !important;
-    height: 24px !important;
-    background-color: #3C3836 !important;
-    color: #FBF1C7 !important;
-  }
-
-  .tabbrowser-tab:hover {
-    background-color: #665C54 !important;
-  }
-
-  /*.tabbrowser-tab[pinned=true]:after {*/
-    /*background-color: #32302F !important;*/
-  /*}*/
-
-  .tabbrowser-tab[selected=true] {
-    color: #282828 !important;
-    background-color: #98971A !important;
-  }
-
-  .tabs-newtab-button {
-    border-style: solid !important;
-    border-color: #282828 !important;
-    border-width: 1px 1px 0 1px !important;
-    background-color: #3C3836 !important;
-    color: #FBF1C7 !important;
-  }
-
-  .tabs-newtab-button:hover {
-    background-color: #665C54 !important;
-    color: #FBF1C7 !important;
-  }
-EOM
-" }}}
-" Navbar {{{2
-style -name nav-bar chrome://* <<EOM
-
-  #nav-bar, #urlbar-container, #search-container, #openLocation {
-    display: none !important;
-  }
-
-EOM
-"}}}
-" Liberator bar {{{2
+"┌─┐┐─┐┐─┐
+"│  └─┐└─┐
+"└─┘──┘──┘
+"---------
 style -name liberator chrome://* <<EOM
-
   #liberator-statusline {
-    margin: -2px -2px !important;
+    margin: 0 0 !important;
     padding: 0 0 !important;
     border: none !important;
     height: 24px !important;
@@ -136,5 +77,5 @@ style -name liberator chrome://* <<EOM
     color: #FB4934;
   }
 EOM
-"}}}
+
 " vim:ft=vimperator:ts=2:sw=2:fdm=marker

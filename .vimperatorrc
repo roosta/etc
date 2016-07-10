@@ -1,4 +1,4 @@
-colorscheme dark-fantastic
+colorscheme srcery
 set noscrollbars
 set loadplugins
 set complete=ltsS
@@ -6,9 +6,9 @@ set focuscontent
 set defsearch=duckduckgo
 set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position,zoomlevel
+set gui=none
 
-
-" To Enable map <Space>
+" To Enable map <Space> {{{
 js <<EOM
 window.addEventListener('keypress',function (event) {
     var code=event.charCode;
@@ -24,37 +24,15 @@ window.addEventListener('keypress',function (event) {
   }
 },false);
 EOM
-
+" }}}
 noremap <Space> <Leader>
-
-" map l and h to tab movement
-" this removes horizontal h&l movement but arrows still work
-"noremap l gt
-"noremap h gT
-
-noremap <C-]> gt
-noremap <C-[> gT
-
-noremap } 24j
-noremap { 24k
 
 map <leader>R :source ~/.vimperatorrc<CR>
 
-" go to last active tab.
-noremap gp <C-^>
-noremap L  <C-^>
-
-" some quick vertical movement maps
-nnoremap j        8j
-nnoremap k        8k
-"nnoremap J        16j
-"nnoremap K        16k
-"nnoremap <C-j>    24j
-"nnoremap <C-k>    24k
-"nnoremap <C-S-j>  40j
-"nnoremap <C-S-k>  40k
-"nnoremap <C-Up>   24k
-"nnoremap <C-Down> 24j
+" tab management
+" --------------
+noremap <C-]> gt
+noremap <C-[> gT
 
 " change delete tab behaviour.
 " choose direction to go with movement after deleting a tab
@@ -69,8 +47,23 @@ nnoremap dl          :bd -select right<CR>
 nnoremap d[          :bd -select left<CR>
 nnoremap d]          :bd -select right<CR>
 
+noremap gd :bdelete 
+
 " escape cancle tab delete
 nnoremap d<Escape> <Nop>
+
+" go to last active tab.
+noremap gp <C-^>
+
+" Movement
+" --------
+noremap } 24j
+noremap { 24k
+nnoremap j 12j
+nnoremap k 12k
+
+" nnoremap <C-j>    24j
+" nnoremap <C-k>    24k
 
 " noscript integration
 noremap <leader><leader> :noscript popup<CR>
@@ -86,17 +79,14 @@ noremap <leader>sl :emenu Tools.Session Manager.Load Session...<CR>
 " select all on a page.
 noremap <c-a> i<c-a>
 
-" source config file
-noremap <leader>R :source ~/.vimperatorrc<CR>
-
 noremap <leader>ds :nohlsearch<CR>
-"noremap <leader>st :stylish toggle<CR>
-"noremap <leader>sp :stylish popup<CR>
 
 " use up/down when in cmdmode to select completions
 " note: use shift-movement to move in command history
 cmap <Down> <Tab>
 cmap <Up> <S-Tab>
+cmap <C-j> <Tab>
+cmap <C-k> <S-Tab>
 
 " add user styles
 source ~/.vimperator/styles/arch-wiki.vimp
