@@ -222,9 +222,9 @@ nnoremap <leader>q :b#<cr>
 " uses the Ilist function from qlist.
 nnoremap <leader>i :Ilist<space>
 
-imap <c-v> gp
-cmap <c-v> gp
+imap <C-v> <Esc>"*pa
 
+map <f9> :make
 " }}}
 " Cmd:{{{
 """"""""""
