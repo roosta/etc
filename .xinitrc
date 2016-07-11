@@ -78,8 +78,8 @@ dropbox-cli start &
 dunst &
 nm-applet &
 lxqt-policykit-agent &
-conky -d -c ~/.config/conky/conky-left.conf &
-conky -d -c ~/.config/conky/conky-right.conf &
+# conky -d -c ~/.config/conky/conky-left.conf &
+# conky -d -c ~/.config/conky/conky-right.conf &
 
 ## WINDOW MANAGER
 ## --------------
