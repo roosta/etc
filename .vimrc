@@ -224,7 +224,7 @@ nnoremap <leader>i :Ilist<space>
 
 imap <C-v> <Esc>"*pa
 
-map <f9> :make
+map <f9> :make<cr>
 " }}}
 " Cmd:{{{
 """"""""""
@@ -298,6 +298,7 @@ let g:vimpager_scrolloff = 5
 let g:vimpager_less_mode = 0
 "let g:vimpager_passthrough = 0
 set clipboard^=unnamed
+
 "}}}
 " Plugin Manager: {{{
 """""""""""""""""""""
