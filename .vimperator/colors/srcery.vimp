@@ -56,7 +56,7 @@ hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:12px;
 "---------
 style -name liberator chrome://* <<EOM
   #liberator-statusline {
-    margin: 0 0 !important;
+    margin: -2px -2px !important;
     padding: 0 0 !important;
     border: none !important;
     height: 24px !important;
