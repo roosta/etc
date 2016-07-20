@@ -12,4 +12,9 @@
         :repl-options {:init (require 'cljfmt.core)}
         :ultra {:color-scheme :solarized_dark}
         :injections [(require 'pjstadig.humane-test-output)
-                     (pjstadig.humane-test-output/activate!)]}}
+                     (pjstadig.humane-test-output/activate!)]}
+
+ :android-common {:android {:sdk-path "/opt/android-sdk"}}
+ :android-user {:dependencies [[cider/cider-nrepl "0.9.1"]]
+                :android {:aot-exclude-ns ["cider.nrepl.middleware.util.java.parser"
+                                           "cider.nrepl" "cider-nrepl.plugin"]}}}
