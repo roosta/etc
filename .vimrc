@@ -19,9 +19,10 @@ set undodir=~/var/undo
 set wildmenu
 set wildmode=longest,list,full
 set wildignorecase
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
-                \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
-                \*/_site/*
+" set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
+"                 \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
+"                 \*/_site/*
+set wildignore+=.git,.hg,.svn,build,node_modules,undo,out,.repl*,.cljs_rhino_repl,_site
 set backspace=indent,eol,start
 set laststatus=2
 set showtabline=1
@@ -196,9 +197,6 @@ inoremap <C-e> <C-o>$
 " piping colored text into Vim.
 nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g<CR>
 
-" execute current python buffer.
-nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
-
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
@@ -224,7 +222,7 @@ nnoremap <leader>i :Ilist<space>
 
 imap <C-v> <Esc>"*pa
 
-map <f9> :make<cr>
+map <f9> :Dispatch<cr>
 " }}}
 " Cmd:{{{
 """"""""""
@@ -288,7 +286,7 @@ function! AppendModeline()
   let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
   call append(line("$"), l:modeline)
 endfunction
-
+"
 " }}}
 " Vimpager: {{{
 """""""""""""""
@@ -361,7 +359,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-abolish'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
-" Plug 'itchyny/lightline.vim'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
@@ -371,6 +368,7 @@ Plug 'hdima/python-syntax'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vimperator/vimperator.vim'
 Plug 'sudar/vim-arduino-syntax'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 syntax on
@@ -432,18 +430,6 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
-" Quickscope
-" ----------
-let g:qs_first_occurrence_highlight_color = '#afff5f' " gui vim
-let g:qs_first_occurrence_highlight_color = 155       " terminal vim
-
-let g:qs_second_occurrence_highlight_color = '#5fffff'  " gui vim
-let g:qs_second_occurrence_highlight_color = 81         " terminal vim
-
-" Trigger a highlight in the appropriate direction when pressing these keys:
-"let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-" -------------------
 " rainbow parenthesis
 " -------------------
 au VimEnter * RainbowParentheses
@@ -507,6 +493,7 @@ nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
 " ---------------
 let g:user_emmet_leader_key='<C-A>'
 
+" -------
 " vsearch
 " -------
 " Search for selected text, forwards or backwards.
@@ -536,7 +523,9 @@ nmap ga <Plug>(EasyAlign)
 let python_highlight_all = 1
 
 " --------------------
-" Lightline
+" gutentags
 " --------------------
+" let g:gutentags_exclude = ["node_modules"]
+
 " }}}
 " vim: fdm=marker:sw=2
