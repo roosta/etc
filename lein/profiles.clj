@@ -14,7 +14,7 @@
         :injections [(require 'pjstadig.humane-test-output)
                      (pjstadig.humane-test-output/activate!)]}
 
- :android-common {:android {:sdk-path "/opt/android-sdk"}}
+ :android-common {:android {:sdk-path "/home/roosta/lib/android-sdk-linux"}}
  :android-user {:dependencies [[cider/cider-nrepl "0.9.1"]]
                 :android {:aot-exclude-ns ["cider.nrepl.middleware.util.java.parser"
                                            "cider.nrepl" "cider-nrepl.plugin"]}}}
