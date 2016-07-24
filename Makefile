@@ -1,4 +1,4 @@
-default: add-repositories install-packages enable-services link-config set-shell sync-neovim show-notes
+default: add-repositories install-packages link-config set-shell show-notes
 
 install-packages:
 	sudo pacman -Sy yaourt
@@ -13,19 +13,16 @@ add-infinality-key:
 	sudo pacman-key -r 962DDE58
 	sudo pacman-key --lsign-key 962DDE58
 
-enable-services:
-	sudo systemctl enable lightdm NetworkManager tlp tlp-sleep
-	sudo systemctl disable systemd-rfkill
-	sudo tlp start
+# enable-services:
+# 	sudo systemctl enable lightdm NetworkManager tlp tlp-sleep
+# 	sudo systemctl disable systemd-rfkill
+# 	sudo tlp start
 
 link-config:
-	stow --restow `ls -d */`
+	stow `ls conf` -R -t ~ -d conf
 
 set-shell:
-	chsh -s `which fish`
-
-sync-neovim:
-	./neovim/.config/nvim/sync.sh
+	chsh -s `which zsh`
 
 show-notes:
-cat ./post-install.txt
+	cat ./post_install.txt
