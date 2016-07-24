@@ -59,6 +59,7 @@ fasd.data
 **/gnupg/secring.gpg
 **/gnupg/random*
 **/gnupg/*~
+**/private/**
 
 # Comms
 */**/*.pem
