@@ -1,0 +1,38 @@
+GIMP Palette
+Name: gruvbox-dark
+Columns: 16
+#
+ 39  39  39	0 background
+203  35  28	1 dark red
+151 150  25	2 dark green
+214 152  32	3 dark yellow
+ 68 132 135	4 dark blue
+176  97 133	5 dark magenta
+103 156 105	6 dark cyan
+167 152 131	7 light gray
+145 130 115	8 gray
+250  72  51	9 light red
+183 186  37	10 light green
+248 188  46	11 light yellow
+130 164 151	12 light blue
+210 133 154	13 light magenta
+141 191 123	14 light cyan
+233 218 177	15 foreground
+ 28  31  32	bg0_h
+ 39  39  39	bg0
+ 59  55  53	bg1
+ 79  72  68	bg2
+101  91  83	bg3
+123 110  99	bg4
+145 130 115	gray
+213  92  13	Dark Orange
+ 49  47  46	bg0_s
+167 152 131	fg4
+188 173 146	fg3
+212 195 160	fg2
+233 218 177	fg1
+249 239 198	fg0
+252 127  24	Orange
+ 28  28  28	bg_unfocused
+ 50  48  47	bg_soft
+220  85 106	Untitled

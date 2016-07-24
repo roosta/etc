@@ -1,0 +1,22 @@
+GIMP Palette
+Name: sweetlove
+Columns: 16
+#
+ 31  31  31	BG
+192 177 139	FG
+ 74  54  55	color0
+ 64  46  46	color8
+209 123  73	color1
+172  93  47	color9
+123 135  72	color2
+100 112  53	color10
+175 134  90	color3
+143 104  64	color11
+ 83  92  92	color4
+ 68  75  75	color12
+119  87  89	color5
+ 97  68  69	color13
+109 113  94	color6
+ 88  92  73	color14
+192 177 139	color7
+151 137 101	color15

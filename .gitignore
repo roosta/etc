@@ -1,9 +1,11 @@
 # temporary files
+!**/.gitkeep
 *tmp*
 *cache*
 *deprecated*
 *.old
 *.bak
+*.log
 *.*~
 *.swp
 .DS_Store
@@ -11,6 +13,15 @@ backup/*
 /**/tmp
 *.retry
 *.cache
+**/tags
+*.jar
+*/**/fonts.dir
+*/**/fonts.scale
+*/**/autoload
+*/**/port.lock
+*.blacklist
+*.gen
+**/log/**
 
 # ranger
 *bookmarks*
@@ -19,23 +30,18 @@ backup/*
 *history*
 *tagged*
 
-# vim/perator/pentadactyl
-.vim/undo/*
-!.vim/undo/.gitkeep
-.vim/plugged/*
+# vim/ish
+**/.vim/undo/*
+**/plugged/**
 .netrwhist
 *backup/*
-.vimperator/info/**
-
-# sublime text
-*.last-run
-SublimeGit.sublime-settings
-*ca-bundle*
+**/.vim/spell/*
+**/.vimperator/info/**
 
 # shell
-base-16
 .bash_history
-*/**/plugins
+**/.zsh.d/plugins
+fasd.data
 
 # GUI
 */**/bookmarks
@@ -46,72 +52,49 @@ base-16
 *Envy*
 
 # auth
-ssh/id*
-ssh/known_hosts
-subversion/auth/**
-svn/.subversion/auth/**
-gnupg/secring.gpg
-gnupg/random*
-gnupg/*~
+**/ssh/id*
+**/ssh/known_hosts
+**/subversion/auth/**
+**/svn/.subversion/auth/**
+**/gnupg/secring.gpg
+**/gnupg/random*
+**/gnupg/*~
 
 # Comms
 */**/*.pem
-centerim/*/
-centerim/pid
-mutt/cache/*
-mutt/smime/cetificates/*
-mutt/smime/keys/*
-
-# misc
-**/tags
-*.jar
-icons/
-!/inkscape/icons
-*.gen
-mpd/.config/mpd/mpd.log
-ncmpcpp/error.log
-subversion/README.txt
-svn/*/README.txt
+**/centerim/*/
+**/centerim/pid
+**/mutt/cache/*
+**/mutt/smime/cetificates/*
+**/mutt/smime/keys/*
 
 # IntelliJ
-intellij/config/eval/*
-intellij/config/options/usage.statistics.xml
-intellij/config/options/statistics.application.usages.xml
-intellij/config/options/feature.usage.statistics.xml
-intellij/config/options/ClojureUsageStatistics.xml
+**/.IntelliJIdea15/config/eval/*
+**/.IntelliJIdea15/plugins/**
+usage.statistics.xml
+statistics.application.usages.xml
+feature.usage.statistics.xml
+ClojureUsageStatistics.xml
+dimensions.xml
+extensionsRootType.xml
+availables.xml
+ClojureUsageStatisticsSettings.xml
+recentProjects.xml
 
-parasiterc
-gimp/tags.xml
-gimp/gimpswap.*
-gimp/tool-options
-intellij/config/options/dimensions.xml
-intellij/config/options/extensionsRootType.xml
-intellij/config/plugins/availables.xml
-fasd.data
-fasd.log
-intellij/config/options/ClojureUsageStatisticsSettings.xml
-intellij/config/options/recentProjects.xml
-gimprc
+#gimp
+tags.xml
+gimpswap.*
+tool-options
 pluginrc
-extension-errors.log
-#inkscape/preferences.xml
-ycm_build
-i3/log/**
-!i3/log/.gitkeep
-.tmux/plugins
+sessionrc
+menurc
+
+**/icons/
+parasiterc
+!**/inkscape/icons
+**/subversion/README.txt
+**/svn/*/README.txt
+**/.tmux/plugins
 yankring_history_v2.txt
-nitrogen
-*/**/fonts.dir
-*/**/fonts.scale
-*/**/autoload
-*/**/port.lock
-ko_palettes.blacklist
-.vim/spell/*
-gimp/sessionrc
-gimp/menurc
-i3/config
 tags.lock
 tags.temp
-sublime-text-3/Package Control.sublime-settings
-i3/status/py3status/*
-!i3/status/py3status/.gitkeep
