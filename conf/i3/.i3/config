@@ -402,7 +402,7 @@ bar {
   id bar-primary
   output DVI-I-2
   output HDMI-0
-  status_command py3status -c ~/.i3/status/py3status/lintilla_0.py3status
+  status_command py3status -c ~/.i3/status/lintilla_0.py3status
   font pango:Essential PragmataPro, FontAwesome 9
   position top
   tray_output primary
@@ -425,7 +425,7 @@ bar {
 bar {
   id bar-secondary
   output DVI-I-3
-  status_command py3status -c ~/.i3/status/py3status/lintilla_1.py3status
+  status_command py3status -c ~/.i3/status/lintilla_1.py3status
   font pango:Essential PragmataPro, FontAwesome 9
   position top
   tray_output primary
