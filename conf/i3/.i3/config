@@ -26,6 +26,27 @@ set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S
 set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3"
 #set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg reload"
 
+set $black          "#1C1B19"
+set $red            "#FF3128"
+set $green          "#519F50"
+set $yellow         "#FBB829"
+set $blue           "#5573A3"
+set $magenta        "#E02C6D"
+set $cyan           "#1693A5"
+set $gray           "#918175"
+set $bright_black   "#2D2B28"
+set $bright_red     "#DA4939"
+set $bright_green   "#98BC37"
+set $bright_yellow  "#FFC66D"
+set $bright_blue    "#6D9CBE"
+set $bright_magenta "#E35682"
+set $bright_cyan    "#34BEDA"
+set $white          "#FCE8C3"
+set $orange         "#D75F00"
+set $bright_orange  "#FF8700"
+set $hard_black     "#080808"
+set $alt_gray       "#4E4E4E"
+
 # --------------------
 # WORKSPACES
 # -------------------- 
@@ -369,12 +390,12 @@ bindsym $mod+Home mode "$mode_chdisp"
 # set primary font
 font pango:Essential PragmataPro 9
 
-# <class>               <border> <background> <foreground> <indicator>
-client.focused          #5573A3 #5573A3 #FCE8C3 #E02C6D
-client.focused_inactive #2D2B28 #FCE8C3 #1C1B19 #E02C6D
-client.unfocused        #2D2B28 #2D2B28 #918175 #E02C6D
-client.urgent           #D75F00 #D75F00 #1C1B19 #E02C6D
-client.placeholder      #E02C6D #1693A5 #1C1B19 #E02C6D
+# <class>               <border>      <background>  <foreground> <indicator>
+client.focused          $blue         $blue         $white       $magenta
+client.focused_inactive $bright_black $white        $black       $magenta
+client.unfocused        $bright_black $bright_black $gray        $magenta
+client.urgent           $orange       $orange       $black       $magenta
+client.placeholder      $magenta      $cyan         $black       $magenta
 
 
 bar {
@@ -389,15 +410,15 @@ bar {
   separator_symbol "|"
   # sep_block_width 0
   colors {
-    background #1C1B19
-    separator  #1693A5
-    statusline #FCE8C3
+    background $black
+    separator  $cyan
+    statusline $white
 
     # <workclass>      <border> <background> <foreground>
-    focused_workspace  #5573A3 #5573A3 #FCE8C3
-    active_workspace   #1C1B19 #1C1B19 #FCE8C3
-    inactive_workspace #1C1B19 #1C1B19 #FCE8C3
-    urgent_workspace   #D75F00 #D75F00 #1C1B19
+    focused_workspace  $blue   $blue   $white
+    active_workspace   $black  $black  $white
+    inactive_workspace $black  $black  $white
+    urgent_workspace   $orange $orange $black
   }
 }
 
@@ -412,15 +433,15 @@ bar {
   separator_symbol "|"
   # sep_block_width 0
   colors {
-    background #1C1B19
-    separator  #1693A5
-    statusline #FCE8C3
+    background $black
+    separator  $cyan
+    statusline $white
 
     # <workclass>      <border> <background> <foreground>
-    focused_workspace  #5573A3 #5573A3 #FCE8C3
-    active_workspace   #1C1B19 #1C1B19 #FCE8C3
-    inactive_workspace #1C1B19 #1C1B19 #FCE8C3
-    urgent_workspace   #D75F00 #D75F00 #1C1B19
+    focused_workspace  $blue    $blue   $white
+    active_workspace   $black   $black  $white
+    inactive_workspace $black   $black  $white
+    urgent_workspace   $orange  $orange $black
   }
 }
 
