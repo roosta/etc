@@ -12,7 +12,7 @@
 #include ".Xresources.d/urxvt.xresources"
 #include ".Xresources.d/rofi.xresources"
 #include ".Xresources.d/xscreensaver.xresources"
-#include ".Xresources.d/colors.xresources"
+#include ".Xresources.d/srcery.xresources"
 
 !Xcursor.theme: Numix-Cursor
 
