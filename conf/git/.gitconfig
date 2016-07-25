@@ -3,7 +3,7 @@
   name = Daniel Berg
 [core]
   editor = vim
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.globalignore
 [push]
   default = simple
 [credential]
