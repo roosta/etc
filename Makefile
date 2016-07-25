@@ -1,4 +1,4 @@
-default: add-pacman-repositories install-packages link-config set-shell show-notes
+default: add-pacman-repositories install-packages create-user-fs link-config set-shell show-notes
 
 install-packages:
 	sudo pacman -Sy yaourt
@@ -17,6 +17,25 @@ add-infinality-key:
 # 	sudo systemctl enable lightdm NetworkManager tlp tlp-sleep
 # 	sudo systemctl disable systemd-rfkill
 # 	sudo tlp start
+
+create-user-fs:
+	-@mkdir ~/dev
+	-@mkdir ~/lib
+	-@mkdir ~/bin
+	-@mkdir ~/sbin
+	-@mkdir ~/var
+	-@mkdir ~/.tmp
+	-@mkdir ~/.cache
+
+setup-zsh: create-user-fs
+	-@mkdir ~/.zsh.d/plugins
+	-@touch ~/.cache/zsh/dirs
+
+clone-zsh-plugins:
+	@$(foreach repo,$(shell cat zsh_plugins.txt),\
+			cd conf/zsh/.zsh.d/plugins;\
+			git clone $(repo);\
+		)
 
 link-config:
 	stow `ls conf` -R -t ~ -d conf
