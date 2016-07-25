@@ -19,10 +19,10 @@ set undodir=~/var/undo
 set wildmenu
 set wildmode=longest,list,full
 set wildignorecase
-" set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
-"                 \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
-"                 \*/_site/*
-set wildignore+=.git,.hg,.svn,build,node_modules,undo,out,.repl*,.cljs_rhino_repl,_site
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
+                \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
+                \*/_site/*
+" set wildignore+=.git,.hg,.svn,build,node_modules,undo,out,.repl*,.cljs_rhino_repl,_site
 set backspace=indent,eol,start
 set laststatus=2
 set showtabline=1
@@ -525,7 +525,7 @@ let python_highlight_all = 1
 " --------------------
 " gutentags
 " --------------------
-" let g:gutentags_exclude = ["node_modules"]
+let g:gutentags_exclude = ["node_modules", ".git", "plugins", "plugged"]
 
 " }}}
 " vim: fdm=marker:sw=2
