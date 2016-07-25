@@ -1,10 +1,10 @@
-default: add-repositories install-packages link-config set-shell show-notes
+default: add-pacman-repositories install-packages link-config set-shell show-notes
 
 install-packages:
 	sudo pacman -Sy yaourt
 	yaourt -S --needed --noconfirm `cat packages.txt`
 
-add-repositories: add-infinality-key
+add-pacman-repositories: add-infinality-key
 	cat repositories.txt | sudo tee -a /etc/pacman.conf
 
 add-infinality-key:
