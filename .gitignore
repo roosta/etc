@@ -1,5 +1,4 @@
 # temporary files
-!**/.gitkeep
 *tmp*
 *cache*
 *deprecated*
@@ -15,8 +14,8 @@ backup/*
 *.cache
 **/tags
 *.jar
-*/**/fonts.dir
-*/**/fonts.scale
+# */**/fonts.dir
+# */**/fonts.scale
 */**/autoload
 */**/port.lock
 *.blacklist
@@ -99,3 +98,4 @@ parasiterc
 yankring_history_v2.txt
 tags.lock
 tags.temp
+!**/.gitkeep
