@@ -84,3 +84,4 @@ zsh-completions
 zsh-doc
 zsh-lovers
 zshdb
+shellcheck
