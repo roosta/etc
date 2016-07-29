@@ -12,6 +12,7 @@
 	tool = vimdiff
 [alias]
   s = status
+  b = branch
   cc = commit
   ca = commit --amend
   d = diff
