@@ -405,10 +405,7 @@ client.placeholder      $magenta      $cyan         $black       $magenta
 
 bar {
   id bar-primary
-  output $primary_monitor
-  output $tertiary_monitor
-  # status_command py3status -c ~/.i3/status/lintilla_0.py3status
-  status_command i3blocks -c ~/.i3/status/lintilla_0.i3blocks 
+  status_command i3blocks -c ~/.i3/status/$(hostname).i3blocks 
   font pango:Essential PragmataPro, FontAwesome 9
   position top
   tray_output primary
@@ -427,29 +424,5 @@ bar {
     urgent_workspace   $orange $orange $black
   }
 }
-
-bar {
-  id bar-secondary
-  output $secondary_monitor
-  status_command py3status -c ~/.i3/status/lintilla_1.py3status
-  font pango:Essential PragmataPro, FontAwesome 9
-  position top
-  tray_output primary
-  strip_workspace_numbers yes
-  separator_symbol "|"
-  # sep_block_width 0
-  colors {
-    background $black
-    separator  $cyan
-    statusline $white
-
-    # <workclass>      <border> <background> <foreground>
-    focused_workspace  $blue    $blue   $white
-    active_workspace   $black   $black  $white
-    inactive_workspace $black   $black  $white
-    urgent_workspace   $orange  $orange $black
-  }
-}
-
 
 # vim:ft=i3:ts=2:sw=2:fdm=marker

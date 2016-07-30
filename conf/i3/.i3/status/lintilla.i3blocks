@@ -47,6 +47,18 @@ instance=enp9s0
 color=#FCE8C3
 interval=5
 
+[public_ip]
+label=WAN:
+min_width=255.255.255.255
+color=#FCE8C3
+interval=2000
+
+[iface]
+label=LAN:
+instance=bridge0
+color=#FCE8C3
+interval=10
+
 [cpu_temp]
 color=#98BC37
 label=CPU_TEMP:
