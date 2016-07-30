@@ -23,7 +23,8 @@ create-user-fs:
 	-@mkdir ~/lib
 	-@mkdir ~/bin
 	-@mkdir ~/sbin
-	-@mkdir ~/var
+	-@mkdir -p ~/var/log
+	-@mkdir -p ~/var/undo
 	-@mkdir ~/.tmp
 	-@mkdir ~/.cache
 
