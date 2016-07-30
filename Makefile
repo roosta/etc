@@ -2,7 +2,7 @@ default: add-pacman-repositories install-packages create-user-fs link-config set
 
 install-packages:
 	sudo pacman -Sy yaourt
-	yaourt -S --needed --noconfirm `cat packages.txt`
+	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
 
 add-pacman-repositories: add-infinality-key
 	cat repositories.txt | sudo tee -a /etc/pacman.conf
