@@ -11,13 +11,13 @@ general {
 order += "spotify"
 order += "whatismyip"
 order += "ethernet bridge0"
-order += "disk /"
-order += "disk /home"
-order += "disk /mnt/data"
-order += "disk /mnt/games"
-order += "disk /mnt/archive"
-order += "disk /mnt/netmedia"
-order += "disk /mnt/netbackup"
+# order += "disk /"
+# order += "disk /home"
+# order += "disk /mnt/data"
+# order += "disk /mnt/games"
+# order += "disk /mnt/archive"
+# order += "disk /mnt/netmedia"
+# order += "disk /mnt/netbackup"
 order += "tztime date"
 order += "tztime time"
 
@@ -32,7 +32,7 @@ battery_level {
 }
 
 whatismyip {
-  format = "P: {ip}"
+  format = "WAN: {ip}"
 }
 
 wifi {
@@ -114,7 +114,7 @@ wireless wlp2s0 {
 
 ethernet bridge0 {
   # if you use %speed, i3status requires the cap_net_admin capability
-  format_up = "E: %ip"
+  format_up = "LAN: %ip"
   format_down = "E: down"
 }
 

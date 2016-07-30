@@ -26,6 +26,7 @@ set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S
 set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3"
 #set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg reload"
 
+# define palette
 set $black          "#1C1B19"
 set $red            "#FF3128"
 set $green          "#519F50"
@@ -46,6 +47,10 @@ set $orange         "#D75F00"
 set $bright_orange  "#FF8700"
 set $hard_black     "#080808"
 set $alt_gray       "#4E4E4E"
+
+set $primary_monitor   "DVI-I-2"
+set $secondary_monitor "DVI-I-3"
+set $tertiary_monitor  "HDMI-0"
 
 # --------------------
 # WORKSPACES
@@ -123,17 +128,17 @@ bindsym $mod+Shift+F8 move workspace $FWS8
 
 ## assign workspaces to outputs
 # primary
-workspace $PWS1_TRM output DVI-I-2
-workspace $PWS3_WWW output DVI-I-2
-workspace $PWS2_DEV output DVI-I-2
+workspace $PWS1_TRM output $primary_monitor
+workspace $PWS3_WWW output $primary_monitor
+workspace $PWS2_DEV output $primary_monitor
 
-workspace $TWS1_MED output DVI-I-2
-workspace $TWS3_GAM output DVI-I-2
-workspace $TWS2_ART output DVI-I-2
+workspace $TWS1_MED output $primary_monitor
+workspace $TWS3_GAM output $primary_monitor
+workspace $TWS2_ART output $primary_monitor
 # secondary
-workspace $SWS1_AUX output DVI-I-3
-workspace $SWS3_DBG output DVI-I-3
-workspace $SWS2_COM output DVI-I-3
+workspace $SWS1_AUX output $secondary_monitor
+workspace $SWS3_DBG output $secondary_monitor
+workspace $SWS2_COM output $secondary_monitor
 
 # Options
 focus_follows_mouse no
@@ -309,8 +314,8 @@ bindsym --release Print exec scrot $screenshot
 bindsym --release Shift+Print exec scrot -s $screenshot
 
 # send a signal to i3status on caps to toggle layout
-#bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Caps_Lock exec killall -USR1 py3status
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Caps_Lock exec killall -USR1 py3status
 
 ## BINDING MODES
 ## -------------
@@ -400,9 +405,10 @@ client.placeholder      $magenta      $cyan         $black       $magenta
 
 bar {
   id bar-primary
-  output DVI-I-2
-  output HDMI-0
-  status_command py3status -c ~/.i3/status/lintilla_0.py3status
+  output $primary_monitor
+  output $tertiary_monitor
+  # status_command py3status -c ~/.i3/status/lintilla_0.py3status
+  status_command i3blocks -c ~/.i3/status/lintilla_0.i3blocks 
   font pango:Essential PragmataPro, FontAwesome 9
   position top
   tray_output primary
@@ -424,7 +430,7 @@ bar {
 
 bar {
   id bar-secondary
-  output DVI-I-3
+  output $secondary_monitor
   status_command py3status -c ~/.i3/status/lintilla_1.py3status
   font pango:Essential PragmataPro, FontAwesome 9
   position top

@@ -3,10 +3,10 @@ tunnel=$(ip link show|awk '/(tun|pon)/{print substr($2, 1, 4)}')
 if [[ ! -z $tunnel ]]; then
   echo "$tunnel"
   echo
-  echo "#B06185"
+  echo "#98BC37"
 else
   echo "down"
   echo
-  echo "#918273"
+  echo "#DA4939"
 fi
 

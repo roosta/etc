@@ -22,7 +22,7 @@
 # For Jack/Jack2 users, use "jackplug"
 # For ALSA users, you may use "default" for your primary card
 # or you may use hw:# where # is the number of the card desired
-MIXER="pulse"
+MIXER="default"
 [ -n "$(lsmod | grep pulse)" ] && MIXER="pulse"
 [ -n "$(lsmod | grep jack)" ] && MIXER="jackplug"
 MIXER="${2:-$MIXER}"
@@ -57,10 +57,6 @@ format() {
   perl_filter+=$([[ $STEP = *dB ]] && echo '$3' || echo '$1')
   perl_filter+='"; exit}'
   perl -ne "$perl_filter"
-  #echo
-  #if ($4 eq "off") {
-    #echo
-  #}
 }
 
 #------------------------------------------------------------------------
@@ -72,4 +68,3 @@ case $BLOCK_BUTTON in
 esac
 
 volume | format
-

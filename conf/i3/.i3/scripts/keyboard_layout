@@ -12,7 +12,7 @@ esac
 echo $KBD
 echo
 if [[ $KBD = "US" ]]; then
-  echo \#448487
+  echo \#98BC37
 else
-  echo \#FA4833
+  echo \#FF8700
 fi

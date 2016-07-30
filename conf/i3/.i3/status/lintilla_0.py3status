@@ -8,7 +8,7 @@ general {
   color_separator = #1693A5
 }
 
-order += "imap"
+# order += "imap"
 order += "volume_status"
 order += "arch_updates"
 order += "keyboard_layout"
@@ -69,7 +69,6 @@ sysdata cpu {
   on_click 3 = "exec killall htop"
 }
 
-
 sysdata mem {
   format = "MEM: {mem_used}/{mem_total}"
   med_threshold = 60
@@ -80,7 +79,7 @@ sysdata mem {
 # print current keyboard layout, with color codes for language
 keyboard_layout {
   format = " {layout}"
-  colors = "us=#98BC37, no=#FF8700"
+  colors = "us=#98BC37,no=#FF8700"
 }
 
 # control the volume with your mouse (need >i3-4.8)
