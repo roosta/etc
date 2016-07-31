@@ -5,6 +5,6 @@ setlocal softtabstop=4
 setlocal autoindent
 setlocal makeprg=flake8\ %
 " nmap <buffer> <F5> :!python %<CR>
-nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+nnoremap <buffer> <F5> :exec '!python' shellescape(@%, 1)<cr>
 
 
