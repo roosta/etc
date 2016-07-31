@@ -36,6 +36,10 @@ label=VPN:
 color=#98BC37
 interval=30
 
+[arch_updates.py]
+color=#FCE8C3
+interval=30
+
 [volume]
 label=VOL:
 color=#FCE8C3
