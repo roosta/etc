@@ -227,7 +227,7 @@ map <f9> :Dispatch<cr>
 " Cmd:{{{
 """"""""""
 " https://github.com/tpope/vim-fireplace/pull/222
-" command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
+command! Figwheel :Piggieback! (do (require 'figwheel-sidecar.repl-api) (figwheel-sidecar.repl-api/cljs-repl))
 
 " if working with splits, set cursorline only on active window,
 " to give an indication other than airline which split is active
@@ -342,8 +342,9 @@ Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
 
 " clojure
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plug '~/dev/vim-fireplace', { 'for': 'clojure' }
+Plug 'christoph-frick/vim-fireplace'
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 " Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
