@@ -43,7 +43,7 @@ instance=Master
 interval=1
 
 [bandwidth]
-instance=enp9s0
+instance=enp2s0
 color=#FCE8C3
 interval=5
 
@@ -55,7 +55,7 @@ interval=2000
 
 [iface]
 label=LAN:
-instance=bridge0
+instance=enp2s0
 color=#FCE8C3
 interval=10
 
@@ -73,11 +73,6 @@ min_width=100.00%
 [load_average]
 label=LOAD_AVG:
 color=#FCE8C3
-interval=10
-
-[gpu_temp]
-color=#FCE8C3
-label=GPU_TEMP:
 interval=10
 
 [memory]
