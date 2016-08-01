@@ -75,11 +75,6 @@ label=LOAD_AVG:
 color=#FCE8C3
 interval=10
 
-[gpu_temp]
-color=#FCE8C3
-label=GPU_TEMP:
-interval=10
-
 [memory]
 label=MEM:
 color=#98BC37
