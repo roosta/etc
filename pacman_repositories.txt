@@ -1,6 +1,17 @@
 [infinality-bundle]
 Server = http://bohoomil.com/repo/$arch
 
+[infinality-bundle-fonts]
+Server = http://bohoomil.com/repo/fonts
+
+[infinality-bundle-multilib]
+Server = http://bohoomil.com/repo/multilib/$arch
+
+[alucryd-multilib]
+SigLevel = PackageOptional
+Server = http://pkgbuild.com/~alucryd/$repo/x86_64
+
 [archlinuxfr]
-SigLevel = Never
+SigLevel = PackageOptional
 Server = http://repo.archlinux.fr/$arch
+

@@ -1,13 +1,14 @@
-default: add-pacman-repositories install-packages create-user-fs link-config set-shell show-notes
+default: add-pacman-repositories install-packages create-user-fs link-config update-zsh-plugins update-libs set-shell show-notes
 
 install-packages:
 	sudo pacman -Sy yaourt
 	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
 
 add-pacman-repositories: add-infinality-key
-	cat repositories.txt | sudo tee -a /etc/pacman.conf
+	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
 
 add-infinality-key:
+	sudo echo "cache sudo passwd"
 	sudo dirmngr &
 	sleep 1
 	sudo pacman-key -r 962DDE58
@@ -27,8 +28,6 @@ create-user-fs:
 	-@mkdir -p ~/var/undo
 	-@mkdir ~/.tmp
 	-@mkdir ~/.cache
-
-setup-zsh: create-user-fs
 	-@mkdir ~/.zsh.d/plugins
 	-@touch ~/.cache/zsh/dirs
 
@@ -37,6 +36,10 @@ update-zsh-plugins:
 
 update-libs:
 	./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt 
+
+clone-dev:
+	ssh-add ~/.ssh/id_rsa
+	./scripts/git_update.sh ~/dev ~/etc/dev_repositories.txt 
 
 link-config:
 	stow `ls conf` -R -t ~ -d conf
