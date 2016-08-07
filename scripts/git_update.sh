@@ -38,27 +38,5 @@ else
 fi
 }
 
-# source: https://github.com/MaxWinterstein/check_git_pullstatus/blob/master/check_git_pullstatus.sh 
-git_pull() {
-  cd "$2" || exit
-
-  if [ "$(git log --pretty=%H ...refs/heads/master^ | head -n 1)" = "$(git ls-remote origin -h refs/heads/master |cut -f1)" ]; then
-    status=0
-    statustxt="up to date"
-  else
-    status=2
-    git pull
-    statustxt="not up to date, pulling latest changes"
-  fi
-
-  if [[ $(git status --porcelain) ]]; then
-    status=1
-    statustxt="uncommited"
-  fi
-
-
-  echo "$status git_status_$1 - $statustxt"
-}
-
 git_clone "${@}"
 # git_pull
