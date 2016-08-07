@@ -3,5 +3,49 @@ error_msg() {
   echo "missing argument(s)"
   exit 1
 }
-(( $# == 1 )) || error_msg
 
+# take two args. Parent folder and repositories text file.
+# loop over each repo in text file, attempting to clone
+git_clone () {
+(( $# == 2 )) || error_msg
+
+cd "$1" || exit
+
+if [[ -f "$2" ]]; then
+  while read -r repo; do
+
+    # ignore blank lines
+    if [ "$repo" != "" ]; then
+      git clone "$repo"
+    fi
+
+  done <"$2"
+else
+  error_msg
+fi
+}
+
+# source: https://github.com/MaxWinterstein/check_git_pullstatus/blob/master/check_git_pullstatus.sh 
+git_pull() {
+  cd "$1" || exit
+
+  if [ "$(git log --pretty=%H ...refs/heads/master^ | head -n 1)" = "$(git ls-remote origin -h refs/heads/master |cut -f1)" ]; then
+    status=0
+    statustxt="up to date"
+  else
+    status=2
+    git pull
+    statustxt="not up to date, pulling latest changes"
+  fi
+
+  if [[ $(git status --porcelain) ]]; then
+    status=1
+    statustxt="uncommited"
+  fi
+
+
+  echo "$status git_status_$2 - $statustxt"
+}
+
+git_clone "${@}"
+# git_pull

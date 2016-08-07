@@ -3,5 +3,3 @@ https://github.com/zsh-users/zsh-completions
 https://github.com/zsh-users/zsh-history-substring-search
 https://github.com/roosta/pure
 https://github.com/bobthecow/git-flow-completion
-
-
