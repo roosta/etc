@@ -79,7 +79,6 @@ weechat
 whois
 xbindkeys
 xscreensaver
-local/xtitle-git
 zsh-completions
 zsh-doc
 zsh-lovers
