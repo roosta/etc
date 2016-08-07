@@ -16,7 +16,20 @@ if [[ -f "$2" ]]; then
 
     # ignore blank lines
     if [ "$repo" != "" ]; then
-      git clone "$repo"
+
+      # save command output
+      out=$(git clone "$repo" 2>&1)
+
+      # if clone was unsuccessful try to enter folder and pull
+      if [[ $out =~ fatal ]]; then
+        dest=$(echo "$out" | awk '{print substr($4, 2, length($4) - 2)}') 
+        # echo $dest
+        cd "$1"/"$dest" || exit
+        git pull
+        cd .. || exit
+      else
+        echo "$out"
+      fi
     fi
 
   done <"$2"
@@ -27,7 +40,7 @@ fi
 
 # source: https://github.com/MaxWinterstein/check_git_pullstatus/blob/master/check_git_pullstatus.sh 
 git_pull() {
-  cd "$1" || exit
+  cd "$2" || exit
 
   if [ "$(git log --pretty=%H ...refs/heads/master^ | head -n 1)" = "$(git ls-remote origin -h refs/heads/master |cut -f1)" ]; then
     status=0
@@ -44,7 +57,7 @@ git_pull() {
   fi
 
 
-  echo "$status git_status_$2 - $statustxt"
+  echo "$status git_status_$1 - $statustxt"
 }
 
 git_clone "${@}"

@@ -32,11 +32,11 @@ setup-zsh: create-user-fs
 	-@mkdir ~/.zsh.d/plugins
 	-@touch ~/.cache/zsh/dirs
 
-clone-zsh-plugins:
-	@$(foreach repo,$(shell cat zsh_plugins.txt),\
-			cd conf/zsh/.zsh.d/plugins;\
-			git clone $(repo);\
-		)
+update-zsh-plugins:
+	./scripts/git_update.sh ~/.zsh.d/plugins ~/etc/zsh_plugins.txt 
+
+update-libs:
+	./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt 
 
 link-config:
 	stow `ls conf` -R -t ~ -d conf
