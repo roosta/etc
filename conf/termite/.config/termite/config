@@ -1,5 +1,5 @@
 [options]
-font = Ttyp0 12
+font = Essential PragmataPro 10
 # font = Terminus (TTF) 8
 # font = Droid Sans Mono 8
 
@@ -13,33 +13,33 @@ background      = #1c1b19
 
 # black
 color0  = #1c1b19
-color8  = #443d33
+color8  = #2d2b28
 
 # red
 color1  = #ff3128
-color9  = #fc503c
+color9  = #da4939
 
 # green
-color2  = #668422
+color2  = #519f50
 color10 = #98bc37
 
 # yellow
-color3  = #c17209
-color11 = #ff9d2c
+color3  = #fbb829
+color11 = #ffc66d
 
 # blue
-color4  = #445fdf
-color12 = #457eff
+color4  = #5573a3
+color12 = #6d9cbe
 
 # magenta
 color5  = #e02c6d
 color13 = #e35682
 
 # cyan
-color6  = #12827c
-color14 = #55e0d8
+color6  = #1693a5
+color14 = #34beda
 
 # white
-color7  = #6c6050
+color7  = #918175
 color15 = #fce8c3
 # vim: ft=dosini cms=#%s
