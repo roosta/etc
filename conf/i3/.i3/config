@@ -48,9 +48,9 @@ set $bright_orange  "#FF8700"
 set $hard_black     "#080808"
 set $alt_gray       "#4E4E4E"
 
-set $primary_monitor   "HDMI2"
-set $secondary_monitor "HDMI1"
-set $tertiary_monitor  false
+set $primary_monitor   "DVI-I-2"
+set $secondary_monitor "DVI-I-3"
+set $tertiary_monitor  "HDMI-0"
 
 # --------------------
 # WORKSPACES
