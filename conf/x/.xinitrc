@@ -72,7 +72,7 @@ nitrogen --restore &
 # set background with feh
 #$HOME/.fehbg &
 
-urxvtd -q -f -o &
+# urxvtd -q -f -o &
 #compton -b &
 dropbox-cli start &
 dunst &
