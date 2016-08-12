@@ -341,7 +341,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
-
+Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 " clojure
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plug '~/dev/vim-fireplace', { 'for': 'clojure' }
