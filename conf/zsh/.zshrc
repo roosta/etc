@@ -36,15 +36,7 @@ for function (~/.zsh.d/functions/*.zsh) source $function
 # PLUGINS
 plugin_location=$HOME/.zsh.d/plugins
 [ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
-
 [ -f $plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source $plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh
-
 [ -f $plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-[ -f $plugin_location/git-flow-completion/git-flow-completion.zsh ] && source $plugin_location/git-flow-completion/git-flow-completion.zsh
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# 256 COLOR PALETTE
-# https://github.com/morhetz/gruvbox/wiki/Terminal-specific
-#source "$HOME/.vim/plugged/gruvbox/gruvbox_256palette.sh"
