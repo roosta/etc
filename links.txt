@@ -1,0 +1,4 @@
+~/dev/utils ~/utils
+~/dev/colors ~/colors
+~/dev/utils/bakc.sh ~/bin/bakc
+
