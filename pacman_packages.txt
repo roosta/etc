@@ -64,6 +64,7 @@ weechat
 whois
 xbindkeys
 xscreensaver
+zsh-completions
 zsh-doc
 zsh-lovers
 zshdb
