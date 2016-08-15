@@ -84,10 +84,10 @@ recentProjects.xml
 #gimp
 tags.xml
 gimpswap.*
-tool-options
-pluginrc
-sessionrc
-menurc
+# tool-options
+# pluginrc
+# sessionrc
+# menurc
 
 **/icons/
 parasiterc
