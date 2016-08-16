@@ -48,8 +48,8 @@ set $bright_orange  "#FF8700"
 set $hard_black     "#080808"
 set $alt_gray       "#4E4E4E"
 
-set $primary_monitor   false
-set $secondary_monitor false
+set $primary_monitor   HDMI2
+set $secondary_monitor HDMI1
 set $tertiary_monitor  false
 
 # --------------------
