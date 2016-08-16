@@ -324,34 +324,10 @@ Plug 'terryma/vim-expand-region'
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
-" Plug 'unblevable/quick-scope'
 Plug 'haya14busa/incsearch.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'mattn/emmet-vim'
 Plug 'wellle/targets.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug '~/dev/srcery'
-" Plug '~/dev/gruvbox'
-Plug 'guns/vim-sexp'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'jpalardy/vim-slime'
-Plug 'tpope/vim-tbone'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'jmcantrell/vim-virtualenv'
 Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
-Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
-" clojure
-" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-" Plug '~/dev/vim-fireplace', { 'for': 'clojure' }
-Plug 'christoph-frick/vim-fireplace'
-Plug 'tpope/vim-salve', { 'for': 'clojure' }
-" Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-
-" new
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'ajh17/VimCompletesMe'
 Plug 'tpope/vim-rsi'
@@ -362,7 +338,37 @@ Plug 'tpope/vim-abolish'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
 
+" git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" multiplexer
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jpalardy/vim-slime'
+Plug 'tpope/vim-tbone'
+
+" html/js/css
+Plug 'mattn/emmet-vim'
+Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
+
+" Python
+Plug 'jmcantrell/vim-virtualenv'
+
+" Clojure
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+" Plug '~/dev/vim-fireplace', { 'for': 'clojure' }
+Plug 'christoph-frick/vim-fireplace'
+Plug 'tpope/vim-salve', { 'for': 'clojure' }
+" Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'tpope/vim-projectionist'
+Plug 'guns/vim-sexp'
+Plug 'junegunn/rainbow_parentheses.vim'
+
 " syntax
+Plug '~/dev/srcery'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Glench/Vim-Jinja2-Syntax'
