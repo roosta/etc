@@ -50,5 +50,8 @@ link-config:
 set-shell:
 	chsh -s `which zsh`
 
+install-spacemacs:
+	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d	
+
 show-notes:
 	cat ./post_install.txt

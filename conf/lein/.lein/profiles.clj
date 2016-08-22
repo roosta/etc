@@ -1,13 +1,14 @@
-{:user {:dependencies [[pjstadig/humane-test-output "0.8.0"]]
-        :plugins [
-                  [lein-cljfmt "0.5.3"]
-                  [cider/cider-nrepl "0.13.0"]
+{:user {:dependencies [[pjstadig/humane-test-output "0.8.0"]
+                       [alembic "0.3.2"]
+                       [org.clojure/tools.nrepl "0.2.11"]
+                       ]
+        :plugins [[cider/cider-nrepl "0.14.0-SNAPSHOT"]
                   [venantius/ultra "0.4.1"]
+                  [refactor-nrepl "2.2.0"]
                   [lein-ancient "0.6.10"]
                   [jonase/eastwood "0.2.3"]
                   [lein-pprint "1.1.1"]
                   [lein-kibit "0.1.2"]]
-        ; :repl-options {:init (require 'cljfmt.core)}
         :ultra {:color-scheme :solarized_dark}
         :injections [(require 'pjstadig.humane-test-output)
                      (pjstadig.humane-test-output/activate!)]}
