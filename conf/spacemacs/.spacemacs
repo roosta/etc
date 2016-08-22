@@ -224,7 +224,7 @@ values."
    dotspacemacs-highlight-delimiters 'all
    ;; If non nil advises quit functions to keep server open when quitting.
    ;; (default nil)
-   dotspacemacs-persistent-server t
+   dotspacemacs-persistent-server nil
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
@@ -256,7 +256,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
    ;; Avy
    avy-all-windows 'all-frames
 
-   ))
+   )
+
+
+
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -266,7 +270,24 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  )
+  (require 'cider)
+  (setq cider-cljs-lein-repl
+        "(do (require 'figwheel-sidecar.repl-api)
+             (figwheel-sidecar.repl-api/start-figwheel!)
+             (figwheel-sidecar.repl-api/cljs-repl))")
+
+  (defun user/cider-send-to-repl ()
+    (interactive)
+    (let ((s (buffer-substring-no-properties
+              (nth 0 (cider-last-sexp 'bounds))
+              (nth 1 (cider-last-sexp 'bounds)))))
+      (with-current-buffer (cider-current-connection)
+        (insert s)
+        (cider-repl-return))))
+
+  (spacemacs/set-leader-keys "or" #'user/cider-send-to-repl)
+
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
