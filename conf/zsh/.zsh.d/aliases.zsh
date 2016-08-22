@@ -239,10 +239,10 @@ alias 19='cd -19'
 #}}}
 ## LISTS {{{1
 
-alias lsa="\ls -lAhpk --color=auto --group-directories-first"
-alias ls='ls++ -lAhpk'
+alias ls="ls -lsAhpk --color=auto --group-directories-first"
+# alias ls='ls++ -lAhpk'
 #alias dir='ls'
-alias lsr='ls -R'
+alias lsr='tree'
 alias lsp='lsp -p'
 #}}}
 ## SECURITY {{{1
