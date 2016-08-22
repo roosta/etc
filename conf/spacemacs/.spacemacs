@@ -28,6 +28,7 @@ values."
      better-defaults
      emacs-lisp
      git
+     ranger
      markdown
      org
      (shell :variables
@@ -251,6 +252,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
    ;; Evil
    evil-shift-round nil
+
+   ;; Avy
+   avy-all-windows 'all-frames
 
    ))
 
