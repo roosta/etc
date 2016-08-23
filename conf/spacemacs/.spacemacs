@@ -32,7 +32,6 @@ values."
      markdown
      python
      org
-     evil-cleverparens
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
@@ -50,7 +49,9 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(gruvbox-theme
-     arduino-mode)
+     arduino-mode
+     evil-smartparens
+     )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -221,7 +222,7 @@ values."
    dotspacemacs-line-numbers 'relative
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
@@ -298,10 +299,10 @@ you should place your code here."
   ;; ----
   ;; (spacemacs/set-leader-keys "oo" #'helm-projectile-find-file)
 
-  ;; clever-parens
+  ;; pareditish
   ;; -------------
-  (spacemacs/toggle-evil-cleverparens-on)
-  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+  (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
+  ;; (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
