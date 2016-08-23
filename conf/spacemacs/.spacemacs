@@ -33,6 +33,7 @@ values."
      python
      evil-cleverparens
      org
+     evil-cleverparens
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
@@ -50,9 +51,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(gruvbox-theme
-     arduino-mode
-     ; evil-smartparens
-     )
+     arduino-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
