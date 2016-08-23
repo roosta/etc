@@ -169,14 +169,14 @@ let maplocalleader = "\\"
 noremap <leader>R :source $MYVIMRC<CR>
 
 " switch between splits
-noremap <silent> <leader>k       :wincmd k<CR>
-noremap <silent> <leader>j       :wincmd j<CR>
-noremap <silent> <leader>h       :wincmd h<CR>
-noremap <silent> <leader>l       :wincmd l<CR>
-noremap <silent> <leader><Up>    :wincmd k<CR>
-noremap <silent> <leader><Down>  :wincmd j<CR>
-noremap <silent> <leader><Left>  :wincmd h<CR>
-noremap <silent> <leader><Right> :wincmd l<CR>
+noremap <silent> <leader>wk       :wincmd k<CR>
+noremap <silent> <leader>wj       :wincmd j<CR>
+noremap <silent> <leader>wh       :wincmd h<CR>
+noremap <silent> <leader>wl       :wincmd l<CR>
+noremap <silent> <leader>w<Up>    :wincmd k<CR>
+noremap <silent> <leader>w<Down>  :wincmd j<CR>
+noremap <silent> <leader>w<Left>  :wincmd h<CR>
+noremap <silent> <leader>w<Right> :wincmd l<CR>
 
 " Resize splits
 nnoremap <silent> <M-S-Left>  10<C-w><
