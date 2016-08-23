@@ -30,12 +30,14 @@ values."
      git
      ranger
      markdown
+     python
      org
+     evil-cleverparens
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
             shell-default-term-shell "/usr/bin/zsh"
-            shell-default-shell 'eshell
+            shell-default-shell 'multi-term
             )
      ;; spell-checking
      syntax-checking
@@ -47,7 +49,8 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
-   '(gruvbox-theme)
+   '(gruvbox-theme
+     arduino-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -102,7 +105,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(gruvbox
+   dotspacemacs-themes '(badwolf
+                         gruvbox
                          spacemacs-dark
                          spacemacs-light
                          solarized-light
@@ -251,9 +255,11 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq-default
 
    ;; Evil
+   ;; ----
    evil-shift-round nil
 
    ;; Avy
+   ;; ---
    avy-all-windows 'all-frames
 
    ))
@@ -266,6 +272,11 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; always follow symlinks
+  (setq vc-follow-symlinks t)
+
+  ;; figwheel
+  ;; --------
   (require 'cider)
   (setq cider-cljs-lein-repl
         "(do (require 'figwheel-sidecar.repl-api)
@@ -281,8 +292,16 @@ you should place your code here."
         (insert s)
         (cider-repl-return))))
 
-  (spacemacs/set-leader-keys "or" #'user/cider-send-to-repl)
+  (spacemacs/set-leader-keys "meq" #'user/cider-send-to-repl)
 
+  ;; helm
+  ;; ----
+  ;; (spacemacs/set-leader-keys "oo" #'helm-projectile-find-file)
+
+  ;; clever-parens
+  ;; -------------
+  (spacemacs/toggle-evil-cleverparens-on)
+  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
