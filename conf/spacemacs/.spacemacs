@@ -293,15 +293,13 @@ you should place your code here."
         (cider-repl-return))))
 
   (spacemacs/set-leader-keys "meq" #'user/cider-send-to-repl)
-
-  ;; helm
-  ;; ----
-  ;; (spacemacs/set-leader-keys "oo" #'helm-projectile-find-file)
+  (spacemacs/set-leader-keys "oo" #'helm-projectile-find-file)
 
   ;; pareditish
   ;; -------------
   ; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+  ;; (add-hook 'clojure-mode-hook #'smartparens-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
