@@ -31,6 +31,7 @@ values."
      ranger
      markdown
      python
+     evil-cleverparens
      org
      (shell :variables
             shell-default-height 30
@@ -50,7 +51,7 @@ values."
    dotspacemacs-additional-packages
    '(gruvbox-theme
      arduino-mode
-     evil-smartparens
+     ; evil-smartparens
      )
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -301,8 +302,8 @@ you should place your code here."
 
   ;; pareditish
   ;; -------------
-  (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
-  ;; (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+  ; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
+  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
