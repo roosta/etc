@@ -1,68 +1,9 @@
-# ┌───────────────────────────────────┐
-# │▀▀▀▀▀▀▀░░░▀█▀░▀▀█░█░█░█▄█░░░▀▀▀▀▀▀▀│
-# │▀▀▀▀▀▀▀░░░░█░░░▀▄░█▄█░█░█░░░▀▀▀▀▀▀▀│
-# │▀▀▀▀▀▀▀░░░▀▀▀░▀▀░░▀░▀░▀░▀░░░▀▀▀▀▀▀▀│
-# │▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀│
-# │ Author: Roosta <mail@roosta.sh>   │
-# │ Site  : https://roosta.sh         │
-# │ Github: https://github.com/roosta │
-# └───────────────────────────────────┘
-
-# ------------------- 
-# VARIABLES
-# -------------------
-# fast way to reach power settings for system. Requires polkit.
-set $locker xscreensaver-command --lock
-#set $locker i3lock --image=$HOME/.background/pattern-01.png -t && sleep 1
-
-# tmux session management
-# set $term urxvtc -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -s main"
-set $term termite -e "bash -c 'tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -s main'"
-
-# set scrot/screenshot file arguments
-set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
-
-# generate new config with ansible and reload i3
-set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3"
-#set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg reload"
-
-# define palette
-set $black          "#1C1B19"
-set $red            "#FF3128"
-set $green          "#519F50"
-set $yellow         "#FBB829"
-set $blue           "#5573A3"
-set $magenta        "#E02C6D"
-set $cyan           "#1693A5"
-set $gray           "#918175"
-set $bright_black   "#2D2B28"
-set $bright_red     "#DA4939"
-set $bright_green   "#98BC37"
-set $bright_yellow  "#FFC66D"
-set $bright_blue    "#6D9CBE"
-set $bright_magenta "#E35682"
-set $bright_cyan    "#34BEDA"
-set $white          "#FCE8C3"
-set $orange         "#D75F00"
-set $bright_orange  "#FF8700"
-set $hard_black     "#080808"
-set $alt_gray       "#4E4E4E"
-
-set $primary_monitor   HDMI2
-set $secondary_monitor HDMI1
-set $tertiary_monitor  false
-
 # --------------------
 # WORKSPACES
 # -------------------- 
 
 # Numbers in front is for sorting order on i3bar.
 # In each bar numbers are stripped. See bar config below.
-
-# primary workspaces
-set $PWS1_TRM "1[Q]TERM"
-set $PWS2_DEV "2[W]EDIT"
-set $PWS3_WWW "3[E]WWW"
 
 bindsym $mod+q workspace $PWS1_TRM
 bindsym $mod+w workspace $PWS2_DEV
@@ -72,10 +13,6 @@ bindsym $mod+Shift+q move workspace $PWS1_TRM
 bindsym $mod+Shift+w move workspace $PWS2_DEV
 bindsym $mod+Shift+e move workspace $PWS3_WWW
 
-# secondary workspaces
-set $SWS1_AUX "4[A]MISC"
-set $SWS2_COM "5[S]COMS"
-set $SWS3_DBG "6[D]DEBUG"
 
 bindsym $mod+a workspace $SWS1_AUX
 bindsym $mod+s workspace $SWS2_COM
@@ -85,11 +22,6 @@ bindsym $mod+Shift+a move workspace $SWS1_AUX
 bindsym $mod+Shift+s move workspace $SWS2_COM
 bindsym $mod+Shift+d move workspace $SWS3_DBG
 
-# Tertiary workspaces
-set $TWS1_MED "7[1]MEDIA"
-set $TWS2_GAM "8[2]GAME"
-set $TWS3_ART "9[3]GFX"
-
 bindsym $mod+1 workspace $TWS1_MED
 bindsym $mod+2 workspace $TWS2_GAM
 bindsym $mod+3 workspace $TWS3_ART
@@ -97,16 +29,6 @@ bindsym $mod+3 workspace $TWS3_ART
 bindsym $mod+Shift+1 move workspace $TWS1_MED
 bindsym $mod+Shift+2 move workspace $TWS2_GAM
 bindsym $mod+Shift+3 move workspace $TWS3_ART
-
-# Auxiliary workspaces
-set $FWS1  "9[F1]"
-set $FWS2 "10[F2]"
-set $FWS3 "11[F3]"
-set $FWS4 "12[F4]"
-set $FWS5 "13[F5]"
-set $FWS6 "14[F6]"
-set $FWS7 "15[F7]"
-set $FWS8 "16[F8]"
 
 bindsym $mod+F1 workspace $FWS1
 bindsym $mod+F2 workspace $FWS2
@@ -135,6 +57,7 @@ workspace $PWS2_DEV output $primary_monitor
 workspace $TWS1_MED output $primary_monitor
 workspace $TWS3_GAM output $primary_monitor
 workspace $TWS2_ART output $primary_monitor
+
 # secondary
 workspace $SWS1_AUX output $secondary_monitor
 workspace $SWS3_DBG output $secondary_monitor
@@ -424,5 +347,3 @@ bar {
     urgent_workspace   $orange $orange $black
   }
 }
-
-# vim:ft=i3:ts=2:sw=2:fdm=marker

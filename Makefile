@@ -53,5 +53,8 @@ set-shell:
 install-spacemacs:
 	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d	
 
+assemble-i3-config:
+	cd ~/etc/conf/i3/.i3/config.d && cat `hostname`.local > ../config && cat *.i3 >> ../config 
+
 show-notes:
 	cat ./post_install.txt

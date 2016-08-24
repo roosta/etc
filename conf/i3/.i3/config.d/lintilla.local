@@ -1,0 +1,11 @@
+# ------------
+# LOCAL
+# ------------
+set $primary_monitor   DVI-I-1
+set $secondary_monitor DVI-D-0
+set $tertiary_monitor  HDMI-0
+
+workspace $FWS1 output $tertiary_monitor
+workspace $FWS2 output $tertiary_monitor
+workspace $FWS3 output $tertiary_monitor
+

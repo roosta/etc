@@ -99,3 +99,4 @@ yankring_history_v2.txt
 tags.lock
 tags.temp
 !**/.gitkeep
+conf/i3/.i3/config
