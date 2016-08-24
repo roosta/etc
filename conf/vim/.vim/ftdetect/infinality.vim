@@ -1,1 +1,1 @@
-  au BufNewFile,BufRead infinality.conf setf xml
+  au BufNewFile,BufRead infinality.conf set filetype=xml

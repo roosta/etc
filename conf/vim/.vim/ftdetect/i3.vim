@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.i3,~/.i3/config setf=i3
+au BufRead,BufNewFile *.i3,~/.i3/config.tmp set filetype=i3

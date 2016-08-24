@@ -1,1 +1,1 @@
-au BufNewFile,BufRead .Xresources,*.Xresources,*.xresources,.rofirc setf xdefaults
+au BufNewFile,BufRead .Xresources,*.Xresources,*.xresources,.rofirc set filetype=xdefaults

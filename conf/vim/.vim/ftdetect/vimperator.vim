@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *vimperatorrc*,*.vimp setf vimperator
+au BufNewFile,BufRead *vimperatorrc*,*.vimp set filetype=vimperator

@@ -1,1 +1,1 @@
-au BufNewFile,BufRead */irssi/config setf config
+au BufNewFile,BufRead */irssi/config set filetype=config

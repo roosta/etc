@@ -1,1 +1,1 @@
-au BufNewFile,BufRead */conky/*.conf setf conkyrc
+au BufNewFile,BufRead */conky/*.conf set filetype=conkyrc

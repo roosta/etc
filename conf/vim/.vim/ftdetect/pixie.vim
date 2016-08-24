@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.pxi setf=clojure
+au BufRead,BufNewFile *.pxi set filetype=clojure
