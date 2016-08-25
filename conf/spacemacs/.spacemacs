@@ -31,7 +31,6 @@ values."
      ranger
      markdown
      python
-     evil-cleverparens
      org
      (shell :variables
             shell-default-height 30
@@ -51,6 +50,7 @@ values."
    dotspacemacs-additional-packages
    '(gruvbox-theme
      arduino-mode)
+
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -295,11 +295,10 @@ you should place your code here."
   (spacemacs/set-leader-keys "meq" #'user/cider-send-to-repl)
   (spacemacs/set-leader-keys "oo" #'helm-projectile-find-file)
 
-  ;; pareditish
+  ;; smartparens
   ;; -------------
-  ; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
-  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
-  ;; (add-hook 'clojure-mode-hook #'smartparens-mode)
+  (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+  ;; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
