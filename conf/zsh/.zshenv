@@ -21,10 +21,9 @@ if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
 	export LC_CTYPE=${LANG%%:*} # pick the first entry from LANG
 fi
 
-#export TERM="xterm-screen-256color"
-#export TERM="xterm-256color"
-#export TERM="rxvt-unicode-256color"
-# export TERM="screen-256color"
+# export TERM="xterm-screen-256color"
+# export TERM="xterm-256color"
+# export TERM="rxvt-unicode-256color"
 export TERM="screen-256color"
 export TERMINAL=termite
 export BROWSER=firefox
