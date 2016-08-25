@@ -54,6 +54,7 @@ nnoremap d<Escape> <Nop>
 
 " go to last active tab.
 noremap gp <C-^>
+noremap <leader><Tab> <C-^>
 
 " Movement
 " --------
