@@ -41,6 +41,7 @@ values."
      ;; spell-checking
      syntax-checking
      version-control
+     evil-cleverparens
      )
 
    ;; List of additional packages that will be installed without being
@@ -49,6 +50,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(gruvbox-theme
+     ;; evil-smartparens
      arduino-mode)
 
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -297,8 +299,9 @@ you should place your code here."
 
   ;; smartparens
   ;; -------------
-  (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+  ;; (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   ;; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
+  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
