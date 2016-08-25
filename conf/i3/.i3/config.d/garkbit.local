@@ -1,0 +1,6 @@
+# ------------
+# LOCAL
+# ------------
+set $primary_monitor   HDMI2
+set $secondary_monitor HDMI1
+
