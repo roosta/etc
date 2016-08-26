@@ -297,6 +297,20 @@ you should place your code here."
   (spacemacs/set-leader-keys "meq" #'user/cider-send-to-repl)
   (spacemacs/set-leader-keys "oo" #'helm-projectile-find-file)
 
+  ;; (global-set-key (kbd "M-<left>") 'evil-window-left)
+  ;; (global-set-key (kbd "M-<right>") 'evil-window-right)
+  ;; (global-set-key (kbd "M-<up>") 'evil-window-up)
+  ;; (global-set-key (kbd "M-<down>") 'evil-window-down)
+
+  ;; (evil-define-key 'normal (kbd "M-<left>") 'evil-window-left)
+  ;; (evil-define-key 'normal (kbd "M-<right>") 'evil-window-right)
+  ;; (evil-define-key 'normal (kbd "M-<up>") 'evil-window-up)
+  ;; (evil-define-key 'normal (kbd "M-<down>") 'evil-window-down)
+
+  ;; (require 'evil-surround)
+  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
+  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+
   ;; smartparens
   ;; -------------
   ;; (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
