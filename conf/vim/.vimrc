@@ -183,10 +183,10 @@ nnoremap <silent> <M-S-Left>  10<C-w><
 nnoremap <silent> <M-S-Down>  10<C-W>-
 nnoremap <silent> <M-S-Up>    10<C-W>+
 nnoremap <silent> <M-S-Right> 10<C-w>>
-nnoremap <silent> <M-S-h>     10<C-w><
-nnoremap <silent> <M-S-j>     10<C-W>-
-nnoremap <silent> <M-S-k>     10<C-W>+
-nnoremap <silent> <M-S-l>     10<C-w>>
+" nnoremap <silent> <M-S-h>     10<C-w><
+" nnoremap <silent> <M-S-j>     10<C-W>-
+" nnoremap <silent> <M-S-k>     10<C-W>+
+" nnoremap <silent> <M-S-l>     10<C-w>>
 
 " correct annoying typo
 cnoremap Q q
@@ -215,8 +215,8 @@ map <leader>pp :setlocal paste!<cr>
 command! White call StripTrailingWhitespace()<cr>
 command! Mode call AppendModeline()
 
-" switch to laste buffer used.
-nnoremap <leader>q :b#<cr>
+" switch to last buffer used.
+nnoremap <leader><tab> :b#<cr>
 
 " uses the Ilist function from qlist.
 nnoremap <leader>i :Ilist<space>
@@ -234,6 +234,7 @@ nmap <leader>gc :BCommits<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>m  :Marks<cr>
 nmap <leader>H  :Helptags<cr>
+
 
 " }}}
 " Cmd:{{{
@@ -408,9 +409,9 @@ colorscheme srcery
 " https://github.com/junegunn/fzf.vim
 
 " Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+nmap <leader>hdk <plug>(fzf-maps-n)
+xmap <leader>hdk <plug>(fzf-maps-x)
+omap <leader>hdk <plug>(fzf-maps-o)
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
