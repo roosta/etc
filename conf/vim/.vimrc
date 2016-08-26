@@ -223,7 +223,18 @@ nnoremap <leader>i :Ilist<space>
 
 imap <C-v> <Esc>"*pa
 
-map <f9> :Dispatch<cr>
+" plugin spesific
+nmap <leader>cc :Dispatch<cr>
+nmap <leader>pf :Files<CR>
+nmap <leader>bb :Buffers<cr>
+nmap <leader>pT :Tags<cr>
+nmap <leader>pt :BTags<cr>
+nmap <leader>gC :Commits<cr>
+nmap <leader>gc :BCommits<cr>
+nmap <leader>gs :Gstatus<cr>
+nmap <leader>m  :Marks<cr>
+nmap <leader>H  :Helptags<cr>
+
 " }}}
 " Cmd:{{{
 """"""""""
@@ -333,7 +344,8 @@ Plug 'ajh17/VimCompletesMe'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-commentary'
 Plug 'justinmk/vim-dirvish'
-Plug 'justinmk/vim-sneak'
+" Plug 'justinmk/vim-sneak'
+Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-abolish'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
@@ -390,6 +402,7 @@ filetype plugin indent on
 " --------------
 colorscheme srcery
 
+" -------
 " fzf.vim
 " -------
 " https://github.com/junegunn/fzf.vim
@@ -405,23 +418,13 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-nmap <leader>o  :Files<CR>
-nmap <leader>b  :Buffers<cr>
-nmap <leader>T  :Tags<cr>
-nmap <leader>t  :BTags<cr>
-nmap <leader>gC :Commits<cr>
-nmap <leader>gc :BCommits<cr>
-nmap <leader>gs :Gstatus<cr>
-" nmap <leader>a  :Ag<cr>
-nmap <leader>m  :Marks<cr>
-nmap <leader>H  :Helptags<cr>
-
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+" ---------
 " Incsearch
 " ---------
 map /  <Plug>(incsearch-forward)
@@ -437,6 +440,22 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+" -------------
+"  Easymotion
+" -------------
+let g:EasyMotion_smartcase = 1
+
+map <Leader> <Plug>(easymotion-prefix)
+" map <leader><leader> <Plug>(easymotion-s2)
+map <leader><leader> <Plug>(easymotion-s)
+" map <Leader>f <Plug>(easymotion-lineforward)
+" map <Leader>F <Plug>(easymotion-linebackward)
+"
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
+
+let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
 
 " rainbow parenthesis
 " -------------------
