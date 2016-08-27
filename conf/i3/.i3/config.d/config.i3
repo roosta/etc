@@ -5,63 +5,71 @@
 # Numbers in front is for sorting order on i3bar.
 # In each bar numbers are stripped. See bar config below.
 
-bindsym $mod+q workspace $PWS1_TRM
-bindsym $mod+w workspace $PWS2_DEV
-bindsym $mod+e workspace $PWS3_WWW
+bindsym $mod+q workspace $PWS1
+bindsym $mod+w workspace $PWS2
+bindsym $mod+e workspace $PWS3
 
-bindsym $mod+Shift+q move workspace $PWS1_TRM
-bindsym $mod+Shift+w move workspace $PWS2_DEV
-bindsym $mod+Shift+e move workspace $PWS3_WWW
+bindsym $mod+Shift+q move workspace $PWS1
+bindsym $mod+Shift+w move workspace $PWS2
+bindsym $mod+Shift+e move workspace $PWS3
 
 
-bindsym $mod+a workspace $SWS1_AUX
-bindsym $mod+s workspace $SWS2_COM
-bindsym $mod+d workspace $SWS3_DBG
+bindsym $mod+a workspace $SWS1
+bindsym $mod+s workspace $SWS2
+bindsym $mod+d workspace $SWS3
 
-bindsym $mod+Shift+a move workspace $SWS1_AUX
-bindsym $mod+Shift+s move workspace $SWS2_COM
-bindsym $mod+Shift+d move workspace $SWS3_DBG
+bindsym $mod+Shift+a move workspace $SWS1
+bindsym $mod+Shift+s move workspace $SWS2
+bindsym $mod+Shift+d move workspace $SWS3
 
-bindsym $mod+1 workspace $TWS1_MED
-bindsym $mod+2 workspace $TWS2_GAM
-bindsym $mod+3 workspace $TWS3_ART
+bindsym $mod+1 workspace $TWS1
+bindsym $mod+2 workspace $TWS2
+bindsym $mod+3 workspace $TWS3
 
-bindsym $mod+Shift+1 move workspace $TWS1_MED
-bindsym $mod+Shift+2 move workspace $TWS2_GAM
-bindsym $mod+Shift+3 move workspace $TWS3_ART
+bindsym $mod+Shift+1 move workspace $TWS1
+bindsym $mod+Shift+2 move workspace $TWS2
+bindsym $mod+Shift+3 move workspace $TWS3
 
-bindsym $mod+F1 workspace $FWS1
-bindsym $mod+F2 workspace $FWS2
-bindsym $mod+F3 workspace $FWS3
-bindsym $mod+F4 workspace $FWS4
-bindsym $mod+F5 workspace $FWS5
-bindsym $mod+F6 workspace $FWS6
-bindsym $mod+F7 workspace $FWS7
-bindsym $mod+F8 workspace $FWS8
+bindsym $mod+F1  workspace $FWS1
+bindsym $mod+F2  workspace $FWS2
+bindsym $mod+F3  workspace $FWS3
+bindsym $mod+F4  workspace $FWS4
+bindsym $mod+F5  workspace $FWS5
+bindsym $mod+F6  workspace $FWS6
+bindsym $mod+F7  workspace $FWS7
+bindsym $mod+F8  workspace $FWS8
+bindsym $mod+F9  workspace $FWS9
+bindsym $mod+F10 workspace $FWS10
+bindsym $mod+F11 workspace $FWS11
+bindsym $mod+F12 workspace $FWS12
 
-bindsym $mod+Shift+F1 move workspace $FWS1
-bindsym $mod+Shift+F2 move workspace $FWS2
-bindsym $mod+Shift+F3 move workspace $FWS3
-bindsym $mod+Shift+F4 move workspace $FWS4
-bindsym $mod+Shift+F5 move workspace $FWS5
-bindsym $mod+Shift+F6 move workspace $FWS6
-bindsym $mod+Shift+F7 move workspace $FWS7
-bindsym $mod+Shift+F8 move workspace $FWS8
+bindsym $mod+Shift+F1  move workspace $FWS1
+bindsym $mod+Shift+F2  move workspace $FWS2
+bindsym $mod+Shift+F3  move workspace $FWS3
+bindsym $mod+Shift+F4  move workspace $FWS4
+bindsym $mod+Shift+F5  move workspace $FWS5
+bindsym $mod+Shift+F6  move workspace $FWS6
+bindsym $mod+Shift+F7  move workspace $FWS7
+bindsym $mod+Shift+F8  move workspace $FWS8
+bindsym $mod+Shift+F9  move workspace $FWS9
+bindsym $mod+Shift+F10 move workspace $FWS10
+bindsym $mod+Shift+F11 move workspace $FWS11
+bindsym $mod+Shift+F12 move workspace $FWS12
 
 ## assign workspaces to outputs
 # primary
-workspace $PWS1_TRM output $primary_monitor
-workspace $PWS3_WWW output $primary_monitor
-workspace $PWS2_DEV output $primary_monitor
+workspace $PWS1 output $primary_monitor
+workspace $PWS3 output $primary_monitor
+workspace $PWS2 output $primary_monitor
 
-workspace $TWS1_MED output $primary_monitor
-workspace $TWS3_GAM output $primary_monitor
-workspace $TWS2_ART output $primary_monitor
+workspace $TWS1 output $primary_monitor
+workspace $TWS2 output $primary_monitor
+workspace $TWS3 output $primary_monitor
 
 # secondary
-workspace $SWS1_AUX output $secondary_monitor
-workspace $SWS3_DBG output $secondary_monitor
-workspace $SWS2_COM output $secondary_monitor
+workspace $SWS1 output $secondary_monitor
+workspace $SWS3 output $secondary_monitor
+workspace $SWS2 output $secondary_monitor
 
 # Options
 focus_follows_mouse no
@@ -71,45 +79,44 @@ hide_edge_borders none
 # WINDOW WORKSPACE ASSIGNMENT
 # ---------------------------
 # W:DEV
-assign [class="(?i)google-chrome-beta"] $SWS3_DBG
-assign [class="(?i)google-chrome-unstable"] $SWS3_DBG
-assign [instance="^Devtools$$"] $SWS3_DBG
-assign [class="(?i)firefox-developer"] $SWS3_DBG
-assign [class="(?i)subl3"] $PWS2_DEV
-assign [class="(?i)jetbrains-idea"] $PWS2_DEV
-assign [class="(?i)atom"] $PWS2_DEV
-assign [class="(?i)emacs"] $PWS2_DEV
+assign [class="(?i)google-chrome-beta"]     $SWS3
+assign [class="(?i)google-chrome-unstable"] $SWS3
+assign [instance="^Devtools$$"]             $SWS3
+assign [class="(?i)firefox-developer"]      $SWS3
+assign [class="(?i)subl3"]                  $PWS2
+assign [class="(?i)jetbrains-idea"]         $PWS2
+assign [class="(?i)atom"]                   $PWS2
+assign [class="(?i)emacs"]                  $PWS2
 
 # E:WWW
-assign [class="(?i)firefox"] $PWS3_WWW
+assign [class="(?i)firefox"] $PWS3
 
 # 2:GAM
-assign [class="(?i)steam(.*)"] $TWS2_GAM
-#assign [title="(?i)friends"] $TWS2_GAM
+assign [class="(?i)steam(.*)"] $TWS2
+#assign [title="(?i)friends"] $TWS2
 
 # 1:MED
 # workaround for spotify WS assignment
 # see: https://github.com/i3/i3/issues/2060
-for_window [class="Spotify"] move to workspace $TWS1_MED
+for_window [class="Spotify"] move to workspace $TWS1
 
-assign [class="(?i)google-chrome"] $TWS1_MED
-assign [class="(?i)smplayer"] $TWS1_MED
-assign [class="(?i)clementine"] $TWS1_MED
-
+assign [class="(?i)google-chrome"] $TWS1
+assign [class="(?i)smplayer"]      $TWS1
+assign [class="(?i)clementine"]    $TWS1
 
 # 3:ART
-assign [class="(?i)inkscape"] $TWS3_ART
-assign [class="(?i)gimp"] $TWS3_ART
-assign [class="(?i)krita"] $TWS3_ART
+assign [class="(?i)inkscape"] $TWS3
+assign [class="(?i)gimp"]     $TWS3
+assign [class="(?i)krita"]    $TWS3
 
 # S:COM
-assign [class="(?i)pidgin"] $SWS2_COM
-assign [class="(?i)linphone"] $SWS2_COM
-assign [class="(?i)skype"] $SWS2_COM
-assign [class="(?i)slack"] $SWS2_COM
-assign [class="(?i)thunderbird"] $SWS2_COM
+assign [class="(?i)pidgin"]      $FWS1
+assign [class="(?i)linphone"]    $FWS1
+assign [class="(?i)skype"]       $FWS1
+assign [class="(?i)slack"]       $FWS1
+assign [class="(?i)thunderbird"] $FWS2
 
-assign [class="(?i)transmission-gtk"] $FWS1
+assign [class="(?i)transmission-gtk"] $FWS3
 
 # WINDOW BEHAVIOUR
 # ----------------

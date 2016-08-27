@@ -40,27 +40,31 @@ set $hard_black     "#080808"
 set $alt_gray       "#4E4E4E"
 
 # primary workspaces
-set $PWS1_TRM "1[Q]TERM"
-set $PWS2_DEV "2[W]EDIT"
-set $PWS3_WWW "3[E]WWW"
+set $PWS1 "1[Q]TERM"
+set $PWS2 "2[W]EDIT"
+set $PWS3 "3[E]WWW"
 
 # secondary workspaces
-set $SWS1_AUX "4[A]MISC"
-set $SWS2_COM "5[S]COMS"
-set $SWS3_DBG "6[D]DEBUG"
+set $SWS1 "4[A]DBG_TERM"
+set $SWS2 "5[S]DBG_FIREFOX"
+set $SWS3 "6[D]DBG_CHROME"
 
 # Tertiary workspaces
-set $TWS1_MED "7[1]MEDIA"
-set $TWS2_GAM "8[2]GAME"
-set $TWS3_ART "9[3]GFX"
+set $TWS1 "7[1]MEDIA"
+set $TWS2 "8[2]GAME"
+set $TWS3 "9[3]GFX"
 
 # Auxiliary workspaces
-set $FWS1  "9[F1]"
-set $FWS2 "10[F2]"
-set $FWS3 "11[F3]"
-set $FWS4 "12[F4]"
-set $FWS5 "13[F5]"
-set $FWS6 "14[F6]"
-set $FWS7 "15[F7]"
-set $FWS8 "16[F8]"
+set $FWS1  "9[F1]CHAT"
+set $FWS2  "10[F2]EMAIL"
+set $FWS3  "11[F3]DL"
+set $FWS4  "12[F4]"
+set $FWS5  "13[F5]"
+set $FWS6  "14[F6]"
+set $FWS7  "15[F7]"
+set $FWS8  "16[F8]"
+set $FWS9  "17[F9]"
+set $FWS10 "18[F10]"
+set $FWS11 "19[F11]"
+set $FWS12 "20[F12]"
 
