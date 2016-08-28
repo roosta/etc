@@ -332,25 +332,3 @@ client.unfocused        $bright_black $bright_black $gray        $magenta
 client.urgent           $orange       $orange       $black       $magenta
 client.placeholder      $magenta      $cyan         $black       $magenta
 
-
-bar {
-  id bar-primary
-  status_command i3blocks -c ~/.i3/status/$(hostname).i3blocks 
-  font pango:Essential PragmataPro, FontAwesome 9
-  position top
-  tray_output primary
-  strip_workspace_numbers yes
-  separator_symbol "|"
-  # sep_block_width 0
-  colors {
-    background $black
-    separator  $cyan
-    statusline $white
-
-    # <workclass>      <border> <background> <foreground>
-    focused_workspace  $blue   $blue   $white
-    active_workspace   $black  $black  $white
-    inactive_workspace $black  $black  $white
-    urgent_workspace   $orange $orange $black
-  }
-}
