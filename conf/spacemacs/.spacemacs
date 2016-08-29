@@ -310,6 +310,8 @@ you should place your code here."
   ;; (require 'evil-surround)
   (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
   (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+  (evil-define-key 'normal evil-surround-mode-map "cs" 'evil-surround-change)
+  (evil-define-key 'normal evil-surround-mode-map "ds" 'evil-surround-delete)
 
   ;; smartparens
   ;; -------------
