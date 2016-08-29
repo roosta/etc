@@ -81,8 +81,8 @@ hide_edge_borders none
 # W:DEV
 assign [class="(?i)google-chrome-beta"]     $SWS3
 assign [class="(?i)google-chrome-unstable"] $SWS3
-assign [instance="^Devtools$$"]             $SWS3
-assign [class="(?i)firefox-developer"]      $SWS3
+assign [instance="^Devtools$$"]             $SWS2
+assign [class="(?i)firefox-developer"]      $SWS2
 assign [class="(?i)subl3"]                  $PWS2
 assign [class="(?i)jetbrains-idea"]         $PWS2
 assign [class="(?i)atom"]                   $PWS2
@@ -165,7 +165,8 @@ bindsym $mod+Shift+Return exec firefox
 # kill focused window
 bindsym $mod+c kill
 
-bindsym $mod+Tab exec --no-startup-id rofi -show Drun
+# bindsym $mod+Tab exec --no-startup-id rofi -show DRun
+bindsym $mod+Tab exec --no-startup-id rofi -show 
 bindsym $mod+grave exec --no-startup-id rofi -show window
 
 # focus vi bindings
