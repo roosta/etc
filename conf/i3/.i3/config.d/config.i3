@@ -165,8 +165,8 @@ bindsym $mod+Shift+Return exec firefox
 # kill focused window
 bindsym $mod+c kill
 
-# bindsym $mod+Tab exec --no-startup-id rofi -show DRun
-bindsym $mod+Tab exec --no-startup-id rofi -show 
+bindsym $mod+Tab exec --no-startup-id rofi -show DRun
+# bindsym $mod+Tab exec --no-startup-id rofi -show 
 bindsym $mod+grave exec --no-startup-id rofi -show window
 
 # focus vi bindings
