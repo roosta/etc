@@ -7,48 +7,52 @@
 " │─┤││ ┬│─┤│  ││ ┬│─┤ │
 " ┆ ┴┆┆─┘┆ ┴┆─┘┆┆─┘┆ ┴ ┆
 " -----------------------
-hi Hint font-family: "Terminess Powerline"; font-size: 15px; font-weight: normal; color: #1D2021; background-color: #8EC07C; border: 1px solid #1D2021; padding: 0px 5px 0px 5px; text-transform: uppercase;
-hi HintElem   background-color: #458588; color: #3C3836;
-hi HintActive background-color: #B8BB26; color: #282828;
+hi Hint font-family: "Essential PragmataPro"; font-size: 15px; font-weight: normal; color: #1C1B19; background-color: #98BC37; border: 1px solid #1C1B19; padding: 0px 5px 0px 5px; text-transform: uppercase;
+hi HintElem   background-color: #0AAEB3; color: #1C1B19;
+hi HintActive background-color: #98BC37; color: #1C1B19;
 
-hi -append Hint         background-color: rgba(251, 241, 199, 0.7); -moz-border-radius: 4px; -moz-box-shadow: 0px 0px 1px black;
+hi -append Hint         background-color: rgba(252, 232, 195, 0.7); -moz-border-radius: 4px; -moz-box-shadow: 0px 0px 1px black;
 hi -append HintElem     text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #FBF1C7;
 hi -append HintActive   text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #FBF1C7;
 
-hi StatusLine     color: #EBDBB2; background: #282828; font-weight: normal; font-size: 12px; font-family: Essential PragmataPro;
+hi StatusLine     color: #FCE8C3; background: #1C1B19; font-weight: normal; font-size: 12px; font-family: Essential PragmataPro;
 "hi StatusLineBroken   color:  #93a1a1; background: #ffffd7; font-weight: normal; font-size: 12pt;
 "hi StatusLineExtended color:  #93a1a1; background: #af005f; font-weight: normal; font-size: 12pt;
 "hi StatusLineSecure   color:  #93a1a1; background: #b58900; font-weight: normal; font-size: 12pt;
 
-hi Normal     color: #EBDBB2; background: #282828; font-size: 12px; font-family: Terminess Powerline;
-hi CmdLine    color: #EBDBB2; background: #282828; font-size: 12px; font-family: Terminess Powerline;
-hi InfoMsg    color: #EBDBB2; background: #282828; font-size: 12px; font-family: Terminess Powerline;
-hi ModeMsg    color: #EBDBB2; background: #282828; font-size: 12px; font-family: Terminess Powerline;
-hi MoreMsg    color: #859900; background: #282828; font-size: 12px; font-family: Terminess Powerline;
-hi LineNr     color: #FE8019; background: #282828; font-size: 12px; font-family: Terminess Powerline;
-hi Question   color: #FABD2F; background: #282828; font-size: 12px; font-family: Terminess Powerline;
-hi WarningMsg color: #D65D0E; background: #282828; font-size: 12px; font-family: Terminess Powerline;
-hi ErrorMsg   color: #FB4934; background: #282828; font-size: 12px; font-family: Terminess Powerline; font-weight: bold;
-hi NonText    background: #282828;
-hi Null       color: #B8BB26;
-hi Tag        color: #B8BB26;
-hi Number     color: #B8BB26;
+hi Normal     color: #FCE8C3; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
+hi CmdLine    color: #FCE8C3; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
+hi InfoMsg    color: #FCE8C3; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
+hi ModeMsg    color: #FCE8C3; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
+hi MoreMsg    color: #98BC37; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
+hi LineNr     color: #FBB829; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
+hi Question   color: #FABD2F; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
+hi WarningMsg color: #FBB829; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
+hi ErrorMsg   color: #F75341; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro; font-weight: bold;
+hi NonText    background: #1C1B19;
+hi Null       color: #98BC37;
+hi Tag        color: #98BC37;
+hi Number     color: #98BC37;
 
-hi CompTitle          background: #3C3836;
-hi CompTitle>*        color: #EBDBB2; padding-bottom: 2px; padding-top: 2px; padding-left: 12px; font-weight: bold; font-size: 12px; border-top: 1px dotted #83A598; border-bottom: 1px dotted #83A598;
-hi CompItem[selected] color: #458588; background: #3C3836;
-hi CompItem           color: #EBDBB2; width: 50%;
-hi CompDesc           color: #D3869B;
+hi CompTitle          background: #2D2B28;
+hi CompTitle>*        color: #FCE8C3; padding-bottom: 2px; padding-top: 2px; padding-left: 12px; font-weight: bold; font-size: 12px; border-top: 1px dotted #918175; border-bottom: 1px dotted #918175;
+hi CompItem[selected] color: #519F50; background: #2D2B28;
+hi CompItem           color: #FCE8C3; width: 50%;
+hi CompDesc           color: #918175; font-style: italic;
+hi Filter             color: #1C1B19; background: #FBB829;
 
-hi Title     color: #EBDBB2;
-hi Indicator color: #b58900;
-hi String    color: #EBDBB2;
-hi Number    color: #EBDBB2;
-hi Object    color: #2aa198;
-hi Function  color: #268bd2;
-hi URL       color: #B8BB26;
+hi Indicator color: #000000;
 
-hi TabNumber  color: #EBDBB2; font-weight: bold; font-size:12px;
+hi Title     color: #FCE8C3;
+hi Indicator color: #FBB829;
+hi String    color: #FCE8C3;
+hi Number    color: #FCE8C3;
+hi Object    color: #53FDE9;
+hi Function  color: #5573A3;
+hi URL       color: #5573A3;
+hi Preview   color: #918175;
+
+hi TabNumber  color: #FED06E; font-weight: bold; font-size:12px;
 
 "┌─┐┐─┐┐─┐
 "│  └─┐└─┐
@@ -65,13 +69,13 @@ style -name liberator chrome://* <<EOM
     color: #8EC07C;
   }
   #liberator-status-tabcount {
-    color: #D3869B;
+    color: #E35682;
   }
   #liberator-separator {
     height: 0px !important;
   }
   #liberator-status-zoomlevel {
-    color: #FE8019;
+    color: #FBB829;
   }
   #liberator-status-bookmark {
     color: #FB4934;
