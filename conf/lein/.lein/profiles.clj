@@ -1,5 +1,6 @@
 {:user {:dependencies [[pjstadig/humane-test-output "0.8.1"]
                        [alembic "0.3.2"]
+                       [org.clojure/clojure "1.8.0"]
                        [org.clojure/tools.nrepl "0.2.12"]]
         :plugins [[cider/cider-nrepl "0.14.0-SNAPSHOT"]
                   [venantius/ultra "0.4.1"]
