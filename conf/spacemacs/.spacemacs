@@ -308,6 +308,8 @@ you should place your code here."
   ;; (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   ;; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+
+  (setq clojure-enable-fancify-symbols t)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
