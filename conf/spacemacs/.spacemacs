@@ -42,6 +42,7 @@ values."
      syntax-checking
      version-control
      evil-cleverparens
+     ;; evil-unimpaired
      )
 
    ;; List of additional packages that will be installed without being
