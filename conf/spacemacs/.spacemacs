@@ -42,6 +42,7 @@ values."
      syntax-checking
      version-control
      evil-cleverparens
+     colors
      )
 
    ;; List of additional packages that will be installed without being
@@ -103,7 +104,7 @@ values."
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
    dotspacemacs-startup-recent-list-size 5
    ;; Default major mode of the scratch buffer (default `text-mode')
-   dotspacemacs-scratch-mode 'text-mode
+   dotspacemacs-scratch-mode 'clojure-mode
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
@@ -180,7 +181,7 @@ values."
    dotspacemacs-helm-position 'bottom
    ;; If non nil the paste micro-state is enabled. When enabled pressing `p`
    ;; several times cycle between the kill ring content. (default nil)
-   dotspacemacs-enable-paste-micro-state nil
+   dotspacemacs-enable-paste-micro-state t
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
    dotspacemacs-which-key-delay 0.4
@@ -262,7 +263,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
    ;; Avy
    ;; ---
-   avy-all-windows 'all-frames
+   ;; avy-all-windows 'all-frames
 
    ))
 
@@ -296,12 +297,26 @@ you should place your code here."
 
   (spacemacs/set-leader-keys "meq" #'user/cider-send-to-repl)
 
+  ;; window movement
+  ;; ---------------
+  (define-key evil-normal-state-map (kbd "<M-left>") 'evil-window-left)
+  (define-key evil-normal-state-map (kbd "<M-right>") 'evil-window-right)
+  (define-key evil-normal-state-map (kbd "<M-up>") 'evil-window-up)
+  (define-key evil-normal-state-map (kbd "<M-down>") 'evil-window-down)
+
   ;; evil-surround
   ;; -------------
   (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
   (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
-  (spacemacs/set-leader-keys "osc" #'evil-surround-change)
-  (spacemacs/set-leader-keys "osd" #'evil-surround-delete)
+  (define-key evil-normal-state-map (kbd "<cs>") 'evil-surround-change)
+  (define-key evil-normal-state-map (kbd "<ds>") 'evil-surround-delete)
+
+  ;; (spacemacs/set-leader-keys "osc" #'evil-surround-change)
+  ;; (spacemacs/set-leader-keys "osd" #'evil-surround-delete)
+
+  ;; Navigating using visual lines
+  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
   ;; smartparens
   ;; -------------
