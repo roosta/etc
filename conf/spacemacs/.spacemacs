@@ -42,6 +42,7 @@ values."
      syntax-checking
      version-control
      evil-cleverparens
+     evil-snipe
      colors
      )
 
