@@ -51,9 +51,7 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
-   '(gruvbox-theme
-     ;; evil-smartparens
-     arduino-mode)
+   '(arduino-mode)
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -288,17 +286,6 @@ you should place your code here."
              (figwheel-sidecar.repl-api/start-figwheel!)
              (figwheel-sidecar.repl-api/cljs-repl))")
 
-  (defun user/cider-send-to-repl ()
-    (interactive)
-    (let ((s (buffer-substring-no-properties
-              (nth 0 (cider-last-sexp 'bounds))
-              (nth 1 (cider-last-sexp 'bounds)))))
-      (with-current-buffer (cider-current-connection)
-        (insert s)
-        (cider-repl-return))))
-
-  (spacemacs/set-leader-keys "meq" #'user/cider-send-to-repl)
-
   ;; window movement
   ;; ---------------
   (define-key evil-normal-state-map (kbd "<M-left>") 'evil-window-left)
@@ -324,6 +311,7 @@ you should place your code here."
   ;; -------------
   ;; (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   ;; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
+  (setq evil-cleverparens-use-additional-movement-keys nil)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 
   (setq clojure-enable-fancify-symbols t)
