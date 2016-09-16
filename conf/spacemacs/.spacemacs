@@ -311,7 +311,7 @@ you should place your code here."
   ;; -------------
   ;; (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   ;; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
-  (setq evil-cleverparens-use-additional-movement-keys nil)
+  ;; (setq evil-cleverparens-use-additional-movement-keys nil)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 
   (setq clojure-enable-fancify-symbols t)
