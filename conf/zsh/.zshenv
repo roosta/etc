@@ -70,3 +70,4 @@ export PYTHONUSERBASE=$HOME/.pip
 
 export ARDUINO_DIR=/usr/share/arduino
 
+export PULSE_LATENCY_MSEC=60
