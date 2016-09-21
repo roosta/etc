@@ -1,3 +1,6 @@
 **/tags
 tags.*
 **/*.swp
+GTAGS
+GRTAGS
+GPATH
