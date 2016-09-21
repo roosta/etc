@@ -70,4 +70,8 @@ export PYTHONUSERBASE=$HOME/.pip
 
 export ARDUINO_DIR=/usr/share/arduino
 
+# Fix for latency issues in wine
 export PULSE_LATENCY_MSEC=60
+
+# gtags
+export GTAGSLABEL=ctags
