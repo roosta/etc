@@ -178,6 +178,11 @@ noremap <silent> <leader>w<Down>  :wincmd j<CR>
 noremap <silent> <leader>w<Left>  :wincmd h<CR>
 noremap <silent> <leader>w<Right> :wincmd l<CR>
 
+" noremap <silent> <M-Up>    :wincmd k<CR>
+" noremap <silent> <M-Down>  :wincmd j<CR>
+" noremap <silent> <M-Left>  :wincmd h<CR>
+" noremap <silent> <M-Right> :wincmd l<CR>
+
 " Resize splits
 nnoremap <silent> <M-S-Left>  10<C-w><
 nnoremap <silent> <M-S-Down>  10<C-W>-
@@ -225,10 +230,10 @@ imap <C-v> <Esc>"*pa
 
 " plugin spesific
 nmap <leader>cc :Dispatch<cr>
-nmap <leader>pf :Files<CR>
+nmap <leader>o  :Files<CR>
 nmap <leader>bb :Buffers<cr>
-nmap <leader>pT :Tags<cr>
-nmap <leader>pt :BTags<cr>
+nmap <leader>T  :Tags<cr>
+nmap <leader>t  :BTags<cr>
 nmap <leader>gC :Commits<cr>
 nmap <leader>gc :BCommits<cr>
 nmap <leader>gs :Gstatus<cr>
