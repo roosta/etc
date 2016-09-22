@@ -315,7 +315,9 @@ you should place your code here."
   ;; (setq evil-cleverparens-use-additional-movement-keys nil)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 
-  (setq clojure-enable-fancify-symbols t)
+  (setq
+   clojure-enable-fancify-symbols t
+   scroll-margin 7)
 
   (spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
 )
