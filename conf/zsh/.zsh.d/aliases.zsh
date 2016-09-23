@@ -260,7 +260,7 @@ alias pacman="yaourt"
 # iNSTALLING
 alias pacs="pacman -S" # Install specific package(s) from the repositories
 alias pacss="pacman -Ss" # Search for package(s) in the repositories
-alias pacsso="\pacman -Ss" # Search for package(s) in the repositories
+alias pacsso="\pacman -Ss --color=always" # Search for package(s) in the repositories
 alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
 alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
 alias pacinsd="pacman -S --asdeps" # Install given package(s) as dependencies
