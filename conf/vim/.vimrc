@@ -44,7 +44,7 @@ set spelllang=en_us,nb
 set cm=blowfish2
 set autoindent
 set smartindent
-set synmaxcol=512
+set synmaxcol=2048
 
 " line break
 set wrap
