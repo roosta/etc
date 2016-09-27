@@ -1,8 +1,9 @@
 colorscheme srcery
 set noscrollbars
 set loadplugins
-set complete=ltsS
+set complete=slbhSt
 set focuscontent
+set suggestengines=duckduckgo
 set defsearch=duckduckgo
 set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position,zoomlevel
