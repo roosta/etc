@@ -322,7 +322,8 @@ you should place your code here."
 
   (setq
    clojure-enable-fancify-symbols t
-   scroll-margin 7)
+   scroll-margin 7
+   srcery-theme-org-height nil)
 
   (spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
 )
