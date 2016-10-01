@@ -441,6 +441,8 @@ alias ccat='pygmentize -g -O style=colorful'
 #alias ccat='pygmentize -g -O style=colorful,linenos=1'
 alias cats='highlight -O ansi'
 alias cljgrep='ag -R --include="*.clj*"'
+alias ect='emacsclient -t'
+alias ecc='emacsclient -c'
 #}}}
 ## MISC {{{1
 ## ---------
