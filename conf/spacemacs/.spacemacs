@@ -299,16 +299,6 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "<M-up>") 'evil-window-up)
   (define-key evil-normal-state-map (kbd "<M-down>") 'evil-window-down)
 
-  ;; evil-surround
-  ;; -------------
-  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
-  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
-  (define-key evil-normal-state-map (kbd "<cs>") 'evil-surround-change)
-  (define-key evil-normal-state-map (kbd "<ds>") 'evil-surround-delete)
-
-  ;; (spacemacs/set-leader-keys "osc" #'evil-surround-change)
-  ;; (spacemacs/set-leader-keys "osd" #'evil-surround-delete)
-
   ;; Navigating using visual lines
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -319,9 +309,19 @@ you should place your code here."
   ;; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   ;; (setq evil-cleverparens-use-additional-movement-keys nil)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+  (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
+
+  ;; evil-surround
+  ;; -------------
+  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
+  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+  (define-key evil-normal-state-map (kbd "<cs>") 'evil-surround-change)
+  (define-key evil-normal-state-map (kbd "<ds>") 'evil-surround-delete)
+
+  ;; (spacemacs/set-leader-keys "osc" #'evil-surround-change)
+  ;; (spacemacs/set-leader-keys "osd" #'evil-surround-delete)
 
   (setq
-   clojure-enable-fancify-symbols t
    scroll-margin 7
    srcery-theme-org-height nil)
 
