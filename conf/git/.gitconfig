@@ -7,7 +7,7 @@
 [push]
   default = simple
 [credential]
-  helper = cache
+	helper = cache --timeout=3600
 [diff]
 	tool = vimdiff
 [alias]
