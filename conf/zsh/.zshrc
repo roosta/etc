@@ -24,7 +24,7 @@ tmux new-session -s vconsole
 fi
 
 # init completion
-for compl (~/.zsh.d/completion/*.zsh) source $compl
+# for compl (~/.zsh.d/completion/*.zsh) source $compl
 
 # CONF
 for config (~/.zsh.d/*.zsh) source $config
