@@ -9,7 +9,7 @@
                      (pjstadig.humane-test-output/activate!)]}
 
  :repl {:plugins [[cider/cider-nrepl "0.14.0-SNAPSHOT"]
-                  [venantius/ultra "0.4.1"]
+                  [venantius/ultra "0.5.0"]
                   [refactor-nrepl "2.3.0-SNAPSHOT"]]
         :ultra {:color-scheme :solarized_dark}
         :dependencies [[alembic "0.3.2"]
