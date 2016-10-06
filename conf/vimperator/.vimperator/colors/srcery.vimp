@@ -60,10 +60,10 @@ hi TabNumber  color: #FED06E; font-weight: bold; font-size:12px;
 "---------
 style -name liberator chrome://* <<EOM
   #liberator-statusline {
-    margin: -2px -2px !important;
-    padding: 0 0 !important;
+    /* margin: -2px -2px !important; */
+    /* padding: 0 0 !important; */
     border: none !important;
-    height: 24px !important;
+    /* height: 24px !important; */
   }
   #liberator-status-position {
     color: #8EC07C;
@@ -72,7 +72,7 @@ style -name liberator chrome://* <<EOM
     color: #E35682;
   }
   #liberator-separator {
-    height: 0px !important;
+    /* height: 0px !important; */
   }
   #liberator-status-zoomlevel {
     color: #FBB829;
