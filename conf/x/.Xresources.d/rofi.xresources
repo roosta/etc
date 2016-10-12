@@ -10,12 +10,12 @@ rofi.font:                       Essential PragmataPro 12px
 rofi.color-enabled:              false
 !
 ! State:                         'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
-rofi.color-normal:               #272727, #FBF1C7,  #2D2D2D,  #8EC07C,  #282828
+rofi.color-normal:               #1C1B19, #FCE8C3,  #211F1D,  #918175,  #1C1B19
 rofi.color-urgent:               #fdf6e3, #EBDBB2,  #eee8d5,  #dc322f,  #fdf6e3
-rofi.color-active:               #B8BB26, #282828,  #eee8d5,  #458588,  #fdf6e3
+rofi.color-active:               #519F50, #1C1B19,  #eee8d5,  #98BC37,  #1C1B19
 
 !                                'background', 'border'
-rofi.color-window:               #272727, #D5C4A1
+rofi.color-window:               #1C1B19, #918175
 !rofi.fg-active:                  #272727
 !rofi.fg-urgent:                  #272727
 !rofi.hlfg-active:                #272727
