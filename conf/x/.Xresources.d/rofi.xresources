@@ -35,7 +35,7 @@ rofi.padding:                    5
 rofi.yoffset:                    18
 rofi.xoffset:                    0
 rofi.fixed-num-lines:            false
-rofi.terminal:                   urxvtc
+rofi.terminal:                   termite
 rofi.ssh-client:                 ssh
 rofi.ssh-command:                {terminal} -e {ssh-client} {host}
 rofi.run-command:                {cmd}
