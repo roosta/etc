@@ -359,13 +359,17 @@ you should place your code here."
   ;; always follow symlinks
   (setq vc-follow-symlinks t)
   (setq powerline-default-separator nil)
-  ;; figwheel
+
+  ;; Cider
   ;; --------
   (require 'cider)
   (setq cider-cljs-lein-repl
         "(do (require 'figwheel-sidecar.repl-api)
              (figwheel-sidecar.repl-api/start-figwheel!)
              (figwheel-sidecar.repl-api/cljs-repl))")
+
+  (setq cider-refresh-before-fn "user/stop"
+        cider-refresh-after-fn "user/go")
 
   ;; window movement
   ;; ---------------
