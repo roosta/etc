@@ -93,8 +93,8 @@ assign [class="(?i)emacs"]                  $PWS2
 assign [class="(?i)firefox"] $PWS3
 
 # 2:GAM
-assign [class="(?i)steam(.*)"]  $TWS2
-assign [class="(?i)Wine"]       $TWS2
+assign [class="(?i)^steam(.*)"]   $TWS2
+assign [class="(?i)Wine"]        $TWS2
 assign [class="(?i)PlayOnLinux"] $TWS2
 #assign [title="(?i)friends"] $TWS2
 
@@ -125,6 +125,7 @@ assign [class="(?i)transmission-gtk"] $FWS3
 # ----------------
 # create some rules to force floating on certain roles/classes
 for_window [window_role="pop-up"] floating enable
+for_window [title="teamviewer"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [title="Preferences$"] floating enable
