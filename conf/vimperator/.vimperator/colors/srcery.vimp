@@ -61,10 +61,28 @@ hi TabNumber  color: #FED06E; font-weight: bold; font-size:12px;
 style -name liberator chrome://* <<EOM
   #liberator-statusline {
     /* margin: -2px -2px !important; */
-    /* padding: 0 0 !important; */
     border: none !important;
-    /* height: 24px !important; */
   }
+
+  #tabGroups-tabview-button {
+    color: #FCE8C3 !important;
+  }
+
+  #tabGroups-tabview-button:hover {
+    color: #1C1B19 !important;
+  }
+
+  #ublock0-button {
+  }
+
+  /* privacy badger */
+  #toggle-button--jid1-mnnxcxisbpnsxqjetpack-pb-button {
+  }
+  
+  /* self destructing cookies */
+  #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies {
+  }
+
   #liberator-status-position {
     color: #8EC07C;
   }
@@ -75,6 +93,7 @@ style -name liberator chrome://* <<EOM
     /* height: 0px !important; */
   }
   #liberator-status-zoomlevel {
+    /* padding-left: 5px; */
     color: #FBB829;
   }
   #liberator-status-bookmark {
