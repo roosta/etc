@@ -384,6 +384,8 @@ alias pgrep='pgrep -ia'
 alias grep='grep -i'
 alias fehp='feh -g 640x480 -d -S filename'
 
+alias mounttmpfs='sudo mount -t tmpfs tmpfs /mnt -o size=1024m'
+
 #}}}
 ## VCS {{{1
 ## --------
