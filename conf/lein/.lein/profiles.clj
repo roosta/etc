@@ -8,7 +8,7 @@
         :injections [(require 'pjstadig.humane-test-output)
                      (pjstadig.humane-test-output/activate!)]}
 
- :repl {:plugins [[cider/cider-nrepl "0.14.0-SNAPSHOT"]
+ :repl {:plugins [[cider/cider-nrepl "0.15.0-SNAPSHOT"]
                   [venantius/ultra "0.5.0"]
                   [refactor-nrepl "2.3.0-SNAPSHOT"]]
         :ultra {:color-scheme :solarized_dark}
@@ -16,6 +16,6 @@
                        [org.clojure/tools.nrepl "0.2.12"]]}
 
  :android-common {:android {:sdk-path "/home/roosta/lib/android-sdk-linux"}}
- :android-user {:dependencies [[cider/cider-nrepl "0.14.0-SNAPSHOT"]]
+ :android-user {:dependencies [[cider/cider-nrepl "0.15.0-SNAPSHOT"]]
                 :android {:aot-exclude-ns ["cider.nrepl.middleware.util.java.parser"
                                            "cider.nrepl" "cider-nrepl.plugin"]}}}
