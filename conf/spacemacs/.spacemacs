@@ -157,6 +157,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Essential PragmataPro"
+                               ; :size (if (string= system-name "allitnil") 15 13)
                                :size 13
                                :weight normal
                                :width normal
@@ -337,14 +338,9 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq-default
-
    ;; Evil
    ;; ----
    evil-shift-round nil
-
-   ;; Avy
-   ;; ---
-   ;; avy-all-windows 'all-frames
 
    ))
 
@@ -358,6 +354,7 @@ you should place your code here."
 
   ;; always follow symlinks
   (setq vc-follow-symlinks t)
+
   (setq powerline-default-separator nil)
 
   ;; Cider
@@ -382,6 +379,9 @@ you should place your code here."
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
+  ;; opening project files
+  (spacemacs/set-leader-keys "o" 'helm-projectile-find-file))
+
   ;; smartparens
   ;; -------------
   ;; (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
@@ -397,16 +397,13 @@ you should place your code here."
   (evil-define-key 'normal evil-surround-mode-map (kbd "<cs>") 'evil-surround-change)
   (evil-define-key 'normal evil-surround-mode-map (kbd "<ds>") 'evil-surround-delete)
 
-  ;; (spacemacs/set-leader-keys "osc" #'evil-surround-change)
-  ;; (spacemacs/set-leader-keys "osd" #'evil-surround-delete)
-
   (setq
    scroll-margin 7
    srcery-theme-org-height nil
    clojure-enable-fancify-symbols t)
 
-  (spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
-  )
+  ;; (when (string= system-name "allitnil")
+  ;;     (set-default-font "Essential PragmataPro 15"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
