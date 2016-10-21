@@ -1,8 +1,8 @@
 # ------------
 # LOCAL
 # ------------
-set $primary_monitor   HDMI2
-set $secondary_monitor HDMI1
+set $primary_monitor   HDMI1
+set $secondary_monitor HDMI2
 
 bar {
   id bar-primary
