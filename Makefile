@@ -1,8 +1,8 @@
-default: add-pacman-repositories install-packages create-user-fs link-config update-zsh-plugins update-libs set-shell show-notes
+default: add-pacman-repositories create-user-fs link-config update-zsh-plugins update-libs set-shell show-notes
 
-install-packages:
-	sudo pacman -Sy yaourt
-	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
+# install-packages:
+# 	sudo pacman -Sy yaourt
+# 	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
 
 add-pacman-repositories: add-infinality-key
 	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
