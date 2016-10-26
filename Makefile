@@ -41,7 +41,7 @@ clone-dev:
 	ssh-add ~/.ssh/id_rsa
 	./scripts/git_update.sh ~/dev ~/etc/dev_repositories.txt 
 
-link-misc: clone-dev update-libs
+link-misc:
 	./scripts/symlink.sh ~/etc/symlinks.txt
 
 link-config:

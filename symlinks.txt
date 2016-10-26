@@ -2,4 +2,5 @@
 /home/roosta/dev/colors /home/roosta/colors
 /home/roosta/dev/utils/bakc.sh /home/roosta/bin/bakc
 /home/roosta/dev/utils/emacs-file-opener.sh /home/roosta/bin/emacs-file-opener
-
+/home/roosta/Dropbox/org /home/roosta/org
+/home/roosta/Dropbox/org/TODOs.org /home/roosta/TODOs.org
