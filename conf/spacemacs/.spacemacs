@@ -352,21 +352,31 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;; always follow symlinks
-  (setq vc-follow-symlinks t)
 
-  (setq powerline-default-separator nil)
+  (setq
+   scroll-margin 7
+
+   ;; srcery-theme-org-height nil
+   powerline-default-separator nil
+
+   clojure-enable-fancify-symbols t
+
+   ;; always follow symlinks
+   vc-follow-symlinks t)
 
   ;; Cider
   ;; --------
   (require 'cider)
+  ;; use figwheel when starting a cljs repl
   (setq cider-cljs-lein-repl
         "(do (require 'figwheel-sidecar.repl-api)
              (figwheel-sidecar.repl-api/start-figwheel!)
-             (figwheel-sidecar.repl-api/cljs-repl))")
+             (figwheel-sidecar.repl-api/cljs-repl))"
 
-  (setq cider-refresh-before-fn "user/stop"
+        ;; use app lifecycle functions in cider-refresh
+        cider-refresh-before-fn "user/stop"
         cider-refresh-after-fn "user/go")
+
 
   ;; window movement
   ;; ---------------
@@ -397,10 +407,7 @@ you should place your code here."
   (evil-define-key 'normal evil-surround-mode-map (kbd "<cs>") 'evil-surround-change)
   (evil-define-key 'normal evil-surround-mode-map (kbd "<ds>") 'evil-surround-delete)
 
-  (setq
-    scroll-margin 7
-    srcery-theme-org-height nil
-    clojure-enable-fancify-symbols t)
+
 )
 
   ;; (when (string= system-name "allitnil")
@@ -413,6 +420,8 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
+ '(org-agenda-files (quote ("~/Dropbox/org/TODOs.org")))
  '(package-selected-packages
    (quote
     (hide-comnt helm-purpose window-purpose imenu-list pug-mode org diminish seq nginx-mode magit-gh-pulls github-search github-clone github-browse-file gist gh marshal logito pcache ht dockerfile-mode docker json-mode tablist docker-tramp json-snatcher json-reformat web-mode tagedit slim-mode scss-mode sass-mode less-css-mode jade-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data helm-gtags ggtags yapfify uuidgen py-isort org-projectile org-download mwim live-py-mode link-hint git-link eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump column-enforce-mode color-identifiers-mode clojure-snippets parent-mode request gitignore-mode fringe-helper git-gutter+ flx magit-popup anzu pos-tip inflections edn multiple-cursors paredit peg highlight spinner clojure-mode epl yasnippet packed pythonic dash s avy async popup bind-key bind-map ws-butler spacemacs-theme spaceline ranger persp-mode org-plus-contrib open-junk-file neotree leuven-theme indent-guide help-fns+ helm-themes helm-pydoc helm-projectile helm-descbinds helm-c-yasnippet helm-ag google-translate evil-surround evil-search-highlight-persist evil-matchit evil-iedit-state diff-hl company-quickhelp cider-eval-sexp-fu ace-link ace-jump-helm-line auto-complete cider anaconda-mode smartparens flycheck git-gutter company projectile helm helm-core markdown-mode alert magit git-commit with-editor hydra f package-build which-key evil srcery-theme xterm-color window-numbering volatile-highlights vi-tilde-fringe use-package undo-tree toc-org smooth-scrolling smeargle shell-pop restart-emacs rainbow-mode rainbow-identifiers rainbow-delimiters queue quelpa pyvenv pytest pyenv-mode py-yapf powerline popwin pkg-info pip-requirements pcre2el paradox page-break-lines orgit org-repo-todo org-present org-pomodoro org-bullets multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum log4e linum-relative info+ iedit ido-vertical-mode hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-swoop helm-mode-manager helm-make helm-gitignore helm-flx helm-company gruvbox-theme goto-chg golden-ratio gnuplot gntp gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-snipe evil-numbers evil-nerd-commenter evil-mc evil-magit evil-lisp-state evil-indent-plus evil-exchange evil-escape evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-prompt-extras esh-help elisp-slime-nav define-word cython-mode company-statistics company-anaconda clj-refactor clean-aindent-mode buffer-move bracketed-paste badwolf-theme auto-yasnippet auto-highlight-symbol auto-compile arduino-mode aggressive-indent adaptive-wrap ace-window ac-ispell))))
