@@ -134,7 +134,8 @@ values."
     ;; List sizes may be nil, in which case
     ;; `spacemacs-buffer-startup-lists-length' takes effect.
     dotspacemacs-startup-lists '((recents . 5)
-                                 (projects . 7))
+                                 (projects . 7)
+                                 (agenda . 5))
     ;; True if the home buffer should respond to resize events.
     dotspacemacs-startup-buffer-responsive t
     ;; Default major mode of the scratch buffer (default `text-mode')
@@ -241,6 +242,12 @@ values."
     ;; right; if there is insufficient space it displays it at the bottom.
     ;; (default 'bottom)
     dotspacemacs-which-key-position 'bottom
+    ;; Control where `switch-to-buffer' displays the buffer. If nil,
+    ;; `switch-to-buffer' displays the buffer in the current window even if
+    ;; another same-purpose window is available. If non nil, `switch-to-buffer'
+    ;; displays the buffer in a same-purpose window even if the buffer can be
+    ;; displayed in the current window. (default nil)
+    dotspacemacs-switch-to-buffer-prefers-purpose nil
     ;; If non nil a progress bar is displayed when spacemacs is loading. This
     ;; may increase the boot time on some systems and emacs builds, set it to
     ;; nil to boost the loading time. (default t)
@@ -286,8 +293,6 @@ values."
     ;; If non nil show the color guide hint for transient state keys. (default t)
     dotspacemacs-show-transient-state-color-guide t
     ;; If non nil unicode symbols are displayed in the mode line. (default t)
-    dotspacemacs-mode-line-unicode-symbols t
-    ;; If non nil unicode symbols are displayed in the mode line. (default t)
     dotspacemacs-mode-line-unicode-symbols nil
     ;; If non nil smooth scrolling (native-scrolling) is enabled. Smooth
     ;; scrolling overrides the default behavior of Emacs which recenters the
@@ -306,7 +311,7 @@ values."
     ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
     ;; over any automatically added closing parenthesis, bracket, quote, etc…
     ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
-    dotspacemacs-smart-closing-parenthesis nil
+    dotspacemacs-smart-closing-parenthesis t
     ;; Select a scope to highlight delimiters. Possible values are `any',
     ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
     ;; emphasis the current one). (default 'all)
