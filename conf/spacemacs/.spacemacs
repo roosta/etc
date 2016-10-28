@@ -365,7 +365,7 @@ you should place your code here."
    ;; srcery-theme-org-height nil
    powerline-default-separator nil
 
-   clojure-enable-fancify-symbols t
+   ;; clojure-enable-fancify-symbols t
 
    ;; always follow symlinks
    vc-follow-symlinks t)
