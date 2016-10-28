@@ -184,10 +184,15 @@ noremap <silent> <leader>w<Right> :wincmd l<CR>
 " noremap <silent> <M-Right> :wincmd l<CR>
 
 " Resize splits
-nnoremap <silent> <M-S-Left>  10<C-w><
-nnoremap <silent> <M-S-Down>  10<C-W>-
-nnoremap <silent> <M-S-Up>    10<C-W>+
-nnoremap <silent> <M-S-Right> 10<C-w>>
+" nnoremap <silent> <M-S-Left>  10<C-w><
+" nnoremap <silent> <M-S-Down>  10<C-W>-
+" nnoremap <silent> <M-S-Up>    10<C-W>+
+" nnoremap <silent> <M-S-Right> 10<C-w>>
+
+nnoremap <silent> <M-S-h>  10<C-w><
+nnoremap <silent> <M-S-l>  10<C-W>-
+nnoremap <silent> <M-S-k>  10<C-W>+
+nnoremap <silent> <M-S-l>  10<C-w>>
 " nnoremap <silent> <M-S-h>     10<C-w><
 " nnoremap <silent> <M-S-j>     10<C-W>-
 " nnoremap <silent> <M-S-k>     10<C-W>+
@@ -513,11 +518,16 @@ let g:yankring_history_dir = '~/var'
 " --------------------
 let g:tmux_navigator_no_mappings = 1
 
-nnoremap <silent> <A-Left>  : TmuxNavigateLeft<cr>
-nnoremap <silent> <A-Down>  : TmuxNavigateDown<cr>
-nnoremap <silent> <A-Up>    : TmuxNavigateUp<cr>
-nnoremap <silent> <A-Right> : TmuxNavigateRight<cr>
-nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
+" nnoremap <silent> <A-Left>  : TmuxNavigateLeft<cr>
+" nnoremap <silent> <A-Down>  : TmuxNavigateDown<cr>
+" nnoremap <silent> <A-Up>    : TmuxNavigateUp<cr>
+" nnoremap <silent> <A-Right> : TmuxNavigateRight<cr>
+" nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
+
+nnoremap <silent> <C-h>  : TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j>  : TmuxNavigateDown<cr>
+nnoremap <silent> <C-k>  : TmuxNavigateUp<cr>
+nnoremap <silent> <C-l>  : TmuxNavigateRight<cr>
 
 " ---------------
 " emmet-vim

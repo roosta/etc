@@ -45,6 +45,7 @@ values."
      markdown
      html
      gtags
+     tmux
      python
      docker
      git
@@ -70,7 +71,8 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
-   '(arduino-mode)
+   '(arduino-mode
+     evil-terminal-cursor-changer)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -155,7 +157,7 @@ values."
                            monokai
                            zenburn)
     ;; If non nil the cursor color matches the state color in GUI Emacs.
-    dotspacemacs-colorize-cursor-according-to-state t
+    dotspacemacs-colorize-cursor-according-to-state nil
     ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
     ;; size to make separators look not too crappy.
     ; :size (if (string= system-name "allitnil") 15 13)
@@ -386,10 +388,10 @@ you should place your code here."
 
   ;; window movement
   ;; ---------------
-  (define-key evil-normal-state-map (kbd "<M-left>") 'evil-window-left)
-  (define-key evil-normal-state-map (kbd "<M-right>") 'evil-window-right)
-  (define-key evil-normal-state-map (kbd "<M-up>") 'evil-window-up)
-  (define-key evil-normal-state-map (kbd "<M-down>") 'evil-window-down)
+  ;; (define-key evil-normal-state-map (kbd "<M-left>") 'evil-window-left)
+  ;; (define-key evil-normal-state-map (kbd "<M-right>") 'evil-window-right)
+  ;; (define-key evil-normal-state-map (kbd "<M-up>") 'evil-window-up)
+  ;; (define-key evil-normal-state-map (kbd "<M-down>") 'evil-window-down)
 
   ;; Navigating using visual lines
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
@@ -404,6 +406,7 @@ you should place your code here."
   ;; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
   ;; (setq evil-cleverparens-use-additional-movement-keys nil)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+  (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
   (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
 
   ;; evil-surround
@@ -412,6 +415,11 @@ you should place your code here."
   (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
   (evil-define-key 'normal evil-surround-mode-map (kbd "<cs>") 'evil-surround-change)
   (evil-define-key 'normal evil-surround-mode-map (kbd "<ds>") 'evil-surround-delete)
+
+  (unless (display-graphic-p)
+    (require 'evil-terminal-cursor-changer)
+    (evil-terminal-cursor-changer-activate) ; or (etcc-on)
+    )
 
 
 )
