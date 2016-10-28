@@ -12,7 +12,7 @@ widget_class "*" style "myfont"
 gtk-font-name = "Essential PragmataPro 10"
 
 # Icon theme
-gtk-icon-theme-name = "Moka"
+gtk-icon-theme-name = "Adwaita"
 
 # Toolbar style
 #gtk-toolbar-style = GTK_TOOLBAR_ICONS
