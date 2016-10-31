@@ -42,10 +42,11 @@ alias sysdis='sudo systemctl disable'
 ## ----------------
 
 alias vi="vim"
+alias vim="ect"
 alias vigit="vim ~/.gitconfig"
 alias vissh="vim ~/.ssh/config"
 alias vialias="vim ~/.zsh.d/aliases.zsh"
-alias vivim="vim ~/.vimrc"
+alias vivim="\vim ~/.vimrc"
 alias vixres="vim ~/.Xresources"
 alias vitmux="vim ~/.tmux.conf"
 alias vixinit="vim ~/.xinitrc"
@@ -65,6 +66,8 @@ alias vizrc='vim ~/.zshrc'
 alias viorg='vim ~/org'
 alias viorgw='vim ~/org/Work.org'
 alias viorgd='vim ~/org/Dev.org'
+alias vispc='vim ~/.spacemacs'
+alias vitodo='vim ~/org/TODOs.org'
 
 #}}}
 ## FIND {{{1
@@ -386,7 +389,7 @@ alias fehp='feh -g 640x480 -d -S filename'
 
 alias mounttmpfs='sudo mount -t tmpfs tmpfs /mnt -o size=1024m'
 alias npmls='npm -g ls --depth=0'
-
+alias killemacs='emacsclient -e "(kill-emacs)"'
 #}}}
 ## VCS {{{1
 ## --------
