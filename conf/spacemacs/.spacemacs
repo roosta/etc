@@ -31,7 +31,6 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     vimscript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -39,6 +38,7 @@ values."
      ;; ----------------------------------------------------------------
      clojure
      auto-completion
+     vimscript
      better-defaults
      emacs-lisp
      git
@@ -59,7 +59,7 @@ values."
      ;;        shell-default-term-shell "/usr/bin/zsh"
      ;;        shell-default-shell 'multi-term
      ;;        )
-     spell-checking
+     (spell-checking :variables spell-checking-enable-by-default nil)
      syntax-checking
      version-control
      evil-cleverparens
@@ -370,8 +370,6 @@ you should place your code here."
 
    ;; clojure-enable-fancify-symbols t
 
-   ;; linum-format "%d "
-
    ;; always follow symlinks
    vc-follow-symlinks t)
 
@@ -420,12 +418,14 @@ you should place your code here."
   ;; (evil-define-key 'normal evil-surround-mode-map (kbd "<cs>") 'evil-surround-change)
   ;; (evil-define-key 'normal evil-surround-mode-map (kbd "<ds>") 'evil-surround-delete)
 
+  ;; terminal-only conf
   (unless (display-graphic-p)
     (require 'evil-terminal-cursor-changer)
     (evil-terminal-cursor-changer-activate) ; or (etcc-on)
+    (setq
+     ;; add a space between text and line numbers
+     linum-relative-format "%3s ")
     )
-
-  (spacemacs/toggle-spelling-checking-off)
 
 )
 
