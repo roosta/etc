@@ -427,6 +427,8 @@ you should place your code here."
      linum-relative-format "%3s ")
     )
 
+  ;; Mutt support.
+  (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))\
 )
 
   ;; (when (string= system-name "allitnil")
