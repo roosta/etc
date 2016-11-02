@@ -1,12 +1,15 @@
-{:user {:dependencies [[pjstadig/humane-test-output "0.8.1"]
+{:user {:dependencies [
+                       ; [pjstadig/humane-test-output "0.8.1"]
                        [alembic "0.3.2"]
+                       [com.cemerick/piggieback "0.2.1"]
                        [org.clojure/clojure "1.8.0"]]
         :plugins [[lein-ancient "0.6.10"]
                   [jonase/eastwood "0.2.3"]
                   [lein-pprint "1.1.2"]
                   [lein-kibit "0.1.2"]]
-        :injections [(require 'pjstadig.humane-test-output)
-                     (pjstadig.humane-test-output/activate!)]}
+        ; :injections [(require 'pjstadig.humane-test-output)
+        ;              (pjstadig.humane-test-output/activate!)]
+        }
 
  :repl {:plugins [[cider/cider-nrepl "0.15.0-SNAPSHOT"]
                   [venantius/ultra "0.5.0"]
