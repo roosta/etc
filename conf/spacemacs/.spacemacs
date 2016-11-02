@@ -49,7 +49,6 @@ values."
      html
      gtags
      tmux
-     nixos
      yaml
      javascript
      shell-scripts
