@@ -17,7 +17,7 @@ bar {
   # sep_block_width 0
   colors {
     background $black
-    separator  $cyan
+    separator  $gray
     statusline $white
 
     # <workclass>      <border> <background> <foreground>
