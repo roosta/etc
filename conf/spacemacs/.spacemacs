@@ -318,7 +318,7 @@ values."
     dotspacemacs-folding-method 'evil
     ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
     ;; (default nil)
-    dotspacemacs-smartparens-strict-mode t
+    dotspacemacs-smartparens-strict-mode nil
     ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
     ;; over any automatically added closing parenthesis, bracket, quote, etc…
     ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
@@ -410,9 +410,13 @@ you should place your code here."
 
   ;; smartparens
   ;; -------------
-  ;; (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
-  ;; (add-hook 'clojure-mode-hook #'evil-smartparens-mode)
-  ;; (setq evil-cleverparens-use-additional-movement-keys nil)
+  (setq
+   evil-move-beyond-eol t
+   ;; evil-cleverparens-use-additional-movement-keys nil
+   )
+  (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+  (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
+  (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
   (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
   (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
