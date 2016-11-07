@@ -22,7 +22,7 @@ bar {
   # sep_block_width 0
   colors {
     background $black
-    separator  $cyan
+    separator  $gray
     statusline $white
 
     # <workclass>      <border> <background> <foreground>
@@ -41,11 +41,11 @@ bar {
   position top
   tray_output primary
   strip_workspace_numbers yes
-  separator_symbol "|"
+  separator_symbol "/"
   # sep_block_width 0
   colors {
     background $black
-    separator  $cyan
+    separator  $gray
     statusline $white
 
     # <workclass>      <border> <background> <foreground>
