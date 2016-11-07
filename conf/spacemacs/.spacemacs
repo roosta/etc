@@ -391,7 +391,8 @@ you should place your code here."
 
         ;; use app lifecycle functions in cider-refresh
         cider-refresh-before-fn "user/stop"
-        cider-refresh-after-fn "user/go")
+        cider-refresh-after-fn "user/go"
+        cider-repl-use-pretty-printing t)
 
 
   ;; window movement
