@@ -441,6 +441,13 @@ you should place your code here."
 
   ;; Mutt support.
   (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
+
+  ;; multiple-cursors
+  (require 'multiple-cursors)
+  (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+  (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+  (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+  (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 )
 
   ;; (when (string= system-name "allitnil")
