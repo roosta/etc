@@ -10,7 +10,7 @@ rofi.font:                       Essential PragmataPro 12px
 rofi.color-enabled:              false
 !
 ! State:                         'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
-rofi.color-normal:               #1C1B19, #FCE8C3,  #211F1D,  #5573A3,  #FCE8C3
+rofi.color-normal:               #1C1B19, #FCE8C3,  #211F1D,  #E02C6D,  #FCE8C3
 rofi.color-urgent:               #fdf6e3, #EBDBB2,  #eee8d5,  #dc322f,  #fdf6e3
 rofi.color-active:               #519F50, #1C1B19,  #eee8d5,  #98BC37,  #1C1B19
 
