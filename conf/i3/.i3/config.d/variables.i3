@@ -18,26 +18,26 @@ set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3"
 #set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg reload"
 
 # define palette
-set $black          "#1C1B19"
-set $red            "#FF3128"
-set $green          "#519F50"
-set $yellow         "#FBB829"
-set $blue           "#5573A3"
-set $magenta        "#E02C6D"
-set $cyan           "#1693A5"
-set $gray           "#918175"
-set $bright_black   "#2D2B28"
-set $bright_red     "#DA4939"
-set $bright_green   "#98BC37"
-set $bright_yellow  "#FFC66D"
-set $bright_blue    "#6D9CBE"
-set $bright_magenta "#E35682"
-set $bright_cyan    "#34BEDA"
-set $white          "#FCE8C3"
-set $orange         "#D75F00"
-set $bright_orange  "#FF8700"
-set $hard_black     "#080808"
-set $alt_gray       "#4E4E4E"
+set_from_resource $black          i3wm.color0    #1C1B19
+set_from_resource $red            i3wm.color1    #FF3128
+set_from_resource $green          i3wm.color2    #519F50
+set_from_resource $yellow         i3wm.color3    #FBB829
+set_from_resource $blue           i3wm.color4    #5573A3
+set_from_resource $magenta        i3wm.color5    #E02C6D
+set_from_resource $cyan           i3wm.color6    #1693A5
+set_from_resource $gray           i3wm.color7    #918175
+set_from_resource $bright_black   i3wm.color8    #2D2B28
+set_from_resource $bright_red     i3wm.color9    #DA4939
+set_from_resource $bright_green   i3wm.color10   #98BC37
+set_from_resource $bright_yellow  i3wm.color11   #FFC66D
+set_from_resource $bright_blue    i3wm.color12   #6D9CBE
+set_from_resource $bright_magenta i3wm.color.13  #E35682
+set_from_resource $bright_cyan    i3wm.color.14  #34BEDA
+set_from_resource $white          i3wm.color15   #FCE8C3
+set_from_resource $orange         i3wm.color.166 #D75F00
+set_from_resource $bright_orange  i3wm.color208  #FF8700
+set_from_resource $hard_black     i3wm.color232  #080808
+set_from_resource $alt_gray       i3wm.color239  #4E4E4E
 
 # primary workspaces
 set $PWS1 "1[Q]TERM"
