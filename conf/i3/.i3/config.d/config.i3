@@ -74,7 +74,7 @@ workspace $SWS2 output $secondary_monitor
 # Options
 focus_follows_mouse no
 new_window pixel 1
-hide_edge_borders none
+hide_edge_borders smart
 
 # WINDOW WORKSPACE ASSIGNMENT
 # ---------------------------
