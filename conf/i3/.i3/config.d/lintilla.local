@@ -26,10 +26,10 @@ bar {
     statusline $white
 
     # <workclass>      <border> <background> <foreground>
-    focused_workspace  $blue   $blue   $white
-    active_workspace   $black  $black  $white
-    inactive_workspace $black  $black  $white
-    urgent_workspace   $orange $orange $black
+    focused_workspace  $magenta $magenta $white
+    active_workspace   $white   $white   $black
+    inactive_workspace $black   $black   $white
+    urgent_workspace   $orange  $orange  $black
   }
 }
 
