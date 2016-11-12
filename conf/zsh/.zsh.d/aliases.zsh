@@ -449,6 +449,7 @@ alias cats='highlight -O ansi'
 alias cljgrep='ag -R --include="*.clj*"'
 alias ect='emacsclient -t'
 alias ecc='emacsclient -c'
+alias et='emacs -nw'
 #}}}
 ## MISC {{{1
 ## ---------
