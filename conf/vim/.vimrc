@@ -566,7 +566,7 @@ let python_highlight_all = 1
 " --------------------
 " gutentags
 " --------------------
-let g:gutentags_exclude = ["node_modules", ".git", "plugins", "plugged"]
+let g:gutentags_exclude = [".password-store, node_modules", ".git", "plugins", "plugged"]
 
 " }}}
 " vim: fdm=marker:sw=2
