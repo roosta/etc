@@ -68,6 +68,7 @@ alias viorgw="$EDITOR ~/org/Work.org"
 alias viorgd="$EDITOR ~/org/Dev.org"
 alias vispc="emacsclient -t ~/.spacemacs"
 alias vitodo="emacsclient -t ~/org/TODOs.org"
+alias vimutt="$EDITOR ~/.muttrc"
 
 #}}}
 ## FIND {{{1
