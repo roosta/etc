@@ -24,7 +24,7 @@
 ## SSH
 ## ---
 # start keychain. Remove --noask if you want to add a key on shell startup
-eval $(keychain --eval --nogui --noask --agents ssh,gpg --quiet --timeout 30)
+eval $(keychain --eval --nogui --noask --agents ssh,gpg --quiet --timeout 120)
 
  #use envoy as a ssh-agent wrapper
 #envoy -t ssh-agent
