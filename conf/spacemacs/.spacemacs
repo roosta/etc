@@ -353,10 +353,12 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
   (setq-default
-   ;; Evil
-   ;; ----
-   evil-shift-round nil
+   ;; evil-shift-round nil
+
+   ;; disable waring for setting path outside profile/env
+   ;; exec-path-from-shell-check-startup-files nil
 
    ))
 
@@ -378,7 +380,9 @@ you should place your code here."
    ;; clojure-enable-fancify-symbols t
 
    ;; always follow symlinks
-   vc-follow-symlinks t)
+   vc-follow-symlinks t
+
+   )
 
   ;; Cider
   ;; --------
@@ -442,16 +446,20 @@ you should place your code here."
   ;; Mutt support.
   (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
 
+  ;; (setenv "PATH" (concat (getenv "PATH") ":/home/roosta/.npm/bin"))
+  ;; (setq exec-path (append exec-path '("/home/roosta/.npm/bin")))
+
   ;; multiple-cursors
   ;; (require 'multiple-cursors)
   ;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
   ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
   ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-)
 
   ;; (when (string= system-name "allitnil")
   ;;     (set-default-font "Essential PragmataPro 15"))
+
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
