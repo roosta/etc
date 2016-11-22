@@ -1,6 +1,14 @@
 [options]
+
 font = Essential PragmataPro 10
 # font = Fira Code 10
+
+search_wrap = true
+audible_bell = true
+clickable_url = true
+allow_bold = true
+urgent_on_bell = true
+browser = firefox
 
 [colors]
 
