@@ -459,6 +459,14 @@ you should place your code here."
   ;; (when (string= system-name "allitnil")
   ;;     (set-default-font "Essential PragmataPro 15"))
 
+  ;; --- org ---
+  (with-eval-after-load 'org
+    ;; persist org clock
+    (setq org-clock-persist 'history)
+    (org-clock-persistence-insinuate)
+    )
+
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -480,3 +488,9 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+)
