@@ -331,9 +331,9 @@ bindsym $mod+Home mode "$mode_chdisp"
 font pango:Essential PragmataPro 9
 
 # <class>               <border>      <background>  <foreground> <indicator>
-client.focused          $magenta         $magenta         $white       $magenta
-client.focused_inactive $bright_black $white        $black       $magenta
-client.unfocused        $bright_black $bright_black $gray        $magenta
-client.urgent           $orange       $orange       $black       $magenta
-client.placeholder      $magenta      $cyan         $black       $magenta
+client.focused          $magenta      $magenta      $white       $cyan
+client.focused_inactive $bright_black $white        $black       $cyan
+client.unfocused        $bright_black $bright_black $gray        $cyan
+client.urgent           $orange       $orange       $black       $cyan
+client.placeholder      $magenta      $cyan         $black       $cyan
 
