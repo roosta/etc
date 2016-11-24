@@ -10,23 +10,23 @@ set status=ssl,input,location,bookmark,history,tabcount,position,zoomlevel
 set gui=none
 
 " To Enable map <Space> {{{
-" js <<EOM
-"   window.addEventListener('keypress',function (event) {
-"     var code=event.charCode;
-"     if ((liberator.mode === modes.INSERT && modes.extended === modes.MENU)
-"     ||(liberator.mode ==modes.NORMAL && code==32)
-"     ||(liberator.mode ==modes.COMMAND_LINE && code !=32)){
-"       let map = mappings.get(liberator.mode, events.toString(event));
-"       if (map) {
-"         event.preventDefault();
-"         event.stopPropagation();
-"         map.execute();
-"       }
-"     }
-"   },false);
-" EOM
+js <<EOM
+  window.addEventListener('keypress',function (event) {
+    var code=event.charCode;
+    if ((liberator.mode === modes.INSERT && modes.extended === modes.MENU)
+    ||(liberator.mode ==modes.NORMAL && code==32)
+    ||(liberator.mode ==modes.COMMAND_LINE && code !=32)){
+      let map = mappings.get(liberator.mode, events.toString(event));
+      if (map) {
+        event.preventDefault();
+        event.stopPropagation();
+        map.execute();
+      }
+    }
+  },false);
+EOM
 " }}}
-" noremap <Space> <Leader>
+noremap <Space> <Leader>
 noremap \ <Leader>
 
 map <leader>rr :source ~/.vimperatorrc<CR>
