@@ -73,7 +73,7 @@ noremap <leader><leader> :noscript popup<CR>
 
 " bind some firefox menus
 noremap <leader>bm :emenu View.Sidebar.Bookmarks<CR>
-noremap <leader>dl :emenu Tools.Downloads<CR>
+noremap <leader>dl :emenu View.Sidebar.Downloads<CR>
 
 " session manager shortcuts
 noremap <leader>ss :emenu Tools.Session Manager.Save Session...<CR>
@@ -96,6 +96,10 @@ source ~/.vimperator/styles/arch-wiki.vimp
 source ~/.vimperator/styles/input-field.vimp
 source ~/.vimperator/styles/wikipedia.vimp
 
+" temporary hack to fix autocompletion
 js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
+
+" alias commands 
+alias tg tabgroups
 
 " vim:ft=vimperator:sw=2:ts=2
