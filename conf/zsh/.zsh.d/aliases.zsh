@@ -391,6 +391,7 @@ alias fehp='feh -g 640x480 -d -S filename'
 alias mounttmpfs='sudo mount -t tmpfs tmpfs /mnt -o size=1024m'
 alias npmls='npm -g ls --depth=0'
 alias killemacs='emacsclient -e "(kill-emacs)"'
+alias gpg-reload='gpg-connect-agent reloadagent /bye'
 #}}}
 ## VCS {{{1
 ## --------
