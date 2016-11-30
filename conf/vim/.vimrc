@@ -250,7 +250,8 @@ nmap <leader>H  :Helptags<cr>
 " Cmd:{{{
 """"""""""
 " https://github.com/tpope/vim-fireplace/pull/222
-command! Figwheel :Piggieback (figwheel-sidecar.repl-api/repl-env)
+" https://github.com/bhauman/lein-figwheel/wiki/Using-the-Figwheel-REPL-with-Vim
+command! Figwheel :Piggieback (figwheel-sidecar.repl-api/repl-env)<cr>
 
 " if working with splits, set cursorline only on active window,
 " to give an indication other than airline which split is active
