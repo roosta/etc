@@ -20,7 +20,7 @@ add-infinality-key:
 # 	sudo tlp start
 
 create-user-fs:
-	-@mkdir ~/dev
+	-@mkdir ~/src
 	-@mkdir ~/lib
 	-@mkdir ~/bin
 	-@mkdir ~/sbin
@@ -37,9 +37,9 @@ update-zsh-plugins:
 update-libs:
 	./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt 
 
-clone-dev:
+clone-src:
 	ssh-add ~/.ssh/id_rsa
-	./scripts/git_update.sh ~/dev ~/etc/dev_repositories.txt 
+	./scripts/git_update.sh ~/src ~/etc/src_repositories.txt 
 
 link-misc:
 	./scripts/symlink.sh ~/etc/symlinks.txt
