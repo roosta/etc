@@ -346,7 +346,8 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'wellle/targets.vim'
 Plug 'jceb/vim-orgmode'
@@ -569,5 +570,10 @@ let python_highlight_all = 1
 " --------------------
 let g:gutentags_exclude = [".password-store, node_modules", ".git", "plugins", "plugged"]
 
+" ---------- 
+" Ack.vim
+" ---------- 
+" let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --vimgrep'
 " }}}
 " vim: fdm=marker:sw=2
