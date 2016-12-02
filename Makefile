@@ -1,4 +1,4 @@
-default: add-pacman-repositories create-user-fs link-config update-zsh-plugins update-libs set-shell show-notes
+default: add-pacman-repositories user-fs link-config update-zsh-plugins update-libs set-shell show-notes
 
 # install-packages:
 # 	sudo pacman -Sy yaourt
@@ -19,7 +19,7 @@ add-infinality-key:
 # 	sudo systemctl disable systemd-rfkill
 # 	sudo tlp start
 
-create-user-fs:
+user-fs:
 	-@mkdir ~/src
 	-@mkdir ~/lib
 	-@mkdir ~/bin
@@ -53,7 +53,7 @@ set-shell:
 install-spacemacs:
 	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d	
 
-assemble-i3-config:
+i3-config:
 	cd ~/etc/conf/i3/.i3/config.d && cat `hostname`.local > ../config && cat *.i3 >> ../config 
 
 setup-tmux:
