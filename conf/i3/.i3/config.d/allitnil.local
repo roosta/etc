@@ -8,23 +8,22 @@ bar {
   output $primary_monitor
   output $secondary_monitor
   status_command i3blocks -c ~/.i3/status/$(hostname).i3blocks 
-  font pango:Essential PragmataPro, FontAwesome 9
+  font pango:Essential PragmataPro 10
   position top
   tray_output primary
   strip_workspace_numbers yes
-  separator_symbol "|"
+  separator_symbol "/"
   # sep_block_width 0
   colors {
     background $black
-    separator  $cyan
+    separator  $gray
     statusline $white
 
     # <workclass>      <border> <background> <foreground>
-    focused_workspace  $blue   $blue   $white
-    active_workspace   $black  $black  $white
-    inactive_workspace $black  $black  $white
-    urgent_workspace   $orange $orange $black
+    focused_workspace  $magenta $magenta $white
+    active_workspace   $black   $black   $white
+    inactive_workspace $black   $black   $white
+    urgent_workspace   $orange  $orange  $black
   }
 }
-
 # vim:ft=i3:ts=2:sw=2:fdm=marker
