@@ -6,7 +6,7 @@
         :plugins [[lein-ancient "0.6.10"]
                   [jonase/eastwood "0.2.3"]
                   [lein-pprint "1.1.2"]
-                  [lein-kibit "0.1.2"]]
+                  [lein-kibit "0.1.3"]]
         ; :injections [(require 'pjstadig.humane-test-output)
         ;              (pjstadig.humane-test-output/activate!)]
         }
