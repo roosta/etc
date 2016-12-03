@@ -55,6 +55,7 @@ install-spacemacs:
 
 i3-config:
 	cd ~/etc/conf/i3/.i3/config.d && cat `hostname`.local > ../config && cat *.i3 >> ../config 
+	i3-msg reload
 
 setup-tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
