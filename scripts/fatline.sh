@@ -6,7 +6,6 @@ error_msg() {
 }
 
 commit () {
-  # (( $# == 2 )) || error_msg
   for arg in "$@"
   do
     if [[ -d "$etc_path/conf/$arg" ]]; then
@@ -29,11 +28,27 @@ push () {
   git push
 }
 
+make-i3 () {
+ cd "$etc_path"
+ make i3-config
+}
+
 run () {
   (( $# >= 1 )) || usage
   case "$1" in
     "commit")
       commit ${@:2}
+      ;;
+    "i3")
+      # if [[ -n "$2" ]]; then
+      case "$2" in
+        "make")
+          make-i3
+          ;;
+        *)
+          usage
+          ;;
+      esac
       ;;
     "status")
       stat
