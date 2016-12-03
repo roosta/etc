@@ -14,7 +14,7 @@ set $term termite
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
 
 # generate new config with ansible and reload i3
-set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3"
+# set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3"
 #set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg reload"
 
 # define palette
