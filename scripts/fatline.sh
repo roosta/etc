@@ -7,13 +7,16 @@ error_msg() {
 
 commit () {
   # (( $# == 2 )) || error_msg
-  if [[ -d "$etc_path/conf/$1" ]]; then
-    cd "$etc_path/$1" || exit
-    git add .
-    git commit
-  else
-    error_msg "No such directory"
-  fi
+  for arg in "$@"
+  do
+    if [[ -d "$etc_path/conf/$arg" ]]; then
+      cd "$etc_path/conf/$arg" || exit
+      git add .
+    else
+      error_msg "No such directory: $arg"
+    fi
+  done
+  git commit
 }
 
 stat () {
@@ -30,7 +33,7 @@ run () {
   (( $# >= 1 )) || usage
   case "$1" in
     "commit")
-      commit $2
+      commit ${@:2}
       ;;
     "status")
       stat
