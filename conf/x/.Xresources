@@ -13,6 +13,7 @@
 #include ".Xresources.d/rofi.xresources"
 #include ".Xresources.d/xscreensaver.xresources"
 #include ".Xresources.d/srcery.xresources"
+#include ".Xresources.local"
 
 !Xcursor.theme: Numix-Cursor
 
