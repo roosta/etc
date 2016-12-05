@@ -1,10 +1,13 @@
 #!/bin/bash
+
 etc_path=$HOME/etc
+
 error_msg() {
   echo "$1"
   exit 1
 }
 
+## Git  {{{1
 commit () {
   for arg in "$@"
   do
@@ -44,6 +47,79 @@ diff () {
     done
   fi
 }
+#}}}
+## edit {{{1
+edit () {
+  for arg in "$@"
+  do
+    case "$arg" in
+      "git")
+        $EDITOR ~/.gitconfig
+        ;;
+      "ssh")
+        $EDITOR ~/.ssh/config
+        ;;
+      "alias")
+        $EDITOR ~/.zsh.d/aliases.zsh
+        ;;
+      "vim")
+        vim ~/.vimrc
+        ;;
+      "xresources")
+        $EDITOR ~/.Xresources ~/.Xresources.d/*
+        ;;
+      "tmux")
+        $EDITOR ~/.tmux.conf
+        ;;
+      "xinitrc")
+        $EDITOR ~/.xinitrc
+        ;;
+      "font")
+        $EDITOR ~/.config/fontconfig/fonts.conf
+        ;;
+      "xbindkeys")
+        $EDITOR ~/.xbindkeyssrc
+        ;;
+      "vimp")
+        $EDITOR ~/.vimperatorrc
+        ;;
+      "gtk")
+        $EDITOR ~/.gtkrc-2.0 ~/.config/gtk-3.0/settings.ini
+        ;;
+      "lein")
+        $EDITOR ~/.lein/profiles.clj
+        ;;
+      "urxvt")
+        $EDITOR ~/.Xresources.d/urxvt.xresources
+        ;;
+      "termite")
+        $EDITOR ~/.config/termite/config
+        ;;
+      "env")
+        $EDITOR ~/.zshenv
+        ;;
+      "zshrc")
+        $EDITOR ~/.zshrc
+        ;;
+      "zsh")
+        $EDITOR ~/.zsh.d
+        ;;
+      "org")
+        emacsclient -t ~/org
+        ;;
+      "todo")
+        emacsclient -t ~/org/TODOs.org
+        ;;
+      "mutt")
+        $EDITOR ~/.muttrc
+        ;;
+      *)
+        error_msg "No such config: $arg"
+        ;;
+    esac
+  done
+}
+#}}}
 
 make-i3 () {
  cd "$etc_path"
@@ -73,6 +149,9 @@ run () {
     "status")
       stat
       ;;
+    "edit")
+      edit ${@:2}
+      ;;
     "help")
       usage
       ;;
@@ -90,10 +169,10 @@ Helper script for etc/dotfiles
 Usage: fatline command option
 
 commands:
-  commit                stage a folder and commit using git
-  status                get git status
-  push                  push to origin
-  help                  show help (this)
+  commit            stage a folder and commit using git
+  status            get git status
+  push              push to origin
+  help              show help (this)
 
 EOL
 	exit 1
