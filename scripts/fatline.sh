@@ -9,7 +9,7 @@ commit () {
   for arg in "$@"
   do
     if [[ -d "$etc_path/conf/$arg" ]]; then
-      cd "$etc_path/conf/$arg" || exit
+      cd "$etc_path/conf/$arg" || exit 1
       git add .
     else
       error_msg "No such directory: $arg"
@@ -28,6 +28,23 @@ push () {
   git push
 }
 
+# get config diff if arg is provided
+# else diff entire etc tree
+diff () {
+  if (( $# < 1 )); then
+    git diff "$etc_path"
+  else
+    for arg in "$@"
+    do
+      if [[ -d "$etc_path/conf/$arg" ]]; then
+        git diff "$etc_path/conf/$arg" || exit 1
+      else
+        error_msg "No such directory: $arg"
+      fi
+    done
+  fi
+}
+
 make-i3 () {
  cd "$etc_path"
  make i3-config
@@ -38,6 +55,9 @@ run () {
   case "$1" in
     "commit")
       commit ${@:2}
+      ;;
+    "diff")
+      diff ${@:2}
       ;;
     "i3")
       # if [[ -n "$2" ]]; then
