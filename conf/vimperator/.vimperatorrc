@@ -29,7 +29,7 @@ EOM
 noremap <Space> <Leader>
 noremap \ <Leader>
 
-map <leader>rr :source ~/.vimperatorrc<CR>
+map <leader>R :source ~/.vimperatorrc<CR>
 
 " tab management
 " --------------
@@ -48,7 +48,6 @@ nnoremap dh          :bd -select left<CR>
 nnoremap dl          :bd -select right<CR>
 nnoremap d[          :bd -select left<CR>
 nnoremap d]          :bd -select right<CR>
-
 noremap gd :bdelete 
 
 " escape cancle tab delete
