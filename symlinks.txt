@@ -4,3 +4,4 @@
 /home/roosta/dev/utils/emacs-file-opener.sh /home/roosta/bin/emacs-file-opener
 /home/roosta/Dropbox/org /home/roosta/org
 /home/roosta/Dropbox/org/TODOs.org /home/roosta/TODOs.org
+/home/roosta/etc/scripts/fatline.sh /home/roosta/bin/fatline
