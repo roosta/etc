@@ -92,36 +92,40 @@ style -name liberator chrome://* <<EOM
 #toggle-button--jid1-mnnxcxisbpnsxqjetpack-pb-button {
   -moz-appearance: none !important;
 }
-
 #toggle-button--jid1-mnnxcxisbpnsxqjetpack-pb-button:hover:after {
   color: #8EB2F7 !important;
 }
-
 #toggle-button--jid1-mnnxcxisbpnsxqjetpack-pb-button image {
   display: none;
 }
-
 #toggle-button--jid1-mnnxcxisbpnsxqjetpack-pb-button:after {
   content: "PB";
   margin: 5px;
-  color: #FCE8C3; 
 }
 
 /* self destructing cookies */
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies {
   -moz-appearance: none !important;
 }
-
+/* display green color when sdc image is green */
+#action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies[image="resource://jid0-9xfbwuwnvpx4wwsfbwmcm4jj69e-at-jetpack/data/toolbar-r.png"]:after {
+  /* display: none; */
+  color: #FF3128 !important;
+}
+/* display red color when sdc image is red */
+#action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies[image="resource://jid0-9xfbwuwnvpx4wwsfbwmcm4jj69e-at-jetpack/data/toolbar-g.png"]:after {
+  /* display: none; */
+  color: #519F50 !important;
+}
+/* hide scd image */
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies image {
   display: none;
 }
-
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies:after {
   content: "SC";
   color: #FCE8C3; 
   margin: 5px;
 }
-
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies:hover:after {
   color: #8EB2F7 !important;
 }
