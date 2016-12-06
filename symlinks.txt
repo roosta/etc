@@ -1,7 +1,6 @@
 /home/roosta/src/utils /home/roosta/utils
 /home/roosta/src/colors /home/roosta/colors
-/home/roosta/src/utils/bakc.sh /home/roosta/bin/bakc
 /home/roosta/src/utils/emacs-file-opener.sh /home/roosta/bin/emacs-file-opener
 /home/roosta/Dropbox/org /home/roosta/org
 /home/roosta/Dropbox/org/TODOs.org /home/roosta/TODOs.org
-/home/roosta/etc/scripts/fatline.sh /home/roosta/bin/fatline
+/home/roosta/etc/scripts/ftl.sh /home/roosta/bin/ftl
