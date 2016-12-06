@@ -118,6 +118,10 @@ style -name liberator chrome://* <<EOM
   /* display: none; */
   color: #519F50 !important;
 }
+#action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies[image="resource://jid0-9xfbwuwnvpx4wwsfbwmcm4jj69e-at-jetpack/data/toolbar-y.png"]:after {
+  /* display: none; */
+  color: #FBB829 !important;
+}
 /* hide scd image */
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies image {
   display: none;
