@@ -1,8 +1,9 @@
 {:user {:dependencies [
                        ; [pjstadig/humane-test-output "0.8.1"]
-                       [alembic "0.3.2"]
+                       ; [alembic "0.3.2"]
                        [com.cemerick/piggieback "0.2.1"]
-                       [org.clojure/clojure "1.8.0"]]
+                       ; [org.clojure/clojure "1.8.0"]
+                       ]
         :plugins [[lein-ancient "0.6.10"]
                   [jonase/eastwood "0.2.3"]
                   [lein-pprint "1.1.2"]
