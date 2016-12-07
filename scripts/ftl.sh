@@ -40,6 +40,7 @@ diff () {
     for arg in "$@"
     do
       if [[ -d "$etc_path/conf/$arg" ]]; then
+        cd $etc_path
         git diff "$etc_path/conf/$arg" || exit 1
       else
         error_msg "No such directory: $arg"
