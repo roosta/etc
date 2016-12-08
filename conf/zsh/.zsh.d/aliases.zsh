@@ -392,6 +392,7 @@ alias npmls='npm -g ls --depth=0'
 alias killemacs='emacsclient -e "(kill-emacs)"'
 alias gpg-reload='gpg-connect-agent reloadagent /bye'
 alias tldr='tldr -t original --linux'
+alias repl='rlwrap lumo'
 #}}}
 ## VCS {{{1
 ## --------
