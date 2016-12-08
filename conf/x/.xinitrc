@@ -43,6 +43,8 @@ fi
 # set local config
 [ -x "$localrc" ] && . "$localrc"
 
+xrdb -merge ~/.Xresources
+
 # set X font locations
 xset +fp $HOME/.fonts/restricted &
 xset +fp $HOME/.fonts/misc &
