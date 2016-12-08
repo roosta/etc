@@ -77,7 +77,7 @@ alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color
 
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
-alias aliasgrep="cats ~/.zsh.d/aliases.zsh | grep" # locate an alias quickly
+alias aliasg="cats ~/.zsh.d/aliases.zsh | grep" # locate an alias quickly
 alias histgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
@@ -391,6 +391,7 @@ alias mounttmpfs='sudo mount -t tmpfs tmpfs /mnt -o size=1024m'
 alias npmls='npm -g ls --depth=0'
 alias killemacs='emacsclient -e "(kill-emacs)"'
 alias gpg-reload='gpg-connect-agent reloadagent /bye'
+alias tldr='tldr -t original --linux'
 #}}}
 ## VCS {{{1
 ## --------
