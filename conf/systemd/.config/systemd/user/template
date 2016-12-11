@@ -1,0 +1,8 @@
+[Unit]
+Description=My script
+
+[Service]
+ExecStart=/usr/bin/my-script
+
+[Install]
+WantedBy=multi-user.target 
