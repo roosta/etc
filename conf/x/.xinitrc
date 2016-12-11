@@ -57,6 +57,7 @@ setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:c
 # enable numlock at startup
 numlockx &
 
+# set custom keybinds
 xbindkeys &
 
 # screen locker
