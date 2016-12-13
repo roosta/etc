@@ -388,15 +388,22 @@ you should place your code here."
   ;; --------
   (require 'cider)
   ;; use figwheel when starting a cljs repl
-  (setq cider-cljs-lein-repl
-        "(do (require 'figwheel-sidecar.repl-api)
-             (figwheel-sidecar.repl-api/start-figwheel!)
-             (figwheel-sidecar.repl-api/cljs-repl))"
+  (setq
+   cider-cljs-lein-repl (require 'script.repl)
+   ;; cider-cljs-lein-repl
+   ;; "(do (require 'figwheel-sidecar.repl-api)
+   ;;           (figwheel-sidecar.repl-api/start-figwheel!)
+   ;;           (figwheel-sidecar.repl-api/cljs-repl))"
 
-        ;; use app lifecycle functions in cider-refresh
-        cider-refresh-before-fn "user/stop"
-        cider-refresh-after-fn "user/go"
-        cider-repl-use-pretty-printing t)
+   ;; use app lifecycle functions in cider-refresh
+   cider-refresh-before-fn "user/stop"
+   cider-refresh-after-fn "user/go"
+
+   ;; always pretty print
+   cider-repl-use-pretty-printing t
+
+   ;; add syntax highlighting to eval overlay
+   cider-overlays-use-font-lock t)
 
 
   ;; window movement
@@ -425,6 +432,7 @@ you should place your code here."
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
   (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
   (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
+  (add-hook 'cider-repl-mode-hook #'eldoc-mode)
 
   ;; evil-surround
   ;; -------------
