@@ -11,6 +11,7 @@
         ; :injections [(require 'pjstadig.humane-test-output)
         ;              (pjstadig.humane-test-output/activate!)]
         }
+ :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
  :repl {:plugins [[cider/cider-nrepl "0.15.0-SNAPSHOT"]
                   [venantius/ultra "0.5.0"]
