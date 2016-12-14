@@ -382,6 +382,8 @@ you should place your code here."
    ;; always follow symlinks
    vc-follow-symlinks t
 
+   ;; move across linebreaks
+   evil-move-beyond-eol t
    )
 
   ;; Cider
@@ -389,11 +391,11 @@ you should place your code here."
   (require 'cider)
   ;; use figwheel when starting a cljs repl
   (setq
-   cider-cljs-lein-repl (require 'script.repl)
-   ;; cider-cljs-lein-repl
-   ;; "(do (require 'figwheel-sidecar.repl-api)
-   ;;           (figwheel-sidecar.repl-api/start-figwheel!)
-   ;;           (figwheel-sidecar.repl-api/cljs-repl))"
+   ;; cider-cljs-lein-repl "(require 'script.repl)"
+   cider-cljs-lein-repl
+   "(do (require 'figwheel-sidecar.repl-api)
+             (figwheel-sidecar.repl-api/start-figwheel!)
+             (figwheel-sidecar.repl-api/cljs-repl))"
 
    ;; use app lifecycle functions in cider-refresh
    cider-refresh-before-fn "user/stop"
@@ -405,6 +407,9 @@ you should place your code here."
    ;; add syntax highlighting to eval overlay
    cider-overlays-use-font-lock t)
 
+  (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
+  (add-hook 'cider-repl-mode-hook #'eldoc-mode)
+  (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
 
   ;; window movement
   ;; ---------------
@@ -423,16 +428,15 @@ you should place your code here."
   ;; smartparens
   ;; -------------
   (setq
-   evil-move-beyond-eol t
    ;; evil-cleverparens-use-additional-movement-keys nil
    )
+
+  ;; clojure
+  ;; -------
   (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
   (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
-  (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
   (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'cider-repl-mode-hook #'eldoc-mode)
 
   ;; evil-surround
   ;; -------------
@@ -473,10 +477,7 @@ you should place your code here."
     (setq org-clock-persist 'history
           org-mobile-directory "~/Dropbox/org/"
           org-mobile-files (quote ("~/Dropbox/org/TODOs.org")))
-    (org-clock-persistence-insinuate)
-    )
-
-
+    (org-clock-persistence-insinuate))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
