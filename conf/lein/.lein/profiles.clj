@@ -2,8 +2,9 @@
                        ; [pjstadig/humane-test-output "0.8.1"]
                        ; [alembic "0.3.2"]
                        [com.cemerick/piggieback "0.2.1"]
-                       ; [org.clojure/clojure "1.8.0"]
-                       ]
+                       [org.clojure/clojurescript "1.9.293"]
+                       [org.clojure/clojure "1.9.0-alpha14"] ]
+
         :plugins [[lein-ancient "0.6.10"]
                   [jonase/eastwood "0.2.3"]
                   [lein-pprint "1.1.2"]
