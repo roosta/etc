@@ -16,8 +16,8 @@ if [[ -f "$1" ]]; then
         src=$(echo "$item" | awk '{print $1}') 
         dest=$(echo "$item" | awk '{print $2}') 
         # echo $dest
-        echo "Symlinking $src -> $dest"
-        ln -sf "$src" "$dest"
+        # echo "Symlinking $src -> $dest"
+        ln -sfv "$src" "$dest"
     fi
   done <"$1"
 else
