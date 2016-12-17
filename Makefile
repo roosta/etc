@@ -1,6 +1,6 @@
 default: link-config update-zsh-plugins update-libs show-notes
 
-install: link-config link-misc install-spacemacs set-shell i3-config setup-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-packages show-notes
+install: link-config link-misc install-spacemacs set-shell i3-config setup-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-yaourt install-packages show-notes
 
 install-packages:
 	sudo pacman -Sy yaourt
@@ -65,6 +65,9 @@ i3-config:
 
 setup-tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bindings/install_plugins
+
+install-yaourt:
+	./scripts/install_yaourt.sh
 
 show-notes:
 	cat ./post_install.txt

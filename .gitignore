@@ -1,4 +1,5 @@
 # temporary files
+build
 *tmp*
 *cache*
 *deprecated*
