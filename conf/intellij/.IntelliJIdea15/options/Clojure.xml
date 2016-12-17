@@ -1,6 +1,0 @@
-<application>
-  <component name="ClojureIdeSettings">
-    <option name="coloredParentheses" value="true" />
-    <option name="maintainSelectionOnWrap" value="true" />
-  </component>
-</application>

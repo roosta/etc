@@ -1,7 +1,0 @@
-<application>
-  <component name="UpdatesConfigurable">
-    <pluginHosts>
-      <item value="https://cursiveclojure.com/plugins-15.xml" />
-    </pluginHosts>
-  </component>
-</application>
