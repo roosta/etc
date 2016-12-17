@@ -64,7 +64,7 @@ i3-config:
 	i3-msg reload
 
 setup-tmux:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bindings/install_plugins
 
 show-notes:
 	cat ./post_install.txt
