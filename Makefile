@@ -1,8 +1,10 @@
-default: add-pacman-repositories user-fs link-config update-zsh-plugins update-libs set-shell show-notes
+default: link-config update-zsh-plugins update-libs show-notes
 
-# install-packages:
-# 	sudo pacman -Sy yaourt
-# 	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
+install: link-config link-misc install-spacemacs set-shell i3-config setup-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-packages show-notes
+
+install-packages:
+	sudo pacman -Sy yaourt
+	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
 
 add-pacman-repositories: add-infinality-key
 	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
@@ -14,7 +16,8 @@ add-infinality-key:
 	sudo pacman-key -r 962DDE58
 	sudo pacman-key --lsign-key 962DDE58
 
-# enable-services:
+enable-services:
+	systemctl --user enable emacs && systemctl --user start emacs
 # 	sudo systemctl enable lightdm NetworkManager tlp tlp-sleep
 # 	sudo systemctl disable systemd-rfkill
 # 	sudo tlp start
@@ -51,9 +54,10 @@ set-shell:
 	chsh -s `which zsh`
 
 update-spacemacs:
+	cd ~/.emacs.d && git pull --rebase
 	
 install-spacemacs:
-	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d	
+	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d	
 
 i3-config:
 	cd ~/etc/conf/i3/.i3/config.d && cat `hostname`.local > ../config && cat *.i3 >> ../config 
