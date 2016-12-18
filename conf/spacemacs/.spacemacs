@@ -176,6 +176,11 @@ values."
                                 :powerline-scale 1.1)
     ;; The leader key
     dotspacemacs-leader-key "SPC"
+    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
+    ;; (default "SPC")
+    dotspacemacs-emacs-command-key "SPC"
+    ;; The key used for Vim Ex commands (default ":")
+    dotspacemacs-ex-command-key ":"
     ;; The leader key accessible in `emacs state' and `insert state'
     ;; (default "M-m")
     dotspacemacs-emacs-leader-key "M-m"
@@ -185,9 +190,6 @@ values."
     ;; Major mode leader key accessible in `emacs state' and `insert state'.
     ;; (default "C-M-m)
     dotspacemacs-major-mode-emacs-leader-key "C-M-m"
-    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
-    ;; (default "SPC")
-    dotspacemacs-emacs-command-key "SPC"
     ;; These variables control whether separate commands are bound in the GUI to
     ;; the key pairs C-i, TAB and C-m, RET.
     ;; Setting it to a non-nil value, allows for separate commands under <C-i>
@@ -230,10 +232,6 @@ values."
     ;; if non nil, the helm header is hidden when there is only one source.
     ;; (default nil)
     dotspacemacs-helm-no-header nil
-    ;; If non nil then `ido' replaces `helm' for some commands. For now only
-    ;; `find-files' (SPC f f), `find-spacemacs-file' (SPC f e s), and
-    ;; `find-contrib-file' (SPC f e c) are replaced. (default nil)
-    dotspacemacs-use-ido nil
     ;; define the position to display `helm', options are `bottom', `top',
     ;; `left', or `right'. (default 'bottom)
     dotspacemacs-helm-position 'bottom
@@ -331,9 +329,9 @@ values."
     ;; (default nil)
     dotspacemacs-persistent-server nil
     ;; List of search tool executable names. Spacemacs uses the first installed
-    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
-    ;; (default '("ag" "pt" "ack" "grep"))
-    dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
+    ;; (default '("rg" "ag" "pt" "ack" "grep"))
+    dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
     ;; The default package repository used if no explicit repository has been
     ;; specified with an installed package.
     ;; Not used for now. (default nil)
