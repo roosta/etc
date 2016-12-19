@@ -1,10 +1,6 @@
 @namespace url(http://www.w3.org/1999/xhtml);
 
-@-moz-document domain(wikipedia.org) {
-
-
 /* *** Basic *** */
-
 *{
    background-color: transparent !important;
    color: #bcbcbc !important;
@@ -158,4 +154,3 @@ span.tex{
    padding: 5px !important;
 }
 
-}

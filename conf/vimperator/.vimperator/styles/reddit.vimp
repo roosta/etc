@@ -1,3 +1,4 @@
+style -name reddit https://www.reddit.com/* <<EOM
 @-moz-document url("https://www.reddit.com/"), url("http://www.reddit.com/"), url-prefix("https://www.reddit.com/?count="), url-prefix("http://www.reddit.com/?count="), url-prefix("https://www.reddit.com/new/"), url-prefix("http://www.reddit.com/new/"), url-prefix("https://www.reddit.com/top/"), url-prefix("http://www.reddit.com/top/"), url-prefix("https://www.reddit.com/wiki/"), url-prefix("http://www.reddit.com/wiki/"), url-prefix("https://www.reddit.com/ads/"), url-prefix("http://www.reddit.com/ads/"), url-prefix("https://www.reddit.com/search?q="), url-prefix("http://www.reddit.com/search?q="), url-prefix("https://www.reddit.com/message/"), url-prefix("http://www.reddit.com/message/"), url-prefix("https://www.reddit.com/r/all"), url-prefix("http://www.reddit.com/r/all") {
 *, :before, :after {
     -webkit-box-sizing: border-box;
@@ -2705,3 +2706,4 @@ display: none !important;
 z-index: 99999999;
 }
 }
+EOM

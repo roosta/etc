@@ -1,4 +1,4 @@
-style -name arch-wiki https://en.wikipedia.org/* <<EOM
+style -name wikipedia https://en.wikipedia.org/* <<EOM
   @namespace url(http://www.w3.org/1999/xhtml);
 
   /* *** Basic *** */
