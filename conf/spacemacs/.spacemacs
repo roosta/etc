@@ -399,15 +399,33 @@ you should place your code here."
    cider-refresh-before-fn "user/stop"
    cider-refresh-after-fn "user/go"
 
-   ;; always pretty print
+   ;; always pretty print in repl
    cider-repl-use-pretty-printing t
 
+   ;; Add to list to highlight more than macro and core
+   ;; cider-font-lock-dynamically '(macro core function var)
+
    ;; add syntax highlighting to eval overlay
-   cider-overlays-use-font-lock t)
+   cider-overlays-use-font-lock t
+   )
 
   (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
   (add-hook 'cider-repl-mode-hook #'eldoc-mode)
   (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
+
+
+  ;; smartparens
+  ;; -------------
+  ;; (setq
+  ;; evil-cleverparens-use-additional-movement-keys nil
+  ;; )
+
+  ;; clojure
+  ;; -------
+  (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+  (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
+  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+  (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
 
   ;; window movement
   ;; ---------------
@@ -422,19 +440,6 @@ you should place your code here."
 
   ;; opening project files
   (spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
-
-  ;; smartparens
-  ;; -------------
-  (setq
-   ;; evil-cleverparens-use-additional-movement-keys nil
-   )
-
-  ;; clojure
-  ;; -------
-  (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
-  (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
-  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
 
   ;; evil-surround
   ;; -------------
