@@ -67,4 +67,3 @@ _lein_run() {
 _lein_test() {
   _lein_namespaces "test/"
 }
-

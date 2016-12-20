@@ -6,13 +6,12 @@
 
 # set paths.
 # See ~/.zprofile
-typeset -U path
-path=(~/bin $(ruby -rubygems -e "puts Gem.user_dir")/bin /usr/local/bin $HOME/.go/bin /perl5/bin ~/.npm/bin ~/.pip/bin $path[@])
-
+#typeset -U path
+#path=(~/bin $(ruby -rubygems -e "puts Gem.user_dir")/bin /usr/local/bin $HOME/.go/bin /perl5/bin ~/.npm/bin ~/.pip/bin $path[@])
 # export PATH=$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$HOME/.npm/bin:$HOME/.pip/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
 
-fpath=("$HOME/.zsh.d/functions" $fpath)
+fpath=($HOME/.zsh.d/functions $HOME/.zsh.d/completions $fpath)
 # fpath=("$HOME/.zsh.d/completion" $fpath)
 
 # set ruby gems install location to home
