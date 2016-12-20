@@ -103,7 +103,7 @@ assign [class="(?i)PlayOnLinux"] $TWS2
 # see: https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace $TWS1
 
-assign [class="(?i)google-chrome"] $TWS1
+# assign [class="(?i)google-chrome"] $TWS1
 assign [class="(?i)smplayer"]      $TWS1
 assign [class="(?i)clementine"]    $TWS1
 
