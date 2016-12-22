@@ -1,4 +1,6 @@
-default: link-config update-zsh-plugins update-libs show-notes
+default: link-config link-misc show-notes
+
+update: update-zsh-plugins update-libs update-spacemacs show-notes  
 
 install: link-config link-misc install-spacemacs set-shell i3-config setup-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-yaourt install-packages show-notes
 

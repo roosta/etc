@@ -1,7 +1,7 @@
 colorscheme srcery
 set noscrollbars
 set loadplugins
-set complete=ltsS
+set complete=tlsS
 set focuscontent
 set suggestengines=duckduckgo
 set defsearch=duckduckgo

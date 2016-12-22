@@ -3,3 +3,4 @@ https://github.com/iye/lightsOn
 https://github.com/franks42/lein-repls
 https://github.com/sampson-chen/sack
 https://github.com/nonpop/xkblayout-state
+https://github.com/trapd00r/LS_COLORS
