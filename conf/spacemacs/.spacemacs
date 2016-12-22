@@ -375,8 +375,6 @@ you should place your code here."
    ;; srcery-theme-org-height nil
    powerline-default-separator nil
 
-   ;; clojure-enable-fancify-symbols t
-
    ;; always follow symlinks
    vc-follow-symlinks t
 
@@ -389,11 +387,17 @@ you should place your code here."
   (require 'cider)
   ;; use figwheel when starting a cljs repl
   (setq
-   ;; cider-cljs-lein-repl "(require 'script.repl)"
-   cider-cljs-lein-repl
-   "(do (require 'figwheel-sidecar.repl-api)
-             (figwheel-sidecar.repl-api/start-figwheel!)
-             (figwheel-sidecar.repl-api/cljs-repl))"
+
+   ;; start cljs repl scripts/repl.clj in project
+   cider-cljs-lein-repl "(require 'repl)"
+
+   ;; cider-cljs-lein-repl
+   ;; "(do (require 'figwheel-sidecar.repl-api)
+   ;;           (figwheel-sidecar.repl-api/start-figwheel!)
+   ;;           (figwheel-sidecar.repl-api/cljs-repl))"
+
+
+   ;; clojure-enable-fancify-symbols t
 
    ;; use app lifecycle functions in cider-refresh
    cider-refresh-before-fn "user/stop"
