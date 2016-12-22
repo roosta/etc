@@ -44,11 +44,11 @@ nnoremap d<Left>     :bd -select left<CR>
 nnoremap d<Right>    :bd -select right<CR>
 nnoremap d<PageUp>   :bd -select left<CR>
 nnoremap d<PageDown> :bd -select right<CR>
-nnoremap dh          :bd -select left<CR>
-nnoremap dl          :bd -select right<CR>
+nnoremap dk          :bd -select left<CR>
+nnoremap dj          :bd -select right<CR>
 nnoremap d[          :bd -select left<CR>
 nnoremap d]          :bd -select right<CR>
-noremap gd :bdelete 
+noremap gd           :bdelete 
 
 " escape cancle tab delete
 nnoremap d<Escape> <Nop>
