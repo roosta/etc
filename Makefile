@@ -1,6 +1,6 @@
 default: link-config link-misc show-notes
 
-update: update-zsh-plugins update-libs update-spacemacs show-notes  
+update: update-zsh-plugins update-libs update-spacemacs update-tmux show-notes
 
 install: link-config link-misc install-spacemacs set-shell i3-config setup-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-yaourt install-packages show-notes
 
@@ -64,6 +64,9 @@ install-spacemacs:
 i3-config:
 	cd ~/etc/conf/i3/.i3/config.d && cat `hostname`.local > ../config && cat *.i3 >> ../config 
 	i3-msg reload
+
+update-tmux:
+	. ~/.tmux/plugins/tpm/bindings/update_plugins
 
 setup-tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bindings/install_plugins
