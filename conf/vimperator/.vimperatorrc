@@ -27,7 +27,6 @@ set gui=none
 "EOM
 "noremap <Space> <Leader>
 "" }}}
-noremap \ <Leader>
 
 map <leader>R :source ~/.vimperatorrc<CR>
 
@@ -68,7 +67,7 @@ nnoremap k 12k
 " nnoremap <C-k>    24k
 
 " noscript integration
-noremap <leader><leader> :noscript popup<CR>
+" noremap <leader><leader> :noscript popup<CR>
 
 " bind some firefox menus
 noremap <leader>b :emenu View.Sidebar.Bookmarks<CR>
@@ -86,18 +85,18 @@ noremap <leader>ds :nohlsearch<CR>
 " use up/down when in cmdmode to select completions
 " note: use shift-movement to move in command history
 cmap <Down> <Tab>
-cmap <Up> <S-Tab>
-cmap <C-j> <Tab>
-cmap <C-k> <S-Tab>
+cmap <Up>   <S-Tab>
+cmap <C-j>  <Tab>
+cmap <C-k>  <S-Tab>
 
 " add user styles
 " source ~/.vimperator/styles/arch-wiki.vimp
 source ~/.vimperator/styles/input-field.vimp
-source ~/.vimperator/styles/wikipedia.vimp
+" source ~/.vimperator/styles/wikipedia.vimp
 " source ~/.vimperator/styles/reddit.vimp
 
 " temporary hack to fix autocompletion
-js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
+" js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
 
 " alias commands 
 " alias tg tabgroups
