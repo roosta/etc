@@ -66,10 +66,10 @@ i3-config:
 	i3-msg reload
 
 update-tmux:
-	. ~/.tmux/plugins/tpm/bindings/update_plugins
+	. ~/.tmux/plugins/tpm/bin/update_plugins all
 
 setup-tmux:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bindings/install_plugins
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bin/install_plugins
 
 install-yaourt:
 	./scripts/install_yaourt.sh
