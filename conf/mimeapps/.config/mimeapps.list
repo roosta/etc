@@ -13,8 +13,8 @@ application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
-x-scheme-handler/mailto=userapp-Thunderbird-ERPT4X.desktop
-message/rfc822=userapp-Thunderbird-ERPT4X.desktop
+x-scheme-handler/mailto=thunderbird.desktop
+message/rfc822=thunderbird.desktop
 
 [Added Associations]
 image/jpeg=feh.desktop
@@ -31,7 +31,7 @@ application/x-extension-shtml=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
-x-scheme-handler/mailto=userapp-Thunderbird-ERPT4X.desktop;
-message/rfc822=userapp-Thunderbird-ERPT4X.desktop;
+x-scheme-handler/mailto=thunderbird.desktop;
+message/rfc822=thunderbird.desktop;
 
 [Removed Associations]
