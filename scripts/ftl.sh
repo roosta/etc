@@ -115,7 +115,7 @@ edit () {
         $EDITOR ~/.muttrc
         ;;
       "i3")
-        $EDITOR ~/.i3
+        $EDITOR ~/.i3/config.d
         ;;
       *)
         error_msg "No such config: $arg"
