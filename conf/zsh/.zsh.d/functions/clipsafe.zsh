@@ -21,7 +21,7 @@ emulate -L zsh
 local file=$1
 if which xsel &>/dev/null; then
   if [[ -z $file ]]; then
-    xsel --clipboard --input 
+    head -1 | xsel --clipboard --input 
   else
     cat "$file" | xsel --clipboard --input
   fi
