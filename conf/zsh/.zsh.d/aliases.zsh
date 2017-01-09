@@ -453,6 +453,7 @@ alias cljgrep='ag -R --include="*.clj*"'
 alias ect='emacsclient -t'
 alias ecc='emacsclient -c'
 alias et='emacs -nw'
+alias e='emacsclient --no-wait'
 #}}}
 ## MISC {{{1
 ## ---------
@@ -483,5 +484,6 @@ alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc
 
 # cleanly shut down firefox
 alias ffs="wmctrl -c firefox"
+alias uh="ls && sleep 0.2 && clear"
 #}}}
 # vim: fdm=marker:sw=2
