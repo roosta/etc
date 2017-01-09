@@ -420,9 +420,8 @@ you should place your code here."
 
   ;; smartparens
   ;; -------------
-  ;; (setq
-  ;; evil-cleverparens-use-additional-movement-keys nil
-  ;; )
+  (setq
+   evil-cleverparens-use-additional-movement-keys nil)
 
   ;; clojure
   ;; -------
