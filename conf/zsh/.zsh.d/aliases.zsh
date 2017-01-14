@@ -332,6 +332,7 @@ alias ports="netstat -tulanp" # list open ports
 alias tmux="tmux -2" # force 256 color mode in tmux
 alias tn="tmux new-session -s" # start new session by giving a name
 alias ta="tmux attach -t"
+alias tkill="tmux kill-pane -t"
 alias tls="tmux ls"
 alias tc="tmux choose-session"
 alias tk="tmux kill-session -t"
