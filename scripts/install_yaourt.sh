@@ -8,4 +8,5 @@ git clone https://aur.archlinux.org/yaourt.git
 cd yaourt
 makepkg -si
 cd ..
+rm -rf ~/etc/build
 
