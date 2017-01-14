@@ -5,3 +5,5 @@
 /home/roosta/Dropbox/org/TODOs.org /home/roosta/TODOs.org
 /home/roosta/etc/scripts/ftl.sh /home/roosta/bin/ftl
 /home/roosta/lib/LS_COLORS/LS_COLORS /home/roosta/.dircolors
+/home/roosta/src/utils/chdisp_nvidia.sh /home/roosta/bin/chdisp
+/home/roosta/src/utils/touchpad_toggle.sh /home/roosta/bin/touchpad_toggle

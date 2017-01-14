@@ -1,3 +1,2 @@
 git@github.com:roosta/utils.git
-git@github.com:roosta/LS_COLORS.git
 git@github.com:roosta/colors.git
