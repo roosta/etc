@@ -46,7 +46,7 @@ clone-src:
 	ssh-add ~/.ssh/id_rsa
 	./scripts/git_update.sh ~/src ~/etc/src_repositories.txt 
 
-link-misc:
+symlink:
 	./scripts/symlink.sh ~/etc/symlinks.txt
 
 link-config:
