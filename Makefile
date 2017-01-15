@@ -49,7 +49,7 @@ clone-src:
 symlink:
 	./scripts/symlink.sh ~/etc/symlinks.txt
 
-link-config:
+link-conf:
 	stow `ls conf` -R -t ~ -d conf
 
 set-shell:
