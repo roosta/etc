@@ -73,7 +73,7 @@ alias vimutt="$EDITOR ~/.muttrc"
 ## FIND {{{1
 ## ---------
 
-alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36'"
+alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36' --hidden -p ./.agignore"
 
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
@@ -129,7 +129,7 @@ alias -g EL='|& less'
 alias -g ELS='|& less -S'
 alias -g ETL='|& tail -20'
 alias -g ET='|& tail'
-alias -g F=' | fmt -'
+# alias -g F=' | fmt -'
 alias -g G='| egrep'
 alias -g H='| head'
 alias -g HL='|& head -20'
