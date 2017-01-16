@@ -389,7 +389,7 @@ you should place your code here."
   (setq
 
    ;; start cljs repl scripts/repl.clj in project
-   cider-cljs-lein-repl "(require 'figwheel)"
+   cider-cljs-lein-repl "(require 'repl)"
 
    ;; cider-cljs-lein-repl
    ;; "(do (require 'figwheel-sidecar.repl-api)
