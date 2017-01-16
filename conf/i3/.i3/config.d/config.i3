@@ -170,6 +170,7 @@ bindsym $mod+Shift+Return exec firefox
 bindsym $mod+c kill
 
 bindsym $mod+Tab exec --no-startup-id rofi -show DRun
+# bindsym $mod+Tab exec --no-startup-id rofi -show combi -combi-modi "window,DRun" -modi combi
 # bindsym $mod+Tab exec --no-startup-id rofi -show 
 bindsym $mod+grave exec --no-startup-id rofi -show window
 
