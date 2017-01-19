@@ -49,6 +49,10 @@ diff () {
   fi
 }
 #}}}
+link-conf () {
+  cd "$etc_path" || exit 1
+  make link-conf
+}
 ## edit {{{1
 edit () {
   for arg in "$@"
@@ -156,6 +160,9 @@ run () {
     "edit")
       edit ${@:2}
       ;;
+    "link-conf")
+      link-conf
+      ;;
     "help")
       usage
       ;;
@@ -174,6 +181,7 @@ Usage: fatline command option
 
 commands:
   commit            stage a folder and commit using git
+  link-conf         Symlink conf
   status            get git status
   push              push to origin
   help              show help (this)
