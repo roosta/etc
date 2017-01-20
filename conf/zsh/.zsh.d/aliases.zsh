@@ -394,6 +394,7 @@ alias killemacs='emacsclient -e "(kill-emacs)"'
 alias gpg-reload='gpg-connect-agent reloadagent /bye'
 alias tldr='tldr -t original --linux'
 alias repl='rlwrap lumo'
+alias user-mount="sudo mount -o gid=users,fmask=113,dmask=002"
 #}}}
 ## VCS {{{1
 ## --------
