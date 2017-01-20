@@ -170,7 +170,7 @@ values."
     ;; size to make separators look not too crappy.
     ; :size (if (string= system-name "allitnil") 15 13)
     dotspacemacs-default-font '("Essential PragmataPro"
-                                :size 13
+                                :size 24
                                 :weight normal
                                 :width normal
                                 :powerline-scale 1.1)
