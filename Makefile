@@ -52,6 +52,9 @@ symlink:
 link-conf:
 	stow `ls conf` -R -t ~ -d conf
 
+link-local:
+	stow `ls local/$(hostname)` -R -t ~ -d local/$(hostname) 
+
 set-shell:
 	chsh -s `which zsh`
 
