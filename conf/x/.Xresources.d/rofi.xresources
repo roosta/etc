@@ -1,13 +1,13 @@
 ! "Enabled modi" Set from: XResources
 rofi.modi:                           run
 ! "Window width" Set from: XResources
-rofi.width:                          100
+rofi.width:                          20
 ! "Number of lines" Set from: XResources
-rofi.lines:                          5
+rofi.lines:                          -1
 ! "Number of columns" Set from: XResources
-rofi.columns:                        3
+rofi.columns:                        1
 ! "Font to use" Set from: XResources
-rofi.font:                           Essential PragmataPro 12px
+rofi.font:                           Essential PragmataPro 22px
 ! "Color scheme for normal row" Set from: XResources
 rofi.color-normal:                   #1C1B19, #FCE8C3, #211F1D, #E02C6D, #FCE8C3
 ! "Color scheme for urgent row" Set from: XResources
@@ -23,7 +23,7 @@ rofi.location:                       1
 ! "Padding" Set from: XResources
 rofi.padding:                        5
 ! "Y-offset relative to location" Set from: XResources
-rofi.yoffset:                        18
+rofi.yoffset:                        36
 ! "X-offset relative to location" Set from: XResources
 rofi.xoffset:                        0
 ! "Always show number of lines" Set from: XResources
@@ -51,7 +51,7 @@ rofi.case-sensitive:                 false
 ! "Cycle through the results list" Set from: Default
 ! rofi.cycle:                          true
 ! "Enable sidebar-mode" Set from: XResources
-rofi.sidebar-mode:                   false
+rofi.sidebar-mode:                   true
 ! "Row height (in chars)" Set from: XResources
 rofi.eh:                             1
 ! "Enable auto select mode" Set from: XResources
@@ -83,7 +83,7 @@ rofi.separator-style:                dash
 ! "Fake transparency" Set from: Default
 ! rofi.fake-transparency:              false
 ! "DPI" Set from: Default
-! rofi.dpi:                            -1
+rofi.dpi:                            192
 ! "Threads to use for string matching" Set from: Default
 ! rofi.threads:                        0
 ! "Scrollbar width" Set from: Default
@@ -109,29 +109,29 @@ rofi.kb-clear-line:                  Control+u
 ! "Beginning of line" Set from: XResources
 rofi.kb-move-front:                  Control+a
 ! "End of line" Set from: XResources
-rofi.kb-move-end:                    Control+e
+rofi.kb-move-end:                    Control+0
 ! "Move back one word" Set from: XResources
-rofi.kb-move-word-back:              Control+Left
+rofi.kb-move-word-back:              Control+b
 ! "Move forward one word" Set from: XResources
-rofi.kb-move-word-forward:           Control+Right
+rofi.kb-move-word-forward:           Control+e
 ! "Move back one char" Set from: XResources
-rofi.kb-move-char-back:              Control+b
+rofi.kb-move-char-back:              Left,Control+h
 ! "Move forward one char" Set from: XResources
-rofi.kb-move-char-forward:           Control+f
+rofi.kb-move-char-forward:           Right,Control+l
 ! "Delete previous word" Set from: XResources
-rofi.kb-remove-word-back:            Control+Alt+h
+rofi.kb-remove-word-back:            Control+w
 ! "Delete next word" Set from: XResources
-rofi.kb-remove-word-forward:         Control+Alt+d
+rofi.kb-remove-word-forward:         Control+Alt+w
 ! "Delete next char" Set from: XResources
 rofi.kb-remove-char-forward:         Delete,Control+d
 ! "Delete previous char" Set from: XResources
-rofi.kb-remove-char-back:            BackSpace,Control+h
+rofi.kb-remove-char-back:            BackSpace
 ! "Delete till the end of line" Set from: Default
-! rofi.kb-remove-to-eol:               Control+k
+rofi.kb-remove-to-eol:               Control+q
 ! "Delete till the start of line" Set from: Default
 ! rofi.kb-remove-to-sol:               Control+u
 ! "Accept entry" Set from: XResources
-rofi.kb-accept-entry:                Control+j,Control+m,Return,KP_Enter
+rofi.kb-accept-entry:                Return,KP_Enter
 ! "Use entered text as command (in ssh/run modi)" Set from: XResources
 rofi.kb-accept-custom:               Control+Return
 ! "Use alternate accept command." Set from: Default
@@ -143,13 +143,13 @@ rofi.kb-mode-next:                   Shift+Right,Control+Tab
 ! "Switch to the previous mode." Set from: XResources
 rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab
 ! "Go to the previous column" Set from: XResources
-rofi.kb-row-left:                    Left
+rofi.kb-row-left:                    Control+Left
 ! "Go to the next column" Set from: XResources
-rofi.kb-row-right:                   Right
+rofi.kb-row-right:                   Control+Right
 ! "Select previous entry" Set from: XResources
-rofi.kb-row-up:                      Up,Control+p,Shift+Tab
+rofi.kb-row-up:                      Up,Control+k,Shift+Tab
 ! "Select next entry" Set from: XResources
-rofi.kb-row-down:                    Down,Control+n
+rofi.kb-row-down:                    Down,Control+j
 ! "Go to next row, if one left, accept it, if no left next mode." Set from: XResources
 rofi.kb-row-tab:                     Shift+Tab
 ! "Go to the previous page" Set from: XResources
