@@ -1,4 +1,4 @@
-default: link-config link-misc show-notes
+default: link-conf symlink link-local show-notes
 
 update: update-zsh-plugins update-libs update-spacemacs update-tmux show-notes
 
