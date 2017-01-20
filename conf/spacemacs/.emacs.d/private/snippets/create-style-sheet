@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: create-style-sheet
+# key: create-style-sheet
+# --
+(def $1
+  (create-style-sheet$>
+   "$1"$>
+    (fn [theme]$>
+      {"$2" {$0})$>
+    {}))$>
