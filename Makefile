@@ -2,9 +2,9 @@ HOST ?= $(shell hostname)
 
 default: link-conf link-misc link-local post-install
 
-update: update-zsh-plugins update-libs update-spacemacs update-tmux show-notes
+update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post_install
 
-install: link-config link-misc init-spacemacs set-shell i3 init-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-yaourt install-packages show-notes
+install: link-config link-misc init-spacemacs set-shell i3 init-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-yaourt install-packages post_install
 
 install-yaourt:
 	mkdir ~/etc/build
@@ -54,10 +54,10 @@ update-libs:
 	./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt 
 
 init-vim: ~/.vim/autoload/plug.vim
-	vim -c "PlugInstall|q|q"
+	vim -c "exec InstallAndExit()"
 
 update-vim: ~/.vim/autoload/plug.vim
-	vim -c "PlugUpdate|q"
+	vim -c "exec UpdateAndExit()"
 
 ~/.vim/autoload/plug.vim:
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -93,8 +93,11 @@ init-spacemacs:
 	sudo pacman -S emacs
 	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d	
 
-i3:
-	cd ~/etc/conf/i3/.i3/config.d && cat `hostname`.local > ../config && cat *.i3 >> ../config 
+~/.i3/config: link-conf
+	rm ~/.i3/config
+	cd ~/.i3/config.d && cat $(HOST).local > ../config && cat *.i3 >> ../config
+
+i3: ~/.i3/config
 	i3-msg reload
 
 update-tmux:

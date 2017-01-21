@@ -310,6 +310,19 @@ function! AppendModeline()
   let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
   call append(line("$"), l:modeline)
 endfunction
+
+function UpdateAndExit()
+     :PlugUpdate
+     :q 
+     :q
+endfunction
+
+function InstallAndExit()
+     :PlugInstall
+     :q 
+     :q
+endfunction
+
 "
 " }}}
 " Vimpager: {{{
