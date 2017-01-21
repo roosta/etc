@@ -73,21 +73,28 @@ set-shell:
 update-spacemacs:
 	cd ~/.emacs.d && git pull --rebase
 	
-install-spacemacs:
+init-spacemacs:
+	sudo pacman -S emacs
 	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d	
 
-i3-config:
+i3:
 	cd ~/etc/conf/i3/.i3/config.d && cat `hostname`.local > ../config && cat *.i3 >> ../config 
 	i3-msg reload
 
 update-tmux:
 	. ~/.tmux/plugins/tpm/bin/update_plugins all
 
-setup-tmux:
+init-tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bin/install_plugins
 
 install-yaourt:
-	./scripts/install_yaourt.sh
+	mkdir ~/etc/build
+	cd ~/etc/build && git clone https://aur.archlinux.org/package-query.git
+	cd ~/etc/build/package-query && make -si
+	cd ~/etc/build && git clone https://aur.archlinux.org/yaourt.git
+	cd ~/etc/build/yaourt && make si
+	rm -rf ~/etc/build
 
-show-notes:
-	cat ./post_install.txt
+post-install:
+	echo "All done!"
+

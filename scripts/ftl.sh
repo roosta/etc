@@ -130,8 +130,8 @@ edit () {
 #}}}
 
 make-i3 () {
- cd "$etc_path"
- make i3-config
+ cd "$etc_path" || exit 1
+ make i3
 }
 
 run () {
