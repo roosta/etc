@@ -23,7 +23,7 @@ rofi.location:                       1
 ! "Padding" Set from: XResources
 rofi.padding:                        5
 ! "Y-offset relative to location" Set from: XResources
-rofi.yoffset:                        36
+rofi.yoffset:                        31
 ! "X-offset relative to location" Set from: XResources
 rofi.xoffset:                        0
 ! "Always show number of lines" Set from: XResources

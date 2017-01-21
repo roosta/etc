@@ -6,7 +6,7 @@ update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim p
 
 link: link-conf link-misc link-local post-install
 
-install: link update init-spacemacs set-shell i3 init-tmux  add-pacman-repositories install-infinality-keys install-yaourt install-packages post_install
+install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-infinality-keys install-yaourt install-packages update post_install
 
 install-yaourt:
 	mkdir ~/etc/build
@@ -91,7 +91,7 @@ set-shell:
 update-spacemacs:
 	cd ~/.emacs.d && git pull --rebase
 	
-init-spacemacs:
+init-spacemacs: link-conf
 	sudo pacman -S emacs
 	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d	
 
