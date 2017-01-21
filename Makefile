@@ -27,11 +27,11 @@ enable-services:
 user-fs:
 	-@mkdir ~/src
 	-@mkdir ~/lib
+	-@mkdir ~/tmp
 	-@mkdir ~/bin
 	-@mkdir ~/sbin
 	-@mkdir -p ~/var/log
 	-@mkdir -p ~/var/undo
-	-@mkdir ~/.tmp
 	-@mkdir ~/.cache
 	-@mkdir ~/.zsh.d/plugins
 	-@touch ~/.cache/zsh/dirs
