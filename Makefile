@@ -1,10 +1,12 @@
 HOST ?= $(shell hostname)
 
-default: link-conf link-misc link-local post-install
+default: link update post-install
 
-update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post_install
+update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install
 
-install: link-config link-misc init-spacemacs set-shell i3 init-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-yaourt install-packages post_install
+link: link-conf link-misc link-local post-install
+
+install: link update init-spacemacs set-shell i3 init-tmux  add-pacman-repositories install-infinality-keys install-yaourt install-packages post_install
 
 install-yaourt:
 	mkdir ~/etc/build
