@@ -7,7 +7,6 @@ update: update-zsh-plugins update-libs update-spacemacs update-tmux show-notes
 install: link-config link-misc install-spacemacs set-shell i3-config setup-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-yaourt install-packages show-notes
 
 install-packages:
-	sudo pacman -Sy yaourt
 	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
 
 add-pacman-repositories: add-infinality-key
