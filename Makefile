@@ -1,16 +1,18 @@
 HOST ?= $(shell hostname)
 
-default: link-conf symlink link-local show-notes
+default: link-conf link-misc link-local post-install
 
 update: update-zsh-plugins update-libs update-spacemacs update-tmux show-notes
 
-install: link-config link-misc install-spacemacs set-shell i3-config setup-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-yaourt install-packages show-notes
+install: link-config link-misc init-spacemacs set-shell i3 init-tmux update-zsh-plugins update-libs add-pacman-repositories install-infinality-keys install-yaourt install-packages show-notes
 
-install-packages:
-	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
-
-add-pacman-repositories: add-infinality-key
-	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
+install-yaourt:
+	mkdir ~/etc/build
+	cd ~/etc/build && git clone https://aur.archlinux.org/package-query.git
+	cd ~/etc/build/package-query && make -si
+	cd ~/etc/build && git clone https://aur.archlinux.org/yaourt.git
+	cd ~/etc/build/yaourt && make si
+	rm -rf ~/etc/build
 
 add-infinality-key:
 	sudo echo "cache sudo passwd"
@@ -18,6 +20,12 @@ add-infinality-key:
 	sleep 1
 	sudo pacman-key -r 962DDE58
 	sudo pacman-key --lsign-key 962DDE58
+
+add-pacman-repositories: add-infinality-key
+	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
+
+install-packages: install-yaourt add-pacman-repositiories
+	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
 
 enable-services:
 	systemctl --user enable emacs && systemctl --user start emacs
@@ -44,6 +52,15 @@ update-zsh-plugins:
 
 update-libs:
 	./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt 
+
+init-vim: ~/.vim/autoload/plug.vim
+	vim -c "PlugInstall|q|q"
+
+update-vim: ~/.vim/autoload/plug.vim
+	vim -c "PlugUpdate|q"
+
+~/.vim/autoload/plug.vim:
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 clone-src:
 	ssh-add ~/.ssh/id_rsa
@@ -85,14 +102,6 @@ update-tmux:
 
 init-tmux:
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bin/install_plugins
-
-install-yaourt:
-	mkdir ~/etc/build
-	cd ~/etc/build && git clone https://aur.archlinux.org/package-query.git
-	cd ~/etc/build/package-query && make -si
-	cd ~/etc/build && git clone https://aur.archlinux.org/yaourt.git
-	cd ~/etc/build/yaourt && make si
-	rm -rf ~/etc/build
 
 post-install:
 	echo "All done!"
