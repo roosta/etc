@@ -50,8 +50,16 @@ clone-src:
 	ssh-add ~/.ssh/id_rsa
 	./scripts/git_update.sh ~/src ~/etc/src_repositories.txt 
 
-symlink:
-	./scripts/symlink.sh ~/etc/symlinks.txt
+link-misc:
+	-@ln -s $(HOME)/src/utils /home/roosta/
+	-@ln -s $(HOME)/src/colors /home/roosta/
+	-@ln -s $(HOME)/src/utils/emacs-file-opener.sh /home/roosta/bin/emacs-file-opener
+	-@ln -s $(HOME)/Dropbox/org /home/roosta/
+	-@ln -s $(HOME)/Dropbox/org/TODOs.org /home/roosta/TODOs.org
+	-@ln -s $(HOME)/etc/scripts/ftl.sh /home/roosta/bin/ftl
+	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS /home/roosta/.dircolors
+	-@ln -s $(HOME)/src/utils/chdisp_nvidia.sh /home/roosta/bin/chdisp
+	-@ln -s $(HOME)/src/utils/touchpad_toggle.sh /home/roosta/bin/touchpad_toggle
 
 link-conf:
 	stow $(shell ls conf) -R -t ~ -d conf
