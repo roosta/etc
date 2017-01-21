@@ -1,3 +1,5 @@
+HOST ?= $(shell hostname)
+
 default: link-conf symlink link-local show-notes
 
 update: update-zsh-plugins update-libs update-spacemacs update-tmux show-notes
@@ -52,10 +54,10 @@ symlink:
 	./scripts/symlink.sh ~/etc/symlinks.txt
 
 link-conf:
-	stow `ls conf` -R -t ~ -d conf
+	stow $(shell ls conf) -R -t ~ -d conf
 
 link-local:
-	stow `ls local/$(hostname)` -R -t ~ -d local/$(hostname) 
+	stow $(shell ls local/$(HOST)/conf) -R -t ~ -d local/$(HOST)/conf 
 
 set-shell:
 	chsh -s `which zsh`
