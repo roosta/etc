@@ -24,6 +24,8 @@ enable-services:
 # 	sudo systemctl disable systemd-rfkill
 # 	sudo tlp start
 
+# Scaffold user fs structure.
+# Don't echo to stdout and continue in case of error (-@)
 user-fs:
 	-@mkdir ~/src
 	-@mkdir ~/lib
