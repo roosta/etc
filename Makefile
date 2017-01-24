@@ -29,7 +29,7 @@ add-pacman-repositories: add-infinality-key
 install-packages: install-yaourt add-pacman-repositiories
 	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
 
-enable-services:
+enable-services: init-emacs
 	systemctl --user enable emacs && systemctl --user start emacs
 # 	sudo systemctl enable lightdm NetworkManager tlp tlp-sleep
 # 	sudo systemctl disable systemd-rfkill
