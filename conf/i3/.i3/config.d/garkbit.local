@@ -9,7 +9,7 @@ bar {
   output $primary_monitor
   # output $secondary_monitor
   status_command i3blocks -c ~/.i3/status/$(hostname).i3blocks 
-  font pango:Essential PragmataPro, FontAwesome 8
+  font pango:Essential PragmataPro 8
   position top
   tray_output primary
   strip_workspace_numbers yes
@@ -32,7 +32,7 @@ bar {
   id bar-secondary
   output $secondary_monitor
   status_command i3blocks -c ~/.i3/status/$(hostname).i3blocks 
-  font pango:Essential PragmataPro, FontAwesome 5
+  font pango:Essential PragmataPro 5
   position top
   tray_output primary
   strip_workspace_numbers yes
