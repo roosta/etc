@@ -15,7 +15,7 @@ rofi.color-urgent:                   #fdf6e3, #EBDBB2, #eee8d5, #dc322f, #fdf6e3
 ! "Color scheme for active row" Set from: XResources
 rofi.color-active:                   #519F50, #1C1B19, #eee8d5, #98BC37, #1C1B19
 ! "Color scheme window" Set from: XResources
-rofi.color-window:                   #1C1B19, #918175
+rofi.color-window:                   #1C1B19, #E02C6D
 ! "Border width" Set from: XResources
 rofi.bw:                             1
 ! "Location on screen" Set from: XResources
@@ -23,7 +23,7 @@ rofi.location:                       1
 ! "Padding" Set from: XResources
 rofi.padding:                        5
 ! "Y-offset relative to location" Set from: XResources
-rofi.yoffset:                        37
+rofi.yoffset:                        31
 ! "X-offset relative to location" Set from: XResources
 rofi.xoffset:                        0
 ! "Always show number of lines" Set from: XResources
