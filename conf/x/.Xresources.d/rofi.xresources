@@ -7,7 +7,7 @@ rofi.lines:                          -1
 ! "Number of columns" Set from: XResources
 rofi.columns:                        1
 ! "Font to use" Set from: XResources
-rofi.font:                           Essential PragmataPro 23px
+! rofi.font:                           Essential PragmataPro 23px
 ! "Color scheme for normal row" Set from: XResources
 rofi.color-normal:                   #1C1B19, #FCE8C3, #211F1D, #E02C6D, #FCE8C3
 ! "Color scheme for urgent row" Set from: XResources
@@ -23,7 +23,7 @@ rofi.location:                       1
 ! "Padding" Set from: XResources
 rofi.padding:                        5
 ! "Y-offset relative to location" Set from: XResources
-rofi.yoffset:                        37
+/* rofi.yoffset:                        37 */
 ! "X-offset relative to location" Set from: XResources
 rofi.xoffset:                        0
 ! "Always show number of lines" Set from: XResources
