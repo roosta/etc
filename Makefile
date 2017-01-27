@@ -9,6 +9,7 @@ link: link-conf link-misc link-local post-install
 install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-infinality-keys install-yaourt install-packages update post_install
 
 install-yaourt:
+	@echo -e "\033[0;33mBuild and installing yaourt...\033[0m"
 	mkdir ~/etc/build
 	cd ~/etc/build && git clone https://aur.archlinux.org/package-query.git
 	cd ~/etc/build/package-query && make -si
@@ -17,6 +18,7 @@ install-yaourt:
 	rm -rf ~/etc/build
 
 add-infinality-key:
+	@echo -e "\033[0;33mAdding infinality key...\033[0m"
 	sudo echo "cache sudo passwd"
 	sudo dirmngr &
 	sleep 1
@@ -24,12 +26,15 @@ add-infinality-key:
 	sudo pacman-key --lsign-key 962DDE58
 
 add-pacman-repositories: add-infinality-key
+	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
 	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
 
 install-packages: install-yaourt add-pacman-repositiories
+	@echo -e "\033[0;33mInstalling packages...\033[0m"
 	yaourt -S --needed --noconfirm `cat pacman_packages.txt`
 
-enable-services:
+enable-services: init-emacs
+	@echo -e "\033[0;33mInitialize emacs...\033[0m"
 	systemctl --user enable emacs && systemctl --user start emacs
 # 	sudo systemctl enable lightdm NetworkManager tlp tlp-sleep
 # 	sudo systemctl disable systemd-rfkill
@@ -38,6 +43,7 @@ enable-services:
 # Scaffold user fs structure.
 # Don't echo to stdout and continue in case of error (-@)
 user-fs:
+	@echo -e "\033[0;33mCreate user fs...\033[0m"
 	-@mkdir ~/src
 	-@mkdir ~/lib
 	-@mkdir ~/tmp
@@ -50,25 +56,31 @@ user-fs:
 	-@touch ~/.cache/zsh/dirs
 
 update-zsh-plugins:
+	@echo -e "\033[0;33mUpdating zsh plugins...\033[0m"
 	./scripts/git_update.sh ~/.zsh.d/plugins ~/etc/zsh_plugins.txt 
 
 update-libs:
-	./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt 
+	@./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt 
 
 init-vim: ~/.vim/autoload/plug.vim
-	vim -c "exec InstallAndExit()"
+	@echo -e "\033[0;33mInitialize Vim...\033[0m"
+	@vim -c "exec InstallAndExit()"
 
 update-vim: ~/.vim/autoload/plug.vim
-	vim -c "exec UpdateAndExit()"
+	@echo -e "\033[0;33mUpdating Vim packages...\033[0m"
+	@vim -c "exec UpdateAndExit()"
 
 ~/.vim/autoload/plug.vim:
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	@echo -e "\033[0;33mGetting plugin manager for Vim...\033[0m"
+	@curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 clone-src:
+	@echo -e "\033[0;33mCloning src...\033[0m"
 	ssh-add ~/.ssh/id_rsa
-	./scripts/git_update.sh ~/src ~/etc/src_repositories.txt 
+	@./scripts/git_update.sh ~/src ~/etc/src_repositories.txt 
 
 link-misc:
+	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
 	-@ln -s $(HOME)/src/utils /home/roosta/
 	-@ln -s $(HOME)/src/colors /home/roosta/
 	-@ln -s $(HOME)/src/utils/emacs-file-opener.sh /home/roosta/bin/emacs-file-opener
@@ -80,34 +92,44 @@ link-misc:
 	-@ln -s $(HOME)/src/utils/touchpad_toggle.sh /home/roosta/bin/touchpad_toggle
 
 link-conf:
-	stow $(shell ls conf) -R -t ~ -d conf
+	@echo -e "\033[0;33mSymlinking conf...\033[0m"
+	@stow $(shell ls conf) -R -t ~ -d conf
 
 link-local:
-	stow $(shell ls local/$(HOST)/conf) -R -t ~ -d local/$(HOST)/conf 
+	@echo -e "\033[0;33mSymlinking local...\033[0m"
+	@stow $(shell ls local/$(HOST)/conf) -R -t ~ -d local/$(HOST)/conf 
 
 set-shell:
+	@echo -e "\033[0;33mSetting shell to zsh...\033[0m"
 	chsh -s `which zsh`
 
 update-spacemacs:
-	cd ~/.emacs.d && git pull --rebase
+	@echo -e "\033[0;33mUpdating spacemacs...\033[0m"
+	@cd ~/.emacs.d && git pull --rebase
 	
 init-spacemacs: link-conf
+	@echo -e "\033[0;33mInitialize spacemacs...\033[0m"
 	sudo pacman -S emacs
 	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d	
 
 ~/.i3/config: link-conf
-	rm ~/.i3/config
-	cd ~/.i3/config.d && cat $(HOST).local > ../config && cat *.i3 >> ../config
+	@echo -e "\033[0;33mCreating i3 config...\033[0m"
+	@rm ~/.i3/config
+	@cd ~/.i3/config.d && cat $(HOST).local > ../config && cat *.i3 >> ../config
 
 i3: ~/.i3/config
-	i3-msg reload
+	@echo -e "\033[0;33mReload i3 config...\033[0m"
+	@i3-msg reload
+	@echo -e "\033[1;32mAll done!\033[0m"
 
 update-tmux:
-	. ~/.tmux/plugins/tpm/bin/update_plugins all
+	@echo -e "\033[0;33mUpdating tmux plugins...\033[0m"
+	@. ~/.tmux/plugins/tpm/bin/update_plugins all
 
 init-tmux:
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bin/install_plugins
+	@echo -e "\033[0;33mInitialize tmux...\033[0m"
+	@git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bin/install_plugins
 
 post-install:
-	echo "All done!"
+	@echo -e "\033[1;32mAll done!\033[0m"
 
