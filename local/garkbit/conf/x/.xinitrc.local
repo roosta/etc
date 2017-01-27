@@ -1,0 +1,5 @@
+$HOME/.screenlayout/main.sh &
+# set-default-sink 1
+
+# vim:ft=sh:ts=2:sw=2:fdm=marker
+
