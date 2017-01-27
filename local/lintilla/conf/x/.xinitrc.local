@@ -1,0 +1,6 @@
+nvidia-settings --load-config-only &
+# /home/roosta/bin/chdisp desk &
+/home/roosta/.screenlayout/main.sh &
+# thunderbird --mail &
+
+# vim:ft=sh:ts=2:sw=2:fdm=marker
