@@ -1,6 +1,6 @@
 ! DPI
-Xft.dpi: 120
-*dpi: 120
+Xft.dpi: 140
+*dpi: 140
 
 ! "Font to use" Set from: XResources
 rofi.font: Essential PragmataPro 15px
