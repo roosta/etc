@@ -49,9 +49,9 @@ diff () {
   fi
 }
 #}}}
-link-conf () {
+link () {
   cd "$etc_path" || exit 1
-  make link-conf
+  make link
 }
 ## edit {{{1
 edit () {
@@ -134,6 +134,11 @@ make-i3 () {
  make i3
 }
 
+update () {
+ cd "$etc_path" || exit 1
+ make update
+}
+
 run () {
   (( $# >= 1 )) || usage
   case "$1" in
@@ -160,8 +165,11 @@ run () {
     "edit")
       edit ${@:2}
       ;;
-    "link-conf")
-      link-conf
+    "link")
+      link
+      ;;
+    "update")
+      update
       ;;
     "help")
       usage
