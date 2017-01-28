@@ -262,26 +262,36 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 set $mode_resize Resize: (directions) 10px, (Shift+directions) 30px
 mode "$mode_resize" {
   # vi movement
-  bindsym h resize shrink width  10 px or 10 ppt
-  bindsym j resize grow   height 10 px or 10 ppt
-  bindsym k resize shrink height 10 px or 10 ppt
-  bindsym l resize grow   width  10 px or 10 ppt
+  bindsym h resize shrink width  50 px or 50 ppt
+  bindsym j resize grow   height 50 px or 50 ppt
+  bindsym k resize shrink height 50 px or 50 ppt
+  bindsym l resize grow   width  50 px or 50 ppt
 
-  bindsym Shift+h resize shrink width  30 px or 30 ppt
-  bindsym Shift+j resize grow   height 30 px or 30 ppt
-  bindsym Shift+k resize shrink height 30 px or 30 ppt
-  bindsym Shift+l resize grow   width  30 px or 30 ppt
+  bindsym Shift+h resize shrink width  100 px or 100 ppt
+  bindsym Shift+j resize grow   height 100 px or 100 ppt
+  bindsym Shift+k resize shrink height 100 px or 100 ppt
+  bindsym Shift+l resize grow   width  100 px or 100 ppt
+
+  bindsym Shift+Control+h resize shrink width  200 px or 200 ppt
+  bindsym Shift+Control+j resize grow   height 200 px or 200 ppt
+  bindsym Shift+Control+k resize shrink height 200 px or 200 ppt
+  bindsym Shift+Control+l resize grow   width  200 px or 200 ppt
 
   # assign the same for arrows
-  bindsym Left  resize shrink width  10 px or 10 ppt
-  bindsym Down  resize grow   height 10 px or 10 ppt
-  bindsym Up    resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow   width  10 px or 10 ppt
+  bindsym Left  resize shrink width  50 px or 50 ppt
+  bindsym Down  resize grow   height 50 px or 50 ppt
+  bindsym Up    resize shrink height 50 px or 50 ppt
+  bindsym Right resize grow   width  50 px or 50 ppt
 
-  bindsym Shift+Left  resize shrink width  30 px or 30 ppt
-  bindsym Shift+Down  resize grow   height 30 px or 30 ppt
-  bindsym Shift+Up    resize shrink height 30 px or 30 ppt
-  bindsym Shift+Right resize grow   width  30 px or 30 ppt
+  bindsym Shift+Left  resize shrink width  100 px or 100 ppt
+  bindsym Shift+Down  resize grow   height 100 px or 100 ppt
+  bindsym Shift+Up    resize shrink height 100 px or 100 ppt
+  bindsym Shift+Right resize grow   width  100 px or 100 ppt
+
+  bindsym Shift+Control+Left  resize shrink width  200 px or 200 ppt
+  bindsym Shift+Control+Down  resize grow   height 200 px or 200 ppt
+  bindsym Shift+Control+Up    resize shrink height 200 px or 200 ppt
+  bindsym Shift+Control+Right resize grow   width  200 px or 200 ppt
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
