@@ -46,6 +46,7 @@ user-fs:
 	@echo -e "\033[0;33mCreate user fs...\033[0m"
 	-@mkdir ~/src
 	-@mkdir ~/lib
+	-@mkdir ~/mnt
 	-@mkdir ~/tmp
 	-@mkdir ~/bin
 	-@mkdir ~/sbin
