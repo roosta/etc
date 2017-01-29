@@ -387,6 +387,8 @@ you should place your code here."
    ;; move across linebreaks
    evil-move-beyond-eol t
 
+   yas-snippet-dirs
+   '("~/.spacemacs.d/snippets")
    )
 
   ;; Cider
@@ -397,12 +399,6 @@ you should place your code here."
 
    ;; start cljs repl scripts/repl.clj in project
    cider-cljs-lein-repl "(require 'repl)"
-
-   ;; cider-cljs-lein-repl
-   ;; "(do (require 'figwheel-sidecar.repl-api)
-   ;;           (figwheel-sidecar.repl-api/start-figwheel!)
-   ;;           (figwheel-sidecar.repl-api/cljs-repl))"
-
 
    ;; clojure-enable-fancify-symbols t
 
@@ -444,13 +440,6 @@ you should place your code here."
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
   (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
 
-  ;; window movement
-  ;; ---------------
-  ;; (define-key evil-normal-state-map (kbd "<M-left>") 'evil-window-left)
-  ;; (define-key evil-normal-state-map (kbd "<M-right>") 'evil-window-right)
-  ;; (define-key evil-normal-state-map (kbd "<M-up>") 'evil-window-up)
-  ;; (define-key evil-normal-state-map (kbd "<M-down>") 'evil-window-down)
-
   ;; Navigating using visual lines
   (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
   (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -477,16 +466,6 @@ you should place your code here."
 
   ;; Mutt support.
   (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
-
-  ;; (setenv "PATH" (concat (getenv "PATH") ":/home/roosta/.npm/bin"))
-  ;; (setq exec-path (append exec-path '("/home/roosta/.npm/bin")))
-
-  ;; multiple-cursors
-  ;; (require 'multiple-cursors)
-  ;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-  ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-  ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-  ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
   ;; (when (string= system-name "allitnil")
   ;;     (set-default-font "Essential PragmataPro 15"))
