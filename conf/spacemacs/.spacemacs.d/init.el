@@ -362,7 +362,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
    custom-theme-directory "~/src/emacs-srcery"
 
    ;; disable waring for setting path outside profile/env
-   ;; exec-path-from-shell-check-startup-files nil
+   exec-path-from-shell-check-startup-files nil
 
    ))
 
