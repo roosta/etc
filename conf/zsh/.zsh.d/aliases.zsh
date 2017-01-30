@@ -282,7 +282,7 @@ alias pacsu="pacman -U" # Install specific package not from the repositories but
 # CLEANING
 alias pacr="pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
 alias pacrns="pacman -Rns" # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrcs="pacman -Rcs" # Remove the specified package(s), and recursivly remove unneeded dependencies
+alias pacrcs="pacman -Rcs" # !! Remove the specified package(s), and everything that depends on them, and recursivly remove unneeded dependencies
 alias pacrs="pacman -Rs" # Remove the specified package(s) and its dependencies
 alias pacc="pacman -Scc" # Clean cache - delete all the package files in the cache
 
