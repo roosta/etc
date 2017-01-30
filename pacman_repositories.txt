@@ -1,8 +1,0 @@
-[infinality-bundle]
-Server = http://bohoomil.com/repo/$arch
-
-[infinality-bundle-fonts]
-Server = http://bohoomil.com/repo/fonts
-
-[infinality-bundle-multilib]
-Server = http://bohoomil.com/repo/multilib/$arch

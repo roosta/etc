@@ -17,15 +17,7 @@ install-yaourt:
 	cd ~/etc/build/yaourt && make si
 	rm -rf ~/etc/build
 
-add-infinality-key:
-	@echo -e "\033[0;33mAdding infinality key...\033[0m"
-	sudo echo "cache sudo passwd"
-	sudo dirmngr &
-	sleep 1
-	sudo pacman-key -r 962DDE58
-	sudo pacman-key --lsign-key 962DDE58
-
-add-pacman-repositories: add-infinality-key
+add-pacman-repositories:
 	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
 	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
 
