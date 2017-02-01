@@ -1,7 +1,7 @@
 # ------------
 # LOCAL
 # ------------
-set $primary_monitor   HDMI1
+set $primary_monitor   DP1
 set $secondary_monitor HDMI2
 
 bar {
