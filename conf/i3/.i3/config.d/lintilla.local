@@ -37,7 +37,7 @@ bar {
   id bar-secondary
   output $secondary_monitor
   status_command i3blocks -c ~/.i3/status/$(hostname)-primary.i3blocks 
-  font pango:Essential PragmataPro 5
+  font pango:Essential PragmataPro 4
   position top
   tray_output primary
   strip_workspace_numbers yes
