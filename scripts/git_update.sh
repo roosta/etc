@@ -25,6 +25,7 @@ if [[ -f "$2" ]]; then
         dest=$(echo "$out" | awk '{print substr($4, 2, length($4) - 2)}') 
         # echo $dest
         cd "$1"/"$dest" || exit
+        echo -e "\033[0;33mupdating $dest:\033[0m"
         git pull
         cd .. || exit
       else
