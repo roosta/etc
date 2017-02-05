@@ -4,6 +4,6 @@
 # --
 (defui $1
   {:stylesheet $2$>
-  :title $3}$>
+  :title $1}$>
   (fn [{:keys [classnames]}]$>
     $0))$>
