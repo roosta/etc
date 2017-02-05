@@ -41,24 +41,24 @@ set_from_resource $hard_black     i3wm.color232  #080808
 set_from_resource $alt_gray       i3wm.color239  #4E4E4E
 
 # primary workspaces
-set $PWS1 "1[Q]TERM"
-set $PWS2 "2[W]EDIT"
+set $PWS1 "1[Q]Term"
+set $PWS2 "2[W]Edit"
 set $PWS3 "3[E]WWW"
 
 # secondary workspaces
-set $SWS1 "4[A]DBG_TERM"
-set $SWS2 "5[S]DBG_FIREFOX"
-set $SWS3 "6[D]DBG_CHROME"
+set $SWS1 "4[A]DBG_Term"
+set $SWS2 "5[S]DBG_Firefox"
+set $SWS3 "6[D]DBG_Chrome"
 
 # Tertiary workspaces
-set $TWS1 "7[1]MEDIA"
-set $TWS2 "8[2]GAME"
+set $TWS1 "7[1]Media"
+set $TWS2 "8[2]Game"
 set $TWS3 "9[3]GFX"
 
 # Auxiliary workspaces
-set $FWS1  "9[F1]CHAT"
-set $FWS2  "10[F2]EMAIL"
-set $FWS3  "11[F3]DL"
+set $FWS1  "9[F1]Chat"
+set $FWS2  "10[F2]"
+set $FWS3  "11[F3]"
 set $FWS4  "12[F4]"
 set $FWS5  "13[F5]"
 set $FWS6  "14[F6]"

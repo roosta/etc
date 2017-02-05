@@ -5,9 +5,9 @@ set $primary_monitor   DP-1
 set $secondary_monitor DVI-D-0
 set $tertiary_monitor  HDMI-0
 
-workspace $FWS1 output $tertiary_monitor
-workspace $FWS2 output $tertiary_monitor
-workspace $FWS3 output $tertiary_monitor
+# workspace $FWS1 output $tertiary_monitor
+# workspace $FWS2 output $tertiary_monitor
+# workspace $FWS3 output $tertiary_monitor
 
 bar {
   id bar-primary
@@ -37,7 +37,7 @@ bar {
   id bar-secondary
   output $secondary_monitor
   status_command i3blocks -c ~/.i3/status/$(hostname)-primary.i3blocks 
-  font pango:Essential PragmataPro 4
+  font pango:Essential PragmataPro 5
   position top
   tray_output primary
   strip_workspace_numbers yes

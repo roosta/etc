@@ -117,7 +117,7 @@ assign [class="(?i)pidgin"]      $FWS1
 assign [class="(?i)linphone"]    $FWS1
 assign [class="(?i)skype"]       $FWS1
 assign [class="(?i)slack"]       $FWS1
-assign [class="(?i)thunderbird"] $FWS2
+# assign [class="(?i)thunderbird"] $FWS2
 
 assign [class="(?i)transmission-gtk"] $FWS3
 
@@ -139,13 +139,14 @@ for_window [class="(?i)Linphone"] floating enable
 for_window [title="(?i)Friends"] floating enable
 #for_window [title="(?i)Steam#-#Update#News(.*)"] floating enable
 for_window [class="(?i)Pidgin"] floating enable
+for_window [class="(?i)nitrogen"] floating enable
 for_window [class="(?i)pinentry-gtk-2"] floating enable
 for_window [class="(?i)yad"] floating enable
 
 ## WINDOW SIZE
 ## -----------
 for_window [class="(?i)Pidgin"]   floating_maximum_size 50 x 75
-for_window [class="(?i)nitrogen"] floating_maximum_size 520 x 120
+for_window [class="(?i)nitrogen"] floating_maximum_size 768 x 2160
 
 # BORDER
 # ------
