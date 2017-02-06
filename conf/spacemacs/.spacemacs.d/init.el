@@ -170,7 +170,7 @@ values."
                          monokai
                          zenburn)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
-   dotspacemacs-colorize-cursor-according-to-state t
+   dotspacemacs-colorize-cursor-according-to-state nil
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
                                         ; :size (if (string= system-name "allitnil") 15 13)
