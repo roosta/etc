@@ -56,6 +56,7 @@ values."
      fasd
      python
      docker
+     slack
      git
      nginx
      react
@@ -343,152 +344,38 @@ values."
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
-It is called immediately after `dotspacemacs/init', before layer configuration
-executes.
- This function is mostly useful for variables that need to be set
-before packages are loaded. If you are unsure, you should try in setting them in
-`dotspacemacs/user-config' first."
+  It is called immediately after `dotspacemacs/init', before layer configuration
+  executes.
+  This function is mostly useful for variables that need to be set
+  before packages are loaded. If you are unsure, you should try in setting them in
+  `dotspacemacs/user-config' first."
 
-  (setq-default
-   ;; evil-shift-round nil
-   custom-theme-directory "~/src/emacs-srcery"
-
-   ;; disable waring for setting path outside profile/env
-   exec-path-from-shell-check-startup-files nil
-
-   ))
+  (load-file  "~/.spacemacs.d/user-init.el"))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
-This function is called at the very end of Spacemacs initialization after
-layers configuration.
-This is the place where most of your configurations should be done. Unless it is
-explicitly specified that a variable should be set before a package is loaded,
-you should place your code here."
+  This function is called at the very end of Spacemacs initialization after
+  layers configuration.
+  This is the place where most of your configurations should be done. Unless it is
+  explicitly specified that a variable should be set before a package is loaded,
+  you should place your code here."
 
-
-  (setq
-   scroll-margin 7
-
-   ;; srcery-theme-org-height nil
-   powerline-default-separator nil
-
-   ;; always follow symlinks
-   vc-follow-symlinks t
-
-   ;; move across linebreaks
-   evil-move-beyond-eol t
-
-   yas-snippet-dirs
-   '("~/.spacemacs.d/snippets")
-   )
-
-  ;; Cider
-  ;; --------
-  (require 'cider)
-  ;; use figwheel when starting a cljs repl
-  (setq
-
-   ;; start cljs repl scripts/repl.clj in project
-   cider-cljs-lein-repl "(require 'repl)"
-
-   ;; clojure-enable-fancify-symbols t
-
-   ;; use app lifecycle functions in cider-refresh
-   cider-refresh-before-fn "user/stop"
-   cider-refresh-after-fn "user/go"
-
-   ;; always pretty print in repl
-   cider-repl-use-pretty-printing t
-
-   ;; Add to list to highlight more than macro and core
-   ;; cider-font-lock-dynamically '(macro core function var)
-
-   ;; add syntax highlighting to eval overlay
-   cider-overlays-use-font-lock t
-   )
-
-  (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'cider-repl-mode-hook #'eldoc-mode)
-  (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
-
-  ;; flycheck
-  ;; ------------
-  ;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
-  ;; (add-hook 'after-init-hook #'global-flycheck-mode)
-
-  ;; (eval-after-load 'flycheck
-  ;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
-
-  ;; smartparens
-  ;; -------------
-  (setq
-   evil-cleverparens-use-additional-movement-keys nil)
-
-  ;; clojure
-  ;; -------
-  (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
-  (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
-  (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
-
-  ;; Navigating using visual lines
-  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-
-  ;; opening project files
-  (spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
-
-  ;; evil-surround
-  ;; -------------
-  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
-  (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
-
-  ;; (evil-define-key 'normal evil-surround-mode-map (kbd "<cs>") 'evil-surround-change)
-  ;; (evil-define-key 'normal evil-surround-mode-map (kbd "<ds>") 'evil-surround-delete)
-
-  ;; terminal-only conf
-  (unless (display-graphic-p)
-    (require 'evil-terminal-cursor-changer)
-    (evil-terminal-cursor-changer-activate) ; or (etcc-on)
-    (setq
-     ;; add a space between text and line numbers
-     linum-relative-format "%3s ")
-    )
-
-  ;; Mutt support.
-  (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
-
-  ;; (when (string= system-name "allitnil")
-  ;;     (set-default-font "Essential PragmataPro 15"))
-
-  ;; --- org ---
-  (with-eval-after-load 'org
-    ;; persist org clock
-    (setq org-clock-persist 'history
-          org-mobile-directory "~/Dropbox/org/"
-          org-mobile-files (quote ("~/Dropbox/org/TODOs.org")))
-    (org-clock-persistence-insinuate))
-  )
+  (load-file "~/.spacemacs.d/user-config.el"))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-agenda-files (quote ("~/Dropbox/org/TODOs.org")))
- '(package-selected-packages
-   (quote
-    (docker-tramp flycheck helm helm-core magit haml-mode dash magithub zenburn-theme yapfify yaml-mode ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill toc-org tagedit systemd spaceline solarized-theme smeargle slim-mode scss-mode sass-mode restart-emacs ranger rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-download org-bullets open-junk-file nginx-mode neotree mwim move-text monokai-theme mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode js2-refactor js-doc jinja2-mode insert-shebang info+ indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme google-translate golden-ratio gnuplot github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md ggtags fuzzy flyspell-correct-helm flycheck-pos-tip flx-ido fish-mode fill-column-indicator fasd fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-snipe evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu emmet-mode elisp-slime-nav dumb-jump dockerfile-mode docker diff-hl define-word dactyl-mode cython-mode company-web company-tern company-statistics company-shell company-emacs-eclim company-ansible company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu badwolf-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile arduino-mode ansible-doc ansible aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
+  This is an auto-generated function, do not modify its content directly, use
+  Emacs customize menu instead.
+  This function is called at the very end of Spacemacs initialization."
+  (custom-set-variables
+    ;; custom-set-variables was added by Custom.
+    ;; If you edit it by hand, you could mess it up, so be careful.
+    ;; Your init file should contain only one such instance.
+    ;; If there is more than one, they won't work right.
+    '(org-agenda-files (quote ("~/Dropbox/org/TODOs.org"))))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   ))
