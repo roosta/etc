@@ -93,8 +93,17 @@
 
 ;; --- org ---
 (with-eval-after-load 'org
-  ;; persist org clock
-  (setq org-clock-persist 'history
-        org-mobile-directory "~/Dropbox/org/"
-        org-mobile-files (quote ("~/Dropbox/org/TODOs.org")))
+
+  (setq
+   org-export-with-drawers t
+   org-export-format-drawer-function 'jbd-org-export-format-drawer
+   org-clock-persist 'history
+   org-mobile-directory "~/Dropbox/org/"
+   org-mobile-files (quote ("~/Dropbox/org/TODOs.org")))
+
+  (defun jbd-org-export-format-drawer (name content)
+    "Export drawers to drawer HTML class."
+    (setq content (org-remove-indentation content))
+    (format "@<div class=\"drawer\">%s@</div>\n" content))
+
   (org-clock-persistence-insinuate))
