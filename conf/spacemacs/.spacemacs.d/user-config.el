@@ -96,10 +96,17 @@
 
   (setq
    org-export-with-drawers t
-   org-export-format-drawer-function 'jbd-org-export-format-drawer
    org-clock-persist 'history
+   org-export-with-clocks t
+   org-clock-idle-time 15
    org-mobile-directory "~/Dropbox/org/"
    org-mobile-files (quote ("~/Dropbox/org/TODOs.org")))
+
+
+  ;; drawer-export
+  ;; https://stackoverflow.com/questions/7174819/export-effort-and-clocksum-from-org-mode
+  (setq
+   org-export-format-drawer-function 'jbd-org-export-format-drawer)
 
   (defun jbd-org-export-format-drawer (name content)
     "Export drawers to drawer HTML class."
