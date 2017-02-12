@@ -103,3 +103,5 @@ conf/i3/.i3/config
 conf/pip/.pip/bin
 conf/pip/.pip/lib
 lock.png
+
+slack-credentials.el
