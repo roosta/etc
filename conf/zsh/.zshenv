@@ -30,7 +30,7 @@ fi
 # export TERM="rxvt-unicode-256color"
 export TERM="screen-256color"
 export TERMINAL=termite
-export BROWSER=firefox
+export BROWSER=firefox-developer
 
 #export GEM_HOME="/usr/local/lib/ruby/gems/2.2.0"
 
