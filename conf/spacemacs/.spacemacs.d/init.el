@@ -45,7 +45,7 @@ values."
      vinegar
      ranger
      java
-     markdown
+     (markdown :variables markdown-live-preview-engine 'vmd)
      ansible
      html
      gtags
