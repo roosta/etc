@@ -93,13 +93,13 @@
 (with-eval-after-load 'org
 
   (setq
-   org-export-with-drawers t
-   org-clock-persist 'history
-   org-export-with-clocks t
-   org-clock-idle-time 15
-   org-mobile-directory "~/Dropbox/org/"
-   org-mobile-files (quote ("~/Dropbox/org/TODOs.org")))
-
+    org-export-with-drawers t
+    org-clock-persist 'history
+    org-export-with-clocks t
+    org-clock-idle-time 15
+    org-mobile-directory "~/Dropbox/org/"
+    org-mobile-files (quote ("~/Dropbox/org/TODOs.org"))
+    org-agenda-files (quote ("~/Dropbox/org/TODOs.org")))
   (add-hook 'org-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
   ;; drawer-export
