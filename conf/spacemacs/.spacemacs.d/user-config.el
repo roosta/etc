@@ -88,22 +88,19 @@
 ;; Mutt support.
 (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
 
-;; (when (string= system-name "allitnil")
-;;     (set-default-font "Essential PragmataPro 15"))
-
-;; --- org ---
-;; ===========
+;; org
+;; ----------
 (with-eval-after-load 'org
 
   (setq
-   org-export-with-drawers t
-   org-clock-persist 'history
-   org-export-with-clocks t
-   org-clock-idle-time 15
-   org-mobile-directory "~/Dropbox/org/"
-   org-mobile-files (quote ("~/Dropbox/org/TODOs.org")))
-
-  (add-hook 'org-mode-hook #'toggle-spelling-checking-on)
+    org-export-with-drawers t
+    org-clock-persist 'history
+    org-export-with-clocks t
+    org-clock-idle-time 15
+    org-mobile-directory "~/Dropbox/org/"
+    org-mobile-files (quote ("~/Dropbox/org/TODOs.org"))
+    org-agenda-files (quote ("~/Dropbox/org/TODOs.org")))
+  (add-hook 'org-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
   ;; drawer-export
   ;; https://stackoverflow.com/questions/7174819/export-effort-and-clocksum-from-org-mode
@@ -117,6 +114,12 @@
 
   (org-clock-persistence-insinuate))
 
-;; --- markdown ---
-;; ================
-(add-hook 'markdown-mode-hook #'toggle-spelling-checking-on)
+;; markdown
+;; --------
+(add-hook 'markdown-mode-hook #'spacemacs/toggle-spelling-checking-on)
+
+;; Slack
+;; ------
+(load-file (or "~/Private/slack/sic.el" load-file-name))
+(load-file (or "~/Private/slack/bitraf.el" load-file-name))
+(add-hook 'slack-mode-hook #'spacemacs/toggle-spelling-checking-on)
