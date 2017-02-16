@@ -34,5 +34,6 @@ application/x-extension-xhtml=firefox-developer.desktop;
 application/x-extension-xht=firefox-developer.desktop;
 x-scheme-handler/mailto=thunderbird.desktop;
 message/rfc822=thunderbird.desktop;
+image/svg+xml=inkscape.desktop;
 
 [Removed Associations]
