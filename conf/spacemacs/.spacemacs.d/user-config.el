@@ -123,3 +123,8 @@
 (load-file (or "~/Private/slack/sic.el" load-file-name))
 (load-file (or "~/Private/slack/bitraf.el" load-file-name))
 (add-hook 'slack-mode-hook #'spacemacs/toggle-spelling-checking-on)
+
+;; Alert
+;; -----
+(setq
+ alert-default-style 'libnotify)
