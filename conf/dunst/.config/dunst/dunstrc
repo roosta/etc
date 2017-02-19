@@ -22,7 +22,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<u>%i%a</u>\n<b>%s</b>\n%b\n%p"
     #format = "%s\n%b"
     #format = "%i%a - %s\n%b"
 
@@ -142,19 +142,17 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/firefox -new-tab
+    browser = /usr/bin/firefox-developer -new-tab
 
     # Align icons left/right/off
-    icon_position = off
+    icon_position = left
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/Numix/16/status:/usr/share/icons/Numix/16/devices:/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_folders = /usr/share/icons/Arc/16/status:/usr/share/icons/Arc/16/devices:/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 [frame]
-    width = 1
-    #color = "#aaaaaa"
-    width = 0
-    color = "#b16286"
+    width = 2
+    color = "#E02C6D"
 
 [shortcuts]
 
@@ -180,20 +178,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#32302f"
-    foreground = "#ebdbb2"
+    background = "#2D2B28"
+    foreground = "#918175"
     timeout = 5
 
 [urgency_normal]
-    #background = "#285577"
-    #foreground = "#CECFD1"
-    background = "#32302f"
-    foreground = "#ebdbb2"
-    timeout = 5
+    background = "#1C1B19"
+    foreground = "#FCE8C3"
+    timeout = 10
 
 [urgency_critical]
-    background = "#D55C0D"
-    foreground = "#252525"
+    background = "#E02C6D"
+    foreground = "#FCE8C3"
     timeout = 0
 
 
