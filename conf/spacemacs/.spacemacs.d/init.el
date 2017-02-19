@@ -59,6 +59,7 @@ values."
      docker
      slack
      git
+     lua
      nginx
      react
      systemd
