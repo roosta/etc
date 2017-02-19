@@ -50,6 +50,7 @@ alias vivim="vim ~/.vimrc"
 alias vixres="$EDITOR ~/.Xresources"
 alias vitmux="$EDITOR ~/.tmux.conf"
 alias vixinit="$EDITOR ~/.xinitrc"
+alias vixinit.local="$EDITOR ~/.xinitrc.local"
 alias vifont="$EDITOR ~/.config/fontconfig/fonts.conf"
 alias vibinds="$EDITOR ~/.xbindkeysrc"
 alias vivimp="$EDITOR ~/.vimperatorrc"
@@ -396,6 +397,7 @@ alias gpg-reload='gpg-connect-agent reloadagent /bye'
 alias tldr='tldr -t original --linux'
 alias repl='rlwrap lumo'
 alias user-mount="sudo mount -o gid=users,fmask=113,dmask=002"
+alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 #}}}
 ## VCS {{{1
 ## --------
