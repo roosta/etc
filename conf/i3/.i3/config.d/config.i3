@@ -81,7 +81,7 @@ hide_edge_borders none
 # W:DEV
 assign [class="(?i)google-chrome-beta"]     $SWS3
 assign [class="(?i)google-chrome-unstable"] $SWS3
-assign [instance="^Devtools$$"]             $SWS2
+# assign [instance="^Devtools$$"]             $SWS2
 assign [class="(?i)Firebug"]                $SWS2
 # assign [class="(?i)firefox-developer"]      $SWS2
 assign [class="(?i)subl3"]                  $PWS2
