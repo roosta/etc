@@ -128,3 +128,13 @@
 ;; -----
 (setq
  alert-default-style 'libnotify)
+
+;; Flymd
+;; -----
+(defun my-flymd-browser-function (url)
+  (let ((process-environment (browse-url-process-environment)))
+    (apply 'start-process
+           (concat "google-chrome-unstable " url) nil
+           "google-chrome-unstable"
+           (list "--allow-file-access-from-files" url "--force-device-scale-factor=1"))))
+(setq flymd-browser-open-function 'my-flymd-browser-function)
