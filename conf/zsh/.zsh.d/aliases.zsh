@@ -258,38 +258,28 @@ alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l $HOME/v
 alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l $HOME/var/log/clamscan.log /"
 alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l $HOME/var/log/clamscan.log ."
 #}}}
-## PACKAGES {{{1
+## PACMAN {{{1
 ## -------------
-alias pacman="yaourt"
+alias pacman="pacaur --color=always"
 
 # iNSTALLING
 alias pacs="pacman -S" # Install specific package(s) from the repositories
 alias pacss="pacman -Ss" # Search for package(s) in the repositories
-alias pacsso="\pacman -Ss --color=always" # Search for package(s) in the official repositories
+# alias pacsso="\pacman -Ss --color=always" # Search for package(s) in the official repositories
 alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
 alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
 alias pacinsd="pacman -S --asdeps" # Install given package(s) as dependencies
 alias pacsu="pacman -U" # Install specific package not from the repositories but from a file
 
-# AUR
-#alias aurs="yaourt -S" #install from AUR
-#alias aurss="yaourt -Ss" #search from AUR
-#alias auru="yaourt -Syua" # update aur packages
-#alias auruf="yaourt -Syua --noconfirm" # update aur with no confirm
-#alias aurud="yaourt -Syua --devel" # update all, including git packages
-#alias aurudf="yaourt -Syua --devel --noconfirm" # Update all without confirming
-#alias aursi="yaourt -Si"
-#alias auro="yaourt -Qdt"
-
 # CLEANING
 alias pacr="pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrns="pacman -Rns" # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrcs="pacman -Rcs" # !! Remove the specified package(s), and everything that depends on them, and recursivly remove unneeded dependencies
-alias pacrs="pacman -Rs" # Remove the specified package(s) and its dependencies
+alias pacr!="pacman -Rs" # Remove the specified package(s) and its dependencies
+alias pacr!!="pacman -Rns" # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias pacr!!!="pacman -Rcs" # !! Remove the specified package(s), and everything that depends on them, and recursivly remove unneeded dependencies
 alias pacc="pacman -Scc" # Clean cache - delete all the package files in the cache
 
 # ORPHANS
-alias pacorm="pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
+alias pacor="pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
 alias paco="pacman -Qdt" # List all packages which are orphaned
 
 # QUERY
@@ -310,15 +300,18 @@ alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non e
 
 # UPDATING
 alias pacu="pacman -Syu" # update only from official repos
+alias pacuf="pacman -Syu --noconfirm" # don't ask when updating
 
-alias pacua="yaourt -Syua" # update aur packages
-alias pacuaf="yaourt -Syua --noconfirm" # update aur with no confirm
-alias pacuad="yaourt -Syua --devel" # update all, including git packages
-alias pacuadf="pacman -Syua --devel --noconfirm" # Update all without confirming
+# AUR
+alias pacua="pacaur -u" # update aur packages
+alias pacuad="pacaur -u --devel" # update aur packages
+alias pacuadf="pacaur -u --devel --noconfirm" # update aur packages
+alias pacua="pacaur -u --noconfirm" # update aur packages without asking for confirmation
+alias pacuadf="pacaur -Syua --devel --noconfirm" # Update ALL without confirming
 
 alias pacm="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
 alias pacmu="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
-alias pacmr="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
+alias pacmf="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
 
 # update locate db and find all pacnew, pacsave files.
 alias pacnews="sudo updatedb && locate --existing --regex '\.pac(new|save)$'"
@@ -490,5 +483,9 @@ alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc
 # cleanly shut down firefox
 alias ffs="wmctrl -c firefox"
 alias uh="ls && sleep 0.2 && clear"
+#}}}
+## DEFAULT OPTS {{{1
+## ---------
+alias firefox='firefox-developer'
 #}}}
 # vim: fdm=marker:sw=2
