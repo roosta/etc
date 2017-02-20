@@ -10,5 +10,3 @@ function conky_vpn()
     return "${color FF3128}No VPN detected"
   end
 end
-
-print(conky_vpn())
