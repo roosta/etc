@@ -78,15 +78,15 @@ clone-src:
 
 link-misc:
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
-	-@ln -s $(HOME)/src/utils /home/roosta/
-	-@ln -s $(HOME)/src/colors /home/roosta/
-	-@ln -s $(HOME)/src/utils/emacs-file-opener.sh /home/roosta/bin/emacs-file-opener
-	-@ln -s $(HOME)/Dropbox/org /home/roosta/
-	-@ln -s $(HOME)/Dropbox/org/TODOs.org /home/roosta/TODOs.org
-	-@ln -s $(HOME)/etc/scripts/ftl.sh /home/roosta/bin/ftl
-	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS /home/roosta/.dircolors
-	-@ln -s $(HOME)/src/utils/chdisp_nvidia.sh /home/roosta/bin/chdisp
-	-@ln -s $(HOME)/src/utils/touchpad_toggle.sh /home/roosta/bin/touchpad_toggle
+	-@ln -s $(HOME)/src/utils $(HOME)
+	-@ln -s $(HOME)/src/colors $(HOME)
+	-@ln -s $(HOME)/src/utils/emacs-file-opener.sh $(HOME)/bin/emacs-file-opener
+	-@ln -s $(HOME)/Dropbox/org $(HOME)
+	-@ln -s $(HOME)/Dropbox/org/TODOs.org $(HOME)/TODOs.org
+	-@ln -s $(HOME)/etc/scripts/ftl.sh $(HOME)/bin/ftl
+	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
+	-@ln -s $(HOME)/src/utils/chdisp_nvidia.sh $(HOME)/bin/chdisp
+	-@ln -s $(HOME)/src/utils/touchpad_toggle.sh $(HOME)/bin/touchpad_toggle
 
 link-conf:
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
