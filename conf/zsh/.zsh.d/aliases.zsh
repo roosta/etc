@@ -279,7 +279,7 @@ alias pacr!!!="pacman -Rcs" # !! Remove the specified package(s), and everything
 alias pacc="pacman -Scc" # Clean cache - delete all the package files in the cache
 
 # ORPHANS
-alias pacor="pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
+alias pacor="\sudo pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
 alias paco="pacman -Qdt" # List all packages which are orphaned
 
 # QUERY
