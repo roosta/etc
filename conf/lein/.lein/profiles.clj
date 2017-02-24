@@ -1,5 +1,6 @@
 {:user {:dependencies [[com.cemerick/piggieback "0.2.1"]
                        [org.clojure/clojurescript "1.9.473"]
+                       [mvxcvi/puget "1.0.1"]
                        [org.clojure/clojure "1.9.0-alpha14"] ]
 
         :plugins [[lein-ancient "0.6.10"]
