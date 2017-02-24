@@ -582,7 +582,7 @@ let python_highlight_all = 1
 " --------------------
 " gutentags
 " --------------------
-let g:gutentags_exclude = [".password-store, node_modules", ".git", "plugins", "plugged"]
+let g:gutentags_ctags_exclude = [".password-store, node_modules", ".git", "plugins", "plugged"]
 
 " ---------- 
 " Ack.vim
