@@ -1,6 +1,8 @@
 {:user {:dependencies [[com.cemerick/piggieback "0.2.1"]
                        [org.clojure/clojurescript "1.9.473"]
                        [mvxcvi/puget "1.0.1"]
+                       [org.clojure/tools.nrepl "0.2.12"]
+                       [org.clojure/tools.namespace "0.2.11"]
                        [org.clojure/clojure "1.9.0-alpha14"] ]
 
         :plugins [[lein-ancient "0.6.10"]
@@ -18,7 +20,7 @@
         :dependencies [
                        ; [alembic "0.3.2"]
                        ; [acyclic/squiggly-clojure "0.1.7"]
-                       [org.clojure/tools.nrepl "0.2.12"]]}
+                       ]}
 
  :android-common {:android {:sdk-path "/home/roosta/lib/android-sdk-linux"}}
  :android-user {:dependencies [[cider/cider-nrepl "0.15.0-SNAPSHOT"]]
