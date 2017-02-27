@@ -1,6 +1,8 @@
 (setq
  scroll-margin 7
 
+ evil-ex-search-vim-style-regexp t
+
  ;; srcery-theme-org-height nil
  powerline-default-separator nil
 
