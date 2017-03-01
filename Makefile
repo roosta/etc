@@ -8,6 +8,12 @@ link: link-conf link-misc link-local post-install
 
 install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-yaourt install-packages install-aur-packages update post_install
 
+min: user-fs
+	sudo apt-get install `cat min_packages.txt` 
+	$(MAKE) set-shell
+	stow zsh tmux vim bash -R -t ~ -d conf  
+	$(MAKE) init-tmux
+
 install-yaourt:
 	@echo -e "\033[0;33mBuild and installing yaourt...\033[0m"
 	mkdir ~/etc/build
