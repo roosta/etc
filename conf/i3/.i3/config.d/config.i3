@@ -273,6 +273,11 @@ mode "$mode_resize" {
   bindsym Shift+k resize shrink height 100 px or 100 ppt
   bindsym Shift+l resize grow   width  100 px or 100 ppt
 
+  bindsym Control+h resize shrink width  50 px or 50 ppt
+  bindsym Control+j resize grow   height 50 px or 50 ppt
+  bindsym Control+k resize shrink height 50 px or 50 ppt
+  bindsym Control+l resize grow   width  50 px or 50 ppt
+
   bindsym Shift+Control+h resize shrink width  200 px or 200 ppt
   bindsym Shift+Control+j resize grow   height 200 px or 200 ppt
   bindsym Shift+Control+k resize shrink height 200 px or 200 ppt
@@ -288,6 +293,11 @@ mode "$mode_resize" {
   bindsym Shift+Down  resize grow   height 100 px or 100 ppt
   bindsym Shift+Up    resize shrink height 100 px or 100 ppt
   bindsym Shift+Right resize grow   width  100 px or 100 ppt
+
+  bindsym Control+Left  resize shrink width  50 px or 50 ppt
+  bindsym Control+Down  resize grow   height 50 px or 50 ppt
+  bindsym Control+Up    resize shrink height 50 px or 50 ppt
+  bindsym Control+Right resize grow   width  50 px or 50 ppt
 
   bindsym Shift+Control+Left  resize shrink width  200 px or 200 ppt
   bindsym Shift+Control+Down  resize grow   height 200 px or 200 ppt
