@@ -55,7 +55,8 @@ user-fs:
 	-@mkdir -p ~/var/log
 	-@mkdir -p ~/var/undo
 	-@mkdir -p ~/.zsh.d/plugins
-	-@touch -p ~/.cache/zsh/dirs
+	-@mkdir -p ~/.cache/zsh
+	-@touch ~/.cache/zsh/dirs
 
 update-zsh-plugins:
 	@echo -e "\033[0;33mUpdating zsh plugins...\033[0m"
