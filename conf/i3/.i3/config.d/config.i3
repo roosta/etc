@@ -117,6 +117,7 @@ assign [class="(?i)pidgin"]      $FWS1
 assign [class="(?i)linphone"]    $FWS1
 assign [class="(?i)skype"]       $FWS1
 assign [class="(?i)slack"]       $FWS1
+assign [class="(?i)franz"]       $FWS1
 # assign [class="(?i)thunderbird"] $FWS2
 
 assign [class="(?i)transmission-gtk"] $FWS3
