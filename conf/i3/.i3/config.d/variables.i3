@@ -14,10 +14,6 @@ set $term termite
 # set scrot/screenshot file arguments
 set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S).png"
 
-# generate new config with ansible and reload i3
-# set $fullrestart "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3"
-#set $fullreload "ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3 && i3-msg reload"
-
 # define palette
 set_from_resource $black          i3wm.color0    #1C1B19
 set_from_resource $red            i3wm.color1    #FF3128
@@ -40,32 +36,39 @@ set_from_resource $bright_orange  i3wm.color208  #FF8700
 set_from_resource $hard_black     i3wm.color232  #080808
 set_from_resource $alt_gray       i3wm.color239  #4E4E4E
 
-# primary workspaces
-set $PWS1 "1[Q]Term"
-set $PWS2 "2[W]Edit"
-set $PWS3 "3[E]WWW"
+# primary monitor workspaces
+set $pws_term  "1:[Q]Term"
+set $pws_edit  "2:[W]Edit"
+set $pws_www   "3:[E]WWW"
+set $pws_media "4:[1]Media"
+set $pws_game  "5:[2]Game"
+set $pws_gfx   "6:[3]GFX"
+set $pws_chat  "7:[4]Chat"
 
-# secondary workspaces
-set $SWS1 "4[A]DBG_Term"
-set $SWS2 "5[S]DBG_Firefox"
-set $SWS3 "6[D]DBG_Chrome"
+# secondary monitor workspaces
+set $sws_a     "1:[A]"
+set $sws_s     "2:[S]"
+set $sws_debug "3:[D]Debug"
 
-# Tertiary workspaces
-set $TWS1 "7[1]Media"
-set $TWS2 "8[2]Game"
-set $TWS3 "9[3]GFX"
+# tertiary monitor ws
+set $tws_stats    "1:[F1]Stats"
+set $tws_media    "2:[F2]Media"
+set $tws_download "2:[F3]Download"
 
 # Auxiliary workspaces
-set $FWS1  "9[F1]Chat"
-set $FWS2  "10[F2]"
-set $FWS3  "11[F3]"
-set $FWS4  "12[F4]"
-set $FWS5  "13[F5]"
-set $FWS6  "14[F6]"
-set $FWS7  "15[F7]"
-set $FWS8  "16[F8]"
-set $FWS9  "17[F9]"
-set $FWS10 "18[F10]"
-set $FWS11 "19[F11]"
-set $FWS12 "20[F12]"
+set $aws_5   "12:[5]"
+set $aws_6   "13:[6]"
+set $aws_7   "14:[7]"
+set $aws_8   "15:[8]"
+set $aws_9   "16:[9]"
+set $aws_0   "17:[0]"
+set $aws_f4  "18:[F4]"
+set $aws_f5  "19:[F5]"
+set $aws_f6  "20:[F6]"
+set $aws_f7  "21:[F7]"
+set $aws_f8  "22:[F8]"
+set $aws_f9  "23:[F9]"
+set $aws_f10 "24:[F10]"
+set $aws_f11 "25:[F11]"
+set $aws_f12 "26:[F12]"
 

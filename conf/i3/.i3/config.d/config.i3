@@ -2,74 +2,87 @@
 # WORKSPACES
 # -------------------- 
 
-# Numbers in front is for sorting order on i3bar.
-# In each bar numbers are stripped. See bar config below.
+bindsym $mod+q workspace $pws_term
+bindsym $mod+w workspace $pws_edit
+bindsym $mod+e workspace $pws_www
+bindsym $mod+1 workspace $pws_media
+bindsym $mod+2 workspace $pws_game
+bindsym $mod+3 workspace $pws_gfx
+bindsym $mod+4 workspace $pws_chat
 
-bindsym $mod+q workspace $PWS1
-bindsym $mod+w workspace $PWS2
-bindsym $mod+e workspace $PWS3
+bindsym $mod+Shift+q move workspace $pws_term
+bindsym $mod+Shift+w move workspace $pws_edit
+bindsym $mod+Shift+e move workspace $pws_www
+bindsym $mod+Shift+1 move workspace $pws_media
+bindsym $mod+Shift+2 move workspace $pws_game
+bindsym $mod+Shift+3 move workspace $pws_gfx
+bindsym $mod+Shift+4 move workspace $pws_chat
 
-bindsym $mod+Shift+q move workspace $PWS1
-bindsym $mod+Shift+w move workspace $PWS2
-bindsym $mod+Shift+e move workspace $PWS3
+bindsym $mod+a workspace $sws_a
+bindsym $mod+s workspace $sws_s
+bindsym $mod+d workspace $sws_debug
+bindsym $mod+Shift+a move workspace $sws_a
+bindsym $mod+Shift+s move workspace $sws_s
+bindsym $mod+Shift+d move workspace $sws_debug
 
+bindsym $mod+F1  workspace $tws_stats
+bindsym $mod+F2  workspace $tws_media
+bindsym $mod+F3  workspace $tws_download
+bindsym $mod+Shift+F1  move workspace $tws_stats
+bindsym $mod+Shift+F2  move workspace $tws_media
+bindsym $mod+Shift+F3  move workspace $tws_download
 
-bindsym $mod+a workspace $SWS1
-bindsym $mod+s workspace $SWS2
-bindsym $mod+d workspace $SWS3
+bindsym $mod+5 workspace $aws_5
+bindsym $mod+6 workspace $aws_6
+bindsym $mod+7 workspace $aws_7
+bindsym $mod+8 workspace $aws_8
+bindsym $mod+9 workspace $aws_9
+bindsym $mod+0 workspace $aws_0
+bindsym $mod+F4  workspace $aws_f4
+bindsym $mod+F5  workspace $aws_f5
+bindsym $mod+F6  workspace $aws_f6
+bindsym $mod+F7  workspace $aws_f7
+bindsym $mod+F8  workspace $aws_f8
+bindsym $mod+F9  workspace $aws_f9
+bindsym $mod+F10 workspace $aws_f10
+bindsym $mod+F11 workspace $aws_f11
+bindsym $mod+F12 workspace $aws_f12
 
-bindsym $mod+Shift+a move workspace $SWS1
-bindsym $mod+Shift+s move workspace $SWS2
-bindsym $mod+Shift+d move workspace $SWS3
-
-bindsym $mod+1 workspace $TWS1
-bindsym $mod+2 workspace $TWS2
-bindsym $mod+3 workspace $TWS3
-
-bindsym $mod+Shift+1 move workspace $TWS1
-bindsym $mod+Shift+2 move workspace $TWS2
-bindsym $mod+Shift+3 move workspace $TWS3
-
-bindsym $mod+F1  workspace $FWS1
-bindsym $mod+F2  workspace $FWS2
-bindsym $mod+F3  workspace $FWS3
-bindsym $mod+F4  workspace $FWS4
-bindsym $mod+F5  workspace $FWS5
-bindsym $mod+F6  workspace $FWS6
-bindsym $mod+F7  workspace $FWS7
-bindsym $mod+F8  workspace $FWS8
-bindsym $mod+F9  workspace $FWS9
-bindsym $mod+F10 workspace $FWS10
-bindsym $mod+F11 workspace $FWS11
-bindsym $mod+F12 workspace $FWS12
-
-bindsym $mod+Shift+F1  move workspace $FWS1
-bindsym $mod+Shift+F2  move workspace $FWS2
-bindsym $mod+Shift+F3  move workspace $FWS3
-bindsym $mod+Shift+F4  move workspace $FWS4
-bindsym $mod+Shift+F5  move workspace $FWS5
-bindsym $mod+Shift+F6  move workspace $FWS6
-bindsym $mod+Shift+F7  move workspace $FWS7
-bindsym $mod+Shift+F8  move workspace $FWS8
-bindsym $mod+Shift+F9  move workspace $FWS9
-bindsym $mod+Shift+F10 move workspace $FWS10
-bindsym $mod+Shift+F11 move workspace $FWS11
-bindsym $mod+Shift+F12 move workspace $FWS12
+bindsym $mod+shift+5  move workspace $aws_5
+bindsym $mod+shift+6  move workspace $aws_6
+bindsym $mod+shift+7  move workspace $aws_7
+bindsym $mod+shift+8  move workspace $aws_8
+bindsym $mod+shift+9  move workspace $aws_9
+bindsym $mod+Shift+0  move workspace $aws_0
+bindsym $mod+shift+f4  move workspace $aws_f4
+bindsym $mod+shift+f5  move workspace $aws_f5
+bindsym $mod+shift+f6  move workspace $aws_f6
+bindsym $mod+shift+f7  move workspace $aws_f7
+bindsym $mod+shift+f8  move workspace $aws_f8
+bindsym $mod+Shift+F9  move workspace $aws_f9
+bindsym $mod+Shift+F10 move workspace $aws_f10
+bindsym $mod+Shift+F11 move workspace $aws_f11
+bindsym $mod+Shift+F12 move workspace $aws_f12
 
 ## assign workspaces to outputs
 # primary
-workspace $PWS1 output $primary_monitor
-workspace $PWS3 output $primary_monitor
-workspace $PWS2 output $primary_monitor
-
-workspace $TWS1 output $primary_monitor
-workspace $TWS2 output $primary_monitor
-workspace $TWS3 output $primary_monitor
+workspace $pws_term output $primary_monitor
+workspace $pws_edit output $primary_monitor
+workspace $pws_www output $primary_monitor
+workspace $pws_media output $primary_monitor
+workspace $pws_game output $primary_monitor
+workspace $pws_gfx output $primary_monitor
+workspace $pws_chat output $primary_monitor
 
 # secondary
-workspace $SWS1 output $secondary_monitor
-workspace $SWS3 output $secondary_monitor
-workspace $SWS2 output $secondary_monitor
+workspace $sws_a output $secondary_monitor
+workspace $sws_s output $secondary_monitor
+workspace $sws_debug output $secondary_monitor
+
+# tertiary
+workspace $tws_stats output $tertiary_monitor
+workspace $tws_media output $tertiary_monitor
+workspace $tws_download output $tertiary_monitor
 
 # Options
 focus_follows_mouse no
@@ -79,48 +92,47 @@ hide_edge_borders none
 # WINDOW WORKSPACE ASSIGNMENT
 # ---------------------------
 # W:DEV
-assign [class="(?i)google-chrome-beta"]     $SWS3
-assign [class="(?i)google-chrome-unstable"] $SWS3
-# assign [instance="^Devtools$$"]             $SWS2
-assign [class="(?i)Firebug"]                $SWS2
-# assign [class="(?i)firefox-developer"]      $SWS2
-assign [class="(?i)subl3"]                  $PWS2
-assign [class="(?i)jetbrains-idea"]         $PWS2
-assign [class="(?i)atom"]                   $PWS2
-assign [class="(?i)emacs"]                  $PWS2
+assign [class="(?i)google-chrome-beta"]     $sws_debug
+assign [class="(?i)google-chrome-unstable"] $sws_debug
+# assign [instance="^Devtools$$"]             $sws_s
+# assign [class="(?i)firefox-developer"]      $sws_s
+assign [class="(?i)subl3"]                  $pws_edit
+assign [class="(?i)jetbrains-idea"]         $pws_edit
+assign [class="(?i)atom"]                   $pws_edit
+assign [class="(?i)emacs"]                  $pws_edit
 
 # E:WWW
-assign [class="(?i)firefox"] $PWS3
+assign [class="(?i)firefox"] $pws_www
 
 # 2:GAM
-assign [class="(?i)^steam(.*)"]   $TWS2
-assign [class="(?i)Wine"]        $TWS2
-assign [class="(?i)PlayOnLinux"] $TWS2
+assign [class="(?i)^steam(.*)"]   $pws_game
+assign [class="(?i)Wine"]        $pws_game
+assign [class="(?i)PlayOnLinux"] $pws_game
 #assign [title="(?i)friends"] $TWS2
 
 # 1:MED
 # workaround for spotify WS assignment
 # see: https://github.com/i3/i3/issues/2060
-for_window [class="Spotify"] move to workspace $TWS1
+for_window [class="Spotify"] move to workspace $pws_media
 
 # assign [class="(?i)google-chrome"] $TWS1
-assign [class="(?i)smplayer"]      $TWS1
-assign [class="(?i)clementine"]    $TWS1
+assign [class="(?i)smplayer"]      $pws_media
+assign [class="(?i)clementine"]    $pws_media
 
 # 3:ART
-assign [class="(?i)inkscape"] $TWS3
-assign [class="(?i)gimp"]     $TWS3
-assign [class="(?i)krita"]    $TWS3
+assign [class="(?i)inkscape"] $pws_gfx
+assign [class="(?i)gimp"]     $pws_gfx
+assign [class="(?i)krita"]    $pws_gfx
 
 # S:COM
-assign [class="(?i)pidgin"]      $FWS1
-assign [class="(?i)linphone"]    $FWS1
-assign [class="(?i)skype"]       $FWS1
-assign [class="(?i)slack"]       $FWS1
-assign [class="(?i)franz"]       $FWS1
+assign [class="(?i)pidgin"]      $pws_chat
+assign [class="(?i)linphone"]    $pws_chat
+assign [class="(?i)skype"]       $pws_chat
+assign [class="(?i)slack"]       $pws_chat
+assign [class="(?i)franz"]       $pws_chat
 # assign [class="(?i)thunderbird"] $FWS2
 
-assign [class="(?i)transmission-gtk"] $FWS3
+assign [class="(?i)transmission-gtk"] $tws_download
 
 # WINDOW BEHAVIOUR
 # ----------------
@@ -146,8 +158,10 @@ for_window [class="(?i)yad"] floating enable
 
 ## WINDOW SIZE
 ## -----------
-for_window [class="(?i)Pidgin"]   floating_maximum_size 50 x 75
+for_window [class="(?i)Pidgin"] floating_maximum_size 50 x 75
 for_window [class="(?i)nitrogen"] floating_maximum_size 768 x 2160
+for_window [id="Open Document"] floating_maximum_size 670 x 470
+for_window [window_role="task_dialog"] floating_maximum_size 670 x 470
 
 # BORDER
 # ------
@@ -274,15 +288,15 @@ mode "$mode_resize" {
   bindsym Shift+k resize shrink height 100 px or 100 ppt
   bindsym Shift+l resize grow   width  100 px or 100 ppt
 
-  bindsym Control+h resize shrink width  50 px or 50 ppt
-  bindsym Control+j resize grow   height 50 px or 50 ppt
-  bindsym Control+k resize shrink height 50 px or 50 ppt
-  bindsym Control+l resize grow   width  50 px or 50 ppt
+  bindsym Control+h resize shrink width  200 px or 200 ppt
+  bindsym Control+j resize grow   height 200 px or 200 ppt
+  bindsym Control+k resize shrink height 200 px or 200 ppt
+  bindsym Control+l resize grow   width  200 px or 200 ppt
 
-  bindsym Shift+Control+h resize shrink width  200 px or 200 ppt
-  bindsym Shift+Control+j resize grow   height 200 px or 200 ppt
-  bindsym Shift+Control+k resize shrink height 200 px or 200 ppt
-  bindsym Shift+Control+l resize grow   width  200 px or 200 ppt
+  bindsym Shift+Control+h resize shrink width  300 px or 300 ppt
+  bindsym Shift+Control+j resize grow   height 300 px or 300 ppt
+  bindsym Shift+Control+k resize shrink height 300 px or 300 ppt
+  bindsym Shift+Control+l resize grow   width  300 px or 300 ppt
 
   # assign the same for arrows
   bindsym Left  resize shrink width  50 px or 50 ppt
@@ -295,15 +309,15 @@ mode "$mode_resize" {
   bindsym Shift+Up    resize shrink height 100 px or 100 ppt
   bindsym Shift+Right resize grow   width  100 px or 100 ppt
 
-  bindsym Control+Left  resize shrink width  50 px or 50 ppt
-  bindsym Control+Down  resize grow   height 50 px or 50 ppt
-  bindsym Control+Up    resize shrink height 50 px or 50 ppt
-  bindsym Control+Right resize grow   width  50 px or 50 ppt
+  bindsym Control+Left  resize shrink width  200 px or 200 ppt
+  bindsym Control+Down  resize grow   height 200 px or 200 ppt
+  bindsym Control+Up    resize shrink height 200 px or 200 ppt
+  bindsym Control+Right resize grow   width  200 px or 200 ppt
 
-  bindsym Shift+Control+Left  resize shrink width  200 px or 200 ppt
-  bindsym Shift+Control+Down  resize grow   height 200 px or 200 ppt
-  bindsym Shift+Control+Up    resize shrink height 200 px or 200 ppt
-  bindsym Shift+Control+Right resize grow   width  200 px or 200 ppt
+  bindsym Shift+Control+Left  resize shrink width  300 px or 300 ppt
+  bindsym Shift+Control+Down  resize grow   height 300 px or 300 ppt
+  bindsym Shift+Control+Up    resize shrink height 300 px or 300 ppt
+  bindsym Shift+Control+Right resize grow   width  300 px or 300 ppt
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
