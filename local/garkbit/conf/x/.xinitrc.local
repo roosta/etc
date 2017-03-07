@@ -1,5 +1,7 @@
 $HOME/.screenlayout/main.sh &
 # set-default-sink 1
 
+mopidy &
+
 # vim:ft=sh:ts=2:sw=2:fdm=marker
 
