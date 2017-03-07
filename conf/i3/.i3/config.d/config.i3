@@ -116,13 +116,14 @@ assign [class="(?i)PlayOnLinux"] $pws_game
 for_window [class="Spotify"] move to workspace $pws_media
 
 # assign [class="(?i)google-chrome"] $TWS1
-assign [class="(?i)smplayer"]      $pws_media
-assign [class="(?i)clementine"]    $pws_media
+assign [class="(?i)smplayer"]   $pws_media
+assign [class="(?i)clementine"] $pws_media
 
 # 3:ART
 assign [class="(?i)inkscape"] $pws_gfx
 assign [class="(?i)gimp"]     $pws_gfx
 assign [class="(?i)krita"]    $pws_gfx
+assign [class="(?i)freecad"]  $pws_gfx
 
 # S:COM
 assign [class="(?i)pidgin"]      $pws_chat
@@ -185,8 +186,9 @@ bindsym $mod+Shift+Return exec firefox
 # kill focused window
 bindsym $mod+c kill
 
-bindsym $mod+Tab exec --no-startup-id rofi -show DRun
-# bindsym $mod+Tab exec --no-startup-id rofi -show combi -combi-modi "window,DRun" -modi combi
+set $combi_modi "window;DRun"
+# bindsym $mod+Tab exec --no-startup-id rofi -show DRun
+bindsym $mod+Tab exec --no-startup-id "rofi -show combi -combi-modi \\"window,DRun\\"
 # bindsym $mod+Tab exec --no-startup-id rofi -show 
 bindsym $mod+grave exec --no-startup-id rofi -show window
 
@@ -266,7 +268,7 @@ bindsym --release Print exec scrot $screenshot
 bindsym --release Shift+Print exec scrot -s $screenshot
 
 # send a signal to i3status on caps to toggle layout
-bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+# bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Caps_Lock exec killall -USR1 py3status
 
 ## BINDING MODES

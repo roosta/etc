@@ -9,28 +9,28 @@ set $tertiary_monitor  HDMI-0
 # workspace $FWS2 output $tertiary_monitor
 # workspace $FWS3 output $tertiary_monitor
 
-bar {
-  id bar-primary
-  output $primary_monitor
-  status_command i3blocks -c ~/.i3/status/$(hostname)-primary.i3blocks 
-  font pango:Essential PragmataPro 8
-  position top
-  tray_output primary
-  strip_workspace_numbers yes
-  separator_symbol "/"
-  # sep_block_width 0
-  colors {
-    background $black
-    separator  $gray
-    statusline $white
+# bar {
+#   id bar-primary
+#   output $primary_monitor
+#   status_command i3blocks -c ~/.i3/status/$(hostname)-primary.i3blocks 
+#   font pango:Essential PragmataPro 8
+#   position top
+#   tray_output primary
+#   strip_workspace_numbers yes
+#   separator_symbol "/"
+#   # sep_block_width 0
+#   colors {
+#     background $black
+#     separator  $gray
+#     statusline $white
 
-    # <workclass>      <border> <background> <foreground>
-    focused_workspace  $magenta $magenta $white
-    active_workspace   $white   $white   $black
-    inactive_workspace $black   $black   $white
-    urgent_workspace   $orange  $orange  $black
-  }
-}
+#     # <workclass>      <border> <background> <foreground>
+#     focused_workspace  $magenta $magenta $white
+#     active_workspace   $white   $white   $black
+#     inactive_workspace $black   $black   $white
+#     urgent_workspace   $orange  $orange  $black
+#   }
+# }
 
 
 bar {
