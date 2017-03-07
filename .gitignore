@@ -104,4 +104,4 @@ conf/pip/.pip/bin
 conf/pip/.pip/lib
 lock.png
 
-slack-credentials.el
+.lastupdate
