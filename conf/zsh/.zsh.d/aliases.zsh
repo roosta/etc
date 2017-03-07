@@ -265,7 +265,7 @@ alias pacman="pacaur --color=always"
 # iNSTALLING
 alias pacs="pacman -S" # Install specific package(s) from the repositories
 alias pacss="pacman -Ss" # Search for package(s) in the repositories
-# alias pacsso="\pacman -Ss --color=always" # Search for package(s) in the official repositories
+alias pacsso="\pacman -Ss --color=always" # Search for package(s) in the official repositories
 alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
 alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
 alias pacinsd="pacman -S --asdeps" # Install given package(s) as dependencies
@@ -318,7 +318,6 @@ alias pacnews="sudo updatedb && locate --existing --regex '\.pac(new|save)$'"
 #}}}
 ## UTILS {{{1
 ## ----------
-
 alias tree="tree -ah"
 alias watchfirefox="watch progress -wc firefox" # watch firefox download progress.
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
@@ -391,6 +390,7 @@ alias tldr='tldr -t original --linux'
 alias repl='rlwrap lumo'
 alias user-mount="sudo mount -o gid=users,fmask=113,dmask=002"
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias music='ncmpcpp'
 #}}}
 ## VCS {{{1
 ## --------
