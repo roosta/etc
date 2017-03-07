@@ -145,8 +145,8 @@
 ##  - filter_playlist_on_priorities
 ##
 
-def_key "h"
-  show_help
+# def_key "h"
+#   show_help
 
 def_command "help" [deferred]
   show_help
@@ -160,16 +160,41 @@ def_key "n"
 def_key "N"
   previous_found_item
 
-def_key "m"
-  move_sort_order_up
+def_key "j"
+  scroll_down
 
 def_key "k"
-  move_selected_items_up
+  scroll_up
 
-def_key "j"
-  move_selected_items_down
+def_key "ctrl-u"
+  page_up
 
+def_key "ctrl-d"
+  page_down
 
+def_key "h"
+  previous_column
+
+def_key "l"
+  next_column
+
+def_key "J"
+  move_sort_order_down
+
+def_key "K"
+  move_sort_order_up
+
+def_key "G"
+  move_end
+
+def_key "g"
+  move_home
+
+# def_key "k"
+#   move_selected_items_up
+
+# def_key "j"
+#   move_selected_items_down
 #
 #def_key "mouse"
 #  mouse_event
