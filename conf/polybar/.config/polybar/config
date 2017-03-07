@@ -42,16 +42,17 @@ alt_gray = #4E4E4E
 [bar/primary]
 monitor = ${env:MONITOR:DP-1}
 width = 100%
+dpi = 192
 height = 35
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
-fixed-center = false
+fixed-center = true
 
 background = ${colors.black}
 foreground = ${colors.white}
 
-line-size = 3
+line-size = 6
 line-color = #f00
 
 ; border-size = 4
@@ -63,9 +64,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Essential PragmataPro:pixelsize=17;1"
+font-0 = "Essential PragmataPro:pixelsize=9;2"
 font-1 = unifont:fontformat=truetype:pixelsize=17:antialias=false;0
-font-2 = "Fura Code Nerd Font:pixelsize=22;1"
+font-2 = "Fura Code Nerd Font:pixelsize=10;2"
 
 ; font-2 = "Wuncon Siji:pixelsize=17;1"
 ; font-0 = fixed:pixelsize=10;1
@@ -73,8 +74,8 @@ font-2 = "Fura Code Nerd Font:pixelsize=22;1"
 ; font-2 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = xwindow
-modules-right = xkeyboard volume memory cpu eth temperature date powermenu
+modules-center = mpd
+modules-right = xkeyboard volume memory cpu eth temperature date
 
 tray-position = right
 tray-padding = 2
@@ -160,12 +161,12 @@ strip-wsnumbers = true
 
 label-mode-padding = 2
 label-mode-foreground = ${colors.white}
-label-mode-background = ${colors.primary}
+; label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.magenta}
-; label-focused-underline = ${module/bspwm.label-focused-underline}
+; label-focused-background = ${colors.magenta}
+label-focused-underline = ${colors.magenta}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
@@ -176,28 +177,34 @@ label-unfocused-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
-label-visible-background = ${colors.white}
-label-visible-foreground = ${colors.black}
+; label-visible-background = ${colors.white}
+label-visible-foreground = ${colors.white}
 label-visible-underline = ${colors.white}
-label-visible-padding = ${self.label-focused-padding}
+label-visible-padding = 1
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
+label-urgent = %name%
+label-urgent-background = ${colors.orange}
+label-urgent-padding = 1
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+; format-online-prefix = "   "
+; format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = <toggle>  <label-song> 
+host = localhost
+port = 6600
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
 
-label-song-maxlen = 25
-label-song-ellipsis = true
+label-offline =   mpd is offline
+
+label-song-maxlen = 80
+label-song-ellipsis = false
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -224,19 +231,21 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-prefix = " "
+format-prefix-foreground = ${colors.white}
+format-prefix-font = 3
+; format-underline = #f90000
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-; format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.white}
 ; format-underline = #4bffdc
 ; format-background = #5573A3
-label = MEM %gb_used%/%gb_free% (%percentage_used%%)
+; label = MEM %gb_used%/%gb_free% (%percentage_used%%)
+label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -266,7 +275,7 @@ interface = enp9s0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+; format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -296,10 +305,10 @@ label = %date% / %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = 
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = " "
 format-muted-foreground = ${colors.orange}
 label-muted = sound muted
 
@@ -316,7 +325,9 @@ bar-volume-indicator = █
 ; bar-volume-indicator = |
 bar-volume-indicator-font = 1
 bar-volume-fill = █
+; bar-volume-fill = ─
 bar-volume-fill-font = 1
+; bar-volume-empty = ─
 bar-volume-empty = ░
 bar-volume-empty-font = 1
 bar-volume-empty-foreground = ${colors.foreground-alt}
@@ -333,18 +344,18 @@ format-charging-underline = #ffb52a
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+; format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+; ramp-capacity-0 = 
+; ramp-capacity-1 = 
+; ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+; animation-charging-0 = 
+; animation-charging-1 = 
+; animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -354,10 +365,11 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+; format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+; format-warn-underline = ${self.format-underline}
 
+format-prefix = 
 label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.red}
@@ -373,9 +385,9 @@ type = custom/menu
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-open-foreground = ${colors.white}
+label-close =  cancel
+label-close-foreground = ${colors.white}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
@@ -405,4 +417,9 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
+; wifi: 
+; music: 
+; network: 
+; email: 
+; battery(full to empty) 
 ; vim:ft=dosini
