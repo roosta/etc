@@ -87,8 +87,6 @@ link-misc:
 	-@ln -s $(HOME)/src/utils $(HOME)
 	-@ln -s $(HOME)/src/colors $(HOME)
 	-@ln -s $(HOME)/src/utils/emacs-file-opener.sh $(HOME)/bin/emacs-file-opener
-	-@ln -s $(HOME)/Dropbox/org $(HOME)
-	-@ln -s $(HOME)/Dropbox/org/TODOs.org $(HOME)/TODOs.org
 	-@ln -s $(HOME)/etc/scripts/ftl.sh $(HOME)/bin/ftl
 	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 	-@ln -s $(HOME)/src/utils/chdisp_nvidia.sh $(HOME)/bin/chdisp
