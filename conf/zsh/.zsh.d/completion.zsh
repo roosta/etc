@@ -9,7 +9,7 @@
 # init
 autoload -Uz compinit
 compinit
-autoload -U ~/.zsh.d/completions/*(:t)
+autoload -U ~/.zsh.d/completion/*(:t)
 # autoload -U ~/.zsh.d/plugins/zsh-completions/*(:t)
 
 # do not autoselect the first completion entry
