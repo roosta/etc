@@ -62,11 +62,11 @@ padding-left = 0
 padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 font-0 = "Essential PragmataPro:pixelsize=9;2"
 font-1 = unifont:fontformat=truetype:pixelsize=17:antialias=false;0
-font-2 = "Fura Code Nerd Font:pixelsize=10;2"
+font-2 = "Fura Code Nerd Font:pixelsize=11;2"
 
 ; font-2 = "Wuncon Siji:pixelsize=17;1"
 ; font-0 = fixed:pixelsize=10;1
@@ -75,7 +75,7 @@ font-2 = "Fura Code Nerd Font:pixelsize=10;2"
 
 modules-left = i3
 modules-center = mpd
-modules-right = xkeyboard volume memory cpu eth temperature date
+modules-right = xkeyboard pkg vpncheck volume memory cpu eth temperature date
 
 tray-position = right
 tray-padding = 2
@@ -405,6 +405,24 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/pkg]
+type = custom/script
+interval = 1200
+format = <label>
+; format-underline = #dc322f
+label = "%output:0:30%"
+exec = ~/.config/polybar/pkg.sh
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/vpncheck]
+type = custom/script
+exec = pgrep -x openvpn
+interval = 5
+label = vpn
+; format-underline = #268bd2
+format-prefix = " "
+; format-prefix-foreground = #5b
 
 [settings]
 screenchange-reload = true
