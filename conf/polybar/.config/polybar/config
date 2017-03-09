@@ -169,33 +169,36 @@ pin-workspaces = true
 ; Default: false
 strip-wsnumbers = true
 
-label-mode-padding = 2
+label-mode-padding = 0
 label-mode-foreground = ${colors.white}
 ; label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %name%
+label-focused = "%name%"
+; format-suffix = ""
+format-suffix-font = 3
 ; label-focused-background = ${colors.magenta}
-label-focused-underline = ${colors.magenta}
-label-focused-padding = 1
+; label-focused-underline = ${colors.magenta}
+label-focused-padding = 0
+label-focused-background = ${colors.magenta}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %name%
+label-unfocused = "%name%"
 ; label-unfocused-background = ${colors.white}
 ; label-unfocused-foreground = ${colors.black}
-label-unfocused-padding = 1
+label-unfocused-padding = 0
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %name%
 ; label-visible-background = ${colors.white}
 label-visible-foreground = ${colors.white}
-label-visible-underline = ${colors.white}
-label-visible-padding = 1
+; label-visible-underline = ${colors.white}
+label-visible-padding = 0
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %name%
 label-urgent-background = ${colors.orange}
-label-urgent-padding = 1
+label-urgent-padding = 0
 
 [module/mpd]
 type = internal/mpd
