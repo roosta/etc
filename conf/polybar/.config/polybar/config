@@ -79,10 +79,10 @@ modules-center = mpd
 modules-right = xkeyboard pkg vpncheck volume memory cpu eth temperature date time
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
 tray-scale = 1
 ;tray-transparent = true
-;tray-background = #0063ff
+tray-background = ${colors.bright_black}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -253,6 +253,7 @@ type = internal/memory
 interval = 2
 format-suffix = ""
 format-suffix-foreground = ${colors.bright_blue}
+format-suffix-font = 3
 format-background = ${colors.blue}
 format-prefix-foreground = ${colors.white}
 ; format-underline = #4bffdc
@@ -306,6 +307,7 @@ date = "%Y-%m-%d"
 format-background = ${colors.bright_magenta}
 format-foreground = ${colors.black}
 format-suffix = ""
+format-suffix-font = 3
 format-suffix-foreground = ${colors.cyan}
 
 label = %date% 
@@ -319,7 +321,8 @@ time = %H:%M
 format-background = ${colors.cyan}
 format-foreground = ${colors.black}
 format-suffix = ""
-format-suffix-foreground = ${colors.foreground-alt}
+format-suffix-font = 3
+format-suffix-foreground = ${colors.bright_black}
 ; format-underline = #0a6cf5
 
 label = %time% 
@@ -432,10 +435,12 @@ format-suffix = ""
 format-suffix-background = ${colors.magenta}
 format-suffix-foreground = ${colors.bright_magenta}
 format-prefix = ""
+format-prefix-font = 3
 format-prefix-foreground = ${colors.magenta}
 format-prefix-background = ${colors.bright_blue}
 
 format-warn-suffix = ""
+format-suffix-font = 3
 format-warn-suffix-background = ${colors.red}
 format-warn-suffix-foreground = ${colors.bright_magenta}
 format-warn-prefix = ""
