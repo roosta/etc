@@ -1,2 +1,2 @@
 setlocal commentstring=#\ %s
-setlocal makeprg=fatline\ i3\ %
+setlocal makeprg=ftl\ i3\ make
