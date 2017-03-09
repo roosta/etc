@@ -133,6 +133,7 @@ assign [class="(?i)slack"]       $pws_chat
 assign [class="(?i)franz"]       $pws_chat
 # assign [class="(?i)thunderbird"] $FWS2
 
+assign [class="(?i)conky"] $tws_stats
 assign [class="(?i)transmission-gtk"] $tws_download
 
 # WINDOW BEHAVIOUR
@@ -169,6 +170,7 @@ for_window [window_role="task_dialog"] floating_maximum_size 670 x 470
 #for_window [class="(?i)firefox"]               border none
 #for_window [class="(?i)google-chrome$"]         border none
 for_window [class="(?i)PrisonArchitect.x86_64"] border none
+for_window [class="(?i)conky"] border none
 
 ## KEYBINDINGS
 ## -----------
@@ -277,7 +279,7 @@ bindsym --release Shift+Print exec scrot -s $screenshot
 # RESIZE
 # resize windows with either vi keys or arrows.
 # shift+movement shrink or grow with larger increments
-set $mode_resize Resize: (directions) 10px, (Shift+directions) 30px
+set $mode_resize Resize: direction + (shift|control|shift&control)
 mode "$mode_resize" {
   # vi movement
   bindsym h resize shrink width  50 px or 50 ppt
