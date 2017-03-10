@@ -300,14 +300,12 @@ alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non e
 
 # UPDATING
 alias pacu="pacman -Syu" # update only from official repos
-alias pacuf="pacman -Syu --noconfirm" # don't ask when updating
-
-# AUR
 alias pacua="pacaur -u" # update aur packages
 alias pacuad="pacaur -u --devel" # update aur packages
-alias pacuadf="pacaur -u --devel --noconfirm" # update aur packages
-alias pacua="pacaur -u --noconfirm" # update aur packages without asking for confirmation
-alias pacuadf="pacaur -Syua --devel --noconfirm" # Update ALL without confirming
+# alias pacuadf="pacaur -u --devel --noconfirm" # update aur packages
+# alias pacua="pacaur -u --noconfirm" # update aur packages without asking for confirmation
+# alias pacuf="pacman -Syu --noconfirm" # don't ask when updating
+# alias pacuadf="pacaur -Syua --devel --noconfirm" # Update ALL without confirming
 
 alias pacmu="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
 alias pacm-rate="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
