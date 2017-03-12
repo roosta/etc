@@ -19,25 +19,71 @@ secondary = #e60053
 alert = #bd2c40
 
 black = #1C1B19
-bright_black = #2D2B28
+bright-black = #2D2B28
 red = #FF3128
-bright_red = #F75341
+bright-red = #F75341
 green = #519F50
-bright_green = #98BC37
+bright-green = #98BC37
 yellow = #FBB829
-bright_yellow = #FED06E
+bright-yellow = #FED06E
 blue = #5573A3
-bright_blue = #8EB2F7
+bright-blue = #8EB2F7
 magenta = #E02C6D
-bright_magenta = #E35682
+bright-magenta = #E35682
 cyan = #0AAEB3
-bright_cyan = #53FDE9
+bright-cyan = #53FDE9
 gray = #918175
 white = #FCE8C3
 orange = #D75F00
-bright_orange = #FF8700
-hard_black = #080808
-alt_gray = #4E4E4E
+bright-orange = #FF8700
+hard-black = #080808
+alt-gray = #4E4E4E
+
+[icons]
+sep-lg-suffix =  
+sep-lg-prefix = 
+sep-sm-suffix =  
+sep-sm-prefix = 
+
+temp-ramp-0 = 
+temp-ramp-1 = 
+temp-ramp-2 = 
+
+wifi = 
+network = 
+email = 
+close = 
+hot-tamale = 
+power = 
+
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+battery_empty = 
+
+
+volume-ramp-0 = ""
+volume-ramp-1 = ""
+volume-ramp-2 = ""
+
+music = 
+music-prev = 
+music-stop = 
+music-play = 
+music-pause = 
+music-next = 
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
 
 [bar/lintilla-primary]
 monitor = ${env:MONITOR:DP-1}
@@ -82,7 +128,7 @@ tray-position = right
 tray-padding = 0
 tray-scale = 1
 ;tray-transparent = true
-tray-background = ${colors.bright_black}
+tray-background = ${colors.bright-black}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -103,28 +149,20 @@ label = %title:0:50:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = ""
-; format-suffix = ""
-; format-suffix-background = ${colors.green}
-; format-suffix-foreground = ${colors.bright_green}
-; format-prefix-padding = 1
+format-prefix = ${icons.sep-lg-prefix}
+format-prefix-foreground = ${colors.black}
+format-background = ${colors.green}
 format-prefix-font = 3
 format-suffix-font = 3
-format-prefix-foreground = ${colors.green}
-format-suffix-foreground = ${colors.bright_green}
-format-suffix-background = ${colors.green}
-; format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
 label-layout-padding = 1
 label-layout-foreground = ${colors.white}
 label-layout-background = ${colors.green}
-; label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
-; label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
@@ -135,25 +173,6 @@ mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -170,20 +189,23 @@ pin-workspaces = true
 strip-wsnumbers = true
 
 label-mode-padding = 0
+label-mode = %mode%
 label-mode-foreground = ${colors.white}
 ; label-mode-background = ${colors.primary}
+ 
+; fura code nerd font:pixelsize=14;4
 
 ; focused = Active workspace on focused monitor
-label-focused = "%name%"
+label-focused = "%{F#E02C6D B#1C1B19 T3}%{F- B- T-}%{F#FCE8C3 B#E02C6D}%name%%{F- B-}%{F#E02C6D B#1C1B19 T3}%{F- B- T-}"
+; ws-icon-default = 
 ; format-suffix = ""
 format-suffix-font = 3
-; label-focused-background = ${colors.magenta}
 ; label-focused-underline = ${colors.magenta}
 label-focused-padding = 0
 label-focused-background = ${colors.magenta}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = "%name%"
+label-unfocused = "%{F#2D2B28 B##2D2B28 T3}%{F- B- T-}%{F#FCE8C3 B#2D2B28}%name%%{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T-}"
 ; label-unfocused-background = ${colors.white}
 ; label-unfocused-foreground = ${colors.black}
 label-unfocused-padding = 0
@@ -208,11 +230,11 @@ format-online = <toggle>  <label-song>
 host = localhost
 port = 6600
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = ${icons.music-prev}
+icon-stop = ${icons.music-stop}
+icon-play = ${icons.music-play}
+icon-pause = ${icons.music-pause}
+icon-next = ${icons.music-next}
 
 label-offline =   mpd is offline
 
@@ -244,24 +266,18 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-; format-suffix = ""
 format-foreground = ${colors.black}
-format-background = ${colors.bright_blue}
-; format-suffix-foreground = ${colors.magenta}
-; format-suffix-font = 2
-; format-underline = #f90000
+format-background = ${colors.bright-blue}
 label = " %percentage%%"
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-suffix = ""
-format-suffix-foreground = ${colors.bright_blue}
+format-suffix = ${icons.sep-lg-suffix}
+format-suffix-foreground = ${colors.bright-blue}
 format-suffix-font = 3
 format-background = ${colors.blue}
 format-prefix-foreground = ${colors.white}
-; format-underline = #4bffdc
-; format-background = #5573A3
 ; label = MEM %gb_used%/%gb_free% (%percentage_used%%)
 label = " %percentage_used%%"
 
@@ -309,11 +325,12 @@ type = internal/date
 interval = 5
 date = "%Y-%m-%d"
 
-format-background = ${colors.bright_magenta}
+format-background = ${colors.bright-magenta}
 format-foreground = ${colors.black}
-format-suffix = ""
+format-suffix = ${icons.sep-lg-suffix}
 format-suffix-font = 3
 format-suffix-foreground = ${colors.cyan}
+; format-suffix-background = ${colors.cyan}
 
 label = %date% 
 
@@ -325,9 +342,9 @@ time = %H:%M
 
 format-background = ${colors.cyan}
 format-foreground = ${colors.black}
-format-suffix = ""
+format-suffix = ${icons.sep-lg-suffix}
 format-suffix-font = 3
-format-suffix-foreground = ${colors.bright_black}
+format-suffix-foreground = ${colors.bright-black}
 ; format-underline = #0a6cf5
 
 label = %time% 
@@ -336,42 +353,40 @@ label = %time%
 type = internal/volume
 
 format-volume = <ramp-volume><label-volume>  
-format-volume-background = ${colors.bright_yellow}
-label-volume-background = ${colors.bright_yellow}
+format-volume-background = ${colors.bright-yellow}
+label-volume-background = ${colors.bright-yellow}
 label-volume-foreground = ${colors.black}
-; format-volume = <label-volume> <bar-volume>
-label-volume = %percentage%%
+label-volume = " %percentage%%"
 
-format-volume-prefix = ""
+format-volume-prefix = ${icons.sep-lg-prefix}
 format-volume-prefix-font = 3
-format-volume-prefix-background = ${colors.yellow}
-format-volume-prefix-foreground = ${colors.bright_yellow}
+format-volume-prefix-foreground = ${colors.yellow}
 
-format-volume-suffix = ""
+format-volume-suffix = ${icons.sep-lg-suffix}
 format-volume-suffix-font = 3
-format-volume-suffix-background = ${colors.bright_yellow}
+format-volume-suffix-background = ${colors.bright-yellow}
 format-volume-suffix-foreground = ${colors.blue}
 
-ramp-volume-0 = ""
-ramp-volume-1 = ""
-ramp-volume-2 = ""
+ramp-volume-0 = ${icons.volume-ramp-0}
+ramp-volume-1 = ${icons.volume-ramp-1}
+ramp-volume-2 = ${icons.volume-ramp-2}
 ramp-volume-font = 3
-ramp-volume-background = ${colors.bright_yellow}
+ramp-volume-background = ${colors.bright-yellow}
 ramp-volume-foreground = ${colors.black}
 
-format-muted-prefix = ""
+format-muted-prefix = ${icons.sep-lg-prefix}
 format-muted-prefix-font = 3
-format-muted-prefix-background = ${colors.yellow}
-format-muted-prefix-foreground = ${colors.bright_orange}
+format-muted-prefix-background = ${colors.bright-orange}
+format-muted-prefix-foreground = ${colors.yellow}
 
-format-muted-suffix = ""
+format-muted-suffix = ${icons.sep-lg-suffix}
 format-muted-suffix-font = 3
-format-muted-suffix-background = ${colors.bright_orange}
+format-muted-suffix-background = ${colors.bright-orange}
 format-muted-suffix-foreground = ${colors.blue}
 
 format-muted-foreground = ${colors.black}
-format-muted-background = ${colors.bright_orange}
-label-muted-background = ${colors.bright_orange}
+format-muted-background = ${colors.bright-orange}
+label-muted-background = ${colors.bright-orange}
 label-muted-foreground = ${colors.black}
 label-muted = " muted"
 
@@ -379,10 +394,10 @@ label-muted = " muted"
 ; bar-volume-foreground-0 = ${colors.gray}
 ; bar-volume-foreground-1 = ${colors.gray}
 ; bar-volume-foreground-2 = ${colors.bright_green}
-; bar-volume-foreground-3 = ${colors.bright_green}
-; bar-volume-foreground-4 = ${colors.bright_green}
+; bar-volume-foreground-3 = ${colors.bright-green}
+; bar-volume-foreground-4 = ${colors.bright-green}
 ; bar-volume-foreground-5 = ${colors.orange}
-; bar-volume-foreground-6 = ${colors.bright_red}
+; bar-volume-foreground-6 = ${colors.bright-red}
 ; bar-volume-gradient = false
 ; bar-volume-indicator = █
 ; bar-volume-indicator = |
@@ -427,41 +442,36 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp><label>
-; format = <label>
-; format-underline = #f50a4d
-; format-warn = <label-warn>
+format = "<ramp>%{B#E02C6D} <label>"
 format-background = ${colors.magenta}
-; label-background = ${colors.magenta}
+format-warn-background = ${colors.red}
 format-warn = <label-warn>
-; format-warn-underline = ${self.format-underline}
 
-format-suffix = ""
+format-suffix = ${icons.sep-lg-suffix}
 format-suffix-background = ${colors.magenta}
-format-suffix-foreground = ${colors.bright_magenta}
-format-prefix = ""
+format-suffix-foreground = ${colors.bright-magenta}
+format-prefix = ${icons.sep-lg-prefix}
 format-prefix-font = 3
-format-prefix-foreground = ${colors.magenta}
-format-prefix-background = ${colors.bright_blue}
+format-prefix-foreground = ${colors.bright-blue}
+format-prefix-background = ${colors.magenta}
 
-format-warn-suffix = ""
-format-suffix-font = 3
+format-warn-suffix = ${icons.sep-lg-suffix}
+format-warn-suffix-font = 3
 format-warn-suffix-background = ${colors.red}
-format-warn-suffix-foreground = ${colors.bright_magenta}
-format-warn-prefix = ""
-format-warn-prefix-foreground = ${colors.red}
-format-warn-prefix-background = ${colors.bright_blue}
+format-warn-suffix-foreground = ${colors.bright-magenta}
+format-warn-prefix = ${icons.sep-lg-prefix}
+format-warn-prefix-font = 3
+format-warn-prefix-foreground = ${colors.bright-blue}
 
 label = "%temperature%"
 label-background = ${colors.magenta}
 label-warn-foreground = ${colors.black}
 label-warn-background = ${colors.red}
 label-warn = " %temperature%"
-; label-warn-foreground = ${colors.red}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = ${icons.temp-ramp-0}
+ramp-1 = ${icons.temp-ramp-1}
+ramp-2 = ${icons.temp-ramp-2}
 ramp-foreground = ${colors.white}
 ramp-background = ${colors.magenta}
 
@@ -470,7 +480,7 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open = 
+label-open = ${icons.power}
 label-open-foreground = ${colors.white}
 label-close =  cancel
 label-close-foreground = ${colors.white}
@@ -485,10 +495,10 @@ menu-0-1-exec = menu-open-2
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
@@ -496,16 +506,12 @@ menu-2-1-exec = menu-open-0
 type = custom/script
 interval = 1200
 format = <label>
-; format-prefix = ""
-format-prefix = ""
+format-background = ${colors.bright-green}
+format-prefix = ${icons.sep-lg-prefix}
 format-prefix-font = 3
 format-suffix-font = 3
-format-prefix-foreground = ${colors.bright_green}
-format-prefix-background = ${colors.green}
-; format-suffix-foreground = ${colors.yellow}
-; format-suffix-background = ${colors.bright_green}
-; format-underline = #dc322f
-label-background = ${colors.bright_green}
+format-prefix-foreground = ${colors.green}
+label-background = ${colors.bright-green}
 label-foreground = ${colors.black}
 label = "%output:0:30%"
 exec = ~/.config/polybar/pkg.sh
@@ -516,30 +522,11 @@ type = custom/script
 exec = pgrep openvpn
 interval = 5
 label-background = ${colors.yellow}
-format-prefix = ""
+format-background = ${colors.yellow}
+format-prefix = ${icons.sep-lg-prefix}
 format-prefix-font = 3
-format-prefix-background = ${colors.bright_green}
-format-prefix-foreground = ${colors.yellow}
+format-prefix-foreground = ${colors.bright-green}
 label-foreground = ${colors.black}
 label = " vpn"
-; format-underline = #268bd2
-; format-prefix = " "
-; format-prefix-foreground = #5b
 
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
-
-; wifi: 
-; music: 
-; network: 
-; email: 
-; battery(full to empty) 
 ; vim:ft=dosini
