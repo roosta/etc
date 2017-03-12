@@ -180,12 +180,12 @@ alias -g P="2>&1| pygmentize -l pytb"
 
 alias -s yml=vim
 alias -s zsh=vim
-alias -s cljs=vim
+alias -s cljs=emacsclient
 #alias -s sh=vim
 alias -s clj=vim
 alias -s tex=vim
 alias -s html=vim
-alias -s md=atom -n
+alias -s md=emacsclient
 alias -s org=firefox
 alias -s net=firefox
 alias -s com=firefox
