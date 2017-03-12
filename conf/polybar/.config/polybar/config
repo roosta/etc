@@ -121,7 +121,7 @@ font-2 = "fura code nerd font:pixelsize=14;4"
 ; font-2 = siji:pixelsize=10;1
 
 modules-left = i3
-modules-center = mpd
+; modules-center = mpd
 modules-right = xkeyboard pkg vpncheck volume memory cpu temperature date time
 
 tray-position = right
@@ -190,31 +190,19 @@ strip-wsnumbers = true
 
 label-mode-padding = 0
 label-mode = %mode%
-label-mode-foreground = ${colors.white}
-; label-mode-background = ${colors.primary}
  
-; fura code nerd font:pixelsize=14;4
-
 ; focused = Active workspace on focused monitor
-label-focused = "%{F#E02C6D B#1C1B19 T3}%{F- B- T-}%{F#FCE8C3 B#E02C6D}%name%%{F- B-}%{F#E02C6D B#1C1B19 T3}%{F- B- T-}"
-; ws-icon-default = 
-; format-suffix = ""
+label-focused = "%{F#E02C6D B#2D2B28 T3 O-21}%{F- B- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T3}%{F- B- T-}"
 format-suffix-font = 3
-; label-focused-underline = ${colors.magenta}
 label-focused-padding = 0
 label-focused-background = ${colors.magenta}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = "%{F#2D2B28 B##2D2B28 T3}%{F- B- T-}%{F#FCE8C3 B#2D2B28}%name%%{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T-}"
-; label-unfocused-background = ${colors.white}
-; label-unfocused-foreground = ${colors.black}
+label-unfocused = "%{F#2D2B28 B##2D2B28 T3 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T-}"
 label-unfocused-padding = 0
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %name%
-; label-visible-background = ${colors.white}
-label-visible-foreground = ${colors.white}
-; label-visible-underline = ${colors.white}
+label-visible = "%{F#FCE8C3 B#2D2B28 T3 O-20}%{F- B- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T3}%{F- B- T-}"
 label-visible-padding = 0
 
 ; urgent = Workspace with urgency hint set
