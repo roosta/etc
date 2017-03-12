@@ -25,12 +25,12 @@ bindsym $mod+Shift+a move workspace $sws_a
 bindsym $mod+Shift+s move workspace $sws_s
 bindsym $mod+Shift+d move workspace $sws_debug
 
-bindsym $mod+F1  workspace $tws_stats
-bindsym $mod+F2  workspace $tws_media
-bindsym $mod+F3  workspace $tws_download
-bindsym $mod+Shift+F1  move workspace $tws_stats
-bindsym $mod+Shift+F2  move workspace $tws_media
-bindsym $mod+Shift+F3  move workspace $tws_download
+bindsym $mod+F1  workspace $tws_media
+bindsym $mod+F2  workspace $tws_download
+bindsym $mod+F3  workspace $tws_stats
+bindsym $mod+Shift+F1  move workspace $tws_media
+bindsym $mod+Shift+F2  move workspace $tws_download
+bindsym $mod+Shift+F3  move workspace $tws_stats
 
 bindsym $mod+5 workspace $aws_5
 bindsym $mod+6 workspace $aws_6
@@ -217,8 +217,8 @@ bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # choose split direction.
-bindsym $mod+v split h
-bindsym $mod+x split v
+bindsym $mod+-split h
+bindsym $mod+/ split v
 
 # window layout controls
 bindsym $mod+Control+Shift+t layout stacked
