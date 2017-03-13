@@ -6,7 +6,7 @@ update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim p
 
 link: link-conf link-misc link-local post-install
 
-install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-yaourt install-packages install-aur-packages update post_install
+install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-pacaur install-packages install-aur-packages update post_install
 
 min: user-fs
 	sudo apt-get install `cat min_packages.txt` 
@@ -14,20 +14,18 @@ min: user-fs
 	stow zsh tmux vim bash -R -t ~ -d conf  
 	$(MAKE) init-tmux
 
-install-yaourt:
-	@echo -e "\033[0;33mBuild and installing yaourt...\033[0m"
+install-pacaur:
+	@echo -e "\033[0;33mBuild and install pacur...\033[0m"
 	mkdir ~/etc/build
-	cd ~/etc/build && git clone https://aur.archlinux.org/package-query.git
-	cd ~/etc/build/package-query && make -si
-	cd ~/etc/build && git clone https://aur.archlinux.org/yaourt.git
-	cd ~/etc/build/yaourt && make si
+	cd ~/etc/build && git clone https://aur.archlinux.org/pacaur.git
+	cd ~/etc/build/pacaur && makepkg -si --noconfirm --needed
 	rm -rf ~/etc/build
 
 add-pacman-repositories:
 	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
 	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
 
-install-aur-packages: install-yaourt 
+install-aur-packages: install-pacaur 
 	@echo -e "\033[0;33mInstalling AUR packages...\033[0m"
 	yaourt -S --needed --noconfirm `cat aur_packages.txt`
 
