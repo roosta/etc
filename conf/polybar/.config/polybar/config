@@ -35,10 +35,13 @@ alt-gray = #4E4E4E
 [icons]
 sep-lg-right-prefix = 
 sep-lg-right-suffix =  
+sep-sm-right-suffix =  
+sep-sm-right-prefix = 
+
 sep-lg-left-prefix = 
 sep-lg-left-suffix = 
-sep-sm-suffix =  
-sep-sm-prefix = 
+sep-sm-left-prefix = 
+sep-sm-left-suffix = 
 
 temp-ramp-0 = 
 temp-ramp-1 = 
