@@ -33,8 +33,10 @@ hard-black = #080808
 alt-gray = #4E4E4E
 
 [icons]
-sep-lg-suffix =  
-sep-lg-prefix = 
+sep-lg-right-prefix = 
+sep-lg-right-suffix =  
+sep-lg-left-prefix = 
+sep-lg-left-suffix = 
 sep-sm-suffix =  
 sep-sm-prefix = 
 
@@ -142,7 +144,7 @@ label = %title:0:50:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = ${icons.sep-lg-prefix}
+format-prefix = ${icons.sep-lg-right-prefix}
 format-prefix-foreground = ${colors.black}
 format-background = ${colors.green}
 format-prefix-font = 3
@@ -186,21 +188,18 @@ label-mode = %mode%
  
 ; focused = Active workspace on focused monitor
 label-focused = "%{F#E02C6D T3 O-21}%{F- B- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T3}%{F- B- T-}"
-format-suffix-font = 3
 label-focused-padding = 0
-; label-focused-background = ${colors.magenta}
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = "%{F#2D2B28 T3 O-20}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T-}"
-label-unfocused-padding = 0
 
 ; visible = Active workspace on unfocused monitor
 label-visible = "%{F#FCE8C3 T3 O-20}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T3}%{F- B- T-}"
 label-visible-padding = 0
 
+; unfocused = Inactive workspace on any monitor
+label-unfocused = "%{F#2D2B28 T3 O-20}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T-}"
+label-unfocused-padding = 0
+
 ; urgent = Workspace with urgency hint set
-label-urgent = %name%
-label-urgent-background = ${colors.orange}
+label-urgent = "%{F#FF8700 T3 O-21}%{F- B- T-}%{F#1C1B19 B#FF8700} %name% %{F- B-}%{F#FF8700 T3}%{F- B- T-}"
 label-urgent-padding = 0
 
 [module/mpd]
@@ -254,7 +253,7 @@ label = " %percentage%%"
 [module/memory]
 type = internal/memory
 interval = 2
-format-suffix = ${icons.sep-lg-suffix}
+format-suffix = ${icons.sep-lg-right-suffix}
 format-suffix-foreground = ${colors.bright-blue}
 format-suffix-font = 3
 format-background = ${colors.blue}
@@ -308,7 +307,7 @@ date = "%Y-%m-%d"
 
 format-background = ${colors.bright-magenta}
 format-foreground = ${colors.black}
-format-suffix = ${icons.sep-lg-suffix}
+format-suffix = ${icons.sep-lg-right-suffix}
 format-suffix-font = 3
 format-suffix-foreground = ${colors.cyan}
 ; format-suffix-background = ${colors.cyan}
@@ -323,7 +322,7 @@ time = %H:%M
 
 format-background = ${colors.cyan}
 format-foreground = ${colors.black}
-format-suffix = ${icons.sep-lg-suffix}
+format-suffix = ${icons.sep-lg-right-suffix}
 format-suffix-font = 3
 format-suffix-foreground = ${colors.bright-black}
 ; format-underline = #0a6cf5
@@ -339,11 +338,11 @@ label-volume-background = ${colors.bright-yellow}
 label-volume-foreground = ${colors.black}
 label-volume = " %percentage%%"
 
-format-volume-prefix = ${icons.sep-lg-prefix}
+format-volume-prefix = ${icons.sep-lg-right-prefix}
 format-volume-prefix-font = 3
 format-volume-prefix-foreground = ${colors.yellow}
 
-format-volume-suffix = ${icons.sep-lg-suffix}
+format-volume-suffix = ${icons.sep-lg-right-suffix}
 format-volume-suffix-font = 3
 format-volume-suffix-background = ${colors.bright-yellow}
 format-volume-suffix-foreground = ${colors.blue}
@@ -355,12 +354,12 @@ ramp-volume-font = 3
 ramp-volume-background = ${colors.bright-yellow}
 ramp-volume-foreground = ${colors.black}
 
-format-muted-prefix = ${icons.sep-lg-prefix}
+format-muted-prefix = ${icons.sep-lg-right-prefix}
 format-muted-prefix-font = 3
 format-muted-prefix-background = ${colors.bright-orange}
 format-muted-prefix-foreground = ${colors.yellow}
 
-format-muted-suffix = ${icons.sep-lg-suffix}
+format-muted-suffix = ${icons.sep-lg-right-suffix}
 format-muted-suffix-font = 3
 format-muted-suffix-background = ${colors.bright-orange}
 format-muted-suffix-foreground = ${colors.blue}
@@ -428,19 +427,19 @@ format-background = ${colors.magenta}
 format-warn-background = ${colors.red}
 format-warn = <label-warn>
 
-format-suffix = ${icons.sep-lg-suffix}
+format-suffix = ${icons.sep-lg-right-suffix}
 format-suffix-background = ${colors.magenta}
 format-suffix-foreground = ${colors.bright-magenta}
-format-prefix = ${icons.sep-lg-prefix}
+format-prefix = ${icons.sep-lg-right-prefix}
 format-prefix-font = 3
 format-prefix-foreground = ${colors.bright-blue}
 format-prefix-background = ${colors.magenta}
 
-format-warn-suffix = ${icons.sep-lg-suffix}
+format-warn-suffix = ${icons.sep-lg-right-suffix}
 format-warn-suffix-font = 3
 format-warn-suffix-background = ${colors.red}
 format-warn-suffix-foreground = ${colors.bright-magenta}
-format-warn-prefix = ${icons.sep-lg-prefix}
+format-warn-prefix = ${icons.sep-lg-right-prefix}
 format-warn-prefix-font = 3
 format-warn-prefix-foreground = ${colors.bright-blue}
 
@@ -488,7 +487,7 @@ type = custom/script
 interval = 1200
 format = <label>
 format-background = ${colors.bright-green}
-format-prefix = ${icons.sep-lg-prefix}
+format-prefix = ${icons.sep-lg-right-prefix}
 format-prefix-font = 3
 format-suffix-font = 3
 format-prefix-foreground = ${colors.green}
@@ -504,7 +503,7 @@ exec = pgrep openvpn
 interval = 5
 label-background = ${colors.yellow}
 format-background = ${colors.yellow}
-format-prefix = ${icons.sep-lg-prefix}
+format-prefix = ${icons.sep-lg-right-prefix}
 format-prefix-font = 3
 format-prefix-foreground = ${colors.bright-green}
 label-foreground = ${colors.black}
