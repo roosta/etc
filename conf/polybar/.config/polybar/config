@@ -146,21 +146,11 @@ label = %title:0:50:...%
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-
-format-prefix = ${icons.sep-lg-right-prefix}
-format-prefix-foreground = ${colors.black}
-format-background = ${colors.green}
-format-prefix-font = 3
-format-suffix-font = 3
-
-label-layout = %layout%
-label-layout-padding = 1
+label-layout = "%{F#1C1B19}%{F-} %name% %{F#1C1B19}%{F-}"
 label-layout-foreground = ${colors.white}
-label-layout-background = ${colors.green}
-
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.green}
+label-layout-background = ${colors.bright-black}
+label-indicator = "%{B#F75341 F#2D2B28 O-30}%{F-}%{F#FCE8C3} %name% %{F-}%{F#1C1B19}%{F- O-}"
+label-indicator-background = ${colors.bright-black}
 
 [module/filesystem]
 type = internal/fs
