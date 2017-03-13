@@ -187,22 +187,22 @@ pin-workspaces = true
 strip-wsnumbers = true
 
 label-mode-padding = 0
-label-mode = %mode%
+label-mode = "%{O-32 F#5573A3 T3}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T3}%{F- B- T- O-}"
  
 ; focused = Active workspace on focused monitor
-label-focused = "%{F#E02C6D T3 O-21}%{F- B- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T3}%{F- B- T-}"
+label-focused = "%{O-21 F#E02C6D T3}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T3}%{F- T- O-}"
 label-focused-padding = 0
 
 ; visible = Active workspace on unfocused monitor
-label-visible = "%{F#FCE8C3 T3 O-20}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T3}%{F- B- T-}"
+label-visible = "%{O-20 F#FCE8C3 T3}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T3}%{F- B- T- O-}"
 label-visible-padding = 0
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = "%{F#2D2B28 T3 O-20}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T-}"
+label-unfocused = "%{O-20 F#2D2B28 T3}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T- O-}"
 label-unfocused-padding = 0
 
 ; urgent = Workspace with urgency hint set
-label-urgent = "%{F#FF8700 T3 O-21}%{F- B- T-}%{F#1C1B19 B#FF8700} %name% %{F- B-}%{F#FF8700 T3}%{F- B- T-}"
+label-urgent = "%{O-21 F#FF8700 T3}%{F- T-}%{F#1C1B19 B#FF8700} %name% %{F- B-}%{F#FF8700 T3}%{F- T- O-}"
 label-urgent-padding = 0
 
 [module/mpd]
