@@ -9,14 +9,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #1C1B19
-background-alt = #2D2B28
 ;foreground = ${xrdb:color7:#222}
-foreground = #FCE8C3
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
 
 black = #1C1B19
 bright-black = #2D2B28
@@ -162,7 +155,7 @@ label-layout-background = ${colors.green}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
+label-indicator-background = ${colors.green}
 
 [module/filesystem]
 type = internal/fs
@@ -172,7 +165,7 @@ mount-0 = /
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = ${colors.white}
 
 [module/i3]
 type = internal/i3
@@ -192,17 +185,17 @@ label-mode-padding = 0
 label-mode = %mode%
  
 ; focused = Active workspace on focused monitor
-label-focused = "%{F#E02C6D B#2D2B28 T3 O-21}%{F- B- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T3}%{F- B- T-}"
+label-focused = "%{F#E02C6D T3 O-21}%{F- B- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T3}%{F- B- T-}"
 format-suffix-font = 3
 label-focused-padding = 0
-label-focused-background = ${colors.magenta}
+; label-focused-background = ${colors.magenta}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = "%{F#2D2B28 B##2D2B28 T3 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T-}"
+label-unfocused = "%{F#2D2B28 T3 O-20}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T-}"
 label-unfocused-padding = 0
 
 ; visible = Active workspace on unfocused monitor
-label-visible = "%{F#FCE8C3 B#2D2B28 T3 O-20}%{F- B- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T3}%{F- B- T-}"
+label-visible = "%{F#FCE8C3 T3 O-20}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T3}%{F- B- T-}"
 label-visible-padding = 0
 
 ; urgent = Workspace with urgency hint set
@@ -244,7 +237,7 @@ bar-fill-font = 2
 bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+bar-empty-foreground = ${colors.white}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -289,7 +282,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.white}
 
 [module/eth]
 type = internal/network
@@ -298,7 +291,7 @@ interval = 3.0
 
 ; format-connected-underline = #55aa55
 ; format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.white}
 label-connected = " %upspeed%  %downspeed%"
 format-connected = <label-connected>
 
@@ -411,18 +404,18 @@ format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
 ; format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.white}
 format-full-underline = ${self.format-charging-underline}
 
 ; ramp-capacity-0 = 
 ; ramp-capacity-1 = 
 ; ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.white}
 
 ; animation-charging-0 = 
 ; animation-charging-1 = 
 ; animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.white}
 animation-charging-framerate = 750
 
 [module/temperature]
@@ -473,7 +466,7 @@ label-open-foreground = ${colors.white}
 label-close =  cancel
 label-close-foreground = ${colors.white}
 label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
+label-separator-foreground = ${colors.white}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
