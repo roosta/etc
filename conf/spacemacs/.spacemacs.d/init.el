@@ -57,22 +57,21 @@ values."
      fasd
      python
      docker
-     slack
+     ;; slack
      git
      lua
      nginx
      react
      chrome
      systemd
-     emoji
+     ;; emoji
      github
      org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom
      ;;        shell-default-term-shell "/usr/bin/zsh"
-     ;;        shell-default-shell 'multi-term
-     ;;        )
+     ;;        shell-default-shell 'multi-term)
      (spell-checking :variables
                      spell-checking-enable-by-default nil
                      spell-checking-enable-auto-dictionary t
