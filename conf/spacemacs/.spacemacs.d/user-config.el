@@ -4,7 +4,10 @@
  evil-ex-search-vim-style-regexp t
 
  ;; srcery-theme-org-height nil
- powerline-default-separator nil
+
+ powerline-default-separator 'slant
+ spaceline-separator-dir-left '(left . left)
+ spaceline-separator-dir-right '(right . right)
 
  ;; always follow symlinks
  vc-follow-symlinks t
