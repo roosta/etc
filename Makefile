@@ -9,9 +9,9 @@ link: link-conf link-misc link-local post-install
 install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-pacaur install-packages install-aur-packages update post_install
 
 min: user-fs
-	sudo apt-get install `cat min_packages.txt` 
+	sudo apt-get install `cat min_packages.txt`
 	$(MAKE) set-shell
-	stow zsh tmux vim bash -R -t ~ -d conf  
+	stow zsh tmux vim bash -R -t ~ -d conf
 	$(MAKE) init-tmux
 
 install-pacaur:
@@ -25,7 +25,7 @@ add-pacman-repositories:
 	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
 	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
 
-install-aur-packages: install-pacaur 
+install-aur-packages: install-pacaur
 	@echo -e "\033[0;33mInstalling AUR packages...\033[0m"
 	yaourt -S --needed --noconfirm `cat aur_packages.txt`
 
@@ -58,10 +58,10 @@ user-fs:
 
 update-zsh-plugins:
 	@echo -e "\033[0;33mUpdating zsh plugins...\033[0m"
-	./scripts/git_update.sh ~/.zsh.d/plugins ~/etc/zsh_plugins.txt 
+	./scripts/git_update.sh ~/.zsh.d/plugins ~/etc/zsh_plugins.txt
 
 update-libs:
-	@./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt 
+	@./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt
 
 init-vim: ~/.vim/autoload/plug.vim
 	@echo -e "\033[0;33mInitialize Vim...\033[0m"
@@ -78,7 +78,7 @@ update-vim: ~/.vim/autoload/plug.vim
 clone-src:
 	@echo -e "\033[0;33mCloning src...\033[0m"
 	ssh-add ~/.ssh/id_rsa
-	@./scripts/git_update.sh ~/src ~/etc/src_repositories.txt 
+	@./scripts/git_update.sh ~/src ~/etc/src_repositories.txt
 
 link-misc:
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
@@ -96,7 +96,7 @@ link-conf:
 
 link-local:
 	@echo -e "\033[0;33mSymlinking local...\033[0m"
-	@stow $(shell ls local/$(HOST)/conf) -R -t ~ -d local/$(HOST)/conf 
+	@stow $(shell ls local/$(HOST)/conf) -R -t ~ -d local/$(HOST)/conf
 
 set-shell:
 	@echo -e "\033[0;33mSetting shell to zsh...\033[0m"
@@ -105,11 +105,11 @@ set-shell:
 update-spacemacs:
 	@echo -e "\033[0;33mUpdating spacemacs...\033[0m"
 	@cd ~/.emacs.d && git pull --rebase
-	
+
 init-spacemacs: link-conf
 	@echo -e "\033[0;33mInitialize spacemacs...\033[0m"
 	sudo pacman -S emacs
-	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d	
+	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 ~/.i3/config: link-conf
 	@echo -e "\033[0;33mCreating i3 config...\033[0m"
@@ -131,4 +131,3 @@ init-tmux:
 
 post-install:
 	@echo -e "\033[1;32mAll done!\033[0m"
-
