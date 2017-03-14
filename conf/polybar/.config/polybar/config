@@ -146,11 +146,38 @@ label = %title:0:50:...%
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
-label-layout = "%{F#1C1B19}%{F-} %name% %{F#1C1B19}%{F-}"
+format = <label-layout> <label-indicator>
+label-layout = "%{F#1C1B19}%{F-} %name%  "
 label-layout-foreground = ${colors.white}
 label-layout-background = ${colors.bright-black}
-label-indicator = "%{B#F75341 F#2D2B28 O-30}%{F-}%{F#FCE8C3} %name% %{F-}%{F#1C1B19}%{F- O-}"
+label-indicator = "%{B#F75341 F#2D2B28 O-15}%{F-}%{F#FCE8C3} %name% %{F-}%{F#1C1B19}%{F- O-}"
 label-indicator-background = ${colors.bright-black}
+
+[module/pkg]
+type = custom/script
+interval = 1200
+format = <label>
+; label-foreground = ${colors.black}
+label = "%output:0:100%"
+; label = "%{O-15}%output:0:100%"
+; format-background = ${colors.blue}
+exec = ~/.config/polybar/pkg.sh
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/vpncheck]
+type = custom/script
+exec = ~/.config/polybar/vpn.sh
+interval = 5
+label-foreground = ${colors.white}
+label = "%{O-16}%output:0:40%"
+; label = "%output:0:100%"
+; label-background = ${colors.yellow}
+; format-background = ${colors.yellow}
+; format-prefix = ${icons.sep-lg-right-prefix}
+; format-prefix-font = 3
+; format-prefix-foreground = ${colors.bright-green}
+; label-foreground = ${colors.black}
+; label = " vpn"
 
 [module/filesystem]
 type = internal/fs
@@ -325,42 +352,42 @@ label = %time%
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume><label-volume>  
-format-volume-background = ${colors.bright-yellow}
-label-volume-background = ${colors.bright-yellow}
-label-volume-foreground = ${colors.black}
+format-volume = <ramp-volume>%{B#2D2B28} %{B-}<label-volume>  
+format-volume-background = ${colors.bright-black}
+label-volume-background = ${colors.bright-black}
+; label-volume-foreground = ${colors.black}
 label-volume = " %percentage%%"
 
-format-volume-prefix = ${icons.sep-lg-right-prefix}
-format-volume-prefix-font = 3
-format-volume-prefix-foreground = ${colors.yellow}
+; format-volume-prefix = ${icons.sep-lg-right-prefix}
+; format-volume-prefix-font = 3
+; format-volume-prefix-foreground = ${colors.yellow}
 
-format-volume-suffix = ${icons.sep-lg-right-suffix}
-format-volume-suffix-font = 3
-format-volume-suffix-background = ${colors.bright-yellow}
-format-volume-suffix-foreground = ${colors.blue}
+; format-volume-suffix = ${icons.sep-lg-right-suffix}
+; format-volume-suffix-font = 3
+; format-volume-suffix-background = ${colors.bright-yellow}
+; format-volume-suffix-foreground = ${colors.blue}
 
 ramp-volume-0 = ${icons.volume-ramp-0}
 ramp-volume-1 = ${icons.volume-ramp-1}
 ramp-volume-2 = ${icons.volume-ramp-2}
 ramp-volume-font = 3
-ramp-volume-background = ${colors.bright-yellow}
-ramp-volume-foreground = ${colors.black}
+ramp-volume-background = ${colors.bright-black}
+ramp-volume-foreground = ${colors.white}
 
-format-muted-prefix = ${icons.sep-lg-right-prefix}
-format-muted-prefix-font = 3
-format-muted-prefix-background = ${colors.bright-orange}
-format-muted-prefix-foreground = ${colors.yellow}
+; format-muted-prefix = ${icons.sep-lg-right-prefix}
+; format-muted-prefix-font = 3
+; format-muted-prefix-background = ${colors.bright-orange}
+; format-muted-prefix-foreground = ${colors.yellow}
 
-format-muted-suffix = ${icons.sep-lg-right-suffix}
-format-muted-suffix-font = 3
-format-muted-suffix-background = ${colors.bright-orange}
-format-muted-suffix-foreground = ${colors.blue}
+; format-muted-suffix = ${icons.sep-lg-right-suffix}
+; format-muted-suffix-font = 3
+; format-muted-suffix-background = ${colors.bright-orange}
+; format-muted-suffix-foreground = ${colors.blue}
 
 format-muted-foreground = ${colors.black}
-format-muted-background = ${colors.bright-orange}
-label-muted-background = ${colors.bright-orange}
-label-muted-foreground = ${colors.black}
+format-muted-background = ${colors.bright-red}
+; label-muted-background = ${colors.bright-orange}
+; label-muted-foreground = ${colors.black}
 label-muted = " muted"
 
 ; bar-volume-width = 10
@@ -474,32 +501,5 @@ menu-2-0 = power off
 menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
-
-[module/pkg]
-type = custom/script
-interval = 1200
-format = <label>
-format-background = ${colors.bright-green}
-format-prefix = ${icons.sep-lg-right-prefix}
-format-prefix-font = 3
-format-suffix-font = 3
-format-prefix-foreground = ${colors.green}
-label-background = ${colors.bright-green}
-label-foreground = ${colors.black}
-label = "%output:0:30%"
-exec = ~/.config/polybar/pkg.sh
-exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-
-[module/vpncheck]
-type = custom/script
-exec = pgrep openvpn
-interval = 5
-label-background = ${colors.yellow}
-format-background = ${colors.yellow}
-format-prefix = ${icons.sep-lg-right-prefix}
-format-prefix-font = 3
-format-prefix-foreground = ${colors.bright-green}
-label-foreground = ${colors.black}
-label = " vpn"
 
 ; vim:ft=dosini
