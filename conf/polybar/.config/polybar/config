@@ -139,6 +139,39 @@ tray-background = ${colors.bright-black}
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
 
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+; wrapping-scroll = false
+enable-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+label-mode-padding = 0
+label-mode = "%{O-32 F#5573A3 T3}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T3}%{F- B- T- O-}"
+ 
+; focused = Active workspace on focused monitor
+label-focused = "%{O-21 F#E02C6D T3}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T3}%{F- T- O-}"
+label-focused-padding = 0
+
+; visible = Active workspace on unfocused monitor
+label-visible = "%{O-20 F#FCE8C3 T3}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T3}%{F- B- T- O-}"
+label-visible-padding = 0
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = "%{O-20 F#2D2B28 T3}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T- O-}"
+label-unfocused-padding = 0
+
+; urgent = Workspace with urgency hint set
+label-urgent = "%{O-21 F#FF8700 T3}%{F- T-}%{F#1C1B19 B#FF8700} %name% %{F- B-}%{F#FF8700 T3}%{F- T- O-}"
+label-urgent-padding = 0
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:...%
@@ -180,6 +213,47 @@ label = "%{O-44}%output:0:150%"
 ; label-foreground = ${colors.black}
 ; label = " vpn"
 
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-foreground = ${colors.black}
+format-background = ${colors.bright-blue}
+label = " %percentage%%"
+
+[module/volume]
+type = internal/volume
+format-volume = "%{F#2D2B28 B#00000000 T3 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{F#2D2B28 B#FCE8C3}" 
+format-volume-background = ${colors.bright-black}
+label-volume-background = ${colors.bright-black}
+label-volume = "%percentage%%"
+ramp-volume-0 = ${icons.volume-ramp-0}
+ramp-volume-1 = ${icons.volume-ramp-1}
+ramp-volume-2 = ${icons.volume-ramp-2}
+ramp-volume-font = 3
+ramp-volume-background = ${colors.bright-black}
+ramp-volume-foreground = ${colors.white}
+label-muted = "%{F#F75341 B#00000000 T3 O-21}%{F- B- T-}%{B#F75341 F#FCE8C3}  muted %{B- F-}%{F#F75341 B#00000000 T3}%{F- B- T-}"
+
+; bar-volume-width = 10
+; bar-volume-foreground-0 = ${colors.gray}
+; bar-volume-foreground-1 = ${colors.gray}
+; bar-volume-foreground-2 = ${colors.bright_green}
+; bar-volume-foreground-3 = ${colors.bright-green}
+; bar-volume-foreground-4 = ${colors.bright-green}
+; bar-volume-foreground-5 = ${colors.orange}
+; bar-volume-foreground-6 = ${colors.bright-red}
+; bar-volume-gradient = false
+; bar-volume-indicator = █
+; bar-volume-indicator = |
+; bar-volume-indicator-font = 1
+; bar-volume-fill = █
+; bar-volume-fill = ─
+; bar-volume-fill-font = 1
+; bar-volume-empty = ─
+; bar-volume-empty = ░
+; bar-volume-empty-font = 1
+; bar-volume-empty-foreground = ${colors.foreground-alt}
+
 [module/filesystem]
 type = internal/fs
 interval = 25
@@ -189,39 +263,6 @@ mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.white}
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-; wrapping-scroll = false
-enable-scroll = false
-
-; Only show workspaces on the same output as the bar
-pin-workspaces = true
-
-; This will split the workspace name on ':'
-; Default: false
-strip-wsnumbers = true
-
-label-mode-padding = 0
-label-mode = "%{O-32 F#5573A3 T3}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T3}%{F- B- T- O-}"
- 
-; focused = Active workspace on focused monitor
-label-focused = "%{O-21 F#E02C6D T3}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T3}%{F- T- O-}"
-label-focused-padding = 0
-
-; visible = Active workspace on unfocused monitor
-label-visible = "%{O-20 F#FCE8C3 T3}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T3}%{F- B- T- O-}"
-label-visible-padding = 0
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = "%{O-20 F#2D2B28 T3}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T- O-}"
-label-unfocused-padding = 0
-
-; urgent = Workspace with urgency hint set
-label-urgent = "%{O-21 F#FF8700 T3}%{F- T-}%{F#1C1B19 B#FF8700} %name% %{F- B-}%{F#FF8700 T3}%{F- T- O-}"
-label-urgent-padding = 0
 
 [module/mpd]
 type = internal/mpd
@@ -263,13 +304,6 @@ bar-empty-foreground = ${colors.white}
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-foreground = ${colors.black}
-format-background = ${colors.bright-blue}
-label = " %percentage%%"
 
 [module/memory]
 type = internal/memory
@@ -349,67 +383,6 @@ format-suffix-foreground = ${colors.bright-black}
 ; format-underline = #0a6cf5
 
 label = %time% 
-
-[module/volume]
-type = internal/volume
-
-format-volume = <ramp-volume>%{B#2D2B28} %{B-}<label-volume>  
-format-volume-background = ${colors.bright-black}
-label-volume-background = ${colors.bright-black}
-; label-volume-foreground = ${colors.black}
-label-volume = " %percentage%%"
-
-; format-volume-prefix = ${icons.sep-lg-right-prefix}
-; format-volume-prefix-font = 3
-; format-volume-prefix-foreground = ${colors.yellow}
-
-; format-volume-suffix = ${icons.sep-lg-right-suffix}
-; format-volume-suffix-font = 3
-; format-volume-suffix-background = ${colors.bright-yellow}
-; format-volume-suffix-foreground = ${colors.blue}
-
-ramp-volume-0 = ${icons.volume-ramp-0}
-ramp-volume-1 = ${icons.volume-ramp-1}
-ramp-volume-2 = ${icons.volume-ramp-2}
-ramp-volume-font = 3
-ramp-volume-background = ${colors.bright-black}
-ramp-volume-foreground = ${colors.white}
-
-; format-muted-prefix = ${icons.sep-lg-right-prefix}
-; format-muted-prefix-font = 3
-; format-muted-prefix-background = ${colors.bright-orange}
-; format-muted-prefix-foreground = ${colors.yellow}
-
-; format-muted-suffix = ${icons.sep-lg-right-suffix}
-; format-muted-suffix-font = 3
-; format-muted-suffix-background = ${colors.bright-orange}
-; format-muted-suffix-foreground = ${colors.blue}
-
-format-muted-foreground = ${colors.black}
-format-muted-background = ${colors.bright-red}
-; label-muted-background = ${colors.bright-orange}
-; label-muted-foreground = ${colors.black}
-label-muted = " muted"
-
-; bar-volume-width = 10
-; bar-volume-foreground-0 = ${colors.gray}
-; bar-volume-foreground-1 = ${colors.gray}
-; bar-volume-foreground-2 = ${colors.bright_green}
-; bar-volume-foreground-3 = ${colors.bright-green}
-; bar-volume-foreground-4 = ${colors.bright-green}
-; bar-volume-foreground-5 = ${colors.orange}
-; bar-volume-foreground-6 = ${colors.bright-red}
-; bar-volume-gradient = false
-; bar-volume-indicator = █
-; bar-volume-indicator = |
-; bar-volume-indicator-font = 1
-; bar-volume-fill = █
-; bar-volume-fill = ─
-; bar-volume-fill-font = 1
-; bar-volume-empty = ─
-; bar-volume-empty = ░
-; bar-volume-empty-font = 1
-; bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
