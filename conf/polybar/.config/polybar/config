@@ -213,16 +213,9 @@ label = "%{O-44}%output:0:150%"
 ; label-foreground = ${colors.black}
 ; label = " vpn"
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-foreground = ${colors.black}
-format-background = ${colors.bright-blue}
-label = " %percentage%%"
-
 [module/volume]
 type = internal/volume
-format-volume = "%{F#2D2B28 B#00000000 T3 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{F#2D2B28 B#FCE8C3}" 
+format-volume = "%{F#2D2B28 B#00000000 T3 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#FCE8C3 T3}%{F- B- T-}" 
 format-volume-background = ${colors.bright-black}
 label-volume-background = ${colors.bright-black}
 label-volume = "%percentage%%"
@@ -232,7 +225,7 @@ ramp-volume-2 = ${icons.volume-ramp-2}
 ramp-volume-font = 3
 ramp-volume-background = ${colors.bright-black}
 ramp-volume-foreground = ${colors.white}
-label-muted = "%{F#F75341 B#00000000 T3 O-21}%{F- B- T-}%{B#F75341 F#FCE8C3}  muted %{B- F-}%{F#F75341 B#00000000 T3}%{F- B- T-}"
+label-muted = "%{F#F75341 B#00000000 T3 O-21}%{F- B- T-}%{B#F75341 F#FCE8C3}  muted %{B- F-}%{F#F75341 B#FCE8C3 T3}%{F- B- T-}"
 
 ; bar-volume-width = 10
 ; bar-volume-foreground-0 = ${colors.gray}
@@ -254,15 +247,23 @@ label-muted = "%{F#F75341 B#00000000 T3 O-21}%{F- B- T-}%{B#F75341 F#FCE8C3} 
 ; bar-volume-empty-font = 1
 ; bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/filesystem]
-type = internal/fs
-interval = 25
+[module/memory]
+type = internal/memory
+interval = 2
+; format-suffix = ${icons.sep-lg-right-suffix}
+; format-suffix-foreground = ${colors.bright-blue}
+; format-suffix-font = 3
+; format-background = ${colors.blue}
+; format-prefix-foreground = ${colors.white}
+; label = MEM %gb_used%/%gb_free% (%percentage_used%%)
+label = "%{F#2D2B28 B#00000000 T3 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#FCE8C3 T3}%{F- B- T-}"
 
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.white}
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-foreground = ${colors.black}
+format-background = ${colors.bright-blue}
+label = "%{F#2D2B28 B#FCE8C3}  %percentage%%"
 
 [module/mpd]
 type = internal/mpd
@@ -304,17 +305,6 @@ bar-empty-foreground = ${colors.white}
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
-
-[module/memory]
-type = internal/memory
-interval = 2
-format-suffix = ${icons.sep-lg-right-suffix}
-format-suffix-foreground = ${colors.bright-blue}
-format-suffix-font = 3
-format-background = ${colors.blue}
-format-prefix-foreground = ${colors.white}
-; label = MEM %gb_used%/%gb_free% (%percentage_used%%)
-label = " %percentage_used%%"
 
 [module/wlan]
 type = internal/network
@@ -448,6 +438,16 @@ ramp-1 = ${icons.temp-ramp-1}
 ramp-2 = ${icons.temp-ramp-2}
 ramp-foreground = ${colors.white}
 ramp-background = ${colors.magenta}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.white}
 
 [module/powermenu]
 type = custom/menu
