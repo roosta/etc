@@ -147,19 +147,20 @@ label = %title:0:50:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 format = <label-layout> <label-indicator>
-label-layout = "%{F#1C1B19}%{F-} %name%  "
-label-layout-foreground = ${colors.white}
-label-layout-background = ${colors.bright-black}
-label-indicator = "%{B#F75341 F#2D2B28 O-15}%{F-}%{F#FCE8C3} %name% %{F-}%{F#1C1B19}%{F- O-}"
-label-indicator-background = ${colors.bright-black}
+; format-background = ${colors.bright-black}
+label-layout = "%{F#2D2B28 T3}%{F- T-}%{B#2D2B28} %name% %{B-}%{F#2D2B28 B#00000000 T3}%{F- B- T-}"
+; label-layout-foreground = ${colors.white}
+; label-layout-background = ${colors.bright-black}
+label-indicator = "%{F#F75341 O-35 T3}%{F- T-}%{F#FCE8C3 B#F75341} %name% %{F- B-}%{F#F75341 B#00000000 T3}%{F- B- T-}"
+; label-indicator-background = ${colors.bright-black}
 
 [module/pkg]
 type = custom/script
 interval = 1200
 format = <label>
 ; label-foreground = ${colors.black}
-label = "%output:0:100%"
-; label = "%{O-15}%output:0:100%"
+; label = "%output:0:100%"
+label = "%{O-23}%output:0:150%"
 ; format-background = ${colors.blue}
 exec = ~/.config/polybar/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
