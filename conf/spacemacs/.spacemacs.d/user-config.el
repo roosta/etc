@@ -126,10 +126,10 @@
 
 ;; Slack
 ;; ------
-(if (file-directory-p "~/Private/slack")
-    (do (load-file "~/Private/slack/sic.el")
-        (load-file "~/Private/slack/bitraf.el"))
-  (message "~/Private is not mounted, cannot load slack config"))
+;;(if (file-directory-p "~/Private/slack")
+;;    (do (load-file "~/Private/slack/sic.el")
+;;        (load-file "~/Private/slack/bitraf.el"))
+;;  (message "~/Private is not mounted, cannot load slack config"))
 
 (add-hook 'slack-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
