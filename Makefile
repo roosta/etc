@@ -8,11 +8,13 @@ link: link-conf link-misc link-local post-install
 
 install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-pacaur install-packages install-aur-packages update post_install
 
-min: user-fs
+min-install:
 	sudo apt-get install `cat min_packages.txt`
-	$(MAKE) set-shell
+
+min: user-fs set-shell min-link init-vim init-tmux
+
+min-link: 
 	stow zsh tmux vim bash -R -t ~ -d conf
-	$(MAKE) init-tmux
 
 install-pacaur:
 	@echo -e "\033[0;33mBuild and install pacur...\033[0m"
