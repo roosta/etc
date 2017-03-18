@@ -11,7 +11,7 @@ install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories inst
 min-install:
 	sudo apt-get install `cat min_packages.txt`
 
-min: user-fs set-shell min-link init-vim init-tmux
+min: user-fs set-shell update-zsh min-link init-vim init-tmux
 
 min-link: 
 	stow zsh tmux vim bash -R -t ~ -d conf
