@@ -14,7 +14,7 @@ min-install:
 min: user-fs set-shell update-zsh min-link init-vim init-tmux
 
 min-link: 
-	stow zsh tmux vim bash -R -t ~ -d conf
+	stow zsh git tmux vim bash -R -t ~ -d conf
 
 install-pacaur:
 	@echo -e "\033[0;33mBuild and install pacur...\033[0m"
