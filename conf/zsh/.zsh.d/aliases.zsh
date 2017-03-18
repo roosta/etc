@@ -329,7 +329,7 @@ alias tls="tmux ls"
 alias tc="tmux choose-session"
 alias tk="tmux kill-session -t"
 alias ufw="sudo ufw"
-alias make="colormake"
+# alias make="colormake"
 alias pdf="apvlv"
 
 # https://github.com/xero/dotfiles/blob/master/zsh/.zsh/aliases.zsh

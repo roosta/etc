@@ -405,7 +405,8 @@ Plug 'guns/vim-sexp'
 Plug 'junegunn/rainbow_parentheses.vim'
 
 " syntax
-Plug '~/src/vim-srcery'
+" Plug '~/src/vim-srcery'
+Plug 'roosta/vim-srcery'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Glench/Vim-Jinja2-Syntax'
