@@ -12,6 +12,7 @@ min-install:
 	sudo apt-get install `cat min_packages.txt`
 
 min: user-fs set-shell update-zsh-plugins min-link init-vim init-tmux
+	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 
 min-link: 
 	stow zsh git tmux vim bash -R -t ~ -d conf
