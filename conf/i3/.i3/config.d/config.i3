@@ -190,7 +190,7 @@ bindsym $mod+c kill
 
 set $combi_modi "window;DRun"
 # bindsym $mod+Tab exec --no-startup-id rofi -show DRun
-bindsym $mod+Tab exec --no-startup-id "rofi -show combi -combi-modi \\"window,DRun\\"
+bindsym $mod+Tab exec --no-startup-id "rofi -combi-modi \\"window,drun\\" -show combi -modi combi"
 # bindsym $mod+Tab exec --no-startup-id rofi -show 
 bindsym $mod+grave exec --no-startup-id rofi -show window
 
