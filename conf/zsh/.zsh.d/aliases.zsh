@@ -384,7 +384,7 @@ alias mounttmpfs='sudo mount -t tmpfs tmpfs /mnt -o size=1024m'
 alias npmls='npm -g ls --depth=0'
 alias killemacs='emacsclient -e "(kill-emacs)"'
 alias gpg-reload='gpg-connect-agent reloadagent /bye'
-alias tldr='tldr -t original --linux'
+alias tldr='tldr -t base16 --linux'
 alias repl='rlwrap lumo'
 alias user-mount="sudo mount -o gid=users,fmask=113,dmask=002"
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
