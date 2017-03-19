@@ -160,7 +160,7 @@ label-unfocused = "%{O-20 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F
 label-unfocused-padding = 0
 
 ; urgent = Workspace with urgency hint set
-label-urgent = "%{O-21 F#FF8700 T4}%{F- T-}%{F#1C1B19 B#FF8700} %name% %{F- B-}%{F#FF8700 T4}%{F- T- O-}"
+label-urgent = "%{O-21 F#FBB829 T4}%{F- T-}%{F#1C1B19 B#FBB829} %name% %{F- B-}%{F#FBB829 T4}%{F- T- O-}"
 label-urgent-padding = 0
 
 [module/xwindow]
