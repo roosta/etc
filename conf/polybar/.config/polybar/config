@@ -53,13 +53,13 @@ email = 
 close = 
 hot-tamale = 
 power = 
-
+calendar = 
+clock = 
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 battery_empty = 
-
 
 volume-ramp-0 = ""
 volume-ramp-1 = ""
@@ -110,8 +110,9 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = "Essential PragmataPro:pixelsize=9;2"
-font-1 = "fura code nerd font:pixelsize=11;4"
-font-2 = "fura code nerd font:pixelsize=14;4"
+font-1 = "Essential PragmataPro:pixelsize=9:weight=bold;2"
+font-2 = "fura code nerd font:pixelsize=11;4"
+font-3 = "fura code nerd font:pixelsize=14;4"
 
 ; font-2 = "Wuncon Siji:pixelsize=17;1"
 ; font-0 = fixed:pixelsize=10;1
@@ -125,11 +126,12 @@ modules-right = xkeyboard pkg vpncheck volume memory cpu temperature date time
 tray-position = right
 tray-padding = 0
 tray-scale = 1
+
 ;tray-transparent = true
-tray-background = ${colors.bright-black}
+; tray-background = ${colors.bright-black}
 
 ;wm-restack = bspwm
-;wm-restack = i3
+; wm-restack = i3
 
 ;override-redirect = true
 
@@ -154,22 +156,22 @@ pin-workspaces = true
 strip-wsnumbers = true
 
 label-mode-padding = 0
-label-mode = "%{O-32 F#5573A3 T3}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T3}%{F- B- T- O-}"
+label-mode = "%{O-32 F#5573A3 T4}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T4}%{F- B- T- O-}"
  
 ; focused = Active workspace on focused monitor
-label-focused = "%{O-21 F#E02C6D T3}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T3}%{F- T- O-}"
+label-focused = "%{O-21 F#E02C6D T4}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T4}%{F- T- O-}"
 label-focused-padding = 0
 
 ; visible = Active workspace on unfocused monitor
-label-visible = "%{O-20 F#FCE8C3 T3}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T3}%{F- B- T- O-}"
+label-visible = "%{O-20 F#FCE8C3 T4}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T4}%{F- B- T- O-}"
 label-visible-padding = 0
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = "%{O-20 F#2D2B28 T3}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T3}%{F- B- T- O-}"
+label-unfocused = "%{O-20 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T- O-}"
 label-unfocused-padding = 0
 
 ; urgent = Workspace with urgency hint set
-label-urgent = "%{O-21 F#FF8700 T3}%{F- T-}%{F#1C1B19 B#FF8700} %name% %{F- B-}%{F#FF8700 T3}%{F- T- O-}"
+label-urgent = "%{O-21 F#FF8700 T4}%{F- T-}%{F#1C1B19 B#FF8700} %name% %{F- B-}%{F#FF8700 T4}%{F- T- O-}"
 label-urgent-padding = 0
 
 [module/xwindow]
@@ -181,10 +183,10 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 format = <label-layout> <label-indicator>
 ; format-background = ${colors.bright-black}
-label-layout = "%{F#2D2B28 T3}%{F- T-}%{B#2D2B28} %name% %{B-}%{F#2D2B28 B#00000000 T3}%{F- B- T-}"
+label-layout = "%{F#2D2B28 T4 B#00000000}%{F- T- B-}%{B#2D2B28} %name% %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
 ; label-layout-foreground = ${colors.white}
 ; label-layout-background = ${colors.bright-black}
-label-indicator = "%{F#F75341 O-35 T3}%{F- T-}%{F#FCE8C3 B#F75341} %name% %{F- B-}%{F#F75341 B#00000000 T3}%{F- B- T-}"
+label-indicator = "%{F#F75341 O-35 T4}%{F- T-}%{F#FCE8C3 B#F75341} %name% %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
 ; label-indicator-background = ${colors.bright-black}
 
 [module/pkg]
@@ -193,7 +195,7 @@ interval = 1200
 format = <label>
 ; label-foreground = ${colors.black}
 ; label = "%output:0:100%"
-label = "%{O-23}%output:0:150%"
+label = "%{O-20}%output:0:150%"
 ; format-background = ${colors.blue}
 exec = ~/.config/polybar/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
@@ -203,7 +205,7 @@ type = custom/script
 exec = ~/.config/polybar/vpn.sh
 interval = 5
 ; label-foreground = ${colors.white}
-label = "%{O-44}%output:0:150%"
+label = "%{O-42}%output:0:150%"
 ; label = "%output:0:100%"
 ; label-background = ${colors.yellow}
 ; format-background = ${colors.yellow}
@@ -215,7 +217,7 @@ label = "%{O-44}%output:0:150%"
 
 [module/volume]
 type = internal/volume
-format-volume = "%{F#2D2B28 B#00000000 T3 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#FCE8C3 T3}%{F- B- T-}" 
+format-volume = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
 format-volume-background = ${colors.bright-black}
 label-volume-background = ${colors.bright-black}
 label-volume = "%percentage%%"
@@ -225,7 +227,7 @@ ramp-volume-2 = ${icons.volume-ramp-2}
 ramp-volume-font = 3
 ramp-volume-background = ${colors.bright-black}
 ramp-volume-foreground = ${colors.white}
-label-muted = "%{F#F75341 B#00000000 T3 O-21}%{F- B- T-}%{B#F75341 F#FCE8C3}  muted %{B- F-}%{F#F75341 B#FCE8C3 T3}%{F- B- T-}"
+label-muted = "%{F#F75341 B#00000000 T4 O-21}%{F- B- T-}%{B#F75341 F#FCE8C3}  muted %{B- F-}%{F#F75341 B#FCE8C3 T4}%{F- B- T-}"
 
 ; bar-volume-width = 10
 ; bar-volume-foreground-0 = ${colors.gray}
@@ -256,14 +258,53 @@ interval = 2
 ; format-background = ${colors.blue}
 ; format-prefix-foreground = ${colors.white}
 ; label = MEM %gb_used%/%gb_free% (%percentage_used%%)
-label = "%{F#2D2B28 B#00000000 T3 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#FCE8C3 T3}%{F- B- T-}"
+label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-foreground = ${colors.black}
-format-background = ${colors.bright-blue}
-label = "%{F#2D2B28 B#FCE8C3}  %percentage%%"
+label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+; label = "%{F#2D2B28 B#FCE8C3}  %percentage%%"
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp> <label> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+; format-background = ${colors.magenta}
+; format-warn-background = ${colors.red}
+;
+format-warn = "%{F#F75341 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#F75341} <label-warn> %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+; format-warn = <label-warn>
+
+; format-suffix = ${icons.sep-lg-right-suffix}
+; format-suffix-background = ${colors.magenta}
+; format-suffix-foreground = ${colors.bright-magenta}
+; format-prefix = ${icons.sep-lg-right-prefix}
+; format-prefix-font = 3
+; format-prefix-foreground = ${colors.bright-blue}
+; format-prefix-background = ${colors.magenta}
+
+; format-warn-suffix = ${icons.sep-lg-right-suffix}
+; format-warn-suffix-font = 3
+; format-warn-suffix-background = ${colors.red}
+; format-warn-suffix-foreground = ${colors.bright-magenta}
+; format-warn-prefix = ${icons.sep-lg-right-prefix}
+; format-warn-prefix-font = 3
+; format-warn-prefix-foreground = ${colors.bright-blue}
+
+label = "%temperature%"
+; label-background = ${colors.magenta}
+; label-warn-foreground = ${colors.black}
+; label-warn-background = ${colors.red}
+label-warn = " %temperature%"
+
+ramp-0 = ${icons.temp-ramp-0}
+ramp-1 = ${icons.temp-ramp-1}
+ramp-2 = ${icons.temp-ramp-2}
+; ramp-foreground = ${colors.white}
+; ramp-background = ${colors.magenta}
 
 [module/mpd]
 type = internal/mpd
@@ -350,14 +391,14 @@ type = internal/date
 interval = 5
 date = "%Y-%m-%d"
 
-format-background = ${colors.bright-magenta}
-format-foreground = ${colors.black}
-format-suffix = ${icons.sep-lg-right-suffix}
-format-suffix-font = 3
-format-suffix-foreground = ${colors.cyan}
+; format-background = ${colors.bright-magenta}
+; format-foreground = ${colors.black}
+; format-suffix = ${icons.sep-lg-right-suffix}
+; format-suffix-font = 3
+; format-suffix-foreground = ${colors.cyan}
 ; format-suffix-background = ${colors.cyan}
 
-label = %date% 
+label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}" 
 
 [module/time]
 type = internal/date
@@ -365,14 +406,15 @@ interval = 5
 time = %H:%M
 ; time-alt = %H:%M:%S
 
-format-background = ${colors.cyan}
-format-foreground = ${colors.black}
-format-suffix = ${icons.sep-lg-right-suffix}
-format-suffix-font = 3
-format-suffix-foreground = ${colors.bright-black}
+; format-background = ${colors.cyan}
+; format-foreground = ${colors.black}
+; format-suffix = ${icons.sep-lg-right-suffix}
+; format-suffix-font = 3
+; format-suffix-foreground = ${colors.bright-black}
 ; format-underline = #0a6cf5
 
-label = %time% 
+label = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}  %time% %{F- B- T-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
+; label = %time% 
 
 [module/battery]
 type = internal/battery
@@ -400,44 +442,6 @@ ramp-capacity-foreground = ${colors.white}
 ; animation-charging-2 = 
 animation-charging-foreground = ${colors.white}
 animation-charging-framerate = 750
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = "<ramp>%{B#E02C6D} <label>"
-format-background = ${colors.magenta}
-format-warn-background = ${colors.red}
-format-warn = <label-warn>
-
-format-suffix = ${icons.sep-lg-right-suffix}
-format-suffix-background = ${colors.magenta}
-format-suffix-foreground = ${colors.bright-magenta}
-format-prefix = ${icons.sep-lg-right-prefix}
-format-prefix-font = 3
-format-prefix-foreground = ${colors.bright-blue}
-format-prefix-background = ${colors.magenta}
-
-format-warn-suffix = ${icons.sep-lg-right-suffix}
-format-warn-suffix-font = 3
-format-warn-suffix-background = ${colors.red}
-format-warn-suffix-foreground = ${colors.bright-magenta}
-format-warn-prefix = ${icons.sep-lg-right-prefix}
-format-warn-prefix-font = 3
-format-warn-prefix-foreground = ${colors.bright-blue}
-
-label = "%temperature%"
-label-background = ${colors.magenta}
-label-warn-foreground = ${colors.black}
-label-warn-background = ${colors.red}
-label-warn = " %temperature%"
-
-ramp-0 = ${icons.temp-ramp-0}
-ramp-1 = ${icons.temp-ramp-1}
-ramp-2 = ${icons.temp-ramp-2}
-ramp-foreground = ${colors.white}
-ramp-background = ${colors.magenta}
 
 [module/filesystem]
 type = internal/fs
