@@ -57,14 +57,14 @@ values."
      fasd
      python
      docker
-     ;; slack
+     slack
      git
      lua
      nginx
      react
      chrome
      systemd
-     ;; emoji
+     emoji
      github
      org
      ;; (shell :variables

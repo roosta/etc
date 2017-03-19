@@ -16,7 +16,11 @@
  evil-move-beyond-eol t
 
  yas-snippet-dirs
- '("~/.spacemacs.d/snippets"))
+ '("~/.spacemacs.d/snippets")
+
+ browse-url-browser-function 'browse-url-generic
+ browse-url-generic-program "firefox-developer"
+ )
 
 ;; Cider
 ;; --------
