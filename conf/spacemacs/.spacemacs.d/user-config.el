@@ -31,7 +31,7 @@
  ;; start cljs repl scripts/repl.clj in project
  cider-cljs-lein-repl "(require 'repl)"
 
- cider-pprint-fn "puget"
+ ;; cider-pprint-fn "puget"
  ;; clojure-enable-fancify-symbols t
 
  ;; use app lifecycle functions in cider-refresh
