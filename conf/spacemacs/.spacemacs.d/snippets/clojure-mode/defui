@@ -3,7 +3,7 @@
 # key: defui
 # --
 (defui $1
-  {:stylesheet $2$>
+  {:stylesheet $1-styles$>
   :title "$1"}$>
   (fn [{:keys [classnames]}]$>
     $0))$>
