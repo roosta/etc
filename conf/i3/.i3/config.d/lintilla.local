@@ -56,27 +56,27 @@ set $tertiary_monitor  HDMI-0
 #   }
 # }
 
-bar {
-  id bar-tertiary
-  output $tertiary_monitor
-  status_command i3blocks -c ~/.i3/status/$(hostname)-tertiary.i3blocks 
-  font pango:Essential PragmataPro 5
-  # font pango:Essential PragmataPro, FontAwesome 9
-  position top
-  tray_output primary
-  strip_workspace_numbers yes
-  separator_symbol "/"
-  # sep_block_width 0
-  colors {
-    background $black
-    separator  $gray
-    statusline $white
+# bar {
+#   id bar-tertiary
+#   output $tertiary_monitor
+#   status_command i3blocks -c ~/.i3/status/$(hostname)-tertiary.i3blocks 
+#   font pango:Essential PragmataPro 5
+#   # font pango:Essential PragmataPro, FontAwesome 9
+#   position top
+#   tray_output primary
+#   strip_workspace_numbers yes
+#   separator_symbol "/"
+#   # sep_block_width 0
+#   colors {
+#     background $black
+#     separator  $gray
+#     statusline $white
 
-    # <workclass>      <border> <background> <foreground>
-    focused_workspace  $magenta $magenta $white
-    active_workspace   $black   $black   $white
-    inactive_workspace $black   $black   $white
-    urgent_workspace   $orange  $orange  $black
-  }
-}
+#     # <workclass>      <border> <background> <foreground>
+#     focused_workspace  $magenta $magenta $white
+#     active_workspace   $black   $black   $white
+#     inactive_workspace $black   $black   $white
+#     urgent_workspace   $orange  $orange  $black
+#   }
+# }
 # vim:ft=i3:ts=2:sw=2:fdm=marker

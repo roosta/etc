@@ -5,5 +5,7 @@ nvidia-settings --load-config-only &
 # conky -d -q -c ~/.config/conky/conky-rss.conf &
 # conky -d -q -c ~/.config/conky/conky-stats.conf &
 polybar -r lintilla-primary &
-mopidy &
+polybar -r lintilla-secondary &
+polybar -r lintilla-tertiary &
+# mopidy &
 # vim:ft=sh:ts=2:sw=2:fdm=marker
