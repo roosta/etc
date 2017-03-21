@@ -87,75 +87,130 @@ margin-bottom = 5
 monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 dpi = 96
-height = 24
+height = 20
 radius = 0
 fixed-center = false
 
 background = ${colors.black}
 foreground = ${colors.white}
 
-line-size = 6
-line-color = #f00
-
 padding-left = 0
 padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = "Essential PragmataPro:pixelsize=9;2"
-font-1 = "Essential PragmataPro:pixelsize=9:weight=bold;2"
-font-2 = "fura code nerd font:pixelsize=11;4"
-font-3 = "fura code nerd font:pixelsize=14;4"
+font-0 = "Essential PragmataPro:pixelsize=9"
+font-1 = "Essential PragmataPro:pixelsize=9:weight=bold"
+font-2 = "fura code nerd font:pixelsize=12;0"
+font-3 = "fura code nerd font:pixelsize=14;2"
 modules-left = i3
 modules-right = xkeyboard pkg vpncheck eth-lintilla volume memory cpu temperature date time
 
+;; local variables
+;; module/i3
+i3-label-mode = "%{O-16 F#5573A3 T4}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T4}%{F- B- T- O-}"
+i3-label-focused = "%{O-10 F#E02C6D T4}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T4}%{F- T- O-}"
+i3-label-visible = "%{O-10 F#FCE8C3 T4}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T4}%{F- B- T- O-}"
+i3-label-unfocused = "%{O-10 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T- O-}"
+i3-label-urgent = "%{O-10 F#FBB829 T4}%{F- T-}%{F#1C1B19 B#FBB829} %name% %{F- B-}%{F#FBB829 T4}%{F- T- O-}"
+
+;; module/xkeyboard
+xkeyboard-label-layout = "%{F#2D2B28 T4 B#00000000}%{F- T- B-}%{B#2D2B28} %name% %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+xkeyboard-label-indicator = "%{F#F75341 O-16 T4}%{F- T-}%{F#FCE8C3 B#F75341} %name% %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+
+;;module/pkg
+pkg-label = "%{O-10}%output:0:150%"
+
+;;module/vpncheck
+vpncheck-label = "%{O-21}%output:0:150%"
+
+;;module/eth-lintilla
+eth-lintilla-label-connected = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
+eth-lintilla-label-disconnected = %{F#F75341 B#00000000 T4 O-10}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
+
+;; module/volume
+format-volume = "%{F#2D2B28 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
+volume-label-muted = "%{F#F75341 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#F75341}  muted %{B- F-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+
+;; module/memory
+memory-label = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+
+;; module/cpu
+cpu-label = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage:2%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+
+;; module/temperature
+temp-format = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp> <label> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+temp-format-warn = "%{F#F75341 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#F75341} <label-warn> %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+
+;; module/date & time
+date-label = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}" 
+time-label = "%{F#2D2B28 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}  %time% %{F- B- T-}%{F#2D2B28 B#00000000 T4}%{O-20}%{F- B- T-}" 
 
 [bar/lintilla-primary]
+;; settings
 monitor = ${env:MONITOR:DP-1}
 width = 100%
 dpi = 192
 height = 35
-;offset-x = 1%
-;offset-y = 1%
 radius = 0
 fixed-center = false
-
 background = ${colors.black}
 foreground = ${colors.white}
-
-line-size = 6
-line-color = #f00
-
-; module-margin = -5
-; border-size = 4
-; border-color = #00000000
-
 padding-left = 0
 padding-right = 0
-
 module-margin-left = 0
 module-margin-right = 0
-
 font-0 = "Essential PragmataPro:pixelsize=9;2"
 font-1 = "Essential PragmataPro:pixelsize=9:weight=bold;2"
 font-2 = "fura code nerd font:pixelsize=11;4"
 font-3 = "fura code nerd font:pixelsize=14;4"
-
 modules-left = i3
 ; modules-center = xwindow
 modules-right = xkeyboard pkg vpncheck eth-lintilla volume memory cpu temperature date time
-
 tray-position = right
 tray-padding = 0
 tray-scale = 1
-
-;tray-transparent = true
 tray-background = ${colors.bright-black}
-;wm-restack = bspwm
-; wm-restack = i3
-;override-redirect = true
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+
+;; local variables
+;; module/i3
+i3-label-mode = "%{O-32 F#5573A3 T4}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T4}%{F- B- T- O-}"
+i3-label-focused = "%{O-21 F#E02C6D T4}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T4}%{F- T- O-}"
+i3-label-visible = "%{O-20 F#FCE8C3 T4}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T4}%{F- B- T- O-}"
+i3-label-unfocused = "%{O-20 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T- O-}"
+i3-label-urgent = "%{O-21 F#FBB829 T4}%{F- T-}%{F#1C1B19 B#FBB829} %name% %{F- B-}%{F#FBB829 T4}%{F- T- O-}"
+
+;; module/xkeyboard
+xkeyboard-label-layout = "%{F#2D2B28 T4 B#00000000}%{F- T- B-}%{B#2D2B28} %name% %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+xkeyboard-label-indicator = "%{F#F75341 O-35 T4}%{F- T-}%{F#FCE8C3 B#F75341} %name% %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+
+;;module/pkg
+pkg-label = "%{O-20}%output:0:150%"
+
+;;module/vpncheck
+vpncheck-label = "%{O-42}%output:0:150%"
+
+;;module/eth-lintilla
+eth-lintilla-label-connected = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
+eth-lintilla-label-disconnected = %{F#F75341 B#00000000 T4}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
+
+;; module/volume
+format-volume = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
+volume-label-muted = "%{F#F75341 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#F75341}  muted %{B- F-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+
+;; module/memory
+memory-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+
+;; module/cpu
+cpu-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage:2%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+
+;; module/temperature
+temp-format = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp> <label> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+temp-format-warn = "%{F#F75341 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#F75341} <label-warn> %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+
+;; module/date & time
+date-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}" 
+time-label = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}  %time% %{F- B- T-}%{F#2D2B28 B#00000000 T4}%{O-20}%{F- B- T-}" 
 
 [module/i3]
 type = internal/i3
@@ -168,26 +223,17 @@ enable-scroll = false
 pin-workspaces = true
 
 ; This will split the workspace name on ':'
-; Default: false
 strip-wsnumbers = true
 
 label-mode-padding = 0
-label-mode = "%{O-32 F#5573A3 T4}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T4}%{F- B- T- O-}"
- 
-; focused = Active workspace on focused monitor
-label-focused = "%{O-21 F#E02C6D T4}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T4}%{F- T- O-}"
+label-mode = ${root.i3-label-mode}
+label-focused = ${root.i3-label-focused}
 label-focused-padding = 0
-
-; visible = Active workspace on unfocused monitor
-label-visible = "%{O-20 F#FCE8C3 T4}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T4}%{F- B- T- O-}"
+label-visible = ${root.i3-label-visible}
 label-visible-padding = 0
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = "%{O-20 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T- O-}"
+label-unfocused = ${root.i3-label-unfocused}
 label-unfocused-padding = 0
-
-; urgent = Workspace with urgency hint set
-label-urgent = "%{O-21 F#FBB829 T4}%{F- T-}%{F#1C1B19 B#FBB829} %name% %{F- B-}%{F#FBB829 T4}%{F- T- O-}"
+label-urgent = ${root.i3-label-urgent}
 label-urgent-padding = 0
 
 [module/xwindow]
@@ -198,14 +244,14 @@ label = " %title:0:50:...% "
 type = internal/xkeyboard
 blacklist-0 = num lock
 format = <label-layout> <label-indicator>
-label-layout = "%{F#2D2B28 T4 B#00000000}%{F- T- B-}%{B#2D2B28} %name% %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
-label-indicator = "%{F#F75341 O-35 T4}%{F- T-}%{F#FCE8C3 B#F75341} %name% %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+label-layout = ${root.xkeyboard-label-layout}
+label-indicator = ${root.xkeyboard-label-indicator}
 
 [module/pkg]
 type = custom/script
 interval = 1200
 format = <label>
-label = "%{O-20}%output:0:150%"
+label = ${root.pkg-label}
 exec = ~/.config/polybar/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
@@ -213,13 +259,12 @@ exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 type = custom/script
 exec = ~/.config/polybar/vpn.sh
 interval = 5
-label = "%{O-42}%output:0:150%"
+label = ${root.vpncheck-label}
 
 [module/volume]
 type = internal/volume
-format-volume = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
-format-volume-background = ${colors.bright-black}
-label-volume-background = ${colors.bright-black}
+format-volume = ${root.format-volume}
+label-muted = ${root.volume-label-muted}
 label-volume = "%percentage%%"
 ramp-volume-0 = ${icons.volume-ramp-0}
 ramp-volume-1 = ${icons.volume-ramp-1}
@@ -227,7 +272,6 @@ ramp-volume-2 = ${icons.volume-ramp-2}
 ramp-volume-font = 3
 ramp-volume-background = ${colors.bright-black}
 ramp-volume-foreground = ${colors.white}
-label-muted = "%{F#F75341 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#F75341}  muted %{B- F-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
 
 ; bar-volume-width = 10
 ; bar-volume-foreground-0 = ${colors.gray}
@@ -252,20 +296,20 @@ label-muted = "%{F#F75341 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#F75341} 
 [module/memory]
 type = internal/memory
 interval = 2
-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+label = ${root.memory-label}
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+label = ${root.cpu-label}
 
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp> <label> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
-format-warn = "%{F#F75341 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#F75341} <label-warn> %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+format = ${root.temp-format}
+format-warn = ${root.temp-format-warn}
 label = "%temperature%"
 label-warn = " %temperature%"
 ramp-0 = ${icons.temp-ramp-0}
@@ -339,22 +383,22 @@ ramp-signal-foreground = ${colors.white}
 type = internal/network
 interface = enp9s0
 interval = 3.0
-label-connected = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed%   %upspeed% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
+label-connected = ${root.eth-lintilla-label-connected}
+label-disconnected = ${root.eth-lintilla-label-disconnected}
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
-label-disconnected = %{F#F75341 B#00000000 T4}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
 
 [module/date]
 type = internal/date
 interval = 5
 date = "%Y-%m-%d"
-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}" 
+label = ${root.date-label}
 
 [module/time]
 type = internal/date
 interval = 5
 time = %H:%M
-label = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}  %time% %{F- B- T-}%{F#2D2B28 B#00000000 T4}%{O-20}%{F- B- T-}" 
+label = ${root.time-label}
 
 [module/battery]
 type = internal/battery
