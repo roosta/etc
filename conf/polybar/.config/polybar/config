@@ -83,6 +83,33 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
+[bar/lintilla-secondary]
+monitor = ${env:MONITOR:DVI-D-0}
+width = 100%
+dpi = 96
+height = 24
+radius = 0
+fixed-center = false
+
+background = ${colors.black}
+foreground = ${colors.white}
+
+line-size = 6
+line-color = #f00
+
+padding-left = 0
+padding-right = 0
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = "Essential PragmataPro:pixelsize=9;2"
+font-1 = "Essential PragmataPro:pixelsize=9:weight=bold;2"
+font-2 = "fura code nerd font:pixelsize=11;4"
+font-3 = "fura code nerd font:pixelsize=14;4"
+modules-left = i3
+modules-right = xkeyboard pkg vpncheck eth-lintilla volume memory cpu temperature date time
+
+
 [bar/lintilla-primary]
 monitor = ${env:MONITOR:DP-1}
 width = 100%
@@ -91,7 +118,7 @@ height = 35
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
-fixed-center = true
+fixed-center = false
 
 background = ${colors.black}
 foreground = ${colors.white}
@@ -115,15 +142,15 @@ font-2 = "fura code nerd font:pixelsize=11;4"
 font-3 = "fura code nerd font:pixelsize=14;4"
 
 modules-left = i3
-; modules-center = mpd
-modules-right = xkeyboard pkg vpncheck volume memory cpu temperature date time
+; modules-center = xwindow
+modules-right = xkeyboard pkg vpncheck eth-lintilla volume memory cpu temperature date time
 
 tray-position = right
 tray-padding = 0
 tray-scale = 1
 
 ;tray-transparent = true
-; tray-background = ${colors.bright-black}
+tray-background = ${colors.bright-black}
 ;wm-restack = bspwm
 ; wm-restack = i3
 ;override-redirect = true
@@ -165,7 +192,7 @@ label-urgent-padding = 0
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:50:...%
+label = " %title:0:50:...% "
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -190,7 +217,7 @@ label = "%{O-42}%output:0:150%"
 
 [module/volume]
 type = internal/volume
-format-volume = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
+format-volume = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
 format-volume-background = ${colors.bright-black}
 label-volume-background = ${colors.bright-black}
 label-volume = "%percentage%%"
@@ -200,7 +227,7 @@ ramp-volume-2 = ${icons.volume-ramp-2}
 ramp-volume-font = 3
 ramp-volume-background = ${colors.bright-black}
 ramp-volume-foreground = ${colors.white}
-label-muted = "%{F#F75341 B#00000000 T4 O-21}%{F- B- T-}%{B#F75341 F#FCE8C3}  muted %{B- F-}%{F#F75341 B#FCE8C3 T4}%{F- B- T-}"
+label-muted = "%{F#F75341 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#F75341}  muted %{B- F-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
 
 ; bar-volume-width = 10
 ; bar-volume-foreground-0 = ${colors.gray}
@@ -308,52 +335,26 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.white}
 
-[module/eth]
+[module/eth-lintilla]
 type = internal/network
 interface = enp9s0
 interval = 3.0
-
-; format-connected-underline = #55aa55
-; format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.white}
-label-connected = " %upspeed%  %downspeed%"
+label-connected = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed%   %upspeed% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
 format-connected = <label-connected>
-
-; format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = <label-disconnected>
+label-disconnected = %{F#F75341 B#00000000 T4}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
 
 [module/date]
 type = internal/date
 interval = 5
 date = "%Y-%m-%d"
-
-; format-background = ${colors.bright-magenta}
-; format-foreground = ${colors.black}
-; format-suffix = ${icons.sep-lg-right-suffix}
-; format-suffix-font = 3
-; format-suffix-foreground = ${colors.cyan}
-; format-suffix-background = ${colors.cyan}
-
 label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}" 
 
 [module/time]
 type = internal/date
 interval = 5
 time = %H:%M
-; time-alt = %H:%M:%S
-
-; format-background = ${colors.cyan}
-; format-foreground = ${colors.black}
-; format-suffix = ${icons.sep-lg-right-suffix}
-; format-suffix-font = 3
-; format-suffix-foreground = ${colors.bright-black}
-; format-underline = #0a6cf5
-
-label = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}  %time% %{F- B- T-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
-; label = %time% 
+label = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}  %time% %{F- B- T-}%{F#2D2B28 B#00000000 T4}%{O-20}%{F- B- T-}" 
 
 [module/battery]
 type = internal/battery
