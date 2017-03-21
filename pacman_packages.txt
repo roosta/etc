@@ -183,3 +183,4 @@ zsh-completions
 zsh-doc
 zsh-lovers
 zshdb
+xcb-util-xrm

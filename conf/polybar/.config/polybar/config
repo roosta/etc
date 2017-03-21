@@ -11,26 +11,26 @@
 ;background = ${xrdb:color0:#222}
 ;foreground = ${xrdb:color7:#222}
 
-black = #1C1B19
-bright-black = #2D2B28
-red = #FF3128
-bright-red = #F75341
-green = #519F50
-bright-green = #98BC37
-yellow = #FBB829
-bright-yellow = #FED06E
-blue = #5573A3
-bright-blue = #8EB2F7
-magenta = #E02C6D
-bright-magenta = #E35682
-cyan = #0AAEB3
-bright-cyan = #53FDE9
-gray = #918175
-white = #FCE8C3
-orange = #D75F00
-bright-orange = #FF8700
-hard-black = #080808
-alt-gray = #4E4E4E
+black          = ${xrdb:color0:#1C1B19}
+bright-black   = ${xrdb:color8:#2D2B28}
+red            = ${xrdb:color1:#FF3128}
+bright-red     = ${xrdb:color9:#F75341}
+green          = ${xrdb:color2:#519F50}
+bright-green   = ${xrdb:color10:#98BC37}
+yellow         = ${xrdb:color3:#FBB829}
+bright-yellow  = ${xrdb:color11:#FED06E}
+blue           = ${xrdb:color4:#5573A3}
+bright-blue    = ${xrdb:color12:#8EB2F7}
+magenta        = ${xrdb:color5:#E02C6D}
+bright-magenta = ${xrdb:color13:#E35682}
+cyan           = ${xrdb:color6:#0AAEB3}
+bright-cyan    = ${xrdb:color14:#53FDE9}
+gray           = ${xrdb:color7:#918175}
+white          = ${xrdb:color15:#FCE8C3}
+orange         = ${xrdb:color166:#D75F00}
+bright-orange  = ${xrdb:color208:#FF8700}
+hard-black     = ${xrdb:color232:#080808}
+alt-gray       = ${xrdb:color239:#4E4E4E}
 
 [icons]
 sep-lg-right-prefix = 
