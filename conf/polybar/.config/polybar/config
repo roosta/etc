@@ -127,9 +127,9 @@ pkg-label = "%{O-20}%output:0:150%"
 ;;module/vpncheck
 vpncheck-label = "%{O-42}%output:0:150%"
 
-;;module/eth-lintilla
-eth-lintilla-label-connected = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
-eth-lintilla-label-disconnected = %{F#F75341 B#00000000 T4}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
+;;module/eth
+eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
+eth-label-disconnected = %{F#F75341 B#00000000 T4}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
 
 ;; module/volume
 format-volume = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
@@ -191,8 +191,8 @@ pkg-label = "%{O-10}%output:0:150%"
 vpncheck-label = "%{O-21}%output:0:150%"
 
 ;;module/eth-lintilla
-eth-lintilla-label-connected = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
-eth-lintilla-label-disconnected = %{F#F75341 B#00000000 T4 O-10}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
+eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
+eth-label-disconnected = %{F#F75341 B#00000000 T4 O-10}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
 
 ;; module/volume
 format-volume = "%{F#2D2B28 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
@@ -215,6 +215,22 @@ time-label = "%{F#2D2B28 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2
 [bar/lintilla-tertiary]
 inherit = bar/lintilla-secondary
 monitor = ${env:MONITOR:HDMI-0}
+
+[bar/garkbit-primary]
+inherit = bar/lintilla-primary
+monitor = ${env:MONITOR:DP1}
+modules-right = xkeyboard pkg eth-garkbit volume memory cpu temperature date time
+;;module/eth
+eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
+eth-label-disconnected = %{F#F75341 B#00000000 T4 O-20}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
+
+[bar/garkbit-secondary]
+inherit = bar/lintilla-secondary
+monitor = ${env:MONITOR:HDMI2}
+modules-right = xkeyboard pkg eth-garkbit volume memory cpu temperature date time
+;;module/eth
+eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
+eth-label-disconnected = %{F#F75341 B#00000000 T4 O-10}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
 
 [module/i3]
 type = internal/i3
@@ -383,14 +399,21 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.white}
 
-[module/eth-lintilla]
+[module/eth]
 type = internal/network
-interface = enp9s0
 interval = 3.0
-label-connected = ${root.eth-lintilla-label-connected}
-label-disconnected = ${root.eth-lintilla-label-disconnected}
+label-connected = ${root.eth-label-connected}
+label-disconnected = ${root.eth-label-disconnected}
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
+
+[module/eth-lintilla]
+inherit = module/eth
+interface = enp9s0
+
+[module/eth-garkbit]
+inherit = module/eth
+interface = enp2s0
 
 [module/date]
 type = internal/date

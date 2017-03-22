@@ -4,50 +4,50 @@
 set $primary_monitor   DP1
 set $secondary_monitor HDMI2
 
-bar {
-  id bar-primary
-  output $primary_monitor
-  # output $secondary_monitor
-  status_command i3blocks -c ~/.i3/status/$(hostname).i3blocks 
-  font pango:Essential PragmataPro 8
-  position top
-  tray_output primary
-  strip_workspace_numbers yes
-  separator_symbol "/"
-  # sep_block_width 0
-  colors {
-    background $black
-    separator  $gray
-    statusline $white
+# bar {
+#   id bar-primary
+#   output $primary_monitor
+#   # output $secondary_monitor
+#   status_command i3blocks -c ~/.i3/status/$(hostname).i3blocks 
+#   font pango:Essential PragmataPro 8
+#   position top
+#   tray_output primary
+#   strip_workspace_numbers yes
+#   separator_symbol "/"
+#   # sep_block_width 0
+#   colors {
+#     background $black
+#     separator  $gray
+#     statusline $white
 
-    # <workclass>      <border> <background> <foreground>
-    focused_workspace  $magenta $magenta $white
-    active_workspace   $black   $black   $white
-    inactive_workspace $black   $black   $white
-    urgent_workspace   $orange  $orange  $black
-  }
-}
+#     # <workclass>      <border> <background> <foreground>
+#     focused_workspace  $magenta $magenta $white
+#     active_workspace   $black   $black   $white
+#     inactive_workspace $black   $black   $white
+#     urgent_workspace   $orange  $orange  $black
+#   }
+# }
 
-bar {
-  id bar-secondary
-  output $secondary_monitor
-  status_command i3blocks -c ~/.i3/status/$(hostname).i3blocks 
-  font pango:Essential PragmataPro 5
-  position top
-  tray_output primary
-  strip_workspace_numbers yes
-  separator_symbol "/"
-  # sep_block_width 0
-  colors {
-    background $black
-    separator  $gray
-    statusline $white
+# bar {
+#   id bar-secondary
+#   output $secondary_monitor
+#   status_command i3blocks -c ~/.i3/status/$(hostname).i3blocks 
+#   font pango:Essential PragmataPro 5
+#   position top
+#   tray_output primary
+#   strip_workspace_numbers yes
+#   separator_symbol "/"
+#   # sep_block_width 0
+#   colors {
+#     background $black
+#     separator  $gray
+#     statusline $white
 
-    # <workclass>      <border> <background> <foreground>
-    focused_workspace  $magenta $magenta $white
-    active_workspace   $black   $black   $white
-    inactive_workspace $black   $black   $white
-    urgent_workspace   $orange  $orange  $black
-  }
-}
+#     # <workclass>      <border> <background> <foreground>
+#     focused_workspace  $magenta $magenta $white
+#     active_workspace   $black   $black   $white
+#     inactive_workspace $black   $black   $white
+#     urgent_workspace   $orange  $orange  $black
+#   }
+# }
 # vim:ft=i3:ts=2:sw=2:fdm=marker
