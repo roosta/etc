@@ -4,8 +4,8 @@ nvidia-settings --load-config-only &
 # thunderbird --mail &
 # conky -d -q -c ~/.config/conky/conky-rss.conf &
 # conky -d -q -c ~/.config/conky/conky-stats.conf &
-polybar -r lintilla-primary &
-polybar -r lintilla-secondary &
-polybar -r lintilla-tertiary &
+polybar lintilla-primary &
+polybar lintilla-secondary &
+polybar lintilla-tertiary &
 # mopidy &
 # vim:ft=sh:ts=2:sw=2:fdm=marker
