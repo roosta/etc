@@ -174,43 +174,43 @@ modules-right = xkeyboard pkg vpncheck eth-lintilla volume memory cpu temperatur
 
 ;; local variables
 ;; module/i3
-i3-label-mode = "%{O-16 F#5573A3 T4}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T4}%{F- B- T- O-}"
-i3-label-focused = "%{O-10 F#E02C6D T4}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T4}%{F- T- O-}"
-i3-label-visible = "%{O-10 F#FCE8C3 T4}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T4}%{F- B- T- O-}"
-i3-label-unfocused = "%{O-10 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T- O-}"
-i3-label-urgent = "%{O-10 F#FBB829 T4}%{F- T-}%{F#1C1B19 B#FBB829} %name% %{F- B-}%{F#FBB829 T4}%{F- T- O-}"
+i3-label-mode = "%{O-15 F#5573A3 T4}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T4}%{F- B- T- O-}"
+i3-label-focused = "%{O-9 F#E02C6D T4}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T4}%{F- T- O-}"
+i3-label-visible = "%{O-9 F#FCE8C3 T4}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T4}%{F- B- T- O-}"
+i3-label-unfocused = "%{O-9 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T- O-}"
+i3-label-urgent = "%{O-9 F#FBB829 T4}%{F- T-}%{F#1C1B19 B#FBB829} %name% %{F- B-}%{F#FBB829 T4}%{F- T- O-}"
 
 ;; module/xkeyboard
 xkeyboard-label-layout = "%{F#2D2B28 T4 B#00000000}%{F- T- B-}%{B#2D2B28} %name% %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
-xkeyboard-label-indicator = "%{F#F75341 O-16 T4}%{F- T-}%{F#FCE8C3 B#F75341} %name% %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+xkeyboard-label-indicator = "%{F#F75341 O-15 T4}%{F- T-}%{F#FCE8C3 B#F75341} %name% %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
 
 ;;module/pkg
 pkg-label = "%{O-10}%output:0:150%"
 
 ;;module/vpncheck
-vpncheck-label = "%{O-21}%output:0:150%"
+vpncheck-label = "%{O-20}%output:0:150%"
 
 ;;module/eth-lintilla
-eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
-eth-label-disconnected = %{F#F75341 B#00000000 T4 O-10}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
+eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-9}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
+eth-label-disconnected = %{F#F75341 B#00000000 T4 O-9}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
 
 ;; module/volume
-format-volume = "%{F#2D2B28 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
-volume-label-muted = "%{F#F75341 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#F75341}  muted %{B- F-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+format-volume = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
+volume-label-muted = "%{F#F75341 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#F75341}  muted %{B- F-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
 
 ;; module/memory
-memory-label = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+memory-label = "%{F#2D2B28 B#00000000 T4 O-9}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
 
 ;; module/cpu
-cpu-label = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage:2%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+cpu-label = "%{F#2D2B28 B#00000000 T4 O-9}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage:2%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
 
 ;; module/temperature
-temp-format = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp> <label> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
-temp-format-warn = "%{F#F75341 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#F75341} <label-warn> %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+temp-format = "%{F#2D2B28 B#00000000 T4 O-9}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp> <label> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+temp-format-warn = "%{F#F75341 B#00000000 T4 O-9}%{F- B- T-}%{F#FCE8C3 B#F75341} <label-warn> %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
 
 ;; module/date & time
-date-label = "%{F#2D2B28 B#00000000 T4 O-10}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}" 
-time-label = "%{F#2D2B28 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}  %time% %{F- B- T-}%{F#2D2B28 B#00000000 T4}%{O-20}%{F- B- T-}" 
+date-label = "%{F#2D2B28 B#00000000 T4 O-9}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}" 
+time-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}  %time% %{F- B- T-}%{F#2D2B28 B#00000000 T4}%{O-19}%{F- B- T-}" 
 
 [bar/lintilla-tertiary]
 inherit = bar/lintilla-secondary
