@@ -132,22 +132,23 @@ eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#
 eth-label-disconnected = %{F#F75341 B#00000000 T4}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
 
 ;; module/volume
-format-volume = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
+format-volume = "%{F#918175 B#00000000 T4 O-42}%{F- B- T-}<ramp-volume>%{F#918175 B#2D2B28}%{F#FCE8C3}<label-volume>%{B#2D2B28}%{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
 volume-label-muted = "%{F#F75341 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#F75341}  muted %{B- F-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
 
 ;; module/memory
-memory-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+memory-label = "%{F#918175 B#00000000 T4 O-20}%{F#2D2B28 B#918175}%{F- B- T-}%{F#918175 B#2D2B28}%{F#FCE8C3 B#2D2B28}%percentage_used%%%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
 
 ;; module/cpu
-cpu-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage:2%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+cpu-label = "%{F#918175 B#00000000 T4 O-20}%{F#2D2B28 B#918175}%{F- B- T-}%{F#918175 B#2D2B28}%{F#FCE8C3 B#2D2B28}%percentage:2%%%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
 
 ;; module/temperature
-temp-format = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp> <label> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
-temp-format-warn = "%{F#F75341 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#F75341} <label-warn> %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+temp-format = "%{F#918175 B#00000000 T4 O-20}%{F#2D2B28 B#918175 T3}<ramp>%{F#918175 B#2D2B28}%{F- B- T-}%{F#FCE8C3 B#2D2B28}<label>%{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+temp-format-warn = "%{F#F75341 B#00000000 T4 O-20}%{F#FCE8C3 B#F75341 T3}%{F#F75341 B#FF3128}%{F- B- T-}%{F#FCE8C3 B#FF3128} <label-warn> %{F- B-}%{F#FF3128 B#00000000 T4}%{F- B- T-}"
+; temp-format-warn = "%{F#F75341 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#F75341} <label-warn> %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
 
 ;; module/date & time
-date-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}" 
-time-label = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}  %time% %{F- B- T-}%{F#2D2B28 B#00000000 T4}%{O-20}%{F- B- T-}" 
+date-label = "%{F#918175 B#00000000 T4 O-20}%{F#2D2B28 B#918175}%{F#918175 B#2D2B28}%{F- B- T-}%{F#FCE8C3 B#2D2B28}%date% %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
+time-label = "%{F#918175 B#00000000 T4 O-20}%{F#2D2B28 B#918175}%{F#918175 B#2D2B28}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}%time%%{F- B- T-}%{F#2D2B28 B#00000000 T4}%{O-20}%{F- B- T-}" 
 
 [bar/lintilla-secondary]
 monitor = ${env:MONITOR:DVI-D-0}
@@ -289,9 +290,9 @@ label-volume = "%percentage%%"
 ramp-volume-0 = ${icons.volume-ramp-0}
 ramp-volume-1 = ${icons.volume-ramp-1}
 ramp-volume-2 = ${icons.volume-ramp-2}
-ramp-volume-font = 3
-ramp-volume-background = ${colors.bright-black}
-ramp-volume-foreground = ${colors.white}
+ramp-volume-font = 4
+ramp-volume-background = ${colors.gray}
+ramp-volume-foreground = ${colors.black}
 
 ; bar-volume-width = 10
 ; bar-volume-foreground-0 = ${colors.gray}
@@ -331,7 +332,7 @@ warn-temperature = 60
 format = ${root.temp-format}
 format-warn = ${root.temp-format-warn}
 label = "%temperature%"
-label-warn = " %temperature%"
+label-warn = %temperature%
 ramp-0 = ${icons.temp-ramp-0}
 ramp-1 = ${icons.temp-ramp-1}
 ramp-2 = ${icons.temp-ramp-2}
