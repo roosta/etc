@@ -143,7 +143,7 @@ cpu-label = "%{F#2D2B28 B#00000000 T4 O-18}%{F- B- T-}%{F#FCE8C3 B#2D2B28} �
 
 ;; module/temperature
 temp-format = "%{F#2D2B28 B#00000000 T4 O-18}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp> <label> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
-temp-format-warn = "%{F#F75341 B#00000000 T4 O-18}%{F- B- T-}%{F#FCE8C3 B#F75341} <label-warn> %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+temp-format-warn = "%{F#2D2B28 B#00000000 T4 O-18}%{F- B- T-}%{F#F75341 B#2D2B28} <label-warn> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
 
 ;; module/date & time
 date-label = "%{F#2D2B28 B#00000000 T4 O-18}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}" 
