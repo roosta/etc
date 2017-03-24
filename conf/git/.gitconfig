@@ -35,6 +35,8 @@
   last      = log -1 HEAD
   ctags     = !.git/hooks/ctags
   last-sha  = rev-parse --short HEAD
+  pom       = push -u origin master
+  pod       = push -u origin develop
 [init]
   templatedir = ~/.git_template
 [merge]
