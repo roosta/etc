@@ -1,7 +1,6 @@
 [options]
 
-font = Powerline Extra Symbols 9
-font = Essential PragmataPro 9
+font = EssentialPragmataPro Nerd Font 9
 ; font = FuraCode Nerd Font 9
 # font = Envy Code R 9
 # font = Fira Code 10
