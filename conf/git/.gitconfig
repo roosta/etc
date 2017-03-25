@@ -32,7 +32,7 @@
   fuck      = !git reset --hard HEAD && git clean -d -f
   uncommit  = reset --mixed HEAD~
   amend     = commit --amend
-  last      = log -1 HEAD
+	last = cat-file commit HEAD
   ctags     = !.git/hooks/ctags
   last-sha  = rev-parse --short HEAD
   pom       = push -u origin master

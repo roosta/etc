@@ -5,3 +5,4 @@ GTAGS
 GRTAGS
 GPATH
 .#*
+**/nohup.out
