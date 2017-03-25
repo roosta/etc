@@ -101,8 +101,8 @@ padding-left = 0
 padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
-font-0 = "Essential PragmataPro:pixelsize=9;2"
-font-1 = "Essential PragmataPro:pixelsize=9:weight=bold;2"
+font-0 = "EssentialPragmataPro Nerd Font:pixelsize=9;2"
+font-1 = "EssentialPragmataPro Nerd Font:pixelsize=9:weight=bold;2"
 font-2 = "fura code nerd font:pixelsize=11;4"
 font-3 = "fura code nerd font:pixelsize=14;4"
 modules-left = i3 xwindow
@@ -122,7 +122,7 @@ i3-label-unfocused = "%{O-20 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% 
 i3-label-urgent = "%{O-20 F#FBB829 T4}%{F- T-}%{F#1C1B19 B#FBB829} %name% %{F- B-}%{F#FBB829 T4}%{F- T- O-}"
 
 ;; module/xwindow
-xwindow-label = "%{F#2D2B28 O-17}%{F#918175 B#2D2B28} %title:0:50:...% %{F#2D2B28 B#1C1B19 T4}%{B#00000000 O-20}%{O- F- T- B-}"
+xwindow-label = "%{F#2D2B28 O-20 T4}%{F#918175 B#2D2B28 T1} %title:0:50:...% %{F#2D2B28 B#1C1B19 T4}%{B#00000000 O-20}%{O- F- T- B-}"
 
 ;; module/xkeyboard
 xkeyboard-label-layout = "%{F#2D2B28 B#1C1B19 T4}%{B#00000000 O-20}%{O- F- T- B-}%{B#2D2B28} %name% %{B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
