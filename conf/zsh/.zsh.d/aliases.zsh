@@ -260,12 +260,13 @@ alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l $H
 #}}}
 ## PACMAN {{{1
 ## -------------
-alias pacman="pacaur --color=always"
+alias pacman="pacman --color=always"
+alias pacaur="pacaur --color=always" 
 
 # iNSTALLING
-alias pacs="pacman -S" # Install specific package(s) from the repositories
+alias pacs="sudo pacman -S" # Install specific package(s) from the repositories
 alias pacss="pacman -Ss" # Search for package(s) in the repositories
-alias pacsso="\pacman -Ss --color=always" # Search for package(s) in the official repositories
+# alias pacsso="\pacman -Ss --color=always" # Search for package(s) in the official repositories
 alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
 alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
 alias pacinsd="pacman -S --asdeps" # Install given package(s) as dependencies
@@ -279,7 +280,7 @@ alias pacrfff="pacman -Rcs" # !! Remove the specified package(s), and everything
 alias pacc="pacman -Scc" # Clean cache - delete all the package files in the cache
 
 # ORPHANS
-alias pacor="\sudo pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
+alias pacor="sudo pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
 alias paco="pacman -Qdt" # List all packages which are orphaned
 
 # QUERY
