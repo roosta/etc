@@ -1,4 +1,5 @@
-{:user {:dependencies [[com.cemerick/piggieback "0.2.1"]
+{:user {:jvm-opts ^:replace ["-Xmx1024M"]
+        :dependencies [[com.cemerick/piggieback "0.2.1"]
                        ; [mvxcvi/puget "1.0.1"]
                        [org.clojure/tools.nrepl "0.2.12"]
                        [org.clojure/tools.namespace "0.2.11"] ]
