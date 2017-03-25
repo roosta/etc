@@ -55,11 +55,15 @@ hot-tamale = 
 power = 
 calendar = 
 clock = 
+flame = 
+down = 
+up = 
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-battery_empty = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+battery-empty = 
+battery-full = 
 
 volume-ramp-0 = ""
 volume-ramp-1 = ""
@@ -88,10 +92,10 @@ margin-bottom = 5
 monitor = ${env:MONITOR:DP-1}
 width = 100%
 dpi = 192
-height = 35
+height = 32
 radius = 0
 fixed-center = false
-background = ${colors.black}
+background = ${colors.bright-black}
 foreground = ${colors.white}
 padding-left = 0
 padding-right = 0
@@ -101,9 +105,9 @@ font-0 = "Essential PragmataPro:pixelsize=9;2"
 font-1 = "Essential PragmataPro:pixelsize=9:weight=bold;2"
 font-2 = "fura code nerd font:pixelsize=11;4"
 font-3 = "fura code nerd font:pixelsize=14;4"
-modules-left = i3
+modules-left = i3 xwindow
 ; modules-center = xwindow
-modules-right = xkeyboard pkg vpncheck eth-lintilla volume memory cpu temperature date time
+modules-right = xkeyboard pkg vpncheck eth-lintilla volume memory cpu temperature time
 tray-position = right
 tray-padding = 0
 tray-scale = 1
@@ -112,42 +116,46 @@ tray-background = ${colors.bright-black}
 ;; local variables
 ;; module/i3
 i3-label-mode = "%{O-30 F#5573A3 T4}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T4}%{F- B- T- O-}"
-i3-label-focused = "%{O-19 F#E02C6D T4}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T4}%{F- T- O-}"
-i3-label-visible = "%{O-18 F#FCE8C3 T4}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T4}%{F- B- T- O-}"
-i3-label-unfocused = "%{O-18 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T- O-}"
-i3-label-urgent = "%{O-19 F#FBB829 T4}%{F- T-}%{F#1C1B19 B#FBB829} %name% %{F- B-}%{F#FBB829 T4}%{F- T- O-}"
+i3-label-focused = "%{O-20 F#E02C6D T4}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T4}%{F- T- O-}"
+i3-label-visible = "%{O-20 F#FCE8C3 T4}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T4}%{F- B- T- O-}"
+i3-label-unfocused = "%{O-20 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T- O-}"
+i3-label-urgent = "%{O-20 F#FBB829 T4}%{F- T-}%{F#1C1B19 B#FBB829} %name% %{F- B-}%{F#FBB829 T4}%{F- T- O-}"
+
+;; module/xwindow
+xwindow-label = "%{F#2D2B28 O-17}%{F#918175 B#2D2B28} %title:0:50:...% %{F#2D2B28 B#1C1B19 T4}%{B#00000000 O-20}%{O- F- T- B-}"
 
 ;; module/xkeyboard
-xkeyboard-label-layout = "%{F#2D2B28 T4 B#00000000}%{F- T- B-}%{B#2D2B28} %name% %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
-xkeyboard-label-indicator = "%{F#F75341 O-35 T4}%{F- T-}%{F#FCE8C3 B#F75341} %name% %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+xkeyboard-label-layout = "%{F#2D2B28 B#1C1B19 T4}%{B#00000000 O-20}%{O- F- T- B-}%{B#2D2B28} %name% %{B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
+xkeyboard-label-indicator = "%{F#F75341 O-35 T4}%{F- T-}%{F#FCE8C3 B#F75341}%name%%{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
 
 ;;module/pkg
-pkg-label = "%{O-18}%output:0:150%"
+pkg-label = "%{O-20}%output:0:150%"
 
 ;;module/vpncheck
-vpncheck-label = "%{O-40}%output:0:150%"
+vpncheck-label = "%{O-42}%output:0:150%"
 
 ;;module/eth
-eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-18}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
-eth-label-disconnected = %{F#F75341 B#00000000 T4}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
+eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}%downspeed:8% %upspeed:8% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
+eth-label-disconnected = %{F#F75341 B#00000000 T4}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#1C1B19 T4}%{F- B- T-}
 
 ;; module/volume
-format-volume = "%{F#2D2B28 B#00000000 T4 O-40}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}" 
-volume-label-muted = "%{F#F75341 B#00000000 T4 O-40}%{F- B- T-}%{F#FCE8C3 B#F75341}  muted %{B- F-}%{F#F75341 B#00000000 T4}%{F- B- T-}"
+format-volume = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp-volume>%{B#2D2B28} <label-volume>%{B#2D2B28} %{B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}" 
+volume-label-muted = "%{F#F75341 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#F75341}  muted %{B- F-}%{F#F75341 B#1C1B19 T4}%{F- B- T-}"
 
 ;; module/memory
-memory-label = "%{F#2D2B28 B#00000000 T4 O-18}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+memory-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
 
 ;; module/cpu
-cpu-label = "%{F#2D2B28 B#00000000 T4 O-18}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage:2%% %{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+cpu-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage:2%% %{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
 
 ;; module/temperature
-temp-format = "%{F#2D2B28 B#00000000 T4 O-18}%{F- B- T-}%{F#FCE8C3 B#2D2B28} <ramp> <label> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
-temp-format-warn = "%{F#2D2B28 B#00000000 T4 O-18}%{F- B- T-}%{F#F75341 B#2D2B28} <label-warn> %{F- B-}%{F#2D2B28 B#00000000 T4}%{F- B- T-}"
+temp-format = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  <label> %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
+temp-format-warn = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#F75341 B#2D2B28} <label-warn> %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
 
 ;; module/date & time
-date-label = "%{F#2D2B28 B#00000000 T4 O-18}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}" 
-time-label = "%{F#2D2B28 B#00000000 T4 O-40}%{F- B- T-}%{F#FCE8C3 B#2D2B28 T2}  %time% %{F- B- T-}%{F#2D2B28 B#00000000 T4}%{O-18}%{F- B- T-}" 
+date-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %date% %{F- B-}%{F#2D2B28 B#1C1B19 T4} %{F- B- T-}" 
+time-label = "%{F#918175 B#00000000 T4 O-20}%{F- B- T-}%{F#1C1B19 B#918175} %{T4}%{T2} %time% %{F- B- T-}%{F#918175 B#1C1B19 T4}%{F#2D2B28 B#000000000 O-20}%{F- B- T-}" 
+
 
 [bar/lintilla-secondary]
 monitor = ${env:MONITOR:DVI-D-0}
@@ -191,7 +199,7 @@ pkg-label = "%{O-10}%output:0:150%"
 vpncheck-label = "%{O-20}%output:0:150%"
 
 ;;module/eth-lintilla
-eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-9}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
+eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-9}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
 eth-label-disconnected = %{F#F75341 B#00000000 T4 O-9}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
 
 ;; module/volume
@@ -244,6 +252,7 @@ pin-workspaces = true
 
 ; This will split the workspace name on ':'
 strip-wsnumbers = true
+; fuzzy-match = true
 
 label-mode-padding = 0
 label-mode = ${root.i3-label-mode}
@@ -258,7 +267,7 @@ label-urgent-padding = 0
 
 [module/xwindow]
 type = internal/xwindow
-label = " %title:0:50:...% "
+label = ${root.xwindow-label}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -425,6 +434,7 @@ label = ${root.date-label}
 type = internal/date
 interval = 5
 time = %H:%M
+time-alt = %Y-%m-%d
 label = ${root.time-label}
 
 [module/battery]
