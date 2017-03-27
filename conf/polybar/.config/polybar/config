@@ -231,18 +231,15 @@ monitor = ${env:MONITOR:HDMI-0}
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DP1}
-modules-right = xkeyboard pkg eth-garkbit volume memory cpu temperature date time
+modules-right = xkeyboard pkg eth-garkbit volume memory cpu temperature time
+eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28}%{T4}%{T-}%downspeed:8% %{T4}%{T-}%upspeed:8% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
 ;;module/eth
-eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-42}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
-eth-label-disconnected = %{F#F75341 B#00000000 T4 O-20}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
 
 [bar/garkbit-secondary]
 inherit = bar/lintilla-secondary
 monitor = ${env:MONITOR:HDMI2}
-modules-right = xkeyboard pkg eth-garkbit volume memory cpu temperature date time
-;;module/eth
-eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %downspeed:8%  %upspeed:8% %{F- B-}%{F#2D2B28 B#00000000 T4} %{F- B- T-}"
-eth-label-disconnected = %{F#F75341 B#00000000 T4 O-10}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#00000000 T4}%{F- B- T-}
+modules-right = xkeyboard pkg eth-garkbit volume memory cpu temperature time
+eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-21}%{F- B- T-}%{F#FCE8C3 B#2D2B28}%{T4}%{T-}%downspeed:8% %{T4}%{T-}%upspeed:8% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
 
 [module/i3]
 type = internal/i3
