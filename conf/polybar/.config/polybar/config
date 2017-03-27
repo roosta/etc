@@ -92,7 +92,7 @@ margin-bottom = 5
 monitor = ${env:MONITOR:DP-1}
 width = 100%
 dpi = 192
-height = 32
+height = 30
 radius = 0
 fixed-center = false
 background = ${colors.bright-black}
@@ -135,7 +135,7 @@ pkg-label = "%{O-20}%output:0:150%"
 vpncheck-label = "%{O-42}%output:0:150%"
 
 ;;module/eth
-eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}%downspeed:8% %upspeed:8% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
+eth-label-connected = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}%{T4}%{T-}%downspeed:8% %{T4}%{T-}%upspeed:8% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
 eth-label-disconnected = %{F#F75341 B#00000000 T4}%{B- F- T-}%{F#FCE8C3 B#F75341} %ifname% disconnected %{F- B-}%{F#F75341 B#1C1B19 T4}%{F- B- T-}
 
 ;; module/volume
@@ -143,13 +143,13 @@ format-volume = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28
 volume-label-muted = "%{F#F75341 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#F75341}  muted %{B- F-}%{F#F75341 B#1C1B19 T4}%{F- B- T-}"
 
 ;; module/memory
-memory-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage_used%% %{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
+memory-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} %{T3}%{T-} %percentage_used%% %{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
 
 ;; module/cpu
-cpu-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  %percentage:2%% %{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
+cpu-label = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} %{T3}%{T-} %percentage:2%% %{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
 
 ;; module/temperature
-temp-format = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28}  <label> %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
+temp-format = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#FCE8C3 B#2D2B28} %{T3}%{T-} <label> %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
 temp-format-warn = "%{F#2D2B28 B#00000000 T4 O-20}%{F- B- T-}%{F#F75341 B#2D2B28} <label-warn> %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T-}"
 
 ;; module/date & time
@@ -302,7 +302,7 @@ label-volume = "%percentage%%"
 ramp-volume-0 = ${icons.volume-ramp-0}
 ramp-volume-1 = ${icons.volume-ramp-1}
 ramp-volume-2 = ${icons.volume-ramp-2}
-ramp-volume-font = 3
+ramp-volume-font = 4
 ramp-volume-background = ${colors.bright-black}
 ramp-volume-foreground = ${colors.white}
 
