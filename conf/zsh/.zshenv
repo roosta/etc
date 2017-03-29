@@ -7,7 +7,7 @@
 # set paths.
 # See ~/.zprofile
 typeset -U path
-path=(~/bin $(ruby -rubygems -e "puts Gem.user_dir")/bin /usr/local/bin $HOME/.go/bin /perl5/bin ~/.npm/bin ~/.pip/bin $path[@])
+path=(~/bin $(ruby -rubygems -e "puts Gem.user_dir")/bin /usr/local/bin $HOME/.go/bin ~/perl5/bin ~/.npm/bin ~/.pip/bin $path[@])
 # export PATH=$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$HOME/.npm/bin:$HOME/.pip/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
 
