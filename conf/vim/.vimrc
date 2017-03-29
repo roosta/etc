@@ -79,8 +79,8 @@ set foldmethod=marker
 " Statusline:{{{
 """"""""""""""""
 
-set showmode
-
+" set showmode
+set noshowmode
 " %< Where to truncate
 " %n buffer number
 " %F Full path
@@ -106,7 +106,6 @@ set statusline+=%{HasPaste()}\
 set statusline+=%=
 set statusline+=%-10.(%l,%c%V%)\ 
 set statusline+=%P
-
 " set statusline+=[%{strlen(&fenc)?&fenc:'none'}]\  "file encoding
 " set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
 " set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
@@ -311,13 +310,13 @@ function! AppendModeline()
   call append(line("$"), l:modeline)
 endfunction
 
-function UpdateAndExit()
+function! UpdateAndExit()
      :PlugUpdate
      :q 
      :q
 endfunction
 
-function InstallAndExit()
+function! InstallAndExit()
      :PlugInstall
      :q 
      :q
@@ -376,6 +375,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-abolish'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
+Plug 'itchyny/lightline.vim'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -405,8 +405,8 @@ Plug 'guns/vim-sexp'
 Plug 'junegunn/rainbow_parentheses.vim'
 
 " syntax
-" Plug '~/src/vim-srcery'
-Plug 'roosta/vim-srcery'
+Plug '~/src/vim-srcery'
+" Plug 'roosta/vim-srcery'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -590,5 +590,17 @@ let g:gutentags_ctags_exclude = [".password-store, node_modules", ".git", "plugi
 " ---------- 
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ackprg = 'ag --vimgrep'
+
+" --------------------
+" lightline
+" --------------------
+let g:lightline = {
+      \ 'colorscheme': 'srcery',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
 " }}}
 " vim: fdm=marker:sw=2
