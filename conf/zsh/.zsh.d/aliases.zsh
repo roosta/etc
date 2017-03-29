@@ -244,9 +244,11 @@ alias 19='cd -19'
 #}}}
 ## LISTS {{{1
 
-alias ls="ls -lsAhpk --color=auto --group-directories-first"
-# alias ls='ls++ -lAhpk'
-#alias dir='ls'
+if [[ $(which ls++) ]];then
+  alias ls='ls++ -lAhpk'
+else
+  alias ls="ls -lsAhpk --color=auto --group-directories-first"
+fi
 alias lsr='tree'
 alias lsp='lsp -p'
 #}}}
