@@ -115,7 +115,7 @@ tray-background = ${colors.bright-black}
 
 ;; local variables
 ;; module/i3
-i3-label-mode = "%{O-30 F#5573A3 T4}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T4}%{F- B- T- O-}"
+i3-label-mode = "%{O-32 F#5573A3 T4}%{F- B- T-}%{F#FCE8C3 B#5573A3}%mode%%{F- B-}%{F- B-}%{F#5573A3 T4}%{F- B- T- O-}"
 i3-label-focused = "%{O-20 F#E02C6D T4}%{F- T-}%{F#FCE8C3 B#E02C6D} %name% %{F- B-}%{F#E02C6D T4}%{F- T- O-}"
 i3-label-visible = "%{O-20 F#FCE8C3 T4}%{F- T-}%{F#1C1B19 B#FCE8C3} %name% %{F- B-}%{F#FCE8C3 T4}%{F- B- T- O-}"
 i3-label-unfocused = "%{O-20 F#2D2B28 T4}%{F- T-}%{F#FCE8C3 B#2D2B28} %name% %{F- B-}%{F#2D2B28 B#1C1B19 T4}%{F- B- T- O-}"
