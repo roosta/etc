@@ -5,3 +5,4 @@ https://github.com/sampson-chen/sack
 https://github.com/nonpop/xkblayout-state
 https://github.com/trapd00r/LS_COLORS
 https://github.com/vimpr/vimperator-plugins
+https://github.com/trapd00r/ls--

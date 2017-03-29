@@ -39,9 +39,6 @@ install-packages: add-pacman-repositiories
 enable-services: init-emacs
 	@echo -e "\033[0;33mInitialize emacs...\033[0m"
 	systemctl --user enable emacs && systemctl --user start emacs
-# 	sudo systemctl enable lightdm NetworkManager tlp tlp-sleep
-# 	sudo systemctl disable systemd-rfkill
-# 	sudo tlp start
 
 # Scaffold user fs structure.
 # Don't echo to stdout and continue in case of error (-@)
@@ -131,6 +128,10 @@ update-tmux:
 init-tmux:
 	@echo -e "\033[0;33mInitialize tmux...\033[0m"
 	@git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bin/install_plugins
+
+install-ls--: update-libs
+	@cpan Term::ExtendedColor
+	@cd ~/lib/ls-- && perl Makefile.PL && make && make install
 
 post-install:
 	@echo -e "\033[1;32mAll done!\033[0m"
