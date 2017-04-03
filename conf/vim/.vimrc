@@ -598,9 +598,15 @@ let g:lightline = {
       \ 'colorscheme': 'srcery',
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
+      \ }}
+
+" let g:lightline = {
+"       \ 'colorscheme': 'srcery',
+"       \ 'component': {
+"       \   'readonly': '%{&readonly?"":""}',
+"       \ },
+"       \ 'separator': { 'left': '', 'right': '' },
+"       \ 'subseparator': { 'left': '', 'right': '' }
+"       \ }
 " }}}
 " vim: fdm=marker:sw=2

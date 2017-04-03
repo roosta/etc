@@ -5,9 +5,9 @@
 
  ;; srcery-theme-org-height nil
 
- powerline-default-separator 'slant
- spaceline-separator-dir-left '(left . left)
- spaceline-separator-dir-right '(right . right)
+ powerline-default-separator 'nil
+ ;; spaceline-separator-dir-left '(left . left)
+ ;; spaceline-separator-dir-right '(right . right)
 
  ;; always follow symlinks
  vc-follow-symlinks t
