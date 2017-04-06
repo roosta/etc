@@ -109,12 +109,14 @@ alias news='web_search duckduckgo \!n'
 alias youtube='web_search duckduckgo \!yt'
 alias yt='web_search duckduckgo \!yt'
 alias map='web_search duckduckgo \!m'
-alias image='web_search duckduckgo \!i'
+alias img='web_search duckduckgo \!i'
 alias bang='web_search duckduckgo \!'
 alias arch='web_search duckduckgo \!aw'
 alias aw='web_search duckduckgo \!aw'
 alias aur='web_search duckduckgo \!aur'
 alias apkg='web_search duckduckgo \!apkg'
+alias clojars='web_search duckduckgo \!clojars'
+alias npm-search='web_search duckduckgo \!npm'
 
 #}}}
 ## GLOBAL {{{1
