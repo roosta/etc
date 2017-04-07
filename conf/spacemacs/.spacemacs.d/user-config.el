@@ -18,8 +18,10 @@
  yas-snippet-dirs
  '("~/.spacemacs.d/snippets")
 
+ ;; set default browser
  browse-url-browser-function 'browse-url-generic
  browse-url-generic-program "firefox-developer"
+
  )
 
 ;; Cider
@@ -54,11 +56,11 @@
 
 ;; flycheck
 ;; ------------
-;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
+(eval-after-load 'flycheck '(flycheck-clojure-setup))
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
-;; (eval-after-load 'flycheck
-;;   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
+(eval-after-load 'flycheck
+  '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
 ;; smartparens
 ;; -------------
