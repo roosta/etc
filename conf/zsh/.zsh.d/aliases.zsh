@@ -84,7 +84,7 @@ alias histgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
 # locate file at working dir
-alias lsg='\ls -lAh | ag'
+alias lsg='\ls -lAh | rg'
 #alias lsrgrep='lsa -R | grep'
 alias lsrg='tree -f -i -h --matchdirs -P'
 
