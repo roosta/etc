@@ -1,5 +1,5 @@
 ! "Enabled modi" Set from: XResources
-rofi.modi:                           run
+rofi.modi:                           combi
 ! "Window width" Set from: XResources
 rofi.width:                          20
 ! "Number of lines" Set from: XResources
