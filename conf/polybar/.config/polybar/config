@@ -97,7 +97,7 @@ font-0 = "Essential PragmataPro Nerd Font:pixelsize=9;2"
 font-1 = "Essential PragmataPro Nerd Font:pixelsize=9:weight=bold;2"
 font-2 = "fura code nerd font:pixelsize=11;4"
 font-3 = "fura code nerd font:pixelsize=14;4"
-font-4 = "Material Icons:pixelsize=10;5"
+font-4 = "Material Icons:pixelsize=10;4"
 modules-left = i3 xwindow
 modules-center = time xkeyboard
 modules-right = eth-lintilla vpncheck pkg volume memory cpu date
@@ -356,6 +356,7 @@ interface = enp2s0
 type = internal/date
 interval = 5
 date = "%Y-%m-%d"
+label-padding = 2
 label = %date%
 
 [module/time]
