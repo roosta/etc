@@ -25,15 +25,6 @@ xgrey4         = ${xrdb:color238:#444444}
 xgrey5         = ${xrdb:color239:#4E4E4E}
 
 [icons]
-sep-lg-right-prefix = 
-sep-lg-right-suffix =  
-sep-sm-right-suffix =  
-sep-sm-right-prefix = 
-
-sep-lg-left-prefix = 
-sep-lg-left-suffix = 
-sep-sm-left-prefix = 
-sep-sm-left-suffix = 
 
 temp-ramp-0 = 
 temp-ramp-1 = 
@@ -93,14 +84,14 @@ padding-left = 0
 padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
-font-0 = "Essential PragmataPro Nerd Font:pixelsize=9;2"
-font-1 = "Essential PragmataPro Nerd Font:pixelsize=9:weight=bold;2"
+font-0 = "Essential PragmataPro:pixelsize=9;2"
+font-1 = "Essential PragmataPro:pixelsize=9:weight=bold;2"
 font-2 = "fura code nerd font:pixelsize=11;4"
 font-3 = "fura code nerd font:pixelsize=14;4"
 font-4 = "Material Icons:pixelsize=10;4"
 modules-left = i3 xwindow
 modules-center = time
-modules-right =eth-lintilla xkeyboard vpncheck pkg volume memory cpu date
+modules-right = xkeyboard pkg volume memory cpu date
 ; tray-position = right
 ; tray-padding = 1
 ; tray-scale = 1
@@ -109,12 +100,21 @@ modules-right =eth-lintilla xkeyboard vpncheck pkg volume memory cpu date
 [bar/lintilla-secondary]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DVI-D-0}
+font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;1"
+font-4 = "Material Icons:pixelsize=10;3"
 dpi = 96
 height = 18
-modules-right = xkeyboard pkg vpncheck eth-lintilla volume memory cpu time
+modules-center =
+modules-right = vpncheck eth-lintilla
 
 [bar/lintilla-tertiary]
-inherit = bar/lintilla-secondary
+inherit = bar/lintilla-primary
+dpi = 96
+height = 18
+modules-center =
+font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;1"
+font-4 = "Material Icons:pixelsize=10;3"
+modules-right = fs-home fs-root
 monitor = ${env:MONITOR:HDMI-0}
 
 [bar/garkbit-primary]
@@ -186,19 +186,20 @@ label-padding = 1
 type = internal/xkeyboard
 blacklist-0 = num lock
 format = <label-layout> <label-indicator>
-format-padding = 2
+format-padding = 1
 label-layout = %name%
 label-indicator = %name%
 label-indicator-background = ${colors.bright-red}
 label-indicator-foreground = ${colors.white}
-label-indicator-padding = 2
+label-indicator-padding = 1
 
 [module/pkg]
 type = custom/script
 interval = 1200
 format = <label>
 label = PKG %output%
-label-padding = 2
+label-padding-right = 2
+label-padding-left = 1
 exec = ~/.config/polybar/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
@@ -215,7 +216,6 @@ type = internal/volume
 format-volume = "<bar-volume> <label-volume>"
 format-prefix = ${icons.close}
 format-prefix-font = 4
-; label-muted = "%{T3}%{T-} muted"
 label-muted =  ╸╸╸╸╸╸╸╸╸╸ muted
 label-muted-foreground = ${colors.red}
 label-volume = "VOL %percentage%%"
@@ -336,10 +336,10 @@ label-connected = %essid%
 [module/eth]
 type = internal/network
 interval = 3.0
-; label-connected = "%{B#918175 F#1C1B19 T4}%{B- F- T-}%downspeed:9% %{B#918175 F#1C1B19 T4}%{B- F- T-}%upspeed:9%" 
 label-connected = "%downspeed:9%%{T5}%{T-}%upspeed:9%%{T5}%{T-}" 
-label-connected-padding-left = 1
+label-connected-padding-left = 0
 label-connected-padding-right = 2
+accumulate-stats = true
 label-disconnected = %ifname% disconnected
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
@@ -384,15 +384,30 @@ ramp-capacity-foreground = ${colors.white}
 animation-charging-foreground = ${colors.white}
 animation-charging-framerate = 750
 
-[module/filesystem]
+[module/fs-root]
 type = internal/fs
 interval = 25
-
 mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+bar-used-width = 10
+bar-used-foreground = ${colors.white} 
+bar-used-indicator-foreground = ${colors.yellow}
+bar-used-indicator = ╸
+bar-used-fill = ╸
+bar-used-empty = ╸
+bar-used-empty-foreground = ${colors.grey}
+format-mounted = <bar-used> <label-mounted>
+format-mounted-padding = 1
+format-unmounted-padding = 1
+label-mounted = %mountpoint% %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.white}
+label-unmounted-foreground = ${colors.yellow}
+
+[module/fs-home]
+type = internal/fs
+interval = 25
+inherit = module/fs-root
+mount-0 = /home
+bar-used-indicator-foreground = ${colors.blue}
 
 [module/powermenu]
 type = custom/menu
