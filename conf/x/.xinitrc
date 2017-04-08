@@ -47,6 +47,7 @@ xrdb -merge ~/.Xresources
 
 # set X font locations
 xset +fp $HOME/.fonts/restricted &
+xset +fp $HOME/.fonts/icons &
 xset +fp $HOME/.fonts/misc &
 xset fp rehash &
 
