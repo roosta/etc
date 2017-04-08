@@ -262,63 +262,6 @@ alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l $HOME/v
 alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l $HOME/var/log/clamscan.log /"
 alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l $HOME/var/log/clamscan.log ."
 #}}}
-## PACMAN {{{1
-## -------------
-alias pacman="pacman --color=always"
-alias pacaur="pacaur --color=always" 
-
-# iNSTALLING
-alias pacs="sudo pacman -S" # Install specific package(s) from the repositories
-alias pacss="pacman -Ss" # Search for package(s) in the repositories
-# alias pacsso="\pacman -Ss --color=always" # Search for package(s) in the official repositories
-alias pacdl="pacman -Sw" # Download specified package(s) as .tar.xz ball
-alias pacupre="pacman -Sy && abs" # Update and refresh the local package and ABS databases against repositories
-alias pacinsd="pacman -S --asdeps" # Install given package(s) as dependencies
-alias pacsu="pacman -U" # Install specific package not from the repositories but from a file
-
-# CLEANING
-alias pacr="pacman -R" # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrf="pacman -Rs" # Remove the specified package(s) and its dependencies
-alias pacrff="pacman -Rns" # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrfff="pacman -Rcs" # !! Remove the specified package(s), and everything that depends on them, and recursivly remove unneeded dependencies
-alias pacc="pacman -Scc" # Clean cache - delete all the package files in the cache
-
-# ORPHANS
-alias pacor="sudo pacman -Rns $(pacman -Qtdq)" # remove all orphaned packages
-alias paco="pacman -Qdt" # List all packages which are orphaned
-
-# QUERY
-alias pacqs="pacman -Qs" # Search for package(s) in the local database
-alias pacqi="pacman -Qi" # Display information about a given package in the local database
-
-# LISTS/INFO
-alias pacsi="pacman -Si" # Display information about a given package in the repositories
-alias pacls="pacman -Qet" # list all packages explicitly installed and not required as dependencies
-alias paclss="pacman -Ql" # List all files installed by a given package
-alias paclsl="pacman -Qen" # list all packages from official repos
-alias pacals="pacman -Qem" # list explicit packages not from official repos
-alias pacown="pacman -Qo" # Show package(s) owning the specified file(s)
-
-# MARK
-alias pacexpl="pacman -D --asexp" # Mark one or more installed packages as explicitly installed
-alias pacimpl="pacman -D --asdep" # Mark one or more installed packages as non explicitly installed
-
-# UPDATING
-alias pacu="pacman -Syu" # update only from official repos
-alias pacua="pacaur -u" # update aur packages
-alias pacuad="pacaur -u --devel" # update aur packages
-# alias pacuadf="pacaur -u --devel --noconfirm" # update aur packages
-# alias pacua="pacaur -u --noconfirm" # update aur packages without asking for confirmation
-# alias pacuf="pacman -Syu --noconfirm" # don't ask when updating
-# alias pacuadf="pacaur -Syua --devel --noconfirm" # Update ALL without confirming
-
-alias pacmu="sudo curl -o /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/all/" # get country sorted mirrorlist to use with reflector
-alias pacm-rate="sudo reflector --verbose -l 5 --sort rate --save /etc/pacman.d/mirrorlist && sudo pacman -Syy" # use reflector to sort the 5 fastest mirrors and force update
-alias pacm="pacman -Syy" # Force refresh of all package lists after updating /etc/pacman.d/mirrorlist
-
-# update locate db and find all pacnew, pacsave files.
-alias pacnews="sudo updatedb && locate --existing --regex '\.pac(new|save)$'"
-#}}}
 ## UTILS {{{1
 ## ----------
 alias tree="tree -ah"
