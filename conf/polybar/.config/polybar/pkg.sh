@@ -4,7 +4,7 @@ aur=$(cower -u | wc -l)
 
 check=$((pac + aur))
 if [[ "$check" != "0" ]]; then
-  echo "$pac/$aur%{T5}%{T-}"
+  echo "$pac/$aur"
 else
-  echo "$pac/$aur%{T5}%{T-}"
+  echo "$pac/$aur"
 fi

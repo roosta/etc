@@ -99,8 +99,8 @@ font-2 = "fura code nerd font:pixelsize=11;4"
 font-3 = "fura code nerd font:pixelsize=14;4"
 font-4 = "Material Icons:pixelsize=10;4"
 modules-left = i3 xwindow
-modules-center = time xkeyboard
-modules-right = eth-lintilla vpncheck pkg volume memory cpu date
+modules-center = time
+modules-right =eth-lintilla xkeyboard vpncheck pkg volume memory cpu date
 ; tray-position = right
 ; tray-padding = 1
 ; tray-scale = 1
@@ -111,7 +111,7 @@ inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DVI-D-0}
 dpi = 96
 height = 18
-modules-right = xkeyboard pkg vpncheck eth-lintilla volume memory cpu temperature time
+modules-right = xkeyboard pkg vpncheck eth-lintilla volume memory cpu time
 
 [bar/lintilla-tertiary]
 inherit = bar/lintilla-secondary
@@ -120,12 +120,12 @@ monitor = ${env:MONITOR:HDMI-0}
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DP1}
-modules-right = xkeyboard pkg eth-garkbit volume memory cpu temperature time
+modules-right = xkeyboard pkg eth-garkbit volume memory cpu time
 
 [bar/garkbit-secondary]
 inherit = bar/lintilla-secondary
 monitor = ${env:MONITOR:HDMI2}
-modules-right = xkeyboard pkg eth-garkbit volume memory cpu temperature time
+modules-right = xkeyboard pkg eth-garkbit volume memory cpu time
 
 [module/i3]
 type = internal/i3
@@ -197,7 +197,7 @@ label-indicator-padding = 2
 type = custom/script
 interval = 1200
 format = <label>
-label = %output%
+label = PKG %output%
 label-padding = 2
 exec = ~/.config/polybar/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
@@ -356,7 +356,8 @@ interface = enp2s0
 type = internal/date
 interval = 5
 date = "%Y-%m-%d"
-label-padding = 2
+label-font = 2
+label-padding = 1
 label = %date%
 
 [module/time]
