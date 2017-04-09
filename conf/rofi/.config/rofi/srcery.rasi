@@ -51,7 +51,7 @@
 }
 #window {
     border:     2;
-    foreground: @white;
+    foreground: @magenta;
     padding:    5;
     background: @black;
 }
