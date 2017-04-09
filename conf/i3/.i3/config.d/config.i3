@@ -194,9 +194,8 @@ bindsym $mod+Shift+Return exec firefox
 bindsym $mod+c kill
 
 set $combi_modi "window;DRun"
-# bindsym $mod+Tab exec --no-startup-id rofi -show DRun
-bindsym $mod+Tab exec --no-startup-id "rofi -combi-modi \\"window,drun\\" -show combi -modi combi"
-# bindsym $mod+Tab exec --no-startup-id rofi -show 
+# bindsym $mod+Tab exec --no-startup-id "rofi -combi-modi \\"window,drun\\" -show combi -modi combi"
+bindsym $mod+Tab exec --no-startup-id "rofi -theme ~/.config/rofi/srcery.rasi -show"
 bindsym $mod+grave exec --no-startup-id rofi -show window
 
 # focus vi bindings
