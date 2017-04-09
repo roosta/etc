@@ -5,9 +5,9 @@ rofi.width:                          20
 ! "Number of lines" Set from: XResources
 rofi.lines:                          4294967295
 ! "Number of columns" Set from: XResources
-rofi.columns:                        1
+rofi.columns:                        2
 ! "Font to use" Set from: XResources
-rofi.font:                           Essential PragmataPro 24px
+! rofi.font:                           Essential PragmataPro 24px
 ! "Location on screen" Set from: XResources
 rofi.location:                       1
 ! "Y-offset relative to location" Set from: XResources
@@ -220,3 +220,5 @@ rofi.kb-custom-9:                    Alt+9
 ! rofi.kb-select-9:                    Super+9
 ! "Select row 10" Set from: Default
 ! rofi.kb-select-10:                   Super+0
+
+! vim:ft=xdefaults:ts=2:sw=2:fdm=marker
