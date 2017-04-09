@@ -7,7 +7,7 @@
 " │─┤││ ┬│─┤│  ││ ┬│─┤ │
 " ┆ ┴┆┆─┘┆ ┴┆─┘┆┆─┘┆ ┴ ┆
 " -----------------------
-hi Hint font-family: "Essential PragmataPro"; font-size: 15px; font-weight: normal; color: #1C1B19; background-color: #98BC37; border: 1px solid #1C1B19; padding: 0px 5px 0px 5px; text-transform: uppercase;
+hi Hint font-family: "Essential PragmataPro"; font-size: 11px; font-weight: normal; color: #1C1B19; background-color: #98BC37; border: 1px solid #1C1B19; padding: 0px 5px 0px 5px; text-transform: uppercase;
 hi HintElem   background-color: #0AAEB3; color: #1C1B19;
 hi HintActive background-color: #98BC37; color: #1C1B19;
 
@@ -15,33 +15,37 @@ hi -append Hint         background-color: rgba(252, 232, 195, 0.7); -moz-border-
 hi -append HintElem     text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #FBF1C7;
 hi -append HintActive   text-decoration: none; -moz-border-radius: 4px; -moz-box-shadow: 0 0 2px #FBF1C7;
 
-hi StatusLine     color: #FCE8C3; background: #1C1B19; font-weight: normal; font-size: 12px; font-family: Essential PragmataPro;
+hi StatusLine     color: #FCE8C3; background: #2D2B28; font-weight: normal; font-size: 11px; font-family: Essential PragmataPro;
 "hi StatusLineBroken   color:  #93a1a1; background: #ffffd7; font-weight: normal; font-size: 12pt;
 "hi StatusLineExtended color:  #93a1a1; background: #af005f; font-weight: normal; font-size: 12pt;
 "hi StatusLineSecure   color:  #93a1a1; background: #b58900; font-weight: normal; font-size: 12pt;
 
-hi Normal     color: #FCE8C3; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
-hi CmdLine    color: #FCE8C3; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
-hi InfoMsg    color: #FCE8C3; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
-hi ModeMsg    color: #FCE8C3; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
-hi MoreMsg    color: #98BC37; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
-hi LineNr     color: #FBB829; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
-hi Question   color: #FABD2F; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
-hi WarningMsg color: #FBB829; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro;
-hi ErrorMsg   color: #F75341; background: #1C1B19; font-size: 12px; font-family: Essesntial PragmataPro; font-weight: bold;
+hi Normal     color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
+hi CmdLine    color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
+hi InfoMsg    color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
+hi ModeMsg    color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
+hi MoreMsg    color: #98BC37; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
+hi LineNr     color: #FBB829; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
+hi Question   color: #FABD2F; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
+hi WarningMsg color: #FBB829; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
+hi ErrorMsg   color: #F75341; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro; font-weight: bold;
 hi NonText    background: #1C1B19;
 hi Null       color: #98BC37;
 hi Tag        color: #98BC37;
 hi Number     color: #98BC37;
 
-hi CompTitle          background: #2D2B28;
-hi CompTitle>*        color: #FCE8C3; padding-bottom: 2px; padding-top: 2px; padding-left: 12px; font-weight: bold; font-size: 12px; border-top: 1px dotted #918175; border-bottom: 1px dotted #918175;
-hi CompItem[selected] color: #519F50; background: #2D2B28;
-hi CompItem           color: #FCE8C3; width: 50%;
-hi CompDesc           color: #918175; font-style: italic;
-hi Filter             color: #1C1B19; background: #FBB829;
+hi CompTitle background: #2D2B28;
+hi CompTitle>* color: #FBB829; padding-bottom: 2px; padding-top: 2px; padding-left: 11px; border-bottom: 1px solid #1C1B19; font-weight: bold; font-size: 11px;
+hi CompItem[selected] color: #1C1B19; background: #918175;
+hi CompItem color: #FCE8C3;
+hi CompItem>*  border-bottom: 1px solid #1C1B19;
+hi CompItem:nth-child(even) background: #262626;
+hi CompItem[selected] color: #1C1B19; background: #918175;
+hi CompDesc font-style: normal;
+hi Filter color: #E02C6D; font-weight: bold;
+hi CompGroup border-top: 1px solid #E02C6D;
 
-hi Indicator color: #000000;
+hi Indicator color: #E02C6D;
 
 hi Title     color: #FCE8C3;
 hi Indicator color: #FBB829;
@@ -49,10 +53,10 @@ hi String    color: #FCE8C3;
 hi Number    color: #FCE8C3;
 hi Object    color: #53FDE9;
 hi Function  color: #5573A3;
-hi URL       color: #5573A3;
+hi URL       color: #519F50;
 hi Preview   color: #918175;
 
-hi TabNumber  color: #FED06E; font-weight: bold; font-size:12px;
+hi TabNumber  color: #FED06E; font-weight: bold; font-size:11px;
 
 "┌─┐┐─┐┐─┐
 "│  └─┐└─┐
@@ -60,7 +64,7 @@ hi TabNumber  color: #FED06E; font-weight: bold; font-size:12px;
 "---------
 style -name liberator chrome://* <<EOM
 #liberator-statusline {
-  /* margin: -2px -2px !important; */
+  margin: -2px -2px !important;
   /* border: none !important; */
 }
 
