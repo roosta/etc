@@ -1,4 +1,4 @@
-{:user {:jvm-opts ^:replace ["-Xmx512M"]
+{:user {:jvm-opts ^:replace ["-Xmx1g"]
         :dependencies [;; nREPL support for ClojureScript REPLs 
                        [com.cemerick/piggieback "0.2.1"]
 
