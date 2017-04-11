@@ -91,7 +91,7 @@ font-3 = "fura code nerd font:pixelsize=14;4"
 font-4 = "Material Icons:pixelsize=10;4"
 modules-left = i3 xwindow
 modules-center = time
-modules-right = xkeyboard pkg volume memory cpu date
+modules-right = xkeyboard vpncheck pkg volume memory cpu date
 
 [bar/lintilla-secondary]
 inherit = bar/lintilla-primary
@@ -101,7 +101,7 @@ font-4 = "Material Icons:pixelsize=10;3"
 dpi = 96
 height = 18
 modules-center =
-modules-right = vpncheck eth-lintilla
+modules-right = eth-lintilla
 tray-position = right
 tray-padding = 1
 tray-scale = 1
@@ -180,6 +180,7 @@ label-urgent-foreground = ${colors.white}
 [module/xwindow]
 type = internal/xwindow
 format-foreground = ${colors.grey}
+label = %title:0:80%
 label-padding = 1
 
 [module/xkeyboard]
