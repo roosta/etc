@@ -159,11 +159,18 @@ style -name srcery chrome://* <<EOM
 
 tabs, tab, .tab-stack{
   height: var(--tab-height) !important;
+  font-size: 11px !important;
   min-height: var(--tab-height) !important;
   max-height: var(--tab-height) !important;
 }
 
+.tabbrowser-tab:not([pinned]) {
+  max-width: 180px !important;
+}
+
 #TabsToolbar {
+  min-height: var(--tab-height) !important;
+  max-height: var(--tab-height) !important;
   background-color: var(--color-black) !important;
 }
 
@@ -221,7 +228,6 @@ tabs, tab, .tab-stack{
 /* ----- self destructing cookies ----- */
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies {
   margin-right: 4px !important;
-  margin-bottom: 1px !important;
   -moz-appearance: none !important;
 }
 
