@@ -64,46 +64,103 @@ hi TabNumber  color: #FED06E; font-weight: bold; font-size:11px;
 "---------
 style -name srcery chrome://* <<EOM
 :root {
-  --color-black: #1C1B19;
-  --color-bright-black: #2D2B28;
-  --color-red: #FF3128;
-  --color-bright-red: #F75341;
-  --color-green: #519F50;
-  --color-bright-green: #98BC37;
-  --color-yellow: #FBB829;
-  --color-bright-yellow: #FED06E;
-  --color-blue: #5573A3;
-  --color-bright-blue: #8EB2F7;
-  --color-magenta: #E02C6D;
+  --color-black:          #1C1B19;
+  --color-bright-black:   #2D2B28;
+  --color-red:            #FF3128;
+  --color-bright-red:     #F75341;
+  --color-green:          #519F50;
+  --color-bright-green:   #98BC37;
+  --color-yellow:         #FBB829;
+  --color-bright-yellow:  #FED06E;
+  --color-blue:           #5573A3;
+  --color-bright-blue:    #8EB2F7;
+  --color-magenta:        #E02C6D;
   --color-bright-magenta: #E35682;
-  --color-cyan: #0AAEB3;
-  --color-bright-cyan: #53FDE9;
-  --color-white: #918175;
-  --color-bright-white: #FCE8C3;
-  --color-orange: ##D75F00;
-  --color-bright-orange: #FF8700;
-  --color-hard-black: #121212;
-  --color-xgrey1: #262626;
-  --color-xgrey2: #303030;
-  --color-xgrey3: #3A3A3A;
-  --color-xgrey4: #444444;
-  --color-xgrey5: #4E4E4E;
+  --color-cyan:           #0AAEB3;
+  --color-bright-cyan:    #53FDE9;
+  --color-white:          #918175;
+  --color-bright-white:   #FCE8C3;
+  --color-orange:         #D75F00;
+  --color-bright-orange:  #FF8700;
+  --color-hard-black:     #121212;
+  --color-xgrey1:         #262626;
+  --color-xgrey2:         #303030;
+  --color-xgrey3:         #3A3A3A;
+  --color-xgrey4:         #444444;
+  --color-xgrey5:         #4E4E4E;
+
+  --tab-height: 22px;
 }
+
+/* ----- liberator ----- */
 
 #liberator-statusline {
   margin: -2px -2px !important;
   /* border: none !important; */
 }
 
-#liberator-statusline:not([customizing="true"]) :-moz-any(toolbarbutton) {
-  /* height: auto !important; */
+#liberator-status {
 }
 
-/* Tabs */
+#liberator-status-position {
+  margin-left: 2px !important;
+  padding-top: 1px !important;
+  color: var(--color-bright-green);
+}
 
+#liberator-status-ssl {
+  margin-left: 2px !important;
+  padding-top: 1px !important;
+  margin-right: 2px !important;
+}
+
+#liberator-status-history {
+  margin-left: 2px !important;
+  padding-top: 1px !important;
+  margin-right: 2px !important;
+  color: var(--color-cyan);
+}
+
+#liberator-status-tabcount {
+  margin-left: 2px !important;
+  padding-top: 1px !important;
+  margin-right: 2px !important;
+  color: var(--color-bright-magenta);
+}
+#liberator-separator {
+  /* height: 0px !important; */
+}
+#liberator-status-zoomlevel {
+  margin-left: 2px !important;
+  padding-top: 1px !important;
+  margin-right: 2px !important;
+  color: var(--color-yellow);
+}
+#liberator-status-bookmark {
+  margin-left: 2px !important;
+  padding-top: 1px !important;
+  margin-right: 2px !important;
+  color: var(--color-bright-red);
+}
+#liberator-status-location {
+  margin-left: 2px !important;
+  padding-top: 1px !important;
+  margin-right: 2px !important;
+}
+
+#liberator-statusline:not([customizing="true"]) :-moz-any(toolbarbutton) {
+}
+
+/* ----- Tabs ----- */
 .tabbrowser-tab {
   background-color: var(--color-bright-black) !important;
   color: var(--color-bright-white) !important;
+}
+
+tabs, tab, .tab-stack{
+  height: var(--tab-height) !important;
+  min-height: var(--tab-height) !important;
+  max-height: var(--tab-height) !important;
 }
 
 #TabsToolbar {
@@ -123,7 +180,7 @@ style -name srcery chrome://* <<EOM
   background-color: var(--color-white) !important;
 }
 
-/* Tab groups */
+/* ----- Tab groups ----- */
 #tabGroups-tabview-button {
   -moz-appearance: none !important;
   margin-left: 5px !important;
@@ -135,6 +192,7 @@ style -name srcery chrome://* <<EOM
   color: var(--color-bright-blue) !important;
 }
 
+/* ----- ublock ----- */
 #ublock0-button {
   /* color: #ffffff !important; */
   /* -moz-appearance: none !important; */
@@ -144,7 +202,7 @@ style -name srcery chrome://* <<EOM
   /* background-color: #ffffff; */
 }
 
-/* privacy badger */
+/* ----- privacy badger ----- */
 #toggle-button--jid1-mnnxcxisbpnsxqjetpack-pb-button {
   -moz-appearance: none !important;
 }
@@ -160,25 +218,31 @@ style -name srcery chrome://* <<EOM
   margin: 5px;
 }
 
-/* self destructing cookies */
+/* ----- self destructing cookies ----- */
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies {
+  margin-right: 4px !important;
+  margin-bottom: 1px !important;
   -moz-appearance: none !important;
 }
+
 /* display green color when sdc image is green */
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies[image="resource://jid0-9xfbwuwnvpx4wwsfbwmcm4jj69e-at-jetpack/data/toolbar-r.png"]:after {
   /* display: none; */
   color: var(--color-red) !important;
 }
+
 /* display red color when sdc image is red */
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies[image="resource://jid0-9xfbwuwnvpx4wwsfbwmcm4jj69e-at-jetpack/data/toolbar-g.png"]:after {
   /* display: none; */
   color: var(--color-green) !important;
 }
+
 /* display yellow color when sdc image is yellow */
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies[image="resource://jid0-9xfbwuwnvpx4wwsfbwmcm4jj69e-at-jetpack/data/toolbar-y.png"]:after {
   /* display: none; */
   color: var(--color-yellow) !important;
 }
+
 /* hide scd image */
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies image {
   display: none;
@@ -192,42 +256,6 @@ style -name srcery chrome://* <<EOM
 }
 #action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies:hover:after {
   color: var(--color-bright-blue) !important;
-}
-
-#liberator-status-position {
-  margin-left: 2px !important;
-  margin-right: 2px !important;
-  color: var(--color-bright-green);
-}
-
-#liberator-status-ssl {
-  margin-left: 2px !important;
-  margin-right: 2px !important;
-}
-
-#liberator-status-history {
-  margin-left: 2px !important;
-  margin-right: 2px !important;
-  color: var(--color-cyan);
-}
-
-#liberator-status-tabcount {
-  margin-left: 2px !important;
-  margin-right: 2px !important;
-  color: var(--color-bright-magenta);
-}
-#liberator-separator {
-  /* height: 0px !important; */
-}
-#liberator-status-zoomlevel {
-  margin-left: 2px !important;
-  margin-right: 2px !important;
-  color: var(--color-yellow);
-}
-#liberator-status-bookmark {
-  margin-left: 2px !important;
-  margin-right: 2px !important;
-  color: var(--color-bright-red);
 }
 EOM
 
