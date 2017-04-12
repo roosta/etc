@@ -164,10 +164,6 @@ tabs, tab, .tab-stack{
   max-height: var(--tab-height) !important;
 }
 
-.tabbrowser-tab:not([pinned]) {
-  max-width: 180px !important;
-}
-
 #TabsToolbar {
   min-height: var(--tab-height) !important;
   max-height: var(--tab-height) !important;
