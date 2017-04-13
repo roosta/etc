@@ -39,8 +39,8 @@ hi CompTitle>* color: #FBB829; padding-bottom: 2px; padding-top: 2px; padding-le
 hi CompItem[selected] color: #1C1B19; background: #918175;
 hi CompItem color: #FCE8C3;
 hi CompItem>*  border-bottom: 1px solid #1C1B19;
-hi CompItem:nth-child(even) background: #262626;
-hi CompItem[selected] color: #1C1B19; background: #918175;
+hi CompItem:nth-child(odd) background: #262626;
+hi CompItem[selected] color: #1C1B19; background: #918175 !important;
 hi CompDesc font-style: normal;
 hi Filter color: #E02C6D; font-weight: bold;
 hi CompGroup border-top: 1px solid #E02C6D;
