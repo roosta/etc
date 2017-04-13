@@ -290,46 +290,46 @@ bindsym --release Shift+Print exec scrot -s $screenshot
 set $mode_resize Resize: direction + (shift|control|shift&control)
 mode "$mode_resize" {
   # vi movement
-  bindsym h resize shrink width  50 px or 50 ppt
-  bindsym j resize grow   height 50 px or 50 ppt
-  bindsym k resize shrink height 50 px or 50 ppt
-  bindsym l resize grow   width  50 px or 50 ppt
+  bindsym h resize shrink width  50 px or 5 ppt
+  bindsym j resize grow   height 50 px or 5 ppt
+  bindsym k resize shrink height 50 px or 5 ppt
+  bindsym l resize grow   width  50 px or 5 ppt
 
-  bindsym Shift+h resize shrink width  100 px or 100 ppt
-  bindsym Shift+j resize grow   height 100 px or 100 ppt
-  bindsym Shift+k resize shrink height 100 px or 100 ppt
-  bindsym Shift+l resize grow   width  100 px or 100 ppt
+  bindsym Shift+h resize shrink width  100 px or 10 ppt
+  bindsym Shift+j resize grow   height 100 px or 10 ppt
+  bindsym Shift+k resize shrink height 100 px or 10 ppt
+  bindsym Shift+l resize grow   width  100 px or 10 ppt
 
-  bindsym Control+h resize shrink width  200 px or 200 ppt
-  bindsym Control+j resize grow   height 200 px or 200 ppt
-  bindsym Control+k resize shrink height 200 px or 200 ppt
-  bindsym Control+l resize grow   width  200 px or 200 ppt
+  bindsym Control+h resize shrink width  200 px or 20 ppt
+  bindsym Control+j resize grow   height 200 px or 20 ppt
+  bindsym Control+k resize shrink height 200 px or 20 ppt
+  bindsym Control+l resize grow   width  200 px or 20 ppt
 
-  bindsym Shift+Control+h resize shrink width  300 px or 300 ppt
-  bindsym Shift+Control+j resize grow   height 300 px or 300 ppt
-  bindsym Shift+Control+k resize shrink height 300 px or 300 ppt
-  bindsym Shift+Control+l resize grow   width  300 px or 300 ppt
+  bindsym Shift+Control+h resize shrink width  300 px or 30 ppt
+  bindsym Shift+Control+j resize grow   height 300 px or 30 ppt
+  bindsym Shift+Control+k resize shrink height 300 px or 30 ppt
+  bindsym Shift+Control+l resize grow   width  300 px or 30 ppt
 
   # assign the same for arrows
-  bindsym Left  resize shrink width  50 px or 50 ppt
-  bindsym Down  resize grow   height 50 px or 50 ppt
-  bindsym Up    resize shrink height 50 px or 50 ppt
-  bindsym Right resize grow   width  50 px or 50 ppt
+  bindsym Left  resize shrink width  50 px or 5 ppt
+  bindsym Down  resize grow   height 50 px or 5 ppt
+  bindsym Up    resize shrink height 50 px or 5 ppt
+  bindsym Right resize grow   width  50 px or 5 ppt
 
-  bindsym Shift+Left  resize shrink width  100 px or 100 ppt
-  bindsym Shift+Down  resize grow   height 100 px or 100 ppt
-  bindsym Shift+Up    resize shrink height 100 px or 100 ppt
-  bindsym Shift+Right resize grow   width  100 px or 100 ppt
+  bindsym Shift+Left  resize shrink width  100 px or 10 ppt
+  bindsym Shift+Down  resize grow   height 100 px or 10 ppt
+  bindsym Shift+Up    resize shrink height 100 px or 10 ppt
+  bindsym Shift+Right resize grow   width  100 px or 10 ppt
 
-  bindsym Control+Left  resize shrink width  200 px or 200 ppt
-  bindsym Control+Down  resize grow   height 200 px or 200 ppt
-  bindsym Control+Up    resize shrink height 200 px or 200 ppt
-  bindsym Control+Right resize grow   width  200 px or 200 ppt
+  bindsym Control+Left  resize shrink width  200 px or 20 ppt
+  bindsym Control+Down  resize grow   height 200 px or 20 ppt
+  bindsym Control+Up    resize shrink height 200 px or 20 ppt
+  bindsym Control+Right resize grow   width  200 px or 20 ppt
 
-  bindsym Shift+Control+Left  resize shrink width  300 px or 300 ppt
-  bindsym Shift+Control+Down  resize grow   height 300 px or 300 ppt
-  bindsym Shift+Control+Up    resize shrink height 300 px or 300 ppt
-  bindsym Shift+Control+Right resize grow   width  300 px or 300 ppt
+  bindsym Shift+Control+Left  resize shrink width  300 px or 30 ppt
+  bindsym Shift+Control+Down  resize grow   height 300 px or 30 ppt
+  bindsym Shift+Control+Up    resize shrink height 300 px or 30 ppt
+  bindsym Shift+Control+Right resize grow   width  300 px or 30 ppt
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
