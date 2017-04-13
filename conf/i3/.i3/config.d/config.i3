@@ -1,12 +1,13 @@
-# --------------------
 # STARTUP
 # --------------------
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Options
 # --------------------
+workspace_auto_back_and_forth yes
+
 # WORKSPACES
 # -------------------- 
-
 bindsym $mod+q workspace $pws_term
 bindsym $mod+w workspace $pws_edit
 bindsym $mod+e workspace $pws_www
@@ -179,6 +180,9 @@ for_window [class="(?i)conky"] border none
 
 ## KEYBINDINGS
 ## -----------
+## use xev to get keycodes
+## ------------
+
 # set modkey (Super key)
 set $mod Mod4
 
@@ -221,13 +225,13 @@ bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # choose split direction.
-bindsym $mod+-split h
-bindsym $mod+/ split v
+bindsym $mod+slash split horizontal
+bindsym $mod+minus split vertical
 
 # window layout controls
 bindsym $mod+Control+Shift+t layout stacked
-bindsym $mod+Shift+t layout toggle
-bindsym $mod+t layout tabbed
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+t layout toggle
 bindsym $mod+f fullscreen toggle
 
 # toggle
@@ -238,13 +242,13 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+r restart
 
 # regenerate configuration from template and restart i3
-bindsym $mod+Control+Shift+r exec --no-startup-id $fullrestart
+# bindsym $mod+Control+Shift+r exec --no-startup-id $fullrestart
 
 # reload i3 configuration
 bindsym $mod+Shift+c reload
 
 # regenerate i3 config and reload
-bindsym $mod+Control+Shift+c exec --no-startup-id $fullreload
+# bindsym $mod+Control+Shift+c exec --no-startup-id $fullreload
 
 # border changing
 bindsym $mod+b border toggle
@@ -260,10 +264,10 @@ bindsym XF86TouchpadToggle exec --no-startup-id ~/bin/touchpad_toggle
 bindsym $mod+z workspace back_and_forth
 
 # move windows back and forth
-bindsym $mod+Shift+z move container to workspace back_and_forth
+ bindsym $mod+Shift+z move container to workspace back_and_forth
 
-bindsym $mod+Control+Shift+left move container to output left
-bindsym $mod+Control+Shift+right move container to output right
+# bindsym $mod+Control+Shift+left move container to output left
+# bindsym $mod+Control+Shift+right move container to output right
 
 bindsym $mod+p focus parent
 bindsym $mod+Shift+p focus child
@@ -376,9 +380,9 @@ bindsym $mod+Home mode "$mode_chdisp"
 font pango:Essential PragmataPro 9
 
 # <class>               <border>      <background>  <foreground> <indicator>
-client.focused          $magenta      $magenta      $white       $cyan
-client.focused_inactive $bright_black $white        $black       $cyan
-client.unfocused        $bright_black $bright_black $gray        $cyan
-client.urgent           $orange       $orange       $black       $cyan
-client.placeholder      $magenta      $cyan         $black       $cyan
+client.focused          $magenta      $magenta      $bright_white $cyan
+client.focused_inactive $bright_white $bright_white $black        $cyan
+client.unfocused        $black        $black        $bright_white $cyan
+client.urgent           $orange       $orange       $black        $cyan
+client.placeholder      $magenta      $cyan         $black        $cyan
 
