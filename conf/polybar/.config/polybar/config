@@ -154,8 +154,8 @@ format = <label-state> <label-mode>
 
 label-mode = %mode%
 label-mode-padding = 1
-label-mode-foreground = ${colors.white}
-label-mode-background = ${colors.blue}
+label-mode-foreground = ${colors.black}
+label-mode-background = ${colors.grey}
 
 label-focused = %name%
 label-focused-padding = 1
