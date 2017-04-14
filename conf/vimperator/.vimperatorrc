@@ -7,7 +7,7 @@ set suggestengines=duckduckgo
 set defsearch=duckduckgo
 set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position,zoomlevel
-set gui=tabs
+set gui=none,tabs
 
 " To Enable map <Space> {{{
 "js <<EOM
@@ -92,7 +92,7 @@ cmap <C-k>  <S-Tab>
 " add user styles
 " source ~/.vimperator/styles/arch-wiki.vimp
 source ~/.vimperator/styles/input-field.vimp
-" source ~/.vimperator/styles/wikipedia.vimp
+source ~/.vimperator/styles/wikipedia.vimp
 " source ~/.vimperator/styles/reddit.vimp
 
 " temporary hack to fix autocompletion

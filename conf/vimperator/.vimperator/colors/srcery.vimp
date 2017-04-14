@@ -183,6 +183,22 @@ tabs, tab, .tab-stack{
   background-color: var(--color-white) !important;
 }
 
+#new-tab-button {
+  background-color: var(--color-black) !important;
+}
+
+#alltabs-button {
+  background-color: var(--color-black) !important;
+}
+
+.scrollbutton-down {
+  background-color: var(--color-bright-black) !important;
+}
+
+.scrollbutton-up {
+  background-color: var(--color-bright-black) !important;
+}
+
 /* ----- Tab groups ----- */
 #tabGroups-tabview-button {
   -moz-appearance: none !important;
