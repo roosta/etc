@@ -28,7 +28,6 @@ fi
 
 # CONF
 for config (~/.zsh.d/*.zsh) source $config
-for cfg (~/.zsh.d/plugin_conf/*.zsh) source $cfg
 
 # FUNCTIONS
 for function (~/.zsh.d/functions/*.zsh) source $function
@@ -40,6 +39,12 @@ plugin_location=$HOME/.zsh.d/plugins
 [ -f $plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# PLUGIN CONF
+# for cfg (~/.zsh.d/plugin_conf/*.zsh) source $cfg
+hash fasd 2>/dev/null || source ~/.zsh.d/plugin_conf/fasd.zsh
+hash fzf 2>/dev/null || source ~/.zsh.d/plugin_conf/fzf.zsh
+source ~/.zsh.d/plugin_conf/ls_colors.zsh
 
 if [[ $TERM == xterm-termite ]]; then
   . /etc/profile.d/vte.sh
