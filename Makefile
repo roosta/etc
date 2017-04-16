@@ -129,7 +129,7 @@ update-tmux:
 
 init-tmux:
 	@echo -e "\033[0;33mInitialize tmux...\033[0m"
-	@git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && . ~/.tmux/plugins/tpm/bin/install_plugins
+	@git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins
 
 install-ls--: update-libs
 	@cpan Term::ExtendedColor
