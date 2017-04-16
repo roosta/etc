@@ -52,7 +52,7 @@ export GOPATH=$HOME/.go
 export ZSH_CACHE_DIR=$HOME/.cache/zsh
 
 # use vimpager, and replace less
-export PAGER=/usr/bin/vimpager
+hash vimpager 2>/dev/null && export PAGER=/usr/bin/vimpager
 export LESS=-R
 
 # alias less to vim pager
