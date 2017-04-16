@@ -122,6 +122,11 @@ inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DP1}
 modules-right = xkeyboard pkg eth-garkbit volume memory cpu time
 
+[bar/allitnil]
+inherit = bar/lintilla-primary
+monitor = ${env:MONITOR:eDP1
+modules-right = xkeyboard pkg eth-allitnil volume memory cpu time
+
 [bar/garkbit-secondary]
 inherit = bar/lintilla-secondary
 monitor = ${env:MONITOR:HDMI2}
@@ -345,6 +350,17 @@ label-disconnected = %ifname% disconnected
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
+[module/wifi]
+type = internal/network
+interval = 3.0
+label-connected = "%downspeed:9%%{T5}%{T-}%upspeed:9%%{T5}%{T-}" 
+label-connected-padding-left = 0
+label-connected-padding-right = 2
+accumulate-stats = true
+label-disconnected = %ifname% disconnected
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+
 [module/eth-lintilla]
 inherit = module/eth
 interface = enp9s0
@@ -352,6 +368,10 @@ interface = enp9s0
 [module/eth-garkbit]
 inherit = module/eth
 interface = enp2s0
+
+[module/wifi-alltinil]
+inherit = module/eth
+interface = wlp2s0
 
 [module/date]
 type = internal/date
