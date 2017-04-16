@@ -8,11 +8,11 @@ link: link-conf link-misc link-local post-install
 
 install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-pacaur install-packages install-aur-packages update post_install
 
+min: min-install update-libs user-fs set-shell update-zsh-plugins min-link init-vim init-tmux
+	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
+
 min-install:
 	sudo apt-get install `cat min_packages.txt`
-
-min: user-fs set-shell update-zsh-plugins min-link init-vim init-tmux
-	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 
 min-link: 
 	stow zsh git tmux vim bash -R -t ~ -d conf
