@@ -42,14 +42,3 @@ bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directorie
 #tcsh-alias           # define aliases for tcsh
 #tcsh-hook            # setup tcsh precmd alias
 
-# fzf + fasd.
-v() {
-  local file
-  file="$(fasd -Rfl "$1" | fzf-tmux -1 -0 --no-sort +m)" && vi "${file}" || return 1
-}
-
-z() {
-  local dir
-  dir="$(fasd -Rdl "$1" | fzf-tmux -1 -0 --no-sort +m)" && cd "${dir}" || return 1
-}
-
