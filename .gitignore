@@ -40,7 +40,7 @@ backup/*
 
 # shell
 .bash_history
-**/.zsh.d/plugins
+**/.zsh.d/plugins/*
 fasd.data
 
 # GUI

@@ -53,7 +53,6 @@ user-fs:
 	-@mkdir ~/sbin
 	-@mkdir -p ~/var/log
 	-@mkdir -p ~/var/undo
-	-@mkdir -p ~/.zsh.d/plugins
 	-@mkdir -p ~/.cache/zsh
 	-@mkdir -p ~/backup
 	-@touch ~/.cache/zsh/dirs
