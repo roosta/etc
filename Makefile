@@ -1,4 +1,5 @@
 HOST ?= $(shell hostname)
+NOW = $(shell date +"%Y-%m-%d@%T")
 
 default: link update post-install
 
@@ -8,7 +9,7 @@ link: link-conf link-misc link-local post-install
 
 install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-pacaur install-packages install-aur-packages update post_install
 
-min: min-install update-libs user-fs set-shell update-zsh-plugins min-link init-vim init-tmux
+min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-link init-vim init-tmux
 	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 
 min-install:
@@ -54,6 +55,7 @@ user-fs:
 	-@mkdir -p ~/var/undo
 	-@mkdir -p ~/.zsh.d/plugins
 	-@mkdir -p ~/.cache/zsh
+	-@mkdir -p ~/backup
 	-@touch ~/.cache/zsh/dirs
 
 update-zsh-plugins:
@@ -132,6 +134,10 @@ init-tmux:
 install-ls--: update-libs
 	@cpan Term::ExtendedColor
 	@cd ~/lib/ls-- && perl Makefile.PL && make && make install
+
+save-originals:
+	@mkdir ~/backup/original-system-files@$(NOW)
+	@mv ~/.bash* ~/backup/original-system-files@$(NOW)
 
 post-install:
 	@echo -e "\033[1;32mAll done!\033[0m"
