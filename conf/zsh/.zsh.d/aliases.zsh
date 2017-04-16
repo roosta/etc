@@ -246,7 +246,7 @@ alias 19='cd -19'
 #}}}
 ## LISTS {{{1
 
-if [[ $(which ls++) ]];then
+if hash ls++ 2>/dev/null; then
   alias ls='ls++ -lAhpk --potsf'
 else
   alias ls="ls -lsAhpk --color=auto --group-directories-first"
