@@ -21,7 +21,7 @@ set wildmode=longest,list,full
 set wildignorecase
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
                 \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
-                \*/_site/*
+                \*/_site/*,\*/resources/public/js/*
 " set wildignore+=.git,.hg,.svn,build,node_modules,undo,out,.repl*,.cljs_rhino_repl,_site
 set backspace=indent,eol,start
 set laststatus=2
@@ -243,7 +243,6 @@ nmap <leader>gc :BCommits<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>m  :Marks<cr>
 nmap <leader>H  :Helptags<cr>
-
 
 " }}}
 " Cmd:{{{
