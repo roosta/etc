@@ -2,3 +2,4 @@ zsh
 stow
 tmux
 vim
+exuberant-ctags
