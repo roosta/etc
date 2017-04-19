@@ -17,6 +17,8 @@ case "$host_name" in
     ;;
   "garkbit")
     echo "hello"
+    ;;
   "allitnil")
     polybar allitnil &
+    ;;
 esac
