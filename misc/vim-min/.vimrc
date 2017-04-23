@@ -80,7 +80,7 @@ set foldmethod=marker
 """"""""""""""""
 
 " set showmode
-set noshowmode
+" set noshowmode
 " %< Where to truncate
 " %n buffer number
 " %F Full path
