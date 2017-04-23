@@ -155,12 +155,12 @@ strip-wsnumbers = true
 ; fuzzy-match = true
 
 ; ws-icon-0 = 1:term;Q
-format = <label-state> <label-mode> 
+format = <label-state><label-mode> 
 
 label-mode = %mode%
 label-mode-padding = 1
-label-mode-foreground = ${colors.black}
-label-mode-background = ${colors.grey}
+label-mode-foreground = ${colors.white}
+label-mode-background = ${colors.blue}
 
 label-focused = %name%
 label-focused-padding = 1
@@ -203,7 +203,7 @@ label-indicator-padding = 1
 type = custom/script
 interval = 1200
 format = <label>
-label = PKG %output%
+label = "PKG %output%"
 label-padding-right = 2
 label-padding-left = 1
 exec = ~/.config/polybar/pkg.sh
@@ -215,7 +215,7 @@ exec = ~/.config/polybar/vpn.sh
 label-padding = 1
 interval = 5
 ; label-padding = 1
-label = %output%
+label = "%output%"
 
 [module/volume]
 type = internal/volume
