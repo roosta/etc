@@ -120,6 +120,7 @@ assign [class="(?i)PlayOnLinux"] $pws_game
 # workaround for spotify WS assignment
 # see: https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace $pws_media
+assign [class="Spotify"] $pws_media
 
 # assign [class="(?i)google-chrome"] $TWS1
 assign [class="(?i)smplayer"]   $pws_media
@@ -200,7 +201,7 @@ bindsym $mod+c kill
 set $combi_modi "window;DRun"
 # bindsym $mod+Tab exec --no-startup-id "rofi -combi-modi \\"window,drun\\" -show combi -modi combi"
 bindsym $mod+Tab exec --no-startup-id "rofi -theme ~/.config/rofi/srcery.rasi -show"
-bindsym $mod+grave exec --no-startup-id rofi -show window
+bindsym $mod+grave exec --no-startup-id rofi -show window -theme ~/.config/rofi/srcery.rasi
 
 # focus vi bindings
 bindsym $mod+h focus left
