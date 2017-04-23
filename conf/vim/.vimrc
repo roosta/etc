@@ -486,7 +486,9 @@ let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
 " -------------------
 au VimEnter * RainbowParentheses
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-"let g:rbpt_loadcmd_toggle = 0
+
+" exclude bright black since its barly visible
+let g:rainbow#blacklist = [8]
 
 " undotree
 " --------
