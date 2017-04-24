@@ -1,8 +1,5 @@
 $HOME/.screenlayout/main.sh &
 # set-default-sink 1
 
-polybar garkbit-primary &
-polybar garkbit-secondary &
-
 # vim:ft=sh:ts=2:sw=2:fdm=marker
 
