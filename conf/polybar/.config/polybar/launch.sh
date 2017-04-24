@@ -16,7 +16,8 @@ case "$host_name" in
     polybar lintilla-tertiary &
     ;;
   "garkbit")
-    echo "hello"
+    polybar garkbit-primary &
+    polybar garkbit-secondary &
     ;;
   "allitnil")
     polybar allitnil &

@@ -117,20 +117,25 @@ font-4 = "Material Icons:pixelsize=10;3"
 modules-right = fs-home fs-root
 monitor = ${env:MONITOR:HDMI-0}
 
-[bar/garkbit-primary]
-inherit = bar/lintilla-primary
-monitor = ${env:MONITOR:DP1}
-modules-right = xkeyboard pkg eth-garkbit volume memory cpu time
-
 [bar/allitnil]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:eDP1
-modules-right = xkeyboard pkg eth-allitnil volume memory cpu time
+modules-right = xkeyboard vpncheck pkg volume memory cpu date
+
+[bar/garkbit-primary]
+inherit = bar/lintilla-primary
+monitor = ${env:MONITOR:DP1}
+modules-right = xkeyboard pkg volume memory cpu date
 
 [bar/garkbit-secondary]
-inherit = bar/lintilla-secondary
+dpi = 96
+height = 18
+font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;1"
+font-1 = "Essential PragmataPro:pixelsize=9:weight=bold;1"
+font-4 = "Material Icons:pixelsize=10;3"
+inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:HDMI2}
-modules-right = xkeyboard pkg eth-garkbit volume memory cpu time
+modules-right = eth-garkbit
 
 [module/i3]
 type = internal/i3
