@@ -37,6 +37,8 @@ alias syscan='sudo systemctl cancel'
 alias sysedit='sudo systemctl edit'
 alias sysdis='sudo systemctl disable'
 
+alias pacaur='pacaur --color=always'
+alias pacman='pacman --color=always'
 #}}}
 ## QUICK EDITS {{{1
 ## ----------------
