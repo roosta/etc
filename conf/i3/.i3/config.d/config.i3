@@ -417,7 +417,7 @@ font pango:Essential PragmataPro 9
 # <class>               <border>      <background>  <foreground> <indicator>
 client.focused          $magenta      $magenta      $bright_white $cyan
 client.focused_inactive $bright_white $bright_white $black        $cyan
-client.unfocused        $black        $black        $bright_white $cyan
+client.unfocused        $black        $bright_black        $bright_white $cyan
 client.urgent           $orange       $orange       $black        $cyan
 client.placeholder      $magenta      $cyan         $black        $cyan
 
