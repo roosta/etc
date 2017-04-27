@@ -206,7 +206,7 @@ label-indicator-padding = 1
 
 [module/pkg]
 type = custom/script
-interval = 1200
+interval = 90
 format = <label>
 label = "PKG %output%"
 label-padding-right = 2
