@@ -177,6 +177,9 @@ noremap <silent> <leader>w<Down>  :wincmd j<CR>
 noremap <silent> <leader>w<Left>  :wincmd h<CR>
 noremap <silent> <leader>w<Right> :wincmd l<CR>
 
+noremap <silent> <leader>w/ :vsplit<CR>
+noremap <silent> <leader>w- :split<CR>
+
 " noremap <silent> <M-Up>    :wincmd k<CR>
 " noremap <silent> <M-Down>  :wincmd j<CR>
 " noremap <silent> <M-Left>  :wincmd h<CR>
