@@ -26,32 +26,6 @@ xgrey5        = ${xrdb:color239:#4E4E4E}
 
 [icons]
 
-temp-ramp-0 = 
-temp-ramp-1 = 
-temp-ramp-2 = 
-
-wifi = 
-network = 
-email = 
-close = 
-hot-tamale = 
-power = 
-calendar = 
-clock = 
-flame = 
-down = 
-up = 
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-battery-empty = 
-battery-full = 
-
-volume-ramp-0 = ""
-volume-ramp-1 = ""
-volume-ramp-2 = ""
-
 music = 
 music-prev = 
 music-stop = 
@@ -91,7 +65,7 @@ font-3 = "fura code nerd font:pixelsize=14;4"
 font-4 = "Material Icons:pixelsize=10;4"
 modules-left = i3 xwindow
 modules-center = mpd
-modules-right = xkeyboard vpncheck pkg volume memory cpu date time
+modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
 
 [bar/lintilla-secondary]
 inherit = bar/lintilla-primary
@@ -189,7 +163,7 @@ label-urgent-foreground = ${colors.brightwhite}
 
 [module/xwindow]
 type = internal/xwindow
-format-foreground = ${colors.brightwhite}
+format-foreground = ${colors.white}
 label = %title:0:80%
 label-padding = 1
 
@@ -198,7 +172,7 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 format = <label-layout> <label-indicator>
 format-padding = 1
-label-layout = %name%
+label-layout = %layout%
 label-indicator = %name%
 label-indicator-background = ${colors.brightred}
 label-indicator-foreground = ${colors.brightwhite}
@@ -213,6 +187,14 @@ label-padding-right = 2
 label-padding-left = 1
 exec = ~/.config/polybar/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+
+[module/keyboard-layout]
+type = custom/script
+interval = 1
+format = <label>
+label = "%output%"
+exec = ~/.config/polybar/layout.sh
 
 [module/vpncheck]
 type = custom/script
@@ -243,7 +225,7 @@ bar-volume-indicator-foreground = ${colors.brightgreen}
 bar-volume-indicator = ╸
 bar-volume-fill = ╸
 bar-volume-empty = ╸
-bar-volume-empty-foreground = ${colors.brightwhite}
+bar-volume-empty-foreground = ${colors.white}
 
 [module/memory]
 type = internal/memory
@@ -257,7 +239,7 @@ bar-used-indicator-foreground = ${colors.brightmagenta}
 bar-used-indicator = ╸
 bar-used-fill = ╸
 bar-used-empty = ╸
-bar-used-empty-foreground = ${colors.brightwhite}
+bar-used-empty-foreground = ${colors.white}
 
 [module/cpu]
 type = internal/cpu
@@ -271,7 +253,7 @@ bar-load-indicator-foreground = ${colors.brightcyan}
 bar-load-indicator = ╸
 bar-load-fill = ╸
 bar-load-empty = ╸
-bar-load-empty-foreground = ${colors.brightwhite}
+bar-load-empty-foreground = ${colors.white}
 ; ramp-coreload-0 = ▁
 ; ramp-coreload-1 = ▂
 ; ramp-coreload-2 = ▃
@@ -389,7 +371,7 @@ label = %date%
 [module/time]
 type = internal/date
 interval = 5
-format-background = ${white}
+background = ${white}
 time = %H:%M
 ; time-alt = %Y-%m-%d
 label = %time%
