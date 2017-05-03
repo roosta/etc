@@ -87,7 +87,7 @@ alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
 # locate file at working dir
 if hash rg 2>/dev/null; then
-  alias lsg='\ls -lAh | rg'
+  alias lsg='\ls -lAh | rg -i'
 else
   alias lsg='\ls -lAh | grep'
 fi
@@ -442,5 +442,6 @@ alias uh="ls && sleep 0.2 && clear"
 ## DEFAULT OPTS {{{1
 ## ---------
 alias firefox='firefox-developer'
+alias jobs='jobs -l'
 #}}}
 # vim: fdm=marker:sw=2
