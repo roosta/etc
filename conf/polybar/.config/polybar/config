@@ -93,8 +93,11 @@ monitor = ${env:MONITOR:HDMI-0}
 
 [bar/allitnil]
 inherit = bar/lintilla-primary
-monitor = ${env:MONITOR:eDP1
-modules-right = xkeyboard vpncheck pkg volume memory cpu date
+height = 25
+dpi = 140
+monitor = ${env:MONITOR:eDP1}
+modules-center = 
+modules-right = xkeyboard vpncheck wifi-allitnil pkg volume-small memory cpu date time
 
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
@@ -227,6 +230,10 @@ bar-volume-fill = ╸
 bar-volume-empty = ╸
 bar-volume-empty-foreground = ${colors.white}
 
+[module/volume-small]
+inherit = module/volume
+format = <label-volume>
+
 [module/memory]
 type = internal/memory
 interval = 2
@@ -357,8 +364,11 @@ interface = enp9s0
 inherit = module/eth
 interface = enp2s0
 
-[module/wifi-alltinil]
-inherit = module/eth
+[module/wifi-allitnil]
+type = internal/network
+format-connected = WIFI: <label-connected>
+label-padding = 1
+label-connected = %essid%: %signal%%
 interface = wlp2s0
 
 [module/date]
