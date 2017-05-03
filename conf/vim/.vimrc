@@ -231,7 +231,7 @@ command! Mode call AppendModeline()
 nnoremap <leader><tab> :b#<cr>
 
 " uses the Ilist function from qlist.
-nnoremap <leader>i :Ilist<space>
+nnoremap <leader>ji :Ilist<space>
 
 imap <C-v> <Esc>"*pa
 
