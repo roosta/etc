@@ -278,9 +278,10 @@ ramp-2 = ${icons.temp-ramp-2}
 
 [module/mpd]
 type = internal/mpd
-; format-online-prefix = "   "
+format-online-prefix = " "
 ; format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-format-online = <toggle>  <label-song> 
+format-online = <label-song> 
+format-online-foreground = ${colors.white}
 host = localhost
 port = 6600
 
@@ -293,7 +294,7 @@ icon-next = ${icons.music-next}
 label-offline =   mpd is offline
 
 label-song-maxlen = 80
-label-song-ellipsis = false
+label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -364,14 +365,12 @@ interface = wlp2s0
 type = internal/date
 interval = 5
 date = "%Y-%m-%d"
-label-font = 2
 label-padding = 1
 label = %date%
 
 [module/time]
 type = internal/date
 interval = 5
-background = ${white}
 time = %H:%M
 ; time-alt = %Y-%m-%d
 label = %time%
@@ -403,7 +402,7 @@ bar-used-indicator-foreground = ${colors.yellow}
 bar-used-indicator = ╸
 bar-used-fill = ╸
 bar-used-empty = ╸
-bar-used-empty-foreground = ${colors.brightwhite}
+bar-used-empty-foreground = ${colors.white}
 format-mounted = <bar-used> <label-mounted>
 format-mounted-padding = 1
 format-unmounted-padding = 1
