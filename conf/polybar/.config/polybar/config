@@ -97,7 +97,7 @@ height = 25
 dpi = 140
 monitor = ${env:MONITOR:eDP1}
 modules-center = 
-modules-right = xkeyboard vpncheck wifi-allitnil pkg volume-small memory cpu date time
+modules-right = keyboard-layout vpncheck wifi pkg volume-small memory-small cpu-small date time
 
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
@@ -232,7 +232,7 @@ bar-volume-empty-foreground = ${colors.white}
 
 [module/volume-small]
 inherit = module/volume
-format = <label-volume>
+bar-volume-width = 5
 
 [module/memory]
 type = internal/memory
@@ -247,6 +247,10 @@ bar-used-indicator = ╸
 bar-used-fill = ╸
 bar-used-empty = ╸
 bar-used-empty-foreground = ${colors.white}
+
+[module/memory-small]
+inherit = module/memory
+bar-used-width = 5
 
 [module/cpu]
 type = internal/cpu
@@ -269,6 +273,11 @@ bar-load-empty-foreground = ${colors.white}
 ; ramp-coreload-5 = ▆
 ; ramp-coreload-6 = ▇
 ; ramp-coreload-7 = █
+
+[module/cpu-small]
+inherit = module/cpu
+type = internal/cpu
+bar-load-width = 5
 
 [module/temperature]
 type = internal/temperature
@@ -345,16 +354,24 @@ label-disconnected = %ifname% disconnected
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
-[module/wifi]
-type = internal/network
-interval = 3.0
-label-connected = "%downspeed:9%%{T5}%{T-}%upspeed:9%%{T5}%{T-}" 
-label-connected-padding-left = 0
-label-connected-padding-right = 2
-accumulate-stats = true
-label-disconnected = %ifname% disconnected
-format-connected = <label-connected>
-format-disconnected = <label-disconnected>
+; [module/wifi]
+; type = internal/network
+; interval = 3.0
+; label-connected = "%downspeed:9%%{T5}%{T-}%upspeed:9%%{T5}%{T-}" 
+; label-connected-padding-left = 0
+; label-connected-padding-right = 2
+; accumulate-stats = true
+; label-disconnected = %ifname% disconnected
+; format-connected = <label-connected>
+; format-disconnected = <label-disconnected>
+; ramp-signal-0 = ▁
+; ramp-signal-1 = ▂
+; ramp-signal-2 = ▃
+; ramp-signal-3 = ▄
+; ramp-signal-4 = ▅
+; ramp-signal-5 = ▆
+; ramp-signal-6 = ▇
+; ramp-signal-7 = █
 
 [module/eth-lintilla]
 inherit = module/eth
@@ -364,12 +381,18 @@ interface = enp9s0
 inherit = module/eth
 interface = enp2s0
 
-[module/wifi-allitnil]
+[module/wifi]
 type = internal/network
-format-connected = WIFI: <label-connected>
+format-connected = WIFI: <label-connected> <ramp-signal>
 label-padding = 1
-label-connected = %essid%: %signal%%
+label-connected = %essid%
 interface = wlp2s0
+ramp-signal-0 = ▂
+ramp-signal-1 = ▃
+ramp-signal-2 = ▄
+ramp-signal-3 = ▅
+ramp-signal-4 = ▆
+ramp-signal-5 = ▇
 
 [module/date]
 type = internal/date
