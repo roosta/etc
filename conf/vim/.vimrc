@@ -352,6 +352,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
+
 Plug 'tpope/vim-dispatch'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'tpope/vim-unimpaired'
@@ -368,6 +369,7 @@ Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-speeddating'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'ajh17/VimCompletesMe'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-vinegar'
@@ -377,7 +379,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-abolish'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
+
+" theme
 Plug 'itchyny/lightline.vim'
+Plug '~/src/vim-srcery'
+" Plug 'roosta/vim-srcery'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -402,13 +408,12 @@ Plug 'tpope/vim-salve', { 'for': 'clojure' }
 " Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
 Plug 'tpope/vim-projectionist'
-Plug 'guns/vim-sexp'
+" Plug 'guns/vim-sexp'
 Plug 'junegunn/rainbow_parentheses.vim'
 
 " syntax
-Plug '~/src/vim-srcery'
-" Plug 'roosta/vim-srcery'
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -417,6 +422,12 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'vimperator/vimperator.vim'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'pangloss/vim-javascript'
+Plug 'vim-syntastic/syntastic'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+" Plug 'racer-rust/vim-racer'
+
 call plug#end()
 
 syntax on
