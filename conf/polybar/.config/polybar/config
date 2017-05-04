@@ -102,7 +102,8 @@ modules-right = keyboard-layout vpncheck wifi pkg volume-small memory-small cpu-
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DP1}
-modules-right = xkeyboard pkg volume memory cpu date
+modules-center = mpd
+modules-right = keyboard-layout pkg volume memory cpu date time
 
 [bar/garkbit-secondary]
 dpi = 96
