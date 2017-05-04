@@ -416,7 +416,6 @@ Plug 'junegunn/rainbow_parentheses.vim'
 " syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'hdima/python-syntax'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'vimperator/vimperator.vim'
@@ -425,8 +424,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-syntastic/syntastic'
 
 " Rust
-Plug 'rust-lang/rust.vim'
-" Plug 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
 call plug#end()
 
