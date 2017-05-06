@@ -1,5 +1,6 @@
 ! "Enabled modi" Set from: XResources
-rofi.modi:                           combi
+rofi.modi:                           combi,ssh,calc:qalc +u8 -nocurrencies 
+!,repl:rlwrap lumo
 ! "Window width" Set from: XResources
 rofi.width:                          20
 ! "Number of lines" Set from: XResources
@@ -21,6 +22,8 @@ rofi.terminal:                       termite
 ! "Ssh client to use" Set from: XResources
 rofi.ssh-client:                     ssh
 ! "Ssh command to execute" Set from: XResources
+/* urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME" */
+! rofi.ssh-command:                    {terminal} -e tmux -q has-session && exec tmux attach-session -d && exec {ssh-client} {host} || exec tmux new-session -n$USER -s$USER@$HOSTNAME && exec {ssh-client} {host}
 rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
 ! "Run command to execute" Set from: XResources
 rofi.run-command:                    {cmd}
