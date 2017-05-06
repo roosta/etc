@@ -233,7 +233,7 @@ nnoremap <leader><tab> :b#<cr>
 " uses the Ilist function from qlist.
 nnoremap <leader>ji :Ilist<space>
 
-imap <C-v> <Esc>"*pa
+" imap <C-v> <Esc>"*pa
 
 " plugin spesific
 nmap <leader>cc :Dispatch<cr>
