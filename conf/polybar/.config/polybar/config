@@ -190,8 +190,11 @@ type = custom/script
 interval = 90
 format = <label>
 label = "PKG %output%"
+; format-prefix = 
+; label-padding = 1
 label-padding-right = 2
 label-padding-left = 1
+; label-padding-left = 1
 exec = ~/.config/polybar/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
@@ -199,6 +202,9 @@ exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 [module/keyboard-layout]
 type = custom/script
 interval = 1
+format-prefix = 
+format-prefix-foreground = ${colors.white}
+; label-padding = 1
 format = <label>
 label = "%output%"
 exec = ~/.config/polybar/layout.sh
@@ -206,7 +212,7 @@ exec = ~/.config/polybar/layout.sh
 [module/vpncheck]
 type = custom/script
 exec = ~/.config/polybar/vpn.sh
-label-padding = 1
+; label-padding = 1
 interval = 5
 ; label-padding = 1
 label = "%output%"
@@ -216,7 +222,7 @@ type = internal/volume
 format-volume = "<bar-volume> <label-volume>"
 format-prefix = ${icons.close}
 format-prefix-font = 4
-label-muted =  ╸╸╸╸╸╸╸╸╸╸ muted
+label-muted = ╸╸╸╸╸╸╸╸╸╸ muted
 label-muted-foreground = ${colors.red}
 label-volume = "VOL %percentage%%"
 ramp-volume-0 = ${icons.volume-ramp-0}
@@ -225,7 +231,6 @@ ramp-volume-2 = ${icons.volume-ramp-2}
 ramp-volume-font = 4
 ramp-volume-background = ${colors.brightblack}
 ramp-volume-foreground = ${colors.brightwhite}
-
 bar-volume-width = 10
 bar-volume-foreground = ${colors.brightwhite} 
 bar-volume-indicator-foreground = ${colors.brightgreen}
@@ -298,7 +303,7 @@ ramp-2 = ${icons.temp-ramp-2}
 
 [module/mpd]
 type = internal/mpd
-format-online-prefix = " "
+format-online-prefix = ""
 ; format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 format-online = <label-song> 
 format-online-foreground = ${colors.white}

@@ -1,6 +1,6 @@
 tunnel=$(ip link show|awk '/(tun|pon)/{print substr($2, 1, 4)}')
 if [[ ! -z $tunnel ]]; then
-  echo "%{F#98BC37}VPN%{F-}"
+  echo "%{F#98BC37} %{F-}"
 else
-  echo "%{F#F75341}No VPN!%{F-}"
+  echo "%{F#F75341} %{F-}"
 fi
