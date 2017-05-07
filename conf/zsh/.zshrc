@@ -8,11 +8,13 @@
 # ├┤ Site   : http://dotfiles.roosta.sh          ├┤
 # ├┤ Github : https://github.com/roosta          ├┤
 # ┆└───────────────────────────────────────┬┬┬┬┬─┤┆
-# │ Zsh run commands.                      ├┤┆├┴─┤
+# │                                        ├┤┆├┴─┤
 # │                                      ┌─┼┼─┤  ┆
 # └──────────────────────────────────────┴─┴┴─┤
 #                                             ┆
 # VIRTUAL CONSOLE
+# Set colors by parsing xresources (or attempt to, not working. Will fix eventually)
+# Also start a tmux session
 if [ "$TERM" = "linux" ]; then
   _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
   for i in $(sed -n "$_SEDCMD" $HOME/.Xresources.d/srcery.xresources | \
@@ -23,22 +25,21 @@ clear
 tmux new-session -s vconsole
 fi
 
-# init completion
-# for compl (~/.zsh.d/completion/*.zsh) source $compl
-
-# CONF
-for config (~/.zsh.d/*.zsh) source $config
-
-# FUNCTIONS
-for function (~/.zsh.d/functions/*.zsh) source $function
-
 # PLUGINS
 plugin_location=$HOME/.zsh.d/plugins
-[ -f /usr/share/doc/pkgfile/command-not-found.zsh ] && source /usr/share/doc/pkgfile/command-not-found.zsh
-[ -f $plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source $plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh
-[ -f $plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && source $plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
+command_not_found=/usr/share/doc/pkgfile/command-not-found.zsh
+[ -f $command_not_found ] && source $command_not_found
+
+zsh_syntax_highlighting=$plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -f $zsh_syntax_highlighting ] && source $zsh_syntax_highlighting
+
+zsh_history_substring_search=$plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh
+[ -f $zsh_history_substring_search ] && source $zsh_history_substring_search
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Unused ATM
+# [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
 
 # PLUGIN CONF
 # for cfg (~/.zsh.d/plugin_conf/*.zsh) source $cfg
@@ -46,8 +47,9 @@ hash fasd 2>/dev/null && source ~/.zsh.d/plugin_conf/fasd.zsh
 hash fzf 2>/dev/null && source ~/.zsh.d/plugin_conf/fzf.zsh
 source ~/.zsh.d/plugin_conf/ls_colors.zsh
 
-if [[ $TERM == xterm-termite ]]; then
-  . /etc/profile.d/vte.sh
-  __vte_osc7
-fi
+# ZSH CONF
+for config (~/.zsh.d/*.zsh) source $config
+
+# FUNCTIONS
+for function (~/.zsh.d/functions/*.zsh) source $function
 
