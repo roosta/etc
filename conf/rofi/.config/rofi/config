@@ -1,5 +1,5 @@
 ! "Enabled modi" Set from: XResources
-rofi.modi:                           combi,ssh,calc:qalc +u8 -nocurrencies 
+rofi.modi:                           combi,calc:qalc +u8 -nocurrencies 
 !,repl:rlwrap lumo
 ! "Window width" Set from: XResources
 rofi.width:                          20
