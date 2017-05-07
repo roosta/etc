@@ -11,13 +11,12 @@ path=(~/bin $(ruby -rubygems -e "puts Gem.user_dir")/bin /usr/local/bin $HOME/.g
 # export PATH=$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin:/usr/local/bin:$HOME/.go/bin:$HOME/perl5/bin:$HOME/.npm/bin:$HOME/.pip/bin:$PATH
 #export MANPATH=/usr/local/man:$MANPATH
 
-fpath=($HOME/.zsh.d/functions $HOME/.zsh.d/completion $fpath)
+fpath=($HOME/.zsh.d/functions $HOME/.zsh.d/completion $HOME/.zsh.d/plugins/zsh-completions/src $fpath[@])
 # fpath=("$HOME/.zsh.d/completion" $fpath)
 
 # set ruby gems install location to home
 export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
 
-# locate
 export LANG=en_US.UTF-8
 
 # only define LC_CTYPE if undefined
@@ -82,4 +81,3 @@ export PULSE_LATENCY_MSEC=60
 
 # gtags
 export GTAGSLABEL=ctags
-export PROJECT_HOME=~/dev
