@@ -42,11 +42,13 @@ key[PageDown]=${terminfo[knp]}
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-bindkey ' ' magic-space # [Space] - do history expansion
+# [Space] - do history expansion
+bindkey ' ' magic-space
+
 bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
 bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
-bindkey -M vicmd '^[[1;5C' forward-word
-bindkey -M vicmd '^[[1;5D' backward-word
+bindkey -M vicmd '^[[1;5C' forward-word # same for vi mode
+bindkey -M vicmd '^[[1;5D' backward-word # same for vi mode
 
 # [Shift-Tab] - move through the completion menu backwards
 if [[ "${terminfo[kcbt]}" != "" ]]; then
