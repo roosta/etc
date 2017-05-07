@@ -27,6 +27,7 @@ fi
 
 # PLUGINS
 plugin_location=$HOME/.zsh.d/plugins
+
 command_not_found=/usr/share/doc/pkgfile/command-not-found.zsh
 [ -f $command_not_found ] && source $command_not_found
 
@@ -41,14 +42,14 @@ zsh_history_substring_search=$plugin_location/zsh-history-substring-search/zsh-h
 # Unused ATM
 # [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
 
+# ZSH CONF
+for config (~/.zsh.d/*.zsh) source $config
+
 # PLUGIN CONF
 # for cfg (~/.zsh.d/plugin_conf/*.zsh) source $cfg
 hash fasd 2>/dev/null && source ~/.zsh.d/plugin_conf/fasd.zsh
 hash fzf 2>/dev/null && source ~/.zsh.d/plugin_conf/fzf.zsh
 source ~/.zsh.d/plugin_conf/ls_colors.zsh
-
-# ZSH CONF
-for config (~/.zsh.d/*.zsh) source $config
 
 # FUNCTIONS
 for function (~/.zsh.d/functions/*.zsh) source $function
