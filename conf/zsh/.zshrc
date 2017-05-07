@@ -52,5 +52,5 @@ hash fzf 2>/dev/null && source ~/.zsh.d/plugin_conf/fzf.zsh
 source ~/.zsh.d/plugin_conf/ls_colors.zsh
 
 # FUNCTIONS
-for function (~/.zsh.d/functions/*.zsh) source $function
+# for function (~/.zsh.d/functions/*.zsh) source $function
 
