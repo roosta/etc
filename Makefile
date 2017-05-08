@@ -3,7 +3,8 @@ NOW = $(shell date +"%Y-%m-%d@%T")
 
 default: link update post-install
 
-update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install
+
+update: pull update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install
 
 link: link-conf link-misc link-local post-install
 
@@ -11,6 +12,9 @@ install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories inst
 
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-link init-vim init-tmux
 	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
+
+pull:
+	git pull
 
 min-install:
 	sudo apt-get install `cat min_packages.txt`
