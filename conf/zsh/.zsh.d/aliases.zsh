@@ -305,7 +305,7 @@ alias paste="clippaste" # see functions
 
 # print date in various formats
 alias gettime='date +"%T"'
-alias getdatef='date +"%Y-%m-%d@%T"'
+alias now='date +"%Y-%m-%d@%T"'
 alias getdate='date +"%Y-%m-%d"'
 
 # ignore case always
