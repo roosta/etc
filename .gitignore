@@ -105,3 +105,4 @@ conf/pip/.pip/lib
 lock.png
 
 .lastupdate
+conf/teiler/.config/teiler/uploader
