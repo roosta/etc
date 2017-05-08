@@ -31,22 +31,28 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[End]}"      ]]  && bindkey  "${key[End]}"      end-of-line
 [[ -n "${key[Insert]}"   ]]  && bindkey  "${key[Insert]}"   overwrite-mode
 [[ -n "${key[Delete]}"   ]]  && bindkey  "${key[Delete]}"   delete-char
-[[ -n "${key[Up]}"       ]]  && bindkey  "${key[Up]}"       history-substring-search-up
-[[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     history-substring-search-down
+# [[ -n "${key[Up]}"       ]]  && bindkey  "${key[Up]}"       history-substring-search-up
+# [[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     history-substring-search-down
 [[ -n "${key[left]}"     ]]  && bindkey  "${key[left]}"     backward-char
 [[ -n "${key[right]}"    ]]  && bindkey  "${key[right]}"    forward-char
 [[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
 [[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
 
+# Bind up arrow, down arrow to zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 # bind k and j for VI mode hist substring search
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-bindkey ' ' magic-space # [Space] - do history expansion
+# [Space] - do history expansion
+bindkey ' ' magic-space
+
 bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
 bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
-bindkey -M vicmd '^[[1;5C' forward-word
-bindkey -M vicmd '^[[1;5D' backward-word
+bindkey -M vicmd '^[[1;5C' forward-word # same for vi mode
+bindkey -M vicmd '^[[1;5D' backward-word # same for vi mode
 
 # [Shift-Tab] - move through the completion menu backwards
 if [[ "${terminfo[kcbt]}" != "" ]]; then

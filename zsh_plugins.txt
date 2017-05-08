@@ -1,3 +1,4 @@
 https://github.com/zsh-users/zsh-syntax-highlighting
 https://github.com/zsh-users/zsh-history-substring-search
 https://github.com/sindresorhus/pure
+https://github.com/zsh-users/zsh-completions
