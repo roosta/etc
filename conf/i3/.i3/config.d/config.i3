@@ -199,9 +199,9 @@ bindsym $mod+Shift+Return exec firefox
 bindsym $mod+c kill
 
 # set $combi_modi "window;DRun"
-# bindsym $mod+Tab exec --no-startup-id "rofi -combi-modi \\"window,drun\\" -show combi -modi combi -theme ~/.config/rofi/srcery.rasi"
-bindsym $mod+Tab exec --no-startup-id "rofi -theme ~/.config/rofi/srcery.rasi -show"
-bindsym $mod+grave exec --no-startup-id rofi -show window -theme ~/.config/rofi/srcery.rasi
+bindsym $mod+Tab exec --no-startup-id "rofi -combi-modi \\"window,drun\\" -show combi -modi combi,calc:qalc +u8 -nocurrencies
+# bindsym $mod+Tab exec --no-startup-id "rofi -show"
+bindsym $mod+grave exec --no-startup-id rofi -show window
 
 # focus vi bindings
 bindsym $mod+h focus left
@@ -275,8 +275,9 @@ bindsym $mod+Shift+p focus child
 
 # screenshot
 # source: https://github.com/Airblader/dotfiles-manjaro
-bindsym --release Print exec scrot $screenshot
-bindsym --release Shift+Print exec scrot -s $screenshot
+# bindsym --release Print exec scrot $screenshot
+bindsym --release Print exec teiler
+# bindsym --release Shift+Print exec scrot -s $screenshot
 
 # send a signal to i3status on caps to toggle layout
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
