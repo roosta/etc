@@ -1,5 +1,5 @@
 ! "Enabled modi" Set from: XResources
-rofi.modi:                           combi,calc:qalc +u8 -nocurrencies 
+rofi.modi:                           combi,calc:qalc +u8 -nocurrencies
 !,repl:rlwrap lumo
 ! "Window width" Set from: XResources
 rofi.width:                          20
@@ -78,7 +78,7 @@ rofi.dpi:                            192
 ! "Indicate how it match by underlining it." Set from: Default
 ! rofi.show-match:                     true
 ! "New style theme file" Set from: Default
-! rofi.theme:                          
+rofi.theme: ~/.config/rofi/srcery.rasi                          
 ! "Pidfile location" Set from: XResources
 rofi.pid:                            /run/user/1000/rofi.pid
 ! "The display name of this browser" Set from: Default
