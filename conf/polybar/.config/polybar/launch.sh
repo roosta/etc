@@ -11,15 +11,15 @@ host_name=$(hostname)
 case "$host_name" in
   "lintilla")
     echo "got lintilla"
-    polybar lintilla-primary &
-    polybar lintilla-secondary &
-    polybar lintilla-tertiary &
+    polybar lintilla-primary -r &
+    polybar lintilla-secondary -r &
+    polybar lintilla-tertiary -r &
     ;;
   "garkbit")
-    polybar garkbit-primary &
-    polybar garkbit-secondary &
+    polybar garkbit-primary -r &
+    polybar garkbit-secondary -r &
     ;;
   "allitnil")
-    polybar allitnil &
+    polybar allitnil -r &
     ;;
 esac
