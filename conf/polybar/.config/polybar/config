@@ -75,7 +75,7 @@ font-4 = "Material Icons:pixelsize=10;3"
 dpi = 96
 height = 18
 modules-center =
-modules-right = eth-lintilla
+modules-right = eth-lintilla fs-home fs-root
 tray-position = right
 tray-padding = 1
 tray-scale = 1
@@ -88,7 +88,7 @@ height = 18
 modules-center =
 font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;1"
 font-4 = "Material Icons:pixelsize=10;3"
-modules-right = fs-home fs-root
+modules-right = 
 monitor = ${env:MONITOR:HDMI-0}
 
 [bar/allitnil]
