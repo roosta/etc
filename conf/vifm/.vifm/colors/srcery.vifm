@@ -1,4 +1,3 @@
-" An example colorscheme looks like: 
 highlight Win cterm=none ctermfg=white ctermbg=black
 highlight Directory cterm=none ctermfg=4 ctermbg=none
 highlight Link cterm=bold ctermfg=yellow ctermbg=none
@@ -17,7 +16,7 @@ highlight CmdLine cterm=none ctermfg=white ctermbg=black
 highlight ErrorMsg cterm=none ctermfg=red ctermbg=black
 highlight Border cterm=none ctermfg=15 ctermbg=8
 
-"You can also highlight different filetypes using regular expressions:  
+" Highlight different filetypes using regular expressions:  
 highlight /^.*\.(mp3|ogg|oga|flac|m4a)$/ ctermfg=magenta
 highlight /^.*\.(md)$/ ctermfg=yellow
 highlight /^.*\.(jpg|jpeg|png|gif|tiff|webp|bmp|svg|svgz)$/ ctermfg=magenta
