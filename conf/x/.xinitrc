@@ -46,9 +46,9 @@ fi
 xrdb -merge ~/.Xresources
 
 # set X font locations
-xset +fp $HOME/.fonts/restricted &
-xset +fp $HOME/.fonts/icons &
-xset +fp $HOME/.fonts/misc &
+xset +fp "$HOME/.fonts/restricted" &
+xset +fp "$HOME/.fonts/icons" &
+xset +fp "$HOME/.fonts/misc" &
 xset fp rehash &
 
 # Set keyboard layouts and options.
@@ -68,7 +68,7 @@ xss-lock -- xscreensaver-command --lock &
 
 # disable screensaver when certain fullscreen apps are active
 # see https://github.com/iye/lightsOn/blob/master/lightsOn.sh
-lightsOn 590 &
+# lightsOn 590 &
 
 # set background with nitrogen
 nitrogen --restore &
@@ -102,7 +102,8 @@ case $session in
   fluxbox           ) exec startfluxbox;;
   gnome             ) exec gnome-session;;
   gnome-classic     ) exec gnome-session --session=gnome-classic;;
-  i3|i3wm           ) exec i3 -c $HOME/.i3/config -V >> ~/var/log/i3log-$(date +'%F-%k-%M-%S') 2>&1;;
+  # i3|i3wm           ) exec i3 -c $HOME/.i3/config -V >> ~/var/log/i3log-$(date +'%F-%k-%M-%S') 2>&1;;
+  i3|i3wm           ) exec i3 -c "$HOME/.i3/config";;
   icewm             ) exec icewm-session;;
   jwm               ) exec jwm;;
   kde               ) exec startkde;;
@@ -114,7 +115,7 @@ case $session in
   xfce|xfce4        ) exec startxfce4;;
   xmonad            ) exec xmonad;;
   # No known session, try to run it as command
-  *) exec $1;;
+  *) exec "$1";;
 esac
 
 # vim:ft=sh:ts=2:sw=2:fdm=marker
