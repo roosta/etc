@@ -28,16 +28,30 @@ fi
 # PLUGINS
 plugin_location=$HOME/.zsh.d/plugins
 
-command_not_found=/usr/share/doc/pkgfile/command-not-found.zsh
-[ -f $command_not_found ] && source $command_not_found
+if [[ -s '/usr/share/doc/pkgfile/command-not-found.zsh' ]]; then
+  source '/usr/share/doc/pkgfile/command-not-found.zsh'
+# Return if requirements are not found.
+else
+  return 1
+fi
 
-zsh_syntax_highlighting=$plugin_location/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-[ -f $zsh_syntax_highlighting ] && source $zsh_syntax_highlighting
+if [[ -s "${plugin_location}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+  source "${plugin_location}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+else
+  return 1
+fi
 
-zsh_history_substring_search=$plugin_location/zsh-history-substring-search/zsh-history-substring-search.zsh
-[ -f $zsh_history_substring_search ] && source $zsh_history_substring_search
+if [[ -s "${plugin_location}/zsh-history-substring-search/zsh-history-substring-search.zsh" ]]; then
+  source "${plugin_location}/zsh-history-substring-search/zsh-history-substring-search.zsh"
+else
+  return 1
+fi
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [[ -s ~/.fzf.zsh ]]; then
+  source ~/.fzf.zsh
+else
+  return 1
+fi
 
 # Unused ATM
 # [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
