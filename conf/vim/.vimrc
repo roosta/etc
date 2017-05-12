@@ -247,6 +247,8 @@ nmap <leader>gs :Gstatus<cr>
 nmap <leader>m  :Marks<cr>
 nmap <leader>H  :Helptags<cr>
 
+nnoremap Y y$
+
 " }}}
 " Cmd:{{{
 """"""""""
