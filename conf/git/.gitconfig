@@ -11,13 +11,14 @@
 [diff]
 	tool = vimdiff
 [alias]
-  s = status
-  b = branch
-  cc = commit
-  ca = commit --amend
-  d = diff
-  dc = diff --cached
-  wd = diff --word-dif
+  s         = status
+  b         = branch
+  c         = commit
+  A         = add -A
+  ca        = commit --amend
+  d         = diff
+  dc        = diff --cached
+  wd        = diff --word-dif
   precommit = diff --cached --diff-algorithm=minimal -w
   logs      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   logd      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
@@ -26,13 +27,12 @@
   branches  = branch -a
   tags      = tag
   stashes   = stash list
-  alias     = "!git config -l | grep alias | cut -c 7-"
   unstage   = reset HEAD --
   discard   = checkout -- .
   fuck      = !git reset --hard HEAD && git clean -d -f
   uncommit  = reset --mixed HEAD~
   amend     = commit --amend
-	last = cat-file commit HEAD
+	last      = cat-file commit HEAD
   ctags     = !.git/hooks/ctags
   last-sha  = rev-parse --short HEAD
   pom       = push -u origin master
