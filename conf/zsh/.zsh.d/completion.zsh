@@ -13,7 +13,7 @@ if [[ "$TERM" == 'dumb' ]]; then
 fi
 
 # Add zsh-completions and local completions to $fpath.
-fpath=($HOME/.zsh.d/functions $HOME/.zsh.d/completion $HOME/.zsh.d/plugins/zsh-completions/src $fpath[@])
+fpath=($HOME/.zsh.d/completion $HOME/.zsh.d/plugins/zsh-completions/src $fpath[@])
 
 # OPTIONS
 # -------
