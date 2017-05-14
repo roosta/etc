@@ -31,7 +31,7 @@ unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
 # cache time of 20 hours, so it should almost always regenerate the first time a
 # shell is opened each day.
 autoload -Uz compinit
-compfiles=(${HOME}/.zcompdump(Nm-20))
+compfiles=(${ZDOTDIR:-$HOME}/.zcompdump(Nm-20))
 if [[ $#compfiles > 0 ]]; then
   compinit -i -C
 else
@@ -47,7 +47,7 @@ autoload -U ~/.zsh.d/completion/*(:t)
 
 # Use caching to make completion for commands such as dpkg and apt usable.
 zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path "${HOME}/.zcompcache"
+zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
 
 # Case-insensitive (all), partial-word, and then substring completion.
 if zstyle -t ':prezto:module:completion:*' case-sensitive; then
