@@ -62,9 +62,10 @@ numlockx &
 xbindkeys &
 
 # screen locker
-xscreensaver -no-splash &
-xss-lock -- xscreensaver-command --lock &
-#xss-lock -- i3lock -t -d -n -i /home/roosta/.background/pattern-01.png &
+# xscreensaver -no-splash &
+# xss-lock -- lock &
+xss-lock -- "$HOME/.i3/scripts/locker.sh" &
+# xautolock -time 10 -locker lock &
 
 # disable screensaver when certain fullscreen apps are active
 # see https://github.com/iye/lightsOn/blob/master/lightsOn.sh
