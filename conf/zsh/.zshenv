@@ -10,7 +10,8 @@
 #   source "${ZDOTDIR:-$HOME}/.zprofile"
 # fi
 
-if [[ -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+# source zprofile on a interactive non-login shell
+if [[ ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 

@@ -62,6 +62,7 @@ function fload {
   for function in ~/.zsh.d/functions/$~function_glob; do
     autoload -Uz "$function"
   done
+  unset function
 }
 
 fload
