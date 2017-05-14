@@ -43,4 +43,5 @@ function web_search() {
   nohup $open_cmd "$url" &>/dev/null
 }
 
+web_search "$@"
 

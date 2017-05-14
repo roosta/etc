@@ -57,3 +57,6 @@ function transfer() {
   # cleanup
   rm -f $tmpfile
 }
+transfer "$@"
+
+#  vim: set ft=zsh ts=2 sw=2 tw=0 fdm=marker et :

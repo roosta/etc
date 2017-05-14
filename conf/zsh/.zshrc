@@ -56,6 +56,16 @@ fi
 # Unused ATM
 # [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
 
+function fload {
+  local function_glob='^([_.]*|prompt_*_setup|README*|*~)(-.N:t)'
+  fpath=($HOME/.zsh.d/functions $fpath)
+  for function in ~/.zsh.d/functions/$~function_glob; do
+    autoload -Uz "$function"
+  done
+}
+
+fload
+
 # ZSH CONF
 for config (~/.zsh.d/*.zsh) source $config
 
@@ -65,6 +75,4 @@ hash fasd 2>/dev/null && source ~/.zsh.d/plugin_conf/fasd.zsh
 hash fzf 2>/dev/null && source ~/.zsh.d/plugin_conf/fzf.zsh
 source ~/.zsh.d/plugin_conf/ls_colors.zsh
 
-# FUNCTIONS
-# for function (~/.zsh.d/functions/*.zsh) source $function
 

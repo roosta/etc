@@ -4,4 +4,5 @@ spell () {
   echo "$*"|aspell -a --suggest
 }
 
+spell "$@"
 

@@ -4,3 +4,4 @@ function md() {
     pandoc -s -f markdown -t man "$*" | man -l -
 }
 
+md "$@"

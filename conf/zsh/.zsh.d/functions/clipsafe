@@ -1,7 +1,7 @@
 # System clipboard integration
 #
 # A "safer" copy to clipboard made for Pass and SSH
-# Copies only first line and clears clipboard after 30 secondsz
+# Copies only first line and clears clipboard after 30 seconds
 
 # safecopy - Copy head of string to clipboard
 #
@@ -9,7 +9,7 @@
 #
 #  ssh remote-host [remote command] | safecopy    - copies stdin to local clipboard
 #
-function safecopy() {
+function clipsafe() {
   emulate -L zsh
   local file=$1
   if which xsel &>/dev/null; then
@@ -25,3 +25,7 @@ function safecopy() {
     return 1
   fi
 }
+
+clipsafe "$@"
+
+#  vim: set ft=zsh ts=2 sw=2 tw=0 fdm=marker et :
