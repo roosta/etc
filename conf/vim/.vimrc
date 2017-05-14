@@ -236,19 +236,20 @@ nnoremap <leader>ji :Ilist<space>
 " imap <C-v> <Esc>"*pa
 
 " plugin spesific
-nmap <leader>cc :Dispatch<cr>
-nmap <leader>o  :Files<CR>
-nmap <leader>bb :Buffers<cr>
-nmap <leader>T  :Tags<cr>
-nmap <leader>t  :BTags<cr>
-nmap <leader>gC :Commits<cr>
-nmap <leader>gc :BCommits<cr>
-nmap <leader>gs :Gstatus<cr>
-nmap <leader>m  :Marks<cr>
-nmap <leader>H  :Helptags<cr>
+nnoremap <leader>cc :Dispatch<cr>
+nnoremap <leader>o  :Files<CR>
+nnoremap <leader>bb :Buffers<cr>
+nnoremap <leader>T  :Tags<cr>
+nnoremap <leader>t  :BTags<cr>
+nnoremap <leader>gC :Commits<cr>
+nnoremap <leader>gc :BCommits<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>m  :Marks<cr>
+nnoremap <leader>H  :Helptags<cr>
 
 nnoremap Y y$
 
+nnoremap <leader><leader> :call 
 " }}}
 " Cmd:{{{
 """"""""""
@@ -308,7 +309,7 @@ endfunction
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
 " files.
 function! AppendModeline()
-  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d fdm=marker %set :",
         \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
   let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
   call append(line("$"), l:modeline)
@@ -488,7 +489,7 @@ let g:EasyMotion_smartcase = 1
 
 map <Leader> <Plug>(easymotion-prefix)
 " map <leader><leader> <Plug>(easymotion-s2)
-map <leader><leader> <Plug>(easymotion-s)
+map <leader>jj <Plug>(easymotion-s)
 " map <Leader>f <Plug>(easymotion-lineforward)
 " map <Leader>F <Plug>(easymotion-linebackward)
 "
