@@ -30,27 +30,18 @@ plugin_location=$HOME/.zsh.d/plugins
 
 if [[ -s '/usr/share/doc/pkgfile/command-not-found.zsh' ]]; then
   source '/usr/share/doc/pkgfile/command-not-found.zsh'
-# Return if requirements are not found.
-else
-  return 1
 fi
 
 if [[ -s "${plugin_location}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
   source "${plugin_location}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-else
-  return 1
 fi
 
 if [[ -s "${plugin_location}/zsh-history-substring-search/zsh-history-substring-search.zsh" ]]; then
   source "${plugin_location}/zsh-history-substring-search/zsh-history-substring-search.zsh"
-else
-  return 1
 fi
 
 if [[ -s ~/.fzf.zsh ]]; then
   source ~/.fzf.zsh
-else
-  return 1
 fi
 
 # Unused ATM
