@@ -1,8 +1,9 @@
 HOST ?= $(shell hostname)
 NOW = $(shell date +"%Y-%m-%d@%T")
 
-default: link update post-install
+include local/$(HOST)/variables.mk
 
+default: link update post-install
 
 update: pull update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install
 
@@ -14,7 +15,7 @@ min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins
 	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 
 pull:
-	git pull
+	git pull --rebase
 
 min-install:
 	sudo apt-get install `cat min_packages.txt`
@@ -29,9 +30,9 @@ install-pacaur:
 	cd ~/etc/build/pacaur && makepkg -si --noconfirm --needed
 	rm -rf ~/etc/build
 
-add-pacman-repositories:
-	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
-	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
+# add-pacman-repositories:
+# 	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
+# 	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
 
 install-aur-packages: install-pacaur
 	@echo -e "\033[0;33mInstalling AUR packages...\033[0m"
@@ -94,6 +95,7 @@ link-misc:
 	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 	-@ln -s $(HOME)/src/utils/chdisp_nvidia.sh $(HOME)/bin/chdisp
 	-@ln -s $(HOME)/src/utils/touchpad_toggle.sh $(HOME)/bin/touchpad_toggle
+	-@ln -s $(HOME)/utils/locker.sh $(HOME)/bin/locker
 
 link-conf:
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
@@ -119,7 +121,16 @@ init-spacemacs: link-conf
 ~/.i3/config: link-conf
 	@echo -e "\033[0;33mCreating i3 config...\033[0m"
 	@rm ~/.i3/config
-	@cd ~/.i3/config.d && cat $(HOST).local > ../config && cat *.i3 >> ../config
+ifdef primary_monitor
+	@echo "set \$$primary_monitor $(primary_monitor)" >> ~/.i3/config
+endif
+ifdef secondary_monitor
+	@echo "set \$$secondary_monitor $(secondary_monitor)" >> ~/.i3/config 
+endif
+ifdef tertiary_monitor
+	@echo "set \$$tertiary_monitor $(tertiary_monitor)" >> ~/.i3/config
+endif
+	@cd templates/i3 && cat *.i3 >> ~/.i3/config
 
 i3: ~/.i3/config
 	@echo -e "\033[0;33mReload i3 config...\033[0m"
@@ -141,6 +152,17 @@ install-ls--: update-libs
 save-originals:
 	@mkdir ~/backup/original-system-files@$(NOW)
 	@mv ~/.bash* ~/backup/original-system-files@$(NOW)
+
+i3-append-monitors:
+ifdef primary_monitor
+	@echo "set \$$primary_monitor $(primary_monitor)"
+endif
+ifdef secondary_monitor
+	@echo "set \$$secondary_monitor $(secondary_monitor)"
+endif
+ifdef tertiary_monitor
+	@echo "set \$$tertiary_monitor $(tertiary_monitor)"
+endif
 
 post-install:
 	@echo -e "\033[1;32mAll done!\033[0m"

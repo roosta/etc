@@ -1,8 +1,0 @@
-# ------------
-# LOCAL
-# ------------
-set $primary_monitor   DP-1
-set $secondary_monitor DVI-D-0
-set $tertiary_monitor  HDMI-0
-
-# vim:ft=i3:ts=2:sw=2:fdm=marker
