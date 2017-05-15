@@ -1,5 +1,0 @@
-#!/bin/bash
-gputemp=$(nvidia-smi -q -d TEMPERATURE|awk '/GPU Current Temp/{print $5}')
-echo "$gputemp°C"
-echo
-echo "#FCE8C3"

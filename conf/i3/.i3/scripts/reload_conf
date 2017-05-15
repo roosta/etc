@@ -1,3 +1,0 @@
-#!/bin/env bash
-ansible-playbook $HOME/.dotfiles/dotfiles.yml -t i3  > /dev/null && i3-msg -q restart &
-
