@@ -20,15 +20,15 @@ hi StatusLine     color: #FCE8C3; background: #2d2b28; font-weight: normal; font
 "hi StatusLineExtended color:  #93a1a1; background: #af005f; font-weight: normal; font-size: 12pt;
 "hi StatusLineSecure   color:  #93a1a1; background: #b58900; font-weight: normal; font-size: 12pt;
 
-hi Normal     color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
-hi CmdLine    color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
-hi InfoMsg    color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
-hi ModeMsg    color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
-hi MoreMsg    color: #98BC37; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
-hi LineNr     color: #FBB829; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
-hi Question   color: #FABD2F; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
-hi WarningMsg color: #FBB829; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro;
-hi ErrorMsg   color: #F75341; background: #2d2b28; font-size: 11px; font-family: Essesntial PragmataPro; font-weight: bold;
+hi Normal     color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: "Essential PragmataPro";
+hi CmdLine    color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: "Essential PragmataPro";
+hi InfoMsg    color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: "Essential PragmataPro";
+hi ModeMsg    color: #FCE8C3; background: #2d2b28; font-size: 11px; font-family: "Essential PragmataPro";
+hi MoreMsg    color: #98BC37; background: #2d2b28; font-size: 11px; font-family: "Essential PragmataPro";
+hi LineNr     color: #FBB829; background: #2d2b28; font-size: 11px; font-family: "Essential PragmataPro";
+hi Question   color: #FABD2F; background: #2d2b28; font-size: 11px; font-family: "Essential PragmataPro";
+hi WarningMsg color: #FBB829; background: #2d2b28; font-size: 11px; font-family: "Essential PragmataPro";
+hi ErrorMsg   color: #F75341; background: #2d2b28; font-size: 11px; font-family: "Essential PragmataPro"; font-weight: bold;
 hi NonText    background: #1C1B19;
 hi Null       color: #98BC37;
 hi Tag        color: #98BC37;
