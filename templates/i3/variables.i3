@@ -2,7 +2,7 @@
 # VARIABLES
 # -------------------
 # fast way to reach power settings for system. Requires polkit.
-set $locker ~/.i3/scripts/locker.sh
+set $locker ~/utils/locker.sh
 # set $locker xscreensaver-command --lock
 #set $locker i3lock --image=$HOME/.background/pattern-01.png -t && sleep 1
 
