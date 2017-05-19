@@ -70,7 +70,7 @@ alias viorg="emacs --no-wait ~/org"
 alias viorgw="emacs --no-wait ~/org/Work.org"
 alias viorgd="emacs --no-wait ~/org/Dev.org"
 alias vispc="emacs -t ~/.spacemacs"
-alias vitodo="emacs --no-wait ~/org/TODOs.org"
+alias vitodo="emacsclient --no-wait ~/org/TODOs.org"
 alias vimutt="$EDITOR ~/.muttrc"
 
 #}}}
@@ -400,9 +400,9 @@ alias leindeps='lein deps :tree'
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
 alias dust='rlwrap dust'
-alias ccat='pygmentize -g -O style=colorful'
+alias cats='pygmentize -g -O style=colorful'
 #alias ccat='pygmentize -g -O style=colorful,linenos=1'
-alias cats='highlight -O ansi'
+alias ccat='highlight -O ansi'
 alias cljgrep='ag -R --include="*.clj*"'
 alias ect='emacsclient -t'
 alias ecc='emacsclient -c'
@@ -444,7 +444,6 @@ alias uh="ls && sleep 0.2 && clear"
 #}}}
 ## DEFAULT OPTS {{{1
 ## ---------
-alias firefox='firefox-developer'
 alias jobs='jobs -l'
 #}}}
 # vim: fdm=marker:sw=2
