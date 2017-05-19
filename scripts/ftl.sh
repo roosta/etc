@@ -174,6 +174,9 @@ run () {
     "help")
       usage
       ;;
+    "make")
+      cd $etc_path && make && cd -
+      ;;
     *)
       usage
   esac
