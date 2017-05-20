@@ -61,7 +61,7 @@ alias vilein="$EDITOR ~/.lein/profiles.clj"
 alias viterm="$EDITOR ~/.Xresources.d/urxvt"
 alias vii3="$EDITOR ~/etc/templates/i3/config.i3"
 alias vii3vars="$EDITOR ~/etc/templates/i3/variables.i3"
-alias vienv="$EDITOR ~/.zshenv"
+alias vienv="$EDITOR ~/.zprofile"
 alias vizopts="$EDITOR ~/.zsh.d/options.zsh"
 alias vizrc="$EDITOR ~/.zshrc"
 alias vixfont="$EDITOR ~/.Xresources.d/fonts"
@@ -84,6 +84,8 @@ alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 alias aliasg="cats ~/.zsh.d/aliases.zsh | grep" # locate an alias quickly
 alias histgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
+
+alias psgrep='ps aux|head -n 1 && ps aux|grep'
 
 # locate file at working dir
 if hash rg 2>/dev/null; then
