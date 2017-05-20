@@ -1,0 +1,7 @@
+(if (is (window_class) "Terminator")
+    (begin 
+     (pin)
+     (stick)
+     (undecorate)
+     (wintype "desktop")
+     (geometry "3840x500+1920+1660")))
