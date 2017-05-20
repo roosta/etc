@@ -16,8 +16,6 @@ path=(~/bin
       
 #export MANPATH=/usr/local/man:$MANPATH
 
-export BROWSER=firefox-developer
-
 # set ruby gems install location to home
 export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
 
@@ -35,7 +33,7 @@ fi
 # export TERM="rxvt-unicode-256color"
 export TERM="screen-256color"
 export TERMINAL=termite
-export BROWSER=firefox-developer
+export BROWSER=firefox
 
 # uniform qt/gtk look.
 export DESKTOP_SESSION=gnome
