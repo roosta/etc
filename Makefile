@@ -5,7 +5,7 @@ include local/$(HOST)/variables.mk
 
 default: link update post-install
 
-update: pull update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install
+update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install
 
 link: link-conf link-misc link-local post-install
 
@@ -90,7 +90,7 @@ link-misc:
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
 	-@ln -s $(HOME)/src/utils $(HOME)
 	-@ln -s $(HOME)/src/colors $(HOME)
-	-@ln -s $(HOME)/src/utils/emacs-file-opener.sh $(HOME)/bin/emacs-file-opener
+	-@ln -s $(HOME)/src/utils/emacs_file_opener.sh $(HOME)/bin/emacs_file_opener
 	-@ln -s $(HOME)/etc/scripts/ftl.sh $(HOME)/bin/ftl
 	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 	-@ln -s $(HOME)/src/utils/chdisp_nvidia.sh $(HOME)/bin/chdisp
