@@ -178,7 +178,7 @@ for_window [window_role="task_dialog"] floating_maximum_size 670 x 470
 #for_window [class="(?i)google-chrome$"]         border none
 for_window [class="(?i)PrisonArchitect.x86_64"] border none
 for_window [class="(?i)conky"] border none
-
+for_window [class="(?i)terminator"] border none
 ## KEYBINDINGS
 ## -----------
 ## use xev to get keycodes
