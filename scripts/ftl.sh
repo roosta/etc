@@ -21,6 +21,17 @@ commit () {
   git commit
 }
 
+add () {
+  for arg in "$@"
+  do
+    if [[ -f "$etc_path/conf/$arg" ]]; then
+      git add "$etc_path/conf/$arg" || exit 1
+    else
+      error_msg "No such file: $arg"
+    fi
+  done
+}
+
 stat () {
   cd "$etc_path" || exit 1
   git status
@@ -40,7 +51,7 @@ diff () {
     for arg in "$@"
     do
       if [[ -d "$etc_path/conf/$arg" ]]; then
-        cd $etc_path
+        cd "$etc_path" || exit 1
         git diff "$etc_path/conf/$arg" || exit 1
       else
         error_msg "No such directory: $arg"
@@ -143,10 +154,10 @@ run () {
   (( $# >= 1 )) || usage
   case "$1" in
     "commit")
-      commit ${@:2}
+      commit "${@:2}"
       ;;
     "diff")
-      diff ${@:2}
+      diff "${@:2}"
       ;;
     "i3")
       # if [[ -n "$2" ]]; then
@@ -162,8 +173,11 @@ run () {
     "status")
       stat
       ;;
+    "add")
+      add "${@:2}"
+      ;;
     "edit")
-      edit ${@:2}
+      edit "${@:2}"
       ;;
     "link")
       link
@@ -175,7 +189,7 @@ run () {
       usage
       ;;
     "make")
-      cd $etc_path && make && cd -
+      cd "$etc_path" && make && cd - || exit 1
       ;;
     *)
       usage
