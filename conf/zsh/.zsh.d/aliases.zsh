@@ -201,7 +201,8 @@ alias -s net=firefox
 alias -s com=firefox
 
 #}}}
-## SAFETY {{{1
+## DEFAULTS {{{1
+## Aliases that shadow its original command. Like docker='sudo docker'
 ## -----------
 
 alias mv=' timeout 8 mv -iv'
@@ -224,6 +225,9 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 
 # create parents, be verbose
 alias mkdir='mkdir -pv'
+alias docker='sudo docker'
+
+
 #}}}
 ## MOVEMENT {{{1
 ## -------------
