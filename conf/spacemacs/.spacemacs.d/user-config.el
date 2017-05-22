@@ -109,9 +109,9 @@
     org-clock-persist 'history
     org-export-with-clocks t
     org-clock-idle-time 15
-    org-mobile-directory "~/Dropbox/org/"
-    org-mobile-files (quote ("~/Dropbox/org/TODOs.org"))
-    org-agenda-files (quote ("~/Dropbox/org/TODOs.org")))
+    org-mobile-directory "~/org/"
+    org-mobile-files (quote ("~/org/TODOs.org"))
+    org-agenda-files (quote ("~/org/TODOs.org")))
   (add-hook 'org-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
   ;; drawer-export
