@@ -108,7 +108,7 @@ assign [class="(?i)atom"]                   $pws_edit
 assign [class="(?i)emacs"]                  $pws_edit
 
 # E:WWW
-assign [class="(?i)firefox"] $pws_www
+assign [class="(?i)firefox$"] $pws_www
 
 # 2:GAM
 assign [class="(?i)^steam(.*)"]   $pws_game
@@ -192,7 +192,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec $term
 
-bindsym $mod+Shift+Return exec firefox
+# bindsym $mod+Shift+Return exec firefox
 #bindsym $mod+Shift+Return exec $tmux_new
 
 # kill focused window
@@ -379,7 +379,7 @@ bindsym $mod+Home mode "$mode_chdisp"
 mode "focused" {
 
   # hardcoded focus keybindings
-  bindsym b [class="(?i)firefox-developer"] focus
+  bindsym b [class="(?i)firefox"] focus
   bindsym w [class="(?i)termite"] focus
   # bindsym w [class="(?i)terminal" title="weechat"] focus
   bindsym m [class="(?i)thunderbird"] focus
