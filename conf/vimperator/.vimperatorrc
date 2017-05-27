@@ -8,6 +8,7 @@ set defsearch=duckduckgo
 set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position,zoomlevel
 set gui=none,tabs
+set titlestring=""
 " set editor="emacsclient -n"
 
 " To Enable map <Space> {{{
