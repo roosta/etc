@@ -97,18 +97,20 @@ hide_edge_borders none
 
 # WINDOW WORKSPACE ASSIGNMENT
 # ---------------------------
-# W:DEV
+# D:Debug
 assign [class="(?i)google-chrome-beta"]     $sws_debug
 assign [class="(?i)google-chrome-unstable"] $sws_debug
-# assign [instance="^Devtools$$"]             $sws_s
-# assign [class="(?i)firefox-developer"]      $sws_s
+assign [class="(?i)firefox-developer"]      $sws_debug
+assign [instance="^Devtools$$"]             $sws_debug
+
+# W:Edit
 assign [class="(?i)subl3"]                  $pws_edit
 assign [class="(?i)jetbrains-idea"]         $pws_edit
 assign [class="(?i)atom"]                   $pws_edit
 assign [class="(?i)emacs"]                  $pws_edit
 
 # E:WWW
-assign [class="(?i)firefox$"] $pws_www
+assign [class="(?i)firefox$$"] $pws_www
 
 # 2:GAM
 assign [class="(?i)^steam(.*)"]   $pws_game
@@ -116,7 +118,7 @@ assign [class="(?i)Wine"]        $pws_game
 assign [class="(?i)PlayOnLinux"] $pws_game
 #assign [title="(?i)friends"] $TWS2
 
-# 1:MED
+# 1:Media
 # workaround for spotify WS assignment
 # see: https://github.com/i3/i3/issues/2060
 for_window [class="Spotify"] move to workspace $pws_media
@@ -125,6 +127,9 @@ assign [class="Spotify"] $pws_media
 # assign [class="(?i)google-chrome"] $TWS1
 assign [class="(?i)smplayer"]   $pws_media
 assign [class="(?i)clementine"] $pws_media
+
+# F1:Media
+assign [class="(?i)google-chrome$"] $tws_media
 
 # 3:ART
 assign [class="(?i)inkscape"] $pws_gfx
