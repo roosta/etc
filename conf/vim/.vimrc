@@ -75,6 +75,8 @@ set ffs=unix,dos,mac
 
 set foldmethod=marker
 
+" disable auto comment insert. see :help fo-table
+set formatoptions-=cro
 "}}}
 " Statusline:{{{
 """"""""""""""""
@@ -277,9 +279,6 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <leader><C-n> :call NumberToggle()<cr>
-
-" disable 'new comment line' by removing the format option. Still happens so suspect one of my plugins...
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " remove leaks for encrypted files
 autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
