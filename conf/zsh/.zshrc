@@ -50,7 +50,7 @@ fi
 function fload {
   local function_glob='^([_.]*|prompt_*_setup|README*|*~)(-.N:t)'
   fpath=($HOME/.zsh.d/functions $fpath)
-  for function in ~/.zsh.d/functions/$~function_glob; do
+  for function in $HOME/.zsh.d/functions/$~function_glob; do
     autoload -Uz "$function"
   done
   unset function
