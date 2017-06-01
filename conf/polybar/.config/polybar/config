@@ -97,6 +97,10 @@ height = 25
 dpi = 140
 monitor = ${env:MONITOR:eDP1}
 modules-center = 
+tray-position = right
+tray-padding = 1
+tray-scale = 1
+tray-background = ${colors.brightblack}
 modules-right = keyboard-layout vpncheck wifi pkg volume-small memory-small cpu-small date time
 
 [bar/garkbit-primary]
