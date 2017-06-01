@@ -396,7 +396,7 @@ interface = enp2s0
 
 [module/wifi]
 type = internal/network
-format-connected = WIFI: <label-connected> <ramp-signal>
+format-connected = WIFI: <label-connected>
 label-padding = 1
 label-connected = %essid%
 interface = wlp2s0
