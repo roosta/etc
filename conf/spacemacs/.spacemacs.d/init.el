@@ -65,7 +65,7 @@ values."
      react
      chrome
      systemd
-     emoji
+     (emoji :disabled-for org)
      github
      org
      ;; (shell :variables
