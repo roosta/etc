@@ -69,7 +69,7 @@ modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
 
 [bar/lintilla-secondary]
 inherit = bar/lintilla-primary
-monitor = ${env:MONITOR:DVI-D-0}
+monitor = ${env:MONITOR:DVI-I-1}
 font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;1"
 font-4 = "Material Icons:pixelsize=10;3"
 dpi = 96
