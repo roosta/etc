@@ -43,7 +43,9 @@ fi
 # set local config
 [ -x "$localrc" ] && . "$localrc"
 
-xrdb -merge ~/.Xresources
+$HOME/.screenlayout/main.sh &
+
+xrdb -merge ~/.Xresources &
 
 # set X font locations
 xset +fp "$HOME/.fonts/restricted" &
