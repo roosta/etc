@@ -83,8 +83,13 @@ update-vim: ~/.vim/autoload/plug.vim
 
 clone-src:
 	@echo -e "\033[0;33mCloning src...\033[0m"
-	ssh-add ~/.ssh/id_rsa
+	@ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
 	@./scripts/git_update.sh ~/src ~/etc/src_repositories.txt
+
+clone-org:
+	@echo -e "\033[0;33mCloning org...\033[0m"
+	@ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
+	@git clone git@github.com:roosta/org.git $(HOME)
 
 link-misc:
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
