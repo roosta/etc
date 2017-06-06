@@ -83,6 +83,7 @@ alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
 alias aliasg="cats ~/.zsh.d/aliases.zsh | grep" # locate an alias quickly
+alias aliasgrep="aliasg"
 alias histgrep="cat ~/.histfile | grep" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
