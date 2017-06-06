@@ -216,8 +216,9 @@ exec = ~/.config/polybar/layout.sh
 [module/vpncheck]
 type = custom/script
 exec = ~/.config/polybar/vpn.sh
+; exec-if = pgrep -x openvpn
 label-padding = 1
-interval = 5
+interval = 30
 ; label-padding = 1
 label = "%output%"
 
