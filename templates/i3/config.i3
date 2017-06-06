@@ -92,7 +92,7 @@ workspace $tws_download output $tertiary_monitor
 
 # Options
 focus_follows_mouse no
-new_window pixel 1
+new_window pixel 2
 hide_edge_borders none
 
 # WINDOW WORKSPACE ASSIGNMENT
