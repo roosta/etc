@@ -72,6 +72,7 @@ alias viorgd="emacs --no-wait ~/org/Dev.org"
 alias vispc="emacs -t ~/.spacemacs"
 alias vitodo="emacsclient --no-wait ~/org/TODOs.org"
 alias vimutt="$EDITOR ~/.muttrc"
+alias vipoly="$EDITOR ~/.config/polybar/config"
 
 #}}}
 ## FIND {{{1
