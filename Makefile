@@ -9,7 +9,7 @@ update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim p
 
 link: link-conf link-misc link-local post-install
 
-install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-pacaur install-packages install-aur-packages update post_install
+install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-pacaur install-packages install-aur-packages update post-install
 
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-link init-vim init-tmux
 	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
