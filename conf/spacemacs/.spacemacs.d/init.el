@@ -68,11 +68,11 @@ values."
      (emoji :disabled-for org)
      github
      org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom
-     ;;        shell-default-term-shell "/usr/bin/zsh"
-     ;;        shell-default-shell 'multi-term)
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom
+            shell-default-term-shell "/usr/bin/zsh"
+            shell-default-shell 'multi-term)
      (spell-checking :variables
                      spell-checking-enable-by-default nil
                      spell-checking-enable-auto-dictionary t
