@@ -331,7 +331,6 @@ endfunction
 " Vimpager: {{{
 """""""""""""""
 
-let g:vimpager_disable_x11 = 1
 let g:vimpager_scrolloff = 5
 let g:vimpager_less_mode = 0
 "let g:vimpager_passthrough = 0
