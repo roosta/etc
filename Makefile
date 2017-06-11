@@ -104,7 +104,7 @@ link-misc:
 
 link-conf:
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
-	@stow $(shell ls conf) -R -t ~ -d conf
+	@stow $(shell ls conf) -R -t ~ -d conf --ignore="md|org"
 
 link-local:
 	@echo -e "\033[0;33mSymlinking local...\033[0m"
