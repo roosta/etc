@@ -24,6 +24,10 @@
 
  )
 
+;; temporary fix for kill-ring pop. See https://github.com/syl20bnr/spacemacs/issues/8823
+(define-key evil-normal-state-map (kbd "p") 'evil-paste-after)
+(define-key evil-normal-state-map (kbd "P") 'evil-paste-before)
+
 ;; Cider
 ;; --------
 (require 'cider)
