@@ -102,6 +102,7 @@ alias lsrg='tree -f -i -h --matchdirs -P'
 alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
 alias awk='gawk'
+alias pacorg='org ~/org/pacman.org'
 #}}}
 ## WEB-SEARCH {{{1
 
