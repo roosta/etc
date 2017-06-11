@@ -5,11 +5,16 @@
                        ;; alternative pprinter
                        ; [mvxcvi/puget "1.0.1"]
 
+                       [org.clojure/tools.nrepl "0.2.12"]
+
                        ;; namespace tools for user/repl
                        [org.clojure/tools.namespace "0.2.11"] ]
 
         :plugins [;; check deps for new versions
                   [lein-ancient "0.6.10"]
+
+                  ;; cider debugging
+                  [com.billpiel/sayid "0.0.15"]
 
                   ;; clojure syntax checking
                   [jonase/eastwood "0.2.3"]
