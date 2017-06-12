@@ -1,7 +1,0 @@
-(if (is (window_class) "Terminator")
-    (begin 
-     (pin)
-     (skip_pager)
-     (wintype "dock")
-     (skil_tasklist)
-     (geometry "3840x400+1920+1760")))
