@@ -54,6 +54,7 @@ nnoremap d[          :bd -select left<CR>
 nnoremap d]          :bd -select right<CR>
 noremap gd           :bdelete 
 
+nnoremap ! t!
 " escape cancle tab delete
 nnoremap d<Escape> <Nop>
 
