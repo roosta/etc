@@ -407,10 +407,12 @@ interface = enp2s0
 
 [module/wifi]
 type = internal/network
+; format-connected-prefix = 
+; format-connected-prefix-font = 4
 format-connected = WIFI: <label-connected>
-label-padding = 1
+format-connected-padding = 1
 format-connected-foreground = ${colors.brightwhite}
-label-connected = %essid%
+label-connected = %essid%, %signal%%
 interface = wlp2s0
 ramp-signal-0 = ▂
 ramp-signal-1 = ▃
