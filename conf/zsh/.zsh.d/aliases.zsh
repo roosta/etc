@@ -78,16 +78,16 @@ alias vipoly="$EDITOR ~/.config/polybar/config"
 ## FIND {{{1
 ## ---------
 
-alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36' --hidden -p ./.agignore"
+alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36' --hidden -p ~/.agignore"
 
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
 alias aliasg="cats ~/.zsh.d/aliases.zsh | grep" # locate an alias quickly
 alias aliasgrep="aliasg"
-alias histgrep="cat ~/.histfile | grep" # grep command history quickly
+alias histgrep="cat ~/.histfile | ag" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 
-alias psgrep='ps aux|head -n 1 && ps aux|grep'
+alias psgrep='ps aux|head -n 1 && ps aux|ag'
 
 # locate file at working dir
 if hash rg 2>/dev/null; then
@@ -103,6 +103,7 @@ alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
 
 alias awk='gawk'
 alias pacorg='org ~/org/pacman.org'
+alias find-here='find . -name'
 #}}}
 ## WEB-SEARCH {{{1
 
