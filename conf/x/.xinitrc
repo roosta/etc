@@ -66,7 +66,7 @@ xbindkeys &
 # screen locker
 # xscreensaver -no-splash &
 # xss-lock -- lock &
-xss-lock -- "$HOME/utils/locker.sh"
+xss-lock -- "$HOME/utils/locker.sh" &
 # xautolock -time 10 -locker lock &
 
 # disable screensaver when certain fullscreen apps are active

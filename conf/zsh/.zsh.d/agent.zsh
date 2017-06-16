@@ -3,9 +3,9 @@
 ## ---
 
 # Start the gpg-agent if not already running
-#if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
-  #gpg-connect-agent /bye >/dev/null 2>&1
-#fi
+# if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+#   gpg-connect-agent /bye >/dev/null 2>&1
+# fi
 
 
 ## Set SSH to use gpg-agent
@@ -24,7 +24,8 @@
 ## SSH
 ## ---
 # start keychain. Remove --noask if you want to add a key on shell startup
-hash keychain 2>/dev/null && eval $(keychain --eval --nogui --noask --agents ssh,gpg --quiet --timeout 300)
+hash keychain 2>/dev/null && eval $(keychain --eval --nogui --noask --agents ssh --quiet --timeout 300)
+# hash keychain 2>/dev/null && eval $(keychain --eval --nogui --noask --agents ssh,gpg --quiet --timeout 300)
 
  #use envoy as a ssh-agent wrapper
 #envoy -t ssh-agent
