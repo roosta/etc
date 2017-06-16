@@ -397,7 +397,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-tbone'
 
 " html/js/css
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 
 " Python
