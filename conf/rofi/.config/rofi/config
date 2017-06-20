@@ -4,7 +4,7 @@ rofi.modi:                           combi,calc:qalc +u8 -nocurrencies
 ! "Window width" Set from: XResources
 rofi.width:                          20
 ! "Number of lines" Set from: XResources
-rofi.lines:                          4294967295
+rofi.lines:                          64
 ! "Number of columns" Set from: XResources
 rofi.columns:                        2
 ! "Font to use" Set from: XResources
@@ -12,11 +12,11 @@ rofi.columns:                        2
 ! "Location on screen" Set from: XResources
 rofi.location:                       1
 ! "Y-offset relative to location" Set from: XResources
-rofi.yoffset:                        30
+rofi.yoffset:                        34
 ! "X-offset relative to location" Set from: XResources
 rofi.xoffset:                        0
 ! "Always show number of lines" Set from: XResources
-rofi.fixed-num-lines:                false
+rofi.fixed-num-lines:                true
 ! "Terminal to use" Set from: XResources
 rofi.terminal:                       termite
 ! "Ssh client to use" Set from: XResources
@@ -64,7 +64,7 @@ rofi.m:                              -1
 ! "Pre-set filter" Set from: XResources
 rofi.filter:                         
 ! "Fullscreen" Set from: Default
-! rofi.fullscreen:                     false
+ rofi.fullscreen:                     false
 ! "DPI" Set from: XResources
 rofi.dpi:                            192
 ! "Threads to use for string matching" Set from: Default
