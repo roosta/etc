@@ -51,7 +51,7 @@ width = 100%
 separator = │
 
 dpi = 192
-height = 28
+height = 34
 radius = 0
 fixed-center = true
 background = ${colors.brightblack}
