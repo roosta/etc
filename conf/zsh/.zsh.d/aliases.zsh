@@ -90,8 +90,8 @@ alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
 alias psgrep='ps aux|head -n 1 && ps aux|ag'
 
 # locate file at working dir
-if hash rg 2>/dev/null; then
-  alias lsg='\ls -lAh | rg -i'
+if hash ag 2>/dev/null; then
+  alias lsg='\ls -lAh | ag'
 else
   alias lsg='\ls -lAh | grep'
 fi
