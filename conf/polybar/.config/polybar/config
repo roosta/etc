@@ -99,11 +99,11 @@ height = 25
 dpi = 140
 monitor = ${env:MONITOR:eDP1}
 modules-center = 
-tray-position = right
+; tray-position = right
 font-0 = "Essential PragmataPro:pixelsize=8;3"
-tray-padding = 1
-tray-scale = 1
-tray-background = ${colors.brightblack}
+; tray-padding = 1
+; tray-scale = 1
+; tray-background = ${colors.brightblack}
 modules-right = keyboard-layout vpncheck wifi battery pkg volume memory cpu date time
 
 [bar/garkbit-primary]
