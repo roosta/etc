@@ -100,10 +100,11 @@ dpi = 140
 monitor = ${env:MONITOR:eDP1}
 modules-center = 
 tray-position = right
+font-0 = "Essential PragmataPro:pixelsize=8;3"
 tray-padding = 1
 tray-scale = 1
 tray-background = ${colors.brightblack}
-modules-right = keyboard-layout vpncheck wifi pkg volume-small memory-small cpu-small date time
+modules-right = keyboard-layout vpncheck wifi battery pkg volume-small memory-small cpu-small date time
 
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
@@ -445,15 +446,23 @@ type = internal/battery
 battery = BAT0
 adapter = ADP1
 full-at = 98
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-format-full-prefix-foreground = ${colors.brightwhite}
-format-full-underline = ${self.format-charging-underline}
-ramp-capacity-foreground = ${colors.brightwhite}
-animation-charging-foreground = ${colors.brightwhite}
-animation-charging-framerate = 750
+label-discharging-padding = 1
+format-discharging-foreground = ${colors.brightwhite}
+label-discharging = BAT: %percentage%%
+label-charging-padding = 1
+format-discharging = <label-discharging>
+format-full-foreground = ${colors.brightgreen}
+label-charging = %percentage%%
+format-charging-foreground = ${colors.cyan}
+; format-charging = <label-charging>
+; format-charging-underline = #ffb52a
+; format-discharging = <ramp-capacity> <label-discharging>
+; format-discharging-underline = ${self.format-charging-underline}
+; format-full-prefix-foreground = ${colors.brightwhite}
+; format-full-underline = ${self.format-charging-underline}
+; ramp-capacity-foreground = ${colors.brightwhite}
+; animation-charging-foreground = ${colors.brightwhite}
+; animation-charging-framerate = 750
 
 [module/fs-root]
 type = internal/fs
