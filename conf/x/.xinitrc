@@ -83,7 +83,7 @@ nitrogen --restore &
 # compton -b &
 dropbox-cli start &
 dunst &
-nm-applet &
+# nm-applet &
 lxqt-policykit-agent &
 # conky -d -c ~/.config/conky/conky-left.conf &
 # conky -d -c ~/.config/conky/conky-right.conf &
