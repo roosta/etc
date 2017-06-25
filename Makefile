@@ -143,6 +143,7 @@ i3: ~/.i3/config
 	@echo -e "\033[1;32mAll done!\033[0m"
 
 ~/.config/rofi/config:
+	@rm ~/.config/rofi/config
 	@cd templates/rofi && cat *.rofi >> ~/.config/rofi/config
 ifdef dpi
 	@echo  "rofi.dpi: $(dpi)" >> ~/.config/rofi/config
