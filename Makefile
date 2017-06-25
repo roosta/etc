@@ -142,6 +142,25 @@ i3: ~/.i3/config
 	@i3-msg reload
 	@echo -e "\033[1;32mAll done!\033[0m"
 
+~/.config/rofi/config:
+	@cd templates/rofi && cat *.rofi >> ~/.config/rofi/config
+ifdef dpi
+	@echo  "rofi.dpi: $(dpi)" >> ~/.config/rofi/config
+else
+	@echo "rofi.dpi: 192" >> ~/.config/rofi/config
+endif
+ifdef bar_height
+	@echo  "rofi.yoffset: $(bar_height)" >> ~/.config/rofi/config
+endif
+ifdef lines
+	@echo "rofi.lines: $(lines)" >> ~/.config/rofi/config
+else
+	@echo "rofi.lines: 64" >> ~/.config/rofi/config
+endif
+
+rofi: ~/.config/rofi/config
+	@echo -e "\033[0;33mCreating rofi config...\033[0m"
+
 update-tmux:
 	@echo -e "\033[0;33mUpdating tmux plugins...\033[0m"
 	@. ~/.tmux/plugins/tpm/bin/update_plugins all

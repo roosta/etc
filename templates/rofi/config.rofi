@@ -1,3 +1,8 @@
+! vim:ft=xdefaults:ts=2:sw=2:fdm=marker
+! ┳━┓┏━┓┳━┓o
+! ┃┳┛┃ ┃┣━ ┃
+! ┇┗┛┛━┛┇  ┇
+!
 ! "Enabled modi" Set from: XResources
 rofi.modi:                           combi,calc:qalc +u8 -nocurrencies
 !,repl:rlwrap lumo
@@ -12,7 +17,7 @@ rofi.columns:                        2
 ! "Location on screen" Set from: XResources
 rofi.location:                       1
 ! "Y-offset relative to location" Set from: XResources
-rofi.yoffset:                        34
+/* rofi.yoffset:                        34 */
 ! "X-offset relative to location" Set from: XResources
 rofi.xoffset:                        0
 ! "Always show number of lines" Set from: XResources
@@ -224,4 +229,3 @@ rofi.kb-custom-9:                    Alt+9
 ! "Select row 10" Set from: Default
 ! rofi.kb-select-10:                   Super+0
 
-! vim:ft=xdefaults:ts=2:sw=2:fdm=marker
