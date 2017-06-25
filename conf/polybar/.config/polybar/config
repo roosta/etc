@@ -69,6 +69,11 @@ modules-left = i3 xwindow
 modules-center = mpd
 modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
 
+[bar/tray]
+dpi = 140
+height = 25
+
+
 [bar/lintilla-secondary]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DVI-I-1}
@@ -88,19 +93,19 @@ inherit = bar/lintilla-primary
 dpi = 96
 height = 18
 modules-center =
-font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;1"
+font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;0"
 font-4 = "Material Icons:pixelsize=10;3"
 modules-right = 
 monitor = ${env:MONITOR:HDMI-0}
 
 [bar/allitnil]
 inherit = bar/lintilla-primary
-height = 25
+height = 22
 dpi = 140
 monitor = ${env:MONITOR:eDP1}
 modules-center = 
 ; tray-position = right
-font-0 = "Essential PragmataPro:pixelsize=8;3"
+font-0 = "Essential PragmataPro:pixelsize=8;2"
 ; tray-padding = 1
 ; tray-scale = 1
 ; tray-background = ${colors.brightblack}
@@ -449,10 +454,11 @@ full-at = 98
 label-discharging-padding = 1
 format-discharging-foreground = ${colors.brightwhite}
 label-discharging = BAT: %percentage%%
+label-full = BAT: %percentage%%
 label-charging-padding = 1
 format-discharging = <label-discharging>
 format-full-foreground = ${colors.brightgreen}
-label-charging = %percentage%%
+label-charging = BAT: %percentage%%
 format-charging-foreground = ${colors.cyan}
 ; format-charging = <label-charging>
 ; format-charging-underline = #ffb52a
