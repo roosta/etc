@@ -4,7 +4,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Options
 # --------------------
-workspace_auto_back_and_forth yes
+# workspace_auto_back_and_forth yes
 
 # WORKSPACES
 # -------------------- 
