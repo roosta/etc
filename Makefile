@@ -1,7 +1,7 @@
 HOST ?= $(shell hostname)
 NOW = $(shell date +"%Y-%m-%d@%T")
 
-include local/$(HOST)/variables.mk
+include ~/etc/local/$(HOST)/variables.mk
 
 default: link update post-install
 
@@ -125,7 +125,7 @@ init-spacemacs: link-conf
 
 ~/.i3/config: link-conf
 	@echo -e "\033[0;33mCreating i3 config...\033[0m"
-	@rm ~/.i3/config
+	@cd ~/etc/templates/i3 && cat *.i3 > ~/.i3/config
 ifdef primary_monitor
 	@echo "set \$$primary_monitor $(primary_monitor)" >> ~/.i3/config
 endif
@@ -135,7 +135,6 @@ endif
 ifdef tertiary_monitor
 	@echo "set \$$tertiary_monitor $(tertiary_monitor)" >> ~/.i3/config
 endif
-	@cd templates/i3 && cat *.i3 >> ~/.i3/config
 
 i3: ~/.i3/config
 	@echo -e "\033[0;33mReload i3 config...\033[0m"
@@ -143,16 +142,18 @@ i3: ~/.i3/config
 	@echo -e "\033[1;32mAll done!\033[0m"
 
 ~/.config/rofi/config:
-	@rm ~/.config/rofi/config
-	@cd templates/rofi && cat *.rofi >> ~/.config/rofi/config
+	@cd ~/etc/templates/rofi && cat *.rofi > ~/.config/rofi/config
+
 ifdef dpi
 	@echo  "rofi.dpi: $(dpi)" >> ~/.config/rofi/config
 else
 	@echo "rofi.dpi: 192" >> ~/.config/rofi/config
 endif
+
 ifdef bar_height
 	@echo  "rofi.yoffset: $(bar_height)" >> ~/.config/rofi/config
 endif
+
 ifdef lines
 	@echo "rofi.lines: $(lines)" >> ~/.config/rofi/config
 else
