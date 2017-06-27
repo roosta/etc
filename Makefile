@@ -36,11 +36,11 @@ install-pacaur:
 
 install-aur-packages: install-pacaur
 	@echo -e "\033[0;33mInstalling AUR packages...\033[0m"
-	yaourt -S --needed --noconfirm `cat aur_packages.txt`
+	pacaur -S --needed --noconfirm - < aur_packages.txt
 
-install-packages: add-pacman-repositiories
+install-packages:
 	@echo -e "\033[0;33mInstalling packages...\033[0m"
-	pacman -S --needed --noconfirm `cat pacman_packages.txt`
+	sudo pacman --needed -S - < pkglist.txt
 
 enable-services: init-emacs
 	@echo -e "\033[0;33mInitialize emacs...\033[0m"
@@ -125,6 +125,7 @@ init-spacemacs: link-conf
 
 ~/.i3/config: link-conf
 	@echo -e "\033[0;33mCreating i3 config...\033[0m"
+	@rm ~/.i3/config
 	@cd ~/etc/templates/i3 && cat *.i3 > ~/.i3/config
 ifdef primary_monitor
 	@echo "set \$$primary_monitor $(primary_monitor)" >> ~/.i3/config
@@ -142,22 +143,16 @@ i3: ~/.i3/config
 	@echo -e "\033[1;32mAll done!\033[0m"
 
 ~/.config/rofi/config:
+	@rm ~/.config/rofi/config
 	@cd ~/etc/templates/rofi && cat *.rofi > ~/.config/rofi/config
-
 ifdef dpi
 	@echo  "rofi.dpi: $(dpi)" >> ~/.config/rofi/config
-else
-	@echo "rofi.dpi: 192" >> ~/.config/rofi/config
 endif
-
 ifdef bar_height
 	@echo  "rofi.yoffset: $(bar_height)" >> ~/.config/rofi/config
 endif
-
 ifdef lines
 	@echo "rofi.lines: $(lines)" >> ~/.config/rofi/config
-else
-	@echo "rofi.lines: 64" >> ~/.config/rofi/config
 endif
 
 rofi: ~/.config/rofi/config
@@ -178,17 +173,6 @@ install-ls--: update-libs
 save-originals:
 	@mkdir ~/backup/original-system-files@$(NOW)
 	@mv ~/.bash* ~/backup/original-system-files@$(NOW)
-
-i3-append-monitors:
-ifdef primary_monitor
-	@echo "set \$$primary_monitor $(primary_monitor)"
-endif
-ifdef secondary_monitor
-	@echo "set \$$secondary_monitor $(secondary_monitor)"
-endif
-ifdef tertiary_monitor
-	@echo "set \$$tertiary_monitor $(tertiary_monitor)"
-endif
 
 post-install:
 	@echo -e "\033[1;32mAll done!\033[0m"
