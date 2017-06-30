@@ -93,14 +93,14 @@ clone-org:
 
 link-misc:
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
-	-@ln -s $(HOME)/src/utils $(HOME)
-	-@ln -s $(HOME)/src/colors $(HOME)
-	-@ln -s $(HOME)/src/utils/emacs_file_opener.sh $(HOME)/bin/emacs_file_opener
-	-@ln -s $(HOME)/etc/scripts/ftl.sh $(HOME)/bin/ftl
-	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
-	-@ln -s $(HOME)/src/utils/chdisp_nvidia.sh $(HOME)/bin/chdisp
-	-@ln -s $(HOME)/src/utils/touchpad_toggle.sh $(HOME)/bin/touchpad_toggle
-	-@ln -s $(HOME)/utils/locker.sh $(HOME)/bin/locker
+	-@ln -f -s $(HOME)/src/utils $(HOME) &>/dev/null
+	-@ln -f -s $(HOME)/src/colors $(HOME) &>/dev/null
+	-@ln -f -s $(HOME)/src/utils/emacs_file_opener.sh $(HOME)/bin/emacs_file_opener &>/dev/null
+	-@ln -f -s $(HOME)/etc/scripts/ftl.sh $(HOME)/bin/ftl &>/dev/null
+	-@ln -f -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors &>/dev/null
+	-@ln -f -s $(HOME)/src/utils/chdisp_nvidia.sh $(HOME)/bin/chdisp &>/dev/null
+	-@ln -f -s $(HOME)/src/utils/touchpad_toggle.sh $(HOME)/bin/touchpad_toggle &>/dev/null
+	-@ln -f -s $(HOME)/utils/locker.sh $(HOME)/bin/locker &>/dev/null
 
 link-conf:
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
@@ -125,7 +125,7 @@ init-spacemacs: link-conf
 
 ~/.i3/config: link-conf
 	@echo -e "\033[0;33mCreating i3 config...\033[0m"
-	@rm ~/.i3/config
+	@rm ~/.i3/config -f
 	@cd ~/etc/templates/i3 && cat *.i3 > ~/.i3/config
 ifdef primary_monitor
 	@echo "set \$$primary_monitor $(primary_monitor)" >> ~/.i3/config
@@ -143,7 +143,7 @@ i3: ~/.i3/config
 	@echo -e "\033[1;32mAll done!\033[0m"
 
 ~/.config/rofi/config:
-	@rm ~/.config/rofi/config
+	@rm ~/.config/rofi/config -f
 	@cd ~/etc/templates/rofi && cat *.rofi > ~/.config/rofi/config
 ifdef dpi
 	@echo  "rofi.dpi: $(dpi)" >> ~/.config/rofi/config
