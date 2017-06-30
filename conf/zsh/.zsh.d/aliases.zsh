@@ -420,6 +420,8 @@ alias et='emacs -nw'
 alias e='emacsclient --no-wait'
 alias ancient-check='lein ancient check :all :allow-all :check-clojure'
 alias ancient-upgrade='lein ancient upgrade :all :allow-all :check-clojure :no-tests'
+alias ancient-check-profile='lein ancient check-profiles :allow-all'
+alias ancient-upgrade-profile='lein ancient upgrade-profiles :allow-all'
 #}}}
 ## MISC {{{1
 ## ---------

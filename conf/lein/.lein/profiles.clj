@@ -1,14 +1,14 @@
 {:user {:jvm-opts ^:replace ["-Xmx1g" "-server"]
         :dependencies [;; nREPL support for ClojureScript REPLs 
-                       [com.cemerick/piggieback "0.2.1"]
+                       [com.cemerick/piggieback "0.2.2"]
 
                        ;; alternative pprinter
                        ; [mvxcvi/puget "1.0.1"]
 
-                       [org.clojure/tools.nrepl "0.2.12"]
+                       [org.clojure/tools.nrepl "0.2.13"]
 
                        ;; namespace tools for user/repl
-                       [org.clojure/tools.namespace "0.2.11"] ]
+                       [org.clojure/tools.namespace "0.3.0-alpha4"] ]
 
         :plugins [;; check deps for new versions
                   [lein-ancient "0.6.10"]
@@ -17,7 +17,7 @@
                   [com.billpiel/sayid "0.0.15"]
 
                   ;; clojure syntax checking
-                  [jonase/eastwood "0.2.3"]
+                  [jonase/eastwood "0.2.4"]
 
                   ;; generate page from doc-strings
                   [lein-codox "0.10.3"]
@@ -26,7 +26,7 @@
                   [lein-pprint "1.1.2"]
 
                   ;; clojure/script syntax checking
-                  [lein-kibit "0.1.3"]]}
+                  [lein-kibit "0.1.5"]]}
 
  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
@@ -36,14 +36,14 @@
                   [venantius/ultra "0.5.1"]
 
                   ;; flycheck-clojure support for cider 'attach'
-                  [acyclic/squiggly-clojure "0.1.8" :exclusions [org.clojure/tools.reader]]
+                  [acyclic/squiggly-clojure "0.1.9-SNAPSHOT" :exclusions [org.clojure/tools.reader]]
 
                   ;; cider setup
-                  [refactor-nrepl "2.2.0"]]
+                  [refactor-nrepl "2.4.0-SNAPSHOT"]]
 
         :ultra {:color-scheme :solarized_dark}
 
         :dependencies [;; cider setup
-                       [org.clojure/tools.nrepl "0.2.12"]
+                       [org.clojure/tools.nrepl "0.2.13"]
                        ;; cider setup
                        [alembic "0.3.2"]]}}
