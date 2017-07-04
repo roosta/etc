@@ -40,6 +40,10 @@ if [[ -s "${plugin_location}/zsh-history-substring-search/zsh-history-substring-
   source "${plugin_location}/zsh-history-substring-search/zsh-history-substring-search.zsh"
 fi
 
+if [[ -s "${plugin_location}/zsh-you-should-use/you-should-use.plugin.zsh" ]]; then
+  source "${plugin_location}/zsh-you-should-use/you-should-use.plugin.zsh"
+fi
+
 if [[ -s ~/.fzf.zsh ]]; then
   source ~/.fzf.zsh
 fi
