@@ -63,9 +63,8 @@ alias vii3="$EDITOR ~/etc/templates/i3/config.i3"
 alias vii3vars="$EDITOR ~/etc/templates/i3/variables.i3"
 alias vienv="$EDITOR ~/.zprofile"
 alias vizopts="$EDITOR ~/.zsh.d/options.zsh"
-alias vizrc="$EDITOR ~/.zshrc"
+alias vizsh="$EDITOR ~/.zshrc"
 alias vixfont="$EDITOR ~/.Xresources.d/fonts"
-alias vizrc="$EDITOR ~/.zshrc"
 alias viorg="emacs --no-wait ~/org"
 alias viorgw="emacs --no-wait ~/org/Work.org"
 alias viorgd="emacs --no-wait ~/org/Dev.org"
@@ -73,6 +72,7 @@ alias vispc="emacs -t ~/.spacemacs"
 alias vitodo="emacsclient --no-wait ~/org/TODOs.org"
 alias vimutt="$EDITOR ~/.muttrc"
 alias vipoly="$EDITOR ~/.config/polybar/config"
+alias vihosts="$EDITOR /etc/hosts"
 
 #}}}
 ## FIND {{{1
@@ -193,14 +193,15 @@ alias -g P="2>&1| pygmentize -l pytb"
 ## example: type 'test.clj' opens vim with test.clj as active buffer.
 
 alias -s yml=vim
-alias -s zsh=vim
 alias -s cljs=emacsclient
-#alias -s sh=vim
-alias -s clj=vim
+alias -s clj=emacsclient
+alias -s txt=vim
 alias -s tex=vim
 alias -s html=vim
+alias -s js=vim
 alias -s md=emacsclient
-alias -s org=firefox
+alias -s org=emacsclient
+alias -s net=firefox
 alias -s net=firefox
 alias -s com=firefox
 
@@ -235,8 +236,6 @@ alias docker='sudo docker'
 #}}}
 ## MOVEMENT {{{1
 ## -------------
-
-alias cd..='cd ..'
 
 ## dirstack movement: needs some extra config, see dirstack.sh
 alias dirs='dirs -v'
