@@ -10,7 +10,6 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 host_name=$(hostname)
 case "$host_name" in
   "lintilla")
-    echo "got lintilla"
     polybar lintilla-primary -r &
     polybar lintilla-secondary -r &
     polybar lintilla-tertiary -r &
