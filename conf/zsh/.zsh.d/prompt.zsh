@@ -2,6 +2,34 @@
 # > ┃━┛┃┳┛┃ ┃┃┃┃┃━┛ ┃
 # > ┇  ┇┗┛┛━┛┛ ┇┇   ┇
 
+RPROMPT="%(?.[%j].%F{red}[%?]%f [%j]%f"
+
+# https://dougblack.io/words/zsh-vi-mode.html
+# https://github.com/sindresorhus/pure/wiki
+autoload -U promptinit && promptinit
+prompt pure
+
+VIM_PROMPT="❯"
+PROMPT='%(?.%F{magenta}.%F{red})${VIM_PROMPT}%f '
+
+prompt_pure_update_vim_prompt() {
+    zle || {
+        print "error: pure_update_vim_prompt must be called when zle is active"
+        return 1
+    }
+    VIM_PROMPT=${${KEYMAP/vicmd/❮}/(main|viins)/❯}
+    zle .reset-prompt
+}
+
+function zle-line-init zle-keymap-select { 
+    prompt_pure_update_vim_prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+## OLD {{{1
+# enable colors before setting prompt variable
+# autoload -U colors && colors
 # # Define mode prompts. Both turn red on non-zero exit code
 # #PROMPT_SYMBOL_VIINS="%(?.%F{white}.%F{red})%f%F{magenta}%f "
 # #PROMPT_SYMBOL_VICMD="%(?.%F{white}.%F{red})%f%F{magenta}%f "
@@ -9,10 +37,7 @@
 # PROMPT_SYMBOL_VIINS="%F{magenta}❯%f%(?.%F{brightwhite}.%F{red})❯%f "
 # PROMPT_SYMBOL_VICMD="%F{magenta}❮%f%(?.%F{brightwhite}.%F{red})❯%f "
 
-# # enable colors before setting prompt variable
-# autoload -U colors && colors
 # PROMPT=$PROMPT_SYMBOL_VIINS
-RPROMPT="%(?.[%j].%F{red}[%?]%f [%j]%f"
 
 # function zle-line-init () {
 #   # Make sure the terminal is in application mode, when zle is
@@ -56,43 +81,22 @@ RPROMPT="%(?.[%j].%F{red}[%?]%f [%j]%f"
 #       #fi
 #       PROMPT=$PROMPT_SYMBOL_VICMD
 #       ;;
-#     viins|main)
+  #     viins|main)
 
-#       # change to line cursor
-#       #if [ -z ${TMUX+x} ]; then
-#         #print -n -- "\E[6 q"
-#       #else
-#         #print -n -- "\EPtmux;\E\E[6 q\E\\"
-#       #fi
-#       PROMPT=$PROMPT_SYMBOL_VIINS
-#       ;;
-#   esac
-#   zle reset-prompt
-#   zle -R
-# }
+    #       # change to line cursor
+    #       #if [ -z ${TMUX+x} ]; then
+    #         #print -n -- "\E[6 q"
+    #       #else
+    #         #print -n -- "\EPtmux;\E\E[6 q\E\\"
+    #       #fi
+    #       PROMPT=$PROMPT_SYMBOL_VIINS
+    #       ;;
+    #   esac
+    #   zle reset-prompt
+    #   zle -R
+    # }
 
-# # zle -N zle-line-init
-# # zle -N zle-line-finish
-# # zle -N zle-keymap-select
-
-# VIM_PROMPT="❯"
-# PROMPT='%(?.%F{magenta}.%F{red})${VIM_PROMPT}%f '
-
-# prompt_pure_update_vim_prompt() {
-#   zle || {
-#   print "error: pure_update_vim_prompt must be called when zle is active"
-#   return 1
-# }
-# VIM_PROMPT=${${KEYMAP/vicmd/❮}/(main|viins)/❯}
-# zle .reset-prompt
-# }
-
-# function zle-line-init zle-keymap-select { 
-# prompt_pure_update_vim_prompt
-# }
-# zle -N zle-line-init
-# zle -N zle-keymap-select
-
-autoload -U promptinit && promptinit
-prompt pure
-
+    # # zle -N zle-line-init
+    # # zle -N zle-line-finish
+    # # zle -N zle-keymap-select
+    #}}}
