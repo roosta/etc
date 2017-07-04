@@ -23,8 +23,9 @@ setopt NO_BG_NICE
 # Don't send SIGHUP to background processes when the shell exits.
 setopt nohup
 
-# avoid "beep"ing
-setopt nobeep
+# no beeps plz
+# unsetopt beep
+# setopt nobeep
 
 # allow functions to have local options
 setopt LOCAL_OPTIONS
@@ -49,9 +50,6 @@ setopt CORRECT
 
 # Do not exit on end-of-file.  Require the use of exit or logout instead
 setopt IGNORE_EOF
-
-# no beeps plz
-unsetopt beep
 
 # ┬ ┬o┐─┐┌┐┐┌─┐┬─┐┐ ┬
 # │─┤│└─┐ │ │ ││┬┘└┌┘
