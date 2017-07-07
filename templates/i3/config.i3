@@ -92,6 +92,10 @@ workspace $tws_download output $tertiary_monitor
 
 # Options
 focus_follows_mouse no
+
+# Don't move mouse on workspace change
+mouse_warping none
+
 new_window pixel 1
 hide_edge_borders none
 
