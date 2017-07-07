@@ -3,7 +3,7 @@ NOW = $(shell date +"%Y-%m-%d@%T")
 
 include ~/etc/local/$(HOST)/variables.mk
 
-default: link update post-install
+default: link update i3 rofi post-install
 
 update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install
 
@@ -18,7 +18,7 @@ pull:
 	git pull --rebase
 
 min-install:
-	sudo apt-get install `cat min_packages.txt`
+	sudo apt-get install < min_packages.txt
 
 min-link: 
 	stow zsh git tmux vim bash -R -t ~ -d conf
@@ -143,8 +143,10 @@ i3: ~/.i3/config
 	@i3-msg reload
 	@echo -e "\033[1;32mAll done!\033[0m"
 
-~/.config/rofi/config:
+clear-rofi:
 	@rm ~/.config/rofi/config -f
+
+~/.config/rofi/config: clear-rofi
 	@cd ~/etc/templates/rofi && cat *.rofi > ~/.config/rofi/config
 ifdef dpi
 	@echo  "rofi.dpi: $(dpi)" >> ~/.config/rofi/config
