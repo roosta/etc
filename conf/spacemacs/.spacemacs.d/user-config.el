@@ -47,6 +47,9 @@
  ;; always pretty print in repl
  cider-repl-use-pretty-printing t
 
+ ;; possible fix for unhighlighted reader conditionals eg. #?(:cljs)
+ ;; cider-font-lock-reader-conditionals nil
+
  ;; Add to list to highlight more than macro and core
  ;; cider-font-lock-dynamically '(macro core function var)
 
