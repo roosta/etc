@@ -1,6 +1,6 @@
 # STARTUP
 # --------------------
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/utils/launch-polybar.sh
 
 # Options
 # --------------------
