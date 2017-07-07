@@ -237,6 +237,8 @@ alias docker='sudo docker'
 ## MOVEMENT {{{1
 ## -------------
 
+alias cd..='cd ..'
+
 ## dirstack movement: needs some extra config, see dirstack.sh
 alias dirs='dirs -v'
 alias 1='cd -'
