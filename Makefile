@@ -101,6 +101,7 @@ link-misc:
 	-@ln -f -s $(HOME)/src/utils/chdisp_nvidia.sh $(HOME)/bin/chdisp &>/dev/null
 	-@ln -f -s $(HOME)/src/utils/touchpad_toggle.sh $(HOME)/bin/touchpad_toggle &>/dev/null
 	-@ln -f -s $(HOME)/utils/locker.sh $(HOME)/bin/locker &>/dev/null
+	-@ln -f -s $(HOME)/utils/tmux-dev-session.sh $(HOME)/bin/tdev &>/dev/null
 
 link-conf:
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
