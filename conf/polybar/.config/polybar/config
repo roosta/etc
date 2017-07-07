@@ -208,7 +208,7 @@ label = "PKG: %output%"
 label-padding-right = 1
 label-padding-left = 1
 ; label-padding-left = 1
-exec = ~/.config/polybar/pkg.sh
+exec = ~/utils/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 
@@ -221,11 +221,11 @@ format-foreground = ${colors.brightwhite}
 ; label-padding = 1
 format = <label>
 label = "%output%"
-exec = ~/.config/polybar/layout.sh
+exec = ~/utils/layout.sh
 
 [module/vpncheck]
 type = custom/script
-exec = ~/.config/polybar/vpn.sh
+exec = ~/utils/vpn.sh
 ; exec-if = pgrep -x openvpn
 label-padding = 1
 interval = 30
