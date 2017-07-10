@@ -263,12 +263,16 @@ alias 19='cd -19'
 #}}}
 ## LISTS {{{1
 
-if hash ls++ 2>/dev/null; then
-  alias ls='ls++ -lAhpk --potsf'
-elif hash exa 2>/dev/null; then
-  alias ls='exa --long --all --color-scale --git --group-directories-first --group'
+if [ $TERM == 'eterm-color' ]; then
+  alias ls='\ls -lAh'
 else
-  alias ls="ls -lsAhpk --color=auto --group-directories-first"
+  if hash ls++ 2>/dev/null; then
+    alias ls='ls++ -lAhpk --potsf'
+  elif hash exa 2>/dev/null; then
+    alias ls='exa --long --all --color-scale --git --group-directories-first --group'
+  else
+    alias ls="ls -lsAhpk --color=auto --group-directories-first"
+  fi
 fi
 alias lsr='tree'
 alias lsp='lsp -p'
