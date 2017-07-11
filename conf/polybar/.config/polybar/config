@@ -221,7 +221,7 @@ format-foreground = ${colors.brightwhite}
 ; label-padding = 1
 format = <label>
 label = "%output%"
-exec = ~/utils/layout.sh
+exec = ~/utils/keyboard-layout.sh
 
 [module/vpncheck]
 type = custom/script

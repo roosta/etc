@@ -268,7 +268,7 @@ bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
 # toggle touchpad
-bindsym XF86TouchpadToggle exec --no-startup-id ~/bin/touchpad_toggle
+bindsym XF86TouchpadToggle exec --no-startup-id ~/utils/touchpad-toggle.sh
 
 # move to last workspace
 bindsym $mod+z workspace back_and_forth
