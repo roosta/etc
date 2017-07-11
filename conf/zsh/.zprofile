@@ -80,3 +80,7 @@ export PULSE_LATENCY_MSEC=60
 
 # gtags
 export GTAGSLABEL=ctags
+
+# for rust-racer 
+# https://github.com/racer-rust/racer#installation
+export RUST_SRC_PATH="${HOME}/lib/rust/src"
