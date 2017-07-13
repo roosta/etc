@@ -303,8 +303,12 @@ alias ufw="sudo ufw"
 # alias make="colormake"
 alias pdf="apvlv"
 
-# https://github.com/xero/dotfiles/blob/master/zsh/.zsh/aliases.zsh
-alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
+if hash dfc 2>/dev/null; then
+  alias disks='dfc'
+else
+  # https://github.com/xero/dotfiles/blob/master/zsh/.zsh/aliases.zsh
+  alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
+fi
 
 # stow is always verbose
 alias stow="stow -v"
