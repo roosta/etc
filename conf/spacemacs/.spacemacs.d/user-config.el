@@ -120,6 +120,7 @@
     org-clock-persist 'history
     org-export-with-clocks t
     org-hide-emphasis-markers t
+    org-src-tab-acts-natively t
     org-clock-idle-time 15
     org-mobile-directory "~/Dropbox/MobileOrg"
     org-mobile-files (quote ("~/org/TODOs.org" "~/org/buy.org" "~/org/shopping.org" "~/org/quick-notes.org"))
