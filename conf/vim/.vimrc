@@ -77,6 +77,14 @@ set foldmethod=marker
 
 " disable auto comment insert. see :help fo-table
 set formatoptions-=cro
+
+if !has('nvim')
+  set ttymouse=xterm2
+endif
+ 
+if has('nvim')
+  " tnoremap <Esc> <C-\><C-n>
+endif
 "}}}
 " Statusline:{{{
 """"""""""""""""
