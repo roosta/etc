@@ -69,10 +69,36 @@ modules-left = i3 xwindow
 modules-center = mpd
 modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
 
-[bar/tray]
-dpi = 140
-height = 25
+[bar/systray]
+# As small as possible, polybar will resize it when items get added
+width = 1
 
+# Whatever fits your needs
+height = 52
+
+top = true
+
+# Tell the Window Manager not to configure the window.
+# Use this to detach the bar if your WM is locking its size/position.
+# REQUIRED for us to be able to move the window with hideit.sh
+override-redirect = true
+monitor = ${env:MONITOR:DP-1}
+modules-left = placeholder
+tray-position = right
+tray-maxsize = 38
+offset-y = 38
+offset-x = 3837
+dpi = 192
+tray-padding = 8
+; border-bottom-size = 1
+border-color = ${colors.magenta}
+tray-transparent = false
+tray-background = ${colors.brightblack}
+
+[module/placeholder]
+# Just a dummy module as polybar always requires at least one amodule
+type = custom/script
+width = 1
 
 [bar/lintilla-secondary]
 inherit = bar/lintilla-primary
