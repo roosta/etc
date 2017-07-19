@@ -1,5 +1,6 @@
 [user]
   email = mail@roosta.sh
+  user = roosta
   name = Daniel Berg
 [core]
   editor = vim
@@ -41,3 +42,5 @@
 	tool = vimdiff
 [commit]
 	verbose = true
+[include]
+  path = ~/.gitconfig.local
