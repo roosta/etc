@@ -370,6 +370,7 @@ alias fm='vifm'
 ## VCS {{{1
 ## --------
 
+alias git='hub'
 alias diff='colordiff'
 
 # --- git ---
