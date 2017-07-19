@@ -264,9 +264,11 @@ bindsym $mod+Shift+c reload
 bindsym $mod+b border toggle
 
 # scratchpad
-bindsym $mod+m move scratchpad
-bindsym $mod+o scratchpad show
+# bindsym $mod+m move scratchpad
+# bindsym $mod+o scratchpad show
 
+bindsym $mod+period move scratchpad                                                           
+bindsym $mod+comma scratchpad show
 # toggle touchpad
 bindsym XF86TouchpadToggle exec --no-startup-id ~/utils/touchpad-toggle.sh
 
