@@ -57,6 +57,7 @@ noremap gd           :bdelete
 nnoremap ! t!
 " escape cancle tab delete
 nnoremap d<Escape> <Nop>
+nnoremap C t!clj<Nop> 
 
 " go to last active tab.
 noremap gp <C-^>
