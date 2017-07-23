@@ -303,6 +303,8 @@ alias ufw="sudo ufw"
 # alias make="colormake"
 alias pdf="apvlv"
 
+alias free='free -h'
+
 if hash dfc 2>/dev/null; then
   alias disks='dfc'
 else
