@@ -263,7 +263,7 @@ alias 19='cd -19'
 #}}}
 ## LISTS {{{1
 
-if [ $TERM == 'eterm-color' ]; then
+if [[ $TERM == 'eterm-color' ]]; then
   alias ls='\ls -lAh'
 else
   if hash ls++ 2>/dev/null; then
@@ -372,7 +372,10 @@ alias fm='vifm'
 ## VCS {{{1
 ## --------
 
-alias git='hub'
+if hash hub 2>/dev/null; then
+  alias git='hub'
+fi
+
 alias diff='colordiff'
 
 # --- git ---
