@@ -95,12 +95,10 @@ link-misc:
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
 	-@ln -f -s $(HOME)/src/utils $(HOME) &>/dev/null
 	-@ln -f -s $(HOME)/src/colors $(HOME) &>/dev/null
-	-@ln -f -s $(HOME)/src/utils/emacs_file_opener.sh $(HOME)/bin/emacs_file_opener &>/dev/null
+	-@ln -f -s $(HOME)/src/utils/emacs-file-opener.sh $(HOME)/bin/emacs-file-opener &>/dev/null
 	-@ln -f -s $(HOME)/etc/scripts/ftl.sh $(HOME)/bin/ftl &>/dev/null
 	-@ln -f -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors &>/dev/null
-	-@ln -f -s $(HOME)/src/utils/chdisp_nvidia.sh $(HOME)/bin/chdisp &>/dev/null
-	-@ln -f -s $(HOME)/src/utils/touchpad_toggle.sh $(HOME)/bin/touchpad_toggle &>/dev/null
-	-@ln -f -s $(HOME)/utils/locker.sh $(HOME)/bin/locker &>/dev/null
+	-@ln -f -s $(HOME)/src/utils/touchpad-toggle.sh $(HOME)/bin/touchpad-toggle &>/dev/null
 	-@ln -f -s $(HOME)/utils/tmux-dev-session.sh $(HOME)/bin/tdev &>/dev/null
 
 link-conf:
