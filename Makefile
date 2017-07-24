@@ -122,9 +122,8 @@ init-spacemacs: link-conf
 	sudo pacman -S emacs
 	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-~/.i3/config: link-conf
+~/.i3/config: link-conf ~/etc/templates/$(HOST)/variables.mk ~/etc/templates/i3/*.i3
 	@echo -e "\033[0;33mCreating i3 config...\033[0m"
-	@rm ~/.i3/config -f
 	@cd ~/etc/templates/i3 && cat *.i3 > ~/.i3/config
 ifdef primary_monitor
 	@echo "set \$$primary_monitor $(primary_monitor)" >> ~/.i3/config
@@ -136,15 +135,16 @@ ifdef tertiary_monitor
 	@echo "set \$$tertiary_monitor $(tertiary_monitor)" >> ~/.i3/config
 endif
 
+.PHONY: i3
 i3: ~/.i3/config
 	@echo -e "\033[0;33mReload i3 config...\033[0m"
 	@i3-msg reload
 	@echo -e "\033[1;32mAll done!\033[0m"
 
-clear-rofi:
-	@rm ~/.config/rofi/config -f
+# clear-rofi:
+# 	@rm ~/.config/rofi/config -f
 
-~/.config/rofi/config: clear-rofi
+~/.config/rofi/config: ~/etc/templates/rofi/config.rofi ~/etc/local/$(HOST)/variables.mk
 	@cd ~/etc/templates/rofi && cat *.rofi > ~/.config/rofi/config
 ifdef dpi
 	@echo  "rofi.dpi: $(dpi)" >> ~/.config/rofi/config
