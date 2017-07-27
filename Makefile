@@ -100,6 +100,7 @@ link-misc:
 	-@ln -f -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors &>/dev/null
 	-@ln -f -s $(HOME)/src/utils/touchpad-toggle.sh $(HOME)/bin/touchpad-toggle &>/dev/null
 	-@ln -f -s $(HOME)/utils/tmux-dev-session.sh $(HOME)/bin/tdev &>/dev/null
+	-@ln -f -s $(HOME)/utils/tmux-update-window.sh $(HOME)/bin/tupd &>/dev/null
 
 link-conf:
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
