@@ -122,6 +122,14 @@
     org-hide-emphasis-markers t
     org-src-tab-acts-natively t
     org-clock-idle-time 15
+    ;; http://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html
+    ;; org-publish-project-alist
+    ;;       '(("hours"
+    ;;          :base-directory "~/src/hours/"
+    ;;          :publishing-directory "~/src/hours/"
+    ;;          :publishing-function org-twbs-publish-to-html
+    ;;          :with-sub-superscript nil
+    ;;          ))
     org-mobile-directory "~/Dropbox/MobileOrg"
     org-mobile-files (quote ("~/org/media.org" "~/org/TODOs.org" "~/org/buy.org" "~/org/shopping.org" "~/org/quick-notes.org"))
     org-agenda-files (quote ("~/org/TODOs.org")))
