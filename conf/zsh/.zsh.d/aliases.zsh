@@ -294,6 +294,7 @@ alias ports="netstat -tulanp" # list open ports
 #alias pip="sudo -H pip" # set home variable when running pip
 alias tmux="tmux -2" # force 256 color mode in tmux
 alias tn="tmux new-session -s" # start new session by giving a name
+alias trw="tmux rename-window"
 alias ta="tmux attach -t"
 alias tkill="tmux kill-pane -t"
 alias tls="tmux ls"
