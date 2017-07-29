@@ -100,10 +100,9 @@ cmap <C-k>  <S-Tab>
 " source ~/.vimperator/styles/arch-wiki.vimp
 source ~/.vimperator/styles/input-field.vimp
 source ~/.vimperator/styles/wikipedia.vimp
-" source ~/.vimperator/styles/reddit.vimp
+source ~/.vimperator/styles/hide-webrtc-indicator.vimp
 
-" temporary hack to fix autocompletion
-" js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
+" source ~/.vimperator/styles/reddit.vimp
 
 " alias commands 
 " alias tg tabgroups
