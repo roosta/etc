@@ -82,7 +82,7 @@ alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color
 
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
-alias aliasg="cats ~/.zsh.d/aliases.zsh | grep" # locate an alias quickly
+alias aliasg="vimcat ~/.zsh.d/aliases.zsh | ag" # locate an alias quickly
 alias aliasgrep="aliasg"
 alias histgrep="cat ~/.histfile | ag" # grep command history quickly
 alias lspath='echo -e ${PATH//:/\\n}' # echo path variable
@@ -426,7 +426,9 @@ alias leindeps='lein deps :tree'
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
 alias dust='rlwrap dust'
-alias cats='pygmentize -g -O style=colorful'
+alias catz='pygmentize -g -O style=colorful'
+alias cats='vimcat'
+# alias cat=vimcat
 #alias ccat='pygmentize -g -O style=colorful,linenos=1'
 alias ccat='highlight -O ansi'
 alias cljgrep='ag -R --include="*.clj*"'
