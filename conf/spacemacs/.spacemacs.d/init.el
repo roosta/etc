@@ -3,9 +3,8 @@
 ;; It must be stored in your home directory.
 
 (defun dotspacemacs/layers ()
-  "Configuration Layers declaration.
-You should not put any user code in this function besides modifying the variable
-values."
+  "Layer configuration:
+This function should only modify configuration layer settings."
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
@@ -90,7 +89,6 @@ values."
    dotspacemacs-additional-packages
    '(arduino-mode
      flycheck-clojure
-     ox-twbs
      kibit-helper
      ;; evil-smartparens
      (evil-terminal-cursor-changer :location "~/src/evil-terminal-cursor-changer")
@@ -110,11 +108,10 @@ values."
    dotspacemacs-install-packages 'used-only))
 
 (defun dotspacemacs/init ()
-  "Initialization function.
-This function is called at the very startup of Spacemacs initialization
-before layers configuration.
-You should not put any user code in there besides modifying the variable
-values."
+  "Initialization:
+This function is called at the very beginning of Spacemacs startup,
+before layer configuration.
+It should only modify the values of Spacemacs settings."
   ;; This setq-default sexp is an exhaustive list of all the supported
   ;; spacemacs settings.
   (setq-default
@@ -155,7 +152,7 @@ values."
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
-   ;; `recents' `bookmarks' `projects' `agenda' `todos'."
+   ;; `recents' `bookmarks' `projects' `agenda' `todos'.
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
    dotspacemacs-startup-lists '((recents . 5)
@@ -257,8 +254,8 @@ values."
    ;; source settings. Else, disable fuzzy matching in all sources.
    ;; (default 'always)
    dotspacemacs-helm-use-fuzzy 'always
-   ;; If non-nil the paste micro-state is enabled. When enabled pressing `p'
-   ;; several times cycle between the kill ring content. (default nil)
+   ;; If non-nil, the paste transient-state is enabled. And pressing `p' several
+   ;; times, cycles through the elements in the `kill-ring'. (default nil)
    dotspacemacs-enable-paste-transient-state nil
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
    ;; the commands bound to the current keystroke sequence. (default 0.4)
@@ -374,27 +371,29 @@ values."
    ;; Either nil or a number of seconds. If non-nil zone out after the specified
    ;; number of seconds. (default nil)
    dotspacemacs-zone-out-when-idle nil
+   ;; Run `spacemacs/prettify-org-buffer' when
+   ;; visiting README.org files of Spacemacs.
+   ;; (default nil)
+   dotspacemacs-pretty-docs nil
    )
 
   (load-file (concat "~/.spacemacs.d/local/" system-name ".el")))
 
 (defun dotspacemacs/user-init ()
-  "Initialization function for user code.
-  It is called immediately after `dotspacemacs/init', before layer configuration
-  executes.
-  This function is mostly useful for variables that need to be set
-  before packages are loaded. If you are unsure, you should try in setting them in
-  `dotspacemacs/user-config' first."
+  "Initialization for user code:
+This function is called immediately after `dotspacemacs/init', before layer
+configuration.
+It is mostly for variables that should be set before packages are loaded.
+If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   (load-file  "~/.spacemacs.d/user-init.el"))
 
 (defun dotspacemacs/user-config ()
-  "Configuration function for user code.
-  This function is called at the very end of Spacemacs initialization after
-  layers configuration.
-  This is the place where most of your configurations should be done. Unless it is
-  explicitly specified that a variable should be set before a package is loaded,
-  you should place your code here."
+  "Configuration for user code:
+This function is called at the very end of Spacemacs startup, after layer
+configuration.
+Put your configuration code here, except for variables that should be set
+before packages are loaded."
 
   (load-file "~/.spacemacs.d/user-config.el"))
 
@@ -412,7 +411,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ox-twbs window-purpose projectile hydra multiple-cursors skewer-mode rust-mode powerline emojify json-mode flycheck yasnippet company haml-mode clojure-mode js2-mode use-package monokai-theme js2-refactor gruvbox-theme groovy-mode evil-snipe esh-help ensime highlight smartparens evil helm helm-core avy ghub markdown-mode org-plus-contrib magit magit-popup with-editor cider zenburn-theme yapfify yaml-mode xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vmd-mode vimrc-mode vi-tilde-fringe uuidgen unfill undo-tree toml-mode toc-org tagedit systemd symon string-inflection spaceline solarized-theme smeargle slim-mode slack shell-pop scss-mode scala-mode sbt-mode sayid sass-mode restart-emacs ranger rainbow-mode rainbow-identifiers rainbow-delimiters racer queue pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el password-generator paradox orgit org-projectile org-present org-pomodoro org-download org-bullets org-brain open-junk-file nginx-mode neotree mwim multi-term move-text mmm-mode meghanada markdown-toc magithub magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode kibit-helper js-doc jinja2-mode insert-shebang info+ indent-guide impatient-mode hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-imports gradle-mode goto-chg google-translate golden-ratio gnuplot gmail-message-mode github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md ggtags fuzzy flyspell-correct-helm flymd flycheck-rust flycheck-pos-tip flycheck-clojure flycheck-bashate flx-ido fish-mode fill-column-indicator fasd fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig edit-server dumb-jump dockerfile-mode docker diminish diff-hl define-word dactyl-mode cython-mode company-web company-tern company-statistics company-shell company-lua company-emoji company-emacs-eclim company-ansible company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu cargo browse-at-remote bind-key badwolf-theme autothemer auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile arduino-mode ansible-doc ansible aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+    (circe imenu-list dash ox-twbs window-purpose projectile hydra multiple-cursors skewer-mode rust-mode powerline emojify json-mode flycheck yasnippet company haml-mode clojure-mode js2-mode use-package monokai-theme js2-refactor gruvbox-theme groovy-mode evil-snipe esh-help ensime highlight smartparens evil helm helm-core avy ghub markdown-mode org-plus-contrib magit magit-popup with-editor cider zenburn-theme yapfify yaml-mode xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vmd-mode vimrc-mode vi-tilde-fringe uuidgen unfill undo-tree toml-mode toc-org tagedit systemd symon string-inflection spaceline solarized-theme smeargle slim-mode slack shell-pop scss-mode scala-mode sbt-mode sayid sass-mode restart-emacs ranger rainbow-mode rainbow-identifiers rainbow-delimiters racer queue pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el password-generator paradox orgit org-projectile org-present org-pomodoro org-download org-bullets org-brain open-junk-file nginx-mode neotree mwim multi-term move-text mmm-mode meghanada markdown-toc magithub magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode kibit-helper js-doc jinja2-mode insert-shebang info+ indent-guide impatient-mode hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-imports gradle-mode goto-chg google-translate golden-ratio gnuplot gmail-message-mode github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md ggtags fuzzy flyspell-correct-helm flymd flycheck-rust flycheck-pos-tip flycheck-clojure flycheck-bashate flx-ido fish-mode fill-column-indicator fasd fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig edit-server dumb-jump dockerfile-mode docker diminish diff-hl define-word dactyl-mode cython-mode company-web company-tern company-statistics company-shell company-lua company-emoji company-emacs-eclim company-ansible company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu cargo browse-at-remote bind-key badwolf-theme autothemer auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile arduino-mode ansible-doc ansible aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(safe-local-variable-values (quote ((org-hide-emphasis-markers)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
