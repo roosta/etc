@@ -33,6 +33,12 @@
 (define-key evil-normal-state-map (kbd "p") 'evil-paste-after)
 (define-key evil-normal-state-map (kbd "P") 'evil-paste-before)
 
+(defun roosta/find-user-config ()
+  (interactive)
+  (find-file-existing "~/.spacemacs.d/user-config.el"))
+
+(spacemacs/set-leader-keys "feu" 'roosta/find-user-config)
+
 ;; -----------------------------------------------------------
 ;; Cider
 ;; -----------------------------------------------------------
