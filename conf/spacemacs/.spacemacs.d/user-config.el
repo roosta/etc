@@ -1,3 +1,9 @@
+;; ┓━┓┳━┓┳━┓┏━┓┳━┓┏┏┓┳━┓┏━┓┓━┓  ┳ ┓┓━┓┳━┓┳━┓  ┏━┓┏━┓┏┓┓┳━┓o┏━┓
+;; ┗━┓┃━┛┃━┫┃  ┣━ ┃┃┃┃━┫┃  ┗━┓  ┃ ┃┗━┓┣━ ┃┳┛  ┃  ┃ ┃┃┃┃┣━ ┃┃ ┳
+;; ━━┛┇  ┛ ┇┗━┛┻━┛┛ ┇┛ ┇┗━┛━━┛  ┇━┛━━┛┻━┛┇┗┛  ┗━┛┛━┛┇┗┛┇  ┇┇━┛
+;; -----------------------------------------------------------
+;; Misc
+;; -----------------------------------------------------------
 (setq
  scroll-margin 7
 
@@ -21,15 +27,15 @@
  ;; set default browser
  browse-url-browser-function 'browse-url-generic
  browse-url-generic-program "firefox"
-
  )
 
 ;; temporary fix for kill-ring pop. See https://github.com/syl20bnr/spacemacs/issues/8823
 (define-key evil-normal-state-map (kbd "p") 'evil-paste-after)
 (define-key evil-normal-state-map (kbd "P") 'evil-paste-before)
 
+;; -----------------------------------------------------------
 ;; Cider
-;; --------
+;; -----------------------------------------------------------
 (require 'cider)
 ;; use figwheel when starting a cljs repl
 (setq
@@ -65,21 +71,24 @@
 (add-hook 'cider-repl-mode-hook #'eldoc-mode)
 (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
 
+;; ----------------------------------------------------
 ;; flycheck
-;; ------------
+;; ----------------------------------------------------
 (eval-after-load 'flycheck '(flycheck-clojure-setup))
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (eval-after-load 'flycheck
   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
+;; ----------------------------------------------------
 ;; smartparens
-;; -------------
+;; ----------------------------------------------------
 (setq
  evil-cleverparens-use-additional-movement-keys nil)
 
+;; ----------------------------------------------------
 ;; clojure
-;; -------
+;; ----------------------------------------------------
 (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
 (add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
 (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
@@ -92,8 +101,9 @@
 ;; opening project files
 (spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
 
+;; ----------------------------------------------------
 ;; evil-surround
-;; -------------
+;; ----------------------------------------------------
 (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
 (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
 
@@ -111,8 +121,9 @@
 ;; Mutt support.
 (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
 
+;; ----------------------------------------------------
 ;; org
-;; ----------
+;; ----------------------------------------------------
 (with-eval-after-load 'org
 
   (setq
@@ -147,12 +158,14 @@
 
   (org-clock-persistence-insinuate))
 
+;; ----------------------------------------------------
 ;; markdown
-;; --------
+;; ----------------------------------------------------
 (add-hook 'markdown-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
+;; ----------------------------------------------------
 ;; Slack
-;; ------
+;; ----------------------------------------------------
 ;;(if (file-directory-p "~/Private/slack")
 ;;    (do (load-file "~/Private/slack/sic.el")
 ;;        (load-file "~/Private/slack/bitraf.el"))
@@ -160,13 +173,15 @@
 
 (add-hook 'slack-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
+;; ----------------------------------------------------
 ;; Alert
-;; -----
+;; ----------------------------------------------------
 (setq
  alert-default-style 'libnotify)
 
+;; ----------------------------------------------------
 ;; Flymd
-;; -----
+;; ----------------------------------------------------
 (defun my-flymd-browser-function (url)
   (let ((process-environment (browse-url-process-environment)))
     (apply 'start-process
@@ -174,3 +189,10 @@
            "google-chrome-unstable"
            (list "--allow-file-access-from-files" url "--force-device-scale-factor=1"))))
 (setq flymd-browser-open-function 'my-flymd-browser-function)
+
+;; ----------------------------------------------------
+;; Github
+;; ----------------------------------------------------
+(if (file-directory-p "~/Private/github")
+    (load-file "~/Private/github/github.el")
+    (message "~/Private is not mounted, cannot load github config"))
