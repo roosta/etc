@@ -9,6 +9,7 @@ set hintmatching=fuzzy
 set status=ssl,input,location,bookmark,history,tabcount,position,zoomlevel
 set gui=none,tabs
 set titlestring=""
+set newtaburl="http://localhost:3000"
 " set editor="emacsclient -n"
 
 " To Enable map <Space> {{{
@@ -29,6 +30,29 @@ set titlestring=""
 "EOM
 "noremap <Space> <Leader>
 "" }}}
+" examples {{{
+
+" automatic pass-through mode on certain pages (do ':h autocommands' for details)
+" autocmd LocationChange .* :js modes.passAllKeys = /gmail\.com/.test(buffer.URL)
+
+
+" you can even add new functions which are then available to the :js command
+" js <<EOF
+"     toggle_element = function (name) {
+"         document.getElementById(name).collapsed ^= 1;
+"     }
+" EOF
+" and now use it in mappings (':h key-notation'):
+" map <silent> <F8> :js toggle_element('toolbar-menubar')<CR>
+" map <silent> <F9> :js toggle_element('nav-bar')<CR>
+
+
+" define a keyword bookmark
+" bmark -keyword=mozjscoreref https://developer.mozilla.org/Special:Search?search=%s&type=fulltext
+" ... and a command line abbreviation for the keyword
+" ca j mozjscoreref
+" now in Vimperator type 'tj<Space>getElementById<CR>' and there you go
+" }}}
 
 map <leader>R :source ~/.vimperatorrc<CR>
 
