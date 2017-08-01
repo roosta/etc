@@ -26,11 +26,11 @@
                   [lein-pprint "1.1.2"]
 
                   ;; clojure/script syntax checking
-                  [lein-kibit "0.1.5"]]}
+                  [lein-kibit "0.1.6-beta2"]]}
 
  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
- :repl {:plugins [[cider/cider-nrepl "0.15.0-SNAPSHOT"]
+ :repl {:plugins [[cider/cider-nrepl "0.15.1-SNAPSHOT"]
 
                   ;; syntax highlight terminal repl
                   [venantius/ultra "0.5.1"]
