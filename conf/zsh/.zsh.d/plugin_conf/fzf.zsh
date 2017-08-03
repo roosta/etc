@@ -112,10 +112,19 @@ fbr() {
 # get a list of unstaged files and add using fzf
 fad() {
   local files target
-  files=$(git status -s) &&
+  files=$(git diff --name-only) &&
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-  git add $(echo "$target"|awk '{print $2}')
+  git add $(echo "$target")
 }
+
+# get a list of unstaged files and add using fzf
+fac() {
+  local files target
+  files=$(git diff --name-only) &&
+  target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
+  git checkout $(echo "$target")
+}
+
 
 # fco - checkout git branch/tag
 fco() {
