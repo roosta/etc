@@ -471,6 +471,9 @@ alias rmsteamlibs='find ~/.steam/root/ \( -name "libgcc_s.so*" -o -name "libstdc
 # cleanly shut down firefox
 alias ffs="wmctrl -c firefox"
 alias uh="ls && sleep 0.2 && clear"
+
+# run setxkbmap again, sometimes toggling between layouts stops working
+alias refresh-keyboard='setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp'
 #}}}
 ## DEFAULT OPTS {{{1
 ## ---------
