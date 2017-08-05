@@ -30,8 +30,8 @@
  )
 
 ;; temporary fix for kill-ring pop. See https://github.com/syl20bnr/spacemacs/issues/8823
-(define-key evil-normal-state-map (kbd "p") 'evil-paste-after)
-(define-key evil-normal-state-map (kbd "P") 'evil-paste-before)
+;; (define-key evil-normal-state-map (kbd "p") 'evil-paste-after)
+;; (define-key evil-normal-state-map (kbd "P") 'evil-paste-before)
 
 (defun roosta/find-user-config ()
   (interactive)
@@ -133,39 +133,40 @@
 (with-eval-after-load 'org
 
   (setq
-    org-export-with-drawers t
-    org-clock-persist 'history
-    org-export-with-clocks t
-    org-hide-emphasis-markers t
-    org-src-tab-acts-natively t
-    org-clock-idle-time 15
-    ;; http://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html
-    ;; org-publish-project-alist
-    ;;       '(("hours"
-    ;;          :base-directory "~/src/hours/"
-    ;;          :publishing-directory "~/src/hours/"
-    ;;          :publishing-function org-twbs-publish-to-html
-    ;;          :with-sub-superscript nil
-    ;;          ))
-    org-mobile-directory "~/Dropbox/MobileOrg"
-    org-mobile-files (quote ("~/org/media.org"
-                             "~/org/TODOs.org"
-                             "~/org/buy.org"
-                             "~/org/shopping.org"
-                             "~/org/quick-notes.org"
-                             "~/org/loans.org"))
-    org-agenda-files (quote ("~/org/TODOs.org")))
+   ;; I added this to export clock times in drawers
+   org-export-with-drawers t
+
+   ;; Save the running clock when emacs is closed
+   org-clock-persist 't
+   org-export-with-clocks t
+
+   ;; hide markers like ~this~ and =this=
+   ;; makes for a better reading experience I think
+   org-hide-emphasis-markers t
+
+   ;; have indending in source blocks make a bit more sense
+   org-src-tab-acts-natively t
+
+   org-clock-idle-time 15
+
+   org-mobile-directory "~/Dropbox/MobileOrg"
+   org-mobile-files (quote ("~/org/media.org"
+                            "~/org/TODOs.org"
+                            "~/org/buy.org"
+                            "~/org/shopping.org"
+                            "~/org/scratch.org"
+                            "~/org/loans.org"))
+
+   org-agenda-files (quote ("~/org/TODOs.org"))
+
+   ;; Capture templates
+   ;; http://orgmode.org/manual/Capture-templates.html#Capture-templates
+   org-capture-templates
+   '(("t" "Todo" entry (file "~/org/TODOs.org")
+      "* TODO %?")))
+
+  ;; enable spell-checking in org-mode files
   (add-hook 'org-mode-hook #'spacemacs/toggle-spelling-checking-on)
-
-  ;; drawer-export
-  ;; https://stackoverflow.com/questions/7174819/export-effort-and-clocksum-from-org-mode
-  (setq
-   org-export-format-drawer-function 'jbd-org-export-format-drawer)
-
-  (defun jbd-org-export-format-drawer (name content)
-    "Export drawers to drawer HTML class."
-    (setq content (org-remove-indentation content))
-    (format "@<div class=\"drawer\">%s@</div>\n" content))
 
   (org-clock-persistence-insinuate))
 
