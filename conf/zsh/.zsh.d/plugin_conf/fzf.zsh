@@ -111,26 +111,37 @@ fbr() {
 
 # get a list of unstaged files and add using fzf
 fadd() {
-  local files target
+  local files target toplevel
+  toplevel=$(git rev-parse --show-toplevel) &&
   files=$(git diff --name-only) &&
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-  git add $(echo "$target")
+  git add $(echo "$toplevel/$target")
 }
 
 # get a list of unstaged files and add using fzf
-fcheckout() {
+fco() {
   local files target
   files=$(git diff --name-only) &&
+  toplevel=$(git rev-parse --show-toplevel) &&
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-  git checkout $(echo "$target")
+  git checkout $(echo "$toplevel/$target")
 }
 
 # get a list of unstaged files and add using fzf
 fdiff() {
-  local files target
+  local files target toplevel
+
+  # get project root directory
+  toplevel=$(git rev-parse --show-toplevel) &&
+  
+  # get modified files
   files=$(git diff --name-only) &&
+  
+  # Create tmux split with a height of the list of items
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-  git diff $(echo "$target")
+
+  # run diff
+  git diff $(echo "$toplevel/$target")
 }
 
 
