@@ -110,7 +110,7 @@ fbr() {
 }
 
 # get a list of unstaged files and add using fzf
-fad() {
+fadd() {
   local files target
   files=$(git diff --name-only) &&
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
@@ -118,11 +118,19 @@ fad() {
 }
 
 # get a list of unstaged files and add using fzf
-fac() {
+fcheckout() {
   local files target
   files=$(git diff --name-only) &&
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
   git checkout $(echo "$target")
+}
+
+# get a list of unstaged files and add using fzf
+fdiff() {
+  local files target
+  files=$(git diff --name-only) &&
+  target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
+  git diff $(echo "$target")
 }
 
 
