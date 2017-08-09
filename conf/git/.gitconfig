@@ -15,8 +15,7 @@
   s         = status
   b         = branch
   c         = commit
-  A         = add -A
-  ca        = commit --amend
+  a         = add -A
   d         = diff
   dc        = diff --cached
   wd        = diff --word-dif
