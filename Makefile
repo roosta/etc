@@ -144,7 +144,7 @@ init-spacemacs: link-conf
 	sudo pacman -S emacs
 	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-~/.i3/config: link-conf ~/etc/templates/$(HOST)/variables.mk ~/etc/templates/i3/*.i3
+~/.i3/config: link-conf ~/etc/local/$(HOST)/variables.mk ~/etc/templates/i3/*.i3
 	@echo -e "\033[0;33mCreating i3 config...\033[0m"
 	@cd ~/etc/templates/i3 && cat *.i3 > ~/.i3/config
 ifdef primary_monitor
