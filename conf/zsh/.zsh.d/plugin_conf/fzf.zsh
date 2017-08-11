@@ -127,6 +127,14 @@ fdiscard() {
   git checkout $(echo "$toplevel/$target")
 }
 
+funstage() {
+  local files target
+  files=$(git diff --name-only --cached) &&
+  toplevel=$(git rev-parse --show-toplevel) &&
+  target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
+  git reset HEAD -- $(echo "$toplevel/$target")
+}
+
 # get a list of unstaged files and add using fzf
 fdiff() {
   local files target toplevel

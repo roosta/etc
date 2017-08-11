@@ -73,6 +73,7 @@ alias vitodo="emacsclient --no-wait ~/org/TODOs.org"
 alias vimutt="$EDITOR ~/.muttrc"
 alias vipoly="$EDITOR ~/.config/polybar/config"
 alias vihosts="$EDITOR /etc/hosts"
+alias vimime="$EDITOR ~/.config/mimeapps.list"
 
 #}}}
 ## FIND {{{1
