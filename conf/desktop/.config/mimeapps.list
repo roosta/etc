@@ -15,7 +15,7 @@ application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 x-scheme-handler/mailto=thunderbird.desktop
 message/rfc822=thunderbird.desktop
-application/pdf=evince.desktop
+application/pdf=zathura.desktop
 
 [Added Associations]
 image/jpeg=feh.desktop
