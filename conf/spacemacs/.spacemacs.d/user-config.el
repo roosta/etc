@@ -168,6 +168,10 @@
   ;; enable spell-checking in org-mode files
   (add-hook 'org-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
+  ;; disabled linum in org since it cause serious slowdown on larger files
+  (add-hook 'org-mode-hook #'spacemacs/toggle-line-numbers-off)
+  (add-hook 'org-mode-hook #'spacemacs/linum-relative-toggle)
+
   (org-clock-persistence-insinuate))
 
 ;; ----------------------------------------------------
