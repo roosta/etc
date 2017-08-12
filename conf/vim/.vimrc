@@ -437,6 +437,9 @@ Plug 'vim-scripts/nginx.vim'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
+" Utils
+Plug 'alx741/vinfo'
+
 call plug#end()
 
 syntax on
@@ -620,17 +623,14 @@ let g:ackprg = 'ag --vimgrep'
 " --------------------
 let g:lightline = {
       \ 'colorscheme': 'srcery',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ }}
-
-" let g:lightline = {
-"       \ 'colorscheme': 'srcery',
-"       \ 'component': {
-"       \   'readonly': '%{&readonly?"":""}',
-"       \ },
-"       \ 'separator': { 'left': '', 'right': '' },
-"       \ 'subseparator': { 'left': '', 'right': '' }
-"       \ }
-" }}}
 " vim: fdm=marker:sw=2
