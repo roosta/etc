@@ -113,6 +113,7 @@ noremap <c-a> i<c-a>
 
 noremap <leader>ds :nohlsearch<CR>
 
+noremap U :history!<Nop> 
 " use up/down when in cmdmode to select completions
 " note: use shift-movement to move in command history
 cmap <Down> <Tab>
