@@ -1,0 +1,17 @@
+# Function to quickly view as a man page the shellcheck wiki
+# page an error code belongs to e.g. 'scerr 2006' would print out the wiki page
+# SC2006.md. Requires pandoc installed and a clone of the shellcheck wiki at a
+# location defined in $wikipath
+#
+# https://github.com/koalaman/shellcheck.wiki.git
+function scerr() {
+  local file
+  local wikipath
+  wikipath="$HOME/lib/shellcheck.wiki/"
+  file=$(find "$wikipath" -name "*.md" | grep "$@")
+  pandoc -s -f markdown_github -t man "$file" | man -l -
+}
+
+scerr "$@"
+
+#/* vim: set filetype=zsh ts=2 sw=2 tw=0 fdm=marker et :*/
