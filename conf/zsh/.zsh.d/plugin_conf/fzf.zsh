@@ -113,7 +113,7 @@ fbr() {
 fadd() {
   local files target toplevel
   toplevel=$(git rev-parse --show-toplevel) &&
-  files=$(git diff --name-only) &&
+  files=$(git ls-files --exclude-standard -m -o) &&
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
   git add $(echo "$toplevel/$target")
 }
