@@ -22,6 +22,7 @@ alias c='fasd_cd -d'     # cd, same functionality as j in autojump
 #alias v='f -t -e vim -b viminfo' # mimic 'v'
 
 unalias s
+unalias z
 
 # add fasd completion shortcuts
 bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (fils and directories)
