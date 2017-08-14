@@ -119,9 +119,9 @@ cmap <C-k>  <S-Tab>
 
 " add user content styles, included here are overrides for various pages styles
 " example is wikipedia.vimp which turns wiki pages dark
-source ~/.vimperator/styles/input-field.vimp
-source ~/.vimperator/styles/wikipedia.vimp
-source ~/.vimperator/styles/hide-webrtc-indicator.vimp
+" source ~/.vimperator/styles/input-field.vimp
+" source ~/.vimperator/styles/wikipedia.vimp
+" source ~/.vimperator/styles/hide-webrtc-indicator.vimp
 " source ~/.vimperator/styles/arch-wiki.vimp
 " source ~/.vimperator/styles/reddit.vimp
 
