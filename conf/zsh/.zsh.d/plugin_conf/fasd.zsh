@@ -15,14 +15,13 @@ alias f='fasd -f'        # file
 alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
 #alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias c='fasd_cd -d'     # cd, same functionality as j in autojump
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 #alias zi='fasd_cd -d -i' # cd with interactive selection
 #alias ci='fasd_cd -d -i' # cd with interactive selection
 #alias v='f -e vim'       # quick opening files with vim
 #alias v='f -t -e vim -b viminfo' # mimic 'v'
 
 unalias s
-unalias z
 
 # add fasd completion shortcuts
 bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (fils and directories)
