@@ -4,7 +4,7 @@ Xft.dpi: 192
 *dpi: 192
 
 ! "Font to use" Set from: XResources
-rofi.font: Essential PragmataPro 22px
+rofi.font: Essential PragmataPro 24px
 
 ! "Y-offset relative to location" Set from: XResources
 rofi.yoffset: 30
