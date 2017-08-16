@@ -116,6 +116,7 @@ cmap <Down> <Tab>
 cmap <Up>   <S-Tab>
 cmap <C-j>  <Tab>
 cmap <C-k>  <S-Tab>
+" nnoremap <C-y> <Nop>
 
 " add user content styles, included here are overrides for various pages styles
 " example is wikipedia.vimp which turns wiki pages dark
