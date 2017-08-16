@@ -105,7 +105,7 @@ rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
 ! "Paste clipboard" Set from: XResources
 rofi.kb-secondary-paste:             Control+v,Insert
 ! "Clear input line" Set from: XResources
-rofi.kb-clear-line:                  Control+u
+! rofi.kb-clear-line:                  Control+u
 ! "Beginning of line" Set from: XResources
 rofi.kb-move-front:                  Control+a
 ! "End of line" Set from: XResources
@@ -119,7 +119,7 @@ rofi.kb-move-char-back:              Left,Control+h
 ! "Move forward one char" Set from: XResources
 rofi.kb-move-char-forward:           Right,Control+l
 ! "Delete previous word" Set from: XResources
-rofi.kb-remove-word-back:            Control+w
+! rofi.kb-remove-word-back:            Control+w
 ! "Delete next word" Set from: XResources
 rofi.kb-remove-word-forward:         Control+Alt+w
 ! "Delete next char" Set from: XResources
@@ -151,7 +151,7 @@ rofi.kb-row-up:                      Up,Control+k,Shift+Tab
 ! "Select next entry" Set from: XResources
 rofi.kb-row-down:                    Down,Control+j
 ! "Go to next row, if one left, accept it, if no left next mode." Set from: XResources
-rofi.kb-row-tab:                     Shift+Tab
+! rofi.kb-row-tab:                     Shift+Tab
 ! "Go to the previous page" Set from: XResources
 rofi.kb-page-prev:                   Page_Up
 ! "Go to the next page" Set from: XResources
