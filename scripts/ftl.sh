@@ -141,13 +141,18 @@ edit () {
 #}}}
 
 make-i3 () {
- cd "$etc_path" || exit 1
- make i3
+  cd "$etc_path" || exit 1
+  make i3
+}
+
+make-rofi () {
+  cd "$etc_path" || exit 1
+  make rofi
 }
 
 update () {
- cd "$etc_path" || exit 1
- make update
+  cd "$etc_path" || exit 1
+  make update
 }
 
 run () {
@@ -164,6 +169,16 @@ run () {
       case "$2" in
         "make")
           make-i3
+          ;;
+        *)
+          usage
+          ;;
+      esac
+      ;;
+    "rofi")
+      case "$2" in
+        "make")
+          make-rofi
           ;;
         *)
           usage
@@ -197,7 +212,7 @@ run () {
 }
 
 usage() {
-	cat >&2 <<EOL
+  cat >&2 <<EOL
 FATLINE
 ───────
 Helper script for etc/dotfiles
@@ -212,7 +227,7 @@ commands:
   help              show help (this)
 
 EOL
-	exit 1
+exit 1
 }
 
 run "${@}"
