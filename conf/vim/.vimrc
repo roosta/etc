@@ -14,8 +14,11 @@ if &compatible
   set nocompatible
 endif
 
+" use undo file and define location
 set undofile
 set undodir=~/var/undo
+
+" wildmenu
 set wildmenu
 set wildmode=longest,list,full
 set wildignorecase
@@ -23,13 +26,29 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
                 \*/dist/*,*/undo/*,*/out/*,*/.repl*,*/.cljs_rhino_repl/*,
                 \*/_site/*,\*/resources/public/js/*
 " set wildignore+=.git,.hg,.svn,build,node_modules,undo,out,.repl*,.cljs_rhino_repl,_site
+
 set backspace=indent,eol,start
+
+" always show statusline
 set laststatus=2
+
+" show tabline when at least two tab pages
 set showtabline=1
+
+" show the command being typed on the statusline
 set showcmd
+
+" No startup message
 set shortmess+=I
+
+" keep 7 lines visible lines above/below when scrolling up/down
 set scrolloff=7
+
+" limit highlighting to lines shorter than 256 chars.  useful if opening, say
+" a minified js file, where the lines are extremely long
 set t_Co=256
+
+
 set lazyredraw
 set ttyfast
 set cursorline
@@ -48,10 +67,20 @@ set synmaxcol=2048
 
 " line break
 set wrap
+" wrap long lines at a character in 'breakat'
 set linebreak
-set breakindent
+
+" define what characters cause a linebreak
 set breakat=" ^I!@*-+;:,./?"
-set cpoptions+=n  " dont show linenumbers on wrap
+
+" Every wrapped line will continue visually indented (same amount of
+" space as the beginning of that line)
+set breakindent
+
+" dont show linenumbers on wrap
+set cpoptions+=n
+
+" set custom character on linebreaks caused by wrap
 set showbreak=↳\
 
 " tabs
@@ -62,10 +91,11 @@ set softtabstop=2
 
 " search
 set incsearch
-set ignorecase
 set smartcase
 set magic
-set gdefault "substitute global flag always on
+
+"substitute global flag always on
+set gdefault 
 
 set tags=tags;/ " search recursively up for tags
 " set tags+=./.git/.tags,./tags
