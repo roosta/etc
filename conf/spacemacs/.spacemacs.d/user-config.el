@@ -138,7 +138,6 @@
 
    ;; Save the running clock when emacs is closed
    org-clock-persist 't
-   org-export-with-clocks t
 
    ;; hide markers like ~this~ and =this=
    ;; makes for a better reading experience I think
@@ -149,7 +148,10 @@
 
    org-clock-idle-time 15
 
+   ;; use dropbox to sync mobile changes
    org-mobile-directory "~/Dropbox/MobileOrg"
+
+   ;; define which files are available for mobile-org
    org-mobile-files (quote ("~/org/media.org"
                             "~/org/TODOs.org"
                             "~/org/buy.org"
@@ -157,6 +159,7 @@
                             "~/org/scratch.org"
                             "~/org/loans.org"))
 
+   ;; define agenda files
    org-agenda-files (quote ("~/org/TODOs.org"))
 
    ;; Capture templates
