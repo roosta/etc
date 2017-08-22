@@ -150,9 +150,9 @@ font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;1"
 font-1 = "Essential PragmataPro:pixelsize=9:weight=bold;1"
 font-4 = "Material Icons:pixelsize=10;3"
 inherit = bar/lintilla-primary
-; tray-position = right
-; tray-padding = 1
-; tray-scale = 1
+tray-position = right
+tray-padding = 1
+tray-scale = 1
 monitor = ${env:MONITOR:HDMI2}
 modules-right = eth-garkbit fs-home fs-root
 
