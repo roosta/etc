@@ -1,2 +1,2 @@
-. $HOME/bin/touchpad_toggle
+. $HOME/bin/touchpad-toggle
 . $HOME/.screenlayout/main.sh

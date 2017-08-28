@@ -368,6 +368,7 @@ alias repl='rlwrap lumo'
 alias user-mount="sudo mount -o gid=users,fmask=113,dmask=002"
 alias wanip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias music='ncmpcpp'
+alias m='ncmpcpp'
 alias update-font-cache='fc-cache -fv'
 alias fm='vifm'
 #}}}
