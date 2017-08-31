@@ -5,12 +5,13 @@
 ;; Misc
 ;; -----------------------------------------------------------
 (setq
+
  scroll-margin 7
 
+ ;; Used to vim regexp
  evil-ex-search-vim-style-regexp t
 
- ;; srcery-theme-org-height nil
-
+ ;; don't use powerline separators in statusbar
  powerline-default-separator 'nil
  ;; spaceline-separator-dir-left '(left . left)
  ;; spaceline-separator-dir-right '(right . right)
@@ -21,10 +22,11 @@
  ;; move across linebreaks
  evil-move-beyond-eol t
 
+ ;; define a custom snippets location
  yas-snippet-dirs
  '("~/.spacemacs.d/snippets")
 
- ;; set default browser
+ ;; set default browser, wouldn't use xdk default browser
  browse-url-browser-function 'browse-url-generic
  browse-url-generic-program "firefox"
  )
@@ -89,6 +91,7 @@
 ;; ----------------------------------------------------
 ;; smartparens
 ;; ----------------------------------------------------
+;; Some keybinds conflict with evil bindings, and I prefer the evil ones
 (setq
  evil-cleverparens-use-additional-movement-keys nil)
 
@@ -106,6 +109,7 @@
 
 ;; opening project files
 (spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
+
 
 ;; ----------------------------------------------------
 ;; evil-surround
@@ -215,3 +219,5 @@
 (if (file-directory-p "~/Private/github")
     (load-file "~/Private/github/github.el")
     (message "~/Private is not mounted, cannot load github config"))
+
+;; term-send-up
