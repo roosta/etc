@@ -221,3 +221,8 @@
     (message "~/Private is not mounted, cannot load github config"))
 
 ;; term-send-up
+
+(add-to-list 'load-path "~/.emacs.d/toc-org")
+(if (require 'toc-org nil t)
+    (add-hook 'org-mode-hook 'toc-org-enable)
+  (warn "toc-org not found"))
