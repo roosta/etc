@@ -43,3 +43,5 @@
 	verbose = true
 [include]
   path = ~/.gitconfig.local
+[github]
+	user = roosta
