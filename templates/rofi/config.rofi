@@ -3,88 +3,111 @@
 ! ┃┳┛┃ ┃┣━ ┃
 ! ┇┗┛┛━┛┇  ┇
 !
-! "Enabled modi" Set from: XResources
+! "Enabled modi" Set from: File
 rofi.modi:                           combi,calc:qalc +u8 -nocurrencies
-!,repl:rlwrap lumo
-! "Window width" Set from: XResources
+! "Window width" Set from: File
 rofi.width:                          20
-! "Number of lines" Set from: XResources
-rofi.lines:                          64
-! "Number of columns" Set from: XResources
-rofi.columns:                        2
-! "Font to use" Set from: XResources
-! rofi.font:                           Essential PragmataPro 24px
-! "Location on screen" Set from: XResources
+! "Number of columns" Set from: File
+rofi.columns:                        1
+! "Font to use" Set from: File
+rofi.font:                           Essential PragmataPro 24px
+! "Border width" Set from: Default
+! rofi.bw:                             1
+! "Location on screen" Set from: File
 rofi.location:                       1
-! "Y-offset relative to location" Set from: XResources
-/* rofi.yoffset:                        34 */
-! "X-offset relative to location" Set from: XResources
+! "Padding" Set from: Default
+! rofi.padding:                        5
+! "X-offset relative to location" Set from: File
 rofi.xoffset:                        0
-! "Always show number of lines" Set from: XResources
+! "Always show number of lines" Set from: File
 rofi.fixed-num-lines:                true
-! "Terminal to use" Set from: XResources
+! "Whether to load and show icons" Set from: Default
+! rofi.show-icons:                     false
+! "Terminal to use" Set from: File
 rofi.terminal:                       termite
-! "Ssh client to use" Set from: XResources
+! "Ssh client to use" Set from: File
 rofi.ssh-client:                     ssh
-! "Ssh command to execute" Set from: XResources
-/* urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME" */
-! rofi.ssh-command:                    {terminal} -e tmux -q has-session && exec tmux attach-session -d && exec {ssh-client} {host} || exec tmux new-session -n$USER -s$USER@$HOSTNAME && exec {ssh-client} {host}
+! "Ssh command to execute" Set from: File
 rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
-! "Run command to execute" Set from: XResources
+! "Run command to execute" Set from: File
 rofi.run-command:                    {cmd}
-! "Command to get extra run targets" Set from: XResources
+! "Command to get extra run targets" Set from: File
 rofi.run-list-command:               
-! "Run command to execute that runs in shell" Set from: XResources
+! "Run command to execute that runs in shell" Set from: File
 rofi.run-shell-command:              {terminal} -e {cmd}
 ! "Command executed on accep-entry-custom for window modus" Set from: Default
 ! rofi.window-command:                 xkill -id {window}
-! "Disable history in run/ssh" Set from: XResources
+! "Theme to use to look for icons" Set from: Default
+! rofi.drun-icon-theme:                
+! "Disable history in run/ssh" Set from: File
 rofi.disable-history:                false
 ! "Use sorting" Set from: Default
 ! rofi.sort:                           false
-! "Use levenshtein sorting also for fuzzy matching" Set from: XResources
+! "Use levenshtein sorting also for fuzzy matching" Set from: File
 rofi.levenshtein-sort:               true
-! "Set case-sensitivity" Set from: XResources
+! "Set case-sensitivity" Set from: File
 rofi.case-sensitive:                 false
 ! "Cycle through the results list" Set from: Default
 ! rofi.cycle:                          true
-! "Enable sidebar-mode" Set from: XResources
+! "Enable sidebar-mode" Set from: File
 rofi.sidebar-mode:                   true
-! "Row height (in chars)" Set from: XResources
+! "Row height (in chars)" Set from: File
 rofi.eh:                             1
-! "Enable auto select mode" Set from: XResources
+! "Enable auto select mode" Set from: File
 rofi.auto-select:                    false
-! "Parse hosts file for ssh mode" Set from: XResources
+! "Parse hosts file for ssh mode" Set from: File
 rofi.parse-hosts:                    false
 ! "Parse known_hosts file for ssh mode" Set from: Default
 ! rofi.parse-known-hosts:              true
-! "Set the modi to combine in combi mode" Set from: XResources
+! "Set the modi to combine in combi mode" Set from: File
 rofi.combi-modi:                     window,drun
 ! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
 ! rofi.matching:                       normal
 ! "Tokenize input string" Set from: Default
 ! rofi.tokenize:                       true
-! "Monitor id to show on" Set from: XResources
+! "Monitor id to show on" Set from: File
 rofi.m:                              -1
-! "Pre-set filter" Set from: XResources
+! "Margin between rows *DEPRECATED*" Set from: Default
+! rofi.line-margin:                    2
+! "Padding within rows *DEPRECATED*" Set from: Default
+! rofi.line-padding:                   1
+! "Pre-set filter" Set from: File
 rofi.filter:                         
-! "Fullscreen" Set from: Default
- rofi.fullscreen:                     false
-! "DPI" Set from: XResources
-rofi.dpi:                            192
+! "Separator style (none, dash, solid) *DEPRECATED*" Set from: Default
+! rofi.separator-style:                dash
+! "Hide scroll-bar *DEPRECATED*" Set from: Default
+! rofi.hide-scrollbar:                 false
+! "Fullscreen" Set from: File
+rofi.fullscreen:                     false
+! "Fake transparency *DEPRECATED*" Set from: Default
+! rofi.fake-transparency:              false
 ! "Threads to use for string matching" Set from: Default
 ! rofi.threads:                        0
+! "Scrollbar width *DEPRECATED*" Set from: Default
+! rofi.scrollbar-width:                8
 ! "Scrolling method. (0: Page, 1: Centered)" Set from: Default
 ! rofi.scroll-method:                  0
-! "Window Format. w (desktop name), t (title), n (name), r (role), c (class)" Set from: Default
-! rofi.window-format:                  {w}   {c}   {t}
+! "Background to use for fake transparency. (background or screenshot)" Set from: Default
+! rofi.fake-background:                screenshot
+! "Window Format. w (desktop name), t (title), n (name), r (role), c (class) *DEPRECATED*" Set from: Default
+! rofi.window-format:                  {w}    {i}{c}   {t}
 ! "Click outside the window to exit" Set from: Default
 ! rofi.click-to-exit:                  true
 ! "Indicate how it match by underlining it." Set from: Default
 ! rofi.show-match:                     true
-! "New style theme file" Set from: Default
-rofi.theme: ~/.config/rofi/srcery.rasi                          
-! "Pidfile location" Set from: XResources
+! "New style theme file" Set from: File
+rofi.theme:                          ~/.config/rofi/srcery.rasi
+! "Color scheme for normal row" Set from: Default
+! rofi.color-normal:                   
+! "Color scheme for urgent row" Set from: Default
+! rofi.color-urgent:                   
+! "Color scheme for active row" Set from: Default
+! rofi.color-active:                   
+! "Color scheme window" Set from: Default
+! rofi.color-window:                   
+! "Directory containing plugins" Set from: Default
+! rofi.plugin-path:                    /usr/lib/rofi
+! "Pidfile location" Set from: File
 rofi.pid:                            /run/user/1000/rofi.pid
 ! "The display name of this browser" Set from: Default
 ! rofi.display-window:                 
@@ -100,93 +123,93 @@ rofi.pid:                            /run/user/1000/rofi.pid
 ! rofi.display-combi:                  
 ! "The display name of this browser" Set from: Default
 ! rofi.display-keys:                   
-! "Paste primary selection" Set from: XResources
+! "Paste primary selection" Set from: File
 rofi.kb-primary-paste:               Control+Shift+v,Shift+Insert
-! "Paste clipboard" Set from: XResources
+! "Paste clipboard" Set from: File
 rofi.kb-secondary-paste:             Control+v,Insert
-! "Clear input line" Set from: XResources
-! rofi.kb-clear-line:                  Control+u
-! "Beginning of line" Set from: XResources
+! "Clear input line" Set from: Default
+! rofi.kb-clear-line:                  Control+w
+! "Beginning of line" Set from: File
 rofi.kb-move-front:                  Control+a
-! "End of line" Set from: XResources
+! "End of line" Set from: File
 rofi.kb-move-end:                    Control+0
-! "Move back one word" Set from: XResources
+! "Move back one word" Set from: File
 rofi.kb-move-word-back:              Control+b
-! "Move forward one word" Set from: XResources
+! "Move forward one word" Set from: File
 rofi.kb-move-word-forward:           Control+e
-! "Move back one char" Set from: XResources
-rofi.kb-move-char-back:              Left,Control+h
-! "Move forward one char" Set from: XResources
-rofi.kb-move-char-forward:           Right,Control+l
-! "Delete previous word" Set from: XResources
-! rofi.kb-remove-word-back:            Control+w
-! "Delete next word" Set from: XResources
+! "Move back one char" Set from: File
+rofi.kb-move-char-back:              Left
+! "Move forward one char" Set from: File
+rofi.kb-move-char-forward:           Right
+! "Delete previous word" Set from: Default
+! rofi.kb-remove-word-back:            Control+Alt+h,Control+BackSpace
+! "Delete next word" Set from: File
 rofi.kb-remove-word-forward:         Control+Alt+w
-! "Delete next char" Set from: XResources
+! "Delete next char" Set from: File
 rofi.kb-remove-char-forward:         Delete,Control+d
-! "Delete previous char" Set from: XResources
+! "Delete previous char" Set from: File
 rofi.kb-remove-char-back:            BackSpace
-! "Delete till the end of line" Set from: XResources
+! "Delete till the end of line" Set from: File
 rofi.kb-remove-to-eol:               Control+q
 ! "Delete till the start of line" Set from: Default
 ! rofi.kb-remove-to-sol:               Control+u
-! "Accept entry" Set from: XResources
+! "Accept entry" Set from: File
 rofi.kb-accept-entry:                Return,KP_Enter
-! "Use entered text as command (in ssh/run modi)" Set from: XResources
+! "Use entered text as command (in ssh/run modi)" Set from: File
 rofi.kb-accept-custom:               Control+Return
 ! "Use alternate accept command." Set from: Default
 ! rofi.kb-accept-alt:                  Shift+Return
-! "Delete entry from history" Set from: XResources
+! "Delete entry from history" Set from: File
 rofi.kb-delete-entry:                Shift+Delete
-! "Switch to the next mode." Set from: XResources
-rofi.kb-mode-next:                   Shift+Right,Control+Tab
-! "Switch to the previous mode." Set from: XResources
-rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab
-! "Go to the previous column" Set from: XResources
+! "Switch to the next mode." Set from: File
+rofi.kb-mode-next:                   Shift+Right,Control+Tab,Control+l
+! "Switch to the previous mode." Set from: File
+rofi.kb-mode-previous:               Shift+Left,Control+Shift+Tab,Control+h
+! "Go to the previous column" Set from: File
 rofi.kb-row-left:                    Control+Left
-! "Go to the next column" Set from: XResources
+! "Go to the next column" Set from: File
 rofi.kb-row-right:                   Control+Right
-! "Select previous entry" Set from: XResources
+! "Select previous entry" Set from: File
 rofi.kb-row-up:                      Up,Control+k,Shift+Tab
-! "Select next entry" Set from: XResources
+! "Select next entry" Set from: File
 rofi.kb-row-down:                    Down,Control+j
-! "Go to next row, if one left, accept it, if no left next mode." Set from: XResources
-! rofi.kb-row-tab:                     Shift+Tab
-! "Go to the previous page" Set from: XResources
+! "Go to next row, if one left, accept it, if no left next mode." Set from: Default
+! rofi.kb-row-tab:                     Tab
+! "Go to the previous page" Set from: File
 rofi.kb-page-prev:                   Page_Up
-! "Go to the next page" Set from: XResources
+! "Go to the next page" Set from: File
 rofi.kb-page-next:                   Page_Down
-! "Go to the first entry" Set from: XResources
+! "Go to the first entry" Set from: File
 rofi.kb-row-first:                   Home,KP_Home
-! "Go to the last entry" Set from: XResources
+! "Go to the last entry" Set from: File
 rofi.kb-row-last:                    End,KP_End
-! "Set selected item as input text" Set from: XResources
+! "Set selected item as input text" Set from: File
 rofi.kb-row-select:                  Control+space
 ! "Take a screenshot of the rofi window" Set from: Default
 ! rofi.kb-screenshot:                  Alt+S
-! "Toggle case sensitivity" Set from: XResources
+! "Toggle case sensitivity" Set from: File
 rofi.kb-toggle-case-sensitivity:     grave,dead_grave
 ! "Toggle sort" Set from: Default
 ! rofi.kb-toggle-sort:                 Alt+grave
-! "Quit rofi" Set from: XResources
+! "Quit rofi" Set from: File
 rofi.kb-cancel:                      Escape
-! "Custom keybinding 1" Set from: XResources
+! "Custom keybinding 1" Set from: File
 rofi.kb-custom-1:                    Alt+1
-! "Custom keybinding 2" Set from: XResources
+! "Custom keybinding 2" Set from: File
 rofi.kb-custom-2:                    Alt+2
-! "Custom keybinding 3" Set from: XResources
+! "Custom keybinding 3" Set from: File
 rofi.kb-custom-3:                    Alt+3
-! "Custom keybinding 4" Set from: XResources
+! "Custom keybinding 4" Set from: File
 rofi.kb-custom-4:                    Alt+4
-! "Custom Keybinding 5" Set from: XResources
+! "Custom Keybinding 5" Set from: File
 rofi.kb-custom-5:                    Alt+5
-! "Custom keybinding 6" Set from: XResources
+! "Custom keybinding 6" Set from: File
 rofi.kb-custom-6:                    Alt+6
-! "Custom Keybinding 7" Set from: XResources
+! "Custom Keybinding 7" Set from: File
 rofi.kb-custom-7:                    Alt+7
-! "Custom keybinding 8" Set from: XResources
+! "Custom keybinding 8" Set from: File
 rofi.kb-custom-8:                    Alt+8
-! "Custom keybinding 9" Set from: XResources
+! "Custom keybinding 9" Set from: File
 rofi.kb-custom-9:                    Alt+9
 ! "Custom keybinding 10" Set from: Default
 ! rofi.kb-custom-10:                   Alt+0
@@ -228,4 +251,18 @@ rofi.kb-custom-9:                    Alt+9
 ! rofi.kb-select-9:                    Super+9
 ! "Select row 10" Set from: Default
 ! rofi.kb-select-10:                   Super+0
+! "Go to the previous column" Set from: Default
+! rofi.ml-row-left:                    Mouse6
+! "Go to the next column" Set from: Default
+! rofi.ml-row-right:                   Mouse7
+! "Select previous entry" Set from: Default
+! rofi.ml-row-up:                      Mouse4
+! "Select next entry" Set from: Default
+! rofi.ml-row-down:                    Mouse5
+! "Select hovered row" Set from: Default
+! rofi.me-select-entry:                Mouse1
+! "Accept hovered row" Set from: Default
+! rofi.me-accept-entry:                MouseD1
+! "Accept hovered row with custom action" Set from: Default
+! rofi.me-accept-custom:               Control+MouseD1
 
