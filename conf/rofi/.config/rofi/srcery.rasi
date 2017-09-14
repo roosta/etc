@@ -1,130 +1,204 @@
-//!-------------------------------------------------------------------------------
-//! Rofi color theme
-//!
-//! Based on srcery color scheme for Vim
-//! https://github.com/roosta/vim-srcery
-//!
-//! File: srcery.rasi
-//! Desc: Srcery theme for Rofi
-//! Author: roosta <mail@roosta.sh>
-//! Modified: 2017-04-09
-//!-------------------------------------------------------------------------------
+/*
+ * Rofi color theme
+ * Based on srcery color scheme for Vim
+ * https://github.com/roosta/vim-srcery
+ *
+ * File: srcery.rasi
+ * Desc: Srcery theme for Rofi
+ * Author: roosta <mail@roosta.sh>
+ * Modified: 2017-04-09
+ */
+
 * {
-    spacing:       2;
-    background:    #1C1B19;
-    foreground:    #FCE8C3;
+  spacing:       2;
 
-    black:         #1C1B19;
-    brightblack:   #2D2B28;
+  black:         #1C1B19;
+  brightblack:   #2D2B28;
 
-    red:           #FF3128;
-    brightred:     #F75341;
+  red:           #FF3128;
+  brightred:     #F75341;
 
-    green:         #519F50;
-    brightgreen:   #98BC37;
+  green:         #519F50;
+  brightgreen:   #98BC37;
 
-    yellow:        #FBB829;
-    brightyellow:  #FED06E;
+  yellow:        #FBB829;
+  brightyellow:  #FED06E;
 
-    blue:          #5573A3;
-    brightblue:    #8EB2F7;
+  blue:          #5573A3;
+  brightblue:    #8EB2F7;
 
-    magenta:       #E02C6D;
-    brightmagenta: #E35682;
+  magenta:       #E02C6D;
+  brightmagenta: #E35682;
 
-    cyan:          #0AAEB3;
-    brightcyan:    #53FDE9;
+  cyan:          #0AAEB3;
+  brightcyan:    #53FDE9;
 
-    white:         #918175;
-    brightwhite:   #FCE8C3;
+  white:         #918175;
+  brightwhite:   #FCE8C3;
 
-    orange:        #D75F00;
-    brightorange:  #FF8700;
+  orange:        #D75F00;
+  brightorange:  #FF8700;
 
-    xgrey1:        #262626;
-    xgrey2:        #303030;
-    xgrey3:        #3A3A3A;
-    xgrey4:        #444444;
-    xgrey5:        #4E4E4E;
+  xgrey1:        #262626;
+  xgrey2:        #303030;
+  xgrey3:        #3A3A3A;
+  xgrey4:        #444444;
+  xgrey5:        #4E4E4E;
 
-    highlight:     bold #E02C6D;
+  highlight:     bold #E02C6D;
+
+  selected-normal-foreground:  @black;
+  selected-normal-background:  @white;
+
+  normal-foreground:           @brightwhite;
+  normal-background:           @brightblack;
+
+  alternate-normal-background: @xgrey1;
+  alternate-normal-foreground: @brightwhite;
+
+  urgent-foreground:           @black;
+  urgent-background:           @orange;
+
+  selected-urgent-foreground:  @black;
+  selected-urgent-background:  @brightorange;
+
+  alternate-urgent-background: @urgent-background;
+  alternate-urgent-foreground: @urgent-foreground;
+
+  active-foreground:           @yellow;
+  active-background:           @brightblack;
+
+  selected-active-foreground:  @black;
+  selected-active-background:  @yellow;
+
+  alternate-active-background: @yellow;
+  alternate-active-foreground: @black;
+
+  border-color:                @magenta;
+  separatorcolor:              @white;
+  background-color:            @black;
 }
+
 #window {
-    border:     2;
-    foreground: @magenta;
-    padding:    5;
-    background: @black;
+  border:     2;
+  foreground: @magenta;
+  padding:    0;
+  background: @black;
 }
-#window.mainbox {
-    border:  0;
-    padding: 0;
+
+#mainbox {
+  border:  0;
+  padding: 0;
 }
-#window.mainbox.message.box {
-    border:  2px 0px 0px ;
-    padding: 2px 0px 0px ;
+
+#message {
+  border:  2px 0px 0px ;
+  padding: 2px 0px 0px ;
 }
-#window.mainbox.message.normal {
-    foreground: @brightwhite;
-    background: @black;
+
+#textbox {
+  text-color: @brightwhite;
 }
-#window.mainbox.listview {
-    fixed-height: 1;
-    border:       2px 0px 0px ;
-    columns:      1;
-    padding:      2px 0px 0px ;
+
+#listview {
+  fixed-height: 1;
+  border:       2px dash 0px 0px ;
+  border-color: @separatorcolor;
+  spacing:      2px ;
+  scrollbar:    false;
+  padding:      2px 0px 0px ;
 }
-#window.mainbox.listview.element {
-    border: 0;
+
+#element {
+  border:  0;
+  padding: 1px ;
 }
-#window.mainbox.listview.element.normal.normal {
-    foreground: @brightwhite;
-    background: @brightblack;
+
+#element.normal.normal {
+  background-color: @normal-background;
+  text-color:       @normal-foreground;
 }
-#window.mainbox.listview.element.normal.urgent {
-    foreground: @black;
-    background: @orange;
+
+#element.normal.urgent {
+  background-color: @urgent-background;
+  text-color:       @urgent-foreground;
 }
-#window.mainbox.listview.element.normal.active {
-    foreground: @yellow;
-    background: @brightblack;
+
+#element.normal.active {
+  background-color: @active-background;
+  text-color:       @active-foreground;
 }
-#window.mainbox.listview.element.selected.normal {
-    foreground: @black;
-    background: @white;
+
+#element.selected.normal {
+  background-color: @selected-normal-background;
+  text-color:       @selected-normal-foreground;
 }
-#window.mainbox.listview.element.selected.urgent {
-    foreground: @black;
-    background: @orange;
+
+#element.selected.urgent {
+  background-color: @selected-urgent-background;
+  text-color:       @selected-urgent-foreground;
 }
-#window.mainbox.listview.element.selected.active {
-    foreground: @black;
-    background: @yellow;
+
+#element.selected.active {
+  background-color: @selected-active-background;
+  text-color:       @selected-active-foreground;
 }
-#window.mainbox.listview.element.alternate.normal {
-    foreground: @brightwhite;
-    background: @xgrey1;
+
+#element.alternate.normal {
+  background-color: @alternate-normal-background;
+  text-color:       @alternate-normal-foreground;
 }
-#window.mainbox.listview.element.alternate.urgent {
-    foreground: @white;
-    background: @brightred;
+
+#element.alternate.urgent {
+  background-color: @alternate-urgent-background;
+  text-color:       @alternate-urgent-foreground;
 }
-#window.mainbox.listview.element.alternate.active {
-    foreground: @black;
-    background: @yellow;
+
+#element.alternate.active {
+  background-color: @alternate-active-background;
+  text-color:       @alternate-active-foreground;
 }
-#window.mainbox.listview.scrollbar {
-    border:  0;
-    padding: 0;
+
+#scrollbar {
+  width:        4px ;
+  border:       0;
+  handle-width: 8px ;
+  padding:      0;
 }
-#window.mainbox.sidebar.box {
-    border: 2px 0px 0px ;
+
+#sidebar {
+  border:       2px dash 0px 0px ;
+  border-color: @separatorcolor;
 }
-#window.mainbox.inputbar {
-    spacing: 0;
+
+#button {
+  text-color: @brightwhite;
 }
-#window.mainbox.inputbar.box {
+
+#button.selected {
+  background-color: @magenta;
+  text-color:       @brightwhite;
 }
-#window.mainbox.inputbar.normal {
-    foreground: @brightwhite;
-    background: @brightblack;
+
+#inputbar {
+  spacing:    0;
+  text-color: @normal-foreground;
+  padding:    1px ;
 }
+
+#case-indicator {
+  spacing:    0;
+  text-color: @normal-foreground;
+}
+
+#entry {
+  spacing:    0;
+  text-color: @normal-foreground;
+}
+
+#prompt {
+  spacing:    0;
+  text-color: @normal-foreground;
+}
+
+// vim:ft=css:ts=2:sw=2:fdm=marker
