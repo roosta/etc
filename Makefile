@@ -168,9 +168,6 @@ i3: ~/.i3/config
 
 ~/.config/rofi/config: ~/etc/templates/rofi/config.rofi ~/etc/local/$(HOST)/variables.mk
 	@cd ~/etc/templates/rofi && cat *.rofi > ~/.config/rofi/config
-ifdef dpi
-	@echo  "rofi.dpi: $(dpi)" >> ~/.config/rofi/config
-endif
 ifdef bar_height
 	@echo  "rofi.yoffset: $(bar_height)" >> ~/.config/rofi/config
 endif
