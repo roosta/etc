@@ -130,7 +130,10 @@ edit () {
         $EDITOR ~/.muttrc
         ;;
       "i3")
-        $EDITOR ~/.i3/config.d
+        $EDITOR ~/etc/templates/i3
+        ;;
+      "rofi")
+        $EDITOR ~/etc/templates/rofi/config.rofi
         ;;
       *)
         error_msg "No such config: $arg"
