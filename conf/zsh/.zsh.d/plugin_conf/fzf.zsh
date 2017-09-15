@@ -119,7 +119,7 @@ fadd() {
 }
 
 # get a list of unstaged files and add using fzf
-fdiscard() {
+fcheckout() {
   local files target
   files=$(git diff --name-only) &&
   toplevel=$(git rev-parse --show-toplevel) &&
