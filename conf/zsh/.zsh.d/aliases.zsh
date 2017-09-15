@@ -74,6 +74,7 @@ alias vimutt="$EDITOR ~/.muttrc"
 alias vipoly="$EDITOR ~/.config/polybar/config"
 alias vihosts="$EDITOR /etc/hosts"
 alias vimime="$EDITOR ~/.config/mimeapps.list"
+alias virofi="$EDITOR ~/etc/templates/rofi/config.rofi"
 
 #}}}
 ## FIND {{{1
