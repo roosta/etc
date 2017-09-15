@@ -100,7 +100,7 @@ fi
 alias lsrg='tree -f -i -h --matchdirs -P'
 
 # list pulseaudio sinks
-alias lssink="pacmd list-sinks|egrep -i 'index:|name:'"
+alias sinks="pacmd list-sinks|egrep -i 'index:|name:'"
 
 alias awk='gawk'
 alias pacorg='org ~/org/pacman.org'
