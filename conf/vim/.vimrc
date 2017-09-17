@@ -44,10 +44,11 @@ set shortmess+=I
 " keep 7 lines visible lines above/below when scrolling up/down
 set scrolloff=7
 
-" limit highlighting to lines shorter than 256 chars.  useful if opening, say
-" a minified js file, where the lines are extremely long
+" set number of colors to 256
 set t_Co=256
 
+
+set synmaxcol=256
 
 set lazyredraw
 set ttyfast
@@ -63,6 +64,9 @@ set spelllang=en_us,nb
 set cm=blowfish2
 set autoindent
 set smartindent
+
+" limit highlighting to lines shorter than 2048 chars.  useful if opening, say
+" a minified js file, where the lines are extremely long
 set synmaxcol=2048
 
 " line break
