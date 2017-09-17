@@ -26,7 +26,6 @@ backup/*
 # ranger
 *bookmarks*
 **/__init__.py
-*cache**
 *history*
 *tagged*
 
