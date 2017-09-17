@@ -4,27 +4,27 @@ NOW = $(shell date +"%Y-%m-%d@%T")
 include ~/etc/local/$(HOST)/variables.mk
 
 .PHONY: default
-default: link update i3 rofi post-install
+default: links update i3 rofi post-install
 
 .PHONY: update
 update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install
 	
-.PHONY: link
-link: link-conf link-misc link-local post-install
+.PHONY: links
+links: link-conf link-misc link-local post-install
 
 .PHONY: install
-install: link init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-pacaur install-packages install-aur-packages update post-install
+install: links init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-pacaur install-packages install-aur-packages update post-install
 	
 .PHONY: min
-min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-link init-vim init-tmux
+min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux
 	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 
 .PHONY: min-install
 min-install:
 	sudo apt-get install < min_packages.txt
 
-.PHONY: min-link
-min-link: 
+.PHONY: min-links
+min-links: 
 	stow zsh git tmux vim bash -R -t ~ -d conf
 
 .PHONY: install-pacaur
