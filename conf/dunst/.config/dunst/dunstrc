@@ -12,7 +12,7 @@
     # <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
     # If markup is not allowed, those tags will be stripped out of the
     # message.
-    allow_markup = yes
+    markup = yes
 
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -150,9 +150,8 @@
     # Paths to default icons.
     icon_folders = /usr/share/icons/Arc/16/status:/usr/share/icons/Arc/16/devices:/usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
-[frame]
-    width = 2
-    color = "#E02C6D"
+    frame_width = 2
+    frame_color = "#E02C6D"
 
 [shortcuts]
 
@@ -180,12 +179,12 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#2D2B28"
     foreground = "#918175"
-    timeout = 5
+    timeout = 10
 
 [urgency_normal]
     background = "#2D2B28"
     foreground = "#FCE8C3"
-    timeout = 10
+    timeout = 15
 
 [urgency_critical]
     background = "#E02C6D"
