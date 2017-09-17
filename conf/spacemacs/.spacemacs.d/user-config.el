@@ -39,7 +39,19 @@
   (interactive)
   (find-file-existing "~/.spacemacs.d/user-config.el"))
 
+
+;; (defun roosta/org-search ()
+;;   (interactive)
+;;   (let ((default-directory "/home/roosta/org"))
+;;     (spacemacs/helm-project-smart-do-search)))
+
+;; (spacemacs/set-leader-keys "ot" 'roosta/org-search)
+
 (spacemacs/set-leader-keys "feu" 'roosta/find-user-config)
+
+;; opening project files
+(spacemacs/set-leader-keys "oo" 'helm-projectile-find-file)
+
 
 ;; -----------------------------------------------------------
 ;; Cider
@@ -106,10 +118,6 @@
 ;; Navigating using visual lines
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-
-;; opening project files
-(spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
-
 
 ;; ----------------------------------------------------
 ;; evil-surround
@@ -220,9 +228,29 @@
     (load-file "~/Private/github/github.el")
     (message "~/Private is not mounted, cannot load github config"))
 
-;; term-send-up
-
 (add-to-list 'load-path "~/.emacs.d/toc-org")
 (if (require 'toc-org nil t)
     (add-hook 'org-mode-hook 'toc-org-enable)
   (warn "toc-org not found"))
+
+;; --------------------------------------------------
+;; Terminal
+;; --------------------------------------------------
+
+;; (add-hook 'term-mode-hook
+;;           (lambda () (global-unset-key (kbd "C-k")
+;;                       global-set-key (kbd "C-k") #'evil-window-up)))
+
+;; (global-unset-key (kbd "C-k"))
+
+;; (eval-after-load 'multiterm
+;;   '(local-unset-key (kbd "C-k"))
+;;   '(evil-define-key 'insert term-mode-map
+;;      (kbd "C-k") 'evil-window-up
+;;      (kbd "C-k") 'evil-window-up))
+
+;; (global-set-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
+;; (global-set-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
+
+;; (eval-after-load 'term
+;;   '(local-unset-key (kbd "C-k")))
