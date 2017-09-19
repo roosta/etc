@@ -50,7 +50,7 @@
 (spacemacs/set-leader-keys "feu" 'roosta/find-user-config)
 
 ;; opening project files
-(spacemacs/set-leader-keys "oo" 'helm-projectile-find-file)
+(spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
 
 
 ;; -----------------------------------------------------------
@@ -62,6 +62,9 @@
 
  ;; start cljs repl scripts/repl.clj in project
  cider-cljs-lein-repl "(require 'repl)"
+
+ ;; include local-dev as a profile
+ cider-lein-parameters "with-profile +local-dev repl :headless :host ::"
 
  ;; cider-pprint-fn "puget"
  ;; clojure-enable-fancify-symbols t
