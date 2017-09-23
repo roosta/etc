@@ -1,5 +1,4 @@
-{:user {:jvm-opts ^:replace ["-Xmx1g" "-server"]
-        :dependencies [;; nREPL support for ClojureScript REPLs 
+{:user {:dependencies [;; nREPL support for ClojureScript REPLs 
                        [com.cemerick/piggieback "0.2.2"]
 
                        ;; alternative pprinter
@@ -11,7 +10,7 @@
                        [org.clojure/tools.namespace "0.3.0-alpha4"] ]
 
         :plugins [;; check deps for new versions
-                  [lein-ancient "0.6.10"]
+                  [lein-ancient "0.6.12"]
 
                   ;; cider debugging
                   [com.billpiel/sayid "0.0.15"]
@@ -30,7 +29,7 @@
 
  :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
- :repl {:plugins [[cider/cider-nrepl "0.15.1-SNAPSHOT"]
+ :repl {:plugins [[cider/cider-nrepl "0.16.0-SNAPSHOT"]
 
                   ;; syntax highlight terminal repl
                   [venantius/ultra "0.5.1"]
