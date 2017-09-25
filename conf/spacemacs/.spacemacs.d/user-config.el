@@ -64,7 +64,7 @@
  cider-cljs-lein-repl "(require 'repl)"
 
  ;; include local-dev as a profile
- cider-lein-parameters "with-profile +local-dev repl :headless :host ::"
+ ;; cider-lein-parameters "with-profile +local-dev repl :headless :host ::"
 
  ;; cider-pprint-fn "puget"
  ;; clojure-enable-fancify-symbols t
@@ -181,7 +181,11 @@
    ;; http://orgmode.org/manual/Capture-templates.html#Capture-templates
    org-capture-templates
    '(("t" "Todo" entry (file "~/org/TODOs.org")
-      "* TODO %?")))
+      "* TODO %?"))
+
+   ;; dont show hours in days in clocktable
+   org-duration-format 'h:mm
+   )
 
   ;; enable spell-checking in org-mode files
   (add-hook 'org-mode-hook #'spacemacs/toggle-spelling-checking-on)
@@ -190,7 +194,10 @@
   (add-hook 'org-mode-hook #'spacemacs/toggle-line-numbers-off)
   (add-hook 'org-mode-hook #'spacemacs/linum-relative-toggle)
 
-  (org-clock-persistence-insinuate))
+  ;; persist clock on emacs restart
+  (org-clock-persistence-insinuate)
+
+  )
 
 ;; ----------------------------------------------------
 ;; markdown
