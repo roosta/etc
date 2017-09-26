@@ -1,5 +1,5 @@
 $HOME/.screenlayout/main.sh &
-pacmd set-default-sink 2 &
+# pacmd set-default-sink 2 &
 # set-default-sink 1
 
 # vim:ft=sh:ts=2:sw=2:fdm=marker
