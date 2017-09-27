@@ -40,7 +40,7 @@ set gui=none,tabs
 set titlestring=""
 
 " use custom new-tab page
-set newtaburl="http://localhost:3000"
+set newtaburl="http://localhost:3380"
 
 " define editor when using editor to edit text input fields
 " using default gvim. Use by hitting ctrl+i when focused in a textfield
