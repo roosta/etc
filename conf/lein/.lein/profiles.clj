@@ -27,7 +27,8 @@
                   ;; clojure/script syntax checking
                   [lein-kibit "0.1.6-beta2"]]}
 
- :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+ :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]
+                :repl-options {:init (set! *print-length* 50)}}
 
  :repl {:plugins [[cider/cider-nrepl "0.16.0-SNAPSHOT"]
 
