@@ -83,7 +83,7 @@ nitrogen --restore &
 #$HOME/.fehbg &
 
 # start node server with start page
-~/src/startpage/script/run &
+# ~/src/startpage/script/run &
 
 # urxvtd -q -f -o &
 compton -b &
