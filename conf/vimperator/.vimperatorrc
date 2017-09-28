@@ -122,7 +122,7 @@ cmap <C-k>  <S-Tab>
 " example is wikipedia.vimp which turns wiki pages dark
 " source ~/.vimperator/styles/input-field.vimp
 " source ~/.vimperator/styles/wikipedia.vimp
-" source ~/.vimperator/styles/hide-webrtc-indicator.vimp
+source ~/.vimperator/styles/hide-webrtc-indicator.vimp
 " source ~/.vimperator/styles/arch-wiki.vimp
 " source ~/.vimperator/styles/reddit.vimp
 
