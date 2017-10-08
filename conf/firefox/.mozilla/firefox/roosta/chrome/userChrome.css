@@ -89,11 +89,11 @@ tabs, tab, .tab-stack{
   color: var(--color-bright-white) !important;
   background-color: var(--color-bright-black) !important;
 }
+
 #urlbar {
   background-color: var(--color-black) !important;
 }
 
 .toolbarbutton-icon {
   color: var(--color-bright-white) !important;
-  background-color: var(--color-bright-black) !important;
 }
