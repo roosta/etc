@@ -1,0 +1,99 @@
+/*
+ * Do not remove the @namespace line -- it's required for correct functioning
+ */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+:root {
+  --color-black:          #1C1B19;
+  --color-bright-black:   #2D2B28;
+  --color-red:            #FF3128;
+  --color-bright-red:     #F75341;
+  --color-green:          #519F50;
+  --color-bright-green:   #98BC37;
+  --color-yellow:         #FBB829;
+  --color-bright-yellow:  #FED06E;
+  --color-blue:           #5573A3;
+  --color-bright-blue:    #8EB2F7;
+  --color-magenta:        #E02C6D;
+  --color-bright-magenta: #E35682;
+  --color-cyan:           #0AAEB3;
+  --color-bright-cyan:    #53FDE9;
+  --color-white:          #918175;
+  --color-bright-white:   #FCE8C3;
+  --color-orange:         #D75F00;
+  --color-bright-orange:  #FF8700;
+  --color-hard-black:     #121212;
+  --color-xgrey1:         #262626;
+  --color-xgrey2:         #303030;
+  --color-xgrey3:         #3A3A3A;
+  --color-xgrey4:         #444444;
+  --color-xgrey5:         #4E4E4E;
+
+  --tab-height: 22px;
+  --font-familty: "Essential PragmataPro";
+  --font-size: 11px;
+
+}
+
+/* ----- Tabs ----- */
+.tabbrowser-tab {
+  background-color: var(--color-bright-black) !important;
+  color: var(--color-bright-white) !important;
+}
+
+tabs, tab, .tab-stack{
+  height: var(--tab-height) !important;
+  min-height: var(--tab-height) !important;
+  max-height: var(--tab-height) !important;
+  font-family: var(--font-family) !important;
+  font-size: var(--font-size) !important;
+}
+
+#TabsToolbar {
+  min-height: var(--tab-height) !important;
+  max-height: var(--tab-height) !important;
+  background-color: var(--color-black) !important;
+}
+
+.tabbrowser-tab:hover {
+  background-color: var(--color-xgrey5) !important;
+}
+
+.tabbrowser-tabs {
+  background-color: var(--color-black) !important;
+}
+
+.tabbrowser-tab[visuallyselected] {
+  color: var(--color-black) !important;
+  background-color: var(--color-white) !important;
+}
+
+#new-tab-button {
+  background-color: var(--color-black) !important;
+}
+
+#alltabs-button {
+  background-color: var(--color-black) !important;
+}
+
+.scrollbutton-down {
+  background-color: var(--color-bright-black) !important;
+}
+
+.scrollbutton-up {
+  background-color: var(--color-bright-black) !important;
+}
+
+#nav-bar {
+  font-size: var(--font-size) !important;
+  color: var(--color-bright-white) !important;
+  background-color: var(--color-bright-black) !important;
+}
+#urlbar {
+  background-color: var(--color-black) !important;
+}
+
+.toolbarbutton-icon {
+  color: var(--color-bright-white) !important;
+  background-color: var(--color-bright-black) !important;
+}
