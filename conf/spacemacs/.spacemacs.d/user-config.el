@@ -251,4 +251,6 @@
 ;; can still send up and down in insert mode
 (evil-define-key 'normal term-raw-map
   (kbd "C-k") 'evil-window-up
-  (kbd "C-j") 'evil-window-down)
+  (kbd "C-j") 'evil-window-down
+  (kbd "<C-up>") 'term-send-up
+  (kbd "<C-down>") 'term-send-down)
