@@ -390,7 +390,15 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
-  (load-file  "~/.spacemacs.d/user-init.el"))
+  ;; load separate user-init
+  (load-file  "~/.spacemacs.d/user-init.el")
+
+  ;; Set the Emacs customization file path. Must be done here in user-init.
+  (setq custom-file "~/.spacemacs.d/custom.el")
+
+  ;; Lastly, load custom-file (but only if the file exists).
+  (when (file-exists-p custom-file)
+    (load-file custom-file)))
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -400,27 +408,3 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   (load-file "~/.spacemacs.d/user-config.el"))
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (anaconda-mode eclim tern inflections s iedit alert git-commit websocket apiwrap packed async ghub+ org-category-capture circe imenu-list dash ox-twbs window-purpose projectile hydra multiple-cursors skewer-mode rust-mode powerline emojify json-mode flycheck yasnippet company haml-mode clojure-mode js2-mode use-package monokai-theme js2-refactor gruvbox-theme groovy-mode evil-snipe esh-help ensime highlight smartparens evil helm helm-core avy ghub markdown-mode org-plus-contrib magit magit-popup with-editor cider zenburn-theme yapfify yaml-mode xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vmd-mode vimrc-mode vi-tilde-fringe uuidgen unfill undo-tree toml-mode toc-org tagedit systemd symon string-inflection spaceline solarized-theme smeargle slim-mode slack shell-pop scss-mode scala-mode sbt-mode sayid sass-mode restart-emacs ranger rainbow-mode rainbow-identifiers rainbow-delimiters racer queue pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el password-generator paradox orgit org-projectile org-present org-pomodoro org-download org-bullets org-brain open-junk-file nginx-mode neotree mwim multi-term move-text mmm-mode meghanada markdown-toc magithub magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode kibit-helper js-doc jinja2-mode insert-shebang info+ indent-guide impatient-mode hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag groovy-imports gradle-mode goto-chg google-translate golden-ratio gnuplot gmail-message-mode github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md ggtags fuzzy flyspell-correct-helm flymd flycheck-rust flycheck-pos-tip flycheck-clojure flycheck-bashate flx-ido fish-mode fill-column-indicator fasd fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eshell-z eshell-prompt-extras emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig edit-server dumb-jump dockerfile-mode docker diminish diff-hl define-word dactyl-mode cython-mode company-web company-tern company-statistics company-shell company-lua company-emoji company-emacs-eclim company-ansible company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clojure-snippets clj-refactor clean-aindent-mode cider-eval-sexp-fu cargo browse-at-remote bind-key badwolf-theme autothemer auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile arduino-mode ansible-doc ansible aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(safe-local-variable-values (quote ((org-hide-emphasis-markers)))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
