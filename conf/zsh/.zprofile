@@ -89,4 +89,5 @@ export GTAGSLABEL=ctags
 
 # for rust-racer 
 # https://github.com/racer-rust/racer#installation
-export RUST_SRC_PATH="${HOME}/lib/rust/src"
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+# export RUST_SRC_PATH="${HOME}/lib/rust/src"
