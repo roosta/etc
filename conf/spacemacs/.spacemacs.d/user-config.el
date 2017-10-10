@@ -253,4 +253,18 @@
   (kbd "C-k") 'evil-window-up
   (kbd "C-j") 'evil-window-down
   (kbd "<C-up>") 'term-send-up
-  (kbd "<C-down>") 'term-send-down)
+  (kbd "<C-down>") 'term-send-down
+  (kbd "<C-return>") 'term-send-return)
+
+;; --------------------------------------------------
+;; Rust
+;; --------------------------------------------------
+
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+
+(add-hook 'racer-mode-hook #'company-mode)
+
+(require 'rust-mode)
+(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(setq company-tooltip-align-annotations t)
