@@ -87,9 +87,11 @@ This function should only modify configuration layer settings."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
+
    dotspacemacs-additional-packages
    '(arduino-mode
-     flycheck-clojure
+     ;; flycheck-clojure
+     flycheck-joker
      kibit-helper
      ;; evil-smartparens
      (evil-terminal-cursor-changer :location "~/src/evil-terminal-cursor-changer")

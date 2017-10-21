@@ -67,7 +67,7 @@
  ;; cider-lein-parameters "with-profile +local-dev repl :headless :host ::"
 
  ;; cider-pprint-fn "puget"
- ;; clojure-enable-fancify-symbols t
+ clojure-enable-fancify-symbols t
 
  ;; use app lifecycle functions in cider-refresh
  cider-refresh-before-fn "user/stop"
@@ -97,8 +97,12 @@
 ;; ----------------------------------------------------
 ;; flycheck
 ;; ----------------------------------------------------
-(eval-after-load 'flycheck '(flycheck-clojure-setup))
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
+
+(require 'flycheck-joker)
+(add-to-list 'flycheck-global-modes 'clojure-mode)
+(add-to-list 'flycheck-global-modes 'clojurescript-mode)
 
 (eval-after-load 'flycheck
   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
