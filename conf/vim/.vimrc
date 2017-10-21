@@ -464,7 +464,9 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'vimperator/vimperator.vim'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'pangloss/vim-javascript'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
+"
 Plug 'vim-scripts/nginx.vim'
 
 " Rust
