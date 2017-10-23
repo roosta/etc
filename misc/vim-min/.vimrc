@@ -294,6 +294,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
+Plug '/home/roosta/src/vim-srcery'
+
 call plug#end()
 
 syntax on
@@ -304,7 +306,7 @@ filetype plugin indent on
 " ---------------
 "  colorscheme
 " --------------
-" colorscheme srcery
+colorscheme srcery
 
 " ---------
 " Incsearch
