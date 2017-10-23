@@ -268,10 +268,10 @@ alias 19='cd -19'
 if [[ $TERM == 'eterm-color' ]]; then
   alias ls='\ls -lAh'
 else
-  if hash ls++ 2>/dev/null; then
+  if hash exa 2>/dev/null; then
+    alias ls='exa -aghl --git --group-directories-first -F'
+  elif hash ls++ 2>/dev/null; then
     alias ls='ls++ -lAhpk --potsf'
-  elif hash exa 2>/dev/null; then
-    alias ls='exa --long --all --color-scale --git --group-directories-first --group'
   else
     alias ls="ls -lsAhpk --color=auto --group-directories-first"
   fi
