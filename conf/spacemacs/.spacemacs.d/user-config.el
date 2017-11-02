@@ -108,11 +108,17 @@
   '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
 ;; ----------------------------------------------------
-;; smartparens
+;; lisp
 ;; ----------------------------------------------------
 ;; Some keybinds conflict with evil bindings, and I prefer the evil ones
 (setq
  evil-cleverparens-use-additional-movement-keys nil)
+
+;; (dolist (map (list evil-insert-state-map))
+;;   (define-key map "\M-l" 'sp-slurp-hybrid-sexp)
+;;   (define-key map "\M-h" 'sp-forward-barf-sexp)
+;;   (define-key map "\M-L" 'sp-backward-slurp-sexp)
+;;   (define-key map "\M-H" 'sp-backward-barf-sexp))
 
 ;; ----------------------------------------------------
 ;; clojure
