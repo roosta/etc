@@ -110,12 +110,15 @@ reload WM
      - =Shift+Control+l= grow   width  300 px or 30 ppt
 
 **** System
-     =-l=       lock screen, a =$locker= needs to be assigned. See [[file:~/etc/templates/i3/variables.i3::#%20-------------------][variables]]
-     =-e=       exit i3
-     =-s=       Lock and suspend, needs =$locker=
-     =-r=       reboot system
-     =-Shift+s= Shut off system
+
+     - =l=       lock screen, a =$locker= needs to be assigned. See [[file:~/etc/templates/i3/variables.i3::#%20-------------------][variables]]
+     - =e=       exit i3
+     - =s=       Lock and suspend, needs =$locker=
+     - =r=       reboot system
+     - =Shift+s= Shut off system
+
 **** Monitor switching
+
      A wrote this [[https://github.com/roosta/utils/blob/master/chdisp-nvidia.sh][script]], and this [[https://github.com/roosta/utils/blob/master/chdisp-xrandr.sh][one]] to automate changing monitor and audio sink and bound a i3
      mode to this. I have a TV and a desk and I actively switch between them
      using this mode.
