@@ -36,7 +36,7 @@ Companion repos for these dotfiles:
     =prerequisites: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install=
 
     Runs through the update routine. I keep a bunch of 'lib' repos that isn't
-    part of a package manager updated on my system. Located in =/lib= by default
+    part of a package manager updated on my system. Located in =~/lib= by default
     and the source for these libs are [[file:lib_repositories.txt::https:/github.com/nonpop/xkblayout-state][lib_repositories.txt]] which is just a flat
     file with the repository URL.
 
