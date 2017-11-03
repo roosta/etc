@@ -18,7 +18,7 @@ My OS of choice is [[https://www.archlinux.org/][Arch Linux]], and my dotfiles a
 
   git needs to be installed prior to the setup.
 
-* Main Make file rules
+* Main Makefile rules
   I list the basics here, there are a bunch of rules and they are in constant
   flux, for details on each see the [[file:Makefile::HOST%20?=%20$(shell%20hostname)][Makefile]].
 *** default
@@ -85,4 +85,13 @@ My OS of choice is [[https://www.archlinux.org/][Arch Linux]], and my dotfiles a
  - dunst
 
 * Screenshots
+**** Clean i3
+     [[file:assets/clean.jpg]]
+**** Busy tmux
 [[file:assets/busy.png]]
+
+**** Busy i3
+     [[file:assets/busy2.png]]
+
+**** Firefox
+     [[file:assets/firefox.png]]
