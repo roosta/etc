@@ -302,6 +302,7 @@ alias tkill="tmux kill-pane -t"
 alias tls="tmux ls"
 alias tc="tmux choose-session"
 alias tk="tmux kill-session -t"
+alias tw="tmux new-window -n"  # open new window with name
 alias ufw="sudo ufw"
 # alias make="colormake"
 alias pdf="zathura"
