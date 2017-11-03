@@ -13,7 +13,7 @@ update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim p
 links: link-conf link-misc link-local post-install
 
 .PHONY: install
-install: install-pacaur install-packages install-aur-packages save-originals init-spacemacs set-shell clone-source i3 rofi init-tmux links post-install
+install: user-fs install-pacaur install-packages install-aur-packages save-originals init-spacemacs set-shell clone-source i3 rofi init-tmux links post-install
 
 .PHONY: min
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux
