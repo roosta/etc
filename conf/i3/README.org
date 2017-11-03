@@ -22,7 +22,7 @@ reload WM
 *** Colors and variables
     Since I maintain multiple hosts using these dotfiles there are inevitably
     gonna be discrepancies between the host systems. The way I solved this is by
-    splitting up my i3 into a [[file:../../templates/i3/config.i3][template]], [[file:../../templates/i3/variables.i3][variables]] and local variables stored [[https://github.com/roosta/etc/tree/master/local][here]]
+    splitting up my i3 into a [[file:../../templates/i3/config.i3][template]], [[file:../../templates/i3/variables.i3][variables]] and [[https://github.com/roosta/etc/tree/master/local][local variables]].
 
 *** Workspaces
 
