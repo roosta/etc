@@ -2,7 +2,7 @@
 # > ┃━┛┃┳┛┃ ┃┃┃┃┃━┛ ┃
 # > ┇  ┇┗┛┛━┛┛ ┇┇   ┇
 
-RPROMPT="%(?.[%j].%F{red}[%?]%f [%j]%f"
+# RPROMPT="%(?.[%j].%F{red}[%?]%f [%j]%f"
 
 # https://dougblack.io/words/zsh-vi-mode.html
 # https://github.com/sindresorhus/pure/wiki
