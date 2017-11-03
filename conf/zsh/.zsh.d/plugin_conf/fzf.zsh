@@ -115,7 +115,7 @@ fadd() {
   toplevel=$(git rev-parse --show-toplevel) &&
   files=$(git ls-files --exclude-standard -m -o) &&
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-  git add $(echo "$toplevel/$target")
+  git add "$toplevel/$target"
 }
 
 # get a list of unstaged files and add using fzf
@@ -124,7 +124,7 @@ fcheckout() {
   files=$(git diff --name-only) &&
   toplevel=$(git rev-parse --show-toplevel) &&
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-  git checkout $(echo "$toplevel/$target")
+  git checkout "$toplevel/$target"
 }
 
 funstage() {
@@ -132,7 +132,11 @@ funstage() {
   files=$(git diff --name-only --cached) &&
   toplevel=$(git rev-parse --show-toplevel) &&
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-  git reset HEAD -- $(echo "$toplevel/$target")
+  git reset HEAD -- "$toplevel/$target"
+}
+
+fv() {
+  ag --nobreak --nonumbers --noheading . | fzf-tmux
 }
 
 # get a list of unstaged files and add using fzf
@@ -149,7 +153,7 @@ fdiff() {
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
 
   # run diff
-  git diff $(echo "$toplevel/$target")
+  git diff "$toplevel/$target"
 }
 
 
