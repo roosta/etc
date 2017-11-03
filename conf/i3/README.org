@@ -1,3 +1,4 @@
+[[file:../../assets/i3_title.png]]
 
 Pragmatic i3 configuration, split to accommodate multiple host systems,
 multiple monitors and vim inspired shortcuts.
