@@ -1,0 +1,22 @@
+#+TITLE: i3
+#+AUTHOR: Daniel Berg
+#+CATEGORY: i3
+#+OPTIONS: ^:{}
+
+* Description
+
+  Pragmatic i3 configuration, split to accommodate multiple host systems,
+  multiple monitors and a vim-i
+
+  Mapping my workspaces to keys leaning towards right on the keyboard for ease
+  of access since I tend to only keep one application per window.
+
+  The colors is based of [[https://github.com/roosta/vim-srcery][vim-srcery]], my own colorscheme and I chose a bright
+  magenta color for my active window so that I've easily noticeable which one is
+  currently active. The rest of the colors chosen are more neutral.
+
+  The config is geared towards multiple monitors and I've assigned specific
+  workspaces to their own monitors so that focusing on, say a debugger on a
+  secondary screen is a keypress away
+
+  See [[https://github.com/roosta/etc/blob/master/templates/i3/config.i3][config]] and [[https://github.com/roosta/etc/blob/master/templates/i3/variables.i3][variables]] templates for more details.
