@@ -15,7 +15,7 @@ secondary screen is a keypress away.
 
 See [[https://github.com/roosta/etc/blob/master/templates/i3/config.i3][config]] and [[https://github.com/roosta/etc/blob/master/templates/i3/variables.i3][variables]] templates for full config.
 
-Extra: With my vim ftplugin [[https://github.com/roosta/etc/blob/master/conf/vim/.vim/i3.vim][i3.vim]], and my helper script ftl somewhere on your
+Extra: With my vim ftplugin [[https://github.com/roosta/etc/blob/master/conf/vim/.vim/ftplugin/i3.vim][i3.vim]], and my helper script [[https://github.com/roosta/etc/blob/master/scripts/ftl.sh][ftl]] somewhere on your
 path you can call :make from vim and generate i3 config from templates and
 reload WM
 
