@@ -15,14 +15,14 @@ secondary screen is a keypress away.
 
 See [[https://github.com/roosta/etc/blob/master/templates/i3/config.i3][config]] and [[https://github.com/roosta/etc/blob/master/templates/i3/variables.i3][variables]] templates for full config.
 
-Extra: With my vim ftplugin [[file:~/etc/conf/vim/.vim/ftplugin/i3.vim::setlocal%20commentstring=#\%20%25s][i3.vim]], and my helper script ftl somewhere on your
+Extra: With my vim ftplugin [[https://github.com/roosta/etc/blob/master/conf/vim/.vim/i3.vim][i3.vim]], and my helper script ftl somewhere on your
 path you can call :make from vim and generate i3 config from templates and
 reload WM
 
 *** Colors and variables
     Since I maintain multiple hosts using these dotfiles there are inevitably
     gonna be discrepancies between the host systems. The way I solved this is by
-    splitting up my i3 into a [[file:~/etc/templates/i3/config.i3::#%20STARTUP][template]], [[file:~/etc/templates/i3/variables.i3::#%20-------------------][variables]] and local variables stored [[https://github.com/roosta/etc/tree/master/local][here]]
+    splitting up my i3 into a [[file:../../templates/i3/config.i3][template]], [[file:../../templates/i3/variables.i3][variables]] and local variables stored [[https://github.com/roosta/etc/tree/master/local][here]]
 
 *** Workspaces
 
@@ -32,7 +32,7 @@ reload WM
      Some workspaces are also bound to spesific monitors. So my debug
      applications are bound to my secondary monitor for example.
 
-     See [[file:~/etc/templates/i3/config.i3::#%20WINDOW%20WORKSPACE%20ASSIGNMENT][here]] for more.
+     See [[file:../../templates/i3/config.i3][here]] for more.
 
 **** Shortcuts
      =$mod= refers to the windows/super/logo key on your keyboard
