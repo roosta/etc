@@ -160,6 +160,6 @@ reload WM
      - =5= jump to marked client 5
 
 *** Screenshots
-    [[file:assets/busy.png]]
+    [[file:../../assets/busy.png]]
 
-    [[file:assets/busy2.png]]
+    [[file:../../assets/busy2.png]]
