@@ -8,13 +8,13 @@ default: links update i3 rofi post-install
 
 .PHONY: update
 update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install
-	
+
 .PHONY: links
 links: link-conf link-misc link-local post-install
 
 .PHONY: install
-install: links init-spacemacs set-shell i3 init-tmux add-pacman-repositories install-pacaur install-packages install-aur-packages update post-install
-	
+install: install-pacaur install-packages install-aur-packages save-originals init-spacemacs set-shell clone-source i3 rofi init-tmux links post-install
+
 .PHONY: min
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux
 	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
@@ -24,7 +24,7 @@ min-install:
 	sudo apt-get install < min_packages.txt
 
 .PHONY: min-links
-min-links: 
+min-links:
 	stow zsh git tmux vim bash -R -t ~ -d conf
 
 .PHONY: install-pacaur
@@ -151,7 +151,7 @@ ifdef primary_monitor
 	@echo "set \$$primary_monitor $(primary_monitor)" >> ~/.i3/config
 endif
 ifdef secondary_monitor
-	@echo "set \$$secondary_monitor $(secondary_monitor)" >> ~/.i3/config 
+	@echo "set \$$secondary_monitor $(secondary_monitor)" >> ~/.i3/config
 endif
 ifdef tertiary_monitor
 	@echo "set \$$tertiary_monitor $(tertiary_monitor)" >> ~/.i3/config
@@ -188,11 +188,6 @@ update-tmux:
 init-tmux:
 	@echo -e "\033[0;33mInitialize tmux...\033[0m"
 	@git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins
-
-.PHONY: install-ls--
-install-ls--: update-libs
-	@cpan Term::ExtendedColor
-	@cd ~/lib/ls-- && perl Makefile.PL && make && make install
 
 .PHONY: save-originals
 save-originals:
