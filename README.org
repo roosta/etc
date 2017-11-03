@@ -3,6 +3,10 @@
 A collection of config files I use on a daily basis on multiple hosts.
 My OS of choice is [[https://www.archlinux.org/][Arch Linux]], and my dotfiles are managed by [[https://www.gnu.org/software/make/][Make]] and [[https://www.gnu.org/software/stow/][Stow]].
 
+Companion repos for these dotfiles:
+ - [[https://github.com/roosta/vim-srcery][roosta/vim-srcery: vim colorscheme]]
+ - [[https://github.com/roosta/utils][roosta/utils: collection of various shell utils]]
+
 * Installation
   *Warning*: As with most dotfiles, cherry-picking configs might be a better
   choice than attempting to run the full install steps. There are dragons in
