@@ -112,8 +112,10 @@
 ;; ----------------------------------------------------
 ;; Some keybinds conflict with evil bindings, and I prefer the evil ones
 (setq
- evil-cleverparens-use-additional-movement-keys nil)
+ evil-cleverparens-use-additional-movement-keys nil
+ evil-cleverparens-use-s-and-S nil)
 
+(require 'evil-cleverparens-text-objects)
 ;; (dolist (map (list evil-insert-state-map))
 ;;   (define-key map "\M-l" 'sp-slurp-hybrid-sexp)
 ;;   (define-key map "\M-h" 'sp-forward-barf-sexp)
