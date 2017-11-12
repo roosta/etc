@@ -86,7 +86,7 @@ nitrogen --restore &
 # ~/src/startpage/script/run &
 
 # urxvtd -q -f -o &
-compton -b &
+# compton -b &
 # dropbox-cli start &
 dunst &
 nm-applet &
