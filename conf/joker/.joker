@@ -1,7 +1,7 @@
 ;; https://github.com/candid82/joker#linter-mode
 ;; vim:ft=clojure:ts=2:sw=2:tw=0:fdm=marker:et 
 {:known-macros [secretary.core/defroute
-                compojure.core/defroute
+                compojure.core/defroutes
                 mount.core/defstate] 
  :known-namespaces [] 
  }
