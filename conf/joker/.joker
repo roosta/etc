@@ -2,6 +2,8 @@
 ;; vim:ft=clojure:ts=2:sw=2:tw=0:fdm=marker:et 
 {:known-macros [secretary.core/defroute
                 compojure.core/defroutes
+                compojure.core/GET
+                compojure.core/POST
                 mount.core/defstate] 
  :known-namespaces [] 
  }
