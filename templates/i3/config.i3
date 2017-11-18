@@ -8,35 +8,35 @@ exec_always --no-startup-id $HOME/utils/launch-polybar.sh
 
 # WORKSPACES
 # -------------------- 
-bindsym $mod+q workspace $pws_term
-bindsym $mod+w workspace $pws_edit
-bindsym $mod+e workspace $pws_www
-bindsym $mod+1 workspace $pws_media
-bindsym $mod+2 workspace $pws_game
-bindsym $mod+3 workspace $pws_gfx
-bindsym $mod+4 workspace $pws_chat
+bindsym $mod+q workspace $pws_q
+bindsym $mod+w workspace $pws_w
+bindsym $mod+e workspace $pws_e
+bindsym $mod+1 workspace $pws_1
+bindsym $mod+2 workspace $pws_2
+bindsym $mod+3 workspace $pws_3
+bindsym $mod+4 workspace $pws_4
 
-bindsym $mod+Shift+q move workspace $pws_term
-bindsym $mod+Shift+w move workspace $pws_edit
-bindsym $mod+Shift+e move workspace $pws_www
-bindsym $mod+Shift+1 move workspace $pws_media
-bindsym $mod+Shift+2 move workspace $pws_game
-bindsym $mod+Shift+3 move workspace $pws_gfx
-bindsym $mod+Shift+4 move workspace $pws_chat
+bindsym $mod+Shift+q move workspace $pws_q
+bindsym $mod+Shift+w move workspace $pws_w
+bindsym $mod+Shift+e move workspace $pws_e
+bindsym $mod+Shift+1 move workspace $pws_1
+bindsym $mod+Shift+2 move workspace $pws_2
+bindsym $mod+Shift+3 move workspace $pws_3
+bindsym $mod+Shift+4 move workspace $pws_4
 
 bindsym $mod+a workspace $sws_a
 bindsym $mod+s workspace $sws_s
-bindsym $mod+d workspace $sws_debug
+bindsym $mod+d workspace $sws_d
 bindsym $mod+Shift+a move workspace $sws_a
 bindsym $mod+Shift+s move workspace $sws_s
-bindsym $mod+Shift+d move workspace $sws_debug
+bindsym $mod+Shift+d move workspace $sws_d
 
-bindsym $mod+F1  workspace $tws_media
-bindsym $mod+F2  workspace $tws_download
-bindsym $mod+F3  workspace $tws_stats
-bindsym $mod+Shift+F1  move workspace $tws_media
-bindsym $mod+Shift+F2  move workspace $tws_download
-bindsym $mod+Shift+F3  move workspace $tws_stats
+bindsym $mod+F1  workspace $tws_f1
+bindsym $mod+F2  workspace $tws_f2
+bindsym $mod+F3  workspace $tws_f3
+bindsym $mod+Shift+F1  move workspace $tws_f1
+bindsym $mod+Shift+F2  move workspace $tws_f2
+bindsym $mod+Shift+F3  move workspace $tws_f3
 
 bindsym $mod+5 workspace $aws_5
 bindsym $mod+6 workspace $aws_6
@@ -72,23 +72,23 @@ bindsym $mod+Shift+F12 move workspace $aws_f12
 
 ## assign workspaces to outputs
 # primary
-workspace $pws_term output $primary_monitor
-workspace $pws_edit output $primary_monitor
-workspace $pws_www output $primary_monitor
-workspace $pws_media output $primary_monitor
-workspace $pws_game output $primary_monitor
-workspace $pws_gfx output $primary_monitor
-workspace $pws_chat output $primary_monitor
+workspace $pws_q output $primary_monitor
+workspace $pws_w output $primary_monitor
+workspace $pws_e output $primary_monitor
+workspace $pws_1 output $primary_monitor
+workspace $pws_2 output $primary_monitor
+workspace $pws_3 output $primary_monitor
+workspace $pws_4 output $primary_monitor
 
 # secondary
 workspace $sws_a output $secondary_monitor
 workspace $sws_s output $secondary_monitor
-workspace $sws_debug output $secondary_monitor
+workspace $sws_d output $secondary_monitor
 
 # tertiary
-workspace $tws_stats output $tertiary_monitor
-workspace $tws_media output $tertiary_monitor
-workspace $tws_download output $tertiary_monitor
+workspace $tws_f3 output $tertiary_monitor
+workspace $tws_f1 output $tertiary_monitor
+workspace $tws_f2 output $tertiary_monitor
 
 # Options
 focus_follows_mouse no
@@ -102,55 +102,55 @@ hide_edge_borders none
 # WINDOW WORKSPACE ASSIGNMENT
 # ---------------------------
 # D:Debug
-assign [class="(?i)google-chrome-beta"]     $sws_debug
-assign [class="(?i)google-chrome-unstable"] $sws_debug
-assign [class="(?i)firefox-developer"]      $sws_debug
-assign [instance="^Devtools$$"]             $sws_debug
+assign [class="(?i)google-chrome-beta"]     $sws_d
+assign [class="(?i)google-chrome-unstable"] $sws_d
+assign [class="(?i)firefox-developer"]      $sws_d
+assign [instance="^Devtools$$"]             $sws_d
 
 # W:Edit
-assign [class="(?i)subl3"]                  $pws_edit
-assign [class="(?i)jetbrains-idea"]         $pws_edit
-assign [class="(?i)atom"]                   $pws_edit
-assign [class="(?i)emacs"]                  $pws_edit
+assign [class="(?i)subl3"]                  $pws_w
+assign [class="(?i)jetbrains-idea"]         $pws_w
+assign [class="(?i)atom"]                   $pws_w
+assign [class="(?i)emacs"]                  $pws_w
 
 # E:WWW
-assign [class="(?i)firefox$$"] $pws_www
+assign [class="(?i)firefox$$"] $pws_e
 
 # 2:GAM
-assign [class="(?i)^steam(.*)"]   $pws_game
-assign [class="(?i)Wine"]        $pws_game
-assign [class="(?i)PlayOnLinux"] $pws_game
+assign [class="(?i)^steam(.*)"]   $pws_2
+assign [class="(?i)Wine"]        $pws_2
+assign [class="(?i)PlayOnLinux"] $pws_2
 #assign [title="(?i)friends"] $TWS2
 
 # 1:Media
 # workaround for spotify WS assignment
 # see: https://github.com/i3/i3/issues/2060
-for_window [class="Spotify"] move to workspace $pws_media
-assign [class="Spotify"] $pws_media
+for_window [class="Spotify"] move to workspace $pws_1
+assign [class="Spotify"] $pws_1
 
 # assign [class="(?i)google-chrome"] $TWS1
-assign [class="(?i)smplayer"]   $pws_media
-assign [class="(?i)clementine"] $pws_media
+assign [class="(?i)smplayer"]   $pws_1
+assign [class="(?i)clementine"] $pws_1
 
 # F1:Media
-assign [class="(?i)google-chrome$"] $tws_media
+assign [class="(?i)google-chrome$"] $tws_f1
 
 # 3:ART
-assign [class="(?i)inkscape"] $pws_gfx
-assign [class="(?i)gimp"]     $pws_gfx
-assign [class="(?i)krita"]    $pws_gfx
-assign [class="(?i)freecad"]  $pws_gfx
+assign [class="(?i)inkscape"] $pws_3
+assign [class="(?i)gimp"]     $pws_3
+assign [class="(?i)krita"]    $pws_3
+assign [class="(?i)freecad"]  $pws_3
 
 # S:COM
-assign [class="(?i)pidgin"]      $pws_chat
-assign [class="(?i)linphone"]    $pws_chat
-assign [class="(?i)skype"]       $pws_chat
-assign [class="(?i)slack"]       $pws_chat
-assign [class="(?i)franz"]       $pws_chat
+assign [class="(?i)pidgin"]      $pws_4
+assign [class="(?i)linphone"]    $pws_4
+assign [class="(?i)skype"]       $pws_4
+assign [class="(?i)slack"]       $pws_4
+assign [class="(?i)franz"]       $pws_4
 # assign [class="(?i)thunderbird"] $FWS2
 
-assign [class="(?i)conky"] $tws_stats
-assign [class="(?i)transmission-gtk"] $tws_download
+assign [class="(?i)conky"] $tws_f3
+assign [class="(?i)transmission-gtk"] $tws_f2
 
 # WINDOW BEHAVIOUR
 # ----------------
@@ -188,6 +188,7 @@ for_window [window_role="task_dialog"] floating_maximum_size 670 x 470
 for_window [class="(?i)PrisonArchitect.x86_64"] border none
 for_window [class="(?i)conky"] border none
 for_window [class="(?i)terminator"] border none
+
 ## KEYBINDINGS
 ## -----------
 ## use xev to get keycodes

@@ -3,9 +3,9 @@
 # general variables
 
 # the path where images, videos and pastes should be saved
-img_path=$HOME/Pictures/screenshots
-vid_path=$HOME/Videos/screencasts
-paste_path=$HOME/Pictures/paste
+img_path=$HOME/Dropbox/Pictures/screenshots
+vid_path=$HOME/Dropbox/Videos/screencasts
+paste_path=$HOME/Dropbox/Pictures/paste
 
 # set viewer for images and videos plus editor for images
 viewer=feh

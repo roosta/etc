@@ -42,23 +42,23 @@ set_from_resource $xgrey4         i3wm.color238 #444444
 set_from_resource $xgrey4         i3wm.color239 #4E4E4E
 
 # primary monitor workspaces
-set $pws_term  "1:Q:term"
-set $pws_edit  "2:W:edit"
-set $pws_www   "3:E:www"
-set $pws_media "4:1:media"
-set $pws_game  "5:2:game"
-set $pws_gfx   "6:3:gfx"
-set $pws_chat  "7:4:chat"
+set $pws_q "1:Q"
+set $pws_w "2:W"
+set $pws_e "3:E"
+set $pws_1 "4:1"
+set $pws_2 "5:2"
+set $pws_3 "6:3"
+set $pws_4 "7:4"
 
 # secondary monitor workspaces
-set $sws_a     "1:A"
-set $sws_s     "2:S"
-set $sws_debug "3:D:debug"
+set $sws_a "1:A"
+set $sws_s "2:S"
+set $sws_d "3:D"
 
 # tertiary monitor ws
-set $tws_media    "11:F1:media"
-set $tws_download "12:F2:download"
-set $tws_stats    "10:F3:stats"
+set $tws_f1    "11:F1"
+set $tws_f2    "12:F2"
+set $tws_f3    "10:F3"
 
 # Auxiliary workspaces
 set $aws_5   "13:5"
