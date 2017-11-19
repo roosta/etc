@@ -131,7 +131,7 @@ height = 22
 dpi = 140
 monitor = ${env:MONITOR:eDP1}
 modules-center = 
-; tray-position = right
+tray-position = right
 font-0 = "Essential PragmataPro:pixelsize=8;2"
 ; tray-padding = 1
 ; tray-scale = 1
