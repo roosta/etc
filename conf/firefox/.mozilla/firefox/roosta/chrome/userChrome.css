@@ -47,6 +47,7 @@ tabs, tab, .tab-stack{
   max-height: var(--tab-height) !important;
   font-family: var(--font-family) !important;
   font-size: var(--font-size) !important;
+  background-color: var(--color-black) !important;
 }
 
 #TabsToolbar {
@@ -55,17 +56,18 @@ tabs, tab, .tab-stack{
   background-color: var(--color-black) !important;
 }
 
-.tabbrowser-tab:hover {
+tab:hover {
   background-color: var(--color-xgrey5) !important;
 }
 
-.tabbrowser-tabs {
+tabs {
   background-color: var(--color-black) !important;
 }
 
-.tabbrowser-tab[visuallyselected] {
-  color: var(--color-black) !important;
-  background-color: var(--color-white) !important;
+tab[selected=true] {
+  
+/*   color: var(--color-black) !important; */
+/*   background-color: var(--color-white) !important; */
 }
 
 #new-tab-button {
