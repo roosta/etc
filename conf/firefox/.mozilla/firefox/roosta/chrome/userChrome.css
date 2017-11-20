@@ -69,12 +69,6 @@ tabs {
 tab[selected=true], tab[visuallyselected=true] .tab-content {
   background-color: var(--color-bright-black) !important;
   color: var(--color-bright-white) !important;
-  border: none !important;
-}
-
-tab[selected=true]:hover .tab-content {
-  border: none !important;
-/*   background-color: inherit !important; */
 }
 
 #nav-bar {
@@ -87,6 +81,7 @@ tab[selected=true]:hover .tab-content {
   background-color: var(--color-black) !important;
 }
 
+/* set border color on focused url bar */
 #urlbar[focused=true] {
   border: 1px solid var(--color-magenta) !important;
 }
