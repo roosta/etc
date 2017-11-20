@@ -207,6 +207,7 @@ set $mod Mod4
 floating_modifier $mod
 
 bindsym $mod+Return exec $term
+bindsym $mod+Shift+Return exec $term_scaled
 
 # bindsym $mod+Shift+Return exec firefox
 #bindsym $mod+Shift+Return exec $tmux_new
