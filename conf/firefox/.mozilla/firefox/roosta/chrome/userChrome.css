@@ -57,7 +57,8 @@ tabs, tab, .tab-stack{
 }
 
 tab:hover .tab-content {
-  background-color: var(--color-xgrey5) !important;
+  background-color: var(--color-black) !important;
+  color: var(--color-bright-white) !important;
   border: none !important;
 }
 
@@ -74,6 +75,7 @@ tab[selected=true] .tab-content {
 
 tab[selected=true]:hover .tab-content {
   border: none !important;
+/*   background-color: inherit !important; */
 }
 
 #new-tab-button {
