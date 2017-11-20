@@ -1,0 +1,11 @@
+[[file:../../assets/ff_title.png]]
+
+Custom [[https://github.com/roosta/etc/blob/master/conf/firefox/.mozilla/firefox/roosta/chrome/userChrome.css][userChrome.css]] styling Firefox using [[https://github.com/roosta/vim-srcery][Srcery]] colors. It is based on
+Firefox's dark theme, so that needs to be selected. Symlink this file to
+=~/.mozilla/firefox/[user]/chrome/= and restart browser for it to take effect.
+A plugin like [[https://addons.mozilla.org/en-US/firefox/addon/stylish/][Stylish]] probably works too.
+
+I try to keep this up to date with the latest Firefox release.
+
+*** Screenshots
+    [[file:../../assets/firefox.png]]
