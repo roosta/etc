@@ -124,3 +124,12 @@ tab[selected=true]:hover .tab-content {
 #identity-box.grantedPermissions #connection-icon {
   fill: var(--color-bright-green) !important;
 }
+
+.tabbrowser-arrowscrollbox > .scrollbutton-up,
+.tabbrowser-arrowscrollbox > .scrollbutton-down {
+  max-height: var(--tab-height) !important;
+  color: var(--color-bright-white) !important;
+}
+.arrowscrollbox-overflow-start-indicator, .arrowscrollbox-overflow-end-indicator {
+  max-height: var(--tab-height) !important;
+}
