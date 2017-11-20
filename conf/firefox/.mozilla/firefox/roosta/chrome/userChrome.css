@@ -87,11 +87,11 @@ tab[selected=true]:hover .tab-content {
 }
 
 .scrollbutton-down {
-  background-color: var(--color-bright-black) !important;
+/*   background-color: var(--color-bright-black) !important; */
 }
 
 .scrollbutton-up {
-  background-color: var(--color-bright-black) !important;
+/*   background-color: var(--color-bright-black) !important; */
 }
 
 #nav-bar {
@@ -110,4 +110,17 @@ tab[selected=true]:hover .tab-content {
 
 .toolbarbutton-icon {
   color: var(--color-bright-white) !important;
+}
+
+#identity-box.verifiedIdentity.grantedPermissions {
+/*   border-image-slice: 0 !important; */
+  --urlbar-separator-color: var(--color-bright-green) !important;
+}
+
+#identity-box.verifiedIdentity.grantedPermissions #identity-icon-labels {
+  color: var(--color-bright-green) !important;
+}
+
+#identity-box.grantedPermissions #connection-icon {
+  fill: var(--color-bright-green) !important;
 }
