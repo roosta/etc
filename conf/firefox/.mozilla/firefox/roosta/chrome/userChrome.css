@@ -85,14 +85,6 @@ tab[selected=true]:hover .tab-content {
   background-color: var(--color-black) !important;
 }
 
-.scrollbutton-down {
-/*   background-color: var(--color-bright-black) !important; */
-}
-
-.scrollbutton-up {
-/*   background-color: var(--color-bright-black) !important; */
-}
-
 #nav-bar {
   font-size: var(--font-size) !important;
   color: var(--color-bright-white) !important;
@@ -131,4 +123,16 @@ tab[selected=true]:hover .tab-content {
 }
 .arrowscrollbox-overflow-start-indicator, .arrowscrollbox-overflow-end-indicator {
   max-height: var(--tab-height) !important;
+}
+
+#back-button,
+#reload-button,
+#nav-bar-overflow-button,
+#PanelUI-menu-button,
+#forward-button .toolbarbutton-icon {
+  fill: var(--color-bright-white) !important;
+}
+
+#back-button[disabled=true], #forward-button[disabled=true] .toolbarbutton-icon {
+  fill: var(--color-white) !important;
 }
