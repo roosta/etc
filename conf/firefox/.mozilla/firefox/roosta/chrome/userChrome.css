@@ -38,7 +38,7 @@
 /* ----- Tabs ----- */
 .tabbrowser-tab {
   background-color: var(--color-bright-black) !important;
-  color: var(--color-bright-white) !important;
+  color: var(--color-white) !important;
 }
 
 tabs, tab, .tab-stack{
@@ -56,18 +56,24 @@ tabs, tab, .tab-stack{
   background-color: var(--color-black) !important;
 }
 
-tab:hover {
+tab:hover .tab-content {
   background-color: var(--color-xgrey5) !important;
+  border: none !important;
 }
 
 tabs {
   background-color: var(--color-black) !important;
 }
 
-tab[selected=true] {
-  
+tab[selected=true] .tab-content {
 /*   color: var(--color-black) !important; */
-/*   background-color: var(--color-white) !important; */
+  background-color: var(--color-bright-black) !important;
+  color: var(--color-bright-white) !important;
+  border: none !important;
+}
+
+tab[selected=true]:hover .tab-content {
+  border: none !important;
 }
 
 #new-tab-button {
@@ -96,9 +102,10 @@ tab[selected=true] {
   background-color: var(--color-black) !important;
 }
 
-.toolbarbutton-icon {
-  color: var(--color-bright-white) !important;
-}
 #urlbar[focused=true] {
   border: 1px solid var(--color-magenta) !important;
+}
+
+.toolbarbutton-icon {
+  color: var(--color-bright-white) !important;
 }
