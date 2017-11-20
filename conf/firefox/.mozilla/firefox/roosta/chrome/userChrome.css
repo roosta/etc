@@ -99,3 +99,6 @@ tab[selected=true] {
 .toolbarbutton-icon {
   color: var(--color-bright-white) !important;
 }
+#urlbar[focused=true] {
+  border: 1px solid var(--color-magenta) !important;
+}
