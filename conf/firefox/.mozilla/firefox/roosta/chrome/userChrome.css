@@ -77,14 +77,6 @@ tab[selected=true]:hover .tab-content {
 /*   background-color: inherit !important; */
 }
 
-#new-tab-button {
-  background-color: var(--color-black) !important;
-}
-
-#alltabs-button {
-  background-color: var(--color-black) !important;
-}
-
 #nav-bar {
   font-size: var(--font-size) !important;
   color: var(--color-bright-white) !important;
@@ -99,10 +91,7 @@ tab[selected=true]:hover .tab-content {
   border: 1px solid var(--color-magenta) !important;
 }
 
-.toolbarbutton-icon {
-  color: var(--color-bright-white) !important;
-}
-
+/* sets the green text and lock icon on left side of url bar to use green color */
 #identity-box.verifiedIdentity.grantedPermissions {
 /*   border-image-slice: 0 !important; */
   --urlbar-separator-color: var(--color-bright-green) !important;
@@ -112,10 +101,12 @@ tab[selected=true]:hover .tab-content {
   color: var(--color-bright-green) !important;
 }
 
-#identity-box.grantedPermissions #connection-icon {
+#identity-box.grantedPermissions, #identity-box.verifiedDomain #connection-icon {
   fill: var(--color-bright-green) !important;
 }
 
+/* set tabs scoll left and right, pluss overflow indicator
+to be the same height as tabs */
 .tabbrowser-arrowscrollbox > .scrollbutton-up,
 .tabbrowser-arrowscrollbox > .scrollbutton-down {
   max-height: var(--tab-height) !important;
@@ -125,6 +116,7 @@ tab[selected=true]:hover .tab-content {
   max-height: var(--tab-height) !important;
 }
 
+/* set various icon colors */
 #back-button,
 #reload-button,
 #nav-bar-overflow-button,
@@ -133,6 +125,13 @@ tab[selected=true]:hover .tab-content {
   fill: var(--color-bright-white) !important;
 }
 
+/* set the disabled back and forward button icon color */
 #back-button[disabled=true], #forward-button[disabled=true] .toolbarbutton-icon {
   fill: var(--color-white) !important;
+}
+
+/* Set the max width of newtab button to be same as height, to fix stretching of icon */
+.tabs-newtab-button.toolbarbutton-1 .toolbarbutton-icon {
+  fill: var(--color-bright-white) !important;
+  max-width: var(--tab-height) !important;
 }
