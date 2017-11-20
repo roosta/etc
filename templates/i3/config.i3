@@ -1,12 +1,19 @@
-# STARTUP
+#┌──────────────────────────────────────────────────────┐
+#│o┏━┓┓ ┳┏┏┓  ┏━┓┏━┓┏┓┓┳━┓o┏━┓  ┏┓┓┳━┓┏┏┓┳━┓┳  ┳━┓┏┓┓┳━┓│
+#│┃ ━┫┃┃┃┃┃┃  ┃  ┃ ┃┃┃┃┣━ ┃┃ ┳   ┃ ┣━ ┃┃┃┃━┛┃  ┃━┫ ┃ ┣━ │
+#│┇┗━┛┗┻┇┛ ┇  ┗━┛┛━┛┇┗┛┇  ┇┇━┛   ┇ ┻━┛┛ ┇┇  ┇━┛┛ ┇ ┇ ┻━┛│
+#│  Author : Roosta                                     │
+#│  Github : https://github.com/roosta/etc              │
+#└──────────────────────────────────────────────────────┘
+# STARTUP #{{{1
 # --------------------
 exec_always --no-startup-id $HOME/utils/launch-polybar.sh
-
-# Options
+#}}}
+# OPTIONS {{{1
 # --------------------
 # workspace_auto_back_and_forth yes
-
-# WORKSPACES
+#}}}
+# WORKSPACES #{{{1
 # -------------------- 
 bindsym $mod+q workspace $pws_q
 bindsym $mod+w workspace $pws_w
@@ -98,61 +105,61 @@ mouse_warping none
 
 new_window pixel 1
 hide_edge_borders none
+#}}}
+## WINDOW WORKSPACE ASSIGNMENT {{{1
+## ---------------------------
+## D:Debug
+#assign [class="(?i)google-chrome-beta"]     $sws_d
+#assign [class="(?i)google-chrome-unstable"] $sws_d
+#assign [class="(?i)firefox-developer"]      $sws_d
+#assign [instance="^Devtools$$"]             $sws_d
 
-# WINDOW WORKSPACE ASSIGNMENT
-# ---------------------------
-# D:Debug
-assign [class="(?i)google-chrome-beta"]     $sws_d
-assign [class="(?i)google-chrome-unstable"] $sws_d
-assign [class="(?i)firefox-developer"]      $sws_d
-assign [instance="^Devtools$$"]             $sws_d
+## W:Edit
+#assign [class="(?i)subl3"]                  $pws_w
+#assign [class="(?i)jetbrains-idea"]         $pws_w
+#assign [class="(?i)atom"]                   $pws_w
+#assign [class="(?i)emacs"]                  $pws_w
 
-# W:Edit
-assign [class="(?i)subl3"]                  $pws_w
-assign [class="(?i)jetbrains-idea"]         $pws_w
-assign [class="(?i)atom"]                   $pws_w
-assign [class="(?i)emacs"]                  $pws_w
+## E:WWW
+#assign [class="(?i)firefox$$"] $pws_e
 
-# E:WWW
-assign [class="(?i)firefox$$"] $pws_e
+## 2:GAM
+#assign [class="(?i)^steam(.*)"]   $pws_2
+#assign [class="(?i)Wine"]        $pws_2
+#assign [class="(?i)PlayOnLinux"] $pws_2
+##assign [title="(?i)friends"] $TWS2
 
-# 2:GAM
-assign [class="(?i)^steam(.*)"]   $pws_2
-assign [class="(?i)Wine"]        $pws_2
-assign [class="(?i)PlayOnLinux"] $pws_2
-#assign [title="(?i)friends"] $TWS2
+## 1:Media
+## workaround for spotify WS assignment
+## see: https://github.com/i3/i3/issues/2060
+#for_window [class="Spotify"] move to workspace $pws_1
+#assign [class="Spotify"] $pws_1
 
-# 1:Media
-# workaround for spotify WS assignment
-# see: https://github.com/i3/i3/issues/2060
-for_window [class="Spotify"] move to workspace $pws_1
-assign [class="Spotify"] $pws_1
+## assign [class="(?i)google-chrome"] $TWS1
+#assign [class="(?i)smplayer"]   $pws_1
+#assign [class="(?i)clementine"] $pws_1
 
-# assign [class="(?i)google-chrome"] $TWS1
-assign [class="(?i)smplayer"]   $pws_1
-assign [class="(?i)clementine"] $pws_1
+## F1:Media
+#assign [class="(?i)google-chrome$"] $tws_f1
 
-# F1:Media
-assign [class="(?i)google-chrome$"] $tws_f1
+## 3:ART
+#assign [class="(?i)inkscape"] $pws_3
+#assign [class="(?i)gimp"]     $pws_3
+#assign [class="(?i)krita"]    $pws_3
+#assign [class="(?i)freecad"]  $pws_3
 
-# 3:ART
-assign [class="(?i)inkscape"] $pws_3
-assign [class="(?i)gimp"]     $pws_3
-assign [class="(?i)krita"]    $pws_3
-assign [class="(?i)freecad"]  $pws_3
+## S:COM
+#assign [class="(?i)pidgin"]      $pws_4
+#assign [class="(?i)linphone"]    $pws_4
+#assign [class="(?i)skype"]       $pws_4
+#assign [class="(?i)slack"]       $pws_4
+#assign [class="(?i)franz"]       $pws_4
+## assign [class="(?i)thunderbird"] $FWS2
 
-# S:COM
-assign [class="(?i)pidgin"]      $pws_4
-assign [class="(?i)linphone"]    $pws_4
-assign [class="(?i)skype"]       $pws_4
-assign [class="(?i)slack"]       $pws_4
-assign [class="(?i)franz"]       $pws_4
-# assign [class="(?i)thunderbird"] $FWS2
-
-assign [class="(?i)conky"] $tws_f3
-assign [class="(?i)transmission-gtk"] $tws_f2
-
-# WINDOW BEHAVIOUR
+#assign [class="(?i)conky"] $tws_f3
+#assign [class="(?i)transmission-gtk"] $tws_f2
+##}}}
+# WINDOW BEHAVIOUR {{{1
 # ----------------
 # create some rules to force floating on certain roles/classes
 for_window [window_role="pop-up"] floating enable
@@ -188,11 +195,10 @@ for_window [window_role="task_dialog"] floating_maximum_size 670 x 470
 for_window [class="(?i)PrisonArchitect.x86_64"] border none
 for_window [class="(?i)conky"] border none
 for_window [class="(?i)terminator"] border none
-
-## KEYBINDINGS
-## -----------
-## use xev to get keycodes
-## ------------
+#}}}
+# KEYBINDINGS {{{1
+# use xev to get keycodes
+# ------------------------
 
 # set modkey (Super key)
 set $mod Mod4
@@ -294,11 +300,9 @@ bindsym --release Print exec teiler
 # send a signal to i3status on caps to toggle layout
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Caps_Lock exec killall -USR1 py3status
-
-## BINDING MODES
-## -------------
-
-# RESIZE
+#}}}
+# BINDING MODES {{{1
+# RESIZE {{{2
 # resize windows with either vi keys or arrows.
 # shift+movement shrink or grow with larger increments
 set $mode_resize Resize: direction + (shift|control|shift&control)
@@ -350,8 +354,8 @@ mode "$mode_resize" {
   bindsym Escape mode "default"
 }
 bindsym $mod+r mode "$mode_resize"
-
-# SYSTEM
+#}}}
+# SYSTEM {{{2
 # https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -368,8 +372,8 @@ mode "$mode_system" {
 # bind FN sleep key to menu
 bindsym XF86Sleep mode "$mode_system"
 bindsym $mod+End mode "$mode_system"
-
-# OUTPUT
+#}}}
+# OUTPUT {{{2
 # Quickly switch output based on presets
 # Script is in the submodule "scripts". Alternativly http://github.com/roosta/scripts
 set $changeto ~/bin/chdisp
@@ -386,8 +390,8 @@ mode "$mode_chdisp" {
 # bind FN home key to menu
 bindsym XF86HomePage mode "$mode_chdisp"
 bindsym $mod+Home mode "$mode_chdisp"
-
-# MARKS
+#}}}
+# MARKS {{{2
 mode "focused" {
 
   # hardcoded focus keybindings
@@ -421,8 +425,9 @@ mode "focused" {
 }
 
 bindsym $mod+n mode "focused"
-## APPEARANCE
-## ----------
+#}}}
+# APPEARANCE #{{{1
+# ----------
 # generated from template
 # set primary font
 font pango:Essential PragmataPro 9
@@ -433,4 +438,4 @@ client.focused_inactive $bright_white $bright_white $black        $cyan
 client.unfocused        $black        $bright_black $bright_white $cyan
 client.urgent           $orange       $orange       $black        $cyan
 client.placeholder      $magenta      $cyan         $black        $cyan
-
+#}}}
