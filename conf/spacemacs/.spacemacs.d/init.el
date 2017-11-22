@@ -91,6 +91,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(arduino-mode
      ;; flycheck-clojure
+     toc-org
      flycheck-joker
      kibit-helper
      ;; evil-smartparens
