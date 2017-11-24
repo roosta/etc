@@ -31,20 +31,25 @@
                 ; :init (set! *print-length* 100)}
                 :nrepl-middleware []}
 
- :repl {:plugins [[cider/cider-nrepl "0.16.0-SNAPSHOT"]
+ :repl {:plugins [
 
                   ;; syntax highlight terminal repl
                   [venantius/ultra "0.5.1"]
 
                   ;; flycheck-clojure support for cider 'attach'
-                  [acyclic/squiggly-clojure "0.1.9-SNAPSHOT" :exclusions [org.clojure/tools.reader]]
+                  ; [acyclic/squiggly-clojure "0.1.9-SNAPSHOT" :exclusions [org.clojure/tools.reader]]
 
                   ;; cider setup
-                  [refactor-nrepl "2.4.0-SNAPSHOT"]]
+                  ; [cider/cider-nrepl "0.16.0-SNAPSHOT"]
+                  ; [refactor-nrepl "2.4.0-SNAPSHOT"]
+                  
+                  ]
 
         :ultra {:color-scheme :solarized_dark}
 
         :dependencies [;; cider setup
                        [org.clojure/tools.nrepl "0.2.13"]
                        ;; cider setup
-                       [alembic "0.3.2"]]}}
+                       ; [alembic "0.3.2"]
+                       
+                       ]}}
