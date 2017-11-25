@@ -95,6 +95,7 @@ set softtabstop=2
 
 " search
 set incsearch
+set ignorecase
 set smartcase
 set magic
 
