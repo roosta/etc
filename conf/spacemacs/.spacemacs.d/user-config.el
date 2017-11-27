@@ -5,7 +5,6 @@
 ;; Misc
 ;; -----------------------------------------------------------
 (setq
-
  scroll-margin 7
 
  ;; Used to vim regexp
@@ -31,6 +30,10 @@
  browse-url-generic-program "firefox"
  )
 
+;; Navigating using visual lines
+(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
 ;; temporary fix for kill-ring pop. See https://github.com/syl20bnr/spacemacs/issues/8823
 ;; (define-key evil-normal-state-map (kbd "p") 'evil-paste-after)
 ;; (define-key evil-normal-state-map (kbd "P") 'evil-paste-before)
@@ -38,7 +41,6 @@
 (defun roosta/find-user-config ()
   (interactive)
   (find-file-existing "~/.spacemacs.d/user-config.el"))
-
 
 ;; (defun roosta/org-search ()
 ;;   (interactive)
@@ -53,9 +55,9 @@
 (spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
 
 
-;; -----------------------------------------------------------
-;; Cider
-;; -----------------------------------------------------------
+;; ----------------------------------------------------
+;; clojure
+;; ----------------------------------------------------
 (require 'cider)
 ;; use figwheel when starting a cljs repl
 (setq
@@ -66,8 +68,7 @@
  ;; include local-dev as a profile
  ;; cider-lein-parameters "with-profile +local-dev repl :headless :host ::"
 
- ;; cider-pprint-fn "puget"
- clojure-enable-fancify-symbols t
+ clojure-enable-fancify-symbols nil
 
  ;; use app lifecycle functions in cider-refresh
  cider-refresh-before-fn "user/stop"
@@ -93,6 +94,13 @@
 (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
 (add-hook 'cider-repl-mode-hook #'eldoc-mode)
 (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
+
+(add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+(add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
+(add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
+(add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
+
+(require 're-jump)
 
 ;; ----------------------------------------------------
 ;; flycheck
@@ -123,18 +131,6 @@
 ;;   (define-key map "\M-H" 'sp-backward-barf-sexp))
 
 ;; ----------------------------------------------------
-;; clojure
-;; ----------------------------------------------------
-(add-hook 'clojure-mode-hook #'smartparens-strict-mode)
-(add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
-(add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
-(add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
-
-;; Navigating using visual lines
-(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-
-;; ----------------------------------------------------
 ;; evil-surround
 ;; ----------------------------------------------------
 (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
@@ -158,6 +154,9 @@
 ;; org
 ;; ----------------------------------------------------
 (with-eval-after-load 'org
+
+  (spacemacs/set-leader-keys "ao>" 'org-link-edit-forward-slurp)
+  (spacemacs/set-leader-keys "ao<" 'org-link-edit-forward-barf)
 
   (setq
    ;; I added this to export clock times in drawers
@@ -251,6 +250,7 @@
     (message "~/Private is not mounted, cannot load github config"))
 
 (add-to-list 'load-path "~/.emacs.d/toc-org")
+
 (if (require 'toc-org nil t)
     (add-hook 'org-mode-hook 'toc-org-enable)
   (warn "toc-org not found"))
