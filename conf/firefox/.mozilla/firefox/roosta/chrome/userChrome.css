@@ -30,7 +30,7 @@
   --color-xgrey5:         #4E4E4E;
 
   --tab-height: 22px;
-  --font-familty: "Essential PragmataPro";
+  --font-familty: "Iosevka";
   --font-size: 11px;
 
 }
@@ -83,22 +83,23 @@ tab[selected=true], tab[visuallyselected=true] .tab-content {
 
 /* set border color on focused url bar */
 #urlbar[focused=true] {
+  border-radius: 0;
   border: 1px solid var(--color-bright-white) !important;
 }
 
 /* sets the green text and lock icon on left side of url bar to use green color */
-#identity-box.verifiedIdentity.grantedPermissions {
-/*   border-image-slice: 0 !important; */
-  --urlbar-separator-color: var(--color-bright-green) !important;
-}
+/* #identity-box.verifiedIdentity.grantedPermissions { */
+/* /1*   border-image-slice: 0 !important; *1/ */
+/*   --urlbar-separator-color: var(--color-bright-green) !important; */
+/* } */
 
-#identity-box.verifiedIdentity.grantedPermissions #identity-icon-labels {
-  color: var(--color-bright-green) !important;
-}
+/* #identity-box.verifiedIdentity.grantedPermissions #identity-icon-labels { */
+/*   color: var(--color-bright-green) !important; */
+/* } */
 
-#identity-box.grantedPermissions, #identity-box.verifiedDomain #connection-icon {
-  fill: var(--color-bright-green) !important;
-}
+/* #identity-box.grantedPermissions, #identity-box.verifiedDomain #connection-icon { */
+/*   fill: var(--color-bright-green) !important; */
+/* } */
 
 /* set tabs scoll left and right, pluss overflow indicator
 to be the same height as tabs */
