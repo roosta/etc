@@ -59,7 +59,10 @@
 ;; clojure
 ;; ----------------------------------------------------
 (require 'cider)
-;; use figwheel when starting a cljs repl
+
+;; (evil-define-key 'normal clojurescript-mode-map ";" 'cider-eval-sexp-at-point)
+;; (evil-define-key 'normal clojure-mode-map ";" 'cider-eval-sexp-at-point)
+
 (setq
 
  ;; start cljs repl scripts/repl.clj in project
@@ -155,8 +158,8 @@
 ;; ----------------------------------------------------
 (with-eval-after-load 'org
 
-  (spacemacs/set-leader-keys "ao>" 'org-link-edit-forward-slurp)
-  (spacemacs/set-leader-keys "ao<" 'org-link-edit-forward-barf)
+  (define-key spacemacs-org-mode-map-prefix (kbd ">") 'org-link-edit-forward-slurp)
+  (define-key spacemacs-org-mode-map-prefix (kbd "<") 'org-link-edit-forward-barf)
 
   (setq
    ;; I added this to export clock times in drawers
