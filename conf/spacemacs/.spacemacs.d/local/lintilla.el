@@ -1,5 +1,5 @@
 (setq-default
-  dotspacemacs-default-font '("PragmataPro for Powerline"
+  dotspacemacs-default-font '("Iosevka"
                               :size 24
                               :weight normal
                               :width normal
