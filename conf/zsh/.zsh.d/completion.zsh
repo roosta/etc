@@ -13,7 +13,8 @@ if [[ "$TERM" == 'dumb' ]]; then
 fi
 
 # Add zsh-completions and local completions to $fpath.
-fpath=($HOME/.zsh.d/completion $HOME/.zsh.d/plugins/zsh-completions/src $fpath[@])
+fpath=($HOME/.zsh.d/completion $fpath)
+fpath=($HOME/.zsh.d/plugins/zsh-completions/src $fpath)
 
 # OPTIONS
 # -------
@@ -39,7 +40,7 @@ else
 fi
 
 # load local completion
-autoload -U ~/.zsh.d/completion/*(:t)
+# autoload -U ~/.zsh.d/completion/*(:t)
 
 #
 # Styles
@@ -50,13 +51,8 @@ zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
 
 # Case-insensitive (all), partial-word, and then substring completion.
-if zstyle -t ':prezto:module:completion:*' case-sensitive; then
-  zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  setopt CASE_GLOB
-else
-  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-  unsetopt CASE_GLOB
-fi
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+unsetopt CASE_GLOB
 
 # Group matches and describe.
 zstyle ':completion:*:*:*:*:*' menu select
@@ -167,29 +163,3 @@ zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<-
  zstyle ':completion:*:vim:*:directories' ignored-patterns \*
  zstyle ':completion:*:*:(vim|rview|vimdiff|xxd):*:*files' ignored-patterns \
         '*~|*.(old|bak|zwc|viminfo|rxvt-*|zcompdump)|pm_to_blib|cover_db|blib' file-sort modification
-# ----------------------------------------------------------------------------------------
-# do not autoselect the first completion entry
-# unsetopt menu_complete
-# unsetopt flowcontrol
-
-# use dircolors for menus
-# zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
-
-# formatting
-# zstyle ':completion:*:descriptions' format $'%{- \e[38;5;137;1m\e[48;5;234m%}%B%d%b%{\e[m%}'
-# zstyle ':completion:*:warnings'     format $'%{No match for \e[38;5;240;1m%}%d%{\e[m%}'
-
-# # zstyle prosess list
-# zstyle ':completion:*:processes' command 'ps -axw'
-# zstyle ':completion:*:processes-names' command 'ps -awxho command'
-# zstyle ':completion:*:functions' ignored-patterns '_*'
-
-# change directory
-#zstyle ':completion:*:*:(cd):*:*files' ignored-patterns '*~' file-sort access
-# zstyle ':completion:*:*:(cd):*' file-sort access
-# zstyle ':completion:*:*:(cd):*' menu select
-# zstyle ':completion:*:*:(cd):*' completer _history
-
-# cd will never select the parent directory (e.g.: cd ../<TAB>):
-# zstyle ':completion:*:cd:*' ignore-parents parent pwd
-
