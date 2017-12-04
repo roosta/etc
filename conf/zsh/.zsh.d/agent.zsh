@@ -30,11 +30,3 @@
 #envoy -t ssh-agent
 #source <(envoy -p)
 
-#keys="id_rsa"
-#if [[ -e "$HOME/.ssh/lint@github" ]]; then
-  #keys+=" lint@github"
-#fi
-#unset keys
-
-
-
