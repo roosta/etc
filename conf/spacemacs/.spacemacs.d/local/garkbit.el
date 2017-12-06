@@ -1,5 +1,5 @@
-(setq-default 
-  dotspacemacs-default-font '("Essential PragmataPro"
+(setq-default
+  dotspacemacs-default-font '("Iosevka"
                               :size 24
                               :weight normal
                               :width normal
