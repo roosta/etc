@@ -18,7 +18,7 @@
   a         = add -A
   d         = diff
   dc        = diff --cached
-  wd        = diff --word-dif
+  wd        = diff --word-diff
   precommit = diff --cached --diff-algorithm=minimal -w
   logs      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   logd      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -p
