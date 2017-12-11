@@ -15,67 +15,67 @@ exec_always --no-startup-id $HOME/utils/launch-polybar.sh
 #}}}
 # WORKSPACES #{{{1
 # -------------------- 
-bindsym $mod+q workspace $pws_q
-bindsym $mod+w workspace $pws_w
-bindsym $mod+e workspace $pws_e
-bindsym $mod+1 workspace $pws_1
-bindsym $mod+2 workspace $pws_2
-bindsym $mod+3 workspace $pws_3
-bindsym $mod+4 workspace $pws_4
+bindsym $mod+q workspace number $pws_q
+bindsym $mod+w workspace number $pws_w
+bindsym $mod+e workspace number $pws_e
+bindsym $mod+1 workspace number $pws_1
+bindsym $mod+2 workspace number $pws_2
+bindsym $mod+3 workspace number $pws_3
+bindsym $mod+4 workspace number $pws_4
 
-bindsym $mod+Shift+q move workspace $pws_q
-bindsym $mod+Shift+w move workspace $pws_w
-bindsym $mod+Shift+e move workspace $pws_e
-bindsym $mod+Shift+1 move workspace $pws_1
-bindsym $mod+Shift+2 move workspace $pws_2
-bindsym $mod+Shift+3 move workspace $pws_3
-bindsym $mod+Shift+4 move workspace $pws_4
+bindsym $mod+Shift+q move workspace number $pws_q
+bindsym $mod+Shift+w move workspace number $pws_w
+bindsym $mod+Shift+e move workspace number $pws_e
+bindsym $mod+Shift+1 move workspace number $pws_1
+bindsym $mod+Shift+2 move workspace number $pws_2
+bindsym $mod+Shift+3 move workspace number $pws_3
+bindsym $mod+Shift+4 move workspace number $pws_4
 
-bindsym $mod+a workspace $sws_a
-bindsym $mod+s workspace $sws_s
-bindsym $mod+d workspace $sws_d
-bindsym $mod+Shift+a move workspace $sws_a
-bindsym $mod+Shift+s move workspace $sws_s
-bindsym $mod+Shift+d move workspace $sws_d
+bindsym $mod+a workspace number $sws_a
+bindsym $mod+s workspace number $sws_s
+bindsym $mod+d workspace number $sws_d
+bindsym $mod+Shift+a move workspace number $sws_a
+bindsym $mod+Shift+s move workspace number $sws_s
+bindsym $mod+Shift+d move workspace number $sws_d
 
-bindsym $mod+F1  workspace $tws_f1
-bindsym $mod+F2  workspace $tws_f2
-bindsym $mod+F3  workspace $tws_f3
-bindsym $mod+Shift+F1  move workspace $tws_f1
-bindsym $mod+Shift+F2  move workspace $tws_f2
-bindsym $mod+Shift+F3  move workspace $tws_f3
+bindsym $mod+F1  workspace number $tws_f1
+bindsym $mod+F2  workspace number $tws_f2
+bindsym $mod+F3  workspace number $tws_f3
+bindsym $mod+Shift+F1  move workspace number $tws_f1
+bindsym $mod+Shift+F2  move workspace number $tws_f2
+bindsym $mod+Shift+F3  move workspace number $tws_f3
 
-bindsym $mod+5 workspace $aws_5
-bindsym $mod+6 workspace $aws_6
-bindsym $mod+7 workspace $aws_7
-bindsym $mod+8 workspace $aws_8
-bindsym $mod+9 workspace $aws_9
-bindsym $mod+0 workspace $aws_0
-bindsym $mod+F4  workspace $aws_f4
-bindsym $mod+F5  workspace $aws_f5
-bindsym $mod+F6  workspace $aws_f6
-bindsym $mod+F7  workspace $aws_f7
-bindsym $mod+F8  workspace $aws_f8
-bindsym $mod+F9  workspace $aws_f9
-bindsym $mod+F10 workspace $aws_f10
-bindsym $mod+F11 workspace $aws_f11
-bindsym $mod+F12 workspace $aws_f12
+bindsym $mod+5 workspace number $aws_5
+bindsym $mod+6 workspace number $aws_6
+bindsym $mod+7 workspace number $aws_7
+bindsym $mod+8 workspace number $aws_8
+bindsym $mod+9 workspace number $aws_9
+bindsym $mod+0 workspace number $aws_0
+bindsym $mod+F4  workspace number $aws_f4
+bindsym $mod+F5  workspace number $aws_f5
+bindsym $mod+F6  workspace number $aws_f6
+bindsym $mod+F7  workspace number $aws_f7
+bindsym $mod+F8  workspace number $aws_f8
+bindsym $mod+F9  workspace number $aws_f9
+bindsym $mod+F10 workspace number $aws_f10
+bindsym $mod+F11 workspace number $aws_f11
+bindsym $mod+F12 workspace number $aws_f12
 
-bindsym $mod+shift+5  move workspace $aws_5
-bindsym $mod+shift+6  move workspace $aws_6
-bindsym $mod+shift+7  move workspace $aws_7
-bindsym $mod+shift+8  move workspace $aws_8
-bindsym $mod+shift+9  move workspace $aws_9
-bindsym $mod+Shift+0  move workspace $aws_0
-bindsym $mod+shift+f4  move workspace $aws_f4
-bindsym $mod+shift+f5  move workspace $aws_f5
-bindsym $mod+shift+f6  move workspace $aws_f6
-bindsym $mod+shift+f7  move workspace $aws_f7
-bindsym $mod+shift+f8  move workspace $aws_f8
-bindsym $mod+Shift+F9  move workspace $aws_f9
-bindsym $mod+Shift+F10 move workspace $aws_f10
-bindsym $mod+Shift+F11 move workspace $aws_f11
-bindsym $mod+Shift+F12 move workspace $aws_f12
+bindsym $mod+shift+5  move workspace number $aws_5
+bindsym $mod+shift+6  move workspace number $aws_6
+bindsym $mod+shift+7  move workspace number $aws_7
+bindsym $mod+shift+8  move workspace number $aws_8
+bindsym $mod+shift+9  move workspace number $aws_9
+bindsym $mod+Shift+0  move workspace number $aws_0
+bindsym $mod+shift+f4  move workspace number $aws_f4
+bindsym $mod+shift+f5  move workspace number $aws_f5
+bindsym $mod+shift+f6  move workspace number $aws_f6
+bindsym $mod+shift+f7  move workspace number $aws_f7
+bindsym $mod+shift+f8  move workspace number $aws_f8
+bindsym $mod+Shift+F9  move workspace number $aws_f9
+bindsym $mod+Shift+F10 move workspace number $aws_f10
+bindsym $mod+Shift+F11 move workspace number $aws_f11
+bindsym $mod+Shift+F12 move workspace number $aws_f12
 
 ## assign workspaces to outputs
 # primary
@@ -431,7 +431,7 @@ bindsym $mod+n mode "focused"
 # ----------
 # generated from template
 # set primary font
-font pango:Essential PragmataPro 9
+font pango:Iosevka 9
 
 # <class>               <border>      <background>  <foreground> <indicator>
 client.focused          $magenta      $magenta      $bright_white $cyan
