@@ -174,7 +174,9 @@ endif
 ifdef lines
 	@echo "rofi.lines: $(lines)" >> ~/.config/rofi/config
 endif
-
+ifdef font
+	@echo "rofi.font: $(font)" >> ~/.config/rofi/config
+endif
 .PHONY: rofi
 rofi: ~/.config/rofi/config
 	@echo -e "\033[0;33mCreating rofi config...\033[0m"
