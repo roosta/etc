@@ -3,6 +3,7 @@
 {:ignored-unused-namespaces [reagent.debug]
  :known-macros [secretary.core/defroute
                 compojure.core/defroutes
+                quil.core/defsketch
                 compojure.core/GET
                 compojure.core/POST
                 mount.core/defstate] 
