@@ -8,6 +8,7 @@
 # STARTUP #{{{1
 # --------------------
 exec_always --no-startup-id $HOME/utils/launch-polybar.sh
+exec_always --no-startup-id i3wsr
 #}}}
 # OPTIONS {{{1
 # --------------------
