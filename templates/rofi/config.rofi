@@ -6,9 +6,6 @@ rofi.modi:                           combi,calc:qalc +u8 -nocurrencies
 rofi.width:                          20
 rofi.columns:                        1
 
-! "Font to use" Set from: File
-rofi.font:                           Essential PragmataPro 24px
-
 ! Location on screen
 rofi.location:                       1
 
