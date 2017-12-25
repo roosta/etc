@@ -428,6 +428,8 @@ Plug 'romainl/vim-qlist'
 Plug 'itchyny/lightline.vim'
 Plug '~/src/vim-srcery'
 " Plug 'roosta/vim-srcery'
+" Plug 'romainl/flattened'
+" Plug 'morhetz/gruvbox'
 
 " git
 Plug 'tpope/vim-fugitive'
