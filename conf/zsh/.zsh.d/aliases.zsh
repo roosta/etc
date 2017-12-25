@@ -76,6 +76,7 @@ alias vihosts="$EDITOR /etc/hosts"
 alias vimime="$EDITOR ~/.config/mimeapps.list"
 alias virofi="$EDITOR ~/etc/templates/rofi/config.rofi"
 alias vijoker="$EDITOR ~/.joker"
+alias vidunst="$EDITOR ~/etc/templates/dunst/dunstrc"
 
 #}}}
 ## FIND {{{1
