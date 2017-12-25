@@ -4,7 +4,7 @@ NOW = $(shell date +"%Y-%m-%d@%T")
 include ~/etc/local/$(HOST)/variables.mk
 
 .PHONY: default
-default: links update i3 rofi post-install
+default: links update i3 rofi dunst post-install
 
 .PHONY: update
 update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim post-install
@@ -175,7 +175,7 @@ dunst: ~/.config/dunst/dunstrc
 ~/.config/dunst/dunstrc: ~/etc/templates/dunst/config.dunst ~/etc/local/$(HOST)/variables.mk ~/.config/dunst
 	cat ~/etc/templates/dunst/config.dunst > ~/.config/dunst/dunstrc
 ifdef font
-	sed -ri "s/font = (.*)/font = $(font)/" ~/.config/dunst/dunstrc
+	sed -ri 's/font = (.*)/font = $(font)/' ~/.config/dunst/dunstrc
 endif
 
 ifdef dunst_geometry
