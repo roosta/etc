@@ -166,6 +166,22 @@ i3: ~/.i3/config
 # clear-rofi:
 # 	@rm ~/.config/rofi/config -f
 
+dunst: ~/.config/dunst/dunstrc
+	@echo -e "\033[0;33mCreating dunst config...\033[0m"
+
+~/.config/dunst:
+	mkdir -p ~/.config/dunst
+
+~/.config/dunst/dunstrc: ~/etc/templates/dunst/config.dunst ~/etc/local/$(HOST)/variables.mk ~/.config/dunst
+	cat ~/etc/templates/dunst/config.dunst > ~/.config/dunst/dunstrc
+ifdef font
+	sed -ri "s/font = (.*)/font = $(font)/" ~/.config/dunst/dunstrc
+endif
+
+ifdef dunst_geometry
+	sed -ri 's/geometry = (.*)/geometry = $(dunst_geometry)/' ~/.config/dunst/dunstrc
+endif
+
 ~/.config/rofi/config: ~/etc/templates/rofi/config.rofi ~/etc/local/$(HOST)/variables.mk
 	@cd ~/etc/templates/rofi && cat *.rofi > ~/.config/rofi/config
 ifdef bar_height

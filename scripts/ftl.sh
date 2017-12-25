@@ -153,6 +153,11 @@ make-rofi () {
   make rofi
 }
 
+make-dunst () {
+  cd "$etc_path" || exit 1
+  make dunst
+}
+
 update () {
   cd "$etc_path" || exit 1
   make update
