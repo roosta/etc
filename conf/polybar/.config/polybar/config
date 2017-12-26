@@ -127,7 +127,7 @@ monitor = ${env:MONITOR:HDMI-0}
 
 [bar/allitnil]
 inherit = bar/lintilla-primary
-height = 22
+height = 24
 dpi = 140
 monitor = ${env:MONITOR:eDP1}
 modules-center = 
