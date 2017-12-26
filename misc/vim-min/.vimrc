@@ -295,6 +295,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
 Plug '/home/roosta/src/vim-srcery'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -348,6 +349,12 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+nnoremap <silent> <C-h>  : TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j>  : TmuxNavigateDown<cr>
+nnoremap <silent> <C-k>  : TmuxNavigateUp<cr>
+nnoremap <silent> <C-l>  : TmuxNavigateRight<cr>
+
 
 " }}}
 " vim: fdm=marker:sw=2
