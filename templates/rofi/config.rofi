@@ -323,3 +323,4 @@ rofi.kb-custom-9:                    Alt+9
 ! Accept hovered row with custom action
 ! rofi.me-accept-custom:               Control+MouseD1
 
+!  vim: set ft=xdefaults ts=2 sw=2 tw=0 fdm=marker et :
