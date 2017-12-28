@@ -116,8 +116,10 @@ fadd() {
   local files target toplevel
   toplevel=$(git rev-parse --show-toplevel) &&
   files=$(git ls-files --exclude-standard -m -o) &&
-  target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-  git add "$toplevel/$target"
+  target=$(echo "$files" | fzf-tmux -m -d $(( 2 + $(wc -l <<< "$files") ))) &&
+  while IFS='' read -r line || [[ -n "$line" ]]; do
+    git add "${toplevel}/${line}"
+  done <<< "$target"
 }
 
 # get a list of unstaged files and add using fzf
