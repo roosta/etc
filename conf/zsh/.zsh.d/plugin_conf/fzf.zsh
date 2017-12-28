@@ -124,23 +124,27 @@ fadd() {
 
 # get a list of unstaged files and add using fzf
 fcheckout() {
-  local files target
-  files=$(git diff --name-only) &&
+  local files target toplevel
   toplevel=$(git rev-parse --show-toplevel) &&
-  target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-  git checkout "$toplevel/$target"
+  files=$(git diff --name-only) &&
+  target=$(echo "$files" | fzf-tmux -m -d $(( 2 + $(wc -l <<< "$files") ))) &&
+  while IFS='' read -r line || [[ -n "$line" ]]; do
+    git checkout "${toplevel}/${line}"
+  done <<< "$target"
 }
 
 funstage() {
-  local files target
-  files=$(git diff --name-only --cached) &&
+  local files target toplevel
   toplevel=$(git rev-parse --show-toplevel) &&
-  target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-  git reset HEAD -- "$toplevel/$target"
+  files=$(git diff --name-only --cached) &&
+  target=$(echo "$files" | fzf-tmux -m -d $(( 2 + $(wc -l <<< "$files") ))) &&
+  while IFS='' read -r line || [[ -n "$line" ]]; do
+    git reset HEAD -- "${toplevel}/${line}"
+  done <<< "$target"
 }
 
 fv() {
-  ag --nobreak --nonumbers --noheading . | fzf-tmux
+  ag --nobreak --nonumbers --noheading . | fzf-tmux --ansi
 }
 
 # get a list of unstaged files and add using fzf
