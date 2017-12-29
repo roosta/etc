@@ -1,19 +1,19 @@
 # GTK theme
 #include "/usr/share/themes/Paper/gtk-2.0/gtkrc"
 #include "/home/roosta/.gtkrc-2.0.mine"
-gtk-theme-name = "Adwaita"
+gtk-theme-name = "oomox-srcery"
 # gtk-theme-name = "Arc-Darker"
 
 # Font
 style "myfont" {
-    font_name = "Essential PragmataPro 10"
+    font_name = "Iosevka 10"
 }
 widget_class "*" style "myfont"
 
-gtk-font-name = "Essential PragmataPro 10"
+gtk-font-name = "Iosevka 10"
 
 # Icon theme
-gtk-icon-theme-name = "Adwaita"
+gtk-icon-theme-name = "oomox-srcery"
 #gtk-icon-theme-name = "Arc"
 
 # Toolbar style
