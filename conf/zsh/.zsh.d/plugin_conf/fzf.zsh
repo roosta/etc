@@ -305,7 +305,7 @@ fv() {
     --smart-case \
     --hidden  \
     -p ~/.agignore \
-    --noheading . | fzf-tmux +m --black --ansi) &&
+    --noheading . | fzf-tmux +m) &&
 
     linum=$(echo "$match" | cut -d':' -f2) &&
     file=$(echo "$match" | cut -d':' -f1) &&
