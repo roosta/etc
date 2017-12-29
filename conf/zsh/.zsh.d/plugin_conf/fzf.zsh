@@ -165,7 +165,7 @@ fdiff() {
 
 
 # fco - checkout git branch/tag
-fco() {
+fbranch() {
   local tags branches target
   tags=$(
     git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}') || return
