@@ -1,34 +1,34 @@
 # ┬─┐┬ ┐┌─┐┌─┐┐ ┬  ┬─┐o┌┐┐┬─┐┬─┐┬─┐
 # ├─ │ │┌─┘┌─┘└┌┘──├─ │││││ │├─ │┬┘
 # ┆  ┆─┘└─┘└─┘ ┆   ┆  ┆┆└┘┆─┘┴─┘┆└┘
-
+# OPTIONS:{{{
+# ---------------
 # plugin handled externally with vim-plug
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-#export FZF_DEFAULT_OPTS='--no-256'
-
-#alias fzf='TERM=screen-256color fzf'
-#alias fzf-tmux='TERM=screen-256color fzf'
 
 # Respecting .gitignore, .hgignore, and svn:ignore
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
+export FZF_DEFAULT_OPTS='
+  --color fg:15,bg:0,hl:2,fg+:15,bg+:8,hl+:10
+  --color info:11,prompt:5,spinner:11,pointer:10,marker:208,header:15
+'
 export FZF_COMPLETION_TRIGGER='~~'
 
 # To apply the command to CTRL-T as well
 # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
-
-# COMMAND HISTORY
+#}}}
+# COMMAND HISTORY: {{{ 
 # -------------------
 
 # fh - repeat history
 fhist() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf-tmux +s --tac | sed 's/ *[0-9]* *//')
 }
-
-# CHANGING DIRECTORY
+#}}}
+# CHANGING DIRECTORY {{{
 # ---------------------
 
 # fd - including hidden directories
@@ -62,8 +62,8 @@ cf() {
      fi
   fi
 }
-
-# KILL
+#}}}
+# KILL {{{
 # -----------
 fkill() {
   pid=$(ps -ef | sed 1d | fzf-tmux -m | awk '{print $2}')
@@ -73,8 +73,8 @@ fkill() {
     kill -${1:-9} $pid
   fi
 }
-
-# OPENING FILES
+#}}}
+# OPENING FILES {{{
 # ---------------
 
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
@@ -98,8 +98,8 @@ fo() {
     [ "$key" = ctrl-o ] && open "$file" || ${EDITOR:-vim} "$file"
   fi
 }
-
-# GIT
+#}}}
+# GIT {{{
 # ---------
 
 # fbr - checkout git branch (including remote branches)
@@ -111,7 +111,7 @@ fbr() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-# get a list of unstaged files and add using fzf
+# get a list of unstaged files and add using fzf, supports multiselect via [tab] as default
 fadd() {
   local files target toplevel
   toplevel=$(git rev-parse --show-toplevel) &&
@@ -122,7 +122,8 @@ fadd() {
   done <<< "$target"
 }
 
-# get a list of unstaged files and add using fzf
+# Checkout selected files
+# supports multiselect via [tab] as default
 fcheckout() {
   local files target toplevel
   toplevel=$(git rev-parse --show-toplevel) &&
@@ -133,6 +134,8 @@ fcheckout() {
   done <<< "$target"
 }
 
+# Unstage selected files
+# supports multiselect via [tab] as default
 funstage() {
   local files target toplevel
   toplevel=$(git rev-parse --show-toplevel) &&
@@ -143,11 +146,7 @@ funstage() {
   done <<< "$target"
 }
 
-fv() {
-  ag --nobreak --nonumbers --noheading . | fzf-tmux --ansi
-}
-
-# get a list of unstaged files and add using fzf
+# diff selected file
 fdiff() {
   local files target toplevel
 
@@ -235,8 +234,8 @@ fstash() {
       fi
     done
 }
-
-# TAGS
+#}}}
+# TAGS {{{
 # ------------------
 # ftags - search ctags
 ftags() {
@@ -248,8 +247,8 @@ ftags() {
   ) && $EDITOR $(cut -f3 <<< "$line") -c "set nocst" \
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }
-
-# TMUX
+#}}}
+# TMUX {{{
 # ---------------
 # fs [FUZZY PATTERN] - Select selected tmux session
 #   - Bypass fuzzy finder if there's only one match (--select-1)
@@ -282,8 +281,9 @@ fpane() {
       tmux select-window -t $target_window
   fi
 }
-
-# fzf + fasd.
+#}}}
+# FASD {{{
+# --------
 v() {
   local file
   file="$(fasd -Rfl "$1" | fzf-tmux -1 -0 --no-sort +m)" && vi "${file}" || return 1
@@ -293,4 +293,24 @@ c() {
   local dir
   dir="$(fasd -Rdl "$1" | fzf-tmux -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
+#}}}
+# AG {{{
+# ------
 
+# search using ag and open selected file at linum
+fv() {
+  local match linum file;
+  match=$(\ag \
+    --nobreak \
+    --smart-case \
+    --hidden  \
+    -p ~/.agignore \
+    --noheading . | fzf-tmux +m --black --ansi) &&
+
+    linum=$(echo "$match" | cut -d':' -f2) &&
+    file=$(echo "$match" | cut -d':' -f1) &&
+
+    ${EDITOR:-vim} +$linum $file
+}
+#}}}
+#  vim: set ts=2 sw=2 tw=0 fdm=marker et :
