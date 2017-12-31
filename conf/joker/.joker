@@ -1,6 +1,6 @@
 ;; https://github.com/candid82/joker#linter-mode
 ;; vim:ft=clojure:ts=2:sw=2:tw=0:fdm=marker:et 
-{:ignored-unused-namespaces [reagent.debug]
+{:ignored-unused-namespaces [reagent.debug goog.object]
  :known-macros [secretary.core/defroute
                 compojure.core/defroutes
                 quil.core/defsketch
