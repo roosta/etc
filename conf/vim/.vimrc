@@ -100,7 +100,7 @@ set smartcase
 set magic
 
 "substitute global flag always on
-set gdefault 
+" set gdefault 
 
 set tags=tags;/ " search recursively up for tags
 " set tags+=./.git/.tags,./tags
