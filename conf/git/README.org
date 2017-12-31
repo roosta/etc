@@ -1,0 +1,121 @@
+[[file:../../assets/git_title.png]]
+** Config
+   Besides from the more run of the mill here are some notable options:
+*** Global ignore
+    Some things you just want ignored regardless of repository. Put it in
+    =~/.globalignore= and define it using the config option in =core='s =exclude-file=
+*** Credential
+    It says use cache in the config, but currently I use [[https://wiki.gnome.org/Projects/GnomeKeyring][Gnome Keyring]] to manage
+    my credentials. I've used a bunch of agents in the past and the remnants of
+    that can be found [[https://github.com/roosta/etc/blob/master/conf/zsh/.zsh.d/agent.zsh][here]]. All told though I find Gnome Keyring works well.
+*** Diffing
+    I use a bunch of different tools for diffing and merge resolving. [[https://github.com/magit/magit][Magit]] and
+    other Emacs git tools are quite amazing, but I haven't used Emacs that long
+    so still getting familiar with the Emacs side of things. Vimdiff and
+    [[https://github.com/tpope/vim-fugitive][vim-fugitive]] as a git wrapper are also good options. And lastly I often turn
+    to [[http://meldmerge.org/][Meld]] if I need to go full GUI.
+*** Aliases
+**** wd
+     Show the word difference, which words have changes, not lines. Makes it
+     easier to pick out a change sometimes.
+**** precommit
+     Used to use this a lot, it just shows the diff on what you currently have
+     staged before committing. Ever since git included the commit option =verbose=
+     I haven't really needed this alias anymore. With the verbose option set you
+     get the diff for the current commit in your commit message
+**** logs
+     Log short, print abbreviated SHA - (ref name) commit subject (time since
+     commit) <author> and would look something like this:
+
+     [[file:../../assets/git_logs.png]]
+
+     I did not author this one, and don't remember where I originally got it but
+     it seems it's circulating various sites like stackoverflow and blogs.
+
+**** logd
+     Diff log, get the diff on your entire commit history. Used mainly to search
+     for something that might have gotten lost in a previous commit.
+**** logl
+     Same as above with some extra info. Full commit message and changes done to
+     files. That would look something like this:
+
+     [[file:../../assets/git_logl.png]]
+**** last
+     View the full commit message from the last commit
+**** ctags
+     Manually run the ctag hook. More below.
+**** Remainder
+     Nothing really interesting for the remaining aliases, just shorthand for
+     various basic operations i do often.
+*** Hooks
+    I used to run a hook on commit, merge and rebase that would generate new
+    [[http://ctags.sourceforge.net/][ctags]]. I currently don't use this anymore since I found a nice vim
+    plugin that deals with this called [[https://github.com/ludovicchabant/vim-gutentags][Gutentags]].
+
+    I've kept the config though since I thought that was a neat idea.
+
+    And the idea is not mine, I found it on [[http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html][here]] originally.
+    Also see .git_templates for the hooks and script
+
+    Relevant files:
+
+    - [[file:.git_template/hooks/post-merge::#!/bin/sh][post-merge]]
+    - [[file:.git_template/hooks/post-checkout::#!/bin/sh][post-checkout]]
+    - [[file:.git_template/hooks/post-commit::#!/bin/sh][post-commit]]
+    - [[file:.git_template/hooks/post-rewrite::#rebase)%20exec%20.git/hooks/post-merge%20;;][post-merge]]
+    - [[file:.git_template/hooks/ctags::#!/bin/sh][ctags script]]
+
+** Fzf
+   Another subject worth touching on is various [[https://github.com/junegunn/fzf][fzf]] functions I use on a regular
+   basis.
+
+   I find them particularly useful if you are dealing with long
+   namespaces or a convoluted directory structure where just typing the path is
+   a chore. Or otherwise with commands that tend to get rather verbose.
+
+   Some of these are grabbed wholesale from the [[https://github.com/junegunn/fzf/wiki/Examples][fzf wiki]], worth having
+   a look there. Lots of cool fzf functions.
+
+   [[https://github.com/junegunn/fzf][fzf]] is an awesome tool and definitely worth checking out.
+
+*** fadd
+    List all unstaged files, and add the ones selected. Supports multiselect via
+    ~tab~ as default mapping.
+*** funstage
+    Unstage chosen files. Supports multiselect via ~tab~ as default mapping.
+*** fcheckout
+    Discards chosen files. Supports multiselect via ~tab~ as default mapping.
+*** fco
+    Will list all branches and tags and ~checkout~ selected.
+*** fcoc
+    List all commits and ~checkout~ selected. Useful if you need to walk back in
+    history, but unsure which commit you're looking for. Also saves you a lot of
+    typing either way.
+*** fdiff
+    List all commits and show diff for selected.
+*** fsha
+    Show abbreviated SHA for selected commit.
+
+    Example usage:
+
+    #+BEGIN_SRC shell
+      git rebase -i `fsha`
+    #+END_SRC
+
+*** fstash
+    Easier way to deal with stashes. Type ~fstash~ to get a list of your stashes.
+    ~enter~ shows you the contents of the stash. ~ctrl-d~ shows a diff of the stash
+    against your current ~HEAD~, ~ctrl-b~ checks the stash out as a branch, for
+    easier merging.
+** Other tools
+   These are some other tools I found useful.
+*** Git extras
+    Just a ton of useful git functions, and definitely worth a look
+
+    [[https://github.com/tj/git-extras][tj/git-extras: GIT utilities -- repo summary, repl, changelog population, author commit percentages and more]]
+
+*** Hub
+    A git wrapper that adds useful github spesific commands like dealing with
+    issues, pull-requests and such from the comfort of your commandline.
+
+    [[https://hub.github.com/][hub · the command-line wrapper for git]]

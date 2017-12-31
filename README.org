@@ -77,7 +77,7 @@ Companion repos for these dotfiles:
 
  - [[https://github.com/roosta/etc/tree/master/conf/i3][i3]]
  - [[https://github.com/roosta/etc/tree/master/conf/firefox][firefox]]
- - git
+ - [[https://github.com/roosta/etc/tree/master/conf/git][git]]
  - polybar
  - rofi
  - spacemacs
