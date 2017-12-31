@@ -78,15 +78,21 @@
 
    [[https://github.com/junegunn/fzf][fzf]] is an awesome tool and definitely worth checking out.
 
+   See [[file:../zsh/.zsh.d/plugin_conf/fzf.zsh][here]] for the function definitions. They are loaded with [[file:../zsh/.zshrc][zsh]], more on that here(TODO).
+
 *** fadd
     List all unstaged files, and add the ones selected. Supports multiselect via
     ~tab~ as default mapping.
+
 *** funstage
     Unstage chosen files. Supports multiselect via ~tab~ as default mapping.
+
 *** fcheckout
     Discards chosen files. Supports multiselect via ~tab~ as default mapping.
+
 *** fco
     Will list all branches and tags and ~checkout~ selected.
+
 *** fcoc
     List all commits and ~checkout~ selected. Useful if you need to walk back in
     history, but unsure which commit you're looking for. Also saves you a lot of
