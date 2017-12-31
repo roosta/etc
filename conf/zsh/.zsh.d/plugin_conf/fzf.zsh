@@ -20,7 +20,7 @@ export FZF_COMPLETION_TRIGGER='~~'
 # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 #}}}
-# COMMAND HISTORY: {{{ 
+# COMMAND HISTORY: {{{
 # -------------------
 
 # fh - repeat history
@@ -102,15 +102,6 @@ fo() {
 # GIT {{{
 # ---------
 
-# fbr - checkout git branch (including remote branches)
-fbr() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
 # get a list of unstaged files and add using fzf, supports multiselect via [tab] as default
 fadd() {
   local files target toplevel
@@ -152,10 +143,10 @@ fdiff() {
 
   # get project root directory
   toplevel=$(git rev-parse --show-toplevel) &&
-  
+
   # get modified files
   files=$(git diff --name-only) &&
-  
+
   # Create tmux split with a height of the list of items
   target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
 
@@ -165,7 +156,7 @@ fdiff() {
 
 
 # fco - checkout git branch/tag
-fbranch() {
+fco() {
   local tags branches target
   tags=$(
     git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}') || return
@@ -199,8 +190,8 @@ fshow() {
 FZF-EOF"
 }
 
-# fcs - get git commit sha
-# example usage: git rebase -i `fcs`
+# fsha - get git commit sha
+# example usage: git rebase -i `fsha`
 fsha() {
   local commits commit
   commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
