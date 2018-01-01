@@ -18,6 +18,8 @@ endif
 set undofile
 set undodir=~/var/undo
 
+let g:srcery_italic = 1 
+
 " wildmenu
 set wildmenu
 set wildmode=longest,list,full
@@ -443,7 +445,7 @@ Plug 'tpope/vim-tbone'
 
 " html/js/css
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
-Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
+" Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 
 " Python
 Plug 'jmcantrell/vim-virtualenv'
