@@ -7,6 +7,6 @@
                 compojure.core/GET
                 compojure.core/POST
                 mount.core/defstate] 
- :known-namespaces [] 
+ :known-namespaces [clojure.string] 
  }
 
