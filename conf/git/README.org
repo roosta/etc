@@ -87,8 +87,9 @@
 *** funstage
     Unstage chosen files. Supports multiselect via ~tab~ as default mapping.
 
-*** fcheckout
-    Discards chosen files. Supports multiselect via ~tab~ as default mapping.
+*** fdiscard
+    Discard selected files unstaged changes. Supports multiselect via ~tab~ as
+    default mapping.
 
 *** fco
     Will list all branches and tags and ~checkout~ selected.
