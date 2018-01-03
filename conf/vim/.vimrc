@@ -545,10 +545,10 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-au VimEnter * RainbowParentheses
 
 " Junegunn
 " https://github.com/junegunn/rainbow_parentheses.vim
+" au VimEnter * RainbowParentheses
 " let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 " exclude bright black since its barly visible
