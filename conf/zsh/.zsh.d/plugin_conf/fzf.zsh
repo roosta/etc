@@ -113,9 +113,9 @@ fadd() {
   done <<< "$target"
 }
 
-# Checkout selected files
+# Discard selected files unstaged changes
 # supports multiselect via [tab] as default
-fcheckout() {
+fdiscard() {
   local files target toplevel
   toplevel=$(git rev-parse --show-toplevel) &&
   files=$(git diff --name-only) &&
