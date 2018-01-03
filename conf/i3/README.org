@@ -3,7 +3,7 @@
 Pragmatic i3 configuration, split to accommodate multiple host systems,
 multiple monitors and vim inspired shortcuts.
 
-Mapping my workspaces to keys leaning towards right on the keyboard for ease
+Mapping my workspaces to keys leaning towards left on the keyboard for ease
 of access since I tend to only keep one application per window.
 
 The colors is based of [[https://github.com/roosta/vim-srcery][vim-srcery]], my own colorscheme and I chose a bright
