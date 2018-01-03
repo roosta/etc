@@ -9,7 +9,7 @@
 "│█░░Github : https://github.com/roosta ░░█│
 "└─────────────────────────────────────────┘
 " Options: {{{1
-""""""""""""""
+
 if &compatible
   set nocompatible
 endif
@@ -124,7 +124,6 @@ if has('nvim')
 endif
 "}}}
 " Statusline:{{{
-""""""""""""""""
 
 " set showmode
 set noshowmode
@@ -159,7 +158,6 @@ set statusline+=%P
 
 "}}}
 " Cursor: {{{1
-"""""""""""""
 
 " 1 or 0 -> blinking block
 " 3 -> blinking underscore
@@ -188,7 +186,6 @@ autocmd BufReadPost *
 
 "}}}
 " Gvim: {{{1
-""""""""""""
 
 if has('gui_running')
   "set guioptions-=m  "remove menu bar
@@ -203,7 +200,6 @@ endif
 
 "}}}
 " Keybinds: {{{1
-"""""""""""""""
 
 set mouse=a
 
@@ -299,7 +295,7 @@ nnoremap Y y$
 nnoremap <leader><leader> :call 
 " }}}
 " Cmd:{{{
-""""""""""
+
 " https://github.com/tpope/vim-fireplace/pull/222
 " https://github.com/bhauman/lein-figwheel/wiki/Using-the-Figwheel-REPL-with-Vim
 command! Figwheel :Piggieback (figwheel-sidecar.repl-api/repl-env)<cr>
@@ -374,7 +370,6 @@ endfunction
 "
 " }}}
 " Vimpager: {{{
-"""""""""""""""
 
 let g:vimpager_scrolloff = 5
 let g:vimpager_less_mode = 0
@@ -383,7 +378,6 @@ set clipboard^=unnamed
 
 "}}}
 " Plugin Manager: {{{
-"""""""""""""""""""""
 
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
@@ -459,7 +453,8 @@ Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
 Plug 'tpope/vim-projectionist'
 " Plug 'guns/vim-sexp'
-Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
@@ -487,15 +482,11 @@ syntax on
 filetype plugin indent on
 "}}}
 "Plugin Config: {{{1
-"""""""""""""""""""
-
-" ---------------
-"  colorscheme
+"  Colorscheme: {{{2
 " --------------
 colorscheme srcery
-
-" -------
-" fzf.vim
+"}}}
+" Fzf: {{{2
 " -------
 " https://github.com/junegunn/fzf.vim
 
@@ -516,8 +507,8 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-" ---------
-" Incsearch
+"}}}
+" Incsearch: {{{2
 " ---------
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -532,9 +523,8 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
-
-" -------------
-"  Easymotion
+"}}}
+"  Easymotion: {{{2
 " -------------
 let g:EasyMotion_smartcase = 1
 
@@ -548,29 +538,34 @@ map <leader>jj <Plug>(easymotion-s)
 " map <Leader>k <Plug>(easymotion-k)
 
 let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
-
-" rainbow parenthesis
+"}}}
+" Rainbow Parenthesis: {{{2
 " -------------------
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 au VimEnter * RainbowParentheses
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+" Junegunn
+" https://github.com/junegunn/rainbow_parentheses.vim
+" let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 
 " exclude bright black since its barly visible
-let g:rainbow#blacklist = [8]
-
-" undotree
+" let g:rainbow#blacklist = [8]
+"}}}
+" Undotree: {{{2
 " --------
 nnoremap <leader>ut :UndotreeToggle<cr>
-
-" --------------------
-" vim-slime
-" --------------------
+"}}}
+" Slime: {{{2
+" -------------
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_python_ipython = 1
-
-" -----------------
-" vim-sexp
+"}}}
+" Sexp: {{{2
 " -----------------
 " Disable some irritating mappings
 "let g:sexp_enable_insert_mode_mappings = 1
@@ -581,9 +576,8 @@ let g:sexp_mappings = {
       \ 'sexp_capture_prev_element': '<leader><Left>',
       \ 'sexp_capture_next_element': '<leader><Right>',
       \}
-
-" -----------------
-" clojure_highlight
+"}}}
+" Clojure Highlight: {{{2
 " -----------------
 " This should enable Emacs like indentation
 let g:clojure_fuzzy_indent=1
@@ -591,15 +585,13 @@ let g:clojure_align_multiline_strings = 1
 
 " Add some words which should be indented like defn etc: Compojure/compojure-api, midje and schema stuff mostly.
 let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY', '^HEAD', '^PATCH', '^OPTIONS', '^def']
-
-" ---------------
-" yankring
+"}}}
+" Yankring: {{{2
 " ---------------
 nnoremap <silent> <F11> :YRShow<CR>
 let g:yankring_history_dir = '~/var'
-
-" --------------------
-" Tmux-navigator
+"}}}
+" Tmux Navigator: {{{2
 " --------------------
 let g:tmux_navigator_no_mappings = 1
 
