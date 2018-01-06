@@ -424,6 +424,7 @@ Plug 'romainl/vim-qlist'
 Plug 'itchyny/lightline.vim'
 Plug '~/src/vim-srcery'
 " Plug 'roosta/vim-srcery'
+" Plug 'sjl/badwolf'
 " Plug 'romainl/flattened'
 " Plug 'morhetz/gruvbox'
 
@@ -484,6 +485,9 @@ filetype plugin indent on
 "Plugin Config: {{{1
 "  Colorscheme: {{{2
 " --------------
+let g:srcery_italic=1
+let g:srcery_strong_match_paren=1
+
 colorscheme srcery
 "}}}
 " Fzf: {{{2
