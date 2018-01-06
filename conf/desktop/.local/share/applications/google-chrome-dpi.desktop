@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Google Chrome DPI Scaled
+Name=Google media
 GenericName=Web Browser
 StartupWMClass=Google-chrome
 Exec=/usr/bin/google-chrome-stable --force-device-scale-factor=1 %U

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=Google Chrome (unstable) DPI Scaled
+Name=Google dev
 StartupWMClass=Google-chrome-unstable
 Exec=/usr/bin/google-chrome-unstable %U --force-device-scale-factor=1
 Terminal=false
