@@ -57,19 +57,32 @@ enable-services: init-emacs
 # Scaffold user fs structure.
 # Don't echo to stdout and continue in case of error (-@)
 .PHONY: user-fs
-user-fs:
+user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs
 	@echo -e "\033[0;33mCreate user fs...\033[0m"
+
+~/src:
 	-@mkdir ~/src
+~/lib:
 	-@mkdir ~/lib
+~/mnt:
 	-@mkdir ~/mnt
+~/tmp:
 	-@mkdir ~/tmp
+~/bin:
 	-@mkdir ~/bin
+~/sbin:
 	-@mkdir ~/sbin
+~/var/log:
 	-@mkdir -p ~/var/log
+~/var/undo:
 	-@mkdir -p ~/var/undo
+~/.cache/zsh:
 	-@mkdir -p ~/.cache/zsh
+~/backup:
 	-@mkdir -p ~/backup
+~/.cache/zsh/dirs:
 	-@touch ~/.cache/zsh/dirs
+
 
 .PHONY: update-zsh-plugins
 update-zsh-plugins:
