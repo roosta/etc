@@ -5,7 +5,7 @@
 typeset -gU cdpath fpath mailpath path
 
 path=(~/bin 
-      $(ruby -rubygems -e "puts Gem.user_dir")/bin
+      # $(ruby -rubygems -e "puts Gem.user_dir")/bin
       /usr/local/bin
       $HOME/.go/bin
       ~/perl5/bin
@@ -17,7 +17,7 @@ path=(~/bin
 #export MANPATH=/usr/local/man:$MANPATH
 
 # set ruby gems install location to home
-export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
+# export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
 
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
