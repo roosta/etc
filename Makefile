@@ -236,3 +236,13 @@ save-originals:
 	@mkdir ~/backup/original-system-files@$(NOW)
 	@mv ~/.bash* ~/backup/original-system-files@$(NOW)
 
+.PHONY: rustup
+rustup: install-packages
+	rustup install stable
+	rustup install nightly
+	rustup default stable
+
+.PHONY: exa
+exa: install-packages rustup
+	cargo install exa
+
