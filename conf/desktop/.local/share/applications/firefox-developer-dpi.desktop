@@ -1,12 +1,14 @@
 [Desktop Entry]
-Name=Firefox Developer DPI Scaled
+Version=1.0
+Name=Firefox Developer Edition DPI
 GenericName=Web Browser
-Comment=Firefox scaled down when using multiple monitors with varying resolutions
-Icon=/opt/firefox-developer/browser/icons/mozicon128.png
-Type=Application
-Categories=Network;
-MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;
-Exec=env GDK_DPI_SCALE=0.5 firefox-developer --class=firefox-developer %u
+Exec=env GDK_DPI_SCALE=0.5 /usr/lib/firefox-developer-edition/firefox %u
+Icon=firefox-developer-edition
 Terminal=false
-X-MultipleArgs=false
+Type=Application
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
 StartupNotify=true
+StartupWMClass=Firefox Developer Edition
+Categories=Network;WebBrowser;
+Keywords=web;browser;internet;
+Actions=new-window;new-private-window;
