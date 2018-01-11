@@ -453,7 +453,7 @@ Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
 Plug 'tpope/vim-projectionist'
-" Plug 'guns/vim-sexp'
+Plug 'guns/vim-sexp'
 " Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'kien/rainbow_parentheses.vim'
 
