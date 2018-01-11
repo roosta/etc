@@ -173,9 +173,9 @@ fco() {
 # fcoc - checkout git commit
 fcoc() {
   local commits commit
-  commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
-  commit=$(echo "$commits" | fzf-tmux --tac +s +m -e) &&
-  git checkout $(echo "$commit" | sed "s/ .*//")
+  commits=$(git log --graph --color=always --pretty=oneline --format="%C(auto)%h%d %s %C(black)%C(white)%cr" --abbrev-commit) &&
+  commit=$(echo "$commits" | fzf-tmux --ansi +s +m -e) &&
+  git checkout $(echo "$commit" | awk '{print $2}')
 }
 
 # fshow - git commit browser
