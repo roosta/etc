@@ -62,6 +62,14 @@ cf() {
      fi
   fi
 }
+
+fdirs() {
+  local target
+  file="$HOME/.cache/zsh/dirs" &&
+  height=$(( 2 + $(wc -l < "$file") )) &&
+  target=$(fzf-tmux +m +s < "$file" -d "$height") &&
+  cd "$target"
+}
 #}}}
 # KILL {{{
 # -----------
