@@ -13,6 +13,12 @@
                   ;; generate page from doc-strings
                   [lein-codox "0.10.3"]
 
+                  ;; try libraries in a repl
+                  ;; Emacs: In your *scratch* buffer, set your inferior-lisp-program var...
+                  ; (setq inferior-lisp-program "lein try tentacles")
+                  ; and then launch M-x inferior-lisp.
+                  [lein-try "0.4.3"]
+
                   ;; pretty print
                   [lein-pprint "1.2.0"]
 
