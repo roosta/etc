@@ -2,7 +2,7 @@
 ! ┃┳┛┃ ┃┣━ ┃
 ! ┇┗┛┛━┛┇  ┇
 !
-rofi.modi:                           combi,calc:qalc +u8 -nocurrencies
+rofi.modi:                           combi,calc:qalc +u8
 rofi.width:                          20
 rofi.columns:                        1
 
