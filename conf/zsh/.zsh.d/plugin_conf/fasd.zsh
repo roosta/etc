@@ -11,22 +11,23 @@ eval "$(fasd --init auto)"
 #alias s='fasd -si'       # show / search / select
 #alias d='fasd -d'        # directory
 #alias c='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
+# alias f='fasd -f'        # file
+# alias sd='fasd -sid'     # interactive directory selection
+# alias sf='fasd -sif'     # interactive file selection
 #alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+# alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 #alias zi='fasd_cd -d -i' # cd with interactive selection
 #alias ci='fasd_cd -d -i' # cd with interactive selection
 #alias v='f -e vim'       # quick opening files with vim
 #alias v='f -t -e vim -b viminfo' # mimic 'v'
 
 unalias s
+unalias d
 
 # add fasd completion shortcuts
-bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (fils and directories)
-bindkey '^X^F' fasd-complete-f  # C-x C-f to do fasd-complete-f (only files)
-bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directories)
+# bindkey '^X^A' fasd-complete    # C-x C-a to do fasd-complete (fils and directories)
+# bindkey '^X^F' fasd-complete-f  # C-x C-f to do fasd-complete-f (only files)
+# bindkey '^X^D' fasd-complete-d  # C-x C-d to do fasd-complete-d (only directories)
 
 # all fasd args, passed after --init
 #zsh-hook             # define _fasd_preexec and add it to zsh preexec array
