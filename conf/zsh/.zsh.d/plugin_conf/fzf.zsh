@@ -63,7 +63,8 @@ cf() {
   fi
 }
 
-fdirs() {
+# choose a directory from zshs dirs cache file
+d() {
   local target
   file="$HOME/.cache/zsh/dirs" &&
   height=$(( 2 + $(wc -l < "$file") )) &&
@@ -285,12 +286,12 @@ fpane() {
 # --------
 v() {
   local file
-  file="$(fasd -Rfl "$1" | fzf-tmux -1 -0 --no-sort +m)" && vi "${file}" || return 1
+  file="$(fasd -Rfl "$1" | fzf-tmux --no-sort +m -d 40%)" && vi "${file}" || return 1
 }
 
 c() {
   local dir
-  dir="$(fasd -Rdl "$1" | fzf-tmux -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+  dir="$(fasd -Rdl "$1" | fzf-tmux --no-sort +m -d 40%)" && cd "${dir}" || return 1
 }
 #}}}
 # AG {{{
