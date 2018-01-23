@@ -577,8 +577,8 @@ let g:slime_python_ipython = 1
 let g:sexp_mappings = {
       \ 'sexp_emit_head_element':    '<leader><Down>',
       \ 'sexp_emit_tail_element':    '<leader><Up>',
-      \ 'sexp_capture_prev_element': '<leader><Left>',
-      \ 'sexp_capture_next_element': '<leader><Right>',
+      \ 'sexp_capture_prev_element': '<',
+      \ 'sexp_capture_next_element': '>',
       \}
 "}}}
 " Clojure Highlight: {{{2
