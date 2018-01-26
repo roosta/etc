@@ -83,7 +83,8 @@ This function should only modify configuration layer settings."
                      enable-flyspell-auto-completion nil)
      syntax-checking
      version-control
-     evil-cleverparens
+     ;; evil-cleverparens
+     ;; evil-smartparens
      evil-snipe
      colors)
 

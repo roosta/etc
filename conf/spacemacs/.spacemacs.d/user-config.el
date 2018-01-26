@@ -283,7 +283,3 @@
 (require 'rust-mode)
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
 (setq company-tooltip-align-annotations t)
-
-;; tmp fix
-(with-eval-after-load 'helm
-  (setq helm-display-function 'helm-default-display-buffer)) ;; temp work around
