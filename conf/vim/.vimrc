@@ -280,7 +280,6 @@ nnoremap <leader>ji :Ilist<space>
 
 
 nnoremap Y y$
-nnoremap <leader><leader> :call 
 " }}}
 " Cmd:{{{
 
@@ -483,9 +482,9 @@ colorscheme srcery
 " https://github.com/junegunn/fzf.vim
 
 " Mapping selecting mappings
-nmap <leader>hdn <plug>(fzf-maps-n)
-xmap <leader>hdx <plug>(fzf-maps-x)
-omap <leader>hdo <plug>(fzf-maps-o)
+nmap <leader>? <plug>(fzf-maps-n)
+xmap <leader>? <plug>(fzf-maps-x)
+omap <leader>? <plug>(fzf-maps-o)
 
 nnoremap <leader>o  :Files<CR>
 nnoremap <leader>bb :Buffers<cr>
@@ -497,6 +496,8 @@ nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>m  :Marks<cr>
 nnoremap <leader>H  :Helptags<cr>
 nnoremap <leader>/  :Ag<cr>
+nnoremap <leader><leader> :Commands<cr> 
+nnoremap <leader>ss :BLines<cr>
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
