@@ -278,20 +278,8 @@ nnoremap <leader>ji :Ilist<space>
 
 " imap <C-v> <Esc>"*pa
 
-" plugin spesific
-nnoremap <leader>cc :Dispatch<cr>
-nnoremap <leader>o  :Files<CR>
-nnoremap <leader>bb :Buffers<cr>
-nnoremap <leader>T  :Tags<cr>
-nnoremap <leader>t  :BTags<cr>
-nnoremap <leader>gC :Commits<cr>
-nnoremap <leader>gc :BCommits<cr>
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>m  :Marks<cr>
-nnoremap <leader>H  :Helptags<cr>
 
 nnoremap Y y$
-
 nnoremap <leader><leader> :call 
 " }}}
 " Cmd:{{{
@@ -495,9 +483,20 @@ colorscheme srcery
 " https://github.com/junegunn/fzf.vim
 
 " Mapping selecting mappings
-nmap <leader>hdk <plug>(fzf-maps-n)
-xmap <leader>hdk <plug>(fzf-maps-x)
-omap <leader>hdk <plug>(fzf-maps-o)
+nmap <leader>hdn <plug>(fzf-maps-n)
+xmap <leader>hdx <plug>(fzf-maps-x)
+omap <leader>hdo <plug>(fzf-maps-o)
+
+nnoremap <leader>o  :Files<CR>
+nnoremap <leader>bb :Buffers<cr>
+nnoremap <leader>T  :Tags<cr>
+nnoremap <leader>t  :BTags<cr>
+nnoremap <leader>gC :Commits<cr>
+nnoremap <leader>gc :BCommits<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>m  :Marks<cr>
+nnoremap <leader>H  :Helptags<cr>
+nnoremap <leader>/  :Ag<cr>
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
@@ -609,14 +608,11 @@ nnoremap <silent> <C-h>  : TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j>  : TmuxNavigateDown<cr>
 nnoremap <silent> <C-k>  : TmuxNavigateUp<cr>
 nnoremap <silent> <C-l>  : TmuxNavigateRight<cr>
-
-" ---------------
-" emmet-vim
+" Emmet: {{{2
 " ---------------
 let g:user_emmet_leader_key='<C-A>'
-
-" -------
-" vsearch
+"}}}
+" Vsearch: {{{2
 " -------
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -630,34 +626,30 @@ vnoremap <silent> # :<C-U>
   \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
-" ----------------
-" easy_align
+" Easy-align: {{{2
 " ----------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-" ---------------
-" python
+"}}}
+" Python: {{{2
 " ---------------
 let python_highlight_all = 1
 
-" --------------------
-" gutentags
+"}}}
+" Gutentags: {{{2
 " --------------------
 let g:gutentags_ctags_exclude = [".password-store, node_modules", ".git", "plugins", "plugged"]
-
-" ---------- 
-" Ack.vim
+"}}}
+" Ack: {{{2 
 " ---------- 
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ackprg = 'ag --vimgrep'
-
-" --------------------
-" lightline
-" --------------------
+"}}}
+" Lightline: {{{2
+" --------------
 let g:lightline = {
       \ 'colorscheme': 'srcery',
       \ 'active': {
@@ -670,4 +662,11 @@ let g:lightline = {
       \ 'component': {
       \   'readonly': '%{&readonly?"":""}',
       \ }}
+"}}}
+" Dispatch: {{{
+
+nnoremap <leader>cc :Dispatch<cr>
+
+" }}}
 " vim: fdm=marker:sw=2
+
