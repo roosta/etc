@@ -54,6 +54,8 @@
 ;; opening project files
 (spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
 
+(with-eval-after-load 'evil-maps
+  (evil-ex-define-cmd "W" 'evil-write))
 
 ;; ----------------------------------------------------
 ;; clojure
