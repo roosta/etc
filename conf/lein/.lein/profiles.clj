@@ -1,5 +1,5 @@
 {:user {:dependencies [;; nREPL support for ClojureScript REPLs 
-                       ; [com.cemerick/piggieback "0.2.2"]
+                       [com.cemerick/piggieback "0.2.2"]
                        
                        ]
 
@@ -27,6 +27,6 @@
                   ;; clojure/script syntax checking
                   [lein-kibit "0.1.6"]]}
 
- ; :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
- ; :figwheel {:nrepl-middleware ["cemerick.piggieback/wrap-cljs-repl"]}
+ :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+ :figwheel {:nrepl-middleware ["cemerick.piggieback/wrap-cljs-repl"]}
  }
