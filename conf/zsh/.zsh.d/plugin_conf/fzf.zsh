@@ -115,7 +115,7 @@ fo() {
 fadd() {
   local files target toplevel
   toplevel=$(git rev-parse --show-toplevel) &&
-  files=$(git ls-files --exclude-standard -m -o) &&
+  files=$(git ls-files --exclude-standard -m -o --full-name) &&
   target=$(echo "$files" | fzf-tmux -m -d $(( 2 + $(wc -l <<< "$files") ))) &&
   while IFS='' read -r line || [[ -n "$line" ]]; do
     git add "${toplevel}/${line}"
