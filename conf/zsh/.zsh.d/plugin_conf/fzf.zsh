@@ -260,27 +260,34 @@ fts() {
     tmux switch-client -t "$session"
 }
 
+#{{{ Unused
 # ftpane - switch pane (@george-b)
 # In tmux.conf
 # bind-key 0 run "tmux split-window -l 12 'bash -ci ftpane'"
-fpane() {
-  local panes current_window current_pane target target_window target_pane
-  panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
-  current_pane=$(tmux display-message -p '#I:#P')
-  current_window=$(tmux display-message -p '#I')
+# Doen't work currently
+# fpane() {
+#   local panes current_window current_pane target target_window target_pane
+#   panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
+#   current_pane=$(tmux display-message -p '#I:#P')
+#   current_window=$(tmux display-message -p '#I')
 
-  target=$(echo "$panes" | grep -v "$current_pane" | fzf +m --reverse) || return
+#   target=$(echo "$panes" | grep -v "$current_pane" | fzf +m --reverse) || return
 
-  target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
-  target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
+#   target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
+#   target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
 
-  if [[ $current_window -eq $target_window ]]; then
-    tmux select-pane -t ${target_window}.${target_pane}
-  else
-    tmux select-pane -t ${target_window}.${target_pane} &&
-      tmux select-window -t $target_window
-  fi
-}
+#   if [[ $current_window -eq $target_window ]]; then
+#     tmux select-pane -t ${target_window}.${target_pane}
+#   else
+#     tmux select-pane -t ${target_window}.${target_pane} &&
+#     tmux select-window -t $target_window
+#   fi
+# }
+#}}}
+
+# In tmux.conf
+# bind-key 0 run "tmux split-window -l 12 'bash -ci ftpane'"
+
 #}}}
 # FASD {{{
 # --------
@@ -312,5 +319,18 @@ fv() {
 
     ${EDITOR:-vim} +$linum $file
 }
+
+falias() {
+  local match;
+  match=$(cat ~/.zsh.d/aliases.zsh -n | fzf-tmux +m --reverse --preview="echo {1}") &&
+    echo $match
+
+  # cat aliases.zsh|sed -n '4,5p'
+    # linum=$(echo "$match" | cut -d':' -f2) &&
+    # file=$(echo "$match" | cut -d':' -f1) &&
+
+    # ${EDITOR:-vim} +$linum $file
+}
+
 #}}}
 #  vim: set ts=2 sw=2 tw=0 fdm=marker et :
