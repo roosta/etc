@@ -4,6 +4,8 @@
                              goog.object
                              reagent.core]
  :known-macros [secretary.core/defroute
+                garden.def/defstyles
+                garden.def/defstylesheet
                 compojure.core/defroutes
                 quil.core/defsketch
                 compojure.core/GET
