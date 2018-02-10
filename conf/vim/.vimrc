@@ -49,6 +49,9 @@ set scrolloff=7
 " set number of colors to 256
 set t_Co=256
 
+" tmp workaround for undercurl fallback to work 
+" https://github.com/vim/vim/issues/2424
+set t_Cs=
 
 set synmaxcol=256
 
