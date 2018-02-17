@@ -160,6 +160,8 @@
 ;; ----------------------------------------------------
 (with-eval-after-load 'org
 
+  (require 'org-extras)
+
   (define-key spacemacs-org-mode-map-prefix (kbd ">") 'org-link-edit-forward-slurp)
   (define-key spacemacs-org-mode-map-prefix (kbd "<") 'org-link-edit-forward-barf)
 
