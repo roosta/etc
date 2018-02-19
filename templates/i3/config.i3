@@ -302,6 +302,9 @@ bindsym --release Print exec teiler
 # send a signal to i3status on caps to toggle layout
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Caps_Lock exec killall -USR1 py3status
+
+bindsym $mod+Shift+v exec ~/.vim-anywhere/bin/run
+
 #}}}
 # BINDING MODES {{{1
 # RESIZE {{{2
