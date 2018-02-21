@@ -105,6 +105,12 @@
 (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
 
+;; The following customization of the cider-repl-mode-map will change these
+;; keybindings so that Return will introduce a new-line and C- will send the
+;; form off for evaluation.
+(define-key cider-repl-mode-map (kbd "RET") #'cider-repl-newline-and-indent)
+(define-key cider-repl-mode-map (kbd "C-<return>") #'cider-repl-return)
+
 (require 're-jump)
 
 ;; ----------------------------------------------------
