@@ -457,6 +457,7 @@ Plug 'sudar/vim-arduino-syntax'
 Plug 'pangloss/vim-javascript'
 " Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale'
+Plug 'gregjurman/vim-nc'
 "
 Plug 'vim-scripts/nginx.vim'
 
