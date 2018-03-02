@@ -34,6 +34,11 @@
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
+(define-key global-map (kbd "C-k") 'evil-window-up)
+(define-key global-map (kbd "C-j") 'evil-window-down)
+(define-key global-map (kbd "C-l") 'evil-window-right)
+(define-key global-map (kbd "C-h") 'evil-window-left)
+
 ;; temporary fix for kill-ring pop. See https://github.com/syl20bnr/spacemacs/issues/8823
 ;; (define-key evil-normal-state-map (kbd "p") 'evil-paste-after)
 ;; (define-key evil-normal-state-map (kbd "P") 'evil-paste-before)
@@ -68,7 +73,7 @@
 (setq
 
  ;; start cljs repl scripts/repl.clj in project
- cider-cljs-lein-repl "(require 'repl)"
+ ;; cider-cljs-lein-repl "(require 'repl)"
 
  ;; include local-dev as a profile
  ;; cider-lein-parameters "with-profile +local-dev repl :headless :host ::"
@@ -277,6 +282,8 @@
 (evil-define-key 'normal term-raw-map
   (kbd "C-k") 'evil-window-up
   (kbd "C-j") 'evil-window-down
+  (kbd "C-l") 'evil-window-left
+  (kbd "C-h") 'evil-window-right
   (kbd "<C-up>") 'term-send-up
   (kbd "<C-down>") 'term-send-down
   (kbd "<C-return>") 'term-send-return)
