@@ -357,6 +357,13 @@ function! InstallAndExit()
      :q
 endfunction
 
+" Here's a (what should be a one-line) map to help you tell just what syntax
+" highlighting groups the item under the cursor actually is: 
+" Source: http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor 
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 "
 " }}}
 " Vimpager: {{{
