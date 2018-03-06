@@ -300,3 +300,10 @@
 (require 'rust-mode)
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
 (setq company-tooltip-align-annotations t)
+
+;; --------------------------------------------------
+;; evil-snipe
+;; --------------------------------------------------
+(with-eval-after-load 'evil-snipe
+  (push '(?\[ "[[{(]") evil-snipe-aliases)
+  (push '(?\] "[]})]") evil-snipe-aliases))

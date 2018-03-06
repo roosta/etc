@@ -85,7 +85,7 @@ This function should only modify configuration layer settings."
      version-control
      ;; evil-cleverparens
      ;; evil-smartparens
-     evil-snipe
+     (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
      colors)
 
    ;; List of additional packages that will be installed without being
