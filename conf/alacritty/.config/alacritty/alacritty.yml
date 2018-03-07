@@ -105,7 +105,7 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
-# Colors (Tomorrow Night Bright)
+# Colors (Srcery)
 colors:
   # Default colors
   primary:
@@ -114,7 +114,7 @@ colors:
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x1C1B19'
+    text:   '0x1C1B19'
     cursor: '0xFCE8C3'
 
   # Normal colors
