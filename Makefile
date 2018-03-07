@@ -1,5 +1,5 @@
 HOST ?= $(shell hostname)
-NOW = $(shell date +"%Y-%m-%d@%T")
+NOW = $(shell date +"%Y-%m-%dT%T")
 
 include ~/etc/local/$(HOST)/variables.mk
 
