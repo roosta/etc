@@ -54,7 +54,8 @@ install-packages:
 # 	systemctl --user enable emacs && systemctl --user start emacs
 
 # Scaffold user fs structure.
-# Don't echo to stdout and continue in case of error (-@)
+# @ stops the command from being @echoed to stdout.
+# - means that make will keep going in the case of an error.
 .PHONY: user-fs
 user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs
 	@echo -e "\033[0;33mCreate user fs...\033[0m"
