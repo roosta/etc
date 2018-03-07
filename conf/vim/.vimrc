@@ -370,7 +370,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 let g:vimpager_scrolloff = 5
 let g:vimpager_less_mode = 0
-"let g:vimpager_passthrough = 0
+let g:vimpager_passthrough = 0
 set clipboard^=unnamed
 
 "}}}
