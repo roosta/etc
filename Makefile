@@ -7,7 +7,7 @@ include ~/etc/local/$(HOST)/variables.mk
 default: links update i3 rofi dunst 
 
 .PHONY: update
-update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim 
+update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim update-rust
 
 .PHONY: links
 links: link-conf link-misc link-local 
@@ -246,4 +246,8 @@ rustup: install-packages
 .PHONY: exa
 exa: install-packages rustup
 	cargo install exa
+
+.PHONY: update-rust
+update-rust:
+	rustup update
 
