@@ -54,7 +54,7 @@ install-packages:
 # 	systemctl --user enable emacs && systemctl --user start emacs
 
 # Scaffold user fs structure.
-# @ stops the command from being @echoed to stdout.
+# @ stops the command from being echoed to stdout.
 # - means that make will keep going in the case of an error.
 .PHONY: user-fs
 user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs
@@ -63,25 +63,25 @@ user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/undo ~/.cache/zsh 
 ~/src:
 	-@mkdir ~/src
 ~/lib:
-	-@mkdir ~/lib
+	-mkdir ~/lib
 ~/mnt:
-	-@mkdir ~/mnt
+	-mkdir ~/mnt
 ~/tmp:
-	-@mkdir ~/tmp
+	-mkdir ~/tmp
 ~/bin:
-	-@mkdir ~/bin
+	-mkdir ~/bin
 ~/sbin:
-	-@mkdir ~/sbin
+	-mkdir ~/sbin
 ~/var/log:
-	-@mkdir -p ~/var/log
+	-mkdir -p ~/var/log
 ~/var/undo:
-	-@mkdir -p ~/var/undo
+	-mkdir -p ~/var/undo
 ~/.cache/zsh:
-	-@mkdir -p ~/.cache/zsh
+	-mkdir -p ~/.cache/zsh
 ~/backup:
-	-@mkdir -p ~/backup
+	-mkdir -p ~/backup
 ~/.cache/zsh/dirs:
-	-@touch ~/.cache/zsh/dirs
+	-touch ~/.cache/zsh/dirs
 
 .PHONY: update-zsh-plugins
 update-zsh-plugins:
@@ -90,67 +90,67 @@ update-zsh-plugins:
 
 .PHONY: update-libs
 update-libs:
-	@./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt
+	./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt
 
 .PHONY: init-vim
 init-vim: ~/.vim/autoload/plug.vim
 	@echo -e "\033[0;33mInitialize Vim...\033[0m"
-	@vim -c "exec InstallAndExit()"
+	vim -c "exec InstallAndExit()"
 
 .PHONY: update-vim
 update-vim: ~/.vim/autoload/plug.vim
 	@echo -e "\033[0;33mUpdating Vim packages...\033[0m"
-	@vim -c "exec UpdateAndExit()"
+	vim -c "exec UpdateAndExit()"
 
 ~/.vim/autoload/plug.vim:
 	@echo -e "\033[0;33mGetting plugin manager for Vim...\033[0m"
-	@curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 .PHONY: clone-src
 clone-src:
 	@echo -e "\033[0;33mCloning src...\033[0m"
-	@ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
-	@./scripts/git_update.sh ~/src ~/etc/src_repositories.txt
+	ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
+	./scripts/git_update.sh ~/src ~/etc/src_repositories.txt
 
 ~/org:
 	@echo -e "\033[0;33mCloning org...\033[0m"
-	@ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
-	@git clone git@github.com:roosta/org.git $(HOME)
+	ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
+	git clone git@github.com:roosta/org.git $(HOME)
 
 .PHONY: link-misc
 link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-toggle ~/bin/tdev ~/bin/tupd
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
 
 ~/utils: user-fs clone-src
-	-@ln -f -s $(HOME)/src/utils $(HOME) &>/dev/null
+	-ln -f -s $(HOME)/src/utils $(HOME) &>/dev/null
 
 ~/colors: user-fs clone-src
-	-@ln -f -s $(HOME)/src/colors $(HOME) &>/dev/null
+	-ln -f -s $(HOME)/src/colors $(HOME) &>/dev/null
 
 ~/bin/emacs-file-opener: user-fs clone-src
-	-@ln -f -s $(HOME)/src/utils/emacs-file-opener.sh $(HOME)/bin/emacs-file-opener &>/dev/null
+	-ln -f -s $(HOME)/src/utils/emacs-file-opener.sh $(HOME)/bin/emacs-file-opener &>/dev/null
 
 ~/bin/ftl: user-fs clone-src
-	-@ln -f -s $(HOME)/etc/scripts/ftl.sh $(HOME)/bin/ftl &>/dev/null
+	-ln -f -s $(HOME)/etc/scripts/ftl.sh $(HOME)/bin/ftl &>/dev/null
 
 ~/bin/touchpad-toggle: user-fs clone-src
-	-@ln -f -s $(HOME)/src/utils/touchpad-toggle.sh $(HOME)/bin/touchpad-toggle &>/dev/null
+	-ln -f -s $(HOME)/src/utils/touchpad-toggle.sh $(HOME)/bin/touchpad-toggle &>/dev/null
 
 ~/bin/tdev: user-fs clone-src
-	-@ln -f -s $(HOME)/utils/tmux-dev-session.sh $(HOME)/bin/tdev &>/dev/null
+	-ln -f -s $(HOME)/utils/tmux-dev-session.sh $(HOME)/bin/tdev &>/dev/null
 
 ~/bin/tupd: user-fs clone-src
-	-@ln -f -s $(HOME)/utils/tmux-update-window.sh $(HOME)/bin/tupd &>/dev/null
+	-ln -f -s $(HOME)/utils/tmux-update-window.sh $(HOME)/bin/tupd &>/dev/null
 
 .PHONY: link-conf
 link-conf:
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
-	@stow $(shell ls conf) -R -t ~ -d conf --ignore="md|org"
+	stow $(shell ls conf) -R -t ~ -d conf --ignore="md|org"
 
 .PHONY: link-local
 link-local:
 	@echo -e "\033[0;33mSymlinking local...\033[0m"
-	@stow $(shell ls local/$(HOST)/conf) -R -t ~ -d local/$(HOST)/conf
+	stow $(shell ls local/$(HOST)/conf) -R -t ~ -d local/$(HOST)/conf
 
 .PHONY: set-shell
 set-shell:
@@ -160,18 +160,18 @@ set-shell:
 .PHONY: update-spacemacs
 update-spacemacs:
 	@echo -e "\033[0;33mUpdating spacemacs...\033[0m"
-	@cd ~/.emacs.d && git pull --rebase
+	cd ~/.emacs.d && git pull --rebase
 
 ~/.emacs.d: link-conf install-packages
 	@echo -e "\033[0;33mInitialize spacemacs...\033[0m"
 	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 ~/dircolors: update-libs
-	-@ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
+	-ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 
 ~/.i3/config: link-conf ~/etc/local/$(HOST)/variables.mk ~/etc/templates/i3/*.i3
 	@echo -e "\033[0;33mCreating i3 config...\033[0m"
-	@cd ~/etc/templates/i3 && cat *.i3 > ~/.i3/config
+	cd ~/etc/templates/i3 && cat *.i3 > ~/.i3/config
 ifdef primary_monitor
 	@echo "set \$$primary_monitor $(primary_monitor)" >> ~/.i3/config
 endif
@@ -185,11 +185,11 @@ endif
 .PHONY: i3
 i3: ~/.i3/config
 	@echo -e "\033[0;33mReload i3 config...\033[0m"
-	@i3-msg reload
-	@echo -e "\033[1;32mAll done!\033[0m"
+	i3-msg reload
+	@echo -e "\033[1;32mi3 config reloaded!\033[0m"
 
 # clear-rofi:
-# 	@rm ~/.config/rofi/config -f
+# 	rm ~/.config/rofi/config -f
 
 dunst: ~/.config/dunst/dunstrc
 	@echo -e "\033[0;33mCreating dunst config...\033[0m"
@@ -225,17 +225,17 @@ rofi: ~/.config/rofi/config
 .PHONY: update-tmux
 update-tmux:
 	@echo -e "\033[0;33mUpdating tmux plugins...\033[0m"
-	@. ~/.tmux/plugins/tpm/bin/update_plugins all
+	. ~/.tmux/plugins/tpm/bin/update_plugins all
 
 ~/tmux/plugins/tpm: link-conf
 	@echo -e "\033[0;33mInitialize tmux...\033[0m"
-	@mkdir -p ~/.tmux/plugins
-	@git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins
+	mkdir -p ~/.tmux/plugins
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins
 
 .PHONY: save-originals
 save-originals:
-	@mkdir ~/backup/original-system-files@$(NOW)
-	@mv ~/.bash* ~/backup/original-system-files@$(NOW)
+	mkdir ~/backup/original-system-files@$(NOW)
+	mv ~/.bash* ~/backup/original-system-files@$(NOW)
 
 .PHONY: rustup
 rustup: install-packages
