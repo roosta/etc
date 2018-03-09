@@ -487,4 +487,10 @@ alias refresh-keyboard='setxkbmap -model pc104 -layout us,no -option grp:caps_to
 ## ---------
 alias jobs='jobs -l'
 #}}}
+## PACMAN:  {{{1
+## ---------
+
+alias pacown='pacman -Qo'
+
+#}}}
 # vim: fdm=marker:sw=2
