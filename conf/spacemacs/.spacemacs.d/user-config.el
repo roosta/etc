@@ -119,8 +119,8 @@
 (evil-define-key 'normal cider-repl-mode-map
   (kbd "C-k") 'evil-window-up
   (kbd "C-j") 'evil-window-down
-  (kbd "C-l") 'evil-window-left
-  (kbd "C-h") 'evil-window-right)
+  (kbd "C-h") 'evil-window-left
+  (kbd "C-l") 'evil-window-right)
 
 (require 're-jump)
 
