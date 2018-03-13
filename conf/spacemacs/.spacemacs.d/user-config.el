@@ -116,6 +116,12 @@
 (define-key cider-repl-mode-map (kbd "RET") #'cider-repl-newline-and-indent)
 (define-key cider-repl-mode-map (kbd "C-<return>") #'cider-repl-return)
 
+(evil-define-key 'normal cider-repl-mode-map
+  (kbd "C-k") 'evil-window-up
+  (kbd "C-j") 'evil-window-down
+  (kbd "C-l") 'evil-window-left
+  (kbd "C-h") 'evil-window-right)
+
 (require 're-jump)
 
 ;; ----------------------------------------------------
