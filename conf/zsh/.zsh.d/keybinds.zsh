@@ -14,8 +14,8 @@ bindkey -v
 KEYTIMEOUT=1
 
 # keybindings
+# http://zshwiki.org/home/zle/bindkeys
 typeset -A key
-
 key[Home]=${terminfo[khome]}
 key[End]=${terminfo[kend]}
 key[Insert]=${terminfo[kich1]}
@@ -47,7 +47,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # [Space] - do history expansion
-bindkey ' ' magic-space
+# bindkey ' ' magic-space
 
 bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
 bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
@@ -59,3 +59,5 @@ if [[ "${terminfo[kcbt]}" != "" ]]; then
   bindkey "${terminfo[kcbt]}" reverse-menu-complete
 fi
 
+# invoke vim to edit command-line
+bindkey '^e' edit-command-line
