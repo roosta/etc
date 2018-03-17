@@ -304,7 +304,7 @@ bindsym --release Print exec teiler
 # bindsym --release Caps_Lock exec killall -USR1 py3status
 
 bindsym $mod+Shift+v exec ~/.vim-anywhere/bin/run
-bindsym $mod+Shift+e exec $HOME/.emacs_anywhere/bin/run
+bindsym $mod+Control+v exec ~/.emacs_anywhere/bin/run
 
 #}}}
 # BINDING MODES {{{1
