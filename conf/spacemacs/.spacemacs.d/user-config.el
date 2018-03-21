@@ -313,3 +313,8 @@
 (with-eval-after-load 'evil-snipe
   (push '(?\[ "[[{(]") evil-snipe-aliases)
   (push '(?\] "[]})]") evil-snipe-aliases))
+
+;; --------------------------------------------------
+;; Helm
+;; --------------------------------------------------
+(define-key helm-map (kbd "ESC") 'helm-keyboard-quit)
