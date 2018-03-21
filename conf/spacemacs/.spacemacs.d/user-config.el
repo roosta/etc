@@ -321,3 +321,7 @@
 ;; Helm
 ;; --------------------------------------------------
 (define-key helm-map (kbd "ESC") 'helm-keyboard-quit)
+
+;; Prevent "display not ready" issue when opening helm in succession
+;; https://github.com/emacs-helm/helm/issues/550
+(setq helm-exit-idle-delay 0)
