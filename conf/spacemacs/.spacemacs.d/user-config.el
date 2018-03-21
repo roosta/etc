@@ -22,18 +22,17 @@
  evil-move-beyond-eol t
 
  ;; define a custom snippets location
- yas-snippet-dirs
- '("~/.spacemacs.d/snippets")
+ yas-snippet-dirs '("~/.spacemacs.d/snippets")
 
  ;; set default browser, wouldn't use xdk default browser
  browse-url-browser-function 'browse-url-generic
- browse-url-generic-program "firefox"
- )
+ browse-url-generic-program "firefox")
 
-;; Navigating using visual lines
+;; Navigating using visual lines, line break counts as new line when navigating
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
+;; These changed in some commit
 (define-key global-map (kbd "C-k") 'evil-window-up)
 (define-key global-map (kbd "C-j") 'evil-window-down)
 (define-key global-map (kbd "C-l") 'evil-window-right)
