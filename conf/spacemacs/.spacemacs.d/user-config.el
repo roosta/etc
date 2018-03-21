@@ -56,6 +56,12 @@
 ;; opening project files
 (spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
 
+;; Change previous tab to this function, it hopefully preserves layout
+(spacemacs/set-leader-keys "TAB" 'mode-line-previous-buffer)
+
+;; cause seriously, now many times have I checked some output after assuming the
+;; file has been saved and then been perplexed about why my changes aren't
+;; reflected
 (with-eval-after-load 'evil-maps
   (evil-ex-define-cmd "W" 'evil-write))
 
