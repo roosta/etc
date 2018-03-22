@@ -9,7 +9,7 @@ function scerr() {
   local wikipath
   wikipath="$HOME/lib/shellcheck.wiki/"
   file=$(find "$wikipath" -name "*.md" | grep "$@")
-  pandoc -s -f markdown_github -t man "$file" | man -l -
+  pandoc -s -f gfm -t man "$file" | man -l -
 }
 
 scerr "$@"
