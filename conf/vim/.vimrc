@@ -226,6 +226,8 @@ noremap <silent> <leader>w<Right> :wincmd l<CR>
 noremap <silent> <leader>w/ :vsplit<CR>
 noremap <silent> <leader>w- :split<CR>
 
+noremap <silent> <leader>sc :nohlsearch<CR>
+
 " noremap <silent> <M-Up>    :wincmd k<CR>
 " noremap <silent> <M-Down>  :wincmd j<CR>
 " noremap <silent> <M-Left>  :wincmd h<CR>
@@ -531,7 +533,7 @@ map g/ <Plug>(incsearch-stay)
 
 " :h g:incsearch#auto_nohlsearch
 set hlsearch
-let g:incsearch#auto_nohlsearch = 1
+let g:incsearch#auto_nohlsearch = 0
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
 map *  <Plug>(incsearch-nohl-*)
