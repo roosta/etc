@@ -332,3 +332,11 @@
 ;; Prevent "display not ready" issue when opening helm in succession
 ;; https://github.com/emacs-helm/helm/issues/550
 (setq helm-exit-idle-delay 0)
+
+;; --------------------------------------------------
+;; Paren-face
+;; --------------------------------------------------
+
+;; enable globally
+(setq paren-face-regexp "[][(){}]")
+(global-paren-face-mode)
