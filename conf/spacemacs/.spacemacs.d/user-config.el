@@ -150,10 +150,10 @@
 ;; ----------------------------------------------------
 ;; lisp
 ;; ----------------------------------------------------
-;; Some keybinds conflict with evil bindings, and I prefer the evil ones
 (setq
- evil-cleverparens-use-additional-movement-keys nil
- evil-cleverparens-use-s-and-S nil)
+ evil-cleverparens-use-additional-movement-keys t
+ evil-cleverparens-use-s-and-S nil
+ evil-cleverparens-swap-move-by-word-and-symbol nil)
 
 (require 'evil-cleverparens-text-objects)
 ;; (dolist (map (list evil-insert-state-map))
