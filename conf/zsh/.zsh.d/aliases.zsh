@@ -375,6 +375,7 @@ alias music='ncmpcpp'
 alias m='ncmpcpp'
 alias update-font-cache='fc-cache -fv'
 alias fm='vifm'
+alias ssh='env TERM=xterm-256color ssh'
 #}}}
 ## VCS {{{1
 ## --------
