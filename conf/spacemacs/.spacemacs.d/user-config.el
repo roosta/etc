@@ -26,7 +26,14 @@
 
  ;; set default browser, wouldn't use xdk default browser
  browse-url-browser-function 'browse-url-generic
- browse-url-generic-program "firefox")
+ browse-url-generic-program "firefox"
+
+ hl-paren-colors '("#FCE8C3" ; bright-white
+                   "#519F50" ; green
+                   "#2C78BF" ; blue
+                   "#918175" ; white
+                   )
+ )
 
 ;; Navigating using visual lines, line break counts as new line when navigating
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
