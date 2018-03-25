@@ -18,8 +18,8 @@ cursor_blink = true
 # special
 foreground        = #fce8c3
 foreground_bold   = #fce8c3
-cursor_foreground = #1c1b19
-cursor            = #fce8c3
+; cursor_foreground = #1c1b19
+; cursor            = #fce8c3
 background        = #1c1b19
 
 # black
