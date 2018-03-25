@@ -63,6 +63,8 @@ numlockx &
 # set custom keybinds
 xbindkeys &
 
+emacs --daemon
+
 # screen locker
 # xscreensaver -no-splash &
 # xss-lock -- lock &
