@@ -454,7 +454,7 @@ Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
 Plug 'tpope/vim-projectionist'
 Plug 'guns/vim-sexp'
 " Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'kien/rainbow_parentheses.vim'
+" Plug 'kien/rainbow_parentheses.vim'
 
 " syntax
 " Plug 'sheerun/vim-polyglot'
@@ -486,7 +486,7 @@ filetype plugin indent on
 "  Colorscheme: {{{2
 " --------------
 let g:srcery_italic=1
-let g:srcery_strong_match_paren=1
+let g:srcery_dim_lisp_paren=1
 
 colorscheme srcery
 "}}}
@@ -558,10 +558,10 @@ let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
 "}}}
 " Rainbow Parenthesis: {{{2
 " -------------------
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 " Junegunn
 " https://github.com/junegunn/rainbow_parentheses.vim
