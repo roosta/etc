@@ -11,7 +11,7 @@
  evil-ex-search-vim-style-regexp t
 
  ;; don't use powerline separators in statusbar
- powerline-default-separator 'nil
+ ;; powerline-default-separator 'nil
  ;; spaceline-separator-dir-left '(left . left)
  ;; spaceline-separator-dir-right '(right . right)
 
