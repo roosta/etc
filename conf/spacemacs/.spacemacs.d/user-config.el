@@ -28,6 +28,7 @@
  browse-url-browser-function 'browse-url-generic
  browse-url-generic-program "firefox"
 
+ ;; Add some padding by the line number on terminal
  linum-format "%d "
 
  hl-paren-colors '("#FCE8C3" ; bright-white
@@ -47,6 +48,8 @@
 (define-key global-map (kbd "C-l") 'evil-window-right)
 (define-key global-map (kbd "C-h") 'evil-window-left)
 
+;; That little navigation hint on the right side of the mode-line
+;; caused the mode-line to get too big when not using separators
 (spaceline-toggle-hud-off)
 
 (defun roosta/find-user-config ()
