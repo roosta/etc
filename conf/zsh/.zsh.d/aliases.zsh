@@ -365,7 +365,7 @@ alias fehp='feh -g 640x480 -d -S filename'
 
 alias mounttmpfs='sudo mount -t tmpfs tmpfs /mnt -o size=1024m'
 alias npmls='npm -g ls --depth=0'
-alias killemacs='emacsclient -e "(kill-emacs)"'
+alias killemacs='emacsclient -e "(save-buffers-kill-emacs)"'
 alias gpg-reload='gpg-connect-agent reloadagent /bye'
 alias tldr='tldr -t base16 --linux'
 alias repl='rlwrap lumo'
