@@ -110,6 +110,9 @@
 
  ;; add syntax highlighting to eval overlay
  cider-overlays-use-font-lock t
+
+ ;; colorize usages of functions and variables from any namespace
+ ;; cider-font-lock-dynamically '(macro core function var)
  )
 
 ;; load sayid keybindings for clojure-mode buffers
