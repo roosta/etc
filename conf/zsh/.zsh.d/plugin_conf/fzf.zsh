@@ -203,9 +203,9 @@ FZF-EOF"
 # example usage: git rebase -i `fsha`
 fsha() {
   local commits commit
-  commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
-  commit=$(echo "$commits" | fzf-tmux --tac +s +m -e --ansi --reverse) &&
-  echo -n $(echo "$commit" | sed "s/ .*//")
+  commits=$(git log --graph --color=always --pretty=oneline --format="%C(auto)%h%d %s %C(black)%C(white)%cr" --abbrev-commit) &&
+  commit=$(echo "$commits" | fzf-tmux +s +m -e --ansi) &&
+  echo -n $(echo "$commit" | awk '{print $2}')
 }
 
 # fstash - easier way to deal with stashes
