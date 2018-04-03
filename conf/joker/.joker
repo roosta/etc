@@ -7,6 +7,7 @@
                 garden.def/defstyles
                 cljs.test/deftest
                 garden.def/defstylesheet
+                herb.core/defgroup
                 compojure.core/defroutes
                 quil.core/defsketch
                 compojure.core/GET
