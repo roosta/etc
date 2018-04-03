@@ -184,7 +184,7 @@ fcoc() {
   local commits commit
   commits=$(git log --graph --color=always --pretty=oneline --format="%C(auto)%h%d %s %C(black)%C(white)%cr" --abbrev-commit) &&
   commit=$(echo "$commits" | fzf-tmux --ansi +s +m -e) &&
-  git checkout $(echo "$commit" | awk '{print $2}')
+  git checkout $(echo "$commit" | grep -oe "[0-9a-f]\{5,32\}")
 }
 
 # fshow - git commit browser
@@ -205,7 +205,7 @@ fsha() {
   local commits commit
   commits=$(git log --graph --color=always --pretty=oneline --format="%C(auto)%h%d %s %C(black)%C(white)%cr" --abbrev-commit) &&
   commit=$(echo "$commits" | fzf-tmux +s +m -e --ansi) &&
-  echo -n $(echo "$commit" | awk '{print $2}')
+  echo -n $(echo "$commit" | grep -oe "[0-9a-f]\{5,32\}")
 }
 
 # fstash - easier way to deal with stashes
