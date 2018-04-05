@@ -67,7 +67,7 @@ font-3 = "fura code nerd font:pixelsize=14;4"
 font-4 = "Material Icons:pixelsize=10;4"
 modules-left = i3 xwindow
 ; modules-left = i3 
-; modules-center = mpd
+modules-center = mpd
 modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
 
 [bar/systray]
