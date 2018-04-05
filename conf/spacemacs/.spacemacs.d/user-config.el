@@ -34,7 +34,9 @@
  hl-paren-colors '("#FCE8C3" ; bright-white
                    "#519F50" ; green
                    "#2C78BF" ; blue
-                   "#918175" ; white))
+                   "#918175" ; white
+                   )
+ )
 
 (xclip-mode 1)
 
