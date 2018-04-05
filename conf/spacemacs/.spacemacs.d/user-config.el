@@ -29,14 +29,14 @@
  browse-url-generic-program "firefox"
 
  ;; Add some padding by the line number on terminal
- linum-format "%d "
+ ;; linum-format "%d "
 
  hl-paren-colors '("#FCE8C3" ; bright-white
                    "#519F50" ; green
                    "#2C78BF" ; blue
-                   "#918175" ; white
-                   )
- )
+                   "#918175" ; white))
+
+(xclip-mode 1)
 
 ;; Navigating using visual lines, line break counts as new line when navigating
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)

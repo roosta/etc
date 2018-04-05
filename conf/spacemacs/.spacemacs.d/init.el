@@ -98,6 +98,7 @@ This function should only modify configuration layer settings."
      ;; flycheck-clojure
      toc-org
      paren-face
+     xclip
      flycheck-joker
      kibit-helper
      ;; evil-smartparens
