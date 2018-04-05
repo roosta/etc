@@ -491,7 +491,11 @@ alias jobs='jobs -l'
 ## PACMAN:  {{{1
 ## ---------
 
+# show which package owns a given file
 alias pacown='pacman -Qo'
+
+# clean orphans
+alias pacco='pacaur -Rns $(pacman -Qtdq)'
 
 #}}}
 # vim: fdm=marker:sw=2
