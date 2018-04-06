@@ -42,11 +42,11 @@ export QT_STYLE_OVERRIDE=GTK+
 # export GDK_DPI_SCALE=2
 
 # editor
-# export EDITOR="emacsclient -t"
-# export VISUAL="emacsclient -t"
+export EDITOR="emacsclient -t"
+export VISUAL="emacsclient -t"
 
-export EDITOR=vim
-export VISUAL=vim
+# export EDITOR=vim
+# export VISUAL=vim
 
 # golang lib path
 export GOPATH=$HOME/.go
