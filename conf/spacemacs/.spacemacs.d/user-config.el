@@ -137,10 +137,10 @@
 ;; (define-key cider-repl-mode-map (kbd "C-<return>") #'cider-repl-return)
 
 (evil-define-key 'normal cider-repl-mode-map
-  (kbd "C-k") 'evil-window-up
-  (kbd "C-j") 'evil-window-down
-  (kbd "C-h") 'evil-window-left
-  (kbd "C-l") 'evil-window-right)
+  (kbd "C-k") 'tmux-nav-up
+  (kbd "C-j") 'tmux-nav-down
+  (kbd "C-h") 'tmux-nav-left
+  (kbd "C-l") 'tmux-nav-right)
 
 (require 're-jump)
 
@@ -347,6 +347,8 @@
 ;; Paren-face
 ;; --------------------------------------------------
 
-;; enable globally
+;; Add maps
 (setq paren-face-regexp "[][(){}]")
+
+;; enable globally
 (global-paren-face-mode)
