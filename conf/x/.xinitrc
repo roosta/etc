@@ -63,13 +63,7 @@ numlockx &
 # set custom keybinds
 xbindkeys &
 
-emacs --daemon
-
-# screen locker
-# xscreensaver -no-splash &
-# xss-lock -- lock &
-xss-lock -- "$HOME/utils/i3lock-color-locker.sh" &
-# xautolock -time 10 -locker lock &
+emacs --daemon &
 
 # disable screensaver when certain fullscreen apps are active
 # see https://github.com/iye/lightsOn/blob/master/lightsOn.sh
