@@ -65,10 +65,8 @@ alias vienv="${EDITOR:-vim} ~/.zprofile"
 alias vizopts="${EDITOR:-vim} ~/.zsh.d/options.zsh"
 alias vizsh="${EDITOR:-vim} ~/.zshrc"
 alias vixfont="${EDITOR:-vim} ~/.Xresources.d/fonts"
-alias viorg="emacs --no-wait ~/org"
-alias viorgw="emacs --no-wait ~/org/Work.org"
-alias viorgd="emacs --no-wait ~/org/Dev.org"
-alias vispc="emacs -t ~/.spacemacs"
+alias viorg="emacsclient -nw ~/org"
+alias viemacs="emacsclient -t ~/.spacemacs.d"
 alias vitodo="emacsclient --no-wait ~/org/TODOs.org"
 alias vimutt="${EDITOR:-vim} ~/.muttrc"
 alias vipoly="${EDITOR:-vim} ~/.config/polybar/config"
@@ -499,3 +497,6 @@ alias pacco='pacaur -Rns $(pacman -Qtdq)'
 
 #}}}
 # vim: fdm=marker:sw=2
+
+# TMP
+alias vim='emacsclient -nw'
