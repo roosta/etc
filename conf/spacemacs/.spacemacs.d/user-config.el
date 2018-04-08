@@ -38,8 +38,6 @@
                    )
  )
 
-(xclip-mode 1)
-
 ;; Navigating using visual lines, line break counts as new line when navigating
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -78,6 +76,18 @@
 ;; reflected
 (with-eval-after-load 'evil-maps
   (evil-ex-define-cmd "W" 'evil-write))
+
+;; ----------------------------------------------------
+;; Terminal spesific
+;; ----------------------------------------------------
+(xclip-mode 1)
+(xterm-mouse-mode 1)
+
+;; Fix arrow keys in tty
+(define-key evil-normal-state-map (kbd "<Up>") 'evil-previous-visual-line)
+(define-key evil-normal-state-map (kbd "<Down>") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "<Left>") 'evil-backwards-char)
+(define-key evil-normal-state-map (kbd "<Right>") 'evil-forward-char)
 
 ;; ----------------------------------------------------
 ;; clojure
