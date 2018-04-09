@@ -374,3 +374,9 @@
 
 ;; enable globally
 (global-paren-face-mode)
+
+;; --------------------------------------------------
+;; Srcery
+;; --------------------------------------------------
+(custom-set-variables '(srcery-theme-invert-matches t))
+;; srcery-theme-invert-matches
