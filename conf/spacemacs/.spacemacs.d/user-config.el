@@ -68,6 +68,7 @@
 
 ;; (spacemacs/set-leader-keys "ot" 'roosta/org-search)
 
+;; Quick access to user-config
 (spacemacs/set-leader-keys "feu" 'roosta/find-user-config)
 
 ;; opening project files
@@ -88,11 +89,17 @@
 (xclip-mode 1)
 (xterm-mouse-mode 1)
 
-;; Fix arrow keys in tty
-(define-key evil-normal-state-map (kbd "<Up>") 'evil-previous-visual-line)
-(define-key evil-normal-state-map (kbd "<Down>") 'evil-next-visual-line)
-(define-key evil-normal-state-map (kbd "<Left>") 'evil-backwards-char)
-(define-key evil-normal-state-map (kbd "<Right>") 'evil-forward-char)
+(defadvice terminal-init-screen
+    ;; The advice is named `tmux', and is run before `terminal-init-screen' runs.
+    (before tmux activate)
+  ;; Docstring.  This describes the advice and is made available inside emacs;
+  ;; for example when doing C-h f terminal-init-screen RET
+  "Apply xterm keymap, allowing use of keys passed through tmux."
+  ;; This is the elisp code that is run before `terminal-init-screen'.
+  (if (getenv "TMUX")
+      (let ((map (copy-keymap xterm-function-map)))
+        (set-keymap-parent map (keymap-parent input-decode-map))
+        (set-keymap-parent input-decode-map map))))
 
 ;; ----------------------------------------------------
 ;; clojure
