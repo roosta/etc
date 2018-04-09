@@ -66,7 +66,7 @@ font-2 = "fura code nerd font:pixelsize=11;4"
 font-3 = "fura code nerd font:pixelsize=14;4"
 font-4 = "Material Icons:pixelsize=10;4"
 modules-left = i3 xwindow
-; modules-left = i3 
+; modules-left = i3
 modules-center = mpd
 modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
 
@@ -104,7 +104,7 @@ width = 1
 [bar/lintilla-secondary]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DVI-I-1}
-font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;2"
+font-0 = "Iosevka:pixelsize=10;2"
 font-4 = "Material Icons:pixelsize=12;3"
 dpi = 96
 height = 18
@@ -120,9 +120,9 @@ inherit = bar/lintilla-primary
 dpi = 96
 height = 18
 modules-center =
-font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;2"
+font-0 = "Iosevka:pixelsize=10;2"
 font-4 = "Material Icons:pixelsize=12;3"
-modules-right = 
+modules-right =
 monitor = ${env:MONITOR:HDMI-0}
 
 [bar/allitnil]
@@ -130,7 +130,7 @@ inherit = bar/lintilla-primary
 height = 24
 dpi = 140
 monitor = ${env:MONITOR:eDP1}
-modules-center = 
+modules-center =
 tray-position = right
 font-0 = "Iosevka:pixelsize=9;2"
 ; tray-padding = 1
@@ -147,8 +147,8 @@ modules-right = keyboard-layout pkg volume memory cpu date time
 [bar/garkbit-secondary]
 dpi = 96
 height = 18
-font-0 = "Essential PragmataPro Nerd Font:pixelsize=10;1"
-font-1 = "Essential PragmataPro:pixelsize=9:weight=bold;1"
+font-0 = "Iosevka:pixelsize=10;1"
+font-1 = "Iosevka:pixelsize=9:weight=bold;1"
 font-4 = "Material Icons:pixelsize=10;3"
 inherit = bar/lintilla-primary
 tray-position = right
@@ -172,15 +172,15 @@ pin-workspaces = true
 ; This will split the workspace name on ':'
 strip-wsnumbers = true
 
-; Use fuzzy (partial) matching on labels when assigning 
+; Use fuzzy (partial) matching on labels when assigning
 ; icons to workspaces
-; Example: code;♚ will apply the icon to all workspaces 
+; Example: code;♚ will apply the icon to all workspaces
 ; containing 'code' in the label
 ; Default: false
 ; fuzzy-match = true
 
 ; ws-icon-0 = 1:term;Q
-format = <label-state><label-mode> 
+format = <label-state><label-mode>
 
 label-mode = %mode%
 label-mode-padding = 1
@@ -192,7 +192,7 @@ label-focused-padding = 1
 label-focused-background = ${colors.magenta}
 label-focused-foreground = ${colors.brightwhite}
 
-label-unfocused = %name% 
+label-unfocused = %name%
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.brightblack}
 label-unfocused-foreground = ${colors.brightwhite}
@@ -266,7 +266,7 @@ format-prefix = ${icons.close}
 format-volume-padding = 1
 format-muted-padding = 1
 format-prefix-font = 4
-label-muted = "╸╸╸╸╸╸╸╸╸╸  MUTED " 
+label-muted = "╸╸╸╸╸╸╸╸╸╸  MUTED "
 label-muted-foreground = ${colors.red}
 label-volume = "VOL %percentage%%"
 label-volume-foreground = ${colors.brightwhite}
@@ -277,7 +277,7 @@ ramp-volume-font = 4
 ramp-volume-background = ${colors.brightblack}
 ramp-volume-foreground = ${colors.brightwhite}
 bar-volume-width = 10
-bar-volume-fill-foreground = ${colors.brightwhite} 
+bar-volume-fill-foreground = ${colors.brightwhite}
 bar-volume-indicator-foreground = ${colors.brightgreen}
 bar-volume-indicator = ╸
 bar-volume-fill = ╸
@@ -296,7 +296,7 @@ label = "RAM %percentage_used:2%%"
 label-foreground = ${colors.brightwhite}
 format-padding = 1
 bar-used-width = 10
-bar-used-fill-foreground = ${colors.brightwhite} 
+bar-used-fill-foreground = ${colors.brightwhite}
 bar-used-indicator-foreground = ${colors.brightmagenta}
 bar-used-indicator = ╸
 bar-used-fill = ╸
@@ -312,10 +312,10 @@ type = internal/cpu
 interval = 2
 format = <bar-load> <label>
 label = "CPU %percentage:2%%"
-label-foreground = ${colors.brightwhite} 
+label-foreground = ${colors.brightwhite}
 format-padding = 1
 bar-load-width = 10
-bar-load-fill-foreground = ${colors.brightwhite} 
+bar-load-fill-foreground = ${colors.brightwhite}
 bar-load-indicator-foreground = ${colors.brightcyan}
 bar-load-indicator = ╸
 bar-load-fill = ╸
@@ -352,7 +352,7 @@ ramp-2 = ${icons.temp-ramp-2}
 type = internal/mpd
 format-online-prefix = ""
 ; format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-format-online = <label-song> 
+format-online = <label-song>
 format-online-foreground = ${colors.white}
 host = localhost
 port = 6600
@@ -404,7 +404,7 @@ format-connected-foreground = ${colors.brightwhite}
 type = internal/network
 interval = 3.0
 format-connected-foreground = ${colors.brightwhite}
-label-connected = "%downspeed:9%%{T5}%{T-}%upspeed:9%%{T5}%{T-}" 
+label-connected = "%downspeed:9%%{T5}%{T-}%upspeed:9%%{T5}%{T-}"
 label-connected-padding-left = 0
 label-connected-padding-right = 2
 accumulate-stats = true
@@ -415,7 +415,7 @@ format-disconnected = <label-disconnected>
 ; [module/wifi]
 ; type = internal/network
 ; interval = 3.0
-; label-connected = "%downspeed:9%%{T5}%{T-}%upspeed:9%%{T5}%{T-}" 
+; label-connected = "%downspeed:9%%{T5}%{T-}%upspeed:9%%{T5}%{T-}"
 ; label-connected-padding-left = 0
 ; label-connected-padding-right = 2
 ; accumulate-stats = true
@@ -502,11 +502,11 @@ type = internal/fs
 interval = 25
 mount-0 = /
 bar-used-width = 10
-label-mounted-foreground = ${colors.brightwhite} 
+label-mounted-foreground = ${colors.brightwhite}
 bar-used-indicator-foreground = ${colors.yellow}
 bar-used-indicator = ╸
 bar-used-fill = ╸
-bar-used-fill-foreground = ${colors.brightwhite} 
+bar-used-fill-foreground = ${colors.brightwhite}
 bar-used-empty = ╸
 bar-used-empty-foreground = ${colors.white}
 format-mounted = <bar-used> <label-mounted>
