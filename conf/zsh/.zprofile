@@ -4,7 +4,7 @@
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
-path=(~/bin 
+path=(~/bin
       # $(ruby -rubygems -e "puts Gem.user_dir")/bin
       /usr/local/bin
       $HOME/.go/bin
@@ -13,7 +13,7 @@ path=(~/bin
       ~/.pip/bin
       ~/.cargo/bin
       $path[@])
-      
+
 #export MANPATH=/usr/local/man:$MANPATH
 
 # set ruby gems install location to home
@@ -87,7 +87,7 @@ export PULSE_LATENCY_MSEC=60
 # gtags
 export GTAGSLABEL=ctags
 
-# for rust-racer 
+# for rust-racer
 # https://github.com/racer-rust/racer#installation
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 # export RUST_SRC_PATH="${HOME}/lib/rust/src"
