@@ -67,7 +67,7 @@ alias vizsh="${EDITOR:-vim} ~/.zshrc"
 alias vixfont="${EDITOR:-vim} ~/.Xresources.d/fonts"
 alias viorg="emacsclient -nw ~/org"
 alias viemacs="emacsclient -t ~/.spacemacs.d"
-alias vitodo="emacsclient --no-wait ~/org/TODOs.org"
+alias vitodo="emacsclient -t ~/org/TODOs.org"
 alias vimutt="${EDITOR:-vim} ~/.muttrc"
 alias vipoly="${EDITOR:-vim} ~/.config/polybar/config"
 alias vihosts="${EDITOR:-vim} /etc/hosts"
@@ -75,6 +75,7 @@ alias vimime="${EDITOR:-vim} ~/.config/mimeapps.list"
 alias virofi="${EDITOR:-vim} ~/etc/templates/rofi/config.rofi"
 alias vijoker="${EDITOR:-vim} ~/.joker"
 alias vidunst="${EDITOR:-vim} ~/etc/templates/dunst/dunstrc"
+alias pacorg="${EDITOR:-vim} ~/org/pacman.org"
 
 #}}}
 ## FIND {{{1
@@ -104,7 +105,6 @@ alias lsrg='tree -f -i -h --matchdirs -P'
 alias sinks="pacmd list-sinks|egrep -i 'index:|name:'"
 
 alias awk='gawk'
-alias pacorg='org ~/org/pacman.org'
 alias find-here='find . -name'
 #}}}
 ## WEB-SEARCH {{{1
@@ -494,6 +494,9 @@ alias pacown='pacman -Qo'
 
 # clean orphans
 alias pacco='pacaur -Rns $(pacman -Qtdq)'
+
+# clean cache
+alias pacc='pacaur -Scc'
 
 #}}}
 # vim: fdm=marker:sw=2
