@@ -43,10 +43,15 @@
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
 ;; These changed in some commit
-(define-key global-map (kbd "C-k") 'evil-window-up)
-(define-key global-map (kbd "C-j") 'evil-window-down)
-(define-key global-map (kbd "C-l") 'evil-window-right)
-(define-key global-map (kbd "C-h") 'evil-window-left)
+(define-key global-map (kbd "C-k") 'tmux-nav-up)
+(define-key global-map (kbd "C-j") 'tmux-nav-down)
+(define-key global-map (kbd "C-l") 'tmux-nav-right)
+(define-key global-map (kbd "C-h") 'tmux-nav-left)
+
+;; (define-key global-map (kbd "C-k") 'evil-window-up)
+;; (define-key global-map (kbd "C-j") 'evil-window-down)
+;; (define-key global-map (kbd "C-l") 'evil-window-right)
+;; (define-key global-map (kbd "C-h") 'evil-window-left)
 
 ;; That little navigation hint on the right side of the mode-line
 ;; caused the mode-line to get too big when not using separators
