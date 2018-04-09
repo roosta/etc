@@ -3,7 +3,7 @@
   user = roosta
   name = Daniel Berg
 [core]
-  editor = vim
+  editor = emacsclient -nw
   excludesfile = ~/.globalignore
 [push]
   default = simple
