@@ -71,6 +71,7 @@ This function should only modify configuration layer settings."
      (emoji :disabled-for org)
      github
      org
+     shell-scripts
      (shell :variables
             shell-default-height 30
             shell-default-full-span nil
