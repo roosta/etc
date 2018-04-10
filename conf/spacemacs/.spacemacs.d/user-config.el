@@ -36,6 +36,7 @@
                    "#2C78BF" ; blue
                    "#918175" ; white
                    )
+ undo-tree-auto-save-history t
  )
 
 ;; Navigating using visual lines, line break counts as new line when navigating
