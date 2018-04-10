@@ -6,3 +6,4 @@ GRTAGS
 GPATH
 .#*
 **/nohup.out
+*.~undo-tree~
