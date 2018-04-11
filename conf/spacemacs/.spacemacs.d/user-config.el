@@ -318,9 +318,12 @@
 
 (add-to-list 'load-path "~/.emacs.d/toc-org")
 
+;; Generate TOC for github in org files
 (if (require 'toc-org nil t)
     (add-hook 'org-mode-hook 'toc-org-enable)
   (warn "toc-org not found"))
+
+(add-hook 'magit-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
 ;; --------------------------------------------------
 ;; Terminal
