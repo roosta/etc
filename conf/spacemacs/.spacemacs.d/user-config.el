@@ -2,13 +2,15 @@
 ;; ┗━┓┃━┛┃━┫┃  ┣━ ┃┃┃┃━┫┃  ┗━┓  ┃ ┃┗━┓┣━ ┃┳┛  ┃  ┃ ┃┃┃┃┣━ ┃┃ ┳
 ;; ━━┛┇  ┛ ┇┗━┛┻━┛┛ ┇┛ ┇┗━┛━━┛  ┇━┛━━┛┻━┛┇┗┛  ┗━┛┛━┛┇┗┛┇  ┇┇━┛
 ;; -----------------------------------------------------------
-;; Misc
+;; General
 ;; -----------------------------------------------------------
 (setq
  scroll-margin 7
 
  ;; Used to vim regexp
  evil-ex-search-vim-style-regexp t
+
+ company-tooltip-align-annotations t
 
  ;; don't use powerline separators in statusbar
  ;; powerline-default-separator 'nil
@@ -28,9 +30,6 @@
  browse-url-browser-function 'browse-url-generic
  browse-url-generic-program "firefox"
 
- ;; Add some padding by the line number on terminal
- ;; linum-format "%d "
-
  hl-paren-colors '("#FCE8C3" ; bright-white
                    "#519F50" ; green
                    "#2C78BF" ; blue
@@ -38,21 +37,6 @@
                    )
  undo-tree-auto-save-history t
  )
-
-;; Navigating using visual lines, line break counts as new line when navigating
-(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-
-;; These changed in some commit
-(define-key global-map (kbd "C-k") 'tmux-nav-up)
-(define-key global-map (kbd "C-j") 'tmux-nav-down)
-(define-key global-map (kbd "C-l") 'tmux-nav-right)
-(define-key global-map (kbd "C-h") 'tmux-nav-left)
-
-;; (define-key global-map (kbd "C-k") 'evil-window-up)
-;; (define-key global-map (kbd "C-j") 'evil-window-down)
-;; (define-key global-map (kbd "C-l") 'evil-window-right)
-;; (define-key global-map (kbd "C-h") 'evil-window-left)
 
 ;; That little navigation hint on the right side of the mode-line
 ;; caused the mode-line to get too big when not using separators
@@ -78,6 +62,67 @@
 ;; Change previous tab to this function, it hopefully preserves layout
 (spacemacs/set-leader-keys "TAB" 'mode-line-other-buffer)
 
+;; ----------------------------------------------------
+;; Keybindings
+;; ----------------------------------------------------
+(defvar roosta-minor-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "C-k") 'tmux-nav-up)
+    (define-key map (kbd "C-j") 'tmux-nav-down)
+    (define-key map (kbd "C-l") 'tmux-nav-right)
+    (define-key map (kbd "C-h") 'tmux-nav-left)
+    map)
+  "roosta-minor-mode keymap.")
+
+(define-minor-mode roosta-minor-mode
+  "A minor mode so that my key settings override annoying major modes."
+  :init-value t
+  :lighter " r")
+
+(roosta-minor-mode 1)
+
+(evil-define-key 'normal term-raw-map
+  (kbd "C-k") 'tmux-nav-up
+  (kbd "C-j") 'tmux-nav-down
+  (kbd "C-l") 'tmux-nav-right
+  (kbd "C-h") 'tmux-nav-left
+  (kbd "<C-up>") 'term-send-up
+  (kbd "<C-down>") 'term-send-down
+  (kbd "<C-return>") 'term-send-return)
+
+(evil-define-key 'normal cider-repl-mode-map
+  (kbd "C-k") 'tmux-nav-up
+  (kbd "C-j") 'tmux-nav-down
+  (kbd "C-l") 'tmux-nav-right
+  (kbd "C-h") 'tmux-nav-left)
+
+;; Navigating using visual lines, line break counts as new line when navigating
+(define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+
+(evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
+(evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
+
+;; (evil-define-key 'normal evil-surround-mode-map (kbd "<cs>") 'evil-surround-change)
+;; (evil-define-key 'normal evil-surround-mode-map (kbd "<ds>") 'evil-surround-delete)
+
+;; (evil-define-key 'normal clojurescript-mode-map ";" 'cider-eval-sexp-at-point)
+;; (evil-define-key 'normal clojure-mode-map ";" 'cider-eval-sexp-at-point)
+
+;; The following customization of the cider-repl-mode-map will change these
+;; keybindings so that Return will introduce a new-line and C- will send the
+;; form off for evaluation.
+;; (define-key cider-repl-mode-map (kbd "RET") #'cider-repl-newline-and-indent)
+;; (define-key cider-repl-mode-map (kbd "C-<return>") #'cider-repl-return)
+
+(define-key spacemacs-org-mode-map-prefix (kbd ">") 'org-link-edit-forward-slurp)
+(define-key spacemacs-org-mode-map-prefix (kbd "<") 'org-link-edit-forward-barf)
+
+(with-eval-after-load 'rust-mode
+  (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common))
+
+(define-key helm-map (kbd "ESC") 'helm-keyboard-quit)
+
 ;; cause seriously, now many times have I checked some output after assuming the
 ;; file has been saved and then been perplexed about why my changes aren't
 ;; reflected
@@ -85,60 +130,72 @@
   (evil-ex-define-cmd "W" 'evil-write))
 
 ;; ----------------------------------------------------
-;; Terminal spesific
+;; Terminal
 ;; ----------------------------------------------------
 (xclip-mode 1)
 (xterm-mouse-mode 1)
 
-(defadvice terminal-init-screen
-    ;; The advice is named `tmux', and is run before `terminal-init-screen' runs.
-    (before tmux activate)
-  ;; Docstring.  This describes the advice and is made available inside emacs;
-  ;; for example when doing C-h f terminal-init-screen RET
-  "Apply xterm keymap, allowing use of keys passed through tmux."
-  ;; This is the elisp code that is run before `terminal-init-screen'.
-  (if (getenv "TMUX")
-      (let ((map (copy-keymap xterm-function-map)))
-        (set-keymap-parent map (keymap-parent input-decode-map))
-        (set-keymap-parent input-decode-map map))))
+;; terminal-only conf
+(unless (display-graphic-p)
+  (require 'evil-terminal-cursor-changer)
+  (evil-terminal-cursor-changer-activate) ; or (etcc-on)
+  (setq
+   ;; add a space between text and line numbers
+   linum-relative-format "%3s "
+
+   ;; Add some padding by the line number on terminal
+   linum-format "%3s "
+   ))
+
+;; Mutt support.
+(setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
+
+;; (defadvice terminal-init-screen
+;;     ;; The advice is named `tmux', and is run before `terminal-init-screen' runs.
+;;     (before tmux activate)
+;;   ;; Docstring.  This describes the advice and is made available inside emacs;
+;;   ;; for example when doing C-h f terminal-init-screen RET
+;;   "Apply xterm keymap, allowing use of keys passed through tmux."
+;;   ;; This is the elisp code that is run before `terminal-init-screen'.
+;;   (if (getenv "TMUX")
+;;       (let ((map (copy-keymap xterm-function-map)))
+;;         (set-keymap-parent map (keymap-parent input-decode-map))
+;;         (set-keymap-parent input-decode-map map))))
 
 ;; ----------------------------------------------------
 ;; clojure
 ;; ----------------------------------------------------
-(require 'cider)
 
-;; (evil-define-key 'normal clojurescript-mode-map ";" 'cider-eval-sexp-at-point)
-;; (evil-define-key 'normal clojure-mode-map ";" 'cider-eval-sexp-at-point)
+(with-eval-after-load 'cider-mode
+  (setq
 
-(setq
+   ;; start cljs repl scripts/repl.clj in project
+   ;; cider-cljs-lein-repl "(require 'repl)"
 
- ;; start cljs repl scripts/repl.clj in project
- ;; cider-cljs-lein-repl "(require 'repl)"
+   ;; include local-dev as a profile
+   ;; cider-lein-parameters "with-profile +local-dev repl :headless :host ::"
 
- ;; include local-dev as a profile
- ;; cider-lein-parameters "with-profile +local-dev repl :headless :host ::"
+   clojure-enable-fancify-symbols nil
 
- clojure-enable-fancify-symbols nil
+   ;; use app lifecycle functions in cider-refresh
+   cider-refresh-before-fn "user/stop"
+   cider-refresh-after-fn "user/go"
 
- ;; use app lifecycle functions in cider-refresh
- cider-refresh-before-fn "user/stop"
- cider-refresh-after-fn "user/go"
+   ;; always pretty print in repl
+   cider-repl-use-pretty-printing t
 
- ;; always pretty print in repl
- cider-repl-use-pretty-printing t
+   ;; possible fix for unhighlighted reader conditionals eg. #?(:cljs)
+   ;; cider-font-lock-reader-conditionals nil
 
- ;; possible fix for unhighlighted reader conditionals eg. #?(:cljs)
- ;; cider-font-lock-reader-conditionals nil
+   ;; Add to list to highlight more than macro and core
+   ;; cider-font-lock-dynamically '(macro core function var)
 
- ;; Add to list to highlight more than macro and core
- ;; cider-font-lock-dynamically '(macro core function var)
+   ;; add syntax highlighting to eval overlay
+   cider-overlays-use-font-lock t
 
- ;; add syntax highlighting to eval overlay
- cider-overlays-use-font-lock t
-
- ;; colorize usages of functions and variables from any namespace
- ;; cider-font-lock-dynamically '(macro core function var)
- )
+   ;; colorize usages of functions and variables from any namespace
+   ;; cider-font-lock-dynamically '(macro core function var)
+   ))
 
 ;; load sayid keybindings for clojure-mode buffers
 ;; (eval-after-load 'clojure-mode
@@ -153,18 +210,6 @@
 (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
 
-;; The following customization of the cider-repl-mode-map will change these
-;; keybindings so that Return will introduce a new-line and C- will send the
-;; form off for evaluation.
-;; (define-key cider-repl-mode-map (kbd "RET") #'cider-repl-newline-and-indent)
-;; (define-key cider-repl-mode-map (kbd "C-<return>") #'cider-repl-return)
-
-(evil-define-key 'normal cider-repl-mode-map
-  (kbd "C-k") 'tmux-nav-up
-  (kbd "C-j") 'tmux-nav-down
-  (kbd "C-h") 'tmux-nav-left
-  (kbd "C-l") 'tmux-nav-right)
-
 (require 're-jump)
 
 ;; ----------------------------------------------------
@@ -177,8 +222,8 @@
 (add-to-list 'flycheck-global-modes 'clojure-mode)
 (add-to-list 'flycheck-global-modes 'clojurescript-mode)
 
-(eval-after-load 'flycheck
-  '(setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
+(with-eval-after-load 'flycheck
+  (setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
 
 ;; ----------------------------------------------------
 ;; lisp
@@ -189,31 +234,6 @@
  evil-cleverparens-swap-move-by-word-and-symbol nil)
 
 (require 'evil-cleverparens-text-objects)
-;; (dolist (map (list evil-insert-state-map))
-;;   (define-key map "\M-l" 'sp-slurp-hybrid-sexp)
-;;   (define-key map "\M-h" 'sp-forward-barf-sexp)
-;;   (define-key map "\M-L" 'sp-backward-slurp-sexp)
-;;   (define-key map "\M-H" 'sp-backward-barf-sexp))
-
-;; ----------------------------------------------------
-;; evil-surround
-;; ----------------------------------------------------
-(evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
-(evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
-
-;; (evil-define-key 'normal evil-surround-mode-map (kbd "<cs>") 'evil-surround-change)
-;; (evil-define-key 'normal evil-surround-mode-map (kbd "<ds>") 'evil-surround-delete)
-
-;; terminal-only conf
-(unless (display-graphic-p)
-  (require 'evil-terminal-cursor-changer)
-  (evil-terminal-cursor-changer-activate) ; or (etcc-on)
-  (setq
-   ;; add a space between text and line numbers
-   linum-relative-format "%3s "))
-
-;; Mutt support.
-(setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
 
 ;; ----------------------------------------------------
 ;; org
@@ -221,9 +241,6 @@
 (with-eval-after-load 'org
 
   (require 'org-extras)
-
-  (define-key spacemacs-org-mode-map-prefix (kbd ">") 'org-link-edit-forward-slurp)
-  (define-key spacemacs-org-mode-map-prefix (kbd "<") 'org-link-edit-forward-barf)
 
   (setq
    ;; I added this to export clock times in drawers
@@ -310,7 +327,7 @@
 (setq flymd-browser-open-function 'my-flymd-browser-function)
 
 ;; ----------------------------------------------------
-;; Github
+;; Git
 ;; ----------------------------------------------------
 (if (file-directory-p "~/Private/github")
     (load-file "~/Private/github/github.el")
@@ -326,32 +343,13 @@
 (add-hook 'magit-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
 ;; --------------------------------------------------
-;; Terminal
-;; --------------------------------------------------
-
-;; override term-send-up/down with window changing
-;; can still send up and down in insert mode
-(evil-define-key 'normal term-raw-map
-  (kbd "C-k") 'evil-window-up
-  (kbd "C-j") 'evil-window-down
-  (kbd "C-l") 'evil-window-left
-  (kbd "C-h") 'evil-window-right
-  (kbd "<C-up>") 'term-send-up
-  (kbd "<C-down>") 'term-send-down
-  (kbd "<C-return>") 'term-send-return)
-
-;; --------------------------------------------------
 ;; Rust
 ;; --------------------------------------------------
+;; (require 'rust-mode)
 
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
-
 (add-hook 'racer-mode-hook #'company-mode)
-
-(require 'rust-mode)
-(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
-(setq company-tooltip-align-annotations t)
 
 ;; --------------------------------------------------
 ;; evil-snipe
@@ -363,7 +361,6 @@
 ;; --------------------------------------------------
 ;; Helm
 ;; --------------------------------------------------
-(define-key helm-map (kbd "ESC") 'helm-keyboard-quit)
 
 ;; Prevent "display not ready" issue when opening helm in succession
 ;; https://github.com/emacs-helm/helm/issues/550
