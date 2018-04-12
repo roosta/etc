@@ -90,6 +90,7 @@
   (kbd "<C-down>") 'term-send-down
   (kbd "<C-return>") 'term-send-return)
 
+;; (require 'cider)
 (evil-define-key 'normal cider-repl-mode-map
   (kbd "C-k") 'tmux-nav-up
   (kbd "C-j") 'tmux-nav-down
