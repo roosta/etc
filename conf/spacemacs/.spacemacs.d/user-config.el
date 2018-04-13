@@ -90,7 +90,7 @@
   (kbd "<C-down>") 'term-send-down
   (kbd "<C-return>") 'term-send-return)
 
-;; (require 'cider)
+(require 'cider)
 (evil-define-key 'normal cider-repl-mode-map
   (kbd "C-k") 'tmux-nav-up
   (kbd "C-j") 'tmux-nav-down
@@ -341,7 +341,7 @@
     (add-hook 'org-mode-hook 'toc-org-enable)
   (warn "toc-org not found"))
 
-(add-hook 'magit-mode-hook #'spacemacs/toggle-spelling-checking-on)
+;; (add-hook 'magit-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
 ;; --------------------------------------------------
 ;; Rust
