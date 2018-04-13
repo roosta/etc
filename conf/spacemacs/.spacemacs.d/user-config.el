@@ -380,5 +380,4 @@
 ;; --------------------------------------------------
 ;; Srcery
 ;; --------------------------------------------------
-(custom-set-variables '(srcery-theme-invert-matches t))
-;; srcery-theme-invert-matches
+(custom-set-variables '(srcery-invert-matches t))
