@@ -18,8 +18,6 @@ endif
 set undofile
 set undodir=~/var/undo
 
-let g:srcery_italic = 1 
-
 " wildmenu
 set wildmenu
 set wildmode=longest,list,full
@@ -485,8 +483,9 @@ filetype plugin indent on
 "Plugin Config: {{{1
 "  Colorscheme: {{{2
 " --------------
-let g:srcery_italic=1
 let g:srcery_dim_lisp_paren=1
+let g:srcery_italic=1 
+let g:srcery_inverse_matches=1 
 
 colorscheme srcery
 "}}}
