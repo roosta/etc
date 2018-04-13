@@ -501,6 +501,3 @@ alias pacc='pacaur -Scc'
 
 #}}}
 # vim: fdm=marker:sw=2
-
-# TMP
-alias vim='emacsclient -nw'
