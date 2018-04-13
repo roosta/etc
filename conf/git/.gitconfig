@@ -3,7 +3,7 @@
   user = roosta
   name = Daniel Berg
 [core]
-  editor = emacsclient -nw
+  editor = vim
   excludesfile = ~/.globalignore
 [push]
   default = simple
@@ -38,7 +38,7 @@
 [merge]
 	tool = vimdiff
 [commit]
-	# verbose = true
+	verbose = true
 [include]
   path = ~/.gitconfig.local
 [github]
