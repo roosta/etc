@@ -101,6 +101,7 @@ This function should only modify configuration layer settings."
      paren-face
      xclip
      flycheck-joker
+     flycheck-package
      kibit-helper
      ;; evil-smartparens
      (evil-terminal-cursor-changer :location "~/src/evil-terminal-cursor-changer")

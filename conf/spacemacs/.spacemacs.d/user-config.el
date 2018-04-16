@@ -381,3 +381,9 @@
 ;; Srcery
 ;; --------------------------------------------------
 (custom-set-variables '(srcery-invert-matches t))
+
+;; --------------------------------------------------
+;; Package-lint
+;; --------------------------------------------------
+(eval-after-load 'flycheck
+  '(flycheck-package-setup))
