@@ -139,8 +139,14 @@ link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-tog
 ~/bin/tdev: user-fs clone-src
 	-ln -f -s $(HOME)/utils/tmux-dev-session.sh $(HOME)/bin/tdev &>/dev/null
 
+~/bin/tmusic: user-fs clone-src
+	-ln -f -s $(HOME)/utils/tmux-music.sh $(HOME)/bin/tmusic &>/dev/null
+
 ~/bin/tupd: user-fs clone-src
 	-ln -f -s $(HOME)/utils/tmux-update-window.sh $(HOME)/bin/tupd &>/dev/null
+
+~/bin/tssh: user-fs clone-src
+	-ln -f -s $(HOME)/utils/tmux-ngrok.sh $(HOME)/bin/tssh &>/dev/null
 
 .PHONY: link-conf
 link-conf:
