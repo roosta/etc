@@ -98,6 +98,7 @@ This function should only modify configuration layer settings."
    '(arduino-mode
      ;; flycheck-clojure
      toc-org
+     srcery-theme
      paren-face
      xclip
      flycheck-joker
@@ -105,7 +106,8 @@ This function should only modify configuration layer settings."
      kibit-helper
      ;; evil-smartparens
      (evil-terminal-cursor-changer :location "~/src/evil-terminal-cursor-changer")
-     (srcery-theme :location "~/src/emacs-srcery"))
+     ;; (srcery-theme :location "~/src/emacs-srcery")
+     )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
