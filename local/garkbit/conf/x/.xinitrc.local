@@ -1,6 +1,6 @@
 $HOME/.screenlayout/main.sh &
 
 # screen locker
-xss-lock -- i3lock -n -i /home/roosta/backgrounds/footer_lodyas.png &
+xss-lock -- i3lock -n -t -i /home/roosta/backgrounds/footer_lodyas.png &
 
 # vim:ft=sh:ts=2:sw=2:fdm=marker
