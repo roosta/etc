@@ -1,8 +1,9 @@
 {:user {:dependencies [;; nREPL support for ClojureScript REPLs 
                        [com.cemerick/piggieback "0.2.2"]
-                       [com.bhauman/rebel-readline "0.1.1"]]
+                       ; [com.bhauman/rebel-readline "0.1.2"]
+                       ]
 
-        :aliases {"rebl" ["trampoline" "run" "-m" "rebel-readline.main"] }
+        ; :aliases {"rebl" ["trampoline" "run" "-m" "rebel-readline.main"] }
 
         :plugins [;; check deps for new versions
                   [lein-ancient "0.6.15"]
