@@ -1,3 +1,3 @@
 . $HOME/bin/touchpad-toggle &
 . $HOME/.screenlayout/main.sh &
-xss-lock -- "$HOME/utils/i3lock-color-locker.sh" &
+xss-lock -- i3lock -t -n -i /home/roosta/backgrounds/footer_lodyas.png &
