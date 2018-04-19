@@ -46,7 +46,7 @@ install-aur-packages: install-pacaur
 .PHONY: install-packages
 install-packages:
 	@echo -e "\033[0;33mInstalling packages...\033[0m"
-	sudo pacman --needed -S - < pkglist.txt
+	sudo pacman --needed -S - < pacman_packages.txt
 
 # .PHONY: enable-services
 # enable-services: init-emacs
