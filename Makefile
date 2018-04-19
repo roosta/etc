@@ -148,6 +148,12 @@ link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-tog
 ~/bin/tssh: user-fs clone-src
 	-ln -f -s $(HOME)/utils/tmux-ngrok.sh $(HOME)/bin/tssh &>/dev/null
 
+~/bin/rxtx: user-fs clone-src
+	-ln -f -s $(HOME)/utils/rxtx.sh $(HOME)/bin/rxtx &>/dev/null
+
+~/bin/loadavg: user-fs clone-src
+	-ln -f -s $(HOME)/utils/loadavg.sh $(HOME)/bin/loadavg &>/dev/null
+
 .PHONY: link-conf
 link-conf:
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
