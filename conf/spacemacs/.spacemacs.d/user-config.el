@@ -36,7 +36,7 @@
                    "#918175" ; white
                    )
  undo-tree-auto-save-history t
- )
+ undo-tree-history-directory-alist '(("." . "~/.cache/emacs/undo")))
 
 ;; That little navigation hint on the right side of the mode-line
 ;; caused the mode-line to get too big when not using separators

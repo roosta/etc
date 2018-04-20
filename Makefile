@@ -174,9 +174,12 @@ update-spacemacs:
 	@echo -e "\033[0;33mUpdating spacemacs...\033[0m"
 	cd ~/.emacs.d && git pull --rebase
 
-~/.emacs.d: link-conf install-packages
+~/.emacs.d: link-conf install-packages ~/.cache/emacs/undo
 	@echo -e "\033[0;33mInitialize spacemacs...\033[0m"
 	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+~/.cache/emacs/undo:
+	mkdir -p ~/.cache/emacs/undo
 
 ~/dircolors: update-libs
 	-ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
