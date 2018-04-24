@@ -18,6 +18,9 @@ install: user-fs install-pacaur install-packages install-aur-packages save-origi
 .PHONY: min
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux
 
+.PHONY: min-update
+min-update: update-libs update-zsh-plugins update-tmux update-vim
+
 .PHONY: min-install
 min-install:
 	sudo apt-get install < min_packages.txt
