@@ -10,9 +10,9 @@ update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim u
 
 links: link-conf link-misc link-local 
 
-install: user-fs install-pacaur install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-source i3 rofi ~/.tmux/plugins/tpm links 
+install: user-fs install-pacaur install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-source i3 rofi ~/.tmux/plugins/tpm links cleanup 
 
-min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux
+min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux cleanup
 
 min-update: update-libs update-zsh-plugins update-tmux update-vim
 
@@ -22,12 +22,21 @@ min-install:
 min-links:
 	stow zsh git tmux vim bash -R -t ~ -d conf
 
-install-pacaur:
+~/etc/build:
+	-mkdir -p ~/etc/build
+
+cleanup:
+	@echo -e "\033[0;33mCleaning up...\033[0m"
+	-rm -rf ~/etc/build
+
+~/.terminfo/x/xterm-termite: ~/etc/build
+	wget https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo ~/etc/build/
+	tic -x ~/etc/build/termite.terminfo
+
+install-pacaur: ~/etc/build
 	@echo -e "\033[0;33mBuild and install pacur...\033[0m"
-	mkdir ~/etc/build
 	cd ~/etc/build && git clone https://aur.archlinux.org/pacaur.git
 	cd ~/etc/build/pacaur && makepkg -si --noconfirm --needed
-	rm -rf ~/etc/build
 
 # add-pacman-repositories:
 # 	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
@@ -53,7 +62,7 @@ user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/undo ~/.cache/zsh 
 	@echo -e "\033[0;33mCreate user fs...\033[0m"
 
 ~/src:
-	-@mkdir ~/src
+	-mkdir ~/src
 ~/lib:
 	-mkdir ~/lib
 ~/mnt:
