@@ -1,35 +1,27 @@
+.PHONY: default update links install min min-update min-install min-links install-pacaur install-aur-packages install-packages user-fs update-zsh-plugins update-libs init-vim update-vim clone-src link-misc link-conf link-local set-shell update-spacemacs i3 rofi update-tmux save-originals rustup exa update-rust
 HOST ?= $(shell hostname)
 NOW = $(shell date +"%Y-%m-%dT%T")
 
 include ~/etc/local/$(HOST)/variables.mk
 
-.PHONY: default
 default: links update i3 rofi dunst 
 
-.PHONY: update
 update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim update-rust
 
-.PHONY: links
 links: link-conf link-misc link-local 
 
-.PHONY: install
 install: user-fs install-pacaur install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-source i3 rofi ~/.tmux/plugins/tpm links 
 
-.PHONY: min
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux
 
-.PHONY: min-update
 min-update: update-libs update-zsh-plugins update-tmux update-vim
 
-.PHONY: min-install
 min-install:
 	sudo apt-get install < min_packages.txt
 
-.PHONY: min-links
 min-links:
 	stow zsh git tmux vim bash -R -t ~ -d conf
 
-.PHONY: install-pacaur
 install-pacaur:
 	@echo -e "\033[0;33mBuild and install pacur...\033[0m"
 	mkdir ~/etc/build
@@ -41,12 +33,10 @@ install-pacaur:
 # 	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
 # 	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
 
-.PHONY: install-aur-packages
 install-aur-packages: install-pacaur
 	@echo -e "\033[0;33mInstalling AUR packages...\033[0m"
 	pacaur -S --needed --noconfirm - < aur_packages.txt
 
-.PHONY: install-packages
 install-packages:
 	@echo -e "\033[0;33mInstalling packages...\033[0m"
 	sudo pacman --needed -S - < pacman_packages.txt
@@ -59,7 +49,6 @@ install-packages:
 # Scaffold user fs structure.
 # @ stops the command from being echoed to stdout.
 # - means that make will keep going in the case of an error.
-.PHONY: user-fs
 user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs
 	@echo -e "\033[0;33mCreate user fs...\033[0m"
 
@@ -86,21 +75,17 @@ user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/undo ~/.cache/zsh 
 ~/.cache/zsh/dirs:
 	-touch ~/.cache/zsh/dirs
 
-.PHONY: update-zsh-plugins
 update-zsh-plugins:
 	@echo -e "\033[0;33mUpdating zsh plugins...\033[0m"
 	./scripts/git_update.sh ~/.zsh.d/plugins ~/etc/zsh_plugins.txt
 
-.PHONY: update-libs
 update-libs:
 	./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt
 
-.PHONY: init-vim
 init-vim: ~/.vim/autoload/plug.vim
 	@echo -e "\033[0;33mInitialize Vim...\033[0m"
 	vim -c "exec InstallAndExit()"
 
-.PHONY: update-vim
 update-vim: ~/.vim/autoload/plug.vim
 	@echo -e "\033[0;33mUpdating Vim packages...\033[0m"
 	vim -c "exec UpdateAndExit()"
@@ -109,7 +94,6 @@ update-vim: ~/.vim/autoload/plug.vim
 	@echo -e "\033[0;33mGetting plugin manager for Vim...\033[0m"
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-.PHONY: clone-src
 clone-src:
 	@echo -e "\033[0;33mCloning src...\033[0m"
 	ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
@@ -120,7 +104,6 @@ clone-src:
 	ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
 	git clone git@github.com:roosta/org.git $(HOME)
 
-.PHONY: link-misc
 link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-toggle ~/bin/tdev ~/bin/tupd
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
 
@@ -157,22 +140,18 @@ link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-tog
 ~/bin/loadavg: user-fs clone-src
 	-ln -f -s $(HOME)/utils/loadavg.sh $(HOME)/bin/loadavg &>/dev/null
 
-.PHONY: link-conf
 link-conf:
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
 	stow $(shell ls conf) -R -t ~ -d conf --ignore="md|org"
 
-.PHONY: link-local
 link-local:
 	@echo -e "\033[0;33mSymlinking local...\033[0m"
 	stow $(shell ls local/$(HOST)/conf) -R -t ~ -d local/$(HOST)/conf
 
-.PHONY: set-shell
 set-shell:
 	@echo -e "\033[0;33mSetting shell to zsh...\033[0m"
 	chsh -s `which zsh`
 
-.PHONY: update-spacemacs
 update-spacemacs:
 	@echo -e "\033[0;33mUpdating spacemacs...\033[0m"
 	cd ~/.emacs.d && git pull --rebase
@@ -200,7 +179,6 @@ ifdef tertiary_monitor
 	@echo "set \$$tertiary_monitor $(tertiary_monitor)" >> ~/.i3/config
 endif
 
-.PHONY: i3
 i3: ~/.i3/config
 	@echo -e "\033[0;33mReload i3 config...\033[0m"
 	i3-msg reload
@@ -236,11 +214,9 @@ endif
 ifdef font
 	@echo "rofi.font: $(font)" >> ~/.config/rofi/config
 endif
-.PHONY: rofi
 rofi: ~/.config/rofi/config
 	@echo -e "\033[0;33mCreating rofi config...\033[0m"
 
-.PHONY: update-tmux
 update-tmux:
 	@echo -e "\033[0;33mUpdating tmux plugins...\033[0m"
 	. ~/.tmux/plugins/tpm/bin/update_plugins all
@@ -250,22 +226,18 @@ update-tmux:
 	mkdir -p ~/.tmux/plugins
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins
 
-.PHONY: save-originals
 save-originals:
 	mkdir ~/backup/original-system-files@$(NOW)
 	mv ~/.bash* ~/backup/original-system-files@$(NOW)
 
-.PHONY: rustup
 rustup: install-packages
 	rustup install stable
 	rustup install nightly
 	rustup default stable
 
-.PHONY: exa
 exa: install-packages rustup
 	cargo install exa
 
-.PHONY: update-rust
 update-rust:
 	rustup update
 
