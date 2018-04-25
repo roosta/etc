@@ -37,8 +37,6 @@ alias syscan='sudo systemctl cancel'
 alias sysedit='sudo systemctl edit'
 alias sysdis='sudo systemctl disable'
 
-alias pacaur='pacaur --color=always'
-alias pacman='pacman --color=always'
 #}}}
 ## QUICK EDITS {{{1
 ## ----------------
@@ -489,7 +487,6 @@ alias jobs='jobs -l'
 #}}}
 ## PACMAN:  {{{1
 ## ---------
-
 # show which package owns a given file
 alias pacown='pacman -Qo'
 
