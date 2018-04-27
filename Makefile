@@ -141,7 +141,7 @@ link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-tog
 	-ln -f -s $(HOME)/utils/tmux-update-window.sh $(HOME)/bin/tupd &>/dev/null
 
 ~/bin/tssh: user-fs clone-src
-	-ln -f -s $(HOME)/utils/tmux-ngrok.sh $(HOME)/bin/tssh &>/dev/null
+	-ln -f -s $(HOME)/utils/tmux-ssh.sh $(HOME)/bin/tssh &>/dev/null
 
 ~/bin/rxtx: user-fs clone-src
 	-ln -f -s $(HOME)/utils/rxtx.sh $(HOME)/bin/rxtx &>/dev/null
