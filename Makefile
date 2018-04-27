@@ -113,7 +113,7 @@ clone-src:
 	ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
 	git clone git@github.com:roosta/org.git $(HOME)
 
-link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-toggle ~/bin/tdev ~/bin/tupd
+link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-toggle ~/bin/tmain ~/bin/tupd
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
 
 ~/utils: user-fs clone-src
@@ -131,8 +131,8 @@ link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-tog
 ~/bin/touchpad-toggle: user-fs clone-src
 	-ln -f -s $(HOME)/src/utils/touchpad-toggle.sh $(HOME)/bin/touchpad-toggle &>/dev/null
 
-~/bin/tdev: user-fs clone-src
-	-ln -f -s $(HOME)/utils/tmux-dev-session.sh $(HOME)/bin/tdev &>/dev/null
+~/bin/tmain: user-fs clone-src
+	-ln -f -s $(HOME)/utils/tmux-main.sh $(HOME)/bin/tmain &>/dev/null
 
 ~/bin/tmusic: user-fs clone-src
 	-ln -f -s $(HOME)/utils/tmux-music.sh $(HOME)/bin/tmusic &>/dev/null
