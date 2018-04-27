@@ -13,6 +13,7 @@ exec_always --no-startup-id $HOME/.cargo/bin/i3wsr
 # OPTIONS {{{1
 # --------------------
 # workspace_auto_back_and_forth yes
+show_marks yes
 #}}}
 # WORKSPACES #{{{1
 # -------------------- 
@@ -398,6 +399,7 @@ bindsym XF86HomePage mode "$mode_chdisp"
 bindsym $mod+Home mode "$mode_chdisp"
 #}}}
 # MARKS {{{2
+# https://i3wm.org/docs/userguide.html#vim_like_marks
 mode "focused" {
 
   # hardcoded focus keybindings
