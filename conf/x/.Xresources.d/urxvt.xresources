@@ -29,8 +29,9 @@ URxvt.cursorBlink: false
 
 !URxvt*skipBuiltinGlyphs: true
 
-!URxvt.iso14755: false
-!URxvt.iso14755_52: false
+! Modes to enter unicode chars
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 ! Meta (Alt) + keypress to set the 8th bit
 !URxvt*meta8: true
