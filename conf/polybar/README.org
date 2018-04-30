@@ -23,3 +23,5 @@ the ones I've created myself.
 - [[https://github.com/roosta/utils/blob/master/vpn.sh][vpn.sh]]
 - [[https://github.com/roosta/utils/blob/master/keyboard-layout.sh][keyboard-layout.sh]]
 - [[https://github.com/roosta/utils/blob/master/pkg.sh][pkg.sh]]
+
+Also I wrote an i3 util that renames my workspaces to whatever is inside them. [[https://github.com/roosta/i3wsr][Check it out]].
