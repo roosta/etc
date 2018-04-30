@@ -14,8 +14,6 @@ path=(~/bin
       ~/.cargo/bin
       $path[@])
 
-#export MANPATH=/usr/local/man:$MANPATH
-
 # set ruby gems install location to home
 # export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
 
@@ -28,11 +26,8 @@ if [[ -z "$LC_CTYPE" && -z "$LC_ALL" ]]; then
 	export LC_CTYPE=${LANG%%:*} # pick the first entry from LANG
 fi
 
-# export TERM="xterm-screen-256color"
-export TERM="xterm-termite"
 # export TERM="rxvt-unicode-256color"
-# export TERM="tmux-256color"
-# exporl TERM="screen-256color"
+export TERM="xterm-termite"
 export TERMINAL=termite
 export BROWSER=firefox
 
@@ -90,4 +85,3 @@ export GTAGSLABEL=ctags
 # for rust-racer
 # https://github.com/racer-rust/racer#installation
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-# export RUST_SRC_PATH="${HOME}/lib/rust/src"
