@@ -491,10 +491,10 @@ alias jobs='jobs -l'
 alias pacown='pacman -Qo'
 
 # clean orphans
-alias pacco='pacaur -Rns $(pacman -Qtdq)'
+alias pacco='yay -Rns $(pacman -Qtdq)'
 
 # clean cache
-alias pacc='pacaur -Scc'
+alias pacc='yay -Scc'
 
 #}}}
 # vim: fdm=marker:sw=2
