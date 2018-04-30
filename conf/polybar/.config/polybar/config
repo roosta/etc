@@ -1,3 +1,11 @@
+;; Polybar config for use with multiple monitors over different hosts.
+;; Author: Daniel Berg <mail@roosta.sh>
+
+;; The host is set using an external script when launching polybar
+;; https://github.com/roosta/utils/blob/master/launch-polybar.sh
+
+;; Fetch colors from xresources
+;; https://github.com/roosta/vim-srcery/tree/master/term_colors
 [colors]
 black         = ${xrdb:color0:#1C1B19}
 brightblack   = ${xrdb:color8:#2D2B28}
@@ -24,32 +32,19 @@ xgrey3        = ${xrdb:color237:#3A3A3A}
 xgrey4        = ${xrdb:color238:#444444}
 xgrey5        = ${xrdb:color239:#4E4E4E}
 
-[icons]
-
-music = 
-music-prev = 
-music-stop = 
-music-play = 
-music-pause = 
-music-next = 
-
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
 
 [global/wm]
 margin-top = 5
 margin-bottom = 5
 
+;; Set a config for each screen @ host lintilla
+;; Multiple monitors with different resolutions
 [bar/lintilla-primary]
-;; settings
 monitor = ${env:MONITOR:DP-1}
 width = 100%
 separator = │
-
 dpi = 192
 height = 34
 radius = 0
@@ -66,41 +61,11 @@ font-2 = "fura code nerd font:pixelsize=11;4"
 font-3 = "fura code nerd font:pixelsize=14;4"
 font-4 = "Material Icons:pixelsize=10;4"
 modules-left = i3 xwindow
-; modules-left = i3
 modules-center = mpd
 modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
 
-[bar/systray]
-# As small as possible, polybar will resize it when items get added
-width = 1
-
-# Whatever fits your needs
-height = 52
-
-top = true
-
-# Tell the Window Manager not to configure the window.
-# Use this to detach the bar if your WM is locking its size/position.
-# REQUIRED for us to be able to move the window with hideit.sh
-override-redirect = true
-monitor = ${env:MONITOR:DP-1}
-modules-left = placeholder
-tray-position = right
-tray-maxsize = 38
-offset-y = 38
-offset-x = 3837
-dpi = 192
-tray-padding = 8
-; border-bottom-size = 1
-border-color = ${colors.magenta}
-tray-transparent = false
-tray-background = ${colors.brightblack}
-
-[module/placeholder]
-# Just a dummy module as polybar always requires at least one amodule
-type = custom/script
-width = 1
-
+;; Secondary monitor @ lintilla, max resolution is 1920x1080 so font sizes and
+;; dpi needs to be adjusted accortingly
 [bar/lintilla-secondary]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DVI-I-1}
@@ -133,9 +98,6 @@ monitor = ${env:MONITOR:eDP1}
 modules-center =
 tray-position = right
 font-0 = "Iosevka:pixelsize=9;2"
-; tray-padding = 1
-; tray-scale = 1
-; tray-background = ${colors.brightblack}
 modules-right = keyboard-layout vpncheck wifi battery pkg volume-small memory-small cpu-small date time
 
 [bar/garkbit-primary]
@@ -172,35 +134,24 @@ pin-workspaces = true
 ; This will split the workspace name on ':'
 strip-wsnumbers = true
 
-; Use fuzzy (partial) matching on labels when assigning
-; icons to workspaces
-; Example: code;♚ will apply the icon to all workspaces
-; containing 'code' in the label
-; Default: false
-; fuzzy-match = true
-
-; ws-icon-0 = 1:term;Q
 format = <label-state><label-mode>
 
 label-mode = %mode%
 label-mode-padding = 1
-label-mode-foreground = ${colors.brightwhite}
-label-mode-background = ${colors.blue}
+label-mode-foreground = ${colors.yellow}
 
 label-focused = %name%
+label-focused-font = 1
 label-focused-padding = 1
-label-focused-background = ${colors.magenta}
-label-focused-foreground = ${colors.brightwhite}
+label-focused-foreground = ${colors.brightmagenta}
 
 label-unfocused = %name%
 label-unfocused-padding = 1
-label-unfocused-background = ${colors.brightblack}
-label-unfocused-foreground = ${colors.brightwhite}
+label-unfocused-foreground = ${colors.white}
 
 label-visible = %name%
 label-visible-padding = 1
-label-visible-background = ${colors.brightwhite}
-label-visible-foreground = ${colors.black}
+label-visible-foreground = ${colors.brightwhite}
 
 label-urgent = %name%
 label-urgent-padding = 1
@@ -209,7 +160,7 @@ label-urgent-foreground = ${colors.brightwhite}
 
 [module/xwindow]
 type = internal/xwindow
-format-foreground = ${colors.white}
+format-foreground = ${colors.brightwhite}
 label = %title:0:80%
 label-padding = 1
 
@@ -224,39 +175,40 @@ label-indicator-background = ${colors.brightred}
 label-indicator-foreground = ${colors.brightwhite}
 label-indicator-padding = 1
 
+;; Calls a script that checks for pacman and aur package updates
+;; https://github.com/roosta/utils/blob/master/pkg.sh
 [module/pkg]
 type = custom/script
 format-foreground = ${colors.brightwhite}
 interval = 90
 format = <label>
 label = "PKG: %output%"
-; format-prefix = 
-; label-padding = 1
 label-padding-right = 1
 label-padding-left = 1
-; label-padding-left = 1
 exec = ~/utils/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 
+;; Calls a script that checks current keyboard layout, I frequently toggle
+;; between Norwegian and American layout, and I need a clear visual indicator
+;; for which is active.
+;; https://github.com/roosta/utils/blob/master/keyboard-layout.sh
 [module/keyboard-layout]
 type = custom/script
 interval = 1
 format-foreground = ${colors.brightwhite}
-; format-prefix = 
-; format-prefix-foreground = ${colors.white}
-; label-padding = 1
 format = <label>
 label = "%output%"
 exec = ~/utils/keyboard-layout.sh
 
+;; Checks if a VPN connection is active and proved a colored indictator
+;; https://github.com/roosta/utils/blob/master/vpn.sh
 [module/vpncheck]
 type = custom/script
 exec = ~/utils/vpn.sh
 ; exec-if = pgrep -x openvpn
 label-padding = 1
 interval = 30
-; label-padding = 1
 label = "%output%"
 
 [module/volume]
@@ -284,6 +236,7 @@ bar-volume-fill = ╸
 bar-volume-empty = ╸
 bar-volume-empty-foreground = ${colors.white}
 
+;; Create a smaller size volume indicator for smaller displays
 [module/volume-small]
 inherit = module/volume
 format-volume = "<label-volume>"
@@ -303,6 +256,7 @@ bar-used-fill = ╸
 bar-used-empty = ╸
 bar-used-empty-foreground = ${colors.white}
 
+;; Smaller memory module for use on smaller resolutions/screens
 [module/memory-small]
 inherit = module/memory
 format = "<label>"
@@ -321,84 +275,21 @@ bar-load-indicator = ╸
 bar-load-fill = ╸
 bar-load-empty = ╸
 bar-load-empty-foreground = ${colors.white}
-; ramp-coreload-0 = ▁
-; ramp-coreload-1 = ▂
-; ramp-coreload-2 = ▃
-; ramp-coreload-3 = ▄
-; ramp-coreload-4 = ▅
-; ramp-coreload-5 = ▆
-; ramp-coreload-6 = ▇
-; ramp-coreload-7 = █
 
 [module/cpu-small]
 inherit = module/cpu
 type = internal/cpu
 format = <label>
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = ${root.temp-format}
-format-warn = ${root.temp-format-warn}
-label = "%temperature%"
-label-warn = " %temperature%"
-ramp-0 = ${icons.temp-ramp-0}
-ramp-1 = ${icons.temp-ramp-1}
-ramp-2 = ${icons.temp-ramp-2}
-
 [module/mpd]
 type = internal/mpd
 format-online-prefix = ""
-; format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 format-online = <label-song>
 format-online-foreground = ${colors.white}
 host = localhost
 port = 6600
-
-icon-prev = ${icons.music-prev}
-icon-stop = ${icons.music-stop}
-icon-play = ${icons.music-play}
-icon-pause = ${icons.music-pause}
-icon-next = ${icons.music-next}
-
-label-offline =   mpd is offline
-
 label-song-maxlen = 80
 label-song-ellipsis = true
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.brightwhite}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
-
-[module/wlan]
-type = internal/network
-interface = net1
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
-format-connected-foreground = ${colors.brightwhite}
 
 [module/eth]
 type = internal/network
@@ -412,25 +303,6 @@ label-disconnected = %ifname% disconnected
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 
-; [module/wifi]
-; type = internal/network
-; interval = 3.0
-; label-connected = "%downspeed:9%%{T5}%{T-}%upspeed:9%%{T5}%{T-}"
-; label-connected-padding-left = 0
-; label-connected-padding-right = 2
-; accumulate-stats = true
-; label-disconnected = %ifname% disconnected
-; format-connected = <label-connected>
-; format-disconnected = <label-disconnected>
-; ramp-signal-0 = ▁
-; ramp-signal-1 = ▂
-; ramp-signal-2 = ▃
-; ramp-signal-3 = ▄
-; ramp-signal-4 = ▅
-; ramp-signal-5 = ▆
-; ramp-signal-6 = ▇
-; ramp-signal-7 = █
-
 [module/eth-lintilla]
 inherit = module/eth
 interface = enp9s0
@@ -441,19 +313,11 @@ interface = enp2s0
 
 [module/wifi]
 type = internal/network
-; format-connected-prefix = 
-; format-connected-prefix-font = 4
 format-connected = WIFI: <label-connected>
 format-connected-padding = 1
 format-connected-foreground = ${colors.brightwhite}
 label-connected = %essid%, %signal%%
 interface = wlp2s0
-ramp-signal-0 = ▂
-ramp-signal-1 = ▃
-ramp-signal-2 = ▄
-ramp-signal-3 = ▅
-ramp-signal-4 = ▆
-ramp-signal-5 = ▇
 
 [module/date]
 type = internal/date
@@ -487,15 +351,6 @@ format-discharging = <label-discharging>
 format-full-foreground = ${colors.brightgreen}
 label-charging = BAT: %percentage%%
 format-charging-foreground = ${colors.cyan}
-; format-charging = <label-charging>
-; format-charging-underline = #ffb52a
-; format-discharging = <ramp-capacity> <label-discharging>
-; format-discharging-underline = ${self.format-charging-underline}
-; format-full-prefix-foreground = ${colors.brightwhite}
-; format-full-underline = ${self.format-charging-underline}
-; ramp-capacity-foreground = ${colors.brightwhite}
-; animation-charging-foreground = ${colors.brightwhite}
-; animation-charging-framerate = 750
 
 [module/fs-root]
 type = internal/fs
@@ -522,32 +377,5 @@ interval = 25
 inherit = module/fs-root
 mount-0 = /home
 bar-used-indicator-foreground = ${colors.blue}
-
-[module/powermenu]
-type = custom/menu
-
-format-spacing = 1
-
-label-open = ${icons.power}
-label-open-foreground = ${colors.brightwhite}
-label-close =  cancel
-label-close-foreground = ${colors.brightwhite}
-label-separator = |
-label-separator-foreground = ${colors.brightwhite}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
-
-menu-2-0 = power off
-menu-2-0-exec = poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
 
 ; vim:ft=dosini
