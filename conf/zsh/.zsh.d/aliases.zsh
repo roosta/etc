@@ -361,7 +361,6 @@ alias grep='grep -i'
 alias fehp='feh -g 640x480 -d -S filename'
 
 alias mounttmpfs='sudo mount -t tmpfs tmpfs /mnt -o size=1024m'
-alias npmls='npm -g ls --depth=0'
 alias killemacs='emacsclient -e "(save-buffers-kill-emacs)"'
 alias gpg-reload='gpg-connect-agent reloadagent /bye'
 alias tldr='tldr -t base16 --linux'
@@ -373,6 +372,10 @@ alias m='ncmpcpp'
 alias update-font-cache='fc-cache -fv'
 alias fm='vifm'
 alias ssh='env TERM=xterm-256color ssh'
+
+# NPM
+alias npmls='npm -g ls --depth=0'
+alias npmoutdated='npm outdated -g --depth=0'
 #}}}
 ## VCS {{{1
 ## --------
