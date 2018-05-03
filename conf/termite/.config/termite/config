@@ -12,6 +12,7 @@ allow_bold = true
 urgent_on_bell = true
 browser = firefox
 cursor_blink = true
+modify_other_keys = true
 
 [colors]
 
