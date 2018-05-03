@@ -237,6 +237,7 @@
  evil-cleverparens-use-s-and-S nil
  evil-cleverparens-swap-move-by-word-and-symbol nil)
 
+(require 'evil-cleverparens)
 (require 'evil-cleverparens-text-objects)
 
 ;; ----------------------------------------------------

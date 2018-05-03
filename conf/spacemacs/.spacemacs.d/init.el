@@ -84,8 +84,6 @@ This function should only modify configuration layer settings."
                      enable-flyspell-auto-completion nil)
      syntax-checking
      version-control
-     ;; evil-cleverparens
-     ;; evil-smartparens
      (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
      colors)
 
@@ -104,9 +102,9 @@ This function should only modify configuration layer settings."
      flycheck-package
      kibit-helper
      ;; evil-smartparens
+     (evil-cleverparens :location "~/src/evil-cleverparens")
      (evil-terminal-cursor-changer :location "~/src/evil-terminal-cursor-changer")
-     (srcery-theme :location "~/src/emacs-srcery")
-     )
+     (srcery-theme :location "~/src/emacs-srcery"))
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
