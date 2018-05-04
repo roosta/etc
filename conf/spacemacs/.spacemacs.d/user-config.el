@@ -114,18 +114,18 @@
 ;; keybindings so that Return will introduce a new-line and C- will send the
 ;; form off for evaluation.
 (define-key cider-repl-mode-map (kbd "RET") #'cider-repl-newline-and-indent)
-(define-key cider-repl-mode-map (kbd "C-\\") #'cider-repl-return)
 
 (define-key spacemacs-org-mode-map-prefix (kbd ">") 'org-link-edit-forward-slurp)
 (define-key spacemacs-org-mode-map-prefix (kbd "<") 'org-link-edit-forward-barf)
-
 
 (with-eval-after-load 'rust-mode
   (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common))
 
 (define-key helm-map (kbd "ESC") 'helm-keyboard-quit)
 
-(define-key org-mode-map (kbd "C-\\") #'evil-org-org-insert-heading-respect-content-below)
+;; Use escape to make C-Return work in terminal (termite)
+(define-key cider-repl-mode-map "\e[27;5;13~" #'cider-repl-return)
+(define-key org-mode-map "\e[27;5;13~" #'evil-org-org-insert-heading-respect-content-below)
 
 ;; cause seriously, now many times have I checked some output after assuming the
 ;; file has been saved and then been perplexed about why my changes aren't
