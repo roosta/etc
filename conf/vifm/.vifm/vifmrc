@@ -374,6 +374,12 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 " Start shell in current directory
 nnoremap s :shell<cr>
 
+" quit by pressing q
+" Editing command-line using external editor is activated by the Ctrl-G
+" shortcut.  It's also possible to do almost the same  from  Normal  and
+" Visual
+nnoremap q :q<cr>
+
 " Display sorting dialog
 nnoremap S :sort<cr>
 
