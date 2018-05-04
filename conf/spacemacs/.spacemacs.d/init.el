@@ -61,7 +61,7 @@ This function should only modify configuration layer settings."
      fasd
      python
      docker
-     slack
+     ;; slack
      git
      lua
      nginx
