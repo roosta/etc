@@ -63,7 +63,6 @@ alias vienv="${EDITOR:-vim} ~/.zprofile"
 alias vizopts="${EDITOR:-vim} ~/.zsh.d/options.zsh"
 alias vizsh="${EDITOR:-vim} ~/.zshrc"
 alias vixfont="${EDITOR:-vim} ~/.Xresources.d/fonts"
-alias o="emacsclient -nw ~/org"
 alias viemacs="emacsclient -t ~/.spacemacs.d"
 alias vitodo="emacsclient -t ~/org/TODOs.org"
 alias vihours="emacsclient -t ~/src/hours/hours.org"
@@ -440,10 +439,8 @@ alias cats='vimcat'
 #alias ccat='pygmentize -g -O style=colorful,linenos=1'
 alias ccat='highlight -O ansi'
 alias cljgrep='ag -R --include="*.clj*"'
-alias ect='emacsclient -nw'
 alias ecc='emacsclient -c'
-alias et='emacs -nw'
-alias e='emacsclient -nw'
+alias ec='emacsclient -nw'
 alias ancient-check-all='lein ancient check :all :allow-all :check-clojure'
 alias ancient-check='lein ancient check :all :check-clojure'
 alias ancient-upgrade-all='lein ancient upgrade :all :allow-all :check-clojure :no-tests'
