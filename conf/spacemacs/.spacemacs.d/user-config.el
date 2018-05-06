@@ -57,24 +57,21 @@
 ;; Change previous tab to this function, it hopefully preserves layout
 (spacemacs/set-leader-keys "TAB" 'mode-line-other-buffer)
 
-;; ----------------------------------------------------
-;; Keybindings
-;; ----------------------------------------------------
-(defvar roosta-minor-mode-map
-  (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "C-k") 'tmux-nav-up)
-    (define-key map (kbd "C-j") 'tmux-nav-down)
-    (define-key map (kbd "C-l") 'tmux-nav-right)
-    (define-key map (kbd "C-h") 'tmux-nav-left)
-    map)
-  "roosta-minor-mode keymap.")
+;; (defvar roosta-minor-mode-map
+;;   (let ((map (make-sparse-keymap)))
+;;     (define-key map (kbd "C-k") 'tmux-nav-up)
+;;     (define-key map (kbd "C-j") 'tmux-nav-down)
+;;     (define-key map (kbd "C-l") 'tmux-nav-right)
+;;     (define-key map (kbd "C-h") 'tmux-nav-left)
+;;     map)
+;;   "roosta-minor-mode keymap.")
 
-(define-minor-mode roosta-minor-mode
-  "A minor mode so that my key settings override annoying major modes."
-  :init-value t
-  :lighter " r")
+;; (define-minor-mode roosta-minor-mode
+;;   "A minor mode so that my key settings override annoying major modes."
+;;   :init-value t
+;;   :lighter " r")
 
-(roosta-minor-mode 1)
+;; (roosta-minor-mode 1)
 
 (evil-define-key 'normal term-raw-map
   (kbd "C-k") 'tmux-nav-up
