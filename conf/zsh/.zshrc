@@ -70,5 +70,4 @@ for config (~/.zsh.d/*.zsh) source $config
 hash fasd 2>/dev/null && source ~/.zsh.d/plugin_conf/fasd.zsh
 hash fzf 2>/dev/null && source ~/.zsh.d/plugin_conf/fzf.zsh
 source ~/.zsh.d/plugin_conf/ls_colors.zsh
-
-eval $(thefuck --alias)
+hash thefuck 2>/dev/null && eval $(thefuck --alias)
