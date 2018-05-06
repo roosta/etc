@@ -12,11 +12,6 @@
 
  company-tooltip-align-annotations t
 
- ;; don't use powerline separators in statusbar
- ;; powerline-default-separator 'nil
- ;; spaceline-separator-dir-left '(left . left)
- ;; spaceline-separator-dir-right '(right . right)
-
  ;; always follow symlinks
  vc-follow-symlinks t
 
