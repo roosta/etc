@@ -1,8 +1,11 @@
 .PHONY: default update links install min min-update min-install min-links install-pacaur install-aur-packages install-packages user-fs update-zsh-plugins update-libs init-vim update-vim clone-src link-misc link-conf link-local set-shell update-spacemacs i3 rofi update-tmux save-originals rustup exa update-rust
 HOST ?= $(shell hostname)
 NOW = $(shell date +"%Y-%m-%dT%T")
+VARS = ~/etc/local/$(HOST)/variables.mk
 
-include ~/etc/local/$(HOST)/variables.mk
+ifneq ("$(wildcard $(VARS))","")
+include $(VARS)
+endif
 
 default: links update i3 rofi dunst 
 
