@@ -15,7 +15,7 @@
  ;; always follow symlinks
  vc-follow-symlinks t
 
- ;; move across linebreaks
+ ;; move normally across linebreaks
  evil-move-beyond-eol t
 
  ;; define a custom snippets location
@@ -30,6 +30,7 @@
                    "#2C78BF" ; blue
                    "#918175" ; white
                    )
+
  undo-tree-auto-save-history t
  undo-tree-history-directory-alist '(("." . "~/.cache/emacs/undo")))
 
@@ -41,21 +42,31 @@
   (interactive)
   (find-file-existing "~/.spacemacs.d/user-config.el"))
 
-;; (defun roosta/org-search ()
-;;   (interactive)
-;;   (let ((default-directory "/home/roosta/org"))
-;;     (spacemacs/helm-project-smart-do-search)))
+(defun roosta/org-search ()
+  (interactive)
+  (spacemacs/helm-files-do-ag "~/org"))
 
-;; (spacemacs/set-leader-keys "ot" 'roosta/org-search)
+
+;; (global-linum-mode)
+;; (linum-relative-toggle)
+
+;; ----------------------------------------------------
+;; Keybindings
+;; ----------------------------------------------------
+
+(spacemacs/set-leader-keys "os" 'roosta/org-search)
 
 ;; Quick access to user-config
 (spacemacs/set-leader-keys "feu" 'roosta/find-user-config)
 
 ;; opening project files
-(spacemacs/set-leader-keys "o" 'helm-projectile-find-file)
+(spacemacs/set-leader-keys "oo" 'helm-projectile-find-file)
+
+;; opening org files
+(spacemacs/set-leader-keys "oi" 'helm-projectile-find-file)
 
 ;; Change previous tab to this function, it hopefully preserves layout
-(spacemacs/set-leader-keys "TAB" 'mode-line-other-buffer)
+;; (spacemacs/set-leader-keys "TAB" 'mode-line-other-buffer)
 
 ;; (defvar roosta-minor-mode-map
 ;;   (let ((map (make-sparse-keymap)))
@@ -94,16 +105,14 @@
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
 (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
-(evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
 
-;; (evil-define-key 'normal evil-surround-mode-map (kbd "<cs>") 'evil-surround-change)
-;; (evil-define-key 'normal evil-surround-mode-map (kbd "<ds>") 'evil-surround-delete)
+;; (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
 
 ;; (evil-define-key 'normal clojurescript-mode-map ";" 'cider-eval-sexp-at-point)
 ;; (evil-define-key 'normal clojure-mode-map ";" 'cider-eval-sexp-at-point)
 
 ;; The following customization of the cider-repl-mode-map will change these
-;; keybindings so that Return will introduce a new-line and C- will send the
+;; keybindings so that Return will introduce a new-line and C-RET will send the
 ;; form off for evaluation.
 (define-key cider-repl-mode-map (kbd "RET") #'cider-repl-newline-and-indent)
 
