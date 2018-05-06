@@ -137,11 +137,25 @@
 ;; ----------------------------------------------------
 ;; Terminal
 ;; ----------------------------------------------------
-(xclip-mode 1)
-(xterm-mouse-mode 1)
-
 ;; terminal-only conf
 (unless (display-graphic-p)
+
+  (xclip-mode 1)
+  (xterm-mouse-mode 1)
+
+  ;; Fix for terminal arrow keys. The escape seq in terminal for arrows keys are
+  ;; the same as these bindings, causing emacs to call the function bound then
+  ;; insert A, B, C, or D
+  (with-eval-after-load 'evil-cleverparens
+    (dolist (state '(normal visual operator))
+      (dolist (key '("M-o" "M-O" "M-["))
+        (evil-define-key state evil-cleverparens-mode-map
+          (read-kbd-macro key)
+          nil))))
+
+  ;; (dolist (key '("\M-o" "\M-O" "\M-["))
+  ;;   (global-unset-key key))
+
   (require 'evil-terminal-cursor-changer)
   (evil-terminal-cursor-changer-activate) ; or (etcc-on)
   (setq
