@@ -37,8 +37,9 @@ export QT_STYLE_OVERRIDE=GTK+
 # export GDK_DPI_SCALE=2
 
 # editor
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="emacsclient -nw"
+export ALTERNATE_EDITOR="vim"
+export VISUAL="emacsclient -nw"
 
 # export EDITOR=vim
 # export VISUAL=vim
