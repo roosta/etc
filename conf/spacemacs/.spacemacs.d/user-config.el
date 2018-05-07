@@ -137,7 +137,6 @@
 ;; ----------------------------------------------------
 ;; Terminal
 ;; ----------------------------------------------------
-;; terminal-only conf
 (unless (display-graphic-p)
 
   (xclip-mode 1)
@@ -152,6 +151,12 @@
         (evil-define-key state evil-cleverparens-mode-map
           (read-kbd-macro key)
           nil))))
+
+  (with-eval-after-load 'dired+
+      (dolist (key '("M-o" "M-O" "M-["))
+        (define-key dired-mode-map
+          (read-kbd-macro key)
+          nil)))
 
   ;; (dolist (key '("\M-o" "\M-O" "\M-["))
   ;;   (global-unset-key key))
