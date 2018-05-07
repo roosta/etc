@@ -88,16 +88,24 @@ fkill() {
 
 # Fuzzy match file and open with emacsclient
 e() {
-  local file
-  file=$(fzf-tmux --query="$1")
-  [ -n "$file" ] && emacsclient -nw "$file"
+  if [ "$#" -ne 0 ]; then
+    emacsclient -nw $@
+  else
+    local file
+    file=$(fzf-tmux --query="$1")
+    [ -n "$file" ] && emacsclient -nw "$file"
+  fi
 }
 
 # Fuzzy match file and open with vim
 v() {
-  local file
-  file=$(fzf-tmux --query="$1")
-  [ -n "$file" ] && vim "$file"
+  if [ "$#" -ne 0 ]; then
+    vim $@
+  else
+    local file
+    file=$(fzf-tmux --query="$1")
+    [ -n "$file" ] && vim "$file"
+  fi
 }
 
 # To to org folder and open match
