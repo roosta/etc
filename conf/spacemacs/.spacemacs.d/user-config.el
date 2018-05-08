@@ -1,6 +1,7 @@
 ;; ┓━┓┳━┓┳━┓┏━┓┳━┓┏┏┓┳━┓┏━┓┓━┓  ┳ ┓┓━┓┳━┓┳━┓  ┏━┓┏━┓┏┓┓┳━┓o┏━┓
 ;; ┗━┓┃━┛┃━┫┃  ┣━ ┃┃┃┃━┫┃  ┗━┓  ┃ ┃┗━┓┣━ ┃┳┛  ┃  ┃ ┃┃┃┃┣━ ┃┃ ┳
 ;; ━━┛┇  ┛ ┇┗━┛┻━┛┛ ┇┛ ┇┗━┛━━┛  ┇━┛━━┛┻━┛┇┗┛  ┗━┛┛━┛┇┗┛┇  ┇┇━┛
+
 ;; -----------------------------------------------------------
 ;; General
 ;; -----------------------------------------------------------
@@ -39,10 +40,12 @@
 (spaceline-toggle-hud-off)
 
 (defun roosta/find-user-config ()
+  "Jump to my user config"
   (interactive)
   (find-file-existing "~/.spacemacs.d/user-config.el"))
 
 (defun roosta/org-search ()
+  "Quickly search in org folder"
   (interactive)
   (spacemacs/helm-files-do-ag "~/org"))
 
