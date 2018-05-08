@@ -49,9 +49,9 @@
   (interactive)
   (spacemacs/helm-files-do-ag "~/org"))
 
-
-;; (global-linum-mode)
-;; (linum-relative-toggle)
+;; Attempt to fix relative linum
+(global-linum-mode)
+(linum-relative-toggle)
 
 ;; ----------------------------------------------------
 ;; Keybindings
