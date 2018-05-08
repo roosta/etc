@@ -111,6 +111,7 @@
 
 ;; (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
 
+;; Quick eval, I rely to much on evil-; but keep this if I can think of a better place to put it
 ;; (evil-define-key 'normal clojurescript-mode-map ";" 'cider-eval-sexp-at-point)
 ;; (evil-define-key 'normal clojure-mode-map ";" 'cider-eval-sexp-at-point)
 
@@ -119,12 +120,14 @@
 ;; form off for evaluation.
 (define-key cider-repl-mode-map (kbd "RET") #'cider-repl-newline-and-indent)
 
+;; Bind link slurp to match cleverparens
 (define-key spacemacs-org-mode-map-prefix (kbd ">") 'org-link-edit-forward-slurp)
 (define-key spacemacs-org-mode-map-prefix (kbd "<") 'org-link-edit-forward-barf)
 
 (with-eval-after-load 'rust-mode
   (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common))
 
+;; Bind escape to quit helm
 (define-key helm-map (kbd "ESC") 'helm-keyboard-quit)
 
 ;; Use escape to make C-Return work in terminal (termite)
