@@ -1,7 +1,7 @@
 (setq-default
  ;; evil-shift-round nil
 
- srcery-invert-matches t
+ ;; srcery-invert-matches t
 
  custom-theme-directory "~/src/emacs-srcery"
 
