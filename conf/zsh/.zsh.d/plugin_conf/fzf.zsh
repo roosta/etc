@@ -325,7 +325,7 @@ fv() {
     linum=$(echo "$match" | cut -d':' -f2) &&
     file=$(echo "$match" | cut -d':' -f1) &&
 
-    ${EDITOR:-vim} +$linum $file
+    emacsclient -nw +$linum $file
 }
 
 falias() {
