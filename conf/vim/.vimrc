@@ -10,10 +10,6 @@
 "└─────────────────────────────────────────┘
 " Options: {{{1
 
-if &compatible
-  set nocompatible
-endif
-
 " use undo file and define location
 set undofile
 set undodir=~/var/undo
@@ -64,7 +60,7 @@ set relativenumber
 set clipboard=unnamedplus
 set shell=zsh
 set spelllang=en_us,nb
-set cm=blowfish2
+set cryptmethod=blowfish2
 set autoindent
 set smartindent
 
@@ -109,7 +105,7 @@ set tags=tags;/ " search recursively up for tags
 " set tags+=./.git/.tags,./tags
 
 " Use Unix as the standard file type
-set ffs=unix,dos,mac
+set fileformats=unix,dos,mac
 
 set foldmethod=marker
 
@@ -119,6 +115,9 @@ set formatoptions-=cro
 if !has('nvim')
   set ttymouse=xterm2
 endif
+
+set encoding=utf-8
+scriptencoding utf-8
  
 if has('nvim')
   " tnoremap <Esc> <C-\><C-n>
@@ -184,10 +183,13 @@ endif
 " Always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside
 " an event handler (happens when dropping a file on gvim).
-autocmd BufReadPost *
-      \ if line("'\"") > 0 && line("'\"") <= line("$") |
-      \   exe "normal g`\"" |
-      \ endif
+augroup vimrc
+  autocmd!
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
+augroup END
 
 "}}}
 " Gvim: {{{1
@@ -208,8 +210,8 @@ endif
 
 set mouse=a
 
-let mapleader = "\<SPACE>"
-let maplocalleader = "\\"
+let g:mapleader = "\<SPACE>"
+let g:maplocalleader = "\\"
 
 " source config on demand
 " Note that this may cause some plugins not to load properly if it has init logic
@@ -274,7 +276,6 @@ map <leader>q :e ~/buffer<cr>
 map <leader>pp :setlocal paste!<cr>
 
 " call userdefined functions..
-command! White call StripTrailingWhitespace()<cr>
 command! Mode call AppendModeline()
 
 " switch to last buffer used.
@@ -313,23 +314,16 @@ function! NumberToggle()
     set relativenumber
   endif
 endfunc
-nnoremap <leader><C-n> :call NumberToggle()<cr>
+nnoremap <leader><C-n> :call RelativeLinumToggle()<cr>
 
 " remove leaks for encrypted files
-autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
-
-function! StripTrailingWhitespace()
-  if !&binary && &filetype != 'diff'
-    normal mz
-    normal Hmy
-    %s/\s\+$//e
-    normal 'yz<CR>
-    normal `z
-  endif
-endfunction
-
-" Evaluate Clojure buffers on load
-autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
+augroup vimrc
+  autocmd!
+  autocmd BufReadPost * 
+        \ if &key != "" |
+        \   set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure |
+        \ endif
+augroup END
 
 " Returns true if paste mode is enabled
 function! HasPaste()
@@ -343,10 +337,10 @@ endfunction
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
 " files.
 function! AppendModeline()
-  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d fdm=marker %set :",
+  let l:modeline = printf(' vim: set ts=%d sw=%d tw=%d fdm=marker %set :',
         \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
-  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
-  call append(line("$"), l:modeline)
+  let l:modeline = substitute(&commentstring, '%s', l:modeline, '')
+  call append(line('$'), l:modeline)
 endfunction
 
 function! UpdateAndExit()
@@ -382,11 +376,13 @@ set clipboard^=unnamed
 
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
+augroup vimrc
+  if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+          \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
+  endif
+augroup END
 call plug#begin('~/.vim/plugged')
 
 " TODO: http://sjl.bitbucket.org/gundo.vim/
@@ -423,6 +419,7 @@ Plug 'romainl/vim-qlist'
 
 " theme
 Plug 'itchyny/lightline.vim'
+" Plug 'vim-airline/vim-airline'
 Plug '~/src/vim-srcery'
 " Plug 'roosta/vim-srcery'
 " Plug 'sjl/badwolf'
@@ -457,6 +454,8 @@ Plug 'tpope/vim-projectionist'
 Plug 'guns/vim-sexp'
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'kien/rainbow_parentheses.vim'
+
+" Plug 'ctrlpvim/ctrlp.vim'
 
 " syntax
 " Plug 'sheerun/vim-polyglot'
@@ -580,9 +579,9 @@ nnoremap <leader>ut :UndotreeToggle<cr>
 "}}}
 " Slime: {{{2
 " -------------
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
-let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_target = 'tmux'
+let g:slime_default_config = {'socket_name': 'default', 'target_pane': '2'}
+let g:slime_paste_file = '$HOME/.slime_paste'
 let g:slime_python_ipython = 1
 "}}}
 " Sexp: {{{2
@@ -654,12 +653,12 @@ nmap ga <Plug>(EasyAlign)
 "}}}
 " Python: {{{2
 " ---------------
-let python_highlight_all = 1
+let g:python_highlight_all = 1
 
 "}}}
 " Gutentags: {{{2
 " --------------------
-let g:gutentags_ctags_exclude = [".password-store, node_modules", ".git", "plugins", "plugged"]
+let g:gutentags_ctags_exclude = ['.password-store, node_modules', '.git', 'plugins', 'plugged']
 "}}}
 " Ack: {{{2 
 " ---------- 
