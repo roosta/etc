@@ -7,3 +7,5 @@ GPATH
 .#*
 **/nohup.out
 *.~undo-tree~
+*.temp
+*.tmp
