@@ -8,7 +8,7 @@
 
 # Respecting .gitignore, .hgignore, and svn:ignore
 # Setting ag as the default source for fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='rg --hidden --files'
 
 export FZF_DEFAULT_OPTS='
   --color fg:15,bg:0,hl:2,fg+:15,bg+:8,hl+:10
