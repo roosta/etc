@@ -39,6 +39,7 @@
 	tool = vimdiff
 [commit]
 	verbose = true
+	gpgsign = true
 [include]
   path = ~/.gitconfig.local
 [github]
