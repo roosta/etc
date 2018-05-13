@@ -22,7 +22,7 @@
   precommit = diff --cached --diff-algorithm=minimal -w
   logs      = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   logd      = log --graph --patch
-  logl      = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d %Cgreen%cr%Creset - %an%Creset%n%s %Creset%n%C(white)%b%Creset' --decorate --numstat --summary
+  logl      = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(bold blue)<%an>%Creset%n%ci - %Cgreen%cr%Creset%n%s %Creset%n%n%C(white)%b%Creset' --decorate --numstat --summary
   branches  = branch -a
   tags      = tag
   stashes   = stash list
