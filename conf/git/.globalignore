@@ -9,3 +9,4 @@ GPATH
 *.~undo-tree~
 *.temp
 *.tmp
+.git
