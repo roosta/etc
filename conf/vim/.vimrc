@@ -1,4 +1,4 @@
-"┌─────────────────────────────────────────┐
+":┌─────────────────────────────────────────┐
 "│█▀▀▀▀▀▀▀▀▀▀▀█░░█░█░▀█▀░█▄█░░█▀▀▀▀▀▀▀▀▀▀▀█│
 "│█▀▀▀▀▀▀▀▀▀▀▀█░░▀▄▀░ █ ░█ █░░█▀▀▀▀▀▀▀▀▀▀▀█│
 "│█▀▀▀▀▀▀▀▀▀▀▀▀░░ ▀ ░▀▀▀░▀░▀░░▀▀▀▀▀▀▀▀▀▀▀▀█│
@@ -43,7 +43,7 @@ set scrolloff=7
 " set number of colors to 256
 set t_Co=256
 
-" tmp workaround for undercurl fallback to work 
+" tmp workaround for undercurl fallback to work
 " https://github.com/vim/vim/issues/2424
 set t_Cs=
 
@@ -99,7 +99,7 @@ set smartcase
 set magic
 
 "substitute global flag always on
-" set gdefault 
+" set gdefault
 
 set tags=tags;/ " search recursively up for tags
 " set tags+=./.git/.tags,./tags
@@ -118,7 +118,7 @@ endif
 
 set encoding=utf-8
 scriptencoding utf-8
- 
+
 if has('nvim')
   " tnoremap <Esc> <C-\><C-n>
 endif
@@ -319,7 +319,7 @@ nnoremap <leader><C-n> :call RelativeLinumToggle()<cr>
 " remove leaks for encrypted files
 augroup vimrc
   autocmd!
-  autocmd BufReadPost * 
+  autocmd BufReadPost *
         \ if &key != "" |
         \   set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure |
         \ endif
@@ -345,19 +345,19 @@ endfunction
 
 function! UpdateAndExit()
      :PlugUpdate
-     :q 
+     :q
      :q
 endfunction
 
 function! InstallAndExit()
      :PlugInstall
-     :q 
+     :q
      :q
 endfunction
 
 " Here's a (what should be a one-line) map to help you tell just what syntax
-" highlighting groups the item under the cursor actually is: 
-" Source: http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor 
+" highlighting groups the item under the cursor actually is:
+" Source: http://vim.wikia.com/wiki/Identify_the_syntax_highlighting_group_used_at_the_cursor
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -487,8 +487,9 @@ filetype plugin indent on
 "  Colorscheme: {{{2
 " --------------
 let g:srcery_dim_lisp_paren=1
-let g:srcery_italic=1 
-let g:srcery_inverse_matches=1 
+let g:srcery_italic=1
+" let g:srcery_inverse_matches=1
+let g:srcery_transparent_background=1
 
 colorscheme srcery
 "}}}
@@ -511,7 +512,7 @@ nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>m  :Marks<cr>
 nnoremap <leader>H  :Helptags<cr>
 nnoremap <leader>/  :Ag<cr>
-nnoremap <leader><leader> :Commands<cr> 
+nnoremap <leader><leader> :Commands<cr>
 nnoremap <leader>ss :BLines<cr>
 
 " Insert mode completion
@@ -660,8 +661,8 @@ let g:python_highlight_all = 1
 " --------------------
 let g:gutentags_ctags_exclude = ['.password-store, node_modules', '.git', 'plugins', 'plugged']
 "}}}
-" Ack: {{{2 
-" ---------- 
+" Ack: {{{2
+" ----------
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ackprg = 'ag --vimgrep'
 "}}}
