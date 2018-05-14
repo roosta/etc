@@ -104,6 +104,7 @@ This function should only modify configuration layer settings."
      ;; evil-smartparens
      ;; (evil-cleverparens :location "~/src/evil-cleverparens")
      ;; (evil-terminal-cursor-changer :location "~/src/evil-terminal-cursor-changer")
+     (org-bullets  :location "~/src/org-bullets")
      (srcery-theme :location "~/src/emacs-srcery"))
 
    ;; A list of packages that cannot be updated.
