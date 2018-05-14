@@ -383,7 +383,8 @@
 
 ;; Prevent "display not ready" issue when opening helm in succession
 ;; https://github.com/emacs-helm/helm/issues/550
-(setq helm-exit-idle-delay 0)
+(setq helm-exit-idle-delay 0
+      helm-echo-input-in-header-line nil)
 
 ;; --------------------------------------------------
 ;; Paren-face
