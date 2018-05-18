@@ -4,9 +4,9 @@
 ;; The host is set using an external script when launching polybar
 ;; https://github.com/roosta/utils/blob/master/launch-polybar.sh
 
+[colors]
 ;; Fetch colors from xresources
 ;; https://github.com/roosta/vim-srcery/tree/master/term_colors
-[colors]
 black         = ${xrdb:color0:#1C1B19}
 brightblack   = ${xrdb:color8:#2D2B28}
 red           = ${xrdb:color1:#FF3128}
@@ -31,17 +31,14 @@ xgrey2        = ${xrdb:color236:#303030}
 xgrey3        = ${xrdb:color237:#3A3A3A}
 xgrey4        = ${xrdb:color238:#444444}
 xgrey5        = ${xrdb:color239:#4E4E4E}
-
 [settings]
 screenchange-reload = true
-
 [global/wm]
 margin-top = 5
 margin-bottom = 5
-
+[bar/lintilla-primary]
 ;; Set a config for each screen @ host lintilla
 ;; Multiple monitors with different resolutions
-[bar/lintilla-primary]
 monitor = ${env:MONITOR:DP-1}
 width = 100%
 separator = │
@@ -63,10 +60,9 @@ font-4 = "Material Icons:pixelsize=10;4"
 modules-left = i3 xwindow
 modules-center = mpd
 modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
-
+[bar/lintilla-secondary]
 ;; Secondary monitor @ lintilla, max resolution is 1920x1080 so font sizes and
 ;; dpi needs to be adjusted accortingly
-[bar/lintilla-secondary]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DVI-I-1}
 font-0 = "Iosevka:pixelsize=10;2"
@@ -79,7 +75,6 @@ tray-position = right
 tray-padding = 1
 tray-scale = 1
 tray-background = ${colors.brightblack}
-
 [bar/lintilla-tertiary]
 inherit = bar/lintilla-primary
 dpi = 96
@@ -89,7 +84,6 @@ font-0 = "Iosevka:pixelsize=10;2"
 font-4 = "Material Icons:pixelsize=12;3"
 modules-right =
 monitor = ${env:MONITOR:HDMI-0}
-
 [bar/allitnil]
 inherit = bar/lintilla-primary
 height = 24
@@ -99,13 +93,11 @@ modules-center =
 tray-position = right
 font-0 = "Iosevka:pixelsize=9;2"
 modules-right = keyboard-layout vpncheck wifi battery pkg volume-small memory-small cpu-small date time
-
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DP1}
 modules-center = mpd
 modules-right = keyboard-layout pkg volume memory cpu date time
-
 [bar/garkbit-secondary]
 dpi = 96
 height = 18
@@ -118,7 +110,6 @@ tray-padding = 1
 tray-scale = 1
 monitor = ${env:MONITOR:HDMI2}
 modules-right = eth-garkbit fs-home fs-root
-
 [module/i3]
 type = internal/i3
 
@@ -157,13 +148,11 @@ label-urgent = %name%
 label-urgent-padding = 1
 label-urgent-background = ${colors.orange}
 label-urgent-foreground = ${colors.brightwhite}
-
 [module/xwindow]
 type = internal/xwindow
 format-foreground = ${colors.brightwhite}
 label = %title:0:80%
 label-padding = 1
-
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
@@ -174,10 +163,9 @@ label-indicator = %name%
 label-indicator-background = ${colors.brightred}
 label-indicator-foreground = ${colors.brightwhite}
 label-indicator-padding = 1
-
+[module/pkg]
 ;; Calls a script that checks for pacman and aur package updates
 ;; https://github.com/roosta/utils/blob/master/pkg.sh
-[module/pkg]
 type = custom/script
 format-foreground = ${colors.brightwhite}
 interval = 90
@@ -187,30 +175,26 @@ label-padding-right = 1
 label-padding-left = 1
 exec = ~/utils/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-
-
+[module/keyboard-layout]
 ;; Calls a script that checks current keyboard layout, I frequently toggle
 ;; between Norwegian and American layout, and I need a clear visual indicator
 ;; for which is active.
 ;; https://github.com/roosta/utils/blob/master/keyboard-layout.sh
-[module/keyboard-layout]
 type = custom/script
 interval = 1
 format-foreground = ${colors.brightwhite}
 format = <label>
 label = "%output%"
 exec = ~/utils/keyboard-layout.sh
-
+[module/vpncheck]
 ;; Checks if a VPN connection is active and proved a colored indictator
 ;; https://github.com/roosta/utils/blob/master/vpn.sh
-[module/vpncheck]
 type = custom/script
 exec = ~/utils/vpn.sh
 ; exec-if = pgrep -x openvpn
 label-padding = 1
 interval = 30
 label = "%output%"
-
 [module/volume]
 type = internal/volume
 format-volume = "<bar-volume> <label-volume>"
@@ -235,12 +219,10 @@ bar-volume-indicator = ╸
 bar-volume-fill = ╸
 bar-volume-empty = ╸
 bar-volume-empty-foreground = ${colors.white}
-
-;; Create a smaller size volume indicator for smaller displays
 [module/volume-small]
+;; Create a smaller size volume indicator for smaller displays
 inherit = module/volume
 format-volume = "<label-volume>"
-
 [module/memory]
 type = internal/memory
 interval = 2
@@ -255,12 +237,10 @@ bar-used-indicator = ╸
 bar-used-fill = ╸
 bar-used-empty = ╸
 bar-used-empty-foreground = ${colors.white}
-
-;; Smaller memory module for use on smaller resolutions/screens
 [module/memory-small]
+;; Smaller memory module for use on smaller resolutions/screens
 inherit = module/memory
 format = "<label>"
-
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -275,12 +255,10 @@ bar-load-indicator = ╸
 bar-load-fill = ╸
 bar-load-empty = ╸
 bar-load-empty-foreground = ${colors.white}
-
 [module/cpu-small]
 inherit = module/cpu
 type = internal/cpu
 format = <label>
-
 [module/mpd]
 type = internal/mpd
 format-online-prefix = ""
@@ -290,7 +268,6 @@ host = localhost
 port = 6600
 label-song-maxlen = 80
 label-song-ellipsis = true
-
 [module/eth]
 type = internal/network
 interval = 3.0
@@ -302,15 +279,12 @@ accumulate-stats = true
 label-disconnected = %ifname% disconnected
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
-
 [module/eth-lintilla]
 inherit = module/eth
 interface = enp9s0
-
 [module/eth-garkbit]
 inherit = module/eth
 interface = enp2s0
-
 [module/wifi]
 type = internal/network
 format-connected = WIFI: <label-connected>
@@ -318,7 +292,6 @@ format-connected-padding = 1
 format-connected-foreground = ${colors.brightwhite}
 label-connected = %essid%, %signal%%
 interface = wlp2s0
-
 [module/date]
 type = internal/date
 format-foreground = ${colors.brightwhite}
@@ -326,7 +299,6 @@ interval = 5
 date = "%Y-%m-%d"
 label-padding = 1
 label = %date%
-
 [module/time]
 type = internal/date
 interval = 5
@@ -336,7 +308,6 @@ time = %H:%M
 label = %time%
 label-padding = 1
 label-font = 2
-
 [module/battery]
 type = internal/battery
 battery = BAT0
@@ -351,7 +322,6 @@ format-discharging = <label-discharging>
 format-full-foreground = ${colors.brightgreen}
 label-charging = BAT: %percentage%%
 format-charging-foreground = ${colors.cyan}
-
 [module/fs-root]
 type = internal/fs
 interval = 25
@@ -370,7 +340,6 @@ format-unmounted-padding = 1
 label-mounted = %mountpoint% %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.yellow}
-
 [module/fs-home]
 type = internal/fs
 interval = 25
