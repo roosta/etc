@@ -132,7 +132,7 @@ label-mode-padding = 1
 label-mode-foreground = ${colors.yellow}
 
 label-focused = %name%
-label-focused-font = 1
+label-focused-font = 2
 label-focused-padding = 1
 label-focused-foreground = ${colors.brightmagenta}
 
