@@ -120,6 +120,7 @@ monitor = ${env:MONITOR:HDMI2}
 modules-right = eth-garkbit fs-home fs-root
 
 [module/i3]
+
 type = internal/i3
 
 ; Sort the workspaces by index instead of the default
@@ -131,7 +132,7 @@ enable-scroll = false
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
-; This will split the workspace name on ':'
+; This will strip numbers preceding ':' from the workspace name
 strip-wsnumbers = true
 
 format = <label-state><label-mode>
@@ -160,7 +161,7 @@ label-urgent-foreground = ${colors.brightwhite}
 
 [module/xwindow]
 type = internal/xwindow
-format-foreground = ${colors.brightwhite}
+format-foreground = ${colors.white}
 label = %title:0:80%
 label-padding = 1
 
