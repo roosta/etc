@@ -178,6 +178,9 @@ update-spacemacs:
 ~/dircolors: update-libs
 	-ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 
+~/bin/vidir: update-libs
+	-ln -s $(HOME)/lib/vidir/bin/vidir $(HOME)/bin/vidir
+
 ~/.i3/config: link-conf ~/etc/local/$(HOST)/variables.mk ~/etc/templates/i3/*.i3
 	@echo -e "\033[0;33mCreating i3 config...\033[0m"
 	cd ~/etc/templates/i3 && cat *.i3 > ~/.i3/config

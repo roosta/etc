@@ -477,6 +477,7 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
 " Utils
 Plug 'alx741/vinfo'
+Plug 'trapd00r/vim-syntax-vidir-ls'
 
 call plug#end()
 
