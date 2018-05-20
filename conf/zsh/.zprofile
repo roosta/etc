@@ -86,3 +86,6 @@ export GTAGSLABEL=ctags
 # for rust-racer
 # https://github.com/racer-rust/racer#installation
 hash rustc 2>/dev/null && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
+# https://github.com/trapd00r/vim-syntax-vidir-ls
+export VIDIR_EDITOR_ARGS='-c :set nolist | :set ft=vidir-ls'

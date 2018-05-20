@@ -76,6 +76,8 @@ alias vidunst="${EDITOR:-vim} ~/etc/templates/dunst/dunstrc"
 alias pacorg="${EDITOR:-vim} ~/org/pacman.org"
 alias vifzf="${EDITOR:-vim} ~/.zsh.d/plugin_conf/fzf.zsh"
 
+alias vidir="env EDITOR=vim vidir"
+
 #}}}
 ## FIND {{{1
 ## ---------
