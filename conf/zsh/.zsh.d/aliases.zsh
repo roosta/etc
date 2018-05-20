@@ -8,7 +8,7 @@
 # │█░░  Site   : https://www.roosta.sh     ░░█│
 # │█░░  Github : https://github.com/roosta ░░█│
 # └───────────────────────────────────────────┘
-## SYSTEM {{{1
+# System: {{{1
 
 # Set up nohup so that it can deal with an argument that is itself an alias name:
 alias nohup="nohup "
@@ -38,8 +38,7 @@ alias sysedit='sudo systemctl edit'
 alias sysdis='sudo systemctl disable'
 
 #}}}
-## QUICK EDITS {{{1
-## ----------------
+# Quick edits: {{{1
 
 alias vi="vim"
 # alias vim="ect"
@@ -79,8 +78,7 @@ alias vifzf="${EDITOR:-vim} ~/.zsh.d/plugin_conf/fzf.zsh"
 alias vidir="env EDITOR=vim vidir"
 
 #}}}
-## FIND {{{1
-## ---------
+# Find: {{{1
 
 alias ag="ag -i --color --color-line-number '0;35' --color-match '46;30' --color-path '4;36' --hidden -p ~/.agignore"
 
@@ -108,7 +106,7 @@ alias sinks="pacmd list-sinks|egrep -i 'index:|name:'"
 alias awk='gawk'
 alias find-here='find . -name'
 #}}}
-## WEB-SEARCH {{{1
+# Web search: {{{1
 
 # see ~/.zsh/web_search.zsh
 alias google='web_search google'
@@ -134,8 +132,7 @@ alias clojars='web_search duckduckgo \!clojars'
 alias npm-search='web_search duckduckgo \!npm'
 
 #}}}
-## GLOBAL {{{1
-## -----------
+# Global: {{{1
 
 alias -g CA="2>&1 | cat -A"
 alias -g C='| wc -l'
@@ -191,9 +188,9 @@ alias -g P="2>&1| pygmentize -l pytb"
 #alias -g ......='../../../../..'
 
 #}}}
-## SUFFIX {{{1
-## -----------
-## example: type 'test.clj' opens vim with test.clj as active buffer.
+# Suffix: {{{1
+
+# example: type 'test.clj' opens vim with test.clj as active buffer.
 
 alias -s yml=vim
 alias -s cljs=emacsclient
@@ -209,9 +206,8 @@ alias -s net=firefox
 alias -s com=firefox
 
 #}}}
-## DEFAULTS {{{1
-## Aliases that shadow its original command. Like docker='sudo docker'
-## -----------
+# Defaults: {{{1
+# Aliases that shadow its original command. Like docker='sudo docker'
 
 alias mv=' timeout 8 mv -iv'
 alias rm=' timeout 3 rm -Iv --one-file-system'
@@ -237,12 +233,11 @@ alias docker='sudo docker'
 
 
 #}}}
-## MOVEMENT {{{1
-## -------------
+# Movement: {{{1
 
 alias cd..='cd ..'
 
-## dirstack movement: needs some extra config, see dirstack.sh
+# dirstack movement: needs some extra config, see dirstack.sh
 alias dirs='dirs -v'
 # alias 1='cd -'
 # alias 2='cd -2'
@@ -264,7 +259,7 @@ alias dirs='dirs -v'
 # alias 18='cd -18'
 # alias 19='cd -19'
 #}}}
-## LISTS {{{1
+# Lists: {{{1
 
 if [[ $TERM == 'eterm-color' ]]; then
   alias ls='\ls -lAh'
@@ -280,16 +275,15 @@ fi
 alias lsr='tree'
 alias lsp='lsp -p'
 #}}}
-## SECURITY {{{1
-## -------------
+# Security: {{{1
 
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --check --sk && sudo rkhunter --propupd"
 alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l $HOME/var/log/clamscan.log $HOME"
 alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l $HOME/var/log/clamscan.log /"
 alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l $HOME/var/log/clamscan.log ."
 #}}}
-## UTILS {{{1
-## ----------
+# Utils: {{{1
+
 alias tree="tree -ah"
 alias watchfirefox="watch progress -wc firefox" # watch firefox download progress.
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
@@ -379,8 +373,8 @@ alias ssh='env TERM=xterm-256color ssh'
 alias npmls='npm -g ls --depth=0'
 alias npmoutdated='npm outdated -g --depth=0'
 #}}}
-## VCS {{{1
-## --------
+# VCS: {{{1
+# --------
 
 if hash hub 2>/dev/null; then
   alias git='hub'
@@ -426,8 +420,7 @@ alias svnrmall="svn status | grep '!' | sed 's/^.* /svn rm /' | bash"
 
 alias sa="ssh-add ~/.ssh/id_rsa"
 #}}}
-## DEVELOP {{{1
-## ------------
+# Develop {{{1
 
 alias lein='rlwrap lein'
 alias leindeps='lein deps :tree'
@@ -450,8 +443,7 @@ alias ancient-upgrade='lein ancient upgrade :all :check-clojure :no-tests'
 alias ancient-check-profile='lein ancient check-profiles :allow-all'
 alias ancient-upgrade-profile='lein ancient upgrade-profiles :allow-all'
 #}}}
-## MISC {{{1
-## ---------
+# Misc {{{1
 
 # delete and or refresh shell confs
 alias xrmerge="xrdb -merge ~/.Xresources"
@@ -484,12 +476,13 @@ alias uh="ls && sleep 0.2 && clear"
 # run setxkbmap again, sometimes toggling between layouts stops working
 alias refresh-keyboard='setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp'
 #}}}
-## DEFAULT OPTS {{{1
-## ---------
+# Default opts: {{{1
+
 alias jobs='jobs -l'
+
 #}}}
-## PACMAN:  {{{1
-## ---------
+# Pacman: {{{1
+
 # show which package owns a given file
 alias pacown='pacman -Qo'
 
