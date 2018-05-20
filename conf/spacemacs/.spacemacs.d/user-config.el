@@ -140,6 +140,9 @@
 (with-eval-after-load 'evil-maps
   (evil-ex-define-cmd "W" 'evil-write))
 
+(with-eval-after-load 'company-mode 
+  (define-key company-active-map (kbd "M-k")   'company-show-doc-buffer))
+
 ;; ----------------------------------------------------
 ;; Terminal
 ;; ----------------------------------------------------
@@ -147,6 +150,16 @@
 
   (xclip-mode 1)
   (xterm-mouse-mode 1)
+
+  (defun my-undo-tree-hook ()
+    (dolist (key '("C-/" "C-_"))
+      (define-key undo-tree-map 
+        (read-kbd-macro key)
+        nil)))
+
+  (add-hook 'undo-tree-mode-hook 'my-undo-tree-hook)
+  (define-key global-map (kbd "C-_") 'helm-company)
+  (define-key global-map (kbd "C-/") 'helm-company)
 
   ;; Fix for terminal arrow keys. The escape seq in terminal for arrows keys are
   ;; the same as these bindings, causing emacs to call the function bound then
