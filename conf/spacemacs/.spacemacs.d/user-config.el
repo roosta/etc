@@ -11,8 +11,6 @@
  ;; Used to vim regexp
  evil-ex-search-vim-style-regexp t
 
- company-tooltip-align-annotations t
-
  ;; always follow symlinks
  vc-follow-symlinks t
 
@@ -33,7 +31,9 @@
                    )
 
  undo-tree-auto-save-history t
- undo-tree-history-directory-alist '(("." . "~/.cache/emacs/undo")))
+ undo-tree-history-directory-alist '(("." . "~/.cache/emacs/undo"))
+
+ )
 
 ;; That little navigation hint on the right side of the mode-line
 ;; caused the mode-line to get too big when not using separators
@@ -413,3 +413,12 @@
 ;; Origami
 ;; --------------------------------------------------
 (setq origami-fold-style 'triple-braces)
+
+;; --------------------------------------------------
+;; Company
+;; --------------------------------------------------
+(setq
+ company-tooltip-align-annotations t
+ auto-completion-enable-sort-by-usage t)
+
+(global-company-mode)
