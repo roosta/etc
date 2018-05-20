@@ -503,7 +503,7 @@ nmap <leader>? <plug>(fzf-maps-n)
 xmap <leader>? <plug>(fzf-maps-x)
 omap <leader>? <plug>(fzf-maps-o)
 
-nnoremap <leader>o  :Files<CR>
+nnoremap <leader>oo  :Files<CR>
 nnoremap <leader>bb :Buffers<cr>
 nnoremap <leader>T  :Tags<cr>
 nnoremap <leader>t  :BTags<cr>
