@@ -1,5 +1,5 @@
 {:user {:dependencies [;; nREPL support for ClojureScript REPLs 
-                       [com.cemerick/piggieback "0.2.2"]
+                       [cider/piggieback "0.3.5"]
                        ; [com.bhauman/rebel-readline "0.1.2"]
                        ]
 
@@ -12,7 +12,7 @@
                   ; [com.billpiel/sayid "0.0.15"]
 
                   ;; clojure syntax checking
-                  [jonase/eastwood "0.2.6-beta2" :exclusions [org.clojure/clojure]]
+                  [jonase/eastwood "0.2.6" :exclusions [org.clojure/clojure]]
 
                   ;; generate page from doc-strings
                   [lein-codox "0.10.3"]
