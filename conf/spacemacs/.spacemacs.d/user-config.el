@@ -315,7 +315,7 @@
    )
 
   ;; enable spell-checking in org-mode files
-  (add-hook 'org-mode-hook #'spacemacs/toggle-spelling-checking-on)
+  ;; (add-hook 'org-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
   ;; disabled linum in org since it cause serious slowdown on larger files
   (add-hook 'org-mode-hook #'spacemacs/toggle-line-numbers-off)
@@ -329,7 +329,7 @@
 ;; ----------------------------------------------------
 ;; markdown
 ;; ----------------------------------------------------
-(add-hook 'markdown-mode-hook #'spacemacs/toggle-spelling-checking-on)
+;; (add-hook 'markdown-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
 ;; ----------------------------------------------------
 ;; Slack
