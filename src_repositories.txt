@@ -3,4 +3,5 @@ git@github.com:roosta/colors.git
 git@github.com:roosta/bakc.git
 git@github.com:roosta/org-bullets.git
 git@github.com:roosta/emacs-srcery.git
+git@github.com:roosta/contrib-srcery.git
 
