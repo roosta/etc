@@ -5,7 +5,6 @@
 typeset -gU cdpath fpath mailpath path
 
 path=(~/bin
-      # $(ruby -rubygems -e "puts Gem.user_dir")/bin
       /usr/local/bin
       $HOME/.go/bin
       ~/perl5/bin
@@ -13,6 +12,11 @@ path=(~/bin
       ~/.pip/bin
       ~/.cargo/bin
       $path[@])
+
+# put ruby user dir in path
+if hash ruby 2>/dev/null; then
+    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
 
 # set ruby gems install location to home
 # export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
