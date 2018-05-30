@@ -50,8 +50,8 @@
   (spacemacs/helm-files-do-ag "~/org"))
 
 ;; Attempt to fix relative linum
-(global-linum-mode)
-(linum-relative-toggle)
+;; (global-linum-mode)
+;; (linum-relative-toggle)
 
 ;; ----------------------------------------------------
 ;; Keybindings
