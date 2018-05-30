@@ -319,7 +319,7 @@
 
   ;; disabled linum in org since it cause serious slowdown on larger files
   (add-hook 'org-mode-hook #'spacemacs/toggle-line-numbers-off)
-  (add-hook 'org-mode-hook #'spacemacs/linum-relative-toggle)
+  ;; (add-hook 'org-mode-hook #'spacemacs/linum-relative-toggle)
 
   ;; persist clock on emacs restart
   (org-clock-persistence-insinuate)
