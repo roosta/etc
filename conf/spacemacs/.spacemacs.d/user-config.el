@@ -386,9 +386,9 @@
 ;; --------------------------------------------------
 ;; evil-snipe
 ;; --------------------------------------------------
-(with-eval-after-load 'evil-snipe
-  (push '(?\[ "[[{(]") evil-snipe-aliases)
-  (push '(?\] "[]})]") evil-snipe-aliases))
+;; (with-eval-after-load 'evil-snipe
+;;   (push '(?\[ "[[{(]") evil-snipe-aliases)
+;;   (push '(?\] "[]})]") evil-snipe-aliases))
 
 ;; --------------------------------------------------
 ;; Helm
