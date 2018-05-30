@@ -110,14 +110,8 @@ This function should only modify configuration layer settings."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
-   ;; - git-gutter+-view-diff-infos                   23918  91%
-   ;; - mapc                                         23915  91%
-   ;; - git-gutter+-view-diff-info                  23915  91%
-   ;; - git-gutter+-view-region                    23915  91%
-   ;; line-number-at-pos                        23915  91%
-
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(rainbow-delimiters git-gutter git-gutter+)
+   dotspacemacs-excluded-packages '(rainbow-delimiters)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
