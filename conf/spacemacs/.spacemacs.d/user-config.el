@@ -55,8 +55,8 @@
   (helm-find-files "~/org"))
 
 ;; Attempt to fix relative linum
-(global-linum-mode)
-(linum-relative-toggle)
+;; (global-linum-mode)
+;; (linum-relative-toggle)
 
 ;; ----------------------------------------------------
 ;; Keybindings
@@ -324,7 +324,7 @@
 
   ;; disabled linum in org since it cause serious slowdown on larger files
   (add-hook 'org-mode-hook #'spacemacs/toggle-line-numbers-off)
-  (add-hook 'org-mode-hook #'spacemacs/linum-relative-toggle)
+  ;; (add-hook 'org-mode-hook #'spacemacs/linum-relative-toggle)
 
   ;; persist clock on emacs restart
   (org-clock-persistence-insinuate)
@@ -391,9 +391,9 @@
 ;; --------------------------------------------------
 ;; evil-snipe
 ;; --------------------------------------------------
-(with-eval-after-load 'evil-snipe
-  (push '(?\[ "[[{(]") evil-snipe-aliases)
-  (push '(?\] "[]})]") evil-snipe-aliases))
+;; (with-eval-after-load 'evil-snipe
+;;   (push '(?\[ "[[{(]") evil-snipe-aliases)
+;;   (push '(?\] "[]})]") evil-snipe-aliases))
 
 ;; --------------------------------------------------
 ;; Helm
