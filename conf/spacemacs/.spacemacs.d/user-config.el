@@ -49,6 +49,11 @@
   (interactive)
   (spacemacs/helm-files-do-ag "~/org"))
 
+(defun roosta/org-find-files ()
+  "Quickly search in org folder"
+  (interactive)
+  (helm-find-files "~/org"))
+
 ;; Attempt to fix relative linum
 (global-linum-mode)
 (linum-relative-toggle)
@@ -65,8 +70,8 @@
 ;; opening project files
 (spacemacs/set-leader-keys "oo" 'helm-projectile-find-file)
 
-;; opening org files
-(spacemacs/set-leader-keys "oi" 'helm-projectile-find-file)
+;; opening project files
+(spacemacs/set-leader-keys "oi" 'roosta/org-find-files)
 
 ;; Change previous tab to this function, it hopefully preserves layout
 ;; (spacemacs/set-leader-keys "TAB" 'mode-line-other-buffer)
