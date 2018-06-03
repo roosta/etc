@@ -52,14 +52,7 @@ fi
 # [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
 
 fpath=($HOME/.zsh.d/functions $fpath)
-function fload {
-  local function_glob='^([_.]*|README*|*~)(-.N:t)'
-  for fn in $HOME/.zsh.d/functions/$~function_glob; do
-    autoload -Uz "$fn"
-  done
-}
-
-fload
+for fn (~/.zsh.d/functions/*)  autoload -Uz $fn
 
 # ZSH CONF
 for config (~/.zsh.d/*.zsh) source $config
