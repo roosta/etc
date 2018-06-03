@@ -448,8 +448,7 @@ alias ancient-upgrade-profile='lein ancient upgrade-profiles :allow-all'
 # delete and or refresh shell confs
 alias xrmerge="xrdb -merge ~/.Xresources"
 alias xrload="xrdb -load ~/.Xresources"
-alias zrefresh="source $HOME/.zshrc"
-alias zref="zrefresh"
+alias zref="source $HOME/.zshrc"
 
 alias _="sudo"
 
