@@ -38,7 +38,7 @@ export BROWSER=firefox
 # uniform qt/gtk look.
 export DESKTOP_SESSION=gnome
 export QT_STYLE_OVERRIDE=GTK+
-# export GDK_DPI_SCALE=2
+export GDK_DPI_SCALE=1
 
 # editor
 export EDITOR="emacsclient -nw"
