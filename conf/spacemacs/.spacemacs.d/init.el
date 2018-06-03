@@ -98,6 +98,7 @@ This function should only modify configuration layer settings."
      xclip
      flycheck-joker
      flycheck-package
+     git-auto-commit-mode
      kibit-helper
      evil-terminal-cursor-changer
      ;; flycheck-clojure
