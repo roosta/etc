@@ -32,8 +32,11 @@
 
  undo-tree-auto-save-history t
  undo-tree-history-directory-alist '(("." . "~/.cache/emacs/undo"))
-
+ tab-width 2
  )
+
+;; Never insert tabs
+(set-default 'indent-tabs-mode nil)
 
 ;; That little navigation hint on the right side of the mode-line
 ;; caused the mode-line to get too big when not using separators
@@ -440,3 +443,36 @@
  auto-completion-enable-sort-by-usage t)
 
 (global-company-mode)
+
+;; https://stackoverflow.com/questions/36719386/spacemacs-set-tab-width
+(defun my-setup-indent (n)
+  (setq
+
+   ;; java/c/c++
+   c-basic-offset n
+
+   ;; coffeescript
+   coffee-tab-width n
+
+   ;; javascript-mode
+   javascript-indent-level n
+
+   ;; js-mode
+   js-indent-level n
+
+   ;; js2-mode, in latest js2-mode, it's alias of js-indent-level
+   js2-basic-offset n
+
+   ;; web-mode, html tag in html file
+   web-mode-markup-indent-offset n
+
+   ;; web-mode, css in html file
+   web-mode-css-indent-offset n
+
+   ;; web-mode, js code in html file
+   web-mode-code-indent-offset n
+
+   ;; css-mode
+   css-indent-offset n))
+
+(my-setup-indent 2)
