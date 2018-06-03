@@ -52,12 +52,11 @@ fi
 # [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
 
 function fload {
-  local function_glob='^([_.]*|prompt_*_setup|README*|*~)(-.N:t)'
+  local function_glob='^([_.]*|README*|*~)(-.N:t)'
   fpath=($HOME/.zsh.d/functions $fpath)
-  for function in $HOME/.zsh.d/functions/$~function_glob; do
-    autoload -Uz "$function"
+  for fn in $HOME/.zsh.d/functions/$~function_glob; do
+    autoload -Uz "$fn"
   done
-  unset function
 }
 
 fload
