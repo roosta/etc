@@ -5,7 +5,6 @@
 # │█▀▀▀▀▀▀▀▀▀░░░░▀▀▀░▀▀▀░▀░▀░▀░▀░▀▀▀░░░░▀▀▀▀▀▀▀▀▀█│
 # │█▀▀▀▀▀▀▀▀▀───────────────────────────▀▀▀▀▀▀▀▀▀█│
 # ├┤ Author : Roosta <mail@roosta.sh>            ├┤
-# ├┤ Site   : http://dotfiles.roosta.sh          ├┤
 # ├┤ Github : https://github.com/roosta          ├┤
 # ┆└───────────────────────────────────────┬┬┬┬┬─┤┆
 # │                                        ├┤┆├┴─┤
@@ -63,3 +62,8 @@ hash fasd 2>/dev/null && source ~/.zsh.d/plugin_conf/fasd.zsh
 hash fzf 2>/dev/null && source ~/.zsh.d/plugin_conf/fzf.zsh
 source ~/.zsh.d/plugin_conf/ls_colors.zsh
 hash thefuck 2>/dev/null && eval $(thefuck --alias)
+
+if [[ -s ~/.fzf.zsh ]]; then
+  source ~/.fzf.zsh
+fi
+
