@@ -1,6 +1,6 @@
-;; function to wrap blocks of text in org templates                        
-;; e.g. latex or src etc                                                  
-;; Source: http://pragmaticemacs.com/emacs/wrap-text-in-an-org-mode-block/ 
+;; function to wrap blocks of text in org templates
+;; e.g. latex or src etc
+;; Source: http://pragmaticemacs.com/emacs/wrap-text-in-an-org-mode-block/
 (defun org-begin-template ()
   "Make a template at point."
   (interactive)
