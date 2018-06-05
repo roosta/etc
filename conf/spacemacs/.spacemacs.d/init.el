@@ -84,8 +84,7 @@ This function should only modify configuration layer settings."
                      enable-flyspell-auto-completion nil)
      syntax-checking
      version-control
-     (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)
-     colors)
+     (evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t))
 
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -112,7 +111,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(rainbow-delimiters)
+   dotspacemacs-excluded-packages '(git-gutter git-gutter+)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
