@@ -476,7 +476,7 @@ alias ffs="wmctrl -c firefox"
 alias uh="ls && sleep 0.2 && clear"
 
 # run setxkbmap again, sometimes toggling between layouts stops working
-alias refresh-keyboard='setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp'
+alias rf='setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp'
 #}}}
 # Default opts: {{{1
 
