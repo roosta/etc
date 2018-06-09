@@ -42,17 +42,25 @@
 }
 
 tabs, tab, .tab-stack{
-  height: var(--tab-height) !important;
-  min-height: var(--tab-height) !important;
-  max-height: var(--tab-height) !important;
+
+  /* comment out these for the time being, moving tabs with these enabled cause */
+  /* the tab bar to collapse and I'm not sure how to fix it */
+  /* height: var(--tab-height) !important; */
+  /* min-height: var(--tab-height) !important; */
+  /* max-height: var(--tab-height) !important; */
+
   font-family: var(--font-family) !important;
   font-size: var(--font-size) !important;
   background-color: var(--color-black) !important;
 }
 
 #TabsToolbar {
-  min-height: var(--tab-height) !important;
-  max-height: var(--tab-height) !important;
+
+  /* comment out these for the time being, moving tabs with these enabled cause */
+  /* the tab bar to collapse and I'm not sure how to fix it */
+  /* min-height: var(--tab-height) !important; */
+  /* max-height: var(--tab-height) !important; */
+
   background-color: var(--color-black) !important;
 }
 
