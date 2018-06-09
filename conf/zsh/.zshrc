@@ -31,8 +31,8 @@ if [[ -s '/usr/share/doc/pkgfile/command-not-found.zsh' ]]; then
   source '/usr/share/doc/pkgfile/command-not-found.zsh'
 fi
 
-if [[ -s "${plugin_location}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
-  source "${plugin_location}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if [[ -s "${plugin_location}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" ]]; then
+    source "${plugin_location}/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 fi
 
 if [[ -s "${plugin_location}/zsh-history-substring-search/zsh-history-substring-search.zsh" ]]; then
@@ -66,4 +66,3 @@ hash thefuck 2>/dev/null && eval $(thefuck --alias)
 if [[ -s ~/.fzf.zsh ]]; then
   source ~/.fzf.zsh
 fi
-
