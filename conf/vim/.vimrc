@@ -12,7 +12,7 @@
 
 " use undo file and define location
 set undofile
-set undodir=~/var/undo
+set undodir=~/var/vim/undo
 
 " wildmenu
 set wildmenu
