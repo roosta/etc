@@ -137,5 +137,5 @@ to be the same height as tabs */
 /* Set the max width of newtab button to be same as height, to fix stretching of icon */
 .tabs-newtab-button.toolbarbutton-1 .toolbarbutton-icon {
   fill: var(--color-bright-white) !important;
-  max-width: var(--tab-height) !important;
+  /* max-width: var(--tab-height) !important; */
 }
