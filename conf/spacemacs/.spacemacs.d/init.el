@@ -53,7 +53,7 @@ This function should only modify configuration layer settings."
      (markdown :variables markdown-live-preview-engine 'vmd)
      ansible
      html
-     gtags
+     ;; gtags
      tmux
      yaml
      javascript

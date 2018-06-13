@@ -40,7 +40,7 @@
 
 ;; That little navigation hint on the right side of the mode-line
 ;; caused the mode-line to get too big when not using separators
-(spaceline-toggle-hud-off)
+; (spaceline-toggle-hud-off)
 
 (defun roosta/find-user-config ()
   "Jump to my user config"
