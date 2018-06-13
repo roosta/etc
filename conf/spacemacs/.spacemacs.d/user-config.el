@@ -136,7 +136,8 @@
   (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common))
 
 ;; Bind escape to quit helm
-(define-key helm-map (kbd "ESC") 'helm-keyboard-quit)
+(with-eval-after-load 'helm
+  (define-key helm-map (kbd "ESC") 'helm-keyboard-quit))
 
 ;; Use escape to make C-Return work in terminal (termite)
 (define-key cider-repl-mode-map "\e[27;5;13~" #'cider-repl-return)
@@ -148,7 +149,7 @@
 (with-eval-after-load 'evil-maps
   (evil-ex-define-cmd "W" 'evil-write))
 
-(with-eval-after-load 'company-mode 
+(with-eval-after-load 'company-mode
   (define-key company-active-map (kbd "M-k")   'company-show-doc-buffer))
 
 ;; ----------------------------------------------------
@@ -161,7 +162,7 @@
 
   (defun my-undo-tree-hook ()
     (dolist (key '("C-/" "C-_"))
-      (define-key undo-tree-map 
+      (define-key undo-tree-map
         (read-kbd-macro key)
         nil)))
 
