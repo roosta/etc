@@ -61,7 +61,7 @@ install-packages:
 # Scaffold user fs structure.
 # @ stops the command from being echoed to stdout.
 # - means that make will keep going in the case of an error.
-user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs
+user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs ~/var/emacs/undo
 	@echo -e "\033[0;33mCreate user fs...\033[0m"
 
 ~/src:
@@ -78,8 +78,8 @@ user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/undo ~/.cache/zsh 
 	-mkdir ~/sbin
 ~/var/log:
 	-mkdir -p ~/var/log
-~/var/undo:
-	-mkdir -p ~/var/undo
+~/var/vim/undo:
+	-mkdir -p ~/var/vim/undo
 ~/.cache/zsh:
 	-mkdir -p ~/.cache/zsh
 ~/backup:
@@ -167,13 +167,14 @@ set-shell:
 update-spacemacs:
 	@echo -e "\033[0;33mUpdating spacemacs...\033[0m"
 	cd ~/.emacs.d && git pull --rebase
+	emacs --batch --load=~/.emacs.d/init.el
 
-~/.emacs.d: link-conf install-packages ~/.cache/emacs/undo
+~/.emacs.d: link-conf install-packages ~/var/emacs/undo
 	@echo -e "\033[0;33mInitialize spacemacs...\033[0m"
 	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-~/.cache/emacs/undo:
-	mkdir -p ~/.cache/emacs/undo
+~/var/emacs/undo:
+	mkdir -p ~/var/emacs/undo
 
 ~/dircolors: update-libs
 	-ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors

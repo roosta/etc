@@ -31,7 +31,7 @@
                    )
 
  undo-tree-auto-save-history t
- undo-tree-history-directory-alist '(("." . "~/.cache/emacs/undo"))
+ undo-tree-history-directory-alist '(("." . "~/var/emacs/undo"))
  tab-width 2
  )
 
