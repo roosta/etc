@@ -286,6 +286,7 @@ nnoremap <leader>ji :Ilist<space>
 
 " imap <C-v> <Esc>"*pa
 
+nnoremap <leader>Sc z=
 
 nnoremap Y y$
 " }}}
