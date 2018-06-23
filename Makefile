@@ -7,13 +7,13 @@ ifneq ("$(wildcard $(VARS))","")
 include $(VARS)
 endif
 
-default: links update i3 rofi dunst 
+default: links update i3 rofi dunst
 
 update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim update-rust
 
-links: link-conf link-misc link-local 
+links: link-conf link-misc link-local
 
-install: user-fs install-pacaur install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-source i3 rofi ~/.tmux/plugins/tpm links cleanup 
+install: user-fs install-pacaur install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-source i3 rofi ~/.tmux/plugins/tpm links cleanup
 
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux cleanup
 
@@ -255,4 +255,3 @@ exa: install-packages rustup
 
 update-rust:
 	rustup update
-
