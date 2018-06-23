@@ -1,5 +1,5 @@
 {:user {:dependencies [;; nREPL support for ClojureScript REPLs 
-                       [cider/piggieback "0.3.5"]
+                       [cider/piggieback "0.3.6"]
                        [org.clojure/tools.nrepl "0.2.13"]
                        ; [com.bhauman/rebel-readline "0.1.2"]
                        ]
@@ -16,7 +16,7 @@
                   [jonase/eastwood "0.2.6" :exclusions [org.clojure/clojure]]
 
                   ;; generate page from doc-strings
-                  [lein-codox "0.10.3"]
+                  [lein-codox "0.10.4"]
 
                   ;; try libraries in a repl
                   ;; Emacs: In your *scratch* buffer, set your inferior-lisp-program var...
