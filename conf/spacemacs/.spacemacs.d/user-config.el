@@ -115,7 +115,8 @@
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
-(evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
+(with-eval-after-load 'evil-surround
+  (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region))
 
 ;; (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
 
