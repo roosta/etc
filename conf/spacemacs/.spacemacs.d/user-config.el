@@ -251,7 +251,7 @@
 (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
 (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
 
-(require 're-jump)
+;; (require 're-jump)
 
 ;; ----------------------------------------------------
 ;; flycheck
