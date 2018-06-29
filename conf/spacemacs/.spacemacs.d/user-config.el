@@ -115,6 +115,9 @@
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
+;; remap C-i (conflict with tab in tty)
+(define-key evil-normal-state-map (kbd "M-o") 'evil-jump-forward)
+
 (with-eval-after-load 'evil-surround
   (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region))
 
