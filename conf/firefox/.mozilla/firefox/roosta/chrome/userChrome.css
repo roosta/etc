@@ -83,10 +83,14 @@ tab[selected=true], tab[visuallyselected=true] .tab-content {
   font-size: var(--font-size) !important;
   color: var(--color-bright-white) !important;
   background-color: var(--color-bright-black) !important;
+  background-image: none !important;
+  border: none !important;
 }
 
 #urlbar {
   background-color: var(--color-black) !important;
+  border-radius: 0 !important;
+  border: none !important;
 }
 
 /* set border color on focused url bar */
