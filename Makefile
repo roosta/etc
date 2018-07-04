@@ -255,3 +255,7 @@ exa: install-packages rustup
 
 update-rust:
 	rustup update
+
+cljs-corpus: update-libs
+	cd ~/lib/cljs-corpus && git submodule update --init --recursive
+
