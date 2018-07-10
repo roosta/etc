@@ -9,14 +9,8 @@
         :plugins [;; check deps for new versions
                   [lein-ancient "0.6.15"]
 
-                  ;; cider debugging
-                  ; [com.billpiel/sayid "0.0.15"]
-
                   ;; clojure syntax checking
                   [jonase/eastwood "0.2.6" :exclusions [org.clojure/clojure]]
-
-                  ;; generate page from doc-strings
-                  [lein-codox "0.10.4"]
 
                   ;; try libraries in a repl
                   ;; Emacs: In your *scratch* buffer, set your inferior-lisp-program var...
