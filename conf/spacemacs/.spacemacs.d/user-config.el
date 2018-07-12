@@ -210,7 +210,10 @@
 ;; clojure
 ;; ----------------------------------------------------
 
-(with-eval-after-load 'cider-mode
+(with-eval-after-load 'cider
+
+  (require 'clojure-extras)
+
   (setq
 
    ;; start cljs repl scripts/repl.clj in project
