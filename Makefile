@@ -259,3 +259,7 @@ update-rust:
 cljs-corpus: update-libs
 	cd ~/lib/cljs-corpus && git submodule update --init --recursive
 
+~/bin/cht.sh:
+	curl https://cht.sh/:cht.sh > ~/bin/cht.sh
+	chmod +x ~/bin/cht.sh
+
