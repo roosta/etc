@@ -417,7 +417,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-abolish'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
-Plug 'mhinz/vim-startify'
+
 " theme
 Plug 'itchyny/lightline.vim'
 " Plug 'vim-airline/vim-airline'
