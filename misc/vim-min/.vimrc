@@ -294,7 +294,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'sheerun/vim-polyglot'
-Plug '/home/roosta/src/vim-srcery'
+Plug '/home/roosta/src/srcery-vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
