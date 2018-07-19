@@ -1,6 +1,4 @@
-{:user {:dependencies [[cider/piggieback "0.3.6"]]
-        :repl-options {:nrepl-middleware [cider.piggieback/wrap-cljs-repl]}
-        :plugins [;; check deps for new versions
+{:user {:plugins [;; check deps for new versions
                   [lein-ancient "0.6.15"]
 
                   ;; clojure syntax checking
