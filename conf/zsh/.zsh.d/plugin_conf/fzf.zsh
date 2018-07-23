@@ -98,6 +98,7 @@ e() {
 }
 
 # Fuzzy match file and open with vim
+# If passed an argument, open that file in vim, otherwise fzf seach from CWD
 v() {
   if [ "$#" -ne 0 ]; then
     vim $@
@@ -113,6 +114,21 @@ o() {
   local file
   ( cd ~/org && file=$(fzf-tmux --query="$1")  && 
     [ -n "$file" ] && emacsclient -nw "$file" )
+}
+
+# vf - fuzzy open with vim from anywhere
+# ex: vf word1 word2 ... (even part of a file name)
+# zsh autoload function
+vf() {
+  local files
+
+  files=(${(f)"$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1 -m)"})
+
+  if [[ -n $files ]]
+  then
+     vim -- $files
+     print -l $files[1]
+  fi
 }
 
 #}}}
