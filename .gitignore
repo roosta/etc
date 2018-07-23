@@ -112,3 +112,4 @@ rofi-example.config
 conf/spacemacs/.spacemacs.d/custom.el
 swap
 spacemacs.env
+.spacemacs.env
