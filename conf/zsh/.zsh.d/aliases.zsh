@@ -73,7 +73,7 @@ alias virofi="${EDITOR:-vim} ~/etc/templates/rofi/config.rofi"
 alias vijoker="${EDITOR:-vim} ~/.joker"
 alias vidunst="${EDITOR:-vim} ~/etc/templates/dunst/dunstrc"
 alias pacorg="${EDITOR:-vim} ~/org/pacman.org"
-alias vifzf="${EDITOR:-vim} ~/.zsh.d/plugin_conf/fzf.zsh"
+alias vifzf="vim ~/.zsh.d/plugin_conf/fzf.zsh"
 
 alias vidir="env EDITOR=vim vidir"
 
