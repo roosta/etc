@@ -76,6 +76,11 @@
 ;; opening project files
 (spacemacs/set-leader-keys "oi" 'roosta/org-find-files)
 
+;; flycheck errors
+(spacemacs/set-leader-keys "on" 'flycheck-next-error)
+
+(spacemacs/set-leader-keys "op" 'flycheck-previous-error)
+
 ;; Change previous tab to this function, it hopefully preserves layout
 ;; (spacemacs/set-leader-keys "TAB" 'mode-line-other-buffer)
 
