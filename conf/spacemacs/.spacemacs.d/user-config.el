@@ -78,8 +78,9 @@
 
 ;; flycheck errors
 (spacemacs/set-leader-keys "on" 'flycheck-next-error)
+(spacemacs/set-leader-keys "oN" 'flycheck-previous-error)
 
-(spacemacs/set-leader-keys "op" 'flycheck-previous-error)
+(spacemacs/set-leader-keys "oc" 'cheat-sh)
 
 ;; Change previous tab to this function, it hopefully preserves layout
 ;; (spacemacs/set-leader-keys "TAB" 'mode-line-other-buffer)

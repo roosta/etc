@@ -99,6 +99,7 @@ This function should only modify configuration layer settings."
      flycheck-package
      git-auto-commit-mode
      package-lint
+     cheat-sh
      kibit-helper
      evil-terminal-cursor-changer
      ;; flycheck-clojure
