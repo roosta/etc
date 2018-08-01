@@ -495,4 +495,7 @@ alias pacco='yay -Rns $(pacman -Qtdq)'
 alias pacc='yay -Scc'
 
 #}}}
+
+alias cheat='cht.sh'
+
 # vim: fdm=marker:sw=2
