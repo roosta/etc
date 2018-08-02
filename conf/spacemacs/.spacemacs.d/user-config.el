@@ -80,7 +80,11 @@
 (spacemacs/set-leader-keys "on" 'flycheck-next-error)
 (spacemacs/set-leader-keys "oN" 'flycheck-previous-error)
 
-(spacemacs/set-leader-keys "oc" 'cheat-sh)
+(spacemacs/set-leader-keys "occ" 'cheat-sh)
+
+(spacemacs/set-leader-keys "ocr" 'cheat-sh-region)
+
+(spacemacs/set-leader-keys "ocl" 'cheat-sh-list)
 
 ;; Change previous tab to this function, it hopefully preserves layout
 ;; (spacemacs/set-leader-keys "TAB" 'mode-line-other-buffer)
