@@ -61,14 +61,14 @@ This function should only modify configuration layer settings."
      fasd
      python
      docker
-     ;; slack
+     slack
      git
      lua
      nginx
      react
      chrome
      systemd
-     (emoji :disabled-for org)
+     ;; (emoji :disabled-for org)
      github
      org
      shell-scripts

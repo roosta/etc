@@ -360,16 +360,17 @@
 ;; ----------------------------------------------------
 ;; Slack
 ;; ----------------------------------------------------
-;; (if (file-directory-p "~/Private/slack")
-;;     (progn (load-file "~/Private/slack/sic.el")
-;;            (load-file "~/Private/slack/bitraf.el"))
-;;   (message "~/Private is not mounted, cannot load slack config"))
+(if (file-directory-p "~/Private/slack")
+    (progn (load-file "~/Private/slack/bitraf.el")
+           (load-file "~/Private/slack/clojurians.el"))
+  (message "~/Private is not mounted, cannot load slack config"))
 
-;; (add-hook 'slack-mode-hook #'spacemacs/toggle-spelling-checking-on)
+(add-hook 'slack-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
 ;; ----------------------------------------------------
 ;; Alert
 ;; ----------------------------------------------------
+(require 'alert)
 (setq
  alert-default-style 'libnotify)
 
