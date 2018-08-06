@@ -421,7 +421,7 @@ Plug 'romainl/vim-qlist'
 " theme
 Plug 'itchyny/lightline.vim'
 " Plug 'vim-airline/vim-airline'
-Plug '~/src/srcery-vim'
+Plug '/home/roosta/src/srcery-vim'
 " Plug 'srcery-colors/srcery-vim'
 " Plug 'sjl/badwolf'
 " Plug 'romainl/flattened'
