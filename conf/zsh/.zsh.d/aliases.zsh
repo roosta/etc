@@ -497,5 +497,5 @@ alias pacc='yay -Scc'
 #}}}
 
 alias cheat='cht.sh'
-
+alias sshlog='journalctl _COMM=sshd'
 # vim: fdm=marker:sw=2
