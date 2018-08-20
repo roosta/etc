@@ -42,25 +42,12 @@
 }
 
 tabs, tab, .tab-stack{
-
-  /* comment out these for the time being, moving tabs with these enabled cause */
-  /* the tab bar to collapse and I'm not sure how to fix it */
-  /* height: var(--tab-height) !important; */
-  /* min-height: var(--tab-height) !important; */
-  /* max-height: var(--tab-height) !important; */
-
   font-family: var(--font-family) !important;
   font-size: var(--font-size) !important;
   background-color: var(--color-black) !important;
 }
 
 #TabsToolbar {
-
-  /* comment out these for the time being, moving tabs with these enabled cause */
-  /* the tab bar to collapse and I'm not sure how to fix it */
-  /* min-height: var(--tab-height) !important; */
-  /* max-height: var(--tab-height) !important; */
-
   background-color: var(--color-black) !important;
 }
 
@@ -95,7 +82,7 @@ tab[selected=true], tab[visuallyselected=true] .tab-content {
 
 /* set border color on focused url bar */
 #urlbar[focused=true] {
-  border-radius: 0;
+  border-radius: 0 !important;
   border: 1px solid var(--color-bright-white) !important;
 }
 
@@ -113,15 +100,9 @@ tab[selected=true], tab[visuallyselected=true] .tab-content {
 /*   fill: var(--color-bright-green) !important; */
 /* } */
 
-/* set tabs scoll left and right, pluss overflow indicator
-to be the same height as tabs */
 .tabbrowser-arrowscrollbox > .scrollbutton-up,
 .tabbrowser-arrowscrollbox > .scrollbutton-down {
-  max-height: var(--tab-height) !important;
   color: var(--color-bright-white) !important;
-}
-.arrowscrollbox-overflow-start-indicator, .arrowscrollbox-overflow-end-indicator {
-  max-height: var(--tab-height) !important;
 }
 
 /* set various icon colors */
@@ -138,8 +119,9 @@ to be the same height as tabs */
   fill: var(--color-white) !important;
 }
 
-/* Set the max width of newtab button to be same as height, to fix stretching of icon */
 .tabs-newtab-button.toolbarbutton-1 .toolbarbutton-icon {
   fill: var(--color-bright-white) !important;
-  /* max-width: var(--tab-height) !important; */
 }
+
+
+
