@@ -16,7 +16,7 @@ exec_always --no-startup-id $HOME/.cargo/bin/i3wsr
 show_marks yes
 #}}}
 # WORKSPACES #{{{1
-# -------------------- 
+# --------------------
 bindsym $mod+q workspace number $pws_q
 bindsym $mod+w workspace number $pws_w
 bindsym $mod+e workspace number $pws_e
@@ -277,7 +277,7 @@ bindsym $mod+b border toggle
 # bindsym $mod+m move scratchpad
 # bindsym $mod+o scratchpad show
 
-bindsym $mod+period move scratchpad                                                           
+bindsym $mod+period move scratchpad
 bindsym $mod+comma scratchpad show
 # toggle touchpad
 bindsym XF86TouchpadToggle exec --no-startup-id ~/utils/touchpad-toggle.sh
@@ -304,8 +304,8 @@ bindsym --release Print exec teiler
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Caps_Lock exec killall -USR1 py3status
 
-bindsym $mod+Shift+v exec ~/.vim-anywhere/bin/run
-bindsym $mod+Control+v exec ~/.emacs_anywhere/bin/run
+bindsym $mod+Control+v exec ~/.vim-anywhere/bin/run
+bindsym $mod+Control+e exec ~/.emacs_anywhere/bin/run
 
 #}}}
 # BINDING MODES {{{1
