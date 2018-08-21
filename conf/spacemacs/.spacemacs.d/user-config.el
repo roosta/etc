@@ -121,6 +121,13 @@
   (kbd "C-l") 'tmux-nav-right
   (kbd "C-h") 'tmux-nav-left)
 
+(require 'magit)
+(evil-define-key 'normal magit-diff-mode-map
+  (kbd "C-k") 'tmux-nav-up
+  (kbd "C-j") 'tmux-nav-down
+  (kbd "C-l") 'tmux-nav-right
+  (kbd "C-h") 'tmux-nav-left)
+
 ;; Navigating using visual lines, line break counts as new line when navigating
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
