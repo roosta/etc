@@ -203,6 +203,7 @@ if has('gui_running')
   " set guifont=Essential\ PragmataPro\ 14px
   set guiheadroom=0
   set background=dark
+  set guifont=Iosevka\ 9
 endif
 
 "}}}
