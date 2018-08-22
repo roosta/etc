@@ -24,7 +24,6 @@ firefox
 gawk
 gimp
 git
-gksu
 gparted
 gpick
 gufw
