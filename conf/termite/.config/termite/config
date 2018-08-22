@@ -19,8 +19,8 @@ modify_other_keys = true
 # special
 foreground        = #fce8c3
 foreground_bold   = #fce8c3
-cursor_foreground = #1c1b19
-cursor            = #fbb829
+; cursor_foreground = #1c1b19
+; cursor            = #fbb829
 background        = #1c1b19
 
 # black
