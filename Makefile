@@ -38,8 +38,8 @@ cleanup:
 
 install-yay: ~/etc/build
 	@echo -e "\033[0;33mBuilding and installing yay...\033[0m"
-	cd ~/etc/build && git clone https://aur.archlinux.org/yay.git
-	cd ~/etc/build/yay && makepkg -si --noconfirm --needed
+	-cd ~/etc/build && git clone https://aur.archlinux.org/yay.git
+	-cd ~/etc/build/yay && makepkg -si --noconfirm --needed
 
 # add-pacman-repositories:
 # 	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
