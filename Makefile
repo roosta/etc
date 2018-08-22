@@ -1,4 +1,4 @@
-.PHONY: default update links install min min-update min-install min-links install-pacaur install-aur-packages install-packages user-fs update-zsh-plugins update-libs init-vim update-vim clone-src link-misc link-conf link-local set-shell update-spacemacs i3 rofi update-tmux save-originals rustup exa update-rust
+.PHONY: default update links install min min-update min-install min-links install-yay install-aur-packages install-packages user-fs update-zsh-plugins update-libs init-vim update-vim clone-src link-misc link-conf link-local set-shell update-spacemacs i3 rofi update-tmux save-originals rustup exa update-rust
 HOST ?= $(shell hostname)
 NOW = $(shell date +"%Y-%m-%dT%T")
 VARS = ~/etc/local/$(HOST)/variables.mk
@@ -13,7 +13,7 @@ update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim u
 
 links: link-conf link-misc link-local
 
-install: user-fs install-pacaur install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-source i3 rofi ~/.tmux/plugins/tpm links cleanup
+install: user-fs install-yay install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-source i3 rofi ~/.tmux/plugins/tpm links cleanup
 
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux cleanup
 
@@ -36,18 +36,18 @@ cleanup:
 	wget https://raw.githubusercontent.com/thestinger/termite/master/termite.terminfo ~/etc/build/
 	tic -x ~/etc/build/termite.terminfo
 
-install-pacaur: ~/etc/build
-	@echo -e "\033[0;33mBuild and install pacur...\033[0m"
-	cd ~/etc/build && git clone https://aur.archlinux.org/pacaur.git
-	cd ~/etc/build/pacaur && makepkg -si --noconfirm --needed
+install-yay: ~/etc/build
+	@echo -e "\033[0;33mBuilding and installing yay...\033[0m"
+	cd ~/etc/build && git clone https://aur.archlinux.org/yay.git
+	cd ~/etc/build/yay && makepkg -si --noconfirm --needed
 
 # add-pacman-repositories:
 # 	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
 # 	cat pacman_repositories.txt | sudo tee -a /etc/pacman.conf
 
-install-aur-packages: install-pacaur
+install-aur-packages: install-yay
 	@echo -e "\033[0;33mInstalling AUR packages...\033[0m"
-	pacaur -S --needed --noconfirm - < aur_packages.txt
+	yay -S --needed --noconfirm - < aur_packages.txt
 
 install-packages:
 	@echo -e "\033[0;33mInstalling packages...\033[0m"
