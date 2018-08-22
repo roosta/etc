@@ -1,10 +1,11 @@
-# ------------------- 
+# -------------------
 # VARIABLES
 # -------------------
 # fast way to reach power settings for system. Requires polkit.
 # set $locker ~/utils/locker.sh
+set $locker ~/lib/glitchlock/glitchlock
 # set $locker xscreensaver-command --lock
-set $locker i3lock -i /home/roosta/backgrounds/footer_lodyas.png -t
+# set $locker i3lock -i /home/roosta/backgrounds/footer_lodyas.png -t
 #set $locker i3lock --image=$HOME/.background/pattern-01.png -t && sleep 1
 
 # tmux session management
@@ -79,3 +80,4 @@ set $aws_f10 "26:[F10]"
 set $aws_f11 "27:[F11]"
 set $aws_f12 "28:[F12]"
 
+# -*- mode: conf; -*-
