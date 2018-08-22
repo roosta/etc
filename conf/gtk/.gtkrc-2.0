@@ -6,11 +6,11 @@ gtk-theme-name = "oomox-srcery"
 
 # Font
 style "myfont" {
-    font_name = "Iosevka 10"
+    font_name = "Iosevka 9"
 }
 widget_class "*" style "myfont"
 
-gtk-font-name = "Iosevka 10"
+gtk-font-name = "Iosevka 9"
 
 # Icon theme
 gtk-icon-theme-name = "oomox-srcery"
