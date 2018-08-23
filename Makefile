@@ -118,7 +118,7 @@ clone-src:
 ~/org:
 	@echo -e "\033[0;33mCloning org...\033[0m"
 	# ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
-	git clone git@github.com:roosta/org.git $(HOME)
+	git clone git@github.com:roosta/org.git ~/org
 
 link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-toggle ~/bin/tmain ~/bin/tupd
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
@@ -273,3 +273,5 @@ cljs-corpus: update-libs
 ~/bin/bakc: clone-src
 	ln -s ~/src/bakc/bakc.sh ~/bin/bakc
 
+i3wsr:
+	cargo install i3wsr
