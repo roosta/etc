@@ -61,7 +61,7 @@ install-packages:
 # Scaffold user fs structure.
 # @ stops the command from being echoed to stdout.
 # - means that make will keep going in the case of an error.
-user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs ~/var/emacs/undo
+user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs ~/var/emacs/undo ~/.local/share
 	@echo -e "\033[0;33mCreate user fs...\033[0m"
 
 ~/src:
@@ -86,6 +86,8 @@ user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/
 	-mkdir -p ~/backup
 ~/.cache/zsh/dirs:
 	-touch ~/.cache/zsh/dirs
+~/.local/share:
+	-mkdir -p ~/.local/share
 
 update-zsh-plugins:
 	@echo -e "\033[0;33mUpdating zsh plugins...\033[0m"
