@@ -1,4 +1,4 @@
-git@github.com:roosta/utils.git
+git@github.com:roosta/scripts.git
 git@github.com:roosta/colors.git
 git@github.com:roosta/bakc.git
 git@github.com:roosta/org-bullets.git
