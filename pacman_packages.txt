@@ -103,3 +103,5 @@ lm_sensors
 numlockx
 lxqt-policykit
 htop
+pacman-contrib
+vimpager
