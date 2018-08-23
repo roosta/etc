@@ -1,4 +1,4 @@
-primary_monitor = "eDP1"
+primary_monitor = "eDP-1"
 dpi = 140
 bar_height = 24
 lines = 38

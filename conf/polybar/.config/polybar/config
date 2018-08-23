@@ -94,7 +94,7 @@ monitor = ${env:MONITOR:HDMI-0}
 inherit = bar/lintilla-primary
 height = 24
 dpi = 140
-monitor = ${env:MONITOR:eDP1}
+monitor = ${env:MONITOR:eDP-1}
 modules-center =
 tray-position = right
 font-0 = "Iosevka:pixelsize=9;2"
