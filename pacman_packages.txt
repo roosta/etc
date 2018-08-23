@@ -102,7 +102,7 @@ zsh-lovers
 lm_sensors
 gnome-keyring
 xorg-xinit
-i3-wm
+i3
 numlockx
 lxqt-policykit
 htop
