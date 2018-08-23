@@ -263,3 +263,9 @@ cljs-corpus: update-libs
 	curl https://cht.sh/:cht.sh > ~/bin/cht.sh
 	chmod +x ~/bin/cht.sh
 
+~/.fasd/fasd.log:
+	 -mkdir ~/.fasd && touch ~/.fasd/fasd.log
+
+~/bin/bakc: clone-src
+	ln -s ~/src/bakc/bakc.sh ~/bin/bakc
+
