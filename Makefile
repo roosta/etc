@@ -175,7 +175,7 @@ update-spacemacs:
 ~/var/emacs/undo:
 	mkdir -p ~/var/emacs/undo
 
-~/dircolors: update-libs
+~/.dircolors: update-libs
 	-ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 
 ~/bin/vidir: update-libs
@@ -236,7 +236,7 @@ update-tmux:
 	@echo -e "\033[0;33mUpdating tmux plugins...\033[0m"
 	. ~/.tmux/plugins/tpm/bin/update_plugins all
 
-~/tmux/plugins/tpm: link-conf
+~/.tmux/plugins/tpm: link-conf
 	@echo -e "\033[0;33mInitialize tmux...\033[0m"
 	mkdir -p ~/.tmux/plugins
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins
