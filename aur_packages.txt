@@ -25,3 +25,4 @@ ttf-iosevka-term
 universal-ctags-git
 vimpager-git
 wacom-utility
+auraucle-git
