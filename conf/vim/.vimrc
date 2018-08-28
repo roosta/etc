@@ -84,7 +84,7 @@ set breakindent
 set cpoptions+=n
 
 " set custom character on linebreaks caused by wrap
-set showbreak=↳\
+set showbreak=>\
 
 " tabs
 set expandtab

@@ -1,7 +1,7 @@
-git@github.com:roosta/utils.git
+git@github.com:roosta/scripts.git
 git@github.com:roosta/colors.git
 git@github.com:roosta/bakc.git
 git@github.com:roosta/org-bullets.git
-git@github.com:roosta/srcery-emacs.git
-git@github.com:roosta/srcery-vim.git
-git@github.com:roosta/srcery-terminal.git
+git@github.com:srcery-colors/srcery-emacs.git
+git@github.com:srcery-colors/srcery-vim.git
+git@github.com:srcery-colors/srcery-terminal.git

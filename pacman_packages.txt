@@ -100,3 +100,11 @@ zshdb
 zsh-doc
 zsh-lovers
 lm_sensors
+gnome-keyring
+xorg-xinit
+i3
+numlockx
+lxqt-policykit
+htop
+pacman-contrib
+vimpager

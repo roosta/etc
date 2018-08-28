@@ -13,7 +13,7 @@ update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim u
 
 links: link-conf link-misc link-local
 
-install: user-fs install-yay install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-source i3 rofi ~/.tmux/plugins/tpm links cleanup
+install: user-fs install-yay install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-source update-libs update-zsh-plugins ~/.tmux/plugins/tpm links cleanup
 
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux cleanup
 
@@ -38,8 +38,8 @@ cleanup:
 
 install-yay: ~/etc/build
 	@echo -e "\033[0;33mBuilding and installing yay...\033[0m"
-	cd ~/etc/build && git clone https://aur.archlinux.org/yay.git
-	cd ~/etc/build/yay && makepkg -si --noconfirm --needed
+	-cd ~/etc/build && git clone https://aur.archlinux.org/yay.git
+	-cd ~/etc/build/yay && makepkg -si --noconfirm --needed
 
 # add-pacman-repositories:
 # 	@echo -e "\033[0;33mAdding pacman repositories...\033[0m"
@@ -61,7 +61,7 @@ install-packages:
 # Scaffold user fs structure.
 # @ stops the command from being echoed to stdout.
 # - means that make will keep going in the case of an error.
-user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs ~/var/emacs/undo
+user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs ~/var/emacs/undo ~/.local/share ~/.mozilla
 	@echo -e "\033[0;33mCreate user fs...\033[0m"
 
 ~/src:
@@ -86,6 +86,10 @@ user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/
 	-mkdir -p ~/backup
 ~/.cache/zsh/dirs:
 	-touch ~/.cache/zsh/dirs
+~/.local/share:
+	-mkdir -p ~/.local/share
+~/.mozilla/firefox:
+	-mkdir -p ~/.mozilla/firefox
 
 update-zsh-plugins:
 	@echo -e "\033[0;33mUpdating zsh plugins...\033[0m"
@@ -114,7 +118,7 @@ clone-src:
 ~/org:
 	@echo -e "\033[0;33mCloning org...\033[0m"
 	# ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
-	git clone git@github.com:roosta/org.git $(HOME)
+	git clone git@github.com:roosta/org.git ~/org
 
 link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-toggle ~/bin/tmain ~/bin/tupd
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
@@ -175,7 +179,7 @@ update-spacemacs:
 ~/var/emacs/undo:
 	mkdir -p ~/var/emacs/undo
 
-~/dircolors: update-libs
+~/.dircolors: update-libs
 	-ln -s $(HOME)/lib/LS_COLORS/LS_COLORS $(HOME)/.dircolors
 
 ~/bin/vidir: update-libs
@@ -236,7 +240,7 @@ update-tmux:
 	@echo -e "\033[0;33mUpdating tmux plugins...\033[0m"
 	. ~/.tmux/plugins/tpm/bin/update_plugins all
 
-~/tmux/plugins/tpm: link-conf
+~/.tmux/plugins/tpm: link-conf
 	@echo -e "\033[0;33mInitialize tmux...\033[0m"
 	mkdir -p ~/.tmux/plugins
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins
@@ -263,3 +267,11 @@ cljs-corpus: update-libs
 	curl https://cht.sh/:cht.sh > ~/bin/cht.sh
 	chmod +x ~/bin/cht.sh
 
+~/.fasd/fasd.log:
+	 -mkdir ~/.fasd && touch ~/.fasd/fasd.log
+
+~/bin/bakc: clone-src
+	ln -s ~/src/bakc/bakc.sh ~/bin/bakc
+
+i3wsr:
+	cargo install i3wsr
