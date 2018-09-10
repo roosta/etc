@@ -426,7 +426,6 @@ alias sa="ssh-add ~/.ssh/id_rsa"
 # Develop {{{1
 
 alias lein='rlwrap lein'
-alias leindeps='lein deps :tree'
 #alias figwheel='lein do clean, figwheel'
 alias eastwood='lein eastwood "{:namespaces [:source-paths]}"'
 # find -name '*.hx' -print -exec sed -i.bak 's/import flash/import openfl/g' {} \;
@@ -445,6 +444,8 @@ alias ancient-upgrade-all='lein ancient upgrade :all :allow-all :check-clojure :
 alias ancient-upgrade='lein ancient upgrade :all :check-clojure :no-tests'
 alias ancient-check-profile='lein ancient check-profiles :allow-all'
 alias ancient-upgrade-profile='lein ancient upgrade-profiles :allow-all'
+alias lein-classpath="lein classpath | sed -e 's/:/\'$'\n/g'"
+alias cli-classpath="clj -Spath |  sed -e 's/:/\'$'\n/g'"
 #}}}
 # Misc {{{1
 
