@@ -1,4 +1,6 @@
-{:user {:plugins [;; check deps for new versions
+{:user {:aliases  {"rebl" ["trampoline" "run" "-m" "rebel-readline.main"]}
+        :dependencies [[com.bhauman/rebel-readline "0.1.4"]]
+        :plugins [;; check deps for new versions
                   [lein-ancient "0.6.15"]
 
                   ;; clojure syntax checking
