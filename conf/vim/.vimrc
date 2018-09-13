@@ -142,15 +142,15 @@ set noshowmode
 " %P Percentage
 " %#HighlightGroup#
 set statusline=
-set statusline+=%<[%n]\ 
-set statusline+=[%F]\ 
+set statusline+=%<[%n]\
+set statusline+=[%F]\
 set statusline+=%m
 set statusline+=%r
-set statusline+=%y\ 
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\ 
-set statusline+=%{HasPaste()}\ 
+set statusline+=%y\
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\
+set statusline+=%{HasPaste()}\
 set statusline+=%=
-set statusline+=%-10.(%l,%c%V%)\ 
+set statusline+=%-10.(%l,%c%V%)\
 set statusline+=%P
 " set statusline+=[%{strlen(&fenc)?&fenc:'none'}]\  "file encoding
 " set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
@@ -418,6 +418,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-abolish'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
+
+Plug 'ntpeters/vim-better-whitespace'
 
 " theme
 Plug 'itchyny/lightline.vim'
