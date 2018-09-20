@@ -406,8 +406,9 @@
     (add-hook 'org-mode-hook 'toc-org-enable)
   (warn "toc-org not found"))
 
-;; (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
+;; (add-hook 'git-commit-setup-hook #'spacemacs/toggle-spelling-checking-on)
 ;; (add-hook 'magit-mode-hook #'spacemacs/toggle-spelling-checking-on)
+(add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell)
 
 ;; --------------------------------------------------
 ;; Rust
