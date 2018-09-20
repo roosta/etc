@@ -1,4 +1,4 @@
-(defun start-cider-repl-with-profile ()
+(defun cider-jack-in-with-profile ()
   (interactive)
   (letrec ((profile (read-string "Enter profile name: "))
            (lein-params (concat "with-profile +" profile " repl :headless")))
