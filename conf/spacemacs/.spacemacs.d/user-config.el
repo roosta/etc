@@ -257,6 +257,10 @@
    ;; add syntax highlighting to eval overlay
    cider-overlays-use-font-lock t
 
+   ;; Disable greying out of reader-conditionals when running a clojurescript
+   ;; repl, annying when I work on clojurescript macros
+   cider-font-lock-reader-conditionals nil
+
    ;; colorize usages of functions and variables from any namespace
    ;; cider-font-lock-dynamically '(macro core function var)
    ))
