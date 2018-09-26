@@ -99,6 +99,7 @@ This function should only modify configuration layer settings."
      flycheck-package
      git-auto-commit-mode
      package-lint
+     helm-org-rifle
      password-store
      cheat-sh
      kibit-helper
