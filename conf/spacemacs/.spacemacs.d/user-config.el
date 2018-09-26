@@ -55,7 +55,8 @@
 (defun roosta/org-find-files ()
   "Quickly search in org folder"
   (interactive)
-  (helm-find-files "~/org"))
+  (let ((default-directory "~/org"))
+    (helm-projectile-find-file)))
 
 ;; Attempt to fix relative linum
 ;; (global-linum-mode)
@@ -66,6 +67,8 @@
 ;; ----------------------------------------------------
 
 (spacemacs/set-leader-keys "os" 'roosta/org-search)
+
+;; (spacemacs/set-leader-keys "oss" 'helm-org-rifle-current-buffer)
 
 ;; Quick access to user-config
 (spacemacs/set-leader-keys "feu" 'roosta/find-user-config)
