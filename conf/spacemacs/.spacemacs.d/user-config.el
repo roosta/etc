@@ -355,6 +355,9 @@
    org-duration-format 'h:mm
    )
 
+  ;; enable org-table for markdown
+  (add-hook 'markdown-mode-hook 'turn-on-orgtbl)
+
   ;; enable spell-checking in org-mode files
   ;; (add-hook 'org-mode-hook #'spacemacs/toggle-spelling-checking-on)
 
