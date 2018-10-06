@@ -276,8 +276,8 @@
 ;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
-(require 'flycheck-joker)
 (with-eval-after-load 'flycheck
+  (require 'flycheck-joker)
   (setq flycheck-pos-tip-display-errors-tty-function #'flycheck-popup-tip-show-popup)
   (flycheck-clojure-setup)
   (flycheck-package-setup)
