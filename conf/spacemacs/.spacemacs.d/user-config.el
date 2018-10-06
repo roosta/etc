@@ -277,12 +277,17 @@
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (require 'flycheck-joker)
-(add-to-list 'flycheck-global-modes 'clojure-mode)
-(add-to-list 'flycheck-global-modes 'clojurescript-mode)
-
 (with-eval-after-load 'flycheck
-  (setq flycheck-display-errors-function #'flycheck-pos-tip-error-messages))
+  (setq flycheck-pos-tip-display-errors-tty-function #'flycheck-popup-tip-show-popup)
+  (flycheck-clojure-setup)
+  (flycheck-package-setup)
+  (if (display-graphic-p)
+      (flycheck-pos-tip-mode)
+    (flycheck-popup-tip-mode))
+  (add-to-list 'flycheck-global-modes 'clojure-mode)
+  (add-to-list 'flycheck-global-modes 'clojurescript-mode))
 
+(add-hook 'after-init-hook #'global-flycheck-mode)
 ;; ----------------------------------------------------
 ;; lisp
 ;; ----------------------------------------------------
@@ -447,12 +452,6 @@
 
 ;; enable globally
 (global-paren-face-mode)
-
-;; --------------------------------------------------
-;; Package-lint
-;; --------------------------------------------------
-(eval-after-load 'flycheck
-  '(flycheck-package-setup))
 
 ;; --------------------------------------------------
 ;; org-bullets
