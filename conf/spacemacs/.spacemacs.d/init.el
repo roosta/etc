@@ -103,8 +103,9 @@ This function should only modify configuration layer settings."
      password-store
      cheat-sh
      kibit-helper
+     flycheck-popup-tip
      evil-terminal-cursor-changer
-     ;; flycheck-clojure
+     flycheck-clojure
      ;; evil-smartparens
      ;; (evil-cleverparens :location "~/src/evil-cleverparens")
      ;; (evil-terminal-cursor-changer :location "~/src/evil-terminal-cursor-changer")
