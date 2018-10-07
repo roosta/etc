@@ -1,5 +1,5 @@
 source "pass email/muttrc |"
-set editor=`echo \$EDITOR`
+set editor="emacsclient -a \"\" -t"
 set my_name="Roosta"
 set realname="Daniel Berg"
 set imap_user=$my_user
@@ -7,16 +7,28 @@ set imap_pass=$my_pass
 set folder=$my_folder
 set spoolfile=+INBOX
 mailboxes = +INBOX
-set from=mail@roosta.sh
+set from="mail@roosta.sh"
 # set imap_check_subscribed
 
-# Store message headers locally to speed things up.
-# If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
+# setup gpg
+source ~/.mutt/gpg.rc
+
+set edit_headers=yes
+
+#default profile
+
+# pre-fills the From address when replying to emails based on the email account
+# that received the original mail:
+set reverse_name
+
+# Store message headers locally to speed things up. If hcache is a folder, Mutt
+# will create sub cache folders for each account which may speeds things up even
+# more.
 set header_cache = ~/.cache/mutt
 
-# Store messages locally to speed things up, like searching message bodies.
-# Can be the same folder as header_cache.
-# This will cost important disk usage according to your e-mail amount.
+# Store messages locally to speed things up, like searching message bodies. Can
+# be the same folder as header_cache. This will cost important disk usage
+# according to your e-mail amount.
 set message_cachedir = "~/.cache/mutt"
 
 # Allow Mutt to open new imap connection automatically.
@@ -31,12 +43,12 @@ set mail_check = 120
 # Maildir is a generic and standardized format.
 # Almost every MUA is able to handle Maildirs and Mutt's support is excellent.
 # There are just a few simple things that you need to do to get Mutt to use them.
-# Open your muttrc and add the following lines: 
+# Open your muttrc and add the following lines:
 # set mbox_type=Maildir
 # set folder=$HOME/mail
 # set spoolfile=+/
 
-# where all your sent e-mails will be saved. 
+# where all your sent e-mails will be saved.
 set record = +Sent
 
 set smtp_url=$my_smtp
@@ -56,24 +68,9 @@ bind pager g top
 bind pager G bottom
 bind attach,index g first-entry
 bind attach,index G last-entry
+bind index <f9> imap-fetch-mail
 
-# Palette for use with the Linux console.  Black background.
-color hdrdefault blue          black
-color quoted     blue          black
-color signature  blue          black
-color attachment red           black
-color prompt     brightmagenta black
-color message    yellow        black
-color error      brightred     black
-color indicator  black         blue
-color status     brightgreen   blue
-color tree       white         black
-color normal     brightwhite   black
-color markers    red           black
-color search     white         black
-color tilde      brightmagenta black
-color index      blue          black ~F
-color index      red           black "~N|~O"
+source ~/.mutt/srcery.linux
 
 # color body brightwhite black '\*+[^*]+\*+'
 # color body brightwhite black '_+[^_]+_+'
