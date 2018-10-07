@@ -223,7 +223,16 @@
    linum-format "%3s "
    ))
 
-;; Mutt support.
+
+;; ------------------------------
+;; Mutt
+;; ------------------------------
+(autoload 'muttrc-mode "~/.spacemacs.d/layers/muttrc-mode.el"
+  "Major mode to edit muttrc files" t)
+(setq auto-mode-alist
+      (append '(("muttrc\\'" . muttrc-mode))
+              auto-mode-alist))
+
 (setq auto-mode-alist (append '(("/tmp/mutt.*" . mail-mode)) auto-mode-alist))
 
 ;; ----------------------------------------------------
