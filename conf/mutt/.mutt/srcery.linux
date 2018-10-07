@@ -1,0 +1,17 @@
+# Palette for use with the srcery terminal colors. Black background.
+color hdrdefault blue          black
+color quoted     blue          black
+color signature  blue          black
+color attachment red           black
+color prompt     brightmagenta black
+color message    yellow        black
+color error      brightred     black
+color indicator  black         blue
+color status     brightwhite   brightblack
+color tree       white         black
+color normal     brightwhite   black
+color markers    red           black
+color search     white         black
+color tilde      brightmagenta black
+color index      blue          black ~F
+color index      red           black "~N|~O"
