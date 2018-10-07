@@ -500,4 +500,5 @@ alias pacc='yay -Scc'
 alias cheat='cht.sh'
 alias sshlog='journalctl _COMM=sshd'
 alias ncdu='ncdu --color dark'
+alias mutt='neomutt'
 # vim: fdm=marker:sw=2
