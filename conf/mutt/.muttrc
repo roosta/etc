@@ -21,6 +21,11 @@ set edit_headers=yes
 # that received the original mail:
 set reverse_name
 
+set mailcap_path 	= ~/.mutt/mailcap
+
+# automatically open HTML messages
+auto_view text/html
+
 # Store message headers locally to speed things up. If hcache is a folder, Mutt
 # will create sub cache folders for each account which may speeds things up even
 # more.
