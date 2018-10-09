@@ -1,11 +1,12 @@
 source "pass email/muttrc |"
-set editor="emacsclient -a \"\" -t"
-set my_name="Roosta"
-set realname="Daniel Berg"
-set imap_user=$my_user
-set imap_pass=$my_pass
-set folder=$my_folder
-set spoolfile=+INBOX
+set editor = "emacsclient -a \"\" -t"
+set my_name = "Roosta"
+set realname = "Daniel Berg"
+set imap_user = $my_user
+set imap_pass = $my_pass
+set folder = $my_folder
+set spoolfile = +INBOX
+set postponed = +Drafts
 mailboxes = +INBOX
 set from="mail@roosta.sh"
 # set imap_check_subscribed
