@@ -40,7 +40,9 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      csv
-     clojure
+     (clojure :variables
+              clojure-enable-sayid nil
+              clojure-enable-clj-refactor t)
      auto-completion
      vimscript
      better-defaults
