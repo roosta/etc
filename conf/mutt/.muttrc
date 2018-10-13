@@ -75,7 +75,9 @@ bind pager G bottom
 bind attach,index g first-entry
 bind attach,index G last-entry
 bind index <f9> imap-fetch-mail
-
+macro index,pager a "<save-message>=Archive<enter><enter>" "Archive Message"
+macro index,pager A "<change-folder>=Archive<enter>" "Go to Archive folder"
+macro index,pager R "<enter-command>source ~/.muttrc<enter>"
 source ~/.mutt/srcery.linux
 
 # color body brightwhite black '\*+[^*]+\*+'
