@@ -108,7 +108,9 @@ This function should only modify configuration layer settings."
      helm-org-rifle
      password-store
      cheat-sh
+     cljr-helm
      kibit-helper
+     datomic-snippets
      flycheck-popup-tip
      evil-terminal-cursor-changer
      flycheck-clojure

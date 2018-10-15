@@ -79,6 +79,8 @@
 ;; opening project files
 (spacemacs/set-leader-keys "oi" 'roosta/org-find-files)
 
+(spacemacs/set-leader-keys "or" 'cljr-helm)
+
 ;; flycheck errors
 (spacemacs/set-leader-keys "on" 'flycheck-next-error)
 (spacemacs/set-leader-keys "oN" 'flycheck-previous-error)
