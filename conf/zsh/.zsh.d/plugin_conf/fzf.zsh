@@ -112,7 +112,7 @@ v() {
 # To to org folder and open match
 o() {
   local file
-  ( cd ~/org && file=$(fzf-tmux --query="$1")  && 
+  ( cd ~/org && file=$(fzf-tmux --query="$1")  &&
     [ -n "$file" ] && emacsclient -nw "$file" )
 }
 
