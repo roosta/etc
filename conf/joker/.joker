@@ -6,6 +6,7 @@
  :known-macros [secretary.core/defroute
                 garden.def/defkeyframes
                 herb.core/defglobal
+                garden.def/defcssfn
                 garden.def/defstyles
                 cljs.test/deftest
                 garden.def/defstylesheet
