@@ -13,11 +13,6 @@ path=(~/bin
       ~/.cargo/bin
       $path[@])
 
-# put ruby user dir in path
-if hash ruby 2>/dev/null; then
-    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
-
 # set ruby gems install location to home
 # export BUNDLE_PATH=$(ruby -rubygems -e "puts Gem.user_dir")
 
@@ -53,13 +48,6 @@ export GOPATH=$HOME/.go
 
 export ZSH_CACHE_DIR=$HOME/.cache/zsh
 
-# use vimpager, and replace less
-if hash vimpager 2>/dev/null; then
-  export PAGER=/usr/bin/vimpager
-else
-  PAGER=LESS
-fi
-
 # always use the -R option to show raw characters
 export LESS=-R
 
@@ -86,10 +74,6 @@ export PULSE_LATENCY_MSEC=60
 
 # gtags
 export GTAGSLABEL=ctags
-
-# for rust-racer
-# https://github.com/racer-rust/racer#installation
-hash rustc 2>/dev/null && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 # https://github.com/trapd00r/vim-syntax-vidir-ls
 export VIDIR_EDITOR_ARGS='-c :set nolist | :set ft=vidir-ls'
