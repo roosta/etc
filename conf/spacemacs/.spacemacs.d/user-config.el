@@ -244,7 +244,7 @@
 (with-eval-after-load 'cider
 
   (require 'clojure-extras)
-
+  (load-file "~/.spacemacs.d/layers/debux.el")
   (setq
 
    ;; start cljs repl scripts/repl.clj in project
