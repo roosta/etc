@@ -124,7 +124,7 @@ link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-tog
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
 
 ~/utils: user-fs clone-src
-	-ln -f -s $(HOME)/src/utils $(HOME) &>/dev/null
+	-ln -f -s $(HOME)/src/scripts $(HOME) &>/dev/null
 
 ~/colors: user-fs clone-src
 	-ln -f -s $(HOME)/src/colors $(HOME) &>/dev/null
