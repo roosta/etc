@@ -113,7 +113,7 @@ This function should only modify configuration layer settings."
      datomic-snippets
      flycheck-popup-tip
      evil-terminal-cursor-changer
-     flycheck-clojure
+     ;; flycheck-clojure
      ;; evil-smartparens
      ;; (evil-cleverparens :location "~/src/evil-cleverparens")
      ;; (evil-terminal-cursor-changer :location "~/src/evil-terminal-cursor-changer")

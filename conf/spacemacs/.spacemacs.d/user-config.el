@@ -290,7 +290,7 @@
 (with-eval-after-load 'flycheck
   (require 'flycheck-joker)
   (setq flycheck-pos-tip-display-errors-tty-function #'flycheck-popup-tip-show-popup)
-  (flycheck-clojure-setup)
+  ;; (flycheck-clojure-setup)
   (flycheck-package-setup)
   (if (display-graphic-p)
       (flycheck-pos-tip-mode)
