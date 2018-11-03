@@ -1,4 +1,4 @@
-" set colorscheme to srcery, see conf/vimperator/.vimperator/colors/srcery.vimp 
+" set colorscheme to srcery, see conf/vimperator/.vimperator/colors/srcery.vimp
 colorscheme srcery
 
 " hide scrollbars
@@ -17,7 +17,7 @@ set loadplugins
 " t | Open tabs
 set complete=tlsS
 
-" Disable focusing on content on page load. 
+" Disable focusing on content on page load.
 " use 'gi' to jump to input fields if wanted
 set focuscontent
 
@@ -36,7 +36,7 @@ set status=ssl,input,location,bookmark,history,tabcount,position,zoomlevel
 " disable gui, only show tabs
 set gui=none,tabs
 
-" disable custom page title (appends to page title, default is 'vimperator' 
+" disable custom page title (appends to page title, default is 'vimperator'
 set titlestring=""
 
 " use custom new-tab page
@@ -77,13 +77,13 @@ nnoremap dk          :bd -select left<CR>
 nnoremap dj          :bd -select right<CR>
 nnoremap d[          :bd -select left<CR>
 nnoremap d]          :bd -select right<CR>
-noremap gd           :bdelete 
+noremap gd           :bdelete
 
 " escape cancle tab delete
 nnoremap d<Escape> <Nop>
 
 " duckduckgo quick bang searches
-nnoremap C t!clj<Nop> 
+nnoremap C t!clj<Nop>
 nnoremap ! t!
 
 " go to last active tab.
@@ -108,7 +108,7 @@ noremap <c-a> i<c-a>
 noremap <leader>ds :nohlsearch<CR>
 
 " open history browser
-noremap U :history!<Nop> 
+noremap U :history!<Nop>
 
 " use up/down when in cmdmode to select completions
 " note: use shift-movement to move in command history
@@ -126,7 +126,7 @@ source ~/.vimperator/styles/hide-webrtc-indicator.vimp
 " source ~/.vimperator/styles/arch-wiki.vimp
 " source ~/.vimperator/styles/reddit.vimp
 
-" alias commands 
+" alias commands
 " alias tg tabgroups
 
 " temporary hack to fix autocompletion
@@ -174,4 +174,4 @@ source ~/.vimperator/styles/hide-webrtc-indicator.vimp
 " now in Vimperator type 'tj<Space>getElementById<CR>' and there you go
 " }}}
 
-" vim:ft=vimperator:sw=2:ts=2
+" vim:ft=vim:sw=2:ts=2
