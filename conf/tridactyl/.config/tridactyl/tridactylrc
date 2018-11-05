@@ -1,5 +1,5 @@
 unbind <C-y>
-bind R source ~/.config/tridactyl/.tridactylrc
+bind <C-R> source ~/.config/tridactyl/tridactylrc
 bind <C-]> tabnext
 bind <C-[> tabprev
 bind <C-l> tabnext
@@ -15,6 +15,6 @@ set searchurls.mdn https://developer.mozilla.org/en-US/search?q=
 set hintfiltermode vimperator-reflow
 set hintnames numeric
 
-set colorscheme srcery
+set colorscheme dark
 
 " vim: set filetype=vim:
