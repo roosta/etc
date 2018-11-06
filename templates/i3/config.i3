@@ -1,3 +1,4 @@
+ # -*- mode: config; compile-command: ftl i3 make; -*-
 # ┌──────────────────────────────────────────────────────┐
 # │o┏━┓┓ ┳┏┏┓  ┏━┓┏━┓┏┓┓┳━┓o┏━┓  ┏┓┓┳━┓┏┏┓┳━┓┳  ┳━┓┏┓┓┳━┓│
 # │┃ ━┫┃┃┃┃┃┃  ┃  ┃ ┃┃┃┃┣━ ┃┃ ┳   ┃ ┣━ ┃┃┃┃━┛┃  ┃━┫ ┃ ┣━ │
@@ -447,5 +448,3 @@ client.unfocused        $black        $bright_black $bright_white $cyan
 client.urgent           $orange       $orange       $black        $cyan
 client.placeholder      $magenta      $cyan         $black        $cyan
 #}}}
-
- # -*- mode: config; compile-command: ftl i3 make -*-
