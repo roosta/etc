@@ -24,15 +24,14 @@
  browse-url-browser-function 'browse-url-generic
  browse-url-generic-program "firefox"
 
- hl-paren-colors '("#FCE8C3" ; bright-white
-                   "#519F50" ; green
-                   "#2C78BF" ; blue
-                   "#918175" ; white
-                   )
-
  undo-tree-auto-save-history t
  undo-tree-history-directory-alist '(("." . "~/var/emacs/undo"))
  tab-width 2
+
+ hl-paren-colors '("#FCE8C3"
+                   "#6C6C6C"
+                   "#4E4E4E"
+                   "#3A3A3A")
  )
 
 ;; Never insert tabs
@@ -220,6 +219,11 @@
   (setq
    ;; add a space between text and line numbers
    linum-relative-format "%3s "
+
+   hl-paren-colors '("brightwhite"
+                     "color-242"
+                     "color-239"
+                     "color-237")
 
    ;; Add some padding by the line number on terminal
    linum-format "%3s "
