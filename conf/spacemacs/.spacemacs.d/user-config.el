@@ -32,6 +32,26 @@
                    "#6C6C6C"
                    "#4E4E4E"
                    "#3A3A3A")
+
+ hl-todo-keyword-faces '(("HOLD" . "#D75F00")
+                         ("TODO" . "#FED06E")
+                         ("NEXT" . "#FF5C8F")
+                         ("THEM" . "#FF5C8F")
+                         ("PROG" . "#53FDE9")
+                         ("OKAY" . "#53FDE9")
+                         ("DONT" . "#F75341")
+                         ("FAIL" . "#F75341")
+                         ("DONE" . "#98BC37")
+                         ("NOTE" . "#FED06E")
+                         ("KLUDGE" . "#FF8700")
+                         ("HACK" . "#FF8700")
+                         ("TEMP" . "#68A8E4")
+                         ("FIXME" . "#FF5C8F")
+                         ("XXX" . "#FF5C8F")
+                         ("XXXX" . "#FF5C8F")
+                         ("???" . "#68A8E4"))
+
+
  )
 
 ;; Never insert tabs
@@ -206,10 +226,10 @@
           nil))))
 
   (with-eval-after-load 'dired+
-      (dolist (key '("M-o" "M-O" "M-["))
-        (define-key dired-mode-map
-          (read-kbd-macro key)
-          nil)))
+    (dolist (key '("M-o" "M-O" "M-["))
+      (define-key dired-mode-map
+        (read-kbd-macro key)
+        nil)))
 
   ;; (dolist (key '("\M-o" "\M-O" "\M-["))
   ;;   (global-unset-key key))
@@ -224,6 +244,24 @@
                      "color-242"
                      "color-239"
                      "color-237")
+
+   hl-todo-keyword-faces '(("HOLD" . "color-208")
+                           ("TODO" . "yellow")
+                           ("NEXT" . "magenta")
+                           ("THEM" . "magenta")
+                           ("PROG" . "cyan")
+                           ("OKAY" . "cyan")
+                           ("DONT" . "red")
+                           ("FAIL" . "red")
+                           ("DONE" . "green")
+                           ("NOTE" . "color-208")
+                           ("KLUDGE" . "color-208")
+                           ("HACK" . "color-208")
+                           ("TEMP" . "blue")
+                           ("FIXME" . "magenta")
+                           ("XXX" . "magenta")
+                           ("XXXX" . "magenta")
+                           ("???" . "blue"))
 
    ;; Add some padding by the line number on terminal
    linum-format "%3s "
