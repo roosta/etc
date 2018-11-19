@@ -49,6 +49,7 @@ This function should only modify configuration layer settings."
      helm
      rust
      emacs-lisp
+     search-engine
      git
      vinegar
      ranger
