@@ -100,6 +100,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(arduino-mode
      toc-org
+     vue-mode
      paren-face
      xclip
      flycheck-joker
