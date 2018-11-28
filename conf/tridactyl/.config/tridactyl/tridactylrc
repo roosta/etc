@@ -1,5 +1,8 @@
+" -*- vimrc -*-
+" vim: set filetype=vim:
+" https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
 unbind <C-y>
-bind <C-R> source ~/.config/tridactyl/tridactylrc
+bind <C-S-r> source ~/.config/tridactyl/tridactylrc
 bind <C-]> tabnext
 bind <C-[> tabprev
 bind <C-l> tabnext
@@ -8,9 +11,9 @@ bind <C-h> tabprev
 " bind --mode=insert <C-k> <S-Tab>
 bind D composite tabclose | buffer #
 
-set searchurls.clj https://clojuredocs.org/search?q=
-set searchurls.aw https://wiki.archlinux.org/index.php?title=Special:Search&search=
-set searchurls.mdn https://developer.mozilla.org/en-US/search?q=
+set searchurls.!clj https://clojuredocs.org/search?q=
+set searchurls.!aw https://wiki.archlinux.org/index.php?title=Special:Search&search=
+set searchurls.!mdn https://developer.mozilla.org/en-US/search?q=
 
 set hintfiltermode vimperator-reflow
 set hintnames numeric
