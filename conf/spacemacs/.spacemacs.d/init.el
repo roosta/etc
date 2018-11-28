@@ -101,6 +101,7 @@ This function should only modify configuration layer settings."
    '(arduino-mode
      toc-org
      vue-mode
+     org-alert
      paren-face
      xclip
      flycheck-joker
