@@ -490,7 +490,7 @@ alias jobs='jobs -l'
 alias pacown='pacman -Qo'
 
 # clean orphans
-alias pacco='yay -Rns $(pacman -Qtdq)'
+alias pacorph='yay -Rns $(pacman -Qtdq)'
 
 # clean cache
 alias pacc='yay -Scc'
