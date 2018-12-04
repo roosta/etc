@@ -108,3 +108,4 @@ lxqt-policykit
 htop
 pacman-contrib
 vimpager
+mlocate
