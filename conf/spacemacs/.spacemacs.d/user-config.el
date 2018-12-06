@@ -129,29 +129,6 @@
 
 ;; (roosta-minor-mode 1)
 
-(evil-define-key 'normal term-raw-map
-  (kbd "C-k") 'tmux-nav-up
-  (kbd "C-j") 'tmux-nav-down
-  (kbd "C-l") 'tmux-nav-right
-  (kbd "C-h") 'tmux-nav-left
-  (kbd "<C-up>") 'term-send-up
-  (kbd "<C-down>") 'term-send-down
-  (kbd "<C-return>") 'term-send-return)
-
-(require 'cider)
-(evil-define-key 'normal cider-repl-mode-map
-  (kbd "C-k") 'tmux-nav-up
-  (kbd "C-j") 'tmux-nav-down
-  (kbd "C-l") 'tmux-nav-right
-  (kbd "C-h") 'tmux-nav-left)
-
-(require 'magit)
-(evil-define-key 'normal magit-diff-mode-map
-  (kbd "C-k") 'tmux-nav-up
-  (kbd "C-j") 'tmux-nav-down
-  (kbd "C-l") 'tmux-nav-right
-  (kbd "C-h") 'tmux-nav-left)
-
 ;; Navigating using visual lines, line break counts as new line when navigating
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -214,6 +191,30 @@
   (add-hook 'undo-tree-mode-hook 'my-undo-tree-hook)
   (define-key global-map (kbd "C-_") 'helm-company)
   (define-key global-map (kbd "C-/") 'helm-company)
+
+  (evil-define-key 'normal term-raw-map
+    (kbd "C-k") 'tmux-nav-up
+    (kbd "C-j") 'tmux-nav-down
+    (kbd "C-l") 'tmux-nav-right
+    (kbd "C-h") 'tmux-nav-left
+    (kbd "<C-up>") 'term-send-up
+    (kbd "<C-down>") 'term-send-down
+    (kbd "<C-return>") 'term-send-return)
+
+  (require 'cider)
+  (evil-define-key 'normal cider-repl-mode-map
+    (kbd "C-k") 'tmux-nav-up
+    (kbd "C-j") 'tmux-nav-down
+    (kbd "C-l") 'tmux-nav-right
+    (kbd "C-h") 'tmux-nav-left)
+
+  (require 'magit)
+  (evil-define-key 'normal magit-diff-mode-map
+    (kbd "C-k") 'tmux-nav-up
+    (kbd "C-j") 'tmux-nav-down
+    (kbd "C-l") 'tmux-nav-right
+    (kbd "C-h") 'tmux-nav-left)
+
 
   ;; Fix for terminal arrow keys. The escape seq in terminal for arrows keys are
   ;; the same as these bindings, causing emacs to call the function bound then
