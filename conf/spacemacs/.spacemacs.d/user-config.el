@@ -438,10 +438,10 @@
 ;; ----------------------------------------------------
 ;; Alert
 ;; ----------------------------------------------------
-(require 'alert)
-(setq alert-default-style 'libnotify)
-(require 'org-alert)
-(org-alert-enable)
+;; (require 'alert)
+;; (setq alert-default-style 'libnotify)
+;; (require 'org-alert)
+;; (org-alert-enable)
 
 ;; ----------------------------------------------------
 ;; Flymd
