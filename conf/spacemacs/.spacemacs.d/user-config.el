@@ -148,6 +148,7 @@
 ;; The following customization of the cider-repl-mode-map will change these
 ;; keybindings so that Return will introduce a new-line and C-RET will send the
 ;; form off for evaluation.
+(require 'cider)
 (define-key cider-repl-mode-map (kbd "RET") #'cider-repl-newline-and-indent)
 
 ;; Bind link slurp to match cleverparens
