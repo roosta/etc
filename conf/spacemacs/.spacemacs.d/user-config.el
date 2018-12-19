@@ -388,7 +388,7 @@
    ;; have indending in source blocks make a bit more sense
    org-src-tab-acts-natively t
 
-   org-clock-idle-time 15
+   org-clock-idle-time 30
 
    ;; use dropbox to sync mobile changes
    org-mobile-directory "~/Dropbox/MobileOrg"
