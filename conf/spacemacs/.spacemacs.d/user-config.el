@@ -216,6 +216,13 @@
     (kbd "C-l") 'tmux-nav-right
     (kbd "C-h") 'tmux-nav-left)
 
+  (require 'python)
+  (evil-define-key 'normal inferior-python-mode-map
+    (kbd "C-k") 'tmux-nav-up
+    (kbd "C-j") 'tmux-nav-down
+    (kbd "C-l") 'tmux-nav-right
+    (kbd "C-h") 'tmux-nav-left)
+
 
   ;; Fix for terminal arrow keys. The escape seq in terminal for arrows keys are
   ;; the same as these bindings, causing emacs to call the function bound then
