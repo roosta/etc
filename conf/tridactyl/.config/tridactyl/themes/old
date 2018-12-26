@@ -1,0 +1,152 @@
+:root {
+  /* colors */
+
+  --tridactyl-srcery-black: #1C1B19;
+  --tridactyl-srcery-red: #EF2F27;
+  --tridactyl-srcery-green: #519F50;
+  --tridactyl-srcery-yellow: #FBB829;
+  --tridactyl-srcery-blue: #2C78BF;
+  --tridactyl-srcery-magenta: #E02C6D;
+  --tridactyl-srcery-cyan: #0AAEB3;
+  --tridactyl-srcery-white: #918175;
+  --tridactyl-srcery-orange: #D75F00;
+
+  --tridactyl-srcery-bright-black: #2D2C29;
+  --tridactyl-srcery-bright-red: #F75341;
+  --tridactyl-srcery-bright-green: #98BC37;
+  --tridactyl-srcery-bright-yellow: #FED06E;
+  --tridactyl-srcery-bright-blue: #68A8E4;
+  --tridactyl-srcery-bright-magenta: #FF5C8F;
+  --tridactyl-srcery-bright-cyan: #53FDE9;
+  --tridactyl-srcery-bright-white: #FCE8C3;
+  --tridactyl-srcery-bright-orange: #FF8700;
+
+  --tridactyl-srcery-hard-black: #121212;
+  --tridactyl-srcery-gray-1: #262626;
+  --tridactyl-srcery-gray-2: #303030;
+  --tridactyl-srcery-gray-3: #3A3A3A;
+  --tridactyl-srcery-gray-4: #444444;
+  --tridactyl-srcery-gray-5: #4E4E4E;
+
+  --tridactyl-font-family: monospace;
+  --tridactyl-font-family-sans: sans-serif;
+  --tridactyl-font-size: 12pt;
+  --tridactyl-small-font-size: 12px;
+  --tridactyl-logo: url('data:image/png;base64,REPLACE_ME_WITH_BASE64_TRIDACTYL_LOGO');
+
+  /* Mode indicator */
+  --tridactyl-status-font-family: var(--tridactyl-font-family);
+  --tridactyl-status-font-size: var(--tridactyl-small-font-size);
+  --tridactyl-status-bg: var(--tridactyl-srcery-black);
+  --tridactyl-status-fg: var(--tridactyl-srcery-bright-white);
+  --tridactyl-status-border: 1px lightgray solid;
+  --tridactyl-status-border-radius: 2px;
+
+  /* Hinting */
+
+  /* Hint character tags */
+  --tridactyl-hintspan-font-family: var(--tridactyl-font-family-sans);
+  --tridactyl-hintspan-font-size: var(--tridactyl-small-font-size);
+  --tridactyl-hintspan-font-weight: bold;
+  --tridactyl-hintspan-fg: white;
+  --tridactyl-hintspan-bg: red;
+  --tridactyl-hintspan-border-color: ButtonShadow;
+  --tridactyl-hintspan-border-width: 0px;
+  --tridactyl-hintspan-border-style: solid;
+
+  /* Element highlights */
+  --tridactyl-hint-active-fg: var(--tridactyl-srcery-bright-white);
+  --tridactyl-hint-active-bg: #88ff00;
+  --tridactyl-hint-active-outline: 1px solid #cc0000;
+
+  --tridactyl-hint-bg: rgba(255, 255, 0, 0.25);
+  --tridactyl-hint-outline: 1px solid #8f5902;
+
+  /* :viewsource */
+  --tridactyl-vs-bg: var(--tridactyl-srcery-black);
+  --tridactyl-vs-fg: var(--tridactyl-bright-white);
+  --tridactyl-vs-font-family: var(--tridactyl-font-family);
+
+  /*commandline*/
+
+  --tridactyl-cmdl-bg: var(--tridactyl-srcery-black);
+  --tridactyl-cmdl-fg: var(--tridactyl-srcery-bright-white);
+  --tridactyl-cmdl-line-height: 1.5;
+  --tridactyl-cmdl-font-family: monospace;
+  --tridactyl-cmdl-font-size: 9pt;
+
+  /*completions*/
+
+  --tridactyl-cmplt-option-height: 1.4em;
+  --tridactyl-cmplt-fg: var(--tridactyl-srcery-bright-white);
+  --tridactyl-cmplt-bg: var(--tridactyl-srcery-black);
+  --tridactyl-cmplt-font-size: 10pt;
+  --tridactyl-cmplt-font-family: monospace;
+  /* i don't think 0.5px is redered */
+  --tridactyl-cmplt-border-top: 1px solid grey;
+
+  /* need a better way for naming variables
+   *
+        - .Properties for .HistoryCompletionSource table
+        - .Properties for .BmarkCompletionSource table
+ */
+
+  /*sectionHeader*/
+
+  --tridactyl-header-first-bg: LightGray;
+  --tridactyl-header-second-bg: #ddd;
+  --tridactyl-header-third-bg: LightGray;
+  /* eg. What if I dont want liner-gradient as bg?
+   *
+   * :root .sectionHeader { background: blue; }
+   *
+   * ????
+   */
+
+  --tridactyl-header-font-weight: bold;
+  /* i don't think 0.5px is redered */
+  --tridactyl-header-border-bottom: 1px solid bottom;
+
+  /*url style*/
+
+  --tridactyl-url-text-decoration: none;
+  --tridactyl-url-fg: #1f9947;
+  --tridactyl-url-bg: var(--tridactyl-srcery-black);
+  --tridactyl-url-cursor: pointer;
+
+  /*option focused*/
+
+  --tridactyl-of-fg: var(--tridactyl-srcery-bright-white);
+  --tridactyl-of-bg: #ffec8b;
+
+  /*new tab spoiler box*/
+  --tridactyl-highlight-box-bg: #eee;
+  --tridactyl-highlight-box-fg: var(--tridactyl-srcery-bright-white);
+
+  --tridactyl-private-window-icon-url: url("chrome://browser/skin/privatebrowsing/private-browsing.svg");
+
+  --tridactyl-container-fingerprint-url: url("resource://usercontext-content/fingerprint.svg");
+  --tridactyl-container-briefcase-url: url("resource://usercontext-content/briefcase.svg");
+  --tridactyl-container-dollar-url: url("resource://usercontext-content/dollar.svg");
+  --tridactyl-container-cart-url: url("resource://usercontext-content/cart.svg");
+  --tridactyl-container-circle-url: url("resource://usercontext-content/circle.svg");
+  --tridactyl-container-gift-url: url("resource://usercontext-content/gift.svg");
+  --tridactyl-container-vacation-url: url("resource://usercontext-content/vacation.svg");
+  --tridactyl-container-food-url: url("resource://usercontext-content/food.svg");
+  --tridactyl-container-fruit-url: url("resource://usercontext-content/fruit.svg");
+  --tridactyl-container-pet-url: url("resource://usercontext-content/pet.svg");
+  --tridactyl-container-tree-url: url("resource://usercontext-content/tree.svg");
+  --tridactyl-container-chill-url: url("resource://usercontext-content/chill.svg");
+
+  --tridactyl-container-color-blue: #37adff;
+  --tridactyl-container-color-turquoise: #00c79a;
+  --tridactyl-container-color-green: #51cd00;
+  --tridactyl-container-color-yellow: #ffcb00;
+  --tridactyl-container-color-orange: #ff9f00;
+  --tridactyl-container-color-red: #ff613d;
+  --tridactyl-container-color-pink: #ff4bda;
+  --tridactyl-container-color-purple: #af51f5;
+
+  --tridactyl-externaledit-bg: var(--tridactyl-logo) no-repeat center;
+
+}
