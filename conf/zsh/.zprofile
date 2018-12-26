@@ -34,6 +34,7 @@ export BROWSER=firefox
 export DESKTOP_SESSION=gnome
 export QT_STYLE_OVERRIDE=GTK+
 export GDK_DPI_SCALE=1
+export GDK_SCALE=2
 
 # editor
 export EDITOR="emacsclient -a \"\" -t"
@@ -77,3 +78,4 @@ export GTAGSLABEL=ctags
 
 # https://github.com/trapd00r/vim-syntax-vidir-ls
 export VIDIR_EDITOR_ARGS='-c :set nolist | :set ft=vidir-ls'
+

@@ -129,29 +129,6 @@
 
 ;; (roosta-minor-mode 1)
 
-(evil-define-key 'normal term-raw-map
-  (kbd "C-k") 'tmux-nav-up
-  (kbd "C-j") 'tmux-nav-down
-  (kbd "C-l") 'tmux-nav-right
-  (kbd "C-h") 'tmux-nav-left
-  (kbd "<C-up>") 'term-send-up
-  (kbd "<C-down>") 'term-send-down
-  (kbd "<C-return>") 'term-send-return)
-
-(require 'cider)
-(evil-define-key 'normal cider-repl-mode-map
-  (kbd "C-k") 'tmux-nav-up
-  (kbd "C-j") 'tmux-nav-down
-  (kbd "C-l") 'tmux-nav-right
-  (kbd "C-h") 'tmux-nav-left)
-
-(require 'magit)
-(evil-define-key 'normal magit-diff-mode-map
-  (kbd "C-k") 'tmux-nav-up
-  (kbd "C-j") 'tmux-nav-down
-  (kbd "C-l") 'tmux-nav-right
-  (kbd "C-h") 'tmux-nav-left)
-
 ;; Navigating using visual lines, line break counts as new line when navigating
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
@@ -171,6 +148,7 @@
 ;; The following customization of the cider-repl-mode-map will change these
 ;; keybindings so that Return will introduce a new-line and C-RET will send the
 ;; form off for evaluation.
+(require 'cider)
 (define-key cider-repl-mode-map (kbd "RET") #'cider-repl-newline-and-indent)
 
 ;; Bind link slurp to match cleverparens
@@ -214,6 +192,37 @@
   (add-hook 'undo-tree-mode-hook 'my-undo-tree-hook)
   (define-key global-map (kbd "C-_") 'helm-company)
   (define-key global-map (kbd "C-/") 'helm-company)
+
+  (evil-define-key 'normal term-raw-map
+    (kbd "C-k") 'tmux-nav-up
+    (kbd "C-j") 'tmux-nav-down
+    (kbd "C-l") 'tmux-nav-right
+    (kbd "C-h") 'tmux-nav-left
+    (kbd "<C-up>") 'term-send-up
+    (kbd "<C-down>") 'term-send-down
+    (kbd "<C-return>") 'term-send-return)
+
+  (require 'cider)
+  (evil-define-key 'normal cider-repl-mode-map
+    (kbd "C-k") 'tmux-nav-up
+    (kbd "C-j") 'tmux-nav-down
+    (kbd "C-l") 'tmux-nav-right
+    (kbd "C-h") 'tmux-nav-left)
+
+  (require 'magit)
+  (evil-define-key 'normal magit-diff-mode-map
+    (kbd "C-k") 'tmux-nav-up
+    (kbd "C-j") 'tmux-nav-down
+    (kbd "C-l") 'tmux-nav-right
+    (kbd "C-h") 'tmux-nav-left)
+
+  (require 'python)
+  (evil-define-key 'normal inferior-python-mode-map
+    (kbd "C-k") 'tmux-nav-up
+    (kbd "C-j") 'tmux-nav-down
+    (kbd "C-l") 'tmux-nav-right
+    (kbd "C-h") 'tmux-nav-left)
+
 
   ;; Fix for terminal arrow keys. The escape seq in terminal for arrows keys are
   ;; the same as these bindings, causing emacs to call the function bound then
@@ -379,7 +388,7 @@
    ;; have indending in source blocks make a bit more sense
    org-src-tab-acts-natively t
 
-   org-clock-idle-time 15
+   org-clock-idle-time 30
 
    ;; use dropbox to sync mobile changes
    org-mobile-directory "~/Dropbox/MobileOrg"
@@ -438,10 +447,10 @@
 ;; ----------------------------------------------------
 ;; Alert
 ;; ----------------------------------------------------
-(require 'alert)
-(setq alert-default-style 'libnotify)
-(require 'org-alert)
-(org-alert-enable)
+;; (require 'alert)
+;; (setq alert-default-style 'libnotify)
+;; (require 'org-alert)
+;; (org-alert-enable)
 
 ;; ----------------------------------------------------
 ;; Flymd

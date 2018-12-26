@@ -5,6 +5,7 @@
                              reagent.core]
  :known-macros [secretary.core/defroute
                 garden.def/defkeyframes
+                reagent.core/with-let
                 herb.core/defglobal
                 garden.def/defcssfn
                 garden.def/defstyles

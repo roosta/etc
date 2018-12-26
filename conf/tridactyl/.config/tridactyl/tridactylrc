@@ -18,6 +18,4 @@ set searchurls.!mdn https://developer.mozilla.org/en-US/search?q=
 set hintfiltermode vimperator-reflow
 set hintnames numeric
 
-set colorscheme dark
-
-" vim: set filetype=vim:
+set colorscheme srcery
