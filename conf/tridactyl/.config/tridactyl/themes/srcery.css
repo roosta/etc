@@ -1,6 +1,31 @@
 :root.TridactylThemeSrcery {
   --tridactyl-bg: black;
   --tridactyl-fg: lightgreen;
+  --srcery-black: #1C1B19;
+  --srcery-bright-black: #2D2C29;
+  --srcery-red: #EF2F27;
+  --srcery-bright-red: #F75341;
+  --srcery-green: #519F50;
+  --srcery-bright-green: #98BC37;
+  --srcery-yellow: #FBB829;
+  --srcery-bright-yellow: #FED06E;
+  --srcery-blue: #2C78BF;
+  --srcery-bright-blue: #68A8E4;
+  --srcery-magenta: #E02C6D;
+  --srcery-bright-magenta: #FF5C8F;
+  --srcery-cyan: #0AAEB3;
+  --srcery-bright-cyan: #53FDE9;
+  --srcery-white: #918175;
+  --srcery-bright-white: #FCE8C3;
+  --srcery-orange: #D75F00;
+  --srcery-bright-orange: #FF8700;
+  --srcery-hard-black: #121212;
+  --srcery-xgray1: #262626;
+  --srcery-xgray2: #303030;
+  --srcery-xgray3: #3A3A3A;
+  --srcery-xgray4: #444444;
+  --srcery-xgray5: #4E4E4E;
+
 }
 
 :root.TridactylThemeSrcery #completions .sectionHeader {
@@ -8,7 +33,7 @@
 }
 
 :root.TridactylThemeSrcery #tridactyl-colon::before {
-  content: "] ";
+  content: "> ";
 }
 
 :root.TridactylThemeSrcery #completions .focused,
