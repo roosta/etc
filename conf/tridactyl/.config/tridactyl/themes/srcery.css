@@ -1,6 +1,4 @@
 :root.TridactylThemeSrcery {
-  --tridactyl-bg: black;
-  --tridactyl-fg: lightgreen;
   --srcery-black: #1C1B19;
   --srcery-bright-black: #2D2C29;
   --srcery-red: #EF2F27;
@@ -26,10 +24,14 @@
   --srcery-xgray4: #444444;
   --srcery-xgray5: #4E4E4E;
 
+  --tridactyl-bg: var(--srcery-black);
+  --tridactyl-fg: var(--srcery-bright-white);
+
 }
 
 :root.TridactylThemeSrcery #completions .sectionHeader {
-  display: none;
+  color: var(--srcery-bright-white);
+  background: var(--srcery-black);
 }
 
 :root.TridactylThemeSrcery #tridactyl-colon::before {
@@ -38,15 +40,13 @@
 
 :root.TridactylThemeSrcery #completions .focused,
 :root.TridactylThemeSrcery #completions .focused .url {
-  background: var(--tridactyl-bg);
-  text-decoration: underline;
+  background: var(--srcery-bright-white) !important;
+  color: var(--srcery-black) !important;
 }
 
 :root.TridactylThemeSrcery #cmdline_iframe {
   position: fixed !important;
   bottom: unset;
-  top: 0% !important;
-  left: 0% !important;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 15px !important;
-  opacity: 0.9;
+  top: -3px !important;
+  left: 0 !important;
 }
