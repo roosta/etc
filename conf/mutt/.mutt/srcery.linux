@@ -1,3 +1,4 @@
+# -*- mode: muttrc; -*-
 # Palette for use with the srcery terminal colors. Black background.
 color hdrdefault blue          black
 color quoted     blue          black
@@ -30,4 +31,3 @@ color body green black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 color body green black  "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
 
 # vim:ft=muttrc
-# -*- mode: muttrc; -*-
