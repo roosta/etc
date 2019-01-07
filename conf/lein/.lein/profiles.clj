@@ -1,10 +1,12 @@
 {:user {:aliases  {"rebl" ["trampoline" "run" "-m" "rebel-readline.main"]}
-        :dependencies [[com.bhauman/rebel-readline "0.1.4"]]
+        :dependencies [
+                       ;; [com.bhauman/rebel-readline "0.1.4"]
+                       ]
         :plugins [;; check deps for new versions
                   [lein-ancient "0.6.15"]
 
                   ;; clojure syntax checking
-                  [jonase/eastwood "0.2.6" :exclusions [org.clojure/clojure]]
+                  [jonase/eastwood "0.3.4" :exclusions [org.clojure/clojure]]
 
                   ;; try libraries in a repl
                   ;; Emacs: In your *scratch* buffer, set your inferior-lisp-program var...
