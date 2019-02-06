@@ -33,13 +33,13 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(typescript
-     ;; ----------------------------------------------------------------
+   '(;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      csv
+     typescript
      (clojure :variables
               clojure-enable-sayid nil
               clojure-enable-clj-refactor t)
@@ -82,7 +82,7 @@ This function should only modify configuration layer settings."
             shell-default-full-span nil
             shell-default-position 'bottom
             shell-default-term-shell "/usr/bin/zsh"
-            shell-default-shell 'multi-term)
+            shell-default-shell 'ansi-term)
      (spell-checking :variables
                      spell-checking-enable-by-default nil
                      spell-checking-enable-auto-dictionary t
