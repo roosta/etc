@@ -107,6 +107,7 @@ This function should only modify configuration layer settings."
      xclip
      flycheck-joker
      flycheck-package
+     ;; org-tempo
      git-auto-commit-mode
      package-lint
      helm-org-rifle

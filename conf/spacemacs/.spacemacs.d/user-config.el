@@ -373,6 +373,7 @@
 (with-eval-after-load 'org
 
   (require 'org-extras)
+  (require 'org-tempo)
 
   (setq
    ;; I added this to export clock times in drawers
