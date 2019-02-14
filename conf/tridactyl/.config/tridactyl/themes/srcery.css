@@ -47,6 +47,12 @@
 :root.TridactylThemeSrcery #cmdline_iframe {
   position: fixed !important;
   bottom: unset;
+  width: 200px !important;
+  bottom: 0 !important;
   top: -3px !important;
   left: 0 !important;
+}
+
+:root.TridactylThemeSrcery #completions .option {
+  background: var(--srcery-bright-white) !important;
 }

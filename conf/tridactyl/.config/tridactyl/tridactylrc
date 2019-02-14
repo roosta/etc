@@ -7,8 +7,10 @@ bind <C-]> tabnext
 bind <C-[> tabprev
 bind <C-l> tabnext
 bind <C-h> tabprev
-" bind --mode=insert <C-j> <Tab>
-" bind --mode=insert <C-k> <S-Tab>
+" unbind <C-j>
+" unbind <C-k>
+" bind --mode=input <C-j> <Tab>
+" bind --mode=input <C-k> <S-Tab>
 bind D composite tabclose | buffer #
 
 set searchurls.!clj https://clojuredocs.org/search?q=
