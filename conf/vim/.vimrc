@@ -418,7 +418,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-abolish'
 Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
-
+Plug 'markonm/traces.vim'
 Plug 'ntpeters/vim-better-whitespace'
 
 " theme
