@@ -41,7 +41,9 @@ set shortmess+=I
 set scrolloff=7
 
 " set number of colors to 256
-set t_Co=256
+if !has('gui_running')
+  set t_Co=256
+endif
 
 " tmp workaround for undercurl fallback to work
 " https://github.com/vim/vim/issues/2424
