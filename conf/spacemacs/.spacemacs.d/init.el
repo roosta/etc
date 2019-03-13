@@ -47,6 +47,7 @@ This function should only modify configuration layer settings."
      vimscript
      better-defaults
      helm
+     c-c++
      rust
      emacs-lisp
      search-engine
