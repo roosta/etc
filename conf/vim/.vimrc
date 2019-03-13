@@ -464,7 +464,7 @@ Plug 'guns/vim-sexp'
 " Plug 'ctrlpvim/ctrlp.vim'
 
 " syntax
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'hdima/python-syntax'
 Plug 'tmux-plugins/vim-tmux'
