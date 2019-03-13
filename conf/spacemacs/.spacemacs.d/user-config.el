@@ -386,6 +386,8 @@
    ;; makes for a better reading experience I think
    org-hide-emphasis-markers t
 
+   org-log-into-drawer "LOGBOOK"
+
    ;; have indending in source blocks make a bit more sense
    org-src-tab-acts-natively t
 
