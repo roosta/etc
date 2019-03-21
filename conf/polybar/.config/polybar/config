@@ -102,7 +102,7 @@ modules-right = keyboard-layout vpncheck wifi battery pkg volume-small memory-sm
 
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
-monitor = ${env:MONITOR:DP1}
+monitor = ${env:MONITOR:DP-1}
 modules-center = mpd
 modules-right = keyboard-layout pkg volume memory cpu date time
 
@@ -116,7 +116,7 @@ inherit = bar/lintilla-primary
 tray-position = right
 tray-padding = 1
 tray-scale = 1
-monitor = ${env:MONITOR:HDMI2}
+monitor = ${env:MONITOR:HDMI-2}
 modules-right = eth-garkbit fs-home fs-root
 
 [module/i3]
@@ -186,7 +186,7 @@ format = <label>
 label = "PKG: %output%"
 label-padding-right = 1
 label-padding-left = 1
-exec = ~/utils/pkg.sh
+exec = ~/scripts/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 [module/keyboard-layout]
@@ -199,13 +199,13 @@ interval = 1
 format-foreground = ${colors.brightwhite}
 format = <label>
 label = "%output%"
-exec = ~/utils/keyboard-layout.sh
+exec = ~/scripts/keyboard-layout.sh
 
 [module/vpncheck]
 ;; Checks if a VPN connection is active and proved a colored indictator
 ;; https://github.com/roosta/utils/blob/master/vpn.sh
 type = custom/script
-exec = ~/utils/vpn.sh
+exec = ~/scripts/vpn.sh
 ; exec-if = pgrep -x openvpn
 label-padding = 1
 interval = 30
