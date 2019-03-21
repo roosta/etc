@@ -1,6 +1,7 @@
 nvidia-settings --load-config-only &
 # /home/roosta/bin/chdisp desk &
 /home/roosta/.screenlayout/main.sh &
+nm-applet &
 # /home/roosta/src/startpage/start.sh &
 # thunderbird --mail &
 # conky -d -q -c ~/.config/conky/conky-rss.conf &
