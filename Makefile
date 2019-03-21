@@ -14,7 +14,7 @@ update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim u
 
 links: link-conf link-misc link-local
 
-install: user-fs install-yay install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-source update-libs update-zsh-plugins ~/.tmux/plugins/tpm links cleanup
+install: user-fs install-yay install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-src update-libs update-zsh-plugins ~/.tmux/plugins/tpm links cleanup
 
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux cleanup
 
@@ -70,7 +70,7 @@ install-packages:
 # Scaffold user fs structure.
 # @ stops the command from being echoed to stdout.
 # - means that make will keep going in the case of an error.
-user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs ~/var/emacs/undo ~/.local/share ~/.mozilla
+user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/zsh ~/backup ~/.cache/zsh/dirs ~/var/emacs/undo ~/.local/share ~/.mozilla/firefox/roosta
 	@echo -e "\033[0;33mCreate user fs...\033[0m"
 
 ~/src:
@@ -148,22 +148,22 @@ link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-tog
 	-ln -f -s $(HOME)/src/utils/touchpad-toggle.sh $(HOME)/bin/touchpad-toggle &>/dev/null
 
 ~/bin/tmain: user-fs clone-src
-	-ln -f -s $(HOME)/utils/tmux-main.sh $(HOME)/bin/tmain &>/dev/null
+	-ln -f -s $(HOME)/scripts/tmux-main.sh $(HOME)/bin/tmain &>/dev/null
 
 ~/bin/tmusic: user-fs clone-src
-	-ln -f -s $(HOME)/utils/tmux-music.sh $(HOME)/bin/tmusic &>/dev/null
+	-ln -f -s $(HOME)/scripts/tmux-music.sh $(HOME)/bin/tmusic &>/dev/null
 
 ~/bin/tupd: user-fs clone-src
-	-ln -f -s $(HOME)/utils/tmux-update-window.sh $(HOME)/bin/tupd &>/dev/null
+	-ln -f -s $(HOME)/scripts/tmux-update-window.sh $(HOME)/bin/tupd &>/dev/null
 
 ~/bin/tssh: user-fs clone-src
-	-ln -f -s $(HOME)/utils/tmux-ssh.sh $(HOME)/bin/tssh &>/dev/null
+	-ln -f -s $(HOME)/scripts/tmux-ssh.sh $(HOME)/bin/tssh &>/dev/null
 
 ~/bin/rxtx: user-fs clone-src
-	-ln -f -s $(HOME)/utils/rxtx.sh $(HOME)/bin/rxtx &>/dev/null
+	-ln -f -s $(HOME)/scripts/rxtx.sh $(HOME)/bin/rxtx &>/dev/null
 
 ~/bin/loadavg: user-fs clone-src
-	-ln -f -s $(HOME)/utils/loadavg.sh $(HOME)/bin/loadavg &>/dev/null
+	-ln -f -s $(HOME)/scripts/loadavg.sh $(HOME)/bin/loadavg &>/dev/null
 
 link-conf:
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
@@ -258,7 +258,7 @@ save-originals:
 	mkdir ~/backup/original-system-files@$(NOW)
 	mv ~/.bash* ~/backup/original-system-files@$(NOW)
 
-rustup: install-packages
+rustup: 
 	rustup install stable
 	rustup install nightly
 	rustup default stable
