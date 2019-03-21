@@ -85,7 +85,6 @@ unzip
 urxvt-perls
 vifm
 vim-spell-nb
-vim-systemd
 virt-manager
 w3m
 xbindkeys
@@ -107,5 +106,7 @@ numlockx
 lxqt-policykit
 htop
 pacman-contrib
-vimpager
 mlocate
+fd
+atool
+docker

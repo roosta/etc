@@ -1,7 +1,6 @@
 aspell-nb
 boot
 cava
-cower
 dropbox
 dropbox-cli
 figlet-fonts
@@ -23,6 +22,4 @@ toilet
 ttf-iosevka
 ttf-iosevka-term
 universal-ctags-git
-vimpager-git
-wacom-utility
-auraucle-git
+polybar
