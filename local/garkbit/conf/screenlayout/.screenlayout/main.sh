@@ -1,5 +1,5 @@
 #!/bin/sh
-xrandr --output DP1 --auto --primary --dpi 192 \
-       --output HDMI2 --auto --left-of DP1
+xrandr --output DP-1 --auto --primary --dpi 192 \
+       --output HDMI-2 --auto --left-of DP-1
 
 
