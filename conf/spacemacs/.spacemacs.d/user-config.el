@@ -405,7 +405,7 @@
                             "~/org/loans.org"))
 
    ;; define agenda files
-   org-agenda-files (quote ("~/org/TODOs.org"))
+   org-agenda-files (quote ("~/org/TODOs.org" "~/org/projects.org" "~/org/work.org"))
 
    ;; Capture templates
    ;; http://orgmode.org/manual/Capture-templates.html#Capture-templates
