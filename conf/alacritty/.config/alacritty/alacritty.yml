@@ -103,7 +103,7 @@ render_timer: false
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: false
+custom_cursor_colors: true
 
 # Colors (Srcery)
 colors:
@@ -115,7 +115,7 @@ colors:
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
     text:   '0x1C1B19'
-    cursor: '0xFCE8C3'
+    cursor: '0xFBB829'
 
   # Normal colors
   normal:
