@@ -59,7 +59,7 @@
 
 ;; That little navigation hint on the right side of the mode-line
 ;; caused the mode-line to get too big when not using separators
-; (spaceline-toggle-hud-off)
+                                        ; (spaceline-toggle-hud-off)
 
 (defun roosta/find-user-config ()
   "Jump to my user config"
@@ -337,19 +337,20 @@
 ;; ----------------------------------------------------
 ;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
-
 (with-eval-after-load 'flycheck
   (require 'flycheck-joker)
+  (require 'flycheck-kondo)
   (setq flycheck-pos-tip-display-errors-tty-function #'flycheck-popup-tip-show-popup)
   ;; (flycheck-clojure-setup)
   (flycheck-package-setup)
   (if (display-graphic-p)
       (flycheck-pos-tip-mode)
     (flycheck-popup-tip-mode))
-  (add-to-list 'flycheck-global-modes 'clojure-mode)
-  (add-to-list 'flycheck-global-modes 'clojurescript-mode))
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
+  (add-to-list 'flycheck-global-modes 'clojure-mode)
+  (add-to-list 'flycheck-global-modes 'clojurescript-mode)
+  (add-hook 'after-init-hook #'global-flycheck-mode))
+
 ;; ----------------------------------------------------
 ;; lisp
 ;; ----------------------------------------------------
@@ -471,7 +472,7 @@
 ;; ----------------------------------------------------
 (if (file-directory-p "~/Private/github")
     (load-file "~/Private/github/github.el")
-    (message "~/Private is not mounted, cannot load github config"))
+  (message "~/Private is not mounted, cannot load github config"))
 
 (add-to-list 'load-path "~/.emacs.d/toc-org")
 
