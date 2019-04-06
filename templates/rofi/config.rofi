@@ -4,7 +4,7 @@
 ! ┃┳┛┃ ┃┣━ ┃
 ! ┇┗┛┛━┛┇  ┇
 !
-rofi.modi:                           combi,calc -no-show-match -no-sort
+rofi.modi:                           combi,calc: calc -no-show-match -no-sort
 rofi.width:                          20
 rofi.columns:                        1
 
