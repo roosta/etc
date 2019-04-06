@@ -98,6 +98,7 @@ message {
 }
 
 textbox {
+  highlight: @highlight;
   text-color: @brightwhite;
 }
 
