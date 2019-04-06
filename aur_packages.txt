@@ -23,3 +23,4 @@ ttf-iosevka
 ttf-iosevka-term
 universal-ctags-git
 polybar
+rofi-calc
