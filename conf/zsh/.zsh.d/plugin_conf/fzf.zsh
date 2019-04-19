@@ -105,7 +105,7 @@ v() {
   else
     local file
     file=$(fzf-tmux --query="$1")
-    [ -n "$file" ] && vim "$file"
+    [ -n "$file" ] && vim -- "$file"
   fi
 }
 
@@ -315,10 +315,10 @@ fts() {
 #}}}
 # FASD {{{
 # --------
-v() {
-  local file
-  file="$(fasd -Rfl "$1" | fzf-tmux --no-sort +m -d 40%)" && vi "${file}" || return 1
-}
+# v() {
+#   local file
+#   file="$(fasd -Rfl "$1" | fzf-tmux --no-sort +m -d 40%)" && vi "${file}" || return 1
+# }
 
 c() {
   local dir
