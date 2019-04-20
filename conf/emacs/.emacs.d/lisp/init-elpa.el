@@ -34,5 +34,8 @@ There are two things you can do about this warning:
   (package-refresh-contents)
   (package-install 'use-package))
 
+(eval-when-compile
+  (require 'use-package))
+
 (provide 'init-elpa)
 ;;; init-elpa.el ends here
