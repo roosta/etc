@@ -19,6 +19,14 @@
 (when (fboundp 'menu-bar-mode)
     (menu-bar-mode -1))
 
+; (let ((no-border '(internal-border-width . 0)))
+;   (add-to-list 'default-frame-alist no-border)
+;   (add-to-list 'initial-frame-alist no-border))
+
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
 
 ; ;; Non-zero values for `line-spacing' can mess up ansi-term and co,
 ; ;; so we zero it explicitly in those cases.
