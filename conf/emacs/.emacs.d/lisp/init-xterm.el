@@ -11,9 +11,17 @@
 (autoload 'mwheel-install "mwheel")
 
 (defun roosta/console-frame-setup ()
-  (use-package xclip :ensure t :config (xclip-mode 1)) ; Enable xclip in terminal
+  (use-package xclip 
+               :ensure t
+               :config
+               (xclip-mode 1))
+  (use-package tmux-pane
+               :ensure t
+               :config
+               (tmux-pane-mode 1))
   (xterm-mouse-mode 1) ; Mouse in a terminal (Use shift to paste with middle button)
-  (mwheel-install))
+  (mwheel-install)
+  )
 
 (add-hook 'after-make-console-frame-hooks 'roosta/console-frame-setup)
 
