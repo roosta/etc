@@ -11,7 +11,7 @@
 (autoload 'mwheel-install "mwheel")
 
 (defun roosta/console-frame-setup ()
-  (use-package xclip 
+  (use-package xclip
                :ensure t
                :config
                (xclip-mode 1))
@@ -19,9 +19,18 @@
                :ensure t
                :config
                (tmux-pane-mode 1))
+  (use-package evil-terminal-cursor-changer
+             :ensure t
+             :init
+             (setq evil-motion-state-cursor 'box)  ; █
+             (setq evil-visual-state-cursor 'box)  ; █
+             (setq evil-normal-state-cursor 'box)  ; █
+             (setq evil-insert-state-cursor 'bar)  ; ⎸
+             (setq evil-emacs-state-cursor  'hbar) ; _
+             :config
+             (etcc-on))
   (xterm-mouse-mode 1) ; Mouse in a terminal (Use shift to paste with middle button)
-  (mwheel-install)
-  )
+  (mwheel-install))
 
 (add-hook 'after-make-console-frame-hooks 'roosta/console-frame-setup)
 
