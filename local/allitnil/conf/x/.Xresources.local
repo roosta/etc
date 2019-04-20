@@ -2,10 +2,4 @@
 Xft.dpi: 140
 *dpi: 140
 
-! "Font to use" Set from: XResources
-rofi.font: Essential PragmataPro 15px
-
-! "Y-offset relative to location" Set from: XResources
-rofi.yoffset: 24
-
 ! vim:ft=xdefaults:ts=2:sw=2:fdm=marker
