@@ -44,5 +44,8 @@
 
 ; (use-package command-log-mode)
 
-; (require 'init-frame-hooks)
-; (require 'init-xterm)
+(require 'init-frame-hooks)
+(require 'init-xterm)
+
+(provide 'init)
+;;; init.el ends here
