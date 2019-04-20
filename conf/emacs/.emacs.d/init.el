@@ -44,6 +44,7 @@
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
+(require 'init-gui-frames)
 
 
 ;;----------------------------------------------------------------------------
