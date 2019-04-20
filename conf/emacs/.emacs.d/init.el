@@ -40,7 +40,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
-; (use-package command-log-mode)
+(use-package diminish :ensure t)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
