@@ -11,10 +11,7 @@
 (autoload 'mwheel-install "mwheel")
 
 (defun roosta/console-frame-setup ()
-  (use-package xclip
-               :ensure t
-               :config
-               (xclip-mode 1))
+  (use-package xclip :ensure t :config (xclip-mode 1)) ; Enable xclip in terminal
   (xterm-mouse-mode 1) ; Mouse in a terminal (Use shift to paste with middle button)
   (mwheel-install))
 
