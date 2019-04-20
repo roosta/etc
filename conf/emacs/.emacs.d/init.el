@@ -25,6 +25,7 @@
   (add-hook 'emacs-startup-hook
 (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
+
 ;;----------------------------------------------------------------------------
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
@@ -33,10 +34,12 @@
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-exec-path) ;; Set up $PATH
 
+
 ;;----------------------------------------------------------------------------
 ;; Allow users to provide an optional "init-preload-local.el"
 ;;----------------------------------------------------------------------------
 (require 'init-preload-local nil t)
+
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
@@ -46,6 +49,31 @@
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
+
+
+;;----------------------------------------------------------------------------
+;; Allow access from emacsclient
+;;----------------------------------------------------------------------------
+(add-hook 'after-init-hook
+          (lambda ()
+            (require 'server)
+            (unless (server-running-p)
+              (server-start))))
+
+
+;;----------------------------------------------------------------------------
+;; Variables configured via the interactive 'customize' interface
+;;----------------------------------------------------------------------------
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+
+;;----------------------------------------------------------------------------
+;; Allow users to provide an optional "init-local" containing personal settings
+;;----------------------------------------------------------------------------
+(require 'init-local nil t)
+
+
 
 (provide 'init)
 ;;; init.el ends here
