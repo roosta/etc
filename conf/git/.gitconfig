@@ -38,7 +38,7 @@
 [merge]
 	tool = emacsclient -nw
 [commit]
-	# verbose = true
+	verbose = true
 	gpgsign = true
 [include]
   path = ~/.gitconfig.local
