@@ -17,22 +17,22 @@
 (when (fboundp 'set-scroll-bar-mode)
   (set-scroll-bar-mode nil))
 (when (fboundp 'menu-bar-mode)
-    (menu-bar-mode -1))
+  (menu-bar-mode -1))
 
-; (let ((no-border '(internal-border-width . 0)))
-;   (add-to-list 'default-frame-alist no-border)
-;   (add-to-list 'initial-frame-alist no-border))
+;; (let ((no-border '(internal-border-width . 0)))
+;;  (add-to-list 'default-frame-alist no-border)
+;;  (add-to-list 'initial-frame-alist no-border))
 
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name))
-                 "%b"))))
+		   (abbreviate-file-name (buffer-file-name))
+		 "%b"))))
 
-; ;; Non-zero values for `line-spacing' can mess up ansi-term and co,
-; ;; so we zero it explicitly in those cases.
-; (add-hook 'term-mode-hook
-;           (lambda ()
-;             (setq line-spacing 0)))
+					; ;; Non-zero values for `line-spacing' can mess up ansi-term and co,
+					; ;; so we zero it explicitly in those cases.
+					; (add-hook 'term-mode-hook
+					;           (lambda ()
+					;             (setq line-spacing 0)))
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here

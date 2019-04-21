@@ -14,8 +14,8 @@ Selectively runs either `after-make-console-frame-hooks' or
 `after-make-window-system-frame-hooks'"
   (with-selected-frame frame
     (run-hooks (if window-system
-                   'after-make-window-system-frame-hooks
-                 'after-make-console-frame-hooks))))
+		   'after-make-window-system-frame-hooks
+		 'after-make-console-frame-hooks))))
 
 (add-hook 'after-make-frame-functions 'run-after-make-frame-hooks)
 
@@ -23,8 +23,8 @@ Selectively runs either `after-make-console-frame-hooks' or
   "The frame (if any) active during Emacs initialization.")
 
 (add-hook 'after-init-hook
-          (lambda () (when roosta/initial-frame
-                  (run-after-make-frame-hooks roosta/initial-frame))))
+	  (lambda () (when roosta/initial-frame
+		       (run-after-make-frame-hooks roosta/initial-frame))))
 
 
 (provide 'init-frame-hooks)

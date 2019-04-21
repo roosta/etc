@@ -3,22 +3,22 @@
 ;;; Code:
 
 (use-package srcery-theme
-             :load-path "~/src/srcery-emacs"
-             :init
-             (setq srcery-transparent-background t)
-             ; :config
-             ; (load-theme 'srcery t)
-             )
+  :load-path "~/src/srcery-emacs"
+  :init
+  (setq srcery-transparent-background t)
+  ;; :config
+  ;; (load-theme 'srcery t)
+  )
 
-; (use-package smart-mode-line
-;              :ensure t
-;              :config
-;              (sml/setup))
+;; (use-package smart-mode-line
+;;              :ensure t
+;;              :config
+;;              (sml/setup))
 
-; (setq-default custom-theme-directory "~/src/srcery-emacs")
+;; (setq-default custom-theme-directory "~/src/srcery-emacs")
 (setq-default custom-enabled-themes '(srcery))
 
-; Ensure that themes will be applied even if they have not been customized
+;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
   "Forcibly load the themes listed in `custom-enabled-themes'."
   (dolist (theme custom-enabled-themes)
