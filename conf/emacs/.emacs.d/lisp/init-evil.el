@@ -20,12 +20,26 @@
   :after (evil)
   :custom (evil-collection-setup-minibuffer t)
   :ensure t
-  :config
-  (evil-collection-init))
+  :config (evil-collection-init))
 
 (use-package evil-surround
   :ensure t
   :config (global-evil-surround-mode))
+
+(use-package nlinum-relative
+  :ensure t
+  :init
+  (setq nlinum-relative-current-symbol "")
+  (setq nlinum-relative-redisplay-delay 0)
+  (setq nlinum-format "%3s ")
+  :config
+  (nlinum-relative-setup-evil)
+  (add-hook 'prog-mode-hook 'nlinum-relative-mode)
+  (add-hook 'text-mode-hook 'nlinum-relative-mode))
+
+(use-package evil-commentary
+  :ensure t
+  :config (evil-commentary-mode))
 
 (provide 'init-evil)
 ;;; init-evil.el ends here
