@@ -55,6 +55,7 @@
 (require 'init-gui-frames)
 (require 'init-evil)
 (require 'init-theme)
+(require 'init-ivy)
 
 
 ;;----------------------------------------------------------------------------
