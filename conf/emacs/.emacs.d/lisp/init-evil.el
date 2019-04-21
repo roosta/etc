@@ -8,12 +8,17 @@
              (setq evil-ex-search-vim-style-regexp t)
              (setq evil-want-keybinding nil) ;; required by evil-collection
              (setq evil-move-beyond-eol t)
-             :bind (:map evil-normal-state-map
-                         ("j" . evil-next-visual-line)
-                         ("k" . evil-previous-visual-line)
-                         ("M-o" . evil-jump-forward))
+             ; :bind (:map evil-normal-state-map
+             ;             ("j" . evil-next-visual-line)
+             ;             ("k" . evil-previous-visual-line)
+             ;             ("M-o" . evil-jump-forward))
              :config
-             (evil-mode))
+             (evil-mode)
+             (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+             (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+             (define-key evil-normal-state-map (kbd "M-o") 'evil-jump-forward)
+             )
+
 
 (use-package evil-collection
              :after (evil)
