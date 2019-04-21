@@ -7,6 +7,7 @@
              :init
              (setq evil-ex-search-vim-style-regexp t)
              (setq evil-want-keybinding nil) ;; required by evil-collection
+             (setq evil-want-C-u-scroll t)
              (setq evil-move-beyond-eol t)
              :config
              (evil-mode)
