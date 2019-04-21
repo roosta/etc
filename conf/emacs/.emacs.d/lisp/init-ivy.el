@@ -38,6 +38,7 @@
  "oi" 'roosta/org-find-files
  "bb" 'counsel-ibuffer
  "rs" 'ivy-resume
+ "qq" 'save-buffers-kill-emacs
  )
 
 
