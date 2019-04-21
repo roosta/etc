@@ -10,17 +10,17 @@
 
 (autoload 'mwheel-install "mwheel")
 
+(use-package tmux-pane
+             :ensure t
+             :config
+             (tmux-pane-mode 1))
+
 (defun roosta/console-frame-setup ()
 
   (use-package xclip
                :ensure t
                :config
                (xclip-mode 1))
-
-  (use-package tmux-pane
-               :ensure t
-               :config
-               (tmux-pane-mode 1))
 
   (use-package evil-terminal-cursor-changer
                :ensure t

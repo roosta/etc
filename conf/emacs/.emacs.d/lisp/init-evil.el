@@ -15,7 +15,6 @@
              (define-key evil-normal-state-map (kbd "M-o") 'evil-jump-forward)
              )
 
-
 (use-package evil-collection
              :after (evil)
              :custom (evil-collection-setup-minibuffer t)
