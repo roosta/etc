@@ -9,31 +9,31 @@
 (global-set-key [mouse-5] (lambda () (interactive) (scroll-up 1)))
 
 (autoload 'mwheel-install "mwheel")
-(use-package xclip
-             :if window-system
-             :ensure t
-             :config
-             (xclip-mode 1))
-
-(use-package tmux-pane
-             :if window-system
-             :ensure t
-             :config
-             (tmux-pane-mode 1))
-
-(use-package evil-terminal-cursor-changer
-             :if window-system
-             :ensure t
-             :init
-             (setq evil-motion-state-cursor 'box)  ; █
-             (setq evil-visual-state-cursor 'box)  ; █
-             (setq evil-normal-state-cursor 'box)  ; █
-             (setq evil-insert-state-cursor 'bar)  ; ⎸
-             (setq evil-emacs-state-cursor  'hbar) ; _
-             :config
-             (etcc-on))
 
 (defun roosta/console-frame-setup ()
+
+  (use-package xclip
+               :ensure t
+               :config
+               (xclip-mode 1))
+
+  (use-package tmux-pane
+               :ensure t
+               :config
+               (tmux-pane-mode 1))
+
+  (use-package evil-terminal-cursor-changer
+               :ensure t
+               :after evil
+               :init
+               (setq evil-motion-state-cursor 'box)  ; █
+               (setq evil-visual-state-cursor 'box)  ; █
+               (setq evil-normal-state-cursor 'box)  ; █
+               (setq evil-insert-state-cursor 'bar)  ; ⎸
+               (setq evil-emacs-state-cursor  'hbar) ; _
+               :config
+               (etcc-on))
+
   (xterm-mouse-mode 1) ; Mouse in a terminal (Use shift to paste with middle button)
   (mwheel-install))
 
