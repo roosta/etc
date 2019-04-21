@@ -24,7 +24,7 @@
 
   (use-package evil-terminal-cursor-changer
                :ensure t
-               :after evil
+               :after (evil)
                :init
                (setq evil-motion-state-cursor 'box)  ; █
                (setq evil-visual-state-cursor 'box)  ; █

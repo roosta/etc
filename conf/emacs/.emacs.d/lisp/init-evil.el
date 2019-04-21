@@ -16,7 +16,7 @@
              (evil-mode))
 
 (use-package evil-collection
-             :after evil
+             :after (evil)
              :custom (evil-collection-setup-minibuffer t)
              :ensure t
              :config
