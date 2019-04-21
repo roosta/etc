@@ -6,8 +6,8 @@
   :load-path "~/src/srcery-emacs"
   :init
   (setq srcery-transparent-background t)
-  ;; :config
-  ;; (load-theme 'srcery t)
+  :config
+  (load-theme 'srcery t)
   )
 
 ;; (use-package smart-mode-line
@@ -16,17 +16,17 @@
 ;;              (sml/setup))
 
 ;; (setq-default custom-theme-directory "~/src/srcery-emacs")
-(setq-default custom-enabled-themes '(srcery))
+; (setq-default custom-enabled-themes '(srcery))
 
-;; Ensure that themes will be applied even if they have not been customized
-(defun reapply-themes ()
-  "Forcibly load the themes listed in `custom-enabled-themes'."
-  (dolist (theme custom-enabled-themes)
-    (unless (custom-theme-p theme)
-      (load-theme theme)))
-  (custom-set-variables `(custom-enabled-themes (quote ,custom-enabled-themes))))
+; ;; Ensure that themes will be applied even if they have not been customized
+; (defun reapply-themes ()
+;   "Forcibly load the themes listed in `custom-enabled-themes'."
+;   (dolist (theme custom-enabled-themes)
+;     (unless (custom-theme-p theme)
+;       (load-theme theme)))
+;   (custom-set-variables `(custom-enabled-themes (quote ,custom-enabled-themes))))
 
-(add-hook 'after-init-hook 'reapply-themes)
+; (add-hook 'after-init-hook 'reapply-themes)
 
 (provide 'init-theme)
 ;;; init-themes.el ends here
