@@ -46,6 +46,7 @@
 (require 'init-xterm)
 (require 'init-gui-frames)
 (require 'init-evil)
+(require 'init-theme)
 
 
 ;;----------------------------------------------------------------------------
