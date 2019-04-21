@@ -37,6 +37,7 @@
   "oo" 'projectile--find-file
   "oi" 'roosta/org-find-files
   "bb" 'counsel-ibuffer
+  "rs" 'ivy-resume
   )
 
 
