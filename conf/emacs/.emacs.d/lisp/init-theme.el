@@ -7,6 +7,7 @@
              :init
              (setq srcery-transparent-background t))
 
+; (setq-default custom-theme-directory "~/src/srcery-emacs")
 (setq-default custom-enabled-themes '(srcery))
 
 ; Ensure that themes will be applied even if they have not been customized
