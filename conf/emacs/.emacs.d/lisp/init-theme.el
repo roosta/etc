@@ -5,7 +5,15 @@
 (use-package srcery-theme
              :load-path "~/src/srcery-emacs"
              :init
-             (setq srcery-transparent-background t))
+             (setq srcery-transparent-background t)
+             ; :config
+             ; (load-theme 'srcery t)
+             )
+
+; (use-package smart-mode-line
+;              :ensure t
+;              :config
+;              (sml/setup))
 
 ; (setq-default custom-theme-directory "~/src/srcery-emacs")
 (setq-default custom-enabled-themes '(srcery))
