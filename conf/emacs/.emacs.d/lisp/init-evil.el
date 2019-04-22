@@ -42,5 +42,12 @@
   :diminish evil-commentary-mode
   :config (evil-commentary-mode))
 
+(use-package evil-snipe
+  :ensure t
+  :diminish evil-snipe-mode
+  :config
+  (evil-snipe-mode +1)
+  (evil-snipe-override-mode +1))
+
 (provide 'init-evil)
 ;;; init-evil.el ends here
