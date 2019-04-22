@@ -4,6 +4,7 @@
 
 (use-package ivy
   :ensure t
+  :diminish ivy-mode
   :init
   (setq ivy-use-virtual-buffers t)
   (setq projectile-completion-system 'ivy)
@@ -15,6 +16,7 @@
 
 (use-package projectile
   :ensure t
+  :diminish projectile-mode
   :config
   (projectile-mode +1))
 

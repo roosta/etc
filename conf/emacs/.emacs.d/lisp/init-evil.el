@@ -39,6 +39,7 @@
 
 (use-package evil-commentary
   :ensure t
+  :diminish evil-commentary-mode
   :config (evil-commentary-mode))
 
 (provide 'init-evil)
