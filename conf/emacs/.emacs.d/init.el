@@ -48,10 +48,7 @@
 (use-package diminish :ensure t)
 (use-package dash :ensure t)
 (use-package s :ensure t)
-(use-package which-key :ensure t
-             :config
-             (which-key-mode))
-
+(use-package which-key :ensure t :config (which-key-mode))
 (use-package general :ensure t)
 
 (require 'init-frame-hooks)
