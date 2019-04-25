@@ -46,7 +46,6 @@
   :ensure t
   :init
   (setq evil-snipe-scope 'whole-buffer)
-  (setq evil-snipe-smart-case t)
   :config
   (evil-snipe-mode +1)
   (diminish 'evil-snipe-mode)
