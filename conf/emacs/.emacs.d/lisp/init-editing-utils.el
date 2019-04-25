@@ -38,5 +38,18 @@
 ;;----------------------------------------------------------------------------
 (add-hook 'after-init-hook 'show-paren-mode)
 
+;;----------------------------------------------------------------------------
+;; Use relative line numbering
+;;----------------------------------------------------------------------------
+(use-package linum-relative
+  :ensure t
+  :init
+  (setq linum-relative-format "%3s ")
+  (setq linum-relative-backend 'display-line-numbers-mode)
+  :config
+  (require 'linum-relative)
+  (linum-relative-global-mode))
+
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

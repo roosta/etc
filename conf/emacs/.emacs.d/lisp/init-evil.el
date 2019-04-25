@@ -26,17 +26,6 @@
   :ensure t
   :config (global-evil-surround-mode))
 
-(use-package nlinum-relative
-  :ensure t
-  :init
-  (setq nlinum-relative-current-symbol "")
-  (setq nlinum-relative-redisplay-delay 0)
-  (setq nlinum-format "%3s ")
-  :config
-  (nlinum-relative-setup-evil)
-  (add-hook 'prog-mode-hook 'nlinum-relative-mode)
-  (add-hook 'text-mode-hook 'nlinum-relative-mode))
-
 (use-package evil-commentary
   :ensure t
   :diminish evil-commentary-mode
