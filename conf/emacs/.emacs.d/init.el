@@ -63,6 +63,8 @@
 (require 'init-ivy)
 (require 'init-undo-tree)
 (require 'init-uniquify)
+(require 'init-git)
+(require 'init-org)
 
 
 ;;----------------------------------------------------------------------------
