@@ -65,5 +65,15 @@
       (browse-url (concat "file://" file-name)))))
 
 
+
+;;----------------------------------------------------------------------------
+;; Toggle between previous next buffer
+;;----------------------------------------------------------------------------
+(defun switch-to-other-buffer ()
+  "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
+
 (provide 'init-utils)
 ;;; init-utils.el ends here
