@@ -62,6 +62,7 @@
 (require 'init-theme)
 (require 'init-ivy)
 (require 'init-undo-tree)
+(require 'init-uniquify)
 
 
 ;;----------------------------------------------------------------------------
