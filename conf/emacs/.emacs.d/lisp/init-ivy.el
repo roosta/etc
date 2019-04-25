@@ -33,7 +33,7 @@
 
  "/"   'counsel-ag
  "TAB" '(switch-to-other-buffer :which-key "prev buffer")
- "SPC" 'counsel-M-x
+ "SPC" '(counsel-M-x :which-key "M-x")
  "hdf" 'counsel-describe-function
  "hdv" 'counsel-describe-variable
  "oo" 'projectile--find-file
