@@ -69,6 +69,7 @@
 (require 'init-git)
 (require 'init-org)
 (require 'init-editing-utils)
+(require 'init-lisp)
 
 
 ;;----------------------------------------------------------------------------
