@@ -3,6 +3,10 @@
 
 ;;; Code:
 
+(general-define-key
+ :keymaps 'org-mode-map
+ "<C-return>" 'evil-org-org-insert-heading-respect-content-below)
+
 (use-package org-bullets
   :load-path "~/src/org-bullets"
   :init
