@@ -41,9 +41,8 @@
  "bb" 'counsel-ibuffer
  "rs" 'ivy-resume
  "qq" 'save-buffers-kill-emacs
+ "ic" 'ivy-immediate-done
  )
-
-
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here
