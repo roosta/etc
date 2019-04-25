@@ -44,10 +44,16 @@
 
 (use-package evil-snipe
   :ensure t
-  :diminish evil-snipe-mode
+  :init
+  (setq evil-snipe-scope 'whole-buffer)
+  (setq evil-snipe-smart-case t)
   :config
   (evil-snipe-mode +1)
-  (evil-snipe-override-mode +1))
+  (diminish 'evil-snipe-mode)
+  (diminish 'evil-snipe-local-mode)
+  (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
+  (add-hook 'git-rebase-mode-hook 'turn-off-evil-snipe-mode))
+
 
 (provide 'init-evil)
 ;;; init-evil.el ends here
