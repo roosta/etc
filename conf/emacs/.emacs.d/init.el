@@ -8,8 +8,12 @@
 
 (setq
   debug-on-error t ;; Produce backtraces when errors occur
-  exec-path-from-shell-check-startup-files nil ;; disable warning about setting path outside profile/env
-  )
+  exec-path-from-shell-check-startup-files nil ; disable warning about setting path outside profile/env
+
+  ;; Set backup options
+  ;; https://stackoverflow.com/questions/151945/how-do-i-control-how-emacs-makes-backup-files
+  backup-directory-alist `(("." . "~/var/emacs/backup")) 
+  backup-by-copying t) 
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
