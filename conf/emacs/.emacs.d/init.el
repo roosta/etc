@@ -5,8 +5,11 @@
 
 ;;; Code:
 
-;; Produce backtraces when errors occur
-(setq debug-on-error t)
+
+(setq
+  debug-on-error t ;; Produce backtraces when errors occur
+  scroll-margin 7
+  )
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
