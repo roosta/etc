@@ -68,6 +68,7 @@
 
 ;;----------------------------------------------------------------------------
 ;; Toggle between previous next buffer
+;; https://emacsredux.com/blog/2013/04/28/switch-to-previous-buffer/
 ;;----------------------------------------------------------------------------
 (defun switch-to-other-buffer ()
   "Switch to previously open buffer.
