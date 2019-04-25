@@ -9,6 +9,7 @@
 (setq
   debug-on-error t ;; Produce backtraces when errors occur
   scroll-margin 7
+  exec-path-from-shell-check-startup-files nil ;; disable warning about setting path outside profile/env
   )
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
