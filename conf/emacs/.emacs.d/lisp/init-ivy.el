@@ -31,11 +31,11 @@
  :prefix "SPC"
  :non-normal-prefix "C-SPC"
 
- "/"   'counsel-ag
- "TAB" '(switch-to-other-buffer :which-key "prev buffer")
+ "/"   '(counsel-ag :which-key "Search project")
+ "ss"  '(swiper :which-key "Search buffer")
  "SPC" '(counsel-M-x :which-key "M-x")
- "hdf" 'counsel-describe-function
- "hdv" 'counsel-describe-variable
+ "hdf" '(counsel-describe-function :which-key "Describe function")
+ "hdv" '(counsel-describe-variable :which-key "Describe variable")
  "oo" 'projectile--find-file
  "oi" 'roosta/org-find-files
  "bb" 'counsel-ibuffer
