@@ -38,6 +38,7 @@
  "SPC" '(counsel-M-x :which-key "M-x")
  "hdf" '(counsel-describe-function :which-key "Describe function")
  "hdv" '(counsel-describe-variable :which-key "Describe variable")
+ "ji"  'counsel-imenu
  "oo"  'projectile--find-file
  "oi"  'roosta/org-find-files
  "bb"  'counsel-ibuffer
