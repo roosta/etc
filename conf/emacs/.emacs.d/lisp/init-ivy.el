@@ -32,16 +32,19 @@
  :non-normal-prefix "C-SPC"
 
  "/"   '(counsel-ag :which-key "Search project")
+ "?"   '(counsel-descbinds :which-key "Describe keybindings")
  "ss"  '(swiper :which-key "Search buffer")
+ "ff"  '(counsel-find-files :which-key "Find files")
  "SPC" '(counsel-M-x :which-key "M-x")
  "hdf" '(counsel-describe-function :which-key "Describe function")
  "hdv" '(counsel-describe-variable :which-key "Describe variable")
- "oo" 'projectile--find-file
- "oi" 'roosta/org-find-files
- "bb" 'counsel-ibuffer
- "rs" 'ivy-resume
- "qq" 'save-buffers-kill-emacs
- "ic" 'ivy-immediate-done
+ "oo"  'projectile--find-file
+ "oi"  'roosta/org-find-files
+ "bb"  'counsel-ibuffer
+ "rs"  'ivy-resume
+ "ry"  'counsel-yank-pop
+ "qq"  'save-buffers-kill-emacs
+ "ic"  'ivy-immediate-done
  )
 
 (provide 'init-ivy)
