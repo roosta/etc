@@ -12,6 +12,7 @@
   (ivy-mode 1))
 
 (setq counsel-ag-command "ag --nocolor --nogroup --hidden %s")
+(setq counsel-ag-base-command "ag --nocolor --nogroup --hidden %s")
 
 (use-package counsel)
 
