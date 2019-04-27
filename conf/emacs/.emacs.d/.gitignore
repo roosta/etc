@@ -19,6 +19,7 @@ cookies
 \#*
 /elpa
 /elpa-*
+site-lisp/tmux/
 site-lisp/package/
 /swank
 /.mc-lists.el

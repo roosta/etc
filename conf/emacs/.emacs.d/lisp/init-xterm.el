@@ -10,15 +10,17 @@
 
 (autoload 'mwheel-install "mwheel")
 
-; (ensure-lib-from-url
-;   "tmux"
-;   "https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Btools/tmux/local/tmux/tmux.el")
 
-(use-package tmux-pane
-  :config
-  (tmux-pane-mode 1))
+;; (use-package tmux-pane
+;;   :config
+;;   (tmux-pane-mode 1))
 
 (defun roosta/console-frame-setup ()
+
+  (ensure-lib-from-url
+   'tmux
+   "https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Btools/tmux/local/tmux/tmux.el")
+  (require 'tmux)
 
   (use-package xclip
     :config
