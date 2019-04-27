@@ -27,13 +27,6 @@
                                                "backups"))))
 
 ;;----------------------------------------------------------------------------
-;; Define emacs keybinding overrides
-;;----------------------------------------------------------------------------
-(general-define-key
- "M-/" 'hippie-expand
- "C-x C-b" 'ibuffer)
-
-;;----------------------------------------------------------------------------
 ;; Show matching parens
 ;;----------------------------------------------------------------------------
 (add-hook 'after-init-hook 'show-paren-mode)
@@ -50,6 +43,19 @@
   (require 'linum-relative)
   (linum-relative-global-mode))
 
+;;----------------------------------------------------------------------------
+;; General keybindings
+;;----------------------------------------------------------------------------
+
+(general-define-key
+ "M-/" 'hippie-expand
+ "C-x C-b" 'ibuffer)
+
+(general-define-key
+ :states '(normal visual insert emacs)
+ :prefix "SPC"
+ :non-normal-prefix "C-SPC"
+ "TAB" '(switch-to-other-buffer :which-key "prev buffer"))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
