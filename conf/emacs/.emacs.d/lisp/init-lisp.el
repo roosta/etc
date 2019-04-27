@@ -4,14 +4,12 @@
 
 
 (use-package smartparens
-  :ensure t
   :config
   (require 'smartparens-config)
   (smartparens-global-mode t)
   (smartparens-strict-mode t))
 
 (use-package evil-cleverparens
-  :ensure t
   :init
   (setq
    evil-cleverparens-use-additional-movement-keys t

@@ -5,7 +5,7 @@
 
 ;;; Code:
 
-(use-package git-auto-commit-mode :ensure t)
+(use-package git-auto-commit-mode)
 
 (provide 'init-git)
 ;;; init-git.el ends here

@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package evil
-  :ensure t
   :init
   (setq evil-ex-search-vim-style-regexp t)
   (setq evil-want-keybinding nil) ;; required by evil-collection
@@ -19,20 +18,16 @@
 (use-package evil-collection
   :after (evil)
   :custom (evil-collection-setup-minibuffer t)
-  :ensure t
   :config (evil-collection-init))
 
 (use-package evil-surround
-  :ensure t
   :config (global-evil-surround-mode))
 
 (use-package evil-commentary
-  :ensure t
   :diminish evil-commentary-mode
   :config (evil-commentary-mode))
 
 (use-package evil-snipe
-  :ensure t
   :init
   (setq evil-snipe-scope 'whole-buffer)
   :config

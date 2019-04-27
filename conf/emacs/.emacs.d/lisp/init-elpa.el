@@ -35,7 +35,10 @@ There are two things you can do about this warning:
   (package-install 'use-package))
 
 (eval-when-compile
-  (require 'use-package))
+  (require 'use-package)
+  (require 'use-package-ensure)
+  (setq use-package-always-ensure t)
+  )
 
 (provide 'init-elpa)
 ;;; init-elpa.el ends here

@@ -3,7 +3,6 @@
 ;;; Code:
 
 (use-package ivy
-  :ensure t
   :diminish ivy-mode
   :init
   (setq ivy-use-virtual-buffers t)
@@ -14,10 +13,9 @@
 
 (setq counsel-ag-command "ag --nocolor --nogroup --hidden %s")
 
-(use-package counsel :ensure t)
+(use-package counsel)
 
 (use-package projectile
-  :ensure t
   :diminish projectile-mode
   :config
   (projectile-mode +1))

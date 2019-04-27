@@ -10,20 +10,21 @@
 
 (autoload 'mwheel-install "mwheel")
 
+; (ensure-lib-from-url
+;   "tmux"
+;   "https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Btools/tmux/local/tmux/tmux.el")
+
 (use-package tmux-pane
-  :ensure t
   :config
   (tmux-pane-mode 1))
 
 (defun roosta/console-frame-setup ()
 
   (use-package xclip
-    :ensure t
     :config
     (xclip-mode 1))
 
   (use-package evil-terminal-cursor-changer
-    :ensure t
     :after (evil)
     :init
     (setq evil-motion-state-cursor 'box)  ; █
