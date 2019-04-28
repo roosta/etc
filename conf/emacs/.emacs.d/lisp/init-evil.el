@@ -10,10 +10,13 @@
   (setq evil-move-beyond-eol t)
   :config
   (evil-mode)
-  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-  (define-key evil-normal-state-map (kbd "M-o") 'evil-jump-forward)
+  ;; (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+  ;; (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+  ;; (define-key evil-normal-state-map (kbd "M-o") 'evil-jump-forward)
   )
+(general-def 'normal
+  "j" 'evil-next-visual-line
+  "k" 'evil-previous-visual-line)
 
 (use-package evil-collection
   :after (evil)
