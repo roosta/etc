@@ -11,6 +11,7 @@
   (setq ivy-use-virtual-buffers t)
   (setq projectile-completion-system 'ivy)
   (setq ivy-count-format "(%d/%d) ")
+  (setq ivy-use-selectable-prompt t)
   :config
   (ivy-mode 1)
   :general
