@@ -15,6 +15,7 @@
    "ss" #'(swiper :which-key "Search buffer")
    "rs" #'ivy-resume))
 
+;; Show hidden files when searching
 (setq counsel-ag-command "ag --nocolor --nogroup --hidden %s")
 (setq counsel-ag-base-command "ag --nocolor --nogroup --hidden %s")
 
