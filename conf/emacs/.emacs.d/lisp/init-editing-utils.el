@@ -66,6 +66,7 @@
  :prefix "SPC"
  :non-normal-prefix "C-SPC"
  "TAB" #'(switch-to-other-buffer :which-key "prev buffer")
+ "hh"  #'help-command
  "qq"  #'save-buffers-kill-emacs
  "bs"  #'(roosta/switch-to-scratch-buffer :which-key "*scratch*"))
 
