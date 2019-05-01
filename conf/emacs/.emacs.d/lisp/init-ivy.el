@@ -11,7 +11,7 @@
   :config
   (ivy-mode 1)
   :general
-  ('(normal visual insert emacs) :prefix "SPC"
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "ss" #'(swiper :which-key "Search buffer")
    "rs" #'ivy-resume))
 
@@ -20,7 +20,7 @@
 
 (use-package counsel
   :general
-  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "SPC"
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "/"   #'(counsel-ag :which-key "Search project")
    "?"   #'(counsel-descbinds :which-key "Describe keybindings")
    "ff"  #'(counsel-find-files :which-key "Find files")
@@ -38,7 +38,7 @@
   :config
   (projectile-mode +1)
   :general
-  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "SPC"
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "oo" #'projectile--find-file))
 
 (defun roosta/org-find-files ()
@@ -47,7 +47,7 @@
   (let ((default-directory "~/org"))
     (projectile-find-file)))
 
-(general-def '(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "SPC"
+(general-def '(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
   "oi" #'roosta/org-find-files)
 
 ;; (general-define-key
