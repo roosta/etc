@@ -7,7 +7,7 @@
 
 
 (setq
-  debug-on-error t ;; Produce backtraces when errors occur
+  debug-on-error t ; Produce backtraces when errors occur
   exec-path-from-shell-check-startup-files nil ; disable warning about setting path outside profile/env
   )
 
