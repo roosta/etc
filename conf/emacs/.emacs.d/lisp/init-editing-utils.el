@@ -48,14 +48,16 @@
 ;;----------------------------------------------------------------------------
 
 (general-define-key
- "M-/" 'hippie-expand
- "C-x C-b" 'ibuffer)
+ "M-/" #'hippie-expand
+ "C-x C-b" #'ibuffer)
 
 (general-define-key
  :states '(normal visual insert emacs)
  :prefix "SPC"
  :non-normal-prefix "C-SPC"
- "TAB" '(switch-to-other-buffer :which-key "prev buffer"))
+ "TAB" #'(switch-to-other-buffer :which-key "prev buffer")
+ "qq"  #'save-buffers-kill-emacs
+ "bs" #'(switch-to-buffer "*scratch*"))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
