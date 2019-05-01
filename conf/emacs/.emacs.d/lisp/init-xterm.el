@@ -18,9 +18,9 @@
 
 (defun roosta/console-frame-setup ()
 
-    (use-package xclip
-     :config
-     (xclip-mode 1))
+  (use-package xclip
+    :config
+    (xclip-mode 1))
 
   (use-package evil-terminal-cursor-changer
     :after (evil)
