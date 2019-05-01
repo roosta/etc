@@ -45,7 +45,7 @@
   "Quickly search in org folder"
   (interactive)
   (let ((default-directory "~/org"))
-    (projectile--find-file)))
+    (projectile-find-file)))
 
 (general-def '(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "SPC"
   "oi" #'roosta/org-find-files)
