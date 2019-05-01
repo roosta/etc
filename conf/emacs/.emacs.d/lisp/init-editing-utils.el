@@ -44,6 +44,16 @@
   (linum-relative-global-mode))
 
 ;;----------------------------------------------------------------------------
+;; Quickly switch to scratch buffer
+;;----------------------------------------------------------------------------
+(defun roosta/switch-to-scratch-buffer ()
+  "Switch to the `*scratch*' buffer"
+  (interactive)
+  (switch-to-buffer (get-buffer-create "*scratch*"))
+  (lisp-interaction-mode))
+
+
+;;----------------------------------------------------------------------------
 ;; General keybindings
 ;;----------------------------------------------------------------------------
 
@@ -57,7 +67,7 @@
  :non-normal-prefix "C-SPC"
  "TAB" #'(switch-to-other-buffer :which-key "prev buffer")
  "qq"  #'save-buffers-kill-emacs
- "bs" #'(switch-to-buffer "*scratch*"))
+ "bs"  #'(roosta/switch-to-scratch-buffer :which-key "*scratch*"))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
