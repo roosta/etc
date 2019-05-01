@@ -10,21 +10,17 @@
 
 (autoload 'mwheel-install "mwheel")
 
-
-;; (use-package tmux-pane
-;;   :config
-;;   (tmux-pane-mode 1))
-
-(defun roosta/console-frame-setup ()
-
+(after-load 'evil
   (ensure-lib-from-url
    'tmux
    "https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Btools/tmux/local/tmux/tmux.el")
-  (require 'tmux)
+  (require 'tmux))
 
-  (use-package xclip
-    :config
-    (xclip-mode 1))
+(defun roosta/console-frame-setup ()
+
+    (use-package xclip
+     :config
+     (xclip-mode 1))
 
   (use-package evil-terminal-cursor-changer
     :after (evil)
