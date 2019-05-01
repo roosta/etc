@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+;;----------------------------------------------------------------------------
+;; Setup ivy
+;;----------------------------------------------------------------------------
 (use-package ivy
   :diminish ivy-mode
   :init
@@ -15,10 +18,16 @@
    "ss" #'(swiper :which-key "Search buffer")
    "rs" #'ivy-resume))
 
+;;----------------------------------------------------------------------------
 ;; Show hidden files when searching
+;;----------------------------------------------------------------------------
 (setq counsel-ag-command "ag --nocolor --nogroup --hidden %s")
 (setq counsel-ag-base-command "ag --nocolor --nogroup --hidden %s")
 
+
+;;----------------------------------------------------------------------------
+;; Setup counsel
+;;----------------------------------------------------------------------------
 (use-package counsel
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
@@ -51,6 +60,19 @@
 (general-def '(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
   "oi" #'roosta/org-find-files)
 
+;;----------------------------------------------------------------------------
+;; Use c-j/k for ivy navigation, otherwise used as window nav
+;;----------------------------------------------------------------------------
+(general-def 'ivy-minibuffer-map
+  "C-j" #'ivy-next-line
+  "C-k" #'ivy-previous-line)
+
+(general-unbind 'insert
+  "C-k")
+
+;;----------------------------------------------------------------------------
+;; old
+;;----------------------------------------------------------------------------
 ;; (general-define-key
 ;;  :states '(normal visual insert emacs)
 ;;  :prefix "SPC"
