@@ -28,10 +28,10 @@
    "SPC" #'(counsel-M-x :which-key "M-x")
    "hdf" #'(counsel-describe-function :which-key "Describe function")
    "hdv" #'(counsel-describe-variable :which-key "Describe variable")
-   "ji"  #'counsel-imenu
-   "bb"  #'counsel-ibuffer
-   "ry"  #'counsel-yank-pop
-   "ic"  #'ivy-immediate-done
+   "ji"  #'(counsel-imenu :which-key "Jump in buffer")
+   "bb"  #'(counsel-ibuffer :which-key "List buffers")
+   "ry"  #'(counsel-yank-pop :which-key "Kill ring")
+   "ic"  #'(ivy-immediate-done :which-key "Immidiate-done")
    ))
 
 (use-package projectile
