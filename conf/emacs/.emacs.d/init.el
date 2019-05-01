@@ -67,6 +67,7 @@
 (require 'init-editing-utils)
 (require 'init-lisp)
 (require 'init-backup)
+(require 'init-flycheck)
 
 
 ;;----------------------------------------------------------------------------
