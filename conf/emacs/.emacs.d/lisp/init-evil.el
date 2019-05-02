@@ -5,6 +5,7 @@
 (use-package evil
   :init
   (setq evil-ex-search-vim-style-regexp t)
+  (setq evil-search-module 'evil-search)
   (setq evil-want-keybinding nil) ;; required by evil-collection
   (setq evil-want-C-u-scroll t)
   (setq evil-move-beyond-eol t)
