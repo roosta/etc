@@ -67,12 +67,14 @@
 ;;----------------------------------------------------------------------------
 ;; Use c-j/k for ivy navigation, otherwise used as window nav
 ;;----------------------------------------------------------------------------
-(general-def 'ivy-minibuffer-map
-  "C-j" #'ivy-next-line
-  "C-k" #'ivy-previous-line)
 
-(general-unbind 'insert
-  "C-k")
+(general-def '(insert normal) ivy-minibuffer-map
+  "C-j" #'ivy-next-line
+  "C-k" #'ivy-previous-line
+  "C-d" #'ivy-scroll-up-command
+  "C-u" #'ivy-scroll-down-command
+  )
+
 
 ;;----------------------------------------------------------------------------
 ;; old
