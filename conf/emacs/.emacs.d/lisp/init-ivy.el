@@ -11,7 +11,7 @@
   (setq ivy-use-virtual-buffers t)
   (setq projectile-completion-system 'ivy)
   (setq ivy-count-format "(%d/%d) ")
-  (setq ivy-use-selectable-prompt t)
+  (setq ivy-use-selectable-prompt t) ; see ivy FAQ
   :config
   (ivy-mode 1)
   :general
@@ -69,30 +69,6 @@
 (general-def '(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
   "oi" #'roosta/org-find-files)
 
-
-;;----------------------------------------------------------------------------
-;; old
-;;----------------------------------------------------------------------------
-;; (general-define-key
-;;  :states '(normal visual insert emacs)
-;;  :prefix "SPC"
-;;  :non-normal-prefix "C-SPC"
-
-;;  "/"   '(counsel-ag :which-key "Search project")
-;;  "?"   '(counsel-descbinds :which-key "Describe keybindings")
-;;  "ss"  '(swiper :which-key "Search buffer")
-;;  "ff"  '(counsel-find-files :which-key "Find files")
-;;  "SPC" '(counsel-M-x :which-key "M-x")
-;;  "hdf" '(counsel-describe-function :which-key "Describe function")
-;;  "hdv" '(counsel-describe-variable :which-key "Describe variable")
-;;  "ji"  'counsel-imenu
-;;  "oo"  'projectile--find-file
-;;  "oi"  'roosta/org-find-files
-;;  "bb"  'counsel-ibuffer
-;;  "rs"  'ivy-resume
-;;  "ry"  'counsel-yank-pop
-;;  "ic"  'ivy-immediate-done
-;;  )
 
 (provide 'init-ivy)
 ;;; init-ivy.el ends here
