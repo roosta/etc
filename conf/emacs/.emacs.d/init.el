@@ -67,6 +67,7 @@
 (require 'init-lisp)
 (require 'init-backup)
 (require 'init-flycheck)
+(require 'init-company)
 
 
 ;;----------------------------------------------------------------------------
