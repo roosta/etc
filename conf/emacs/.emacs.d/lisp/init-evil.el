@@ -11,11 +11,10 @@
   (setq evil-move-beyond-eol t)
   (setq evil-want-Y-yank-to-eol t) ;; Yank to end of line with Y instead of whole line
   :config
-  (evil-mode))
-
-(general-def 'normal
-  "j" 'evil-next-visual-line
-  "k" 'evil-previous-visual-line)
+  (evil-mode)
+  (general-def 'normal
+    "j" 'evil-next-visual-line
+    "k" 'evil-previous-visual-line))
 
 (use-package evil-collection
   :after (evil)
