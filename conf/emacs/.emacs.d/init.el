@@ -3,8 +3,8 @@
 ;; This file bootstraps the configuration, which is divided into
 ;; a number of other files. Inspired by https://github.com/purcell/emacs.d
 
+;;; Commentary:
 ;;; Code:
-
 
 (setq
   debug-on-error t ; Produce backtraces when errors occur
