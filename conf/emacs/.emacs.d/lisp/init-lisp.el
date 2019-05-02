@@ -16,6 +16,7 @@
 ;; Evil cleverparens
 ;;----------------------------------------------------------------------------
 (use-package evil-cleverparens
+  :after (evil)
   :init
   (setq
    evil-cleverparens-use-additional-movement-keys t
