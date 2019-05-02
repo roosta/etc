@@ -14,6 +14,7 @@
 ;; Some basic preferences
 ;;----------------------------------------------------------------------------
 (setq-default indent-tabs-mode nil)
+(global-hl-line-mode 1)
 (setq save-interprogram-paste-before-kill t
       apropos-do-all t
       mouse-yank-at-point t
