@@ -17,7 +17,12 @@
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "ss" #'(swiper :which-key "Search buffer")
-   "rs" #'ivy-resume))
+   "rs" #'ivy-resume)
+  ('(insert normal) ivy-minibuffer-map
+   "C-j" #'ivy-next-line
+   "C-k" #'ivy-previous-line
+   "C-d" #'ivy-scroll-up-command
+   "C-u" #'ivy-scroll-down-command))
 
 ;;----------------------------------------------------------------------------
 ;; Show hidden files when searching
@@ -63,17 +68,6 @@
 
 (general-def '(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
   "oi" #'roosta/org-find-files)
-
-;;----------------------------------------------------------------------------
-;; Use c-j/k for ivy navigation, otherwise used as window nav
-;;----------------------------------------------------------------------------
-
-(general-def '(insert normal) ivy-minibuffer-map
-  "C-j" #'ivy-next-line
-  "C-k" #'ivy-previous-line
-  "C-d" #'ivy-scroll-up-command
-  "C-u" #'ivy-scroll-down-command
-  )
 
 
 ;;----------------------------------------------------------------------------
