@@ -47,7 +47,7 @@
 ;; Quickly switch to scratch buffer
 ;;----------------------------------------------------------------------------
 (defun roosta/switch-to-scratch-buffer ()
-  "Switch to the `*scratch*' buffer"
+  "Switch to the `*scratch*' buffer."
   (interactive)
   (switch-to-buffer (get-buffer-create "*scratch*"))
   (lisp-interaction-mode))
