@@ -68,6 +68,7 @@
 (require 'init-backup)
 (require 'init-flycheck)
 (require 'init-company)
+(require 'init-prescient)
 
 
 ;;----------------------------------------------------------------------------
