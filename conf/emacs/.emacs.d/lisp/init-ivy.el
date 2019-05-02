@@ -24,17 +24,14 @@
    "C-d" #'ivy-scroll-up-command
    "C-u" #'ivy-scroll-down-command))
 
-;;----------------------------------------------------------------------------
-;; Show hidden files when searching
-;;----------------------------------------------------------------------------
-(setq counsel-ag-command "ag --nocolor --nogroup --hidden %s")
-(setq counsel-ag-base-command "ag --nocolor --nogroup --hidden %s")
-
 
 ;;----------------------------------------------------------------------------
 ;; Setup counsel
 ;;----------------------------------------------------------------------------
 (use-package counsel
+  :init
+  (setq counsel-ag-command "ag --nocolor --nogroup --hidden %s")
+  (setq counsel-ag-base-command "ag --nocolor --nogroup --hidden %s")
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "/"   #'(counsel-ag :which-key "Search project")
