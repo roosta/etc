@@ -5,7 +5,6 @@
 
 (use-package smartparens
   :config
-  (require 'smartparens-config)
   (smartparens-global-mode t)
   (smartparens-strict-mode t))
 
@@ -16,7 +15,6 @@
    evil-cleverparens-use-s-and-S nil
    evil-cleverparens-swap-move-by-word-and-symbol nil)
   :config
-  (require 'evil-cleverparens)
   (require 'evil-cleverparens-text-objects)
   (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
   (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
@@ -24,7 +22,6 @@
 
 (use-package elisp-slime-nav
   :config
-  (require 'elisp-slime-nav)
   (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
     (add-hook hook 'turn-on-elisp-slime-nav-mode)))
 
