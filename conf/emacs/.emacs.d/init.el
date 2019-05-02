@@ -27,7 +27,7 @@
 ;; Bootstrap config
 ;;----------------------------------------------------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(setq local-file (expand-file-name (concat "local/" system-name ".el") user-emacs-directory))
+(defvar local-file (expand-file-name (concat "local/" (system-name) ".el") user-emacs-directory))
 (require 'init-utils)
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 (require 'init-elpa)      ;; Machinery for installing required packages
