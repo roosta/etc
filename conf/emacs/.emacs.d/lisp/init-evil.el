@@ -9,6 +9,7 @@
   (setq evil-want-keybinding nil) ;; required by evil-collection
   (setq evil-want-C-u-scroll t)
   (setq evil-move-beyond-eol t)
+  (setq evil-want-Y-yank-to-eol t) ;; Yank to end of line with Y instead of whole line
   :config
   (evil-mode))
 
