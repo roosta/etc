@@ -56,7 +56,7 @@
    "oo" #'projectile--find-file))
 
 (defun roosta/org-find-files ()
-  "Quickly search in org folder"
+  "Quickly search in org folder."
   (interactive)
   (let ((default-directory "~/org"))
     (projectile-find-file)))
