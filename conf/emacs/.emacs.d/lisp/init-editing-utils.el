@@ -71,6 +71,7 @@
  "sc"  'evil-ex-nohighlight
  "qq"  #'save-buffers-kill-emacs
  "bs"  #'(roosta/switch-to-scratch-buffer :which-key "*scratch*")
+ "bd"  #'kill-this-buffer
  "u"   #'universal-argument)
 
 (provide 'init-editing-utils)
