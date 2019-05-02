@@ -3,7 +3,8 @@
 ;;; Code:
 
 (if (fboundp 'with-eval-after-load)
-    (defalias 'after-load 'with-eval-after-load)
+    (defalias 'after-load 'with-eval-after-load
+      "Alias for with-eval-after-load")
   (defmacro after-load (feature &rest body)
     "After FEATURE is loaded, evaluate BODY."
     (declare (indent defun))

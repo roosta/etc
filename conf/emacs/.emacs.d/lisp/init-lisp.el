@@ -28,6 +28,10 @@
   (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
   )
 
+
+;;----------------------------------------------------------------------------
+;; elisp-slime-nav
+;;----------------------------------------------------------------------------
 (use-package elisp-slime-nav
   :general
   ('normal emacs-lisp-mode-map
@@ -35,6 +39,7 @@
   :config
   (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
     (add-hook hook 'turn-on-elisp-slime-nav-mode)))
+
 
 (provide 'init-lisp)
 ;;; init-lisp.el ends here
