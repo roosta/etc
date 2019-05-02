@@ -44,6 +44,9 @@
    "ic"  #'(ivy-immediate-done :which-key "Immidiate-done")
    ))
 
+;;----------------------------------------------------------------------------
+;; Setup projectile
+;;----------------------------------------------------------------------------
 (use-package projectile
   :diminish projectile-mode
   :config
