@@ -18,6 +18,14 @@
 
 (defun roosta/console-frame-setup ()
 
+  (after-load 'evil-cleverparens
+  ;; Unbind troublesome keybinds when in terminal.  Fixes issue with
+  ;; mouse wheel, arrow keys, since these map to the same escape
+  ;; sequence.
+    (general-def '(normal visual operator) evil-cleverparens-mode-map
+      "M-o" nil
+      "M-[" nil))
+
   (use-package xclip
     :config
     (xclip-mode 1))
