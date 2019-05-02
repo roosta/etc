@@ -45,14 +45,13 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
-(use-package diminish :ensure t)
-(use-package dash :ensure t)
-(use-package s :ensure t)
+(use-package diminish)
+(use-package dash)
+(use-package s)
 (use-package which-key
-  :ensure t
   :config (which-key-mode)
   :diminish which-key-mode)
-(use-package general :ensure t)
+(use-package general)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
