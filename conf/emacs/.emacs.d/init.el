@@ -69,6 +69,7 @@
 (require 'init-flycheck)
 (require 'init-company)
 (require 'init-prescient)
+(require 'init-yasnippet)
 
 
 ;;----------------------------------------------------------------------------
