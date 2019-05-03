@@ -33,8 +33,10 @@
   (setq evil-snipe-scope 'whole-buffer)
   :config
   (evil-snipe-mode +1)
+  (evil-snipe-override-mode +1)
   (diminish 'evil-snipe-mode)
   (diminish 'evil-snipe-local-mode)
+  (diminish 'evil-snipe-override-mode)
   (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
   (add-hook 'git-rebase-mode-hook 'turn-off-evil-snipe-mode))
 
