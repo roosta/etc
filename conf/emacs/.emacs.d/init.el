@@ -70,6 +70,7 @@
 (require 'init-company)
 (require 'init-prescient)
 (require 'init-yasnippet)
+(require 'init-clojure)
 
 
 ;;----------------------------------------------------------------------------
