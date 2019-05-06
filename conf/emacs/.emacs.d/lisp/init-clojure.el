@@ -44,14 +44,14 @@
   "RET" 'cider-repl-newline-and-indent)
 
 (general-define-key
-  :states'(normal visual evilified)
+  :states  '(normal visual evilified)
   :keymaps '(clojure-mode-map
              clojurec-mode-map
              clojurescript-mode-map
              clojurex-mode-map
              cider-repl-mode-map
              cider-clojure-interaction-mode-map)
-  :prefix ","
+  :prefix  ","
   "ha" 'cider-apropos
   "hh" 'cider-doc
 
