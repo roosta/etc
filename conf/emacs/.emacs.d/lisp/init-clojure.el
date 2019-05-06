@@ -14,11 +14,7 @@
 ;;----------------------------------------------------------------------------
 ;; Cider
 ;;----------------------------------------------------------------------------
-(use-package cider
-  :commands (cider-repl-newline-and-indent
-             cider-repl-clear-buffer
-             cider-switch-to-last-clojure-buffer
-             cider-repl-handle-shortcut))
+(use-package cider)
 
 ;;----------------------------------------------------------------------------
 ;; highlight evals
@@ -39,12 +35,15 @@
 (general-def cider-repl-mode-map
   "RET" 'cider-repl-newline-and-indent)
 
-(general-def '(normal visual evilified) cider-repl-mode-map :prefix ","
-  "sc"  'cider-repl-clear-buffer
-  "ss"  'cider-switch-to-last-clojure-buffer
-  ","   'cider-repl-handle-shortcut)
-
-(general-def '(normal visual evilified) clojure-mode-map :prefix ","
+(general-define-key
+  :states'(normal visual evilified)
+  :keymaps '(clojure-mode-map
+             clojurec-mode-map
+             clojurescript-mode-map
+             clojurex-mode-map
+             cider-repl-mode-map
+             cider-clojure-interaction-mode-map)
+  :prefix ","
   "ha" 'cider-apropos
   "hh" 'cider-doc
 
@@ -113,6 +112,12 @@
   "rc(" 'clojure-convert-collection-to-list
   "rc'" 'clojure-convert-collection-to-quoted-list
   "rc#" 'clojure-convert-collection-to-set)
+
+(general-def '(normal visual evilified) cider-repl-mode-map :prefix ","
+  "sc"  'cider-repl-clear-buffer
+  "ss"  'cider-switch-to-last-clojure-buffer
+  ","   'cider-repl-handle-shortcut)
+
 
 (provide 'init-clojure)
 ;;; init-clojure.el ends here
