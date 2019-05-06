@@ -14,7 +14,15 @@
 ;;----------------------------------------------------------------------------
 ;; Cider
 ;;----------------------------------------------------------------------------
-(use-package cider)
+(use-package cider
+  :hook
+  (cider-repl-mode-hook . eldoc-mode)
+  :init
+  (setq cider-refresh-before-fn "user/stop")
+  (setq cider-refresh-after-fn "user/go")
+  (setq cider-repl-use-pretty-printing t) ; always pretty print in repl
+  (setq cider-overlays-use-font-lock t) ; add syntax highlighting to eval overlay
+  )
 
 ;;----------------------------------------------------------------------------
 ;; highlight evals
