@@ -14,10 +14,10 @@
 ;; Some basic preferences
 ;;----------------------------------------------------------------------------
 (setq-default indent-tabs-mode nil)
-(global-hl-line-mode 1)
 (setq save-interprogram-paste-before-kill t
       apropos-do-all t
       mouse-yank-at-point t
+      display-line-numbers-type 'relative
       require-final-newline t
       visible-bell t
       scroll-margin 7
@@ -26,23 +26,14 @@
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "backups"))))
+(global-hl-line-mode 1)
+(global-display-line-numbers-mode 1)
 
 ;;----------------------------------------------------------------------------
 ;; Show matching parens
 ;;----------------------------------------------------------------------------
 (add-hook 'after-init-hook 'show-paren-mode)
 
-;;----------------------------------------------------------------------------
-;; Use relative line numbering
-;;----------------------------------------------------------------------------
-(use-package linum-relative
-  :ensure t
-  :init
-  (setq linum-relative-format "%3s ")
-  (setq linum-relative-backend 'display-line-numbers-mode)
-  :config
-  (require 'linum-relative)
-  (linum-relative-global-mode))
 
 ;;----------------------------------------------------------------------------
 ;; Quickly switch to scratch buffer
