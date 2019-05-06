@@ -66,7 +66,7 @@
   "gb" 'cider-pop-back
   "gC" 'cider-classpath
   "ge" 'cider-jump-to-compilation-error
-  "gr" 'cider-jump-to-resource
+  ;; "gr" 'cider-jump-to-resource
   "gn" 'cider-browse-ns
   "gN" 'cider-browse-ns-all
 
