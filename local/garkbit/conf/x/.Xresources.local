@@ -3,10 +3,6 @@
 Xft.dpi: 192
 *dpi: 192
 
-! "Font to use" Set from: XResources
-rofi.font: Essential PragmataPro 24px
-
-! "Y-offset relative to location" Set from: XResources
-rofi.yoffset: 30
+Emacs.font: Iosevka\ Term-9
 
 ! vim:ft=xdefaults:ts=2:sw=2:fdm=marker
