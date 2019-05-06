@@ -77,5 +77,13 @@ Repeated invocations toggle between the two most recently open buffers."
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
+;;----------------------------------------------------------------------------
+;; Comment out form
+;; https://stackoverflow.com/questions/4200905/how-do-i-comment-out-sexps-in-elisp-code
+;;----------------------------------------------------------------------------
+(defmacro comment (&rest body)
+  "Comment out one or more s-expressions."
+  nil)
+
 (provide 'init-utils)
 ;;; init-utils.el ends here
