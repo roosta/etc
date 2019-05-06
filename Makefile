@@ -167,7 +167,7 @@ link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-tog
 ~/bin/loadavg: user-fs clone-src
 	-ln -f -s $(HOME)/scripts/loadavg.sh $(HOME)/bin/loadavg &>/dev/null
 
-link-conf:
+link-conf: user-fs
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
 	stow $(shell ls conf) -R -t ~ -d conf --ignore="md|org"
 
