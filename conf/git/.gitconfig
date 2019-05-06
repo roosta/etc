@@ -3,14 +3,14 @@
   user = roosta
   name = Daniel Berg
 [core]
-  editor = emacsclient -nw
+  editor = vim
   excludesfile = ~/.globalignore
 [push]
   default = simple
 [credential]
-	helper = cache --timeout=3600
+  helper = cache --timeout=3600
 [diff]
-	tool = emacsclient -nw
+  tool = vimdiff
 [alias]
   s         = status
   b         = branch
@@ -30,23 +30,23 @@
   discard   = checkout -- .
   uncommit  = reset --mixed HEAD~
   amend     = commit --amend
-	last      = cat-file commit HEAD
+  last      = cat-file commit HEAD
   ctags     = !.git/hooks/ctags
   last-sha  = rev-parse --short HEAD
 [init]
   templatedir = ~/.git_template
 [merge]
-	tool = emacsclient -nw
+  tool = emacsclient -nw
 [commit]
-	verbose = true
-	gpgsign = true
+  verbose = true
+  gpgsign = true
 [include]
   path = ~/.gitconfig.local
 [github]
-	user = roosta
+  user = roosta
 [magithub]
-	online = true
+  online = true
 [magithub "status"]
-	includeStatusHeader = true
-	includePullRequestsSection = true
-	includeIssuesSection = true
+  includeStatusHeader = true
+  includePullRequestsSection = true
+  includeIssuesSection = true
