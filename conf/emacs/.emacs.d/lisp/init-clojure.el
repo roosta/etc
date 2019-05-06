@@ -126,6 +126,21 @@
   "ss"  'cider-switch-to-last-clojure-buffer
   ","   'cider-repl-handle-shortcut)
 
+(dolist (m '(clojure-mode
+             clojurec-mode
+             clojurescript-mode
+             clojurex-mode
+             cider-repl-mode
+             cider-clojure-interaction-mode))
+  (which-key-add-major-mode-key-based-replacements m
+    ", d" "debug"
+    ", e" "evaluation"
+    ", g" "goto"
+    ", h" "documentation"
+    ", s" "repl"
+    ", t" "test"
+    ", T" "toggle"
+    ", f" "format"))
 
 (provide 'init-clojure)
 ;;; init-clojure.el ends here
