@@ -17,7 +17,6 @@
 (setq save-interprogram-paste-before-kill t
       apropos-do-all t
       mouse-yank-at-point t
-      display-line-numbers-type 'relative
       require-final-newline t
       visible-bell t
       scroll-margin 7
@@ -26,8 +25,19 @@
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "backups"))))
+
+;;----------------------------------------------------------------------------
+;; Globally enable hl-line-mode
+;;----------------------------------------------------------------------------
 (global-hl-line-mode 1)
+
+
+;;----------------------------------------------------------------------------
+;; Relative line numbering
+;;----------------------------------------------------------------------------
+(setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode 1)
+
 
 ;;----------------------------------------------------------------------------
 ;; Show matching parens
