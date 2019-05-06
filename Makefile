@@ -183,9 +183,9 @@ update-spacemacs:
 	@echo -e "\033[0;33mUpdating spacemacs...\033[0m"
 	cd ~/.emacs.d && git pull --rebase
 
-~/.emacs.d: link-conf install-packages ~/var/emacs/undo ~/var/emacs/backup
-	@echo -e "\033[0;33mInitialize spacemacs...\033[0m"
-	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
+# ~/.emacs.d: link-conf install-packages ~/var/emacs/undo ~/var/emacs/backup
+# 	@echo -e "\033[0;33mInitialize spacemacs...\033[0m"
+# 	git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 ~/var/emacs/undo:
 	mkdir -p ~/var/emacs/undo
