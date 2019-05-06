@@ -37,12 +37,12 @@
 ;; Key definitions
 ;;----------------------------------------------------------------------------
 (general-def cider-repl-mode-map
-  "RET" #'cider-repl-newline-and-indent)
+  "RET" 'cider-repl-newline-and-indent)
 
 (general-def '(normal visual evilified) cider-repl-mode-map :prefix ","
-  "sc"  #'cider-repl-clear-buffer
-  "ss"  #'cider-switch-to-last-clojure-buffer
-  ","   #'cider-repl-handle-shortcut)
+  "sc"  'cider-repl-clear-buffer
+  "ss"  'cider-switch-to-last-clojure-buffer
+  ","   'cider-repl-handle-shortcut)
 
 (general-def '(normal visual evilified) clojure-mode-map :prefix ","
   "ha" 'cider-apropos
