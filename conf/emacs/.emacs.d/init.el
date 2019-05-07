@@ -6,6 +6,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(defvar exec-path-from-shell-check-startup-files)
 (setq
   debug-on-error t ; Produce backtraces when errors occur
   exec-path-from-shell-check-startup-files nil ; disable warning about setting path outside profile/env
