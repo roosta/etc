@@ -47,6 +47,8 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 
+(require 'advice) ;; Remove warning about non-defined functions
+
 (use-package diminish)
 (use-package dash)
 (use-package s)
