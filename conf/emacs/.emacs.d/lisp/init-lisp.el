@@ -35,8 +35,8 @@
 ;;----------------------------------------------------------------------------
 (use-package elisp-slime-nav
   :general
-  ('normal emacs-lisp-mode-map
-    "K" #'elisp-slime-nav-describe-elisp-thing-at-point)
+  ('(normal visual evilified) emacs-lisp-mode-map
+   "K" #'elisp-slime-nav-describe-elisp-thing-at-point)
   :config
   (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
     (add-hook hook 'turn-on-elisp-slime-nav-mode)))
