@@ -42,7 +42,8 @@
     (setq evil-insert-state-cursor 'bar)  ; ⎸
     (setq evil-emacs-state-cursor  'hbar) ; _
     :config
-    (etcc-on))
+    (when (fboundp 'etcc-on)
+        (etcc-on)))
 
   (xterm-mouse-mode 1) ; Mouse in a terminal (Use shift to paste with middle button)
   (mwheel-install))
