@@ -7,7 +7,7 @@
 
 (eval-when-compile (require 'cl))
 (defun roosta/add-subdirs-to-load-path (parent-dir)
-  "Adds every non-hidden subdir of PARENT-DIR to `load-path'."
+  "Add every non-hidden subdir of PARENT-DIR to `load-path'."
   (let* ((default-directory parent-dir))
     (progn
       (setq load-path
@@ -23,12 +23,15 @@
 ;;; Utilities for grabbing upstream libs
 
 (defun site-lisp-dir-for (name)
+  "Get site-lisp directory for NAME."
   (expand-file-name (format "site-lisp/%s" name) user-emacs-directory))
 
 (defun site-lisp-library-el-path (name)
+  "Get NAME el path."
   (expand-file-name (format "%s.el" name) (site-lisp-dir-for name)))
 
 (defun download-site-lisp-module (name url)
+  "Download a Lisp module, passing NAME and URL."
   (let ((dir (site-lisp-dir-for name)))
     (message "Downloading %s from %s" name url)
     (unless (file-directory-p dir)
@@ -39,12 +42,12 @@
       el-file)))
 
 (defun ensure-lib-from-url (name url)
+  "Either get or download a lib from NAME and URL."
   (unless (site-lisp-library-loadable-p name)
     (byte-compile-file (download-site-lisp-module name url))))
 
 (defun site-lisp-library-loadable-p (name)
-  "Return whether or not the library `name' can be loaded from a
-source file under ~/.emacs.d/site-lisp/name/"
+  "Return whether or not the library NAME can be loaded from a source file under ~/.emacs.d/site-lisp/name/."
   (let ((f (locate-library (symbol-name name))))
     (and f (string-prefix-p (file-name-as-directory (site-lisp-dir-for name)) f))))
 

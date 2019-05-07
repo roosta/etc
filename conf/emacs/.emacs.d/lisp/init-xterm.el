@@ -19,6 +19,7 @@
   (require 'tmux))
 
 (defun roosta/console-frame-setup ()
+  "Console spesific config."
 
   (after-load 'evil-cleverparens
   ;; Unbind troublesome keybinds when in terminal.  Fixes issue with
