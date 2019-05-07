@@ -5,6 +5,8 @@
         :plugins [;; check deps for new versions
                   [lein-ancient "0.6.15"]
 
+                  [lein-auto "0.1.3"]
+
                   ;; clojure syntax checking
                   [jonase/eastwood "0.3.4" :exclusions [org.clojure/clojure]]
 
