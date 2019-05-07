@@ -5,6 +5,11 @@
 
 (use-package yasnippet
   :init
+  ;; Use hippie expand to expand snippets
+  (setq hippie-expand-try-functions-list
+        (cons 'yas/hippie-try-expand hippie-expand-try-functions-list))
+
+  ;; Custom snippets
   (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
   :config
   (yas-global-mode 1))
