@@ -131,23 +131,23 @@ clone-src:
 	# ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
 	git clone git@github.com:roosta/org.git ~/org
 
-link-misc: ~/utils ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-toggle ~/bin/tmain ~/bin/tupd
+link-misc: ~/scripts ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-toggle ~/bin/tmain ~/bin/tupd
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
 
-~/utils: user-fs clone-src
+~/scripts: user-fs clone-src
 	-ln -f -s $(HOME)/src/scripts $(HOME) &>/dev/null
 
 ~/colors: user-fs clone-src
 	-ln -f -s $(HOME)/src/colors $(HOME) &>/dev/null
 
 ~/bin/emacs-file-opener: user-fs clone-src
-	-ln -f -s $(HOME)/src/utils/emacs-file-opener.sh $(HOME)/bin/emacs-file-opener &>/dev/null
+	-ln -f -s $(HOME)/src/scripts/emacs-file-opener.sh $(HOME)/bin/emacs-file-opener &>/dev/null
 
 ~/bin/ftl: user-fs clone-src
 	-ln -f -s $(HOME)/etc/scripts/ftl.sh $(HOME)/bin/ftl &>/dev/null
 
 ~/bin/touchpad-toggle: user-fs clone-src
-	-ln -f -s $(HOME)/src/utils/touchpad-toggle.sh $(HOME)/bin/touchpad-toggle &>/dev/null
+	-ln -f -s $(HOME)/src/scripts/touchpad-toggle.sh $(HOME)/bin/touchpad-toggle &>/dev/null
 
 ~/bin/tmain: user-fs clone-src
 	-ln -f -s $(HOME)/scripts/tmux-main.sh $(HOME)/bin/tmain &>/dev/null
