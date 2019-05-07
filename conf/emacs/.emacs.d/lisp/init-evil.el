@@ -2,10 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-(defvar evil-want-Y-yank-to-eol)
 
 (use-package evil
   :init
+  (defvar evil-want-Y-yank-to-eol)
   (setq evil-ex-search-vim-style-regexp t)
   (setq evil-search-module 'evil-search)
   (setq evil-want-keybinding nil) ;; required by evil-collection
