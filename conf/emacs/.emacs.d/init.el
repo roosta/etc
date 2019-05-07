@@ -80,8 +80,9 @@
 (add-hook 'after-init-hook
           (lambda ()
             (require 'server)
-            (unless (server-running-p)
-              (server-start))))
+            (if (and (fboundp 'server-running-p)
+                     (not (server-running-p)))
+                (server-start))))
 
 
 
