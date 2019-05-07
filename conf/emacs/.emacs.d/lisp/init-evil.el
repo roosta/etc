@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(defvar evil-want-Y-yank-to-eol)
+
 (use-package evil
   :init
   (setq evil-ex-search-vim-style-regexp t)
