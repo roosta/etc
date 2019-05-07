@@ -130,6 +130,10 @@
   "ss"  'cider-switch-to-last-clojure-buffer
   ","   'cider-repl-handle-shortcut)
 
+
+;;----------------------------------------------------------------------------
+;; Add prefix descriptions to which-key
+;;----------------------------------------------------------------------------
 (dolist (m '(clojure-mode
              clojurec-mode
              clojurescript-mode
