@@ -152,6 +152,9 @@
   "ss"  #'cider-switch-to-last-clojure-buffer
   ","   #'cider-repl-handle-shortcut)
 
+(general-def '(normal visual evilified) clojure-mode-map
+  "K" #'cider-doc)
+
 
 ;;----------------------------------------------------------------------------
 ;; Add prefix descriptions to which-key
