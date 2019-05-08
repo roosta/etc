@@ -75,6 +75,7 @@
 (require 'init-prescient)
 (require 'init-yasnippet)
 (require 'init-clojure)
+(require 'init-yaml)
 
 
 ;;----------------------------------------------------------------------------
