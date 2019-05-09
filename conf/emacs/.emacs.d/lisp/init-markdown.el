@@ -86,5 +86,11 @@
     ", l" "markdown/lists"
     ", x" "markdown/text"))
 
+(use-package vmd-mode
+    :defer t
+    :general
+    ('(normal visual evilified) markdown-mode-map :prefix ","
+     "cP" 'vmd-mode))
+
 (provide 'init-markdown)
 ;;; init-markdown.el ends here
