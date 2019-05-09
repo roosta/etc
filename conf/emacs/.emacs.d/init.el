@@ -76,6 +76,7 @@
 (require 'init-yasnippet)
 (require 'init-clojure)
 (require 'init-yaml)
+(require 'init-markdown)
 
 
 ;;----------------------------------------------------------------------------
