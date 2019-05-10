@@ -28,8 +28,8 @@
   (unless (and buffer-file-name (file-exists-p buffer-file-name))
     (flycheck-mode -1)))
 
-(add-hook 'markdown-mode-hook 'flycheck-disable-on-temp-buffers)
-(add-hook 'clojure-mode-hook 'flycheck-disable-on-temp-buffers)
+(add-hook 'markdown-mode-hook #'flycheck-disable-on-temp-buffers)
+(add-hook 'clojure-mode-hook #'flycheck-disable-on-temp-buffers)
 
 (provide 'init-flycheck)
 ;;; init-flycheck.el ends here
