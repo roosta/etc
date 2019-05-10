@@ -12,7 +12,7 @@
   :commands
   (spell-checking/change-dictionary)
   :general
-  ('(normal visual evilified) :prefix ","
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "Sb" #'flyspell-buffer
    "Sd" #'spell-checking/change-dictionary
    "Sn" #'flyspell-goto-next-error))
