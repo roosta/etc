@@ -96,10 +96,10 @@
 
 (use-package edit-indirect)
 
-(use-package polymode)
-(use-package poly-markdown
-  :config
-  (add-auto-mode 'poly-markdown-mode "\\.md"))
+;; (use-package polymode)
+;; (use-package poly-markdown
+;;   :config
+;;   (add-auto-mode 'poly-markdown-mode "\\.md"))
 
 (provide 'init-markdown)
 ;;; init-markdown.el ends here
