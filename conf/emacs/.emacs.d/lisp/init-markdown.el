@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-utils)
+
 (use-package markdown-mode
   :commands
   (markdown-mode
@@ -91,6 +93,13 @@
     :general
     ('(normal visual evilified) markdown-mode-map :prefix ","
      "cP" 'vmd-mode))
+
+(use-package edit-indirect)
+
+(use-package polymode)
+(use-package poly-markdown
+  :config
+  (add-auto-mode 'poly-markdown-mode "\\.md"))
 
 (provide 'init-markdown)
 ;;; init-markdown.el ends here
