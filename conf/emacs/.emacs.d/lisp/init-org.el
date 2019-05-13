@@ -3,6 +3,7 @@
 
 ;;; Code:
 
+(require 'init-utils)
 
 (defvar org-export-with-drawers)
 (defvar org-clock-persist)
@@ -16,53 +17,49 @@
 (defvar org-capture-templates)
 (defvar org-duration-format)
 
+(setq
+ ;; I added this to export clock times in drawers
+ org-export-with-drawers t
 
-(require 'init-utils)
+ ;; Save the running clock when emacs is closed
+ org-clock-persist 't
 
-(after-load 'org
-  (setq
-   ;; I added this to export clock times in drawers
-   org-export-with-drawers t
+ ;; hide markers like ~this~ and =this=
+ ;; makes for a better reading experience I think
+ org-hide-emphasis-markers t
 
-   ;; Save the running clock when emacs is closed
-   org-clock-persist 't
+ org-log-into-drawer "LOGBOOK"
 
-   ;; hide markers like ~this~ and =this=
-   ;; makes for a better reading experience I think
-   org-hide-emphasis-markers t
+ ;; have indending in source blocks make a bit more sense
+ org-src-tab-acts-natively t
 
-   org-log-into-drawer "LOGBOOK"
+ org-clock-idle-time 30
 
-   ;; have indending in source blocks make a bit more sense
-   org-src-tab-acts-natively t
+ ;; use dropbox to sync mobile changes
+ org-mobile-directory "~/Dropbox/MobileOrg"
 
-   org-clock-idle-time 30
+ ;; define which files are available for mobile-org
+ org-mobile-files (quote ("~/org/media.org"
+                          "~/org/TODOs.org"
+                          "~/org/buy.org"
+                          "~/org/shopping.org"
+                          "~/org/scratch.org"
+                          "~/org/loans.org"))
 
-   ;; use dropbox to sync mobile changes
-   org-mobile-directory "~/Dropbox/MobileOrg"
+ ;; define agenda files
+ org-agenda-files (quote ("~/org/TODOs.org" "~/org/projects.org" "~/org/work.org"))
 
-   ;; define which files are available for mobile-org
-   org-mobile-files (quote ("~/org/media.org"
-                            "~/org/TODOs.org"
-                            "~/org/buy.org"
-                            "~/org/shopping.org"
-                            "~/org/scratch.org"
-                            "~/org/loans.org"))
+ ;; Capture templates
+ ;; http://orgmode.org/manual/Capture-templates.html#Capture-templates
+ org-capture-templates
+ '(("t" "Todo" entry (file "~/org/TODOs.org")
+    "* TODO %?"))
 
-   ;; define agenda files
-   org-agenda-files (quote ("~/org/TODOs.org" "~/org/projects.org" "~/org/work.org"))
-
-   ;; Capture templates
-   ;; http://orgmode.org/manual/Capture-templates.html#Capture-templates
-   org-capture-templates
-   '(("t" "Todo" entry (file "~/org/TODOs.org")
-      "* TODO %?"))
-
-   ;; dont show hours in days in clocktable
-   org-duration-format 'h:mm)
+ ;; dont show hours in days in clocktable
+ org-duration-format 'h:mm)
 
   ;; persist clock on emacs restart
-  (org-clock-persistence-insinuate))
+  (org-clock-persistence-insinuate)
 
 (use-package org-bullets
   :load-path "~/src/org-bullets"
