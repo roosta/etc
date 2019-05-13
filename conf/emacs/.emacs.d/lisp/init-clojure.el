@@ -43,9 +43,9 @@
    cider-repl-handle-shortcut)
   :hook
   (cider-repl-mode-hook . eldoc-mode)
+  :defines
+  (cider-refresh-before-fn cider-refresh-after-fn)
   :init
-  (defvar cider-refresh-before-fn)
-  (defvar cider-refresh-after-fn)
   (setq cider-refresh-before-fn "user/stop")
   (setq cider-refresh-after-fn "user/go")
   (setq cider-repl-use-pretty-printing t) ; always pretty print in repl
