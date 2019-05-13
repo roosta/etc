@@ -69,8 +69,8 @@
 ;; General keybindings
 ;;----------------------------------------------------------------------------
 
-(general-define-key
- "M-/" #'hippie-expand
+(general-def
+ "M-/"     #'hippie-expand
  "C-x C-b" #'ibuffer)
 
 (general-define-key
