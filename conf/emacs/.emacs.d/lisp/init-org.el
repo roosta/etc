@@ -3,6 +3,7 @@
 
 ;;; Code:
 
+
 (defvar org-export-with-drawers)
 (defvar org-clock-persist)
 (defvar org-hide-emphasis-markers)
@@ -14,6 +15,7 @@
 (defvar org-agenda-files)
 (defvar org-capture-templates)
 (defvar org-duration-format)
+
 
 (require 'init-utils)
 
@@ -68,14 +70,13 @@
 
 (use-package org-bullets
   :load-path "~/src/org-bullets"
+  :defer nil
   :commands
   (org-bullets-mode)
   :init
   (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
   :config
-  (require 'org-bullets)
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  )
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
 
 (use-package evil-org
   :after org
