@@ -62,11 +62,7 @@
    org-duration-format 'h:mm)
 
   ;; persist clock on emacs restart
-  (org-clock-persistence-insinuate)
-
-  (general-define-key
-   :keymaps 'org-mode-map
-   "<C-return>" 'evil-org-org-insert-heading-respect-content-below))
+  (org-clock-persistence-insinuate))
 
 (use-package org-bullets
   :load-path "~/src/org-bullets"
@@ -80,6 +76,9 @@
 
 (use-package evil-org
   :after org
+  :general
+  (evil-org-mode-map
+   "<C-return>" 'evil-org-org-insert-heading-respect-content-below)
   :commands
   (evil-org-set-key-theme
    evil-org-agenda-set-keys)
