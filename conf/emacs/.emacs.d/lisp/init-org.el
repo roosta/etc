@@ -68,6 +68,8 @@
 
 (use-package org-bullets
   :load-path "~/src/org-bullets"
+  :commands
+  (org-bullets-mode)
   :init
   (setq org-bullets-bullet-list '("■" "◆" "▲" "▶"))
   :config
@@ -77,6 +79,9 @@
 
 (use-package evil-org
   :after org
+  :commands
+  (evil-org-set-key-theme
+   evil-org-agenda-set-keys)
   :config
   (add-hook 'org-mode-hook 'evil-org-mode)
   (add-hook 'evil-org-mode-hook
