@@ -24,7 +24,7 @@
           ("???" . "#68A8E4")))
   :commands
   (global-hl-todo-mode)
-  :defer nil
+  :demand t
   :config
   (global-hl-todo-mode))
 

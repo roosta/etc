@@ -66,7 +66,7 @@
 
 (use-package org-bullets
   :load-path "~/src/org-bullets"
-  :defer nil
+  :demand t
   :commands
   (org-bullets-mode)
   :init
