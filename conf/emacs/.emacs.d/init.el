@@ -78,6 +78,7 @@
 (require 'init-yaml)
 (require 'init-markdown)
 (require 'init-spelling)
+(require 'init-hl-todo)
 
 
 ;;----------------------------------------------------------------------------
