@@ -16,6 +16,9 @@
 
 (setq-default indent-tabs-mode nil)
 
+(defvar apropos-do-all)
+(defvar ediff-window-setup-function)
+
 (setq save-interprogram-paste-before-kill t
       apropos-do-all t
       mouse-yank-at-point t
@@ -50,6 +53,7 @@
 ;;----------------------------------------------------------------------------
 ;; Relative line numbering
 ;;----------------------------------------------------------------------------
+(defvar display-line-numbers-type)
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode 1)
 
