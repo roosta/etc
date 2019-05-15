@@ -13,7 +13,9 @@
 ;;----------------------------------------------------------------------------
 ;; Some basic preferences
 ;;----------------------------------------------------------------------------
+
 (setq-default indent-tabs-mode nil)
+
 (setq save-interprogram-paste-before-kill t
       apropos-do-all t
       mouse-yank-at-point t
@@ -25,6 +27,18 @@
       save-place-file (concat user-emacs-directory "places")
       backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "backups"))))
+
+;;----------------------------------------------------------------------------
+;; Smooth scrolling
+;; https://www.emacswiki.org/emacs/SmoothScrolling
+;; scroll one line at a time (less "jumpy" than defaults)
+;;----------------------------------------------------------------------------
+
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)) ;; one line at a time
+      mouse-wheel-progressive-speed nil ;; don't accelerate scrolling
+      mouse-wheel-follow-mouse 't ;; scroll window under mouse
+      scroll-step 1  ;; keyboard scroll one line at a time
+      )
 
 ;;----------------------------------------------------------------------------
 ;; Globally enable hl-line-mode
