@@ -38,6 +38,7 @@
       mouse-wheel-progressive-speed nil ;; don't accelerate scrolling
       mouse-wheel-follow-mouse 't ;; scroll window under mouse
       scroll-step 1  ;; keyboard scroll one line at a time
+      scroll-conservatively 10000 ;; scroll one line at a time when you move the cursor past the top or bottom of the window,
       )
 
 ;;----------------------------------------------------------------------------
