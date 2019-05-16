@@ -11,13 +11,11 @@
 
 (use-package flycheck-joker
   :after
-  (flycheck)
-  :config
-  (require 'flycheck-joker))
+  (flycheck))
 
 (require 'flycheck-kondo)
 
-; (use-package package-lint)
+(use-package package-lint)
 
 (use-package flycheck-popup-tip
   :after
@@ -25,12 +23,11 @@
   :config
   (flycheck-popup-tip-mode))
 
-; (use-package flycheck-package
-;   :after
-;   (flycheck package-lint)
-;   :disabled
-;   :config
-;   (flycheck-package-setup))
+(use-package flycheck-package
+  :after
+  (flycheck package-lint)
+  :config
+  (flycheck-package-setup))
 
 (defun flycheck-disable-on-temp-buffers ()
   "Disable flycheck in temporary buffers."
