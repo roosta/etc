@@ -2,15 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-
-
-(provide 'init-spelling)
-
 (defvar flyspell-correct-interface)
 
 (use-package flyspell
   :commands
   (spell-checking/change-dictionary)
+  :config
+  (add-hook 'prog-mode-hook #'flyspell-prog-mode)
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "Sb" #'flyspell-buffer
@@ -29,5 +27,7 @@
   :commands (flyspell-correct-ivy)
   :init
   (setq flyspell-correct-interface #'flyspell-correct-ivy))
+
+(provide 'init-spelling)
 
 ;;; init-spelling.el ends here
