@@ -5,6 +5,10 @@
 (defvar flyspell-correct-interface)
 
 (use-package flyspell
+  :init
+  ;; printing messages for every word (when checking the entire
+  ;; buffer) causes an enormous slowdown
+  (setq flyspell-issue-message-flag nil)
   :commands
   (spell-checking/change-dictionary)
   :config
