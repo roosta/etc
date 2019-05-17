@@ -2,15 +2,12 @@
 ;;; Commentary:
 ;;; Code:
 
-
 ;;----------------------------------------------------------------------------
 ;; smartparens
 ;;----------------------------------------------------------------------------
 (use-package smartparens
   :config
-  (require 'smartparens-config)
-  (smartparens-global-mode t)
-  (smartparens-strict-mode t))
+  (smartparens-global-strict-mode))
 
 
 ;;----------------------------------------------------------------------------
