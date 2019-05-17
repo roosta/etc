@@ -36,6 +36,7 @@
 
 
 (defun roosta/window-system-frame-setup ()
+  "Run when starting a window system."
   )
 
 (add-hook 'after-make-window-system-frame-hooks 'roosta/window-system-frame-setup)
