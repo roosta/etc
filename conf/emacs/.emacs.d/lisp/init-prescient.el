@@ -3,6 +3,8 @@
 ;;; Code:
 
 (use-package prescient
+  :commands
+  (prescient-persist-mode)
   :config
   (prescient-persist-mode 1))
 
