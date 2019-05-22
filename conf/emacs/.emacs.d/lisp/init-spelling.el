@@ -12,7 +12,7 @@
   :commands
   (spell-checking/change-dictionary)
   :config
-  (add-hook 'prog-mode-hook #'flyspell-prog-mode)
+  (add-hook 'prog-mode-hook #'flyspell-prog-mode) ; Check comments and strings
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "Sb" #'flyspell-buffer
