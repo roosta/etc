@@ -5,6 +5,7 @@
 
 (require 'init-utils)
 (require 'advice)
+(require 'init-site-lisp)
 
 (use-package clojure-mode)
 
@@ -60,9 +61,15 @@
   :after (cider))
 
 ;;----------------------------------------------------------------------------
-;; Clojure util functions
+;; Functions defined in spacemacs clojure layer
+;; https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Blang/clojure/funcs.el
 ;;----------------------------------------------------------------------------
-(require 'clojure-utils)
+
+(ensure-lib-from-url
+ 'clojure-utils
+ "https://raw.githubusercontent.com/syl20bnr/spacemacs/develop/layers/%2Blang/clojure/funcs.el")
+
+(load-file (site-lisp-library-el-path 'clojure-utils))
 
 ;;----------------------------------------------------------------------------
 ;; Key definitions
