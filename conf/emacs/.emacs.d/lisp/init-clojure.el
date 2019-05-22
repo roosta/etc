@@ -50,6 +50,7 @@
   (setq cider-refresh-after-fn "user/go")
   (setq cider-repl-use-pretty-printing t) ; always pretty print in repl
   (setq cider-overlays-use-font-lock t) ; add syntax highlighting to eval overlay
+  (setq cider-font-lock-reader-conditionals nil)
   )
 
 ;;----------------------------------------------------------------------------
