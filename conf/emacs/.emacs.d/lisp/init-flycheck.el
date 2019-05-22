@@ -13,7 +13,13 @@
   :after
   (flycheck))
 
-(require 'flycheck-kondo)
+(use-package flycheck-clj-kondo
+  :after (flycheck)
+  :config
+  (dolist (checkers '((clj-kondo-clj . clojure-joker)
+                      (clj-kondo-cljs . clojurescript-joker)
+                      (clj-kondo-cljc . clojure-joker)))
+    (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers)))))
 
 (use-package package-lint)
 
