@@ -25,7 +25,7 @@
    flyspell-correct-previous-word-generic)
   :general
   ('(normal visual insert emacs)  :prefix "SPC" :non-normal-prefix "C-SPC"
-   "Sc" #'flyspell-correct-previous-word-generic))
+   "Sc" #'flyspell-correct-word-generic))
 
 (use-package flyspell-correct-ivy
   :commands (flyspell-correct-ivy)
