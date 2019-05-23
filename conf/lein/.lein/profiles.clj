@@ -1,4 +1,5 @@
 {:user {:aliases  {"rebl" ["trampoline" "run" "-m" "rebel-readline.main"]}
+        :signing {:gpg-key "mail@roosta.sh"} 
         :dependencies [
                        ;; [com.bhauman/rebel-readline "0.1.4"]
                        ]
