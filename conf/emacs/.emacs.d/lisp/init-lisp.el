@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-utils)
+
 ;;----------------------------------------------------------------------------
 ;; smartparens
 ;;----------------------------------------------------------------------------
@@ -40,6 +42,23 @@
     (add-hook hook 'turn-on-elisp-slime-nav-mode)))
 
 
+;;----------------------------------------------------------------------------
+;; Dim parenthesis by using paren-face and srcery theme
+;;----------------------------------------------------------------------------
+(comment
+ (use-package paren-face
+  :init
+  (setq paren-face-regexp "[][(){}]")
+  :config
+  (global-paren-face-mode 1)))
+
+
+;;----------------------------------------------------------------------------
+;; Show matching parenthesis
+;;----------------------------------------------------------------------------
+(add-hook 'after-init-hook 'show-paren-mode)
+
+
+
 (provide 'init-lisp)
 ;;; init-lisp.el ends here
-
