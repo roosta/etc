@@ -53,6 +53,20 @@
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "oo" #'projectile--find-file))
 
+(use-package counsel-projectile
+  :defines
+  (projectile-switch-project-action)
+  :config
+  (setq projectile-switch-project-action 'counsel-projectile-find-file)
+  :general
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
+   "p SPC" 'counsel-projectile
+   "pb"    'counsel-projectile-switch-to-buffer
+   "pd"    'counsel-projectile-find-dir
+   "pp"    'counsel-projectile-switch-project
+   "pf"    'counsel-projectile-find-file
+   "pr"    'projectile-recentf))
+
 (defun roosta/org-find-files ()
   "Quickly search in org folder."
   (interactive)

@@ -59,22 +59,6 @@
 
 
 ;;----------------------------------------------------------------------------
-;; add paren-face
-;;----------------------------------------------------------------------------
-(use-package paren-face
-  :init
-  (setq paren-face-regexp "[][(){}]")
-  :config
-  (global-paren-face-mode 1))
-
-
-;;----------------------------------------------------------------------------
-;; Show matching parens
-;;----------------------------------------------------------------------------
-(add-hook 'after-init-hook 'show-paren-mode)
-
-
-;;----------------------------------------------------------------------------
 ;; Quickly switch to scratch buffer
 ;;----------------------------------------------------------------------------
 (defun roosta/switch-to-scratch-buffer ()
@@ -82,6 +66,21 @@
   (interactive)
   (switch-to-buffer (get-buffer-create "*scratch*"))
   (lisp-interaction-mode))
+
+;;----------------------------------------------------------------------------
+;; Setup dumb jump
+;;----------------------------------------------------------------------------
+
+(use-package dumb-jump
+  :defer t
+  :defines dumb-jump-selector
+  :config
+  (setq dumb-jump-selector 'ivy)
+  :general
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
+   "jq" #'dumb-jump-quick-look
+   "jj" #'dumb-jump-go
+   "jb" #'dumb-jump-back))
 
 
 ;;----------------------------------------------------------------------------

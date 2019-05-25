@@ -9,6 +9,11 @@
   ;; printing messages for every word (when checking the entire
   ;; buffer) causes an enormous slowdown
   (setq flyspell-issue-message-flag nil)
+
+  ;; Don't spell check strings, only comments
+  (setq flyspell-prog-text-faces
+        (delq 'font-lock-string-face
+              flyspell-prog-text-faces))
   :commands
   (spell-checking/change-dictionary)
   :config
