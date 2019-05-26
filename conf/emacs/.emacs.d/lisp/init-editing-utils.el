@@ -56,7 +56,7 @@
 (defvar display-line-numbers-type)
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode 1)
-
+(add-hook 'org-mode-hook (lambda () (display-line-numbers-mode 0)))
 
 ;;----------------------------------------------------------------------------
 ;; Quickly switch to scratch buffer
