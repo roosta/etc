@@ -174,6 +174,7 @@
              cider-repl-mode
              cider-clojure-interaction-mode))
   (which-key-add-major-mode-key-based-replacements m
+    ;; root
     ", d" "debug"
     ", e" "evaluation"
     ", g" "goto"
@@ -181,7 +182,16 @@
     ", s" "repl"
     ", t" "test"
     ", T" "toggle"
-    ", f" "format"))
+    ", f" "format"
+
+    ;; tests
+    ", ta" "cider-test-run-all-tests"
+    ", tl" "cider-test-run-loaded-tests"
+    ", tp" "cider-test-run-project-tests"
+    ", tn" "cider-test-run-ns-tests"
+    ", tr" "cider-test-rerun-failed-tests"
+    ", tt" "cider-test-run-focused-test"
+    ))
 
 (provide 'init-clojure)
 ;;; init-clojure.el ends here

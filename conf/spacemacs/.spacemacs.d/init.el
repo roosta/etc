@@ -517,10 +517,10 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   ;; load separate user-init
-  (load-file  "~/.spacemacs.d/user-init.el")
+  (load-file  "~/spacemacs/.spacemacs.d/user-init.el")
 
   ;; Set the Emacs customization file path. Must be done here in user-init.
-  (setq custom-file "~/.spacemacs.d/custom.el")
+  (setq custom-file "~/spacemacs/.spacemacs.d/custom.el")
 
   ;; Lastly, load custom-file (but only if the file exists).
   (when (file-exists-p custom-file)
@@ -533,4 +533,4 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  (load-file "~/.spacemacs.d/user-config.el"))
+  (load-file "~/spacemacs/.spacemacs.d/user-config.el"))
