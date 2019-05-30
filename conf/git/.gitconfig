@@ -3,14 +3,14 @@
   user = roosta
   name = Daniel Berg
 [core]
-  editor = vim
+  editor = emacsclient -nw
   excludesfile = ~/.globalignore
 [push]
   default = simple
 [credential]
   helper = cache --timeout=3600
 [diff]
-  tool = vimdiff
+  tool = ediffclient
 [alias]
   s         = status
   b         = branch
@@ -36,7 +36,7 @@
 [init]
   templatedir = ~/.git_template
 [merge]
-  tool = emacsclient -nw
+  tool = emergeclient
 [commit]
   verbose = true
   gpgsign = true
