@@ -615,7 +615,7 @@ let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY',
 "}}}
 " Yankring: {{{2
 " ---------------
-nnoremap <silent> <F11> :YRShow<CR>
+noremap <silent> <leader>ry :YRShow<CR>
 let g:yankring_history_dir = '~/var'
 "}}}
 " Tmux Navigator: {{{2
