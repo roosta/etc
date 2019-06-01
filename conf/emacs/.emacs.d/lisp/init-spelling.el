@@ -11,13 +11,13 @@
   (setq flyspell-issue-message-flag nil)
 
   ;; Don't spell check strings, only comments
-  (setq flyspell-prog-text-faces
-        (delq 'font-lock-string-face
-              flyspell-prog-text-faces))
+  ;; (setq flyspell-prog-text-faces
+  ;;       (delq 'font-lock-string-face
+  ;;             flyspell-prog-text-faces))
   :commands
   (spell-checking/change-dictionary)
-  :config
-  (add-hook 'prog-mode-hook #'flyspell-prog-mode) ; Check comments and strings
+  ;; :config
+  ;; (add-hook 'prog-mode-hook #'flyspell-prog-mode) ; Check comments and strings
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "Sb" #'flyspell-buffer
