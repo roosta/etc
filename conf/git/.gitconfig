@@ -38,7 +38,7 @@
 [merge]
   tool = emergeclient
 [commit]
-  verbose = true
+  # verbose = true
   gpgsign = true
 [include]
   path = ~/.gitconfig.local
