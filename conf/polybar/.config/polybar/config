@@ -181,7 +181,7 @@ label-indicator-padding = 1
 ;; https://github.com/roosta/utils/blob/master/pkg.sh
 type = custom/script
 format-foreground = ${colors.brightwhite}
-interval = 90
+interval = 120
 format = <label>
 label = "PKG: %output%"
 label-padding-right = 1
