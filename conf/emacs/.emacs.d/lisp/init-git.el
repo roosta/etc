@@ -5,6 +5,8 @@
 
 ;;; Code:
 
+(use-package git-commit)
+
 (use-package magit
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
