@@ -82,3 +82,6 @@ export VIDIR_EDITOR_ARGS='-c :set nolist | :set ft=vidir-ls'
 export SYSTEMD_EDITOR="/bin/vi"
 
 export GRAALVM_HOME="${HOME}/java/graalvm-ce-1.0.0-rc14"
+
+# temp
+export PGSSLMODE=require
