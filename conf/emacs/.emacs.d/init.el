@@ -80,6 +80,7 @@
 (require 'init-spelling)
 (require 'init-hl-todo)
 (require 'init-folding)
+(require 'init-sql)
 
 
 ;;----------------------------------------------------------------------------

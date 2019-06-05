@@ -18,6 +18,12 @@
    "https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Btools/tmux/local/tmux/tmux.el")
   (require 'tmux))
 
+(general-def '(normal visual operator) (sql-mode-map sql-interactive-mode-map)
+  "C-k" 'tmux-nav-up
+  "C-j" 'tmux-nav-down
+  "C-l" 'tmux-nav-right
+  "C-h" 'tmux-nav-left)
+
 (defun roosta/console-frame-setup ()
   "Console spesific config."
 
