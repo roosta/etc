@@ -7,23 +7,41 @@
 (require 'init-utils)
 (require 'init-site-lisp)
 
+;;----------------------------------------------------------------------------
+;; Mouse support
+;;----------------------------------------------------------------------------
 (global-set-key [mouse-4] (lambda () (interactive) (scroll-down 1)))
 (global-set-key [mouse-5] (lambda () (interactive) (scroll-up 1)))
 
 (autoload 'mwheel-install "mwheel")
 
+;;----------------------------------------------------------------------------
+;; Tmux navigation
+;;----------------------------------------------------------------------------
 (after-load 'evil
   (ensure-lib-from-url
    'tmux
    "https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Btools/tmux/local/tmux/tmux.el")
   (require 'tmux))
 
-(general-def '(normal visual operator) (sql-mode-map sql-interactive-mode-map)
-  "C-k" 'tmux-nav-up
-  "C-j" 'tmux-nav-down
-  "C-l" 'tmux-nav-right
-  "C-h" 'tmux-nav-left)
+;; Add some overrides here, certain buffers the tmux nav doesn't work
+(general-def '(normal visual operator) (sql-mode-map sql-interactive-mode-map magit-diff-mode-map term-raw-map)
+  "C-k" #'tmux-nav-up
+  "C-j" #'tmux-nav-down
+  "C-l" #'tmux-nav-right
+  "C-h" #'tmux-nav-left)
 
+;;----------------------------------------------------------------------------
+;; Emacs terminal
+;;----------------------------------------------------------------------------
+(general-def '(normal visual operator) (term-raw-map)
+  "<C-up>" 'term-send-up
+  "<C-down>" 'term-send-down
+  "<C-return>" 'term-send-return)
+
+;;----------------------------------------------------------------------------
+;; console frame hook
+;;----------------------------------------------------------------------------
 (defun roosta/console-frame-setup ()
   "Console spesific config."
 
