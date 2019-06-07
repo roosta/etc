@@ -58,7 +58,7 @@
 (use-package general)
 
 (require 'init-frame-hooks)
-(require 'init-xterm)
+(require 'init-term)
 (require 'init-gui-frames)
 (require 'init-evil)
 (require 'init-theme)

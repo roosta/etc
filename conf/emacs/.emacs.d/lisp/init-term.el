@@ -1,4 +1,4 @@
-;;; init-xterm.el --- Integrate with terminals such as xterm -*- lexical-binding: t -*-
+;;; init-term.el --- Integrate with terminals such as xterm -*- lexical-binding: t -*-
 ;;; Source: https://github.com/purcell/emacs.d/blob/master/lisp/init-xterm.el
 ;;; Commentary:
 ;;; Code:
@@ -74,5 +74,5 @@
 
 (add-hook 'after-make-console-frame-hooks 'roosta/console-frame-setup)
 
-(provide 'init-xterm)
-;;; init-xterm.el ends here
+(provide 'init-term)
+;;; init-term.el ends here
