@@ -10,7 +10,7 @@ endif
 
 default: links update i3 rofi dunst
 
-update: update-zsh-plugins update-libs update-spacemacs update-tmux update-vim update-rust
+update: update-zsh-plugins update-libs update-tmux update-vim update-rust
 
 links: link-conf link-misc link-local
 
