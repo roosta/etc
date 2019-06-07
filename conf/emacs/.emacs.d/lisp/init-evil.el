@@ -12,11 +12,14 @@
   (setq evil-want-C-u-scroll t)
   (setq evil-move-beyond-eol t)
   (setq evil-want-Y-yank-to-eol t) ;; Yank to end of line with Y instead of whole line
+  :general
+  ('(normal)
+   "j" 'evil-next-visual-line
+   "k" 'evil-previous-visual-line)
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
+   "sc" #'evil-ex-nohighlight)
   :config
-  (evil-mode)
-  (general-def 'normal
-    "j" 'evil-next-visual-line
-    "k" 'evil-previous-visual-line))
+  (evil-mode))
 
 (use-package evil-collection
   :after (evil)
