@@ -44,6 +44,9 @@
   "<C-down>" 'term-send-down
   "<C-return>" 'term-send-return)
 
+(general-def '(normal visual evilified) :prefix "SPC" :non-normal-prefix "C-SPC"
+  "'" #'eshell)
+
 ;;----------------------------------------------------------------------------
 ;; console frame hook
 ;;----------------------------------------------------------------------------
