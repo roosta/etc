@@ -24,6 +24,11 @@
    "https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Btools/tmux/local/tmux/tmux.el")
   (require 'tmux))
 
+(declare-function tmux-nav-up tmux)
+(declare-function tmux-nav-down tmux)
+(declare-function tmux-nav-left tmux)
+(declare-function tmux-nav-right tmux)
+
 ;; Add some overrides here, certain buffers the tmux nav doesn't work
 (general-def '(normal visual operator) (sql-mode-map sql-interactive-mode-map magit-diff-mode-map term-raw-map)
   "C-k" #'tmux-nav-up
@@ -46,9 +51,9 @@
   "Console spesific config."
 
   (after-load 'evil-cleverparens
-  ;; Unbind troublesome keybinds when in terminal.  Fixes issue with
-  ;; mouse wheel, arrow keys, since these map to the same escape
-  ;; sequence.
+    ;; Unbind troublesome keybinds when in terminal.  Fixes issue with
+    ;; mouse wheel, arrow keys, since these map to the same escape
+    ;; sequence.
     (general-def '(normal visual operator) evil-cleverparens-mode-map
       "M-o" nil
       "M-[" nil))
@@ -67,7 +72,7 @@
     (setq evil-emacs-state-cursor  'hbar) ; _
     :config
     (when (fboundp 'etcc-on)
-        (etcc-on)))
+      (etcc-on)))
 
   (xterm-mouse-mode 1) ; Mouse in a terminal (Use shift to paste with middle button)
   (mwheel-install))
