@@ -102,5 +102,10 @@
  "bd"  #'kill-this-buffer
  "u"   #'universal-argument)
 
+;;----------------------------------------------------------------------------
+;; subword mode
+;;----------------------------------------------------------------------------
+(subword-mode 1)
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
