@@ -41,18 +41,17 @@
     padding-top: 3px !important;
 }
 
-:root.TridactylThemeSrcery table tr {
+:root.TridactylThemeSrcery #completions table tr {
     background: var(--srcery-bright-black) !important;
 }
 
-:root.TridactylThemeSrcery table tr:nth-child(odd) {
+:root.TridactylThemeSrcery #completions table tr:nth-child(odd) {
     background: var(--srcery-xgray1) !important;
 }
 
-/* :root.TridactylThemeSrcery HistoryCompletionOption option { */
-/*     border-top: 1px solid var(--srcery-black) !important; */
-/*     border-bottom: 1px solid var(--srcery-black) !important; */
-/* } */
+:root.TridactylThemeSrcery #completions table tr:nth-child(odd).focused {
+    background: var(--srcery-bright-white) !important;
+}
 
 :root.TridactylThemeSrcery #completions .focused,
 :root.TridactylThemeSrcery #completions .focused .url {
