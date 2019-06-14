@@ -1,4 +1,5 @@
 " -*- vimrc -*-
+" -*- mode: vimrc -*-
 " vim: set filetype=vim:
 " https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
 unbind <C-y>
@@ -22,4 +23,5 @@ set searchurls.!img https://www.google.com/search?tbm=isch&q=
 set hintfiltermode vimperator-reflow
 set hintnames numeric
 
-set colorscheme srcery
+colors srcery
+" set theme srcery
