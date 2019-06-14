@@ -81,6 +81,7 @@
 (require 'init-hl-todo)
 (require 'init-folding)
 (require 'init-sql)
+(require 'init-syntax)
 
 
 ;;----------------------------------------------------------------------------
