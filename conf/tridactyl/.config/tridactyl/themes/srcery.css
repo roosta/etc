@@ -27,12 +27,24 @@
   --tridactyl-bg: var(--srcery-black);
   --tridactyl-fg: var(--srcery-bright-white);
 
+  /* Hints */
+  --tridactyl-hintspan-fg: var(--srcery-bright-white);
+  --tridactyl-hintspan-bg: var(--srcery-blue);
+
+  --tridactyl-hint-active-fg: var(--srcery-bright-white);
+  --tridactyl-hint-active-bg: rgba(45, 44, 41, 0.2);
+  --tridactyl-hint-active-outline: 1px solid var(--srcery-magenta);
+
+  --tridactyl-hint-bg: rgba(45, 44, 41, 0.2);
+  --tridactyl-hint-outline: 1px solid var(--srcery-blue);
+
 }
 
 :root.TridactylThemeSrcery #completions .sectionHeader {
     display: none;
 }
 
+/* prompt */
 :root.TridactylThemeSrcery #tridactyl-colon::before {
     content: "=> ";
 }
@@ -63,14 +75,11 @@
     background: inherit !important;
 }
 
-/* :root.TridactylThemeSrcery .url:nth-child(odd) { */
-/*     background: var(--srcery-xgray1) !important; */
-/* } */
-
 :root.TridactylThemeSrcery #completions .url {
     color: var(--srcery-green) !important;
 }
 
+/* set position of cmdline */
 :root.TridactylThemeSrcery #cmdline_iframe {
     position: fixed !important;
     bottom: unset;
