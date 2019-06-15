@@ -7,10 +7,10 @@ unbind <C-f>
 bind <C-S-r> source ~/.config/tridactyl/tridactylrc
 bind <C-]> tabnext
 bind <C-[> tabprev
-bind <C-l> tabnext
-bind <C-h> tabprev
-unbind <C-j>
-unbind <C-k>
+" bind <C-l> tabnext
+" bind <C-h> tabprev
+" unbind <C-j>
+" unbind <C-k>
 bind --mode=ex <C-j> ex.next_completion
 bind --mode=ex <C-k> ex.prev_completion
 bind D composite tabclose | buffer #
