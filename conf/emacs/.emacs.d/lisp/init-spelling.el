@@ -16,7 +16,8 @@
   ;;             flyspell-prog-text-faces))
   :commands
   (spell-checking/change-dictionary)
-  ;; :config
+  :config
+  (add-hook #'git-commit-setup-hook #'git-commit-turn-on-flyspell)
   ;; (add-hook 'prog-mode-hook #'flyspell-prog-mode) ; Check comments and strings
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
