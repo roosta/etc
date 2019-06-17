@@ -57,10 +57,17 @@
 
 
 ;;----------------------------------------------------------------------------
-;; Show matching parenthesis
+;; General hooks
 ;;----------------------------------------------------------------------------
-(add-hook 'after-init-hook 'show-paren-mode)
 
+(require 'lisp-functions)
+
+;; Show matching parenthesis
+(add-hook 'after-init-hook #'show-paren-mode)
+
+;; Fix indentation keyword align
+(add-hook 'emacs-lisp-mode-hook
+          (lambda () (setq-local lisp-indent-function #'Fuco1/lisp-indent-function)))
 
 
 (provide 'init-lisp)
