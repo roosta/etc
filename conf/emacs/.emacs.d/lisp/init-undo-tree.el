@@ -11,5 +11,9 @@
 (setq undo-tree-history-directory-alist `(("." . ,emacs-undo-tree-history-directory)))
 (diminish 'undo-tree-mode)
 
+(general-unbind undo-tree-map
+  :with 'ignore
+  [remap undo-tree-undo])
+
 (provide 'init-undo-tree)
 ;;; init-undo-tree.el ends here
