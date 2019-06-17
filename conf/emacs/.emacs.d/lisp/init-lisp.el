@@ -9,6 +9,7 @@
 ;;----------------------------------------------------------------------------
 (use-package smartparens
   :config
+  (require 'smartparens-config)
   (smartparens-global-strict-mode)
   (add-hook 'eshell-mode-hook #'smartparens-strict-mode))
 
