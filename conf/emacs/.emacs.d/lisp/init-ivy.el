@@ -1,5 +1,7 @@
 ;;; init-ivy.el --- Use ivy for minibuffer completion and more -*- lexical-binding: t -*-
 ;;; Commentary:
+;; Disable initial ^ on input
+;; (setq ivy-initial-inputs-alist nil)
 ;;; Code:
 
 (use-package ivy
