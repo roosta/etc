@@ -89,10 +89,9 @@
     ", x" "markdown/text"))
 
 (use-package vmd-mode
-    :defer t
-    :general
-    ('(normal visual evilified) markdown-mode-map :prefix ","
-     "cP" 'vmd-mode))
+  :general
+  ('(normal visual evilified) markdown-mode-map :prefix ","
+   "cP" 'vmd-mode))
 
 (use-package edit-indirect)
 
