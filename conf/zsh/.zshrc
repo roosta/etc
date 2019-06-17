@@ -39,6 +39,10 @@ if [[ -s "${plugin_location}/zsh-history-substring-search/zsh-history-substring-
   source "${plugin_location}/zsh-history-substring-search/zsh-history-substring-search.zsh"
 fi
 
+if [[ -s "${plugin_location}/zsh-bd/bd.zsh" ]]; then
+  source "${plugin_location}/zsh-bd/bd.zsh"
+fi
+
 # if [[ -s "${plugin_location}/zsh-you-should-use/you-should-use.plugin.zsh" ]]; then
 #   source "${plugin_location}/zsh-you-should-use/you-should-use.plugin.zsh"
 # fi
