@@ -4,6 +4,7 @@
 
 
 (use-package evil
+  :demand t
   :init
   (defvar evil-want-Y-yank-to-eol)
   (setq evil-ex-search-vim-style-regexp t)
