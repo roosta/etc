@@ -4,6 +4,8 @@
 " https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
 unbind <C-y>
 unbind <C-f>
+unbind <C-h>
+unbind <C-j>
 bind <C-S-r> source ~/.config/tridactyl/tridactylrc
 bind <C-]> tabnext
 bind <C-[> tabprev
