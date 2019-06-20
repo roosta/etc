@@ -96,8 +96,7 @@ Pass FNAME as the function name and CHAR as the character."
   :after org
   :general
   (evil-org-mode-map
-   "<C-return>" 'evil-org-org-insert-heading-respect-content-below
-   )
+   "<C-return>" 'evil-org-org-insert-heading-respect-content-below)
   :commands
   (evil-org-set-key-theme
    evil-org-agenda-set-keys)
@@ -247,9 +246,13 @@ Pass FNAME as the function name and CHAR as the character."
   ", ti" "insert"
   ", tt" "toggle")
 
-(general-def '(normal visual operator) org-mode-map
-  "C-j" nil
-  "C-k" nil)
+(general-unbind '(normal visual operator) org-mode-map
+  "C-j"
+  "C-k")
+
+(general-def 'insert org-mode-map
+  "M-l" #'outline-demote
+  "M-h" #'outline-promote)
 
 
 (provide 'init-org)
