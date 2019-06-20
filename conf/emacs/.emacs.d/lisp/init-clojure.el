@@ -104,6 +104,7 @@
   "="  #'cider-format-buffer
   "fb" #'cider-format-buffer
 
+  "gg" #'cider-find-var
   "gb" #'cider-pop-back
   "gC" #'cider-classpath
   "ge" #'cider-jump-to-compilation-error
