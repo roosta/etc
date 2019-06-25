@@ -13,7 +13,6 @@
   (smartparens-global-strict-mode)
   (add-hook 'eshell-mode-hook #'smartparens-strict-mode))
 
-
 ;;----------------------------------------------------------------------------
 ;; Evil cleverparens
 ;;----------------------------------------------------------------------------

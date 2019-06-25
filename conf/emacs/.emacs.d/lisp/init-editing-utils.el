@@ -45,10 +45,11 @@
       )
 
 ;;----------------------------------------------------------------------------
-;; Globally enable hl-line-mode
+;; Modes and hooks
 ;;----------------------------------------------------------------------------
 (global-hl-line-mode 1)
-
+(subword-mode 1)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;----------------------------------------------------------------------------
 ;; Relative line numbering
@@ -101,11 +102,6 @@
  "bs"  #'(roosta/switch-to-scratch-buffer :which-key "*scratch*")
  "bd"  #'kill-this-buffer
  "u"   #'universal-argument)
-
-;;----------------------------------------------------------------------------
-;; subword mode
-;;----------------------------------------------------------------------------
-(subword-mode 1)
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
