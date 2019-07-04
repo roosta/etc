@@ -2,4 +2,4 @@
 # name: breakpoint
 # key: breakpoint
 # --
-$1-$2? @(rf/subscribe [:utils/breakpoint-$2 :$1])
+$1-$2? @(rf/subscribe [:tincture/breakpoint-$2 :$1])
