@@ -51,7 +51,7 @@
   (setq cider-refresh-after-fn "user/go")
   (setq cider-repl-use-pretty-printing t) ; always pretty print in repl
   (setq cider-overlays-use-font-lock t) ; add syntax highlighting to eval overlay
-  (setq cider-font-lock-reader-conditionals nil)
+  (setq cider-font-lock-reader-conditionals nil) ; Fix issue where working on cljc files would comment out env paths
   )
 
 ;;----------------------------------------------------------------------------
