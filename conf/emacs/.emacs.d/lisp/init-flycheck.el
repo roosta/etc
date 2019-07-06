@@ -15,6 +15,8 @@
 
 (use-package flycheck-clj-kondo
   :after (flycheck)
+  :commands
+  (flycheck-add-next-checker)
   :config
   (dolist (checkers '((clj-kondo-clj . clojure-joker)
                       (clj-kondo-cljs . clojurescript-joker)
