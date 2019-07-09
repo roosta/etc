@@ -30,7 +30,7 @@
    cider-pop-back
    cider-jump-to-compilation-error
    cider-jack-in
-   cider-jack-in-clojurescript
+   cider-jack-in-cljs
    cider-load-buffer
    cider-connect
    cider-find-and-clear-repl-output
@@ -113,7 +113,7 @@
   "gN" #'cider-browse-ns-all
 
   "'"  #'cider-jack-in
-  "\"" #'cider-jack-in-clojurescript
+  "\"" #'cider-jack-in-cljs
   "sb" #'cider-load-buffer
   "sB" #'spacemacs/cider-send-buffer-in-repl-and-focus
   "sc" #'cider-connect
