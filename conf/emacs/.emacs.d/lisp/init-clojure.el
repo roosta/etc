@@ -164,6 +164,26 @@
 (general-def '(normal visual evilified) clojure-mode-map
   "K" #'cider-doc)
 
+;;----------------------------------------------------------------------------
+;; clj-refactor
+;;----------------------------------------------------------------------------
+(use-package clj-refactor
+  :defines
+  (cljr--all-helpers)
+  :config
+  (dolist (r cljr--all-helpers)
+    (let* ((binding (car r))
+           (func (car (cdr r))))
+      (general-define-key
+       :states  '(normal visual evilified)
+       :keymaps '(clojure-mode-map
+                  clojurec-mode-map
+                  clojurescript-mode-map
+                  clojurex-mode-map
+                  cider-repl-mode-map
+                  cider-clojure-interaction-mode-map)
+       :prefix  ","
+      (concat "r" binding) func))))
 
 ;;----------------------------------------------------------------------------
 ;; Add prefix descriptions to which-key
@@ -192,7 +212,24 @@
     ", tn" "cider-test-run-ns-tests"
     ", tr" "cider-test-rerun-failed-tests"
     ", tt" "cider-test-run-focused-test"
+
+    ;; cljr
+    ", r" "refactor"
+    ", ra" "add"
+    ", rc" "cycle/clean/convert"
+    ", rd" "destructure"
+    ", re" "extract/expand"
+    ", rf" "find/function"
+    ", rh" "hotload"
+    ", ri" "introduce/inline"
+    ", rm" "move"
+    ", rp" "project/promote"
+    ", rr" "remove/rename/replace"
+    ", rs" "show/sort/stop"
+    ", rt" "thread"
+    ", ru" "unwind/update"
     ))
+
 
 (provide 'init-clojure)
 ;;; init-clojure.el ends here
