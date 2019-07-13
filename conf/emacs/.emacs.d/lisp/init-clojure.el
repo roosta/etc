@@ -123,7 +123,7 @@
   "sf" #'spacemacs/cider-send-function-to-repl
   "sF" #'spacemacs/cider-send-function-to-repl-focus
   "si" #'cider-jack-in
-  "sI" #'cider-jack-in-clojurescript
+  "sI" #'cider-jack-in-cljs
   "sn" #'spacemacs/cider-send-ns-form-to-repl
   "sN" #'spacemacs/cider-send-ns-form-to-repl-focus
   "so" #'cider-repl-switch-to-other
