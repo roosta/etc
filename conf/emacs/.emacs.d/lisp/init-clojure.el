@@ -185,6 +185,13 @@
        :prefix  ","
       (concat "r" binding) func))))
 
+(use-package cljr-ivy
+  :after (ivy clj-refactor)
+  :general
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
+   "or" #'cljr-ivy)
+  :load-path "~/src/cljr-ivy")
+
 ;;----------------------------------------------------------------------------
 ;; Add prefix descriptions to which-key
 ;;----------------------------------------------------------------------------
