@@ -139,6 +139,7 @@
  "ee" #'eval-last-sexp
  "er" #'eval-region
  "ef" #'eval-defun
+ "ep" #'eval-print-last-sexp
  "gG" #'spacemacs/nav-find-elisp-thing-at-point-other-window
  "tb" #'spacemacs/ert-run-tests-buffer
  "tq" #'ert
