@@ -81,6 +81,8 @@
    ","  #'lisp-state-toggle-lisp-state
    "e$" #'lisp-state-eval-sexp-end-of-line))
 
+(use-package bind-map)
+
 
 ;;----------------------------------------------------------------------------
 ;; auto compile
