@@ -6,6 +6,8 @@
 (use-package flycheck
   :init
   (setq flycheck-emacs-lisp-load-path 'inherit)
+  :commands
+  (flycheck-add-next-checker)
   :config
   (global-flycheck-mode))
 
@@ -15,8 +17,6 @@
 
 (use-package flycheck-clj-kondo
   :after (flycheck)
-  :commands
-  (flycheck-add-next-checker)
   :config
   (dolist (checkers '((clj-kondo-clj . clojure-joker)
                       (clj-kondo-cljs . clojurescript-joker)
