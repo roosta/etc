@@ -52,6 +52,7 @@
   (add-hook 'git-rebase-mode-hook 'turn-off-evil-snipe-mode))
 
 (use-package evil-traces
+  :demand t
   :commands
   (evil-traces-use-diff-faces
    evil-traces-mode)
