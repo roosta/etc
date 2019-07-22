@@ -3,20 +3,6 @@
 ;;; Code:
 
 (require 'init-utils)
-(require 'lisp-functions)
-
-;;----------------------------------------------------------------------------
-;; Hooks
-;;----------------------------------------------------------------------------
-
-;; Fix indentation keyword align
-(add-hook 'emacs-lisp-mode-hook
-          (lambda () (setq-local lisp-indent-function #'Fuco1/lisp-indent-function)))
-
-;; Show matching parenthesis
-(add-hook 'after-init-hook #'show-paren-mode)
-
-(add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
 
 ;;----------------------------------------------------------------------------
 ;; smartparens
@@ -118,6 +104,22 @@
 
 
 ;;----------------------------------------------------------------------------
+;; Hooks
+;;----------------------------------------------------------------------------
+
+(require 'lisp-functions)
+
+;; Fix indentation keyword align
+(add-hook 'emacs-lisp-mode-hook
+          (lambda () (setq-local lisp-indent-function #'Fuco1/lisp-indent-function)))
+
+;; Show matching parenthesis
+(add-hook 'after-init-hook #'show-paren-mode)
+
+(add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
+
+
+;;----------------------------------------------------------------------------
 ;; General keybindings
 ;;----------------------------------------------------------------------------
 
@@ -168,6 +170,7 @@
     ", e" "eval"
     ", t" "tests"
     ", =" "srefactor"))
+
 
 (provide 'init-lisp)
 ;;; init-lisp.el ends here
