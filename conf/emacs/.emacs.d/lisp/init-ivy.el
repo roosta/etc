@@ -34,7 +34,7 @@
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "/"   #'(counsel-ag :which-key "Search project")
    "?"   #'(counsel-descbinds :which-key "Describe keybindings")
-   "ff"  #'(counsel-find-files :which-key "Find files")
+   "ff"  #'(counsel-find-file :which-key "Find files")
    "SPC" #'(counsel-M-x :which-key "M-x")
    "hdf" #'(counsel-describe-function :which-key "Describe function")
    "hdv" #'(counsel-describe-variable :which-key "Describe variable")
