@@ -357,4 +357,25 @@ falias() {
 }
 
 #}}}
+
+# =============================
+# Package managers
+# =============================
+fapt() {
+  local pkg=$(apt-cache search $1 | fzf --no-multi -q $1 --ansi --preview="apt-cache show {1}" | awk '{ print $1 }')
+
+  if [[ $pkg ]]; then
+    sudo apt-get install $pkg
+  fi
+}
+
+fpac() {
+  local pkg=$(pacman -Ssq $1 | fzf -m -q $1 --ansi --preview="pacman -Si {}" | awk '{ print $1 }')
+
+  if [[ $pkg ]]; then
+    echo $pkg
+    # sudo pacman -S $pkg
+  fi
+}
+
 #  vim: set ts=2 sw=2 tw=0 fdm=marker et :
