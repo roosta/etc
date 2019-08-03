@@ -371,11 +371,14 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 "
 " }}}
 " Vimpager: {{{
+let g:vimpager = {}
+let g:less     = {}
+let g:less.enabled = 0
+let g:vimpager.passthrough = 0
 
-let g:vimpager_scrolloff = 5
-let g:vimpager_less_mode = 0
-let g:vimpager_passthrough = 0
-set clipboard^=unnamed
+" let g:vimpager_less_mode = 0
+" let g:vimpager_passthrough = 0
+" set clipboard^=unnamed
 
 "}}}
 " Plugin Manager: {{{
