@@ -700,7 +700,7 @@ nnoremap <leader>cc :Dispatch<cr>
 " }}}
 " Better whitespace: {{{
 
-let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofile']
+let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofile', 'git']
 
 " }}}
 " vim: fdm=marker:sw=2
