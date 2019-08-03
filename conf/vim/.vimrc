@@ -266,8 +266,8 @@ inoremap <C-e> <C-o>$
 nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g<CR>
 
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+noremap j gj
+noremap k gk
 
 " Remove the Windows ^M - when the encodings gets messed up
 " noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
@@ -289,8 +289,10 @@ nnoremap <leader>ji :Ilist<space>
 
 " imap <C-v> <Esc>"*pa
 
+" map spell checking
 nnoremap <leader>Sc z=
 
+" yank to end of line when pressing Y
 nnoremap Y y$
 " }}}
 " Cmd:{{{
