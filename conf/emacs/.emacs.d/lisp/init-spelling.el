@@ -34,7 +34,13 @@
    "Sc" #'flyspell-correct-word-generic))
 
 (use-package flyspell-correct-ivy
-  :commands (flyspell-correct-ivy)
+  :commands (flyspell-correct-ivy
+             flyspell-correct-wrapper)
+  :general
+  ('(normal visual insert emacs)  :prefix "SPC" :non-normal-prefix "C-SPC"
+   "SC" #'flyspell-correct-word-generic)
+  (flyspell-mode-map
+   "C-;" #'flyspell-correct-wrapper)
   :init
   (setq flyspell-correct-interface #'flyspell-correct-ivy))
 
