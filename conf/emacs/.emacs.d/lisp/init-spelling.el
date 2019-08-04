@@ -17,7 +17,7 @@
   :commands
   (spell-checking/change-dictionary)
   :hook
-  ((text-mode . flyspell-mode)
+  ((text-mode . turn-on-flyspell)
    (git-commit-setup-hook . git-commit-turn-on-flyspell))
   :config
   ;; (add-hook 'prog-mode-hook #'flyspell-prog-mode) ; Check comments and strings
