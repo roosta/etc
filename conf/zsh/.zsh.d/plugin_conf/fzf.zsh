@@ -370,11 +370,12 @@ fapt() {
 }
 
 fpac() {
-  local pkg=$(pacman -Ssq $1 | fzf -m -q $1 --ansi --preview="pacman -Si {}" | awk '{ print $1 }')
+  local pkg=$(yay -Ssq "$1" | fzf --multi --query "$1" --ansi --preview="yay -Si {}")
 
   if [[ $pkg ]]; then
-    echo $pkg
-    # sudo pacman -S $pkg
+      yay -S - <<EOF
+$pkg
+EOF
   fi
 }
 
