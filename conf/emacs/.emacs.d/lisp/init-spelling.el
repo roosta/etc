@@ -2,9 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(defvar flyspell-correct-interface)
-
 (use-package flyspell
+  :defines
+  (flyspell-correct-interface)
   :init
   ;; printing messages for every word (when checking the entire
   ;; buffer) causes an enormous slowdown
