@@ -22,7 +22,7 @@
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "Sb" #'flyspell-buffer
-   "Sd" #'spell-checking/change-dictionary
+   "Sp" #'spell-checking/change-dictionary
    "Sn" #'flyspell-goto-next-error))
 
 (use-package flyspell-correct
@@ -37,6 +37,15 @@
   :commands (flyspell-correct-ivy)
   :init
   (setq flyspell-correct-interface #'flyspell-correct-ivy))
+
+(use-package define-word
+  :commands
+  (define-word-at-point
+   define-word)
+  :general
+  ('(normal visual insert emacs)  :prefix "SPC" :non-normal-prefix "C-SPC"
+   "Sd" #'define-word-at-point
+   "SD" #'define-word))
 
 (provide 'init-spelling)
 
