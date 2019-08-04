@@ -361,6 +361,7 @@ falias() {
 # =============================
 # Package managers
 # =============================
+# Search apt for query, and install selected package
 fapt() {
   local pkg=$(apt-cache search $1 | fzf --no-multi -q $1 --ansi --preview="apt-cache show {1}" | awk '{ print $1 }')
 
@@ -369,11 +370,23 @@ fapt() {
   fi
 }
 
-fpac() {
+# Search AUR and official repos using yay and install on
+# select. Supports multiple selections and preview using yay -Si
+fyay() {
   local pkg=$(yay -Ssq "$1" | fzf --multi --query "$1" --preview="yay -Si {}")
 
   if [[ $pkg ]]; then
       yay -S - <<< $pkg
+  fi
+}
+
+# Search with pacman, and install on select. Supports multiple
+# selections, and preview using pacman -Si
+fpac() {
+  local pkg=$(pacman -Ssq "$1" | fzf --multi --query "$1" --preview="pacman -Si {}")
+
+  if [[ $pkg ]]; then
+      sudo pacman -S - <<< $pkg
   fi
 }
 
