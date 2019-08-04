@@ -370,7 +370,7 @@ fapt() {
 }
 
 fpac() {
-  local pkg=$(yay -Ssq "$1" | fzf --multi --query "$1" --ansi --preview="yay -Si {}")
+  local pkg=$(yay -Ssq "$1" | fzf --multi --query "$1" --preview="yay -Si {}")
 
   if [[ $pkg ]]; then
       yay -S - <<< $pkg
