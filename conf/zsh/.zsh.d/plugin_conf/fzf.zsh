@@ -373,9 +373,7 @@ fpac() {
   local pkg=$(yay -Ssq "$1" | fzf --multi --query "$1" --ansi --preview="yay -Si {}")
 
   if [[ $pkg ]]; then
-      yay -S - <<EOF
-$pkg
-EOF
+      yay -S - <<< $pkg
   fi
 }
 
