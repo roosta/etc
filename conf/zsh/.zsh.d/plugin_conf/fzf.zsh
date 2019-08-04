@@ -373,20 +373,27 @@ fapt() {
 # Search AUR and official repos using yay and install on
 # select. Supports multiple selections and preview using yay -Si
 fyay() {
-  local pkg=$(yay -Ssq "$1" | fzf --multi --query "$1" --preview="yay -Si {}")
+  if [ "$#" -ne 1 ]; then
+    echo "Please provide a query"
+  else
+    local pkg=$(yay -Ssq "$1" | fzf --multi --query "$1" --preview="yay -Si {}")
 
-  if [[ $pkg ]]; then
+    if [[ $pkg ]]; then
       yay -S - <<< $pkg
+    fi
   fi
 }
 
 # Search with pacman, and install on select. Supports multiple
 # selections, and preview using pacman -Si
 fpac() {
-  local pkg=$(pacman -Ssq "$1" | fzf --multi --query "$1" --preview="pacman -Si {}")
-
-  if [[ $pkg ]]; then
+  if [ "$#" -ne 1 ]; then
+    echo "Please provide a query"
+  else
+    local pkg=$(pacman -Ssq "$1" | fzf --multi --query "$1" --preview="pacman -Si {}")
+    if [[ $pkg ]]; then
       sudo pacman -S - <<< $pkg
+    fi
   fi
 }
 
