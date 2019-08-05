@@ -69,12 +69,12 @@
   (lisp-interaction-mode))
 
 ;;----------------------------------------------------------------------------
-;; Setup dumb jump
+;; dumb-jump
 ;;----------------------------------------------------------------------------
 
 (use-package dumb-jump
-  :defer t
-  :defines dumb-jump-selector
+  :defines
+  (dumb-jump-selector)
   :config
   (setq dumb-jump-selector 'ivy)
   :general
