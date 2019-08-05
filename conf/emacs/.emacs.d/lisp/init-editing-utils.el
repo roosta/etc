@@ -23,6 +23,7 @@
       apropos-do-all t
       mouse-yank-at-point t
       require-final-newline t
+      column-number-mode t
       visible-bell t
       scroll-margin 7
       load-prefer-newer t
