@@ -114,7 +114,10 @@
 
 (use-package visual-fill-column
   :hook
-  (visual-line-mode . visual-fill-column-mode))
+  (visual-line-mode . visual-fill-column-mode)
+  :config
+  ;; https://github.com/joostkremers/visual-fill-column#adjusting-text-size
+  (advice-add 'text-scale-adjust :after #'visual-fill-column-adjust))
 
 (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
 
