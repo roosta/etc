@@ -103,5 +103,19 @@
  "bd"  #'kill-this-buffer
  "u"   #'universal-argument)
 
+;;----------------------------------------------------------------------------
+;; visual-line-mode
+;;----------------------------------------------------------------------------
+
+(setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
+(setq fill-column 80)
+
+(use-package visual-fill-column
+  :hook
+  (visual-line-mode . visual-fill-column-mode))
+
+(add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
+
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
