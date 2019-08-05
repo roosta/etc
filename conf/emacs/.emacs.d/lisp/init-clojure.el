@@ -43,7 +43,7 @@
    cider-switch-to-last-clojure-buffer
    cider-repl-handle-shortcut)
   :hook
-  (cider-repl-mode-hook . eldoc-mode)
+  (cider-repl-mode . eldoc-mode)
   :defines
   (cider-refresh-before-fn cider-refresh-after-fn)
   :init
