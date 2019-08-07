@@ -21,7 +21,7 @@
   :commands
   (spell-checking/change-dictionary)
   :hook
-  (text-mode . turn-on-flyspell)
+  ((text-mode org-mode markdown-mode) . turn-on-flyspell)
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "Sb" #'flyspell-buffer
