@@ -61,5 +61,12 @@
   (evil-traces-use-diff-faces) ; if you want to use diff's faces
   (evil-traces-mode))
 
+;;----------------------------------------------------------------------------
+;; evil-mc
+;;----------------------------------------------------------------------------
+(use-package evil-mc
+  :config
+  (global-evil-mc-mode 1))
+
 (provide 'init-evil)
 ;;; init-evil.el ends here
