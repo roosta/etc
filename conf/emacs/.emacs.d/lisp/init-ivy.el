@@ -42,7 +42,7 @@
    "bb"  #'(counsel-ibuffer :which-key "List buffers")
    "ry"  #'(counsel-yank-pop :which-key "Kill ring")
    "ic"  #'(ivy-immediate-done :which-key "Immidiate-done")
-   ))
+   "jo"  #'(counsel-org-goto :which-key "Org goto")))
 
 ;;----------------------------------------------------------------------------
 ;; Setup projectile
