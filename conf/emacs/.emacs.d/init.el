@@ -84,6 +84,7 @@
 (require 'init-sql)
 (require 'init-syntax)
 (require 'init-shell-scripting)
+(require 'init-dired)
 
 
 ;;----------------------------------------------------------------------------
