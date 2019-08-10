@@ -82,6 +82,7 @@
 (require 'init-folding)
 (require 'init-sql)
 (require 'init-syntax)
+(require 'init-arduino)
 
 
 ;;----------------------------------------------------------------------------
