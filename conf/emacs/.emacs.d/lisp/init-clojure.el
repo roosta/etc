@@ -30,7 +30,7 @@
    cider-pop-back
    cider-jump-to-compilation-error
    cider-jack-in
-   cider-jack-in-clojurescript
+   cider-jack-in-cljs
    cider-load-buffer
    cider-connect
    cider-find-and-clear-repl-output
@@ -43,7 +43,7 @@
    cider-switch-to-last-clojure-buffer
    cider-repl-handle-shortcut)
   :hook
-  (cider-repl-mode-hook . eldoc-mode)
+  (cider-repl-mode . eldoc-mode)
   :defines
   (cider-refresh-before-fn cider-refresh-after-fn)
   :init
@@ -51,7 +51,7 @@
   (setq cider-refresh-after-fn "user/go")
   (setq cider-repl-use-pretty-printing t) ; always pretty print in repl
   (setq cider-overlays-use-font-lock t) ; add syntax highlighting to eval overlay
-  (setq cider-font-lock-reader-conditionals nil)
+  (setq cider-font-lock-reader-conditionals nil) ; Fix issue where working on cljc files would comment out env paths
   )
 
 ;;----------------------------------------------------------------------------
@@ -113,41 +113,41 @@
   "gN" #'cider-browse-ns-all
 
   "'"  #'cider-jack-in
-  "\"" #'cider-jack-in-clojurescript
+  "\"" #'cider-jack-in-cljs
   "sb" #'cider-load-buffer
-  "sB" #'spacemacs/cider-send-buffer-in-repl-and-focus
+  "sB" 'spacemacs/cider-send-buffer-in-repl-and-focus
   "sc" #'cider-connect
   "sC" #'cider-find-and-clear-repl-output
-  "se" #'spacemacs/cider-send-last-sexp-to-repl
-  "sE" #'spacemacs/cider-send-last-sexp-to-repl-focus
-  "sf" #'spacemacs/cider-send-function-to-repl
-  "sF" #'spacemacs/cider-send-function-to-repl-focus
+  "se" 'spacemacs/cider-send-last-sexp-to-repl
+  "sE" 'spacemacs/cider-send-last-sexp-to-repl-focus
+  "sf" 'spacemacs/cider-send-function-to-repl
+  "sF" 'spacemacs/cider-send-function-to-repl-focus
   "si" #'cider-jack-in
-  "sI" #'cider-jack-in-clojurescript
-  "sn" #'spacemacs/cider-send-ns-form-to-repl
-  "sN" #'spacemacs/cider-send-ns-form-to-repl-focus
+  "sI" #'cider-jack-in-cljs
+  "sn" 'spacemacs/cider-send-ns-form-to-repl
+  "sN" 'spacemacs/cider-send-ns-form-to-repl-focus
   "so" #'cider-repl-switch-to-other
   "sq" #'cider-quit
-  "sr" #'spacemacs/cider-send-region-to-repl
-  "sR" #'spacemacs/cider-send-region-to-repl-focus
+  "sr" 'spacemacs/cider-send-region-to-repl
+  "sR" 'spacemacs/cider-send-region-to-repl-focus
   "ss" #'cider-switch-to-repl-buffer
   "sx" #'cider-ns-refresh
 
   "Te" #'cider-enlighten-mode
-  "Tf" #'spacemacs/cider-toggle-repl-font-locking
-  "Tp" #'spacemacs/cider-toggle-repl-pretty-printing
+  "Tf" 'spacemacs/cider-toggle-repl-font-locking
+  "Tp" 'spacemacs/cider-toggle-repl-pretty-printing
   "Tt" #'cider-auto-test-mode
 
-  "ta" #'spacemacs/cider-test-run-all-tests
+  "ta" 'spacemacs/cider-test-run-all-tests
   "tb" #'cider-test-show-report
-  "tl" #'spacemacs/cider-test-run-loaded-tests
-  "tp" #'spacemacs/cider-test-run-project-tests
-  "tn" #'spacemacs/cider-test-run-ns-tests
-  "tr" #'spacemacs/cider-test-rerun-failed-tests
-  "tt" #'spacemacs/cider-test-run-focused-test
+  "tl" 'spacemacs/cider-test-run-loaded-tests
+  "tp" 'spacemacs/cider-test-run-project-tests
+  "tn" 'spacemacs/cider-test-run-ns-tests
+  "tr" 'spacemacs/cider-test-rerun-failed-tests
+  "tt" 'spacemacs/cider-test-run-focused-test
 
   "db" #'cider-debug-defun-at-point
-  "de" #'spacemacs/cider-display-error-buffer
+  "de" 'spacemacs/cider-display-error-buffer
   "dv" #'cider-inspect
 
   ;; refactorings from clojure-mode
@@ -164,6 +164,33 @@
 (general-def '(normal visual evilified) clojure-mode-map
   "K" #'cider-doc)
 
+;;----------------------------------------------------------------------------
+;; clj-refactor
+;;----------------------------------------------------------------------------
+(use-package clj-refactor
+  :defines
+  (cljr--all-helpers)
+  :config
+  (dolist (r cljr--all-helpers)
+    (let* ((binding (car r))
+           (func (car (cdr r))))
+      (general-define-key
+       :states  '(normal visual evilified)
+       :keymaps '(clojure-mode-map
+                  clojurec-mode-map
+                  clojurescript-mode-map
+                  clojurex-mode-map
+                  cider-repl-mode-map
+                  cider-clojure-interaction-mode-map)
+       :prefix  ","
+      (concat "r" binding) func))))
+
+(use-package cljr-ivy
+  :after (ivy clj-refactor)
+  :general
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
+   "or" #'cljr-ivy)
+  :load-path "~/src/cljr-ivy")
 
 ;;----------------------------------------------------------------------------
 ;; Add prefix descriptions to which-key
@@ -192,7 +219,24 @@
     ", tn" "cider-test-run-ns-tests"
     ", tr" "cider-test-rerun-failed-tests"
     ", tt" "cider-test-run-focused-test"
+
+    ;; cljr
+    ", r" "refactor"
+    ", ra" "add"
+    ", rc" "cycle/clean/convert"
+    ", rd" "destructure"
+    ", re" "extract/expand"
+    ", rf" "find/function"
+    ", rh" "hotload"
+    ", ri" "introduce/inline"
+    ", rm" "move"
+    ", rp" "project/promote"
+    ", rr" "remove/rename/replace"
+    ", rs" "show/sort/stop"
+    ", rt" "thread"
+    ", ru" "unwind/update"
     ))
+
 
 (provide 'init-clojure)
 ;;; init-clojure.el ends here

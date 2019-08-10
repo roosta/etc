@@ -254,6 +254,8 @@ Pass FNAME as the function name and CHAR as the character."
   "M-l" #'outline-demote
   "M-h" #'outline-promote)
 
+(general-def 'normal org-mode-map
+  "TAB" #'org-cycle)
 
 (provide 'init-org)
 ;;; init-org.el ends here

@@ -20,6 +20,13 @@
 (use-package evil-magit
   :after (magit))
 
+(use-package diff-hl
+  :functions
+  (global-diff-hl-mode
+   diff-hl-margin-mode)
+  :config
+  (diff-hl-margin-mode))
+
 ;; Use auto commit for org-mode
 (use-package git-auto-commit-mode)
 

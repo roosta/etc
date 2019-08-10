@@ -23,6 +23,7 @@
       apropos-do-all t
       mouse-yank-at-point t
       require-final-newline t
+      column-number-mode t
       visible-bell t
       scroll-margin 7
       load-prefer-newer t
@@ -69,12 +70,12 @@
   (lisp-interaction-mode))
 
 ;;----------------------------------------------------------------------------
-;; Setup dumb jump
+;; dumb-jump
 ;;----------------------------------------------------------------------------
 
 (use-package dumb-jump
-  :defer t
-  :defines dumb-jump-selector
+  :defines
+  (dumb-jump-selector)
   :config
   (setq dumb-jump-selector 'ivy)
   :general
@@ -98,10 +99,28 @@
  :non-normal-prefix "C-SPC"
  "TAB" #'(switch-to-other-buffer :which-key "prev buffer")
  "hh"  #'help-command
+ "hdm" #'(describe-mode :which-key "Describe mode")
  "qq"  #'save-buffers-kill-emacs
  "bs"  #'(roosta/switch-to-scratch-buffer :which-key "*scratch*")
  "bd"  #'kill-this-buffer
  "u"   #'universal-argument)
+
+;;----------------------------------------------------------------------------
+;; visual-line-mode
+;;----------------------------------------------------------------------------
+
+(setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
+(setq fill-column 80)
+
+(use-package visual-fill-column
+  :hook
+  (visual-line-mode . visual-fill-column-mode)
+  :config
+  ;; https://github.com/joostkremers/visual-fill-column#adjusting-text-size
+  (advice-add 'text-scale-adjust :after #'visual-fill-column-adjust))
+
+(add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
+
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

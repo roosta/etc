@@ -6,6 +6,8 @@
 (use-package flycheck
   :init
   (setq flycheck-emacs-lisp-load-path 'inherit)
+  :commands
+  (flycheck-add-next-checker)
   :config
   (global-flycheck-mode))
 

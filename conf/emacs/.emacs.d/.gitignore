@@ -51,3 +51,4 @@ cookies
 .cache/
 /forge-database.sqlite
 /transient
+srecode-map.el

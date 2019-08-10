@@ -2,11 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
-
+;;----------------------------------------------------------------------------
+;; Setup evil
+;;----------------------------------------------------------------------------
 (use-package evil
   :demand t
+  :defines
+  (evil-want-Y-yank-to-eol)
   :init
-  (defvar evil-want-Y-yank-to-eol)
   (setq evil-ex-search-vim-style-regexp t)
   (setq evil-search-module 'evil-search)
   (setq evil-want-keybinding nil) ;; required by evil-collection
@@ -22,6 +25,9 @@
   :config
   (evil-mode))
 
+;;----------------------------------------------------------------------------
+;; Extra plugins
+;;----------------------------------------------------------------------------
 (use-package evil-collection
   :after (evil)
   :custom (evil-collection-setup-minibuffer t)
@@ -46,6 +52,21 @@
   (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
   (add-hook 'git-rebase-mode-hook 'turn-off-evil-snipe-mode))
 
+(use-package evil-traces
+  :demand t
+  :commands
+  (evil-traces-use-diff-faces
+   evil-traces-mode)
+  :config
+  (evil-traces-use-diff-faces) ; if you want to use diff's faces
+  (evil-traces-mode))
+
+;;----------------------------------------------------------------------------
+;; evil-mc
+;;----------------------------------------------------------------------------
+(use-package evil-mc
+  :config
+  (global-evil-mc-mode 1))
 
 (provide 'init-evil)
 ;;; init-evil.el ends here

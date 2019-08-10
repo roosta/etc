@@ -266,8 +266,8 @@ inoremap <C-e> <C-o>$
 nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g<CR>
 
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+noremap j gj
+noremap k gk
 
 " Remove the Windows ^M - when the encodings gets messed up
 " noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
@@ -289,8 +289,10 @@ nnoremap <leader>ji :Ilist<space>
 
 " imap <C-v> <Esc>"*pa
 
+" map spell checking
 nnoremap <leader>Sc z=
 
+" yank to end of line when pressing Y
 nnoremap Y y$
 " }}}
 " Cmd:{{{
@@ -369,11 +371,20 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 "
 " }}}
 " Vimpager: {{{
+" Options for newer version of vimpager >= 2.06
+" let g:vimpager = {}
+" let g:less     = {}
+" let g:less.enabled = 0
+" let g:vimpager.passthrough = 0
 
-let g:vimpager_scrolloff = 5
-let g:vimpager_less_mode = 0
+" options for older versions <= 2.06
 let g:vimpager_passthrough = 0
-set clipboard^=unnamed
+
+" Hack to disable less for vimpager version 2.06, since it doesn't support
+" disabling it via a variable
+if exists("vimpager")
+  call <SNR>1_ToggleLess()
+endif
 
 "}}}
 " Plugin Manager: {{{
@@ -691,6 +702,11 @@ let g:lightline = {
 " Dispatch: {{{
 
 nnoremap <leader>cc :Dispatch<cr>
+
+" }}}
+" Better whitespace: {{{
+
+let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofile', 'git']
 
 " }}}
 " vim: fdm=marker:sw=2
