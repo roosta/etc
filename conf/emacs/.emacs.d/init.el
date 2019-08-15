@@ -85,6 +85,7 @@
 (require 'init-arduino)
 (require 'init-shell-scripting)
 (require 'init-dired)
+(require 'init-javascript)
 
 
 ;;----------------------------------------------------------------------------
