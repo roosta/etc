@@ -29,6 +29,10 @@ There are two things you can do about this warning:
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
 
+;; Work-around for https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34341
+(when (version= "26.2" emacs-version)
+  (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
+
 ;; Ensure use-package is installed
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)

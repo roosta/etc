@@ -11,7 +11,6 @@
   debug-on-error t ; Produce backtraces when errors occur
   exec-path-from-shell-check-startup-files nil ; disable warning about setting path outside profile/env
   vc-follow-symlinks t ; always follow symlinks
-  gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"
   )
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
