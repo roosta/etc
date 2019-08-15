@@ -30,7 +30,7 @@
 (declare-function tmux-nav-right tmux)
 
 ;; Add some overrides here, certain buffers the tmux nav doesn't work
-(general-def '(normal visual operator) (sql-mode-map sql-interactive-mode-map magit-diff-mode-map term-raw-map)
+(general-def '(normal visual operator) (sql-mode-map sql-interactive-mode-map magit-diff-mode-map term-raw-map skewer-repl-mode-map)
   "C-k" #'tmux-nav-up
   "C-j" #'tmux-nav-down
   "C-l" #'tmux-nav-right
