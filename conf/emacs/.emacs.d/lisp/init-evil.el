@@ -68,5 +68,14 @@
   :config
   (global-evil-mc-mode 1))
 
+;;----------------------------------------------------------------------------
+;; evil-matchit
+;;----------------------------------------------------------------------------
+(use-package evil-matchit
+  :commands
+  (global-evil-matchit-mode)
+  :config
+  (global-evil-matchit-mode 1))
+
 (provide 'init-evil)
 ;;; init-evil.el ends here
