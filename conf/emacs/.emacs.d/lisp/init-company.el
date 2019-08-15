@@ -3,6 +3,8 @@
 
 ;;; Code:
 
+(defvar company-backends)
+
 (use-package company
   :demand t
   :init
@@ -15,6 +17,12 @@
    "C-/"     #'counsel-company
    "C-_"     #'counsel-company
    "C-d"     #'company-show-doc-buffer))
+
+(use-package company-tern
+  :after
+  (company)
+  :config
+  (add-to-list 'company-backends 'company-tern))
 
 (general-def
   "C-/" #'counsel-company
