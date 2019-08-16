@@ -25,7 +25,8 @@
   (global-diff-hl-mode
    diff-hl-margin-mode)
   :config
-  (diff-hl-margin-mode))
+  (diff-hl-margin-mode)
+  (global-diff-hl-mode))
 
 ;; Use auto commit for org-mode
 (use-package git-auto-commit-mode)
