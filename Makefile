@@ -260,7 +260,7 @@ save-originals:
 	mkdir ~/backup/original-system-files@$(NOW)
 	mv ~/.bash* ~/backup/original-system-files@$(NOW)
 
-rustup: 
+rustup:
 	rustup install stable
 	rustup install nightly
 	rustup default stable
@@ -286,3 +286,6 @@ cljs-corpus: update-libs
 
 i3wsr:
 	cargo install i3wsr
+
+npm-packages: links
+	npm install -g tern eslint js-beutify npx
