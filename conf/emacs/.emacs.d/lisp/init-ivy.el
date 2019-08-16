@@ -44,6 +44,9 @@
    "ic"  #'(ivy-immediate-done :which-key "Immidiate-done")
    "jo"  #'(counsel-org-goto :which-key "Org goto")))
 
+(which-key-declare-prefixes
+  "SPC hd" "Describe")
+
 ;;----------------------------------------------------------------------------
 ;; Setup projectile
 ;;----------------------------------------------------------------------------
