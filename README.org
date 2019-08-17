@@ -81,7 +81,7 @@ Companion repos for these dotfiles:
  - [[https://github.com/roosta/etc/tree/master/conf/firefox][firefox]]
  - [[https://github.com/roosta/etc/tree/master/conf/git][git]]
  - [[https://github.com/roosta/etc/tree/master/conf/polybar][polybar]]
- - [[https://github.com/roosta/etc/tree/master/conf/emacs/.emacs.d][emacs]]
+ - [[https://github.com/roosta/etc/tree/master/conf/emacs][emacs]]
  - rofi
  - termite
  - tmux
