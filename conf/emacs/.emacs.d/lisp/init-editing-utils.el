@@ -111,6 +111,8 @@
 (setq fill-column 80)
 
 (use-package visual-fill-column
+  :commands
+  (visual-fill-column-adjust)
   :hook
   (visual-line-mode . visual-fill-column-mode)
   :config
