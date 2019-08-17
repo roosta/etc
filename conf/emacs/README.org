@@ -10,7 +10,7 @@
    This configuration is geared toward Arch Linux and I haven't tested
    it on any other OS or distribution.
 
-   The configuration is ATM a work in progress, which I guess it will
+   The configuration is a work in progress, which I guess it will
    always be but I haven't setup everything I want yet, so language
    support is a bit sparse.
 
