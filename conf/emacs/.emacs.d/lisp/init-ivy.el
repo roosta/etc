@@ -4,6 +4,8 @@
 ;; (setq ivy-initial-inputs-alist nil)
 ;;; Code:
 
+(require 'which-key)
+
 (use-package ivy
   :diminish ivy-mode
   :init
@@ -44,7 +46,7 @@
    "ic"  #'(ivy-immediate-done :which-key "Immidiate-done")
    "jo"  #'(counsel-org-goto :which-key "Org goto")))
 
-(which-key-declare-prefixes
+(which-key-add-key-based-replacements
   "SPC hd" "Describe")
 
 ;;----------------------------------------------------------------------------
