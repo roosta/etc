@@ -91,7 +91,7 @@
   (setq httpd-port 8081))
 
 (use-package skewer-mode
-  :hook (js2-mode . skewer-mode)
+  :hook ((js2-mode css-mode html-mode) . skewer-mode)
   :general
   ('(normal visual evilified) js2-mode-map :prefix ","
    "'"  #'spacemacs/skewer-start-repl
