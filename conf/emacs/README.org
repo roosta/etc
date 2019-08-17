@@ -7,26 +7,28 @@
    from it, to instead setup my own configuration. I did so as a
    learning experience but I borrow a lot from Spacemacs.
 
+   This configuration is geared toward Arch Linux and I haven't tested
+   it on any other OS or distribution.
+
    The configuration is ATM a work in progress, which I guess it will
    always be but I haven't setup everything I want yet, so language
    support is a bit sparse.
 
    Currently I got these things set up more or less how I like it.
 
-   - Lisp / Clojure
    - Clojure
-   - common
+   - Common lisp
    - Javascript
    - Markdown / org
    - And various language agnostic utilities like
      + [[https://github.com/emacs-evil/evil][Evil]]
-     + Git
+     + [[https://github.com/magit/magit][Git]]
      + [[https://github.com/abo-abo/swiper][Ivy]]
      + [[https://github.com/flycheck/flycheck][Flycheck]]
      + [[https://github.com/company-mode/company-mode][Company]]
 
     I use [[https://github.com/jwiegley/use-package][use-package]] and [[https://github.com/noctuid/general.el][general]] as building blocks for packages and
-    keybindings to vaguely match that of Spacemacs
+    keybindings to vaguely match that of Spacemacs.
 
 ** Terminal support
 
