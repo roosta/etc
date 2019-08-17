@@ -27,8 +27,8 @@
      + [[https://github.com/flycheck/flycheck][Flycheck]]
      + [[https://github.com/company-mode/company-mode][Company]]
 
-    I use [[https://github.com/jwiegley/use-package][use-package]] and [[https://github.com/noctuid/general.el][general]] as building blocks for packages and
-    keybindings to vaguely match that of Spacemacs.
+   I use [[https://github.com/jwiegley/use-package][use-package]] and [[https://github.com/noctuid/general.el][general]] as building blocks for packages and
+   keybindings to vaguely match that of Spacemacs.
 
 ** Terminal support
 
