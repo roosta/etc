@@ -1,0 +1,94 @@
+[[file:../../assets/emacs_title.png]]
+
+** Spacemacs inspired emacs configuration
+
+   This is my Emacs configuration. As a vimmer I initially chose
+   [[https://github.com/syl20bnr/spacemacs][Spacemacs]] as my framework around Emacs but have since moved away
+   from it, to instead setup my own configuration. I did so as a
+   learning experience but I borrow a lot from Spacemacs.
+
+   The configuration is ATM a work in progress, which I guess it will
+   always be but I haven't setup everything I want yet, so language
+   support is a bit sparse.
+
+   Currently I got these things set up more or less how I like it.
+
+   - Lisp / Clojure
+   - Clojure
+   - common
+   - Javascript
+   - Markdown / org
+   - And various language agnostic utilities like
+     + [[https://github.com/emacs-evil/evil][Evil]]
+     + Git
+     + [[https://github.com/abo-abo/swiper][Ivy]]
+     + [[https://github.com/flycheck/flycheck][Flycheck]]
+     + [[https://github.com/company-mode/company-mode][Company]]
+
+    I use [[https://github.com/jwiegley/use-package][use-package]] and [[https://github.com/noctuid/general.el][general]] as building blocks for packages and
+    keybindings to vaguely match that of Spacemacs
+
+** Terminal support
+
+    A focus for this configuration has been that it should work well
+    inside a terminal and tmux. See [[https://github.com/roosta/etc/blob/master/conf/emacs/.emacs.d/lisp/init-term.el][init-term.el]] for setup. I
+    currently only use Emacs in the terminal despite suggestions
+    otherwise.
+
+** Supported Emacs versions
+
+   This config should run on Emacs 24.4 and above but I have yet only
+   tested it on the latest Emacs version (26.2). It's quite possible
+   various packages break when using older emacs versions.
+
+** Other requirements
+
+   Flycheck linters are required to be installed outside emacs for it
+   to work. For javascript you can call:
+   #+BEGIN_SRC shell
+   make npm-packages
+   #+END_SRC
+
+   For clojure I use a combination of [[https://github.com/borkdude/clj-kondo][clj-kondo]] and [[https://github.com/candid82/joker][joker]] and is
+   installed via Arch linux user repository (AUR), see
+   [[file:../../aur_packages.txt][aur_packages.txt]] and ~make install-aur-packages~
+
+** Installation
+
+   Easiest way to install this config is to clone the repo:
+
+   #+BEGIN_SRC shell
+     git clone https://github.com/roosta/etc
+   #+END_SRC
+
+   ~cd~ into repository and call
+
+   #+BEGIN_SRC shell
+   stow emacs -t ~ -d conf
+   #+END_SRC
+
+   To link config to home. But I rather recommend that you cherry pick
+   whatever you like from this config. It's not really meant to be
+   distributed, its my personal config, and it is far from any kind of
+   finished state. Not to mention I'm a emacs noob.
+
+** Updates
+
+   To update call git pull in the base ~etc~ folder and in Emacs call ~mx
+   package-list-packages~, then ~U~, followed by ~x~
+
+   You should probably restart Emacs after updating so changes can take effect.
+
+** Inspiration / resources
+   - [[https://github.com/purcell/emacs.d][purcell/emacs.d: An Emacs configuration bundle with batteries included]]
+   - [[https://github.com/syl20bnr/spacemacs][syl20bnr/spacemacs: A community-driven Emacs distribution - The best editor is neither Emacs nor Vim, it's Emacs *and* Vim!]]
+   - [[https://github.com/hlissner/doom-emacs][hlissner/doom-emacs: An Emacs configuration for the stubborn martian vimmer]]
+   - [[https://github.com/bbatsov/prelude/][bbatsov/prelude: Prelude is an enhanced Emacs 25.1+ distribution that should make your experience with Emacs both more pleasant and more powerful.]]
+   - [[http://evgeni.io/posts/quick-start-evil-mode/][Quick Start emacs with evil • Personal blog site]]
+   - [[https://github.com/jwiegley/dot-emacs][jwiegley/dot-emacs: My .emacs.el file and other personal Emacs goodies]]
+   - [[http://evgeni.io/posts/quick-start-evil-mode/][Quick Start emacs with evil • Personal blog site]]
+   - [[https://sam217pa.github.io/2016/09/02/how-to-build-your-own-spacemacs/][How to build your own spacemacs · Samuel Barreto]]
+   - [[http://ryan.himmelwright.net/post/emacs-update-evil-usepackage/][Emacs Config Redo - Evil & Use-Package -- λ ryan. himmelwright. net]]
+** Misc
+   I also keep my old spacemacs config in this repo. [[https://github.com/roosta/etc/tree/master/conf/spacemacs/.spacemacs.d][Check it out]] if
+   you are interested.

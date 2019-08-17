@@ -4,7 +4,9 @@ A collection of config files I use on a daily basis on multiple hosts.
 My OS of choice is [[https://www.archlinux.org/][Arch Linux]], and my dotfiles are managed by [[https://www.gnu.org/software/make/][Make]] and [[https://www.gnu.org/software/stow/][Stow]].
 
 Companion repos for these dotfiles:
- - [[https://github.com/roosta/vim-srcery][roosta/vim-srcery: vim colorscheme]]
+ - [[https://github.com/srcery-colors/srcery-vim][srcery-colors/srcery-vim: vim colorscheme]]
+ - [[https://github.com/srcery-colors/srcery-emacs][srcery-colors/srcery-emacs: emacs colorscheme]]
+ - [[https://github.com/srcery-colors/srcery-terminal][srcery-colors/srcery-terminal: terminal colorschemes]]
  - [[https://github.com/roosta/utils][roosta/utils: collection of various shell utils]]
 
 * Installation
@@ -79,8 +81,8 @@ Companion repos for these dotfiles:
  - [[https://github.com/roosta/etc/tree/master/conf/firefox][firefox]]
  - [[https://github.com/roosta/etc/tree/master/conf/git][git]]
  - [[https://github.com/roosta/etc/tree/master/conf/polybar][polybar]]
+ - [[https://github.com/roosta/etc/tree/master/conf/emacs/.emacs.d][emacs]]
  - rofi
- - spacemacs
  - termite
  - tmux
  - vim
