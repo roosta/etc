@@ -4,6 +4,7 @@
 ;;; Code:
 
 (use-package flycheck
+  :demand t
   :init
   (setq flycheck-emacs-lisp-load-path 'inherit)
   :commands
