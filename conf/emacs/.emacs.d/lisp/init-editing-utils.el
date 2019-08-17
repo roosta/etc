@@ -14,8 +14,6 @@
 ;; Some basic preferences
 ;;----------------------------------------------------------------------------
 
-(setq-default indent-tabs-mode nil)
-
 (defvar apropos-do-all)
 (defvar ediff-window-setup-function)
 
@@ -121,6 +119,55 @@
 
 (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
 
+;;----------------------------------------------------------------------------
+;; Indentation
+;;----------------------------------------------------------------------------
+
+(setq-default indent-tabs-mode nil)
+
+(defvar c-basic-offset)
+(defvar javascript-indent-level)
+(defvar js-indent-level)
+(defvar js2-basic-offset)
+(defvar web-mode-markup-indent-offset)
+(defvar web-mode-markup-indent-offset)
+(defvar web-mode-css-indent-offset)
+(defvar web-mode-code-indent-offset)
+(defvar css-indent-offset)
+(defvar c-basic-indent)
+(defvar json-reformat:indent-width)
+
+(defun roosta/setup-indent (n)
+  "Generalized setup indentation.
+Takes N indentation width."
+
+  ;; defaults
+  (setq-local tab-width n)
+
+  ;; java/c/c++
+  (setq-local c-basic-offset n)
+
+  ;; web development
+  (setq-local javascript-indent-level n)
+  (setq-local js-indent-level n)
+  ;; (setq-local js2-basic-offset n)
+  (setq-local web-mode-markup-indent-offset n)
+  (setq-local web-mode-css-indent-offset n)
+  (setq-local web-mode-code-indent-offset n)
+  (setq-local css-indent-offset n)
+  (setq-local json-reformat:indent-width n))
+
+(defun roosta/personal-code-style ()
+  "Personal code style."
+  (interactive)
+  (message "Personal code style")
+  ;; use space instead of tab
+  (setq indent-tabs-mode nil)
+  ;; indent 2 spaces width
+  (roosta/setup-indent 2))
+
+(add-hook 'prog-mode-hook #'roosta/personal-code-style)
+(add-hook 'web-mode-hook #'roosta/personal-code-style)
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
