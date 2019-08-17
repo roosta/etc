@@ -502,4 +502,6 @@ alias cheat='cht.sh'
 alias sshlog='journalctl _COMM=sshd'
 alias ncdu='ncdu --color dark'
 alias mutt='neomutt'
+
+alias weather='curl http://wttr.in/oslo'
 # vim: fdm=marker:sw=2
