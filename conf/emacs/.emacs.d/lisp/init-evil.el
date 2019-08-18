@@ -77,5 +77,15 @@
   :config
   (global-evil-matchit-mode 1))
 
+;;----------------------------------------------------------------------------
+;; evil-lion
+;;----------------------------------------------------------------------------
+(use-package evil-lion
+  :demand t
+  :commands
+  (evil-lion-mode)
+  :config
+  (evil-lion-mode))
+
 (provide 'init-evil)
 ;;; init-evil.el ends here
