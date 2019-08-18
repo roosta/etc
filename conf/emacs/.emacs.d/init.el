@@ -86,6 +86,7 @@
 (require 'init-shell-scripting)
 (require 'init-dired)
 (require 'init-javascript)
+(require 'init-windows)
 
 
 ;;----------------------------------------------------------------------------
