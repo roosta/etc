@@ -87,6 +87,7 @@
 (require 'init-dired)
 (require 'init-javascript)
 (require 'init-windows)
+(require 'init-misc)
 
 
 ;;----------------------------------------------------------------------------
