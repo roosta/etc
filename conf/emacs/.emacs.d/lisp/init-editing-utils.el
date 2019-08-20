@@ -138,6 +138,8 @@
 (defvar css-indent-offset)
 (defvar c-basic-indent)
 (defvar json-reformat:indent-width)
+(defvar sh-basic-offset)
+(defvar sh-indentation)
 
 (defun roosta/setup-indent (n)
   "Generalized setup indentation.
@@ -157,7 +159,11 @@ Takes N indentation width."
   (setq-local web-mode-css-indent-offset n)
   (setq-local web-mode-code-indent-offset n)
   (setq-local css-indent-offset n)
-  (setq-local json-reformat:indent-width n))
+  (setq-local json-reformat:indent-width n)
+
+  ;; shell  script
+  (setq-local sh-basic-offset n)
+  (setq-local sh-indentation n))
 
 (defun roosta/personal-code-style ()
   "Personal code style."
