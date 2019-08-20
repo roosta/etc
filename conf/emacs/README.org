@@ -28,7 +28,7 @@
      + [[https://github.com/company-mode/company-mode][Company]]
 
    I use [[https://github.com/jwiegley/use-package][use-package]] and [[https://github.com/noctuid/general.el][general]] as building blocks for packages and
-   keybindings to vaguely match that of Spacemacs.
+   keybindings that tries to match that of Spacemacs.
 
 ** Terminal support
 
