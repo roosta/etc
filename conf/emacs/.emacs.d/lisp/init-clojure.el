@@ -89,7 +89,7 @@
   "ha" #'cider-apropos
   "hh" #'cider-doc
 
-  "hg" #'cider-grimoire
+  ;; "hg" #'cider-grimoire
   "hj" #'cider-javadoc
   "hn" #'cider-browse-ns
 
@@ -99,6 +99,8 @@
   "em" #'cider-macroexpand-1
   "eM" #'cider-macroexpand-all
   "er" #'cider-eval-region
+  "ep" #'cider-eval-print-last-sexp
+  "eP" #'cider-pprint-eval-last-sexp
   "ew" #'cider-eval-last-sexp-and-replace
 
   "="  #'cider-format-buffer
