@@ -168,8 +168,14 @@ Takes N indentation width."
   ;; indent 2 spaces width
   (roosta/setup-indent 2))
 
+(defun roosta/make-code-style ()
+  "Makefile indentation rules."
+  (setq indent-tabs-mode t)
+  (setq-local tab-width 2))
+
 (add-hook 'prog-mode-hook #'roosta/personal-code-style)
 (add-hook 'web-mode-hook #'roosta/personal-code-style)
+(add-hook 'makefile-mode-hook #'roosta/make-code-style)
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
