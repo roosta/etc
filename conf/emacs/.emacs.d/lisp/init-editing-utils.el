@@ -7,8 +7,7 @@
 ;;----------------------------------------------------------------------------
 ;; The saveplace library saves the location of the point when you kill a buffer
 ;; and returns to it next time you visit the associated file.
-(require 'saveplace)
-(setq-default save-place t)
+(save-place-mode 1)
 
 ;;----------------------------------------------------------------------------
 ;; Some basic preferences
