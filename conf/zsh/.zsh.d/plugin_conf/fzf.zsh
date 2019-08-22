@@ -397,4 +397,28 @@ fpac() {
   fi
 }
 
+
+
+# using ripgrep combined with preview
+# find-in-file - usage: fif <searchTerm>
+fif() {
+  if [ ! "$#" -gte 1 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages $1 | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}"
+}
+
+forg() {
+  local match linum file;
+  match=$(\ag \
+    --nobreak \
+    --smart-case \
+    --hidden  \
+    -p ~/.agignore \
+    --noheading . | fzf +m --preview="fzf-parse-args {}") &&
+
+    linum=$(echo "$match" | cut -d':' -f2) &&
+    file=$(echo "$match" | cut -d':' -f1) &&
+
+    emacsclient -nw +$linum $file
+}
+
 #  vim: set ts=2 sw=2 tw=0 fdm=marker et :
