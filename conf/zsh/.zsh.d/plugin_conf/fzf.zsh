@@ -408,12 +408,10 @@ fif() {
 
 forg() {
   local match linum file;
-  match=$(\ag \
-    --nobreak \
+  match=$(\rg \
     --smart-case \
-    --hidden  \
-    -p ~/.agignore \
-    --noheading . | fzf +m --preview="fzf-parse-args {}") &&
+    --line-number \
+    --no-heading . | fzf -d ":" --preview="fzf-preview {1} {2} {q}") &&
 
     linum=$(echo "$match" | cut -d':' -f2) &&
     file=$(echo "$match" | cut -d':' -f1) &&
