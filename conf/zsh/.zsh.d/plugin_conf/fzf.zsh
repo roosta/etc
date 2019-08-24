@@ -113,7 +113,7 @@ v() {
 o() {
   local file
   ( cd ~/org && file=$(fzf-tmux --query="$1")  &&
-    [ -n "$file" ] && emacsclient -nw "$file" )
+    [ -n "$file" ] && emacsclient -nw "$file" && popd)
 }
 
 # vf - fuzzy open with vim from anywhere
