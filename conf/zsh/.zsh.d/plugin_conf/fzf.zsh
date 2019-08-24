@@ -408,15 +408,18 @@ fif() {
 
 forg() {
   local match linum file;
-  match=$(\rg \
-    --smart-case \
-    --line-number \
-    --no-heading . | fzf -d ":" --preview="fzf-preview {1} {2} {q}") &&
+  (
+    cd ~/org &&
+    match=$(\rg \
+              --smart-case \
+              --line-number \
+              --no-heading . | fzf --preview="fzf-preview {} {q}") &&
 
-    linum=$(echo "$match" | cut -d':' -f2) &&
-    file=$(echo "$match" | cut -d':' -f1) &&
+      linum=$(echo "$match" | cut -d':' -f2) &&
+      file=$(echo "$match" | cut -d':' -f1) &&
 
-    emacsclient -nw +$linum $file
+      emacsclient -nw +$linum $file && popd
+  )
 }
 
 #  vim: set ts=2 sw=2 tw=0 fdm=marker et :
