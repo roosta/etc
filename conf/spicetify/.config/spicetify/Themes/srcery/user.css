@@ -624,7 +624,7 @@ span.glue-page-header__title-text {
 .progress-container .inner {
 	border-radius: 0 2px 2px 0 !important;
 	background-color: var(--modspotify_main_fg) !important;
-	box-shadow: 0 2px 2px 0 var(--modspotify_main_fg);
+	/* box-shadow: 0 2px 2px 0 var(--modspotify_main_fg); */
 }
 
 .saber-hilt {
@@ -680,8 +680,8 @@ span.glue-page-header__title-text {
 .glue-page-header__label span,
 .Header__label span {
 	background-color: var(--modspotify_main_fg);
-    color: var(--modspotify_main_bg);
-    padding: 2px 10px;
+  color: var(--modspotify_secondary_fg);
+  padding: 2px 10px;
 }
 
 .glue-page-header__label .header-verified-check {
@@ -711,12 +711,15 @@ body.remotebar .view-player .player-bar-wrapper {
   padding: 0px !important;
 }
 
-.progress-container .inner {
-  background-color: var(--srcery-green) !important;
-  box-shadow: none;
+
+.button.button-green {
+  color: var(--modspotify_secondary_fg) !important;
 }
 
-.progress-container .inner .handle {
-  background-color: var(--srcery-bright-green) !important;
-  border: 3px solid var(--srcery-bright-green) !important;
+.h-search {
+  background: var(--modspotify_main_bg) !important;
+}
+
+.slider {
+  border: 2px solid var(--modspotify_secondary_fg) !important;
 }
