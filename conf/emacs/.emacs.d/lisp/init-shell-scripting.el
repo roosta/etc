@@ -21,5 +21,15 @@
   (insert-shebang-get-extension-and-insert
    (file-name-nondirectory (buffer-file-name))))
 
+
+;;----------------------------------------------------------------------------
+;; keybindings
+;;----------------------------------------------------------------------------
+(general-define-key
+  :states  '(normal visual evilified)
+  :keymaps '(shell-mode-map)
+  :prefix  ","
+  "gg"  #'dumb-jump-go)
+
 (provide 'init-shell-scripting)
 ;;; init-shell-scripting.el ends here
