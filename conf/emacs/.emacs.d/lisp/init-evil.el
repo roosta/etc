@@ -72,6 +72,7 @@
 ;; evil-matchit
 ;;----------------------------------------------------------------------------
 (use-package evil-matchit
+  :demand t
   :commands
   (global-evil-matchit-mode)
   :config
