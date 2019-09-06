@@ -17,7 +17,6 @@ x-scheme-handler/mailto=thunderbird.desktop
 message/rfc822=thunderbird.desktop
 application/pdf=zathura.desktop
 text/x-arduino=arduino-arduinoide.desktop
-x-scheme-handler/sgnl=signal-desktop.desktop
 
 [Added Associations]
 image/jpeg=gimp.desktop;feh.desktop;
@@ -40,5 +39,6 @@ image/svg+xml=inkscape.desktop;
 application/pdf=evince.desktop;org.pwmt.zathura-pdf-mupdf.desktop;org.pwmt.zathura-pdf-poppler.desktop;
 text/calendar=thunderbird.desktop;
 image/svg+xml=gvim.desktop;inkscape.desktop;
+application/pgp-signature=gvim.desktop;
 
 [Removed Associations]
