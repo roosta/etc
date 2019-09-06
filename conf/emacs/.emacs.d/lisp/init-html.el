@@ -32,5 +32,22 @@
          (web-mode  . emmet-mode)
          (scss-mode . emmet-mode)))
 
+;;----------------------------------------------------------------------------
+;; tagedit
+;;----------------------------------------------------------------------------
+(use-package tagedit
+  :hook (html-mode . tagedit-mode)
+  :general
+  ('(normal insert emacs hybrid) html-mode-map
+   ">" #'tagedit-forward-slurp-tag
+   "<" #'tagedit-forward-barf-tag
+   "M-r" #'tagedit-raise-tag
+   "M-s" #'tagedit-splice-tag
+   "M-J" #'tagedit-join-tags
+   "M-S" #'tagedit-split-tag
+   "M-?" #'tagedit-convolute-tags
+   "M-d" #'tagedit-kill
+   "M-a" #'tagedit-kill-attribute))
+
 (provide 'init-html)
 ;;; init-html.el ends here
