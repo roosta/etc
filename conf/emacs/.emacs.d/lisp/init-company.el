@@ -25,6 +25,11 @@
   :config
   (add-to-list 'company-backends 'company-tern))
 
+(use-package company-web
+  :after (company)
+  :config
+  (require 'company-web-html))
+
 (general-def
   "C-/" #'counsel-company
   "C-_" #'counsel-company
