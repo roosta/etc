@@ -2,6 +2,14 @@
 ;;; Commentary:
 ;;; Code:
 
+(use-package sass-mode
+  :defer t
+  :mode ("\\.sass\\'" . sass-mode))
+
+(use-package scss-mode
+    :defer t
+    :mode ("\\.scss\\'" . scss-mode))
+
 ;;----------------------------------------------------------------------------
 ;; emmet
 ;;----------------------------------------------------------------------------
