@@ -7,6 +7,7 @@
 
 (use-package company
   :demand t
+  :diminish (company-mode . "[c]")
   :init
   (setq company-idle-delay 0.2)
   (setq auto-completion-enable-sort-by-usage t)

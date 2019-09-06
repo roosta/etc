@@ -37,5 +37,10 @@
    "oar" #'asx-reload-post
    "oaf" #'asx-go-back-to-first-post))
 
+;;----------------------------------------------------------------------------
+;;  Diminish
+;;----------------------------------------------------------------------------
+(diminish 'eldoc-mode "[ed]")
+
 (provide 'init-misc)
 ;;; init-misc.el ends here
