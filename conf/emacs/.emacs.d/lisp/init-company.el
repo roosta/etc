@@ -23,6 +23,7 @@
    "C-d"     #'company-show-doc-buffer))
 
 (use-package company-tabnine
+  :demand t
   :commands
   (company-tabnine)
   :config
