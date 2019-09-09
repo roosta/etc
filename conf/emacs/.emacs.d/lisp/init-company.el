@@ -9,9 +9,11 @@
   :demand t
   :diminish (company-mode . "[c]")
   :init
-  (setq company-idle-delay 0)
-  (setq company-show-numbers t)
-  (setq auto-completion-enable-sort-by-usage t)
+  (setq company-idle-delay 0)                   ; Trigger completion immediately.
+  (setq company-show-numbers t)                 ; Number the candidates (use M-1, M-2 etc to select completions).
+  (setq auto-completion-enable-sort-by-usage t) ; sort candidates by usage
+  (setq company-tooltip-align-annotations 't)   ; align annotations to the right tooltip border
+  (setq company-tooltip-limit 20)               ; bigger popup window
   :config
   (add-hook 'after-init-hook 'global-company-mode)
   :general
