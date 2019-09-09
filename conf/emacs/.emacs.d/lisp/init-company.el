@@ -20,6 +20,12 @@
    "C-_"     #'counsel-company
    "C-d"     #'company-show-doc-buffer))
 
+(use-package company-tabnine
+  :commands
+  (company-tabnine)
+  :config
+  (add-to-list 'company-backends #'company-tabnine))
+
 (use-package company-tern
   :after
   (company)
