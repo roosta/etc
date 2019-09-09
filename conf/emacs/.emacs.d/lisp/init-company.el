@@ -9,7 +9,8 @@
   :demand t
   :diminish (company-mode . "[c]")
   :init
-  (setq company-idle-delay 0.2)
+  (setq company-idle-delay 0)
+  (setq company-show-numbers t)
   (setq auto-completion-enable-sort-by-usage t)
   :config
   (add-hook 'after-init-hook 'global-company-mode)
