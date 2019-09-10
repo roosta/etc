@@ -28,6 +28,8 @@
   (diff-hl-margin-mode)
   (global-diff-hl-mode))
 
+(use-package git-link)
+
 ;; Use auto commit for org-mode
 (use-package git-auto-commit-mode)
 
