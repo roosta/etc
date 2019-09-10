@@ -6,6 +6,7 @@
 (require 'init-utils)
 (require 'advice)
 (require 'init-site-lisp)
+(require 'cider)
 
 (use-package clojure-mode)
 
@@ -188,10 +189,15 @@
       (concat "r" binding) func))))
 
 (use-package cljr-ivy
-  :after (ivy clj-refactor)
+  :after (clj-refactor)
   :general
-  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
-   "or" #'cljr-ivy)
+  ('(normal visual evilified)
+   '(clojure-mode-map
+     clojurescript-mode-map
+     clojurec-mode-map
+     clojurex-mode-map)
+   :prefix ","
+   "o" #'cljr-ivy)
   :load-path "~/src/cljr-ivy")
 
 ;;----------------------------------------------------------------------------
