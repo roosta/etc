@@ -89,6 +89,7 @@
 (require 'init-windows)
 (require 'init-misc)
 (require 'init-perspective)
+(require 'init-html)
 
 
 ;;----------------------------------------------------------------------------

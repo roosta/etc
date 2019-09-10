@@ -54,6 +54,7 @@
 
 (use-package evil-traces
   :demand t
+  :diminish (evil-traces-mode . "[et]")
   :commands
   (evil-traces-use-diff-faces
    evil-traces-mode)
@@ -65,6 +66,7 @@
 ;; evil-mc
 ;;----------------------------------------------------------------------------
 (use-package evil-mc
+  :diminish (evil-mc-mode . "[emc]")
   :config
   (global-evil-mc-mode 1))
 

@@ -4,6 +4,7 @@
 ;;; Code:
 
 (use-package yasnippet
+  :diminish (yas-minor-mode . "[y]")
   :init
   ;; Use hippie expand to expand snippets
   (setq hippie-expand-try-functions-list
