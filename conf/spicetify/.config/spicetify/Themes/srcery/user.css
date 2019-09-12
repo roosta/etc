@@ -524,16 +524,16 @@ body:not(.body-container--windows) .content-top-bar__profile-menu-button .dropdo
 	color: var(--modspotify_main_bg) !important;
 }
 
-.glue-page-header:not(.glue-page-header--album):not(.glue-page-header--playlist):not(.glue-page-header--artist):not(.glue-page-header--dailymix):not(.glue-page-header--user):not(.glue-page-header--show)
-	.glue-page-header__content-inner, .HomeHeader .Header__content-inner
-	.Header__title-text-inner, .MadeForYouHeader .Header__content-inner
-	.Header__title-text-inner, .RecentlyPlayedPage__header
-	.Header__content-inner .Header__title-text-inner { background-color:
-	var(--modspotify_main_bg); padding: 5px 20px; border: 5px solid
-	var(--modspotify_main_fg) !important; border-radius: 6px;
-	box-shadow: 0 4px 12px 0
-	rgba(var(--modspotify_rgb_cover_overlay_and_shadow),.2);
-	text-transform: uppercase; }
+/* .glue-page-header:not(.glue-page-header--album):not(.glue-page-header--playlist):not(.glue-page-header--artist):not(.glue-page-header--dailymix):not(.glue-page-header--user):not(.glue-page-header--show) */
+/* 	.glue-page-header__content-inner, .HomeHeader .Header__content-inner */
+/* 	.Header__title-text-inner, .MadeForYouHeader .Header__content-inner */
+/* 	.Header__title-text-inner, .RecentlyPlayedPage__header */
+/* 	.Header__content-inner .Header__title-text-inner { background-color: */
+/* 	var(--modspotify_main_bg); padding: 5px 20px; border: 5px solid */
+/* 	var(--modspotify_main_fg) !important; border-radius: 6px; */
+/* 	box-shadow: 0 4px 12px 0 */
+/* 	rgba(var(--modspotify_rgb_cover_overlay_and_shadow),.2); */
+/* 	text-transform: uppercase; } */
 
 .glue-page-header.glue-page-header--album .glue-page-header__content-inner .glue-page-header__title,
 .glue-page-header.glue-page-header--artist .glue-page-header__content-inner .glue-page-header__title,
@@ -709,6 +709,9 @@ body.remotebar .view-player .player-bar-wrapper {
   padding: 0px !important;
 }
 
+.track-list-container.container {
+  padding: 0px !important;
+}
 
 .button.button-green {
   color: var(--modspotify_secondary_fg) !important;
