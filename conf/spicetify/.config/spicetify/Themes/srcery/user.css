@@ -724,3 +724,7 @@ body.remotebar .view-player .player-bar-wrapper {
 .slider {
   border: 2px solid var(--modspotify_secondary_fg) !important;
 }
+
+.card-station-layer.card-station-mask {
+  background: var(--srcery-black);
+}
