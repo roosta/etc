@@ -498,11 +498,15 @@ body:not(.body-container--windows) .content-top-bar__profile-menu-button .dropdo
 	background: var(--modspotify_scrollbar_fg_and_selected_row_bg) !important;
 }
 
-.tl-row:nth-child(even) .tl-cell {
+.tl-row:nth-child(odd) .tl-cell {
   background: var(--srcery-xgray1) !important;
 }
 
-.tl-row:nth-child(even):hover .tl-cell {
+.tl-row.selected:nth-child(odd) .tl-cell {
+	background-color: var(--modspotify_scrollbar_fg_and_selected_row_bg) !important;
+}
+
+.tl-row:nth-child(odd):hover .tl-cell {
   background: var(--modspotify_main_bg) !important;
 }
 .GlueTableRow--is-selected {
