@@ -12,8 +12,19 @@
 
   ;; Custom snippets
   (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
+  :general
+  ('(normal visual insert emacs)
+   "C-:" #'yas-prev-field)
   :config
   (yas-global-mode 1))
+
+(use-package auto-yasnippet
+  :general
+  ('(normal visual insert emacs)
+   "C-;" #'aya-open-line)
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
+   "iw" #'aya-create
+   "iy" #'aya-expand))
 
 (use-package yasnippet-snippets
   :after (yasnippet))
