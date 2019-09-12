@@ -326,9 +326,9 @@ Change text color in playlist
 	width: 100% !important;
 }
 
-.tracklist-station-container::after {
-	background: transparent !important;
-}
+/* .tracklist-station-container::after { */
+/* 	background: transparent !important; */
+/* } */
 
 .GlueHeader__background-overlay {
 	background: var(--modspotify_main_bg) !important;
