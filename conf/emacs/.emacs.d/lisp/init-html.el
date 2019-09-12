@@ -15,8 +15,7 @@
 (use-package emmet-mode
   :general
   ('(normal insert emacs hybrid) emmet-mode-keymap
-   "TAB" 'spacemacs/emmet-expand
-   "tab" 'spacemacs/emmet-expand)
+   "TAB" 'spacemacs/emmet-expand)
   :hook ((html-mode . emmet-mode)
          (css-mode  . emmet-mode)
          (sgml-mode . emmet-mode)
