@@ -6,7 +6,6 @@
 (require 'init-utils)
 (require 'advice)
 (require 'init-site-lisp)
-(require 'cider)
 
 (use-package clojure-mode)
 
@@ -29,6 +28,7 @@
    cider-eval-region
    cider-eval-last-sexp-and-replace
    cider-pop-back
+   cider-pprint-eval-last-sexp
    cider-jump-to-compilation-error
    cider-jack-in
    cider-jack-in-cljs
@@ -41,6 +41,7 @@
    cider-enlighten-mode
    cider-test-show-report
    cider-repl-clear-buffer
+   cider-eval-print-last-sexp
    cider-switch-to-last-clojure-buffer
    cider-repl-handle-shortcut)
   :hook
@@ -54,6 +55,7 @@
   (setq cider-overlays-use-font-lock t) ; add syntax highlighting to eval overlay
   (setq cider-font-lock-reader-conditionals nil) ; Fix issue where working on cljc files would comment out env paths
   )
+
 
 ;;----------------------------------------------------------------------------
 ;; highlight evals
