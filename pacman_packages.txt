@@ -110,3 +110,5 @@ mlocate
 fd
 atool
 docker
+diff-so-fancy
+bat
