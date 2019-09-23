@@ -4,3 +4,4 @@ https://github.com/sindresorhus/pure.git
 https://github.com/zsh-users/zsh-completions
 https://github.com/Tarrasch/zsh-bd
 https://github.com/zsh-users/zsh-autosuggestions
+https://github.com/wfxr/forgit

@@ -51,6 +51,10 @@ if [[ -s "${plugin_location}/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; th
   source "${plugin_location}/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
+if [[ -s "${plugin_location}/forgit/forgit.plugin.zsh" ]]; then
+  source "${plugin_location}/forgit/forgit.plugin.zsh"
+fi
+
 # if [[ -s "${plugin_location}/zsh-you-should-use/you-should-use.plugin.zsh" ]]; then
 #   source "${plugin_location}/zsh-you-should-use/you-should-use.plugin.zsh"
 # fi
@@ -86,12 +90,12 @@ hash rustc 2>/dev/null && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rus
 
 # put ruby user dir in path
 if hash ruby 2>/dev/null; then
-    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
 # use vimpager, and replace less
 if hash vimpager 2>/dev/null; then
-    export PAGER=/usr/bin/vimpager
+  export PAGER=/usr/bin/vimpager
 else
-    PAGER=LESS
+  PAGER=LESS
 fi
