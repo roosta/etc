@@ -5,6 +5,7 @@
 [core]
   editor = emacsclient -nw
   excludesfile = ~/.globalignore
+  pager = diff-so-fancy | vimpager
 [push]
   default = simple
 [credential]
@@ -50,3 +51,5 @@
   includeStatusHeader = true
   includePullRequestsSection = true
   includeIssuesSection = true
+[diff-so-fancy]
+  rulerWidth = 47
