@@ -25,7 +25,7 @@
   "SPC w" "windows")
 
 ;;----------------------------------------------------------------------------
-;;  Ask StackExchange
+;;  Misc packages
 ;;----------------------------------------------------------------------------
 
 (use-package asx
@@ -37,10 +37,18 @@
    "oar" #'asx-reload-post
    "oaf" #'asx-go-back-to-first-post))
 
+(use-package helpful
+  :after
+  (ivy counsel)
+  :config
+  (setq counsel-describe-function-function #'helpful-callable)
+  (setq counsel-describe-variable-function #'helpful-variable))
+
 ;;----------------------------------------------------------------------------
 ;;  Diminish
 ;;----------------------------------------------------------------------------
 (diminish 'eldoc-mode "[ed]")
+
 
 (provide 'init-misc)
 ;;; init-misc.el ends here
