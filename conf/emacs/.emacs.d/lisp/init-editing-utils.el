@@ -46,7 +46,7 @@
 ;; Modes and hooks
 ;;----------------------------------------------------------------------------
 (global-hl-line-mode 1)
-(subword-mode 1)
+(global-subword-mode t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;----------------------------------------------------------------------------
