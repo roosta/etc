@@ -82,5 +82,7 @@
 
 (add-hook 'after-make-console-frame-hooks 'roosta/console-frame-setup)
 
+(use-package vterm)
+
 (provide 'init-term)
 ;;; init-term.el ends here
