@@ -91,7 +91,7 @@
 (require 'init-perspective)
 (require 'init-html)
 (require 'init-c-cpp)
-
+(require 'init-rust)
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
