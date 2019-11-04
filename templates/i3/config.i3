@@ -8,8 +8,8 @@
 # └──────────────────────────────────────────────────────┘
 # STARTUP #{{{1
 # --------------------
-exec_always --no-startup-id $HOME/scripts/launch-polybar.sh
-exec_always --no-startup-id $HOME/.cargo/bin/i3wsr
+exec --no-startup-id $HOME/scripts/launch-polybar.sh
+exec --no-startup-id $HOME/.cargo/bin/i3wsr
 #}}}
 # OPTIONS {{{1
 # --------------------
