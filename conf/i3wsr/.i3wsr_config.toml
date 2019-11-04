@@ -1,0 +1,10 @@
+[icons]
+firefox = ""
+firefoxdeveloperedition = ""
+Termite = ""
+Thunderbird = ""
+Spotify = ""
+
+[aliases]
+firefoxdeveloperedition = "Firefox Dev"
+firefox = "Firefox"
