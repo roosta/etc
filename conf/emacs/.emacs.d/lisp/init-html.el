@@ -125,5 +125,9 @@
 (which-key-add-major-mode-key-based-replacements 'css-mode
   ", z" "contract/expand")
 
+(with-eval-after-load 'smartparens
+    ;; Don't pair arrow functions
+    (sp-local-pair 'web-mode "<" nil :actions nil))
+
 (provide 'init-html)
 ;;; init-html.el ends here
