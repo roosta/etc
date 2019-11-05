@@ -40,5 +40,6 @@ application/pdf=evince.desktop;org.pwmt.zathura-pdf-mupdf.desktop;org.pwmt.zathu
 text/calendar=thunderbird.desktop;
 image/svg+xml=gvim.desktop;inkscape.desktop;
 application/pgp-signature=gvim.desktop;
+application/x-xpinstall=thunderbird.desktop;
 
 [Removed Associations]
