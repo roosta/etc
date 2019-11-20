@@ -89,6 +89,7 @@ dunst &
 lxqt-policykit-agent &
 # conky -d -c ~/.config/conky/conky-left.conf &
 # conky -d -c ~/.config/conky/conky-right.conf &
+flameshot &
 
 ## WINDOW MANAGER
 ## --------------

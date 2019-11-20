@@ -112,3 +112,4 @@ atool
 docker
 diff-so-fancy
 bat
+flameshot
