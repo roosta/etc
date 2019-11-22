@@ -55,6 +55,10 @@ if [[ -s "${plugin_location}/forgit/forgit.plugin.zsh" ]]; then
   source "${plugin_location}/forgit/forgit.plugin.zsh"
 fi
 
+if [[ -s "${plugin_location}/zsh-system-clipboard/zsh-system-clipboard.zsh" ]]; then
+  source "${plugin_location}/zsh-system-clipboard/zsh-system-clipboard.zsh"
+fi
+
 # if [[ -s "${plugin_location}/zsh-you-should-use/you-should-use.plugin.zsh" ]]; then
 #   source "${plugin_location}/zsh-you-should-use/you-should-use.plugin.zsh"
 # fi
