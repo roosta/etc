@@ -15,5 +15,11 @@
 (general-unbind 'normal dired-mode-map
   "SPC")
 
+(use-package diredfl
+  :commands
+  (diredfl-global-mode)
+  :config
+  (diredfl-global-mode 1))
+
 (provide 'init-dired)
 ;;; init-dired.el ends here
