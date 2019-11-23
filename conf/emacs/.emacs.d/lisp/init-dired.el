@@ -18,8 +18,15 @@
 (use-package diredfl
   :commands
   (diredfl-global-mode)
-  :config
+  :init
+  (setq diredfl-ignore-compressed-flag nil)
   (diredfl-global-mode 1))
+
+(use-package dired-git-info
+  :ensure t
+  :general
+  ('normal dired-mode-map
+   ")" #'dired-git-info-mode))
 
 (provide 'init-dired)
 ;;; init-dired.el ends here
