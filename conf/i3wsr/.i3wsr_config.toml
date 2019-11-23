@@ -3,8 +3,12 @@ firefox = ""
 firefoxdeveloperedition = ""
 Termite = ""
 Thunderbird = ""
+Google-chrome-unstable = ""
+Google-chrome= ""
 Spotify = ""
 
 [aliases]
 firefoxdeveloperedition = "Firefox-dev"
 firefox = "Firefox"
+Google-chrome-unstable = "Chrome-dev"
+Google-chrome = "Chrome"
