@@ -14,7 +14,7 @@ update: update-zsh-plugins update-libs update-tmux update-vim update-rust
 
 links: link-conf link-misc link-local
 
-install: user-fs install-yay install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-src update-libs update-zsh-plugins ~/.tmux/plugins/tpm links cleanup
+install: user-fs install-yay install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-src update-libs update-zsh-plugins ~/.tmux/plugins/tpm links ~/.zplug cleanup
 
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux cleanup
 
