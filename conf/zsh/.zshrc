@@ -25,43 +25,30 @@ tmux new-session -s vconsole
 fi
 
 # PLUGINS
-plugin_location=$HOME/.zsh.d/plugins
+source ~/.zplug/init.zsh
 
 if [[ -s '/usr/share/doc/pkgfile/command-not-found.zsh' ]]; then
   source '/usr/share/doc/pkgfile/command-not-found.zsh'
 fi
 
-if [[ -s "${plugin_location}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
-  source "${plugin_location}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# (If the defer tag is given 2 or above, run after compinit command)
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "Tarrasch/zsh-bd"
+zplug 'wfxr/forgit'
+zplug "kutsan/zsh-system-clipboard"
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
+# zplug check returns true if all packages are installed
+# Therefore, when it returns false, run zplug install
+if ! zplug check; then
+    zplug install
 fi
 
-if [[ -s "${plugin_location}/zsh-history-substring-search/zsh-history-substring-search.zsh" ]]; then
-  source "${plugin_location}/zsh-history-substring-search/zsh-history-substring-search.zsh"
-fi
-
-if [[ -s "${plugin_location}/zsh-bd/bd.zsh" ]]; then
-  source "${plugin_location}/zsh-bd/bd.zsh"
-fi
-
-if [[ -s "${plugin_location}/zsh-bd/bd.zsh" ]]; then
-  source "${plugin_location}/zsh-bd/bd.zsh"
-fi
-
-if [[ -s "${plugin_location}/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
-  source "${plugin_location}/zsh-autosuggestions/zsh-autosuggestions.zsh"
-fi
-
-if [[ -s "${plugin_location}/forgit/forgit.plugin.zsh" ]]; then
-  source "${plugin_location}/forgit/forgit.plugin.zsh"
-fi
-
-if [[ -s "${plugin_location}/zsh-system-clipboard/zsh-system-clipboard.zsh" ]]; then
-  source "${plugin_location}/zsh-system-clipboard/zsh-system-clipboard.zsh"
-fi
-
-# if [[ -s "${plugin_location}/zsh-you-should-use/you-should-use.plugin.zsh" ]]; then
-#   source "${plugin_location}/zsh-you-should-use/you-should-use.plugin.zsh"
-# fi
+# Then, source plugins and add commands to $PATH
+zplug load
 
 if [[ -s ~/.fzf.zsh ]]; then
   source ~/.fzf.zsh
@@ -70,7 +57,7 @@ fi
 # Unused ATM
 # [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
 
-fpath=($HOME/.zsh.d/functions $fpath)
+fpath+=("$HOME/.zsh.d/functions")
 for fn (~/.zsh.d/functions/*)  autoload -Uz $fn
 
 # ZSH CONF
@@ -83,10 +70,6 @@ hash fzf 2>/dev/null && source ~/.zsh.d/plugin_conf/fzf.zsh
 source ~/.zsh.d/plugin_conf/ls_colors.zsh
 source ~/.zsh.d/plugin_conf/autosuggestions.zsh
 hash thefuck 2>/dev/null && eval $(thefuck --alias)
-
-if [[ -s ~/.fzf.zsh ]]; then
-  source ~/.fzf.zsh
-fi
 
 # for rust-racer
 # https://github.com/racer-rust/racer#installation

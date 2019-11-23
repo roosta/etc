@@ -102,9 +102,9 @@ user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/
 ~/.mozilla/firefox:
 	-mkdir -p ~/.mozilla/firefox
 
-update-zsh-plugins:
+update-zsh-plugins: ~/.zplug
 	@echo -e "\033[0;33mUpdating zsh plugins...\033[0m"
-	./scripts/git_update.sh ~/.zsh.d/plugins ~/etc/zsh_plugins.txt
+	./scripts/zsh-update.sh
 
 update-libs:
 	./scripts/git_update.sh ~/lib ~/etc/lib_repositories.txt
@@ -289,3 +289,6 @@ i3wsr:
 
 npm-packages: links
 	npm install -g tern eslint js-beutify npx
+
+~/.zplug:
+	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh

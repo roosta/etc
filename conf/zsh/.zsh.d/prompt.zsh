@@ -6,8 +6,8 @@
 
 # https://dougblack.io/words/zsh-vi-mode.html
 # https://github.com/sindresorhus/pure/wiki
-autoload -U promptinit && promptinit
-prompt pure
+# autoload -U promptinit && promptinit
+# prompt pure
 
 VIM_PROMPT="❯"
 PROMPT='%(?.%F{magenta}.%F{red})${VIM_PROMPT}%f '
@@ -21,7 +21,7 @@ prompt_pure_update_vim_prompt() {
     zle .reset-prompt
 }
 
-function zle-line-init zle-keymap-select { 
+function zle-line-init zle-keymap-select {
     prompt_pure_update_vim_prompt
 }
 zle -N zle-line-init
