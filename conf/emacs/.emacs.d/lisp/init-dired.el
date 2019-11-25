@@ -15,8 +15,8 @@
 (general-unbind 'normal dired-mode-map
   "SPC")
 
-;; http://pragmaticemacs.com/emacs/dired-human-readable-sizes-and-sort-by-size/
-(setq dired-listing-switches "-alh")
+;; Set ls options
+(setq dired-listing-switches "-lsAhpk --group-directories-first")
 
 (use-package diredfl
   :commands
