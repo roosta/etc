@@ -411,7 +411,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'terryma/vim-expand-region'
-Plug 'junegunn/fzf', { 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'rking/ag.vim'
 Plug 'mileszs/ack.vim'
