@@ -50,10 +50,6 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 
-if [[ -s ~/.fzf.zsh ]]; then
-  source ~/.fzf.zsh
-fi
-
 # Unused ATM
 # [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
 
@@ -85,4 +81,8 @@ if hash vimpager 2>/dev/null; then
   export PAGER=/usr/bin/vimpager
 else
   PAGER=LESS
+fi
+
+if [[ -s ~/.fzf.zsh ]]; then
+  source ~/.fzf.zsh
 fi
