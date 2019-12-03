@@ -28,6 +28,11 @@
   (golden-ratio
    golden-ratio-mode))
 
+(with-eval-after-load 'golden-ratio
+  (add-to-list 'golden-ratio-extra-commands 'tmux-nav-left)
+  (add-to-list 'golden-ratio-extra-commands 'tmux-nav-right)
+  (add-to-list 'golden-ratio-extra-commands 'tmux-nav-up)
+  (add-to-list 'golden-ratio-extra-commands 'tmux-nav-down))
 
 ;;----------------------------------------------------------------------------
 ;; Functions
