@@ -212,8 +212,10 @@ alias -s com=firefox
 # Defaults: {{{1
 # Aliases that shadow its original command. Like docker='sudo docker'
 
-alias mv=' timeout 8 mv -iv'
-alias rm=' timeout 3 rm -Iv --one-file-system'
+# alias mv=' timeout 8 mv -iv'
+# alias rm=' timeout 3 rm -Iv --one-file-system'
+alias mv='mv -iv'
+alias rm='rm -Iv --one-file-system'
 alias cp='cp -i'
 alias cpr='cp -r'
 alias ln='ln -i'
