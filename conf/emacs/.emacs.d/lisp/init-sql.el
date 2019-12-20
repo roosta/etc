@@ -16,5 +16,8 @@
           (lambda ()
             (toggle-truncate-lines t)))
 
+(use-package sqlformat)
+
+
 (provide 'init-sql)
 ;;; init-sql.el ends here
