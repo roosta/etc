@@ -28,4 +28,4 @@
 ; (add-hook 'after-init-hook 'reapply-themes)
 
 (provide 'init-theme)
-;;; init-themes.el ends here
+;;; init-theme.el ends here
