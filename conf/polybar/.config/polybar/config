@@ -100,8 +100,9 @@ monitor = ${env:MONITOR:eDP-1}
 modules-center =
 tray-position = right
 font-0 = "Iosevka:pixelsize=9;4"
-font-1 = "Iosevka:pixelsize=9:weight=bold;4"
-modules-right = keyboard-layout vpncheck wifi battery pkg volume-small memory-small cpu-small date time
+modules-left = i3 xwindow-small
+; modules-right = keyboard-layout vpncheck wifi battery pkg volume-small memory-small cpu-small date time
+modules-right = keyboard-layout vpncheck wifi battery pkg volume-small date time
 
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
@@ -166,6 +167,12 @@ label-urgent-foreground = ${colors.brightwhite}
 type = internal/xwindow
 format-foreground = ${colors.white}
 label = %title:0:80%
+label-padding = 1
+
+[module/xwindow-small]
+type = internal/xwindow
+format-foreground = ${colors.white}
+label = %title:0:73%
 label-padding = 1
 
 [module/xkeyboard]
