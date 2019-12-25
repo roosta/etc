@@ -94,12 +94,13 @@ monitor = ${env:MONITOR:HDMI-0}
 
 [bar/allitnil]
 inherit = bar/lintilla-primary
-height = 24
+height = 28
 dpi = 140
 monitor = ${env:MONITOR:eDP-1}
 modules-center =
 tray-position = right
-font-0 = "Iosevka:pixelsize=9;2"
+font-0 = "Iosevka:pixelsize=9;4"
+font-1 = "Iosevka:pixelsize=9:weight=bold;4"
 modules-right = keyboard-layout vpncheck wifi battery pkg volume-small memory-small cpu-small date time
 
 [bar/garkbit-primary]
