@@ -71,10 +71,8 @@ modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
 ;; dpi needs to be adjusted accortingly
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DVI-I-1}
-font-0 = "Iosevka:pixelsize=10;2"
-font-4 = "Material Icons:pixelsize=12;3"
 dpi = 96
-height = 18
+height = 22
 modules-center =
 modules-right = eth-lintilla fs-home fs-root
 tray-position = right
