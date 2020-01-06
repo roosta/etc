@@ -10,9 +10,14 @@
   (load-theme 'srcery t)
   )
 
-;; (use-package smart-mode-line
-;;              :config
-;;              (sml/setup))
+(use-package smart-mode-line
+  :defines
+  (sml/theme)
+  :commands
+  (sml/setup)
+  :init
+  (setq sml/theme 'respectful)
+  (sml/setup))
 
 ;; (setq-default custom-theme-directory "~/src/srcery-emacs")
 ; (setq-default custom-enabled-themes '(srcery))
