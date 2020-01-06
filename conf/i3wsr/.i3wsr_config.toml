@@ -13,5 +13,3 @@ firefox = "Firefox"
 Google-chrome-unstable = "Chrome-dev"
 Google-chrome = "Chrome"
 
-[general]
-separator = "|"
