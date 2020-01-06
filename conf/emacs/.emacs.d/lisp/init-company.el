@@ -7,7 +7,7 @@
 
 (use-package company
   :demand t
-  :diminish (company-mode . "[c]")
+  :diminish company-mode
   :init
   (setq company-idle-delay 0)                   ; Trigger completion immediately.
   (setq company-show-numbers t)                 ; Number the candidates (use M-1, M-2 etc to select completions).

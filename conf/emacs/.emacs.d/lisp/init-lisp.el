@@ -8,7 +8,7 @@
 ;; smartparens
 ;;----------------------------------------------------------------------------
 (use-package smartparens
-  :diminish (smartparens-mode . "[sp]")
+  :diminish smartparens-mode
   :commands
   (smartparens-global-strict-mode
    smartparens-strict-mode)
@@ -22,7 +22,7 @@
 ;;----------------------------------------------------------------------------
 (use-package evil-cleverparens
   :after (evil)
-  :diminish (evil-cleverparens-mode . "[ecp]")
+  :diminish evil-cleverparens-mode
   :init
   (setq
    evil-cleverparens-use-additional-movement-keys t

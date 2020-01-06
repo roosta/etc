@@ -5,7 +5,7 @@
 
 (use-package flycheck
   :demand t
-  :diminish (flycheck-mode . "[f]")
+  :diminish flycheck-mode
   :init
   (setq flycheck-emacs-lisp-load-path 'inherit)
   :commands

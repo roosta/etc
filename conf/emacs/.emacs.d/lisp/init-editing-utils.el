@@ -47,6 +47,9 @@
 ;;----------------------------------------------------------------------------
 (global-hl-line-mode 1)
 (global-subword-mode t)
+(diminish 'subword-mode)
+
+;; Clear trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;----------------------------------------------------------------------------
