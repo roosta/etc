@@ -83,10 +83,8 @@ tray-background = ${colors.brightblack}
 [bar/lintilla-tertiary]
 inherit = bar/lintilla-primary
 dpi = 96
-height = 18
+height = 22
 modules-center =
-font-0 = "Iosevka:pixelsize=10;2"
-font-4 = "Material Icons:pixelsize=12;3"
 modules-right =
 monitor = ${env:MONITOR:HDMI-0}
 
