@@ -17,6 +17,7 @@
   (sml/setup)
   :init
   (setq sml/theme 'respectful)
+  (setq sml/no-confirm-load-theme t)
   (sml/setup))
 
 ;; (setq-default custom-theme-directory "~/src/srcery-emacs")
