@@ -48,6 +48,7 @@
 ;;  Diminish
 ;;----------------------------------------------------------------------------
 (diminish 'eldoc-mode)
+(diminish 'auto-revert-mode)
 
 
 (provide 'init-misc)

@@ -3,6 +3,7 @@
 ;;; Code:
 
 (use-package flyspell
+  :diminish flyspell-mode
   :defines
   (flyspell-correct-interface)
   :init
