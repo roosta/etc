@@ -6,9 +6,11 @@ Thunderbird = ""
 Google-chrome-unstable = ""
 Google-chrome= ""
 Spotify = ""
+libreoffice-calc = ""
 
 [aliases]
 firefoxdeveloperedition = "Firefox-dev"
+libreoffice-calc = "Calc"
 firefox = "Firefox"
 Google-chrome-unstable = "Chrome-dev"
 Google-chrome = "Chrome"
