@@ -305,6 +305,7 @@ bindsym --release Print exec teiler
 # send a signal to i3status on caps to toggle layout
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Caps_Lock exec killall -USR1 py3status
+bindsym --release Caps_Lock exec killall -USR1 ~/script/xkeyboard-layout.sh
 
 bindsym $mod+Control+v exec ~/.vim-anywhere/bin/run
 bindsym $mod+Control+e exec ~/.emacs_anywhere/bin/run

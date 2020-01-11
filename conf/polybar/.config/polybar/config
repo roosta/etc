@@ -201,7 +201,7 @@ exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 ;; for which is active.
 ;; https://github.com/roosta/utils/blob/master/keyboard-layout.sh
 type = custom/script
-interval = 1
+interval = 0
 format-foreground = ${colors.brightwhite}
 format = <label>
 label = "%output%"
