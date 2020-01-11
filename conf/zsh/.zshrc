@@ -88,7 +88,3 @@ if hash vimpager 2>/dev/null; then
 else
   PAGER=LESS
 fi
-
-if [[ -s ~/.fzf.zsh ]]; then
-  source ~/.fzf.zsh
-fi
