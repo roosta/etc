@@ -218,7 +218,7 @@ interval = 30
 label = "%output%"
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 format-volume = "<bar-volume> <label-volume>"
 format-prefix = ${icons.close}
 format-volume-padding = 1
