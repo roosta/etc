@@ -60,12 +60,17 @@ for fn (~/.zsh.d/functions/*)  autoload -Uz $fn
 # ZSH CONF
 for config (~/.zsh.d/*.zsh) source $config
 
+if [[ -s ~/.fzf.zsh ]]; then
+  source ~/.fzf.zsh
+fi
+
 # PLUGIN CONF
 # for cfg (~/.zsh.d/plugin_conf/*.zsh) source $cfg
 hash fasd 2>/dev/null && source ~/.zsh.d/plugin_conf/fasd.zsh
 hash fzf 2>/dev/null && source ~/.zsh.d/plugin_conf/fzf.zsh
 source ~/.zsh.d/plugin_conf/ls_colors.zsh
 source ~/.zsh.d/plugin_conf/autosuggestions.zsh
+source ~/.zsh.d/plugin_conf/enhancd.zsh
 hash thefuck 2>/dev/null && eval $(thefuck --alias)
 
 # for rust-racer
