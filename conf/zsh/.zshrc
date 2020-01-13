@@ -71,6 +71,7 @@ hash fzf 2>/dev/null && source ~/.zsh.d/plugin_conf/fzf.zsh
 source ~/.zsh.d/plugin_conf/ls_colors.zsh
 source ~/.zsh.d/plugin_conf/autosuggestions.zsh
 source ~/.zsh.d/plugin_conf/enhancd.zsh
+source ~/.zsh.d/plugin_conf/zsh-syntax-highlighting.zsh
 hash thefuck 2>/dev/null && eval $(thefuck --alias)
 
 # for rust-racer
