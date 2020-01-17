@@ -1,2 +1,2 @@
 bindkey '^ ' autosuggest-accept
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=7"
