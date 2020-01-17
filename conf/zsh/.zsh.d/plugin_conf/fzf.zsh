@@ -127,47 +127,6 @@ ef() {
 # GIT {{{
 # ---------
 
-# get a list of unstaged files and add using fzf, supports multiselect via [tab] as default
-fadd() {
-  local files target toplevel
-  toplevel=$(git rev-parse --show-toplevel) &&
-  files=$(git ls-files --exclude-standard -m -o --full-name) &&
-  target=$(echo "$files" | fzf-tmux -m -d $(( 2 + $(wc -l <<< "$files") ))) &&
-  while IFS='' read -r line || [[ -n "$line" ]]; do
-    git add "${toplevel}/${line}"
-  done <<< "$target"
-}
-
-# Unstage selected files
-# supports multiselect via [tab] as default
-funstage() {
-  local files target toplevel
-  toplevel=$(git rev-parse --show-toplevel) &&
-  files=$(git diff --name-only --cached) &&
-  target=$(echo "$files" | fzf-tmux -m -d $(( 2 + $(wc -l <<< "$files") ))) &&
-  while IFS='' read -r line || [[ -n "$line" ]]; do
-    git reset HEAD -- "${toplevel}/${line}"
-  done <<< "$target"
-}
-
-# diff selected file
-fdiff() {
-  local files target toplevel
-
-  # get project root directory
-  toplevel=$(git rev-parse --show-toplevel) &&
-
-  # get modified files
-  files=$(git diff --name-only) &&
-
-  # Create tmux split with a height of the list of items
-  target=$(echo "$files" | fzf-tmux -d $(( 2 + $(wc -l <<< "$files") )) +m) &&
-
-  # run diff
-  git diff "$toplevel/$target"
-}
-
-
 # fco - checkout git branch/tag
 fco() {
   local tags branches target
@@ -191,18 +150,6 @@ fcoc() {
   git checkout $(echo "$commit" | grep -oe "[0-9a-f]\{5,32\}")
 }
 
-# fshow - git commit browser
-fshow() {
-  git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(white)%cr" "$@" |
-  fzf-tmux --ansi --no-sort --tiebreak=index --bind=ctrl-s:toggle-sort \
-    --bind "ctrl-m:execute:
-                (grep -o '[a-f0-9]\{7\}' | head -1 |
-                xargs -I % sh -c 'git show --color=always % | vimpager') << 'FZF-EOF'
-                {}
-FZF-EOF"
-}
-
 # fsha - get git commit sha
 # example usage: git rebase -i `fsha`
 fsha() {
@@ -212,32 +159,6 @@ fsha() {
   echo -n $(echo "$commit" | grep -oe "[0-9a-f]\{5,32\}")
 }
 
-# fstash - easier way to deal with stashes
-# type fstash to get a list of your stashes
-# enter shows you the contents of the stash
-# ctrl-d shows a diff of the stash against your current HEAD
-# ctrl-b checks the stash out as a branch, for easier merging
-fstash() {
-  local out q k sha
-    while out=$(
-      git stash list --pretty="%C(yellow)%h %>(14)%Cgreen%cr %C(blue)%gs" |
-      fzf-tmux --ansi --no-sort --query="$q" --print-query \
-          --expect=ctrl-d,ctrl-b);
-    do
-      q=$(head -1 <<< "$out")
-      k=$(head -2 <<< "$out" | tail -1)
-      sha=$(tail -1 <<< "$out" | cut -d' ' -f1)
-      [ -z "$sha" ] && continue
-      if [ "$k" = 'ctrl-d' ]; then
-        git diff $sha
-      elif [ "$k" = 'ctrl-b' ]; then
-        git stash branch "stash-$sha" $sha
-        break;
-      else
-        git stash show -p $sha
-      fi
-    done
-}
 #}}}
 # TAGS {{{
 # ------------------
