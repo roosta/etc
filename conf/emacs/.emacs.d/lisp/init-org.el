@@ -114,6 +114,34 @@ Pass FNAME as the function name and CHAR as the character."
 (use-package org-clock-csv)
 
 ;;----------------------------------------------------------------------------
+;; org-projectile
+;;----------------------------------------------------------------------------
+
+(defun org-projectile/capture (&optional arg)
+  "Capture to project TODOs.
+Change behaviour based on optional ARG."
+  (interactive "P")
+  (if arg
+      (org-projectile-project-todo-completing-read nil :empty-lines 1)
+    (org-projectile-capture-for-current-project nil :empty-lines 1)))
+
+(defun org-projectile/goto-todos ()
+  "Go to project TODOs file."
+  (interactive)
+  (org-projectile-goto-location-for-project (projectile-project-name)))
+
+(use-package org-projectile
+  ;; :diminish projectile-mode
+  :config
+  (org-projectile-per-project)
+  (setq org-projectile-per-project-filepath "TODOs.org")
+  (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
+  :general
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
+   "aop" #'org-projectile/capture
+   "po" #'org-projectile/goto-todos))
+
+;;----------------------------------------------------------------------------
 ;; Keybindings
 ;;----------------------------------------------------------------------------
 (general-define-key
