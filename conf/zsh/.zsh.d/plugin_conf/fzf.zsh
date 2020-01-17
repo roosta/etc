@@ -63,14 +63,6 @@ cf() {
   fi
 }
 
-# choose a directory from zshs dirs cache file
-d() {
-  local target
-  file="$HOME/.cache/zsh/dirs" &&
-  height=$(( 2 + $(wc -l < "$file") )) &&
-  target=$(fzf-tmux +m +s < "$file" -d "$height") &&
-  cd "$target"
-}
 #}}}
 # KILL {{{
 # -----------
@@ -143,18 +135,6 @@ fadd() {
   target=$(echo "$files" | fzf-tmux -m -d $(( 2 + $(wc -l <<< "$files") ))) &&
   while IFS='' read -r line || [[ -n "$line" ]]; do
     git add "${toplevel}/${line}"
-  done <<< "$target"
-}
-
-# Discard selected files unstaged changes
-# supports multiselect via [tab] as default
-fdiscard() {
-  local files target toplevel
-  toplevel=$(git rev-parse --show-toplevel) &&
-  files=$(git diff --name-only) &&
-  target=$(echo "$files" | fzf-tmux -m -d $(( 2 + $(wc -l <<< "$files") ))) &&
-  while IFS='' read -r line || [[ -n "$line" ]]; do
-    git checkout "${toplevel}/${line}"
   done <<< "$target"
 }
 
@@ -284,47 +264,6 @@ fts() {
     tmux switch-client -t "$session"
 }
 
-#{{{ Unused
-# ftpane - switch pane (@george-b)
-# In tmux.conf
-# bind-key 0 run "tmux split-window -l 12 'bash -ci ftpane'"
-# Doen't work currently
-# fpane() {
-#   local panes current_window current_pane target target_window target_pane
-#   panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
-#   current_pane=$(tmux display-message -p '#I:#P')
-#   current_window=$(tmux display-message -p '#I')
-
-#   target=$(echo "$panes" | grep -v "$current_pane" | fzf +m --reverse) || return
-
-#   target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
-#   target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
-
-#   if [[ $current_window -eq $target_window ]]; then
-#     tmux select-pane -t ${target_window}.${target_pane}
-#   else
-#     tmux select-pane -t ${target_window}.${target_pane} &&
-#     tmux select-window -t $target_window
-#   fi
-# }
-#}}}
-
-# In tmux.conf
-# bind-key 0 run "tmux split-window -l 12 'bash -ci ftpane'"
-
-#}}}
-# FASD {{{
-# --------
-# v() {
-#   local file
-#   file="$(fasd -Rfl "$1" | fzf-tmux --no-sort +m -d 40%)" && vi "${file}" || return 1
-# }
-
-c() {
-  local dir
-  dir="$(fasd -Rdl "$1" | fzf-tmux --no-sort +m -d 40%)" && cd "${dir}" || return 1
-}
-#}}}
 # AG {{{
 # ------
 
