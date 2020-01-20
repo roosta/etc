@@ -24,7 +24,7 @@ brightcyan    = ${xrdb:color14:#53FDE9}
 white         = ${xrdb:color7:#D0BFA1}
 brightwhite   = ${xrdb:color15:#FCE8C3}
 orange        = ${xrdb:color166:#D75F00}
-bright-orange = ${xrdb:color208:#FF8700}
+brightorange = ${xrdb:color208:#FF8700}
 hard-black    = ${xrdb:color232:#080808}
 xgray1        = ${xrdb:color235:#262626}
 xgray2        = ${xrdb:color236:#303030}
@@ -49,8 +49,8 @@ dpi = 192
 height = 34
 radius = 0
 fixed-center = true
-background = ${colors.brightblack}
-foreground = ${colors.white}
+background = ${colors.xgray2}
+foreground = ${colors.brightblack}
 padding-left = 0
 padding-right = 0
 module-margin-left = 0
@@ -78,7 +78,7 @@ modules-right = eth-lintilla fs-home fs-root
 tray-position = right
 tray-padding = 1
 tray-scale = 1
-tray-background = ${colors.brightblack}
+tray-background = ${colors.xgray2}
 
 [bar/lintilla-tertiary]
 inherit = bar/lintilla-primary
@@ -148,7 +148,7 @@ label-focused-foreground = ${colors.brightmagenta}
 
 label-unfocused = %name%
 label-unfocused-padding = 1
-label-unfocused-foreground = ${colors.white}
+label-unfocused-foreground = ${colors.brightblack}
 
 label-visible = %name%
 label-visible-padding = 1
@@ -161,13 +161,13 @@ label-urgent-foreground = ${colors.brightwhite}
 
 [module/xwindow]
 type = internal/xwindow
-format-foreground = ${colors.white}
+format-foreground = ${colors.brightblack}
 label = %title:0:80%
 label-padding = 1
 
 [module/xwindow-small]
 type = internal/xwindow
-format-foreground = ${colors.white}
+format-foreground = ${colors.brightblack}
 label = %title:0:73%
 label-padding = 1
 
@@ -232,7 +232,7 @@ ramp-volume-0 = ${icons.volume-ramp-0}
 ramp-volume-1 = ${icons.volume-ramp-1}
 ramp-volume-2 = ${icons.volume-ramp-2}
 ramp-volume-font = 4
-ramp-volume-background = ${colors.brightblack}
+ramp-volume-background = ${colors.xgray2}
 ramp-volume-foreground = ${colors.brightwhite}
 bar-volume-width = 10
 bar-volume-fill-foreground = ${colors.brightwhite}
@@ -240,7 +240,7 @@ bar-volume-indicator-foreground = ${colors.brightgreen}
 bar-volume-indicator = ╸
 bar-volume-fill = ╸
 bar-volume-empty = ╸
-bar-volume-empty-foreground = ${colors.white}
+bar-volume-empty-foreground = ${colors.brightblack}
 
 [module/volume-small]
 ;; Create a smaller size volume indicator for smaller displays
@@ -260,7 +260,7 @@ bar-used-indicator-foreground = ${colors.brightmagenta}
 bar-used-indicator = ╸
 bar-used-fill = ╸
 bar-used-empty = ╸
-bar-used-empty-foreground = ${colors.white}
+bar-used-empty-foreground = ${colors.brightblack}
 
 [module/memory-small]
 ;; Smaller memory module for use on smaller resolutions/screens
@@ -280,7 +280,7 @@ bar-load-indicator-foreground = ${colors.brightcyan}
 bar-load-indicator = ╸
 bar-load-fill = ╸
 bar-load-empty = ╸
-bar-load-empty-foreground = ${colors.white}
+bar-load-empty-foreground = ${colors.brightblack}
 
 [module/cpu-small]
 inherit = module/cpu
@@ -291,7 +291,7 @@ format = <label>
 type = internal/mpd
 format-online-prefix = ""
 format-online = <label-song>
-format-online-foreground = ${colors.white}
+format-online-foreground = ${colors.brightblack}
 host = localhost
 port = 6600
 label-song-maxlen = 80
@@ -369,7 +369,7 @@ bar-used-indicator = ╸
 bar-used-fill = ╸
 bar-used-fill-foreground = ${colors.brightwhite}
 bar-used-empty = ╸
-bar-used-empty-foreground = ${colors.white}
+bar-used-empty-foreground = ${colors.brightblack}
 format-mounted = <bar-used> <label-mounted>
 format-mounted-padding = 1
 format-unmounted-padding = 1
