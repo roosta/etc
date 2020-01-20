@@ -8,7 +8,7 @@
 ;; Fetch colors from xresources
 ;; https://github.com/roosta/vim-srcery/tree/master/term_colors
 black         = ${xrdb:color0:#1C1B19}
-brightblack   = ${xrdb:color8:#2D2B28}
+brightblack   = ${xrdb:color8:#918175}
 red           = ${xrdb:color1:#FF3128}
 brightred     = ${xrdb:color9:#F75341}
 green         = ${xrdb:color2:#519F50}
@@ -21,7 +21,7 @@ magenta       = ${xrdb:color5:#E02C6D}
 brightmagenta = ${xrdb:color13:#E35682}
 cyan          = ${xrdb:color6:#0AAEB3}
 brightcyan    = ${xrdb:color14:#53FDE9}
-white         = ${xrdb:color7:#918175}
+white         = ${xrdb:color7:#D0BFA1}
 brightwhite   = ${xrdb:color15:#FCE8C3}
 orange        = ${xrdb:color166:#D75F00}
 bright-orange = ${xrdb:color208:#FF8700}
