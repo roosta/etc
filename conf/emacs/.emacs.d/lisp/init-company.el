@@ -29,6 +29,11 @@
   :config
   (add-to-list 'company-backends #'company-tabnine))
 
+(use-package company-lsp
+  :commands company-lsp
+  :config
+  (add-to-list 'company-backends #'company-lsp))
+
 (use-package company-tern
   :after
   (company)
