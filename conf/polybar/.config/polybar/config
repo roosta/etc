@@ -108,10 +108,7 @@ modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
 
 [bar/garkbit-secondary]
 dpi = 96
-height = 18
-font-0 = "Iosevka:pixelsize=10;1"
-font-1 = "Iosevka:pixelsize=9:weight=bold;1"
-font-4 = "Material Icons:pixelsize=10;3"
+height = 22
 inherit = bar/lintilla-primary
 tray-position = right
 tray-padding = 1
