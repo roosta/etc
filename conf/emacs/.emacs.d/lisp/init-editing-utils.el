@@ -129,20 +129,6 @@
 
 (setq-default indent-tabs-mode nil)
 
-(defvar c-basic-offset)
-(defvar javascript-indent-level)
-(defvar js-indent-level)
-(defvar js2-basic-offset)
-(defvar web-mode-markup-indent-offset)
-(defvar web-mode-markup-indent-offset)
-(defvar web-mode-css-indent-offset)
-(defvar web-mode-code-indent-offset)
-(defvar css-indent-offset)
-(defvar c-basic-indent)
-(defvar json-reformat:indent-width)
-(defvar sh-basic-offset)
-;; (defvar sh-indentation)
-
 (defun roosta/setup-indent (n)
   "Generalized setup indentation.
 Takes N indentation width."
