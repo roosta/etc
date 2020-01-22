@@ -4,8 +4,8 @@
 
 (use-package srcery-theme
   :load-path "~/src/srcery-emacs"
-  :init
-  (setq srcery-transparent-background t)
+  :custom
+  (srcery-transparent-background t)
   :config
   (load-theme 'srcery t)
   )
