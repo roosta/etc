@@ -6,17 +6,18 @@
 (use-package company
   :demand t
   :diminish company-mode
-  :init
-  (setq company-idle-delay 0)                   ; Trigger completion immediately.
-  (setq company-show-numbers t)                 ; Number the candidates (use M-1, M-2 etc to select completions).
-  (setq auto-completion-enable-sort-by-usage t) ; sort candidates by usage
-  (setq company-tooltip-align-annotations 't)   ; align annotations to the right tooltip border
-  (setq company-tooltip-limit 20)               ; bigger popup window
+  :custom
+  (company-idle-delay 0.1)                          ; Trigger completion immediately.
+  (company-show-numbers t)                          ; Number the candidates (use M-1, M-2 etc to select completions).
+  (auto-completion-enable-sort-by-usage t)          ; sort candidates by usage
+  (company-tooltip-align-annotations 't)            ; align annotations to the right tooltip border
+  (company-tooltip-limit 20)                        ; bigger popup window
+  (company-global-modes '(not shell-mode eaf-mode)) ; Don't use company in the following modes
   :config
   (add-hook 'after-init-hook 'global-company-mode)
   :general
   (company-active-map
-   "M-q" 'company-other-backend
+   "M-q" 'company-other-backend                     ; Switch backend quickly
    "C-/" 'counsel-company
    "C-_" 'counsel-company
    "C-d" 'company-show-doc-buffer))
