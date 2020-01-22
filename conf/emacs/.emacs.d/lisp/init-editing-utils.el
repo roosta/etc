@@ -13,9 +13,6 @@
 ;; Some basic preferences
 ;;----------------------------------------------------------------------------
 
-(defvar apropos-do-all)
-(defvar ediff-window-setup-function)
-
 (setq save-interprogram-paste-before-kill t
       apropos-do-all t
       mouse-yank-at-point t
