@@ -55,16 +55,18 @@
 ;;  Diminish
 ;;----------------------------------------------------------------------------
 (diminish 'eldoc-mode)
-(diminish 'auto-revert-mode)
+
+(after-load 'auto-revert-mode
+  (diminish 'auto-revert-mode))
 
 ;;----------------------------------------------------------------------------
 ;;  which-function-mode
 ;;----------------------------------------------------------------------------
-(require 'which-func)
-(after-load 'which-func
-  '(setq which-func-modes '(java-mode c++-mode org-mode clojure-mode clojurescript-mode)))
+;; (require 'which-func)
+;; (after-load 'which-func
+;;   '(setq which-func-modes '(java-mode c++-mode org-mode clojure-mode clojurescript-mode)))
 
-(which-function-mode 1)
+;; (which-function-mode 1)
 
 (provide 'init-misc)
 ;;; init-misc.el ends here
