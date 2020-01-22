@@ -3,8 +3,6 @@
 
 ;;; Code:
 
-(defvar company-backends)
-
 (use-package company
   :demand t
   :diminish company-mode
@@ -18,9 +16,10 @@
   (add-hook 'after-init-hook 'global-company-mode)
   :general
   (company-active-map
-   "C-/"     #'counsel-company
-   "C-_"     #'counsel-company
-   "C-d"     #'company-show-doc-buffer))
+   "M-q" 'company-other-backend
+   "C-/" 'counsel-company
+   "C-_" 'counsel-company
+   "C-d" 'company-show-doc-buffer))
 
 (use-package company-tabnine
   :demand t
