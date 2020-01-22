@@ -10,17 +10,11 @@
 (require 'org)
 (require 'org-capture)
 
-(defvar org-export-with-drawers)
-(defvar org-clock-persist)
-(defvar org-hide-emphasis-markers)
-(defvar org-log-into-drawer)
-(defvar org-src-tab-acts-natively)
-(defvar org-clock-idle-time)
-(defvar org-mobile-directory)
-(defvar org-mobile-files)
-(defvar org-agenda-files)
-(defvar org-capture-templates)
-(defvar org-duration-format)
+; Manual
+;; (use-package org
+;;   :ensure t
+;;   ;; ignore org-mode from upstream and use a manually installed version
+;;   :pin manual)
 
 ;;----------------------------------------------------------------------------
 ;; Emphasize macro
