@@ -260,10 +260,18 @@ fpac() {
 
 
 # using ripgrep combined with preview
-# find-in-file - usage: fif <searchTerm>
+# find-in-files
 fif() {
-  if [ ! "$#" -gte 1 ]; then echo "Need a string to search for!"; return 1; fi
-  rg --files-with-matches --no-messages $1 | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 $1 || rg --ignore-case --pretty --context 10 $1 {}"
+    match=$(\rg \
+              --smart-case \
+              --color "always" \
+              --line-number \
+              --no-heading . | fzf -d ":" --ansi --with-nth "1,3.." --preview="fzf-preview {} {q}") &&
+
+      linum=$(echo "$match" | cut -d':' -f2) &&
+      file=$(echo "$match" | cut -d':' -f1) &&
+
+      emacsclient -nw +$linum $file && popd
 }
 
 forg() {
