@@ -50,7 +50,9 @@
 ;;  Diminish
 ;;----------------------------------------------------------------------------
 (diminish 'eldoc-mode)
-(diminish 'auto-revert-mode)
+
+(after-load 'auto-revert-mode
+  (diminish 'auto-revert-mode))
 
 ;;----------------------------------------------------------------------------
 ;;  which-function-mode
