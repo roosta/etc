@@ -1,4 +1,4 @@
-;;; init-c-cpp.el ---                                -*- lexical-binding: t; -*-
+;;; init-cpp.el ---                                -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
@@ -12,5 +12,5 @@
   :hook ((c-mode c++-mode objc-mode cuda-mode) .
          (lambda () (require 'ccls) (lsp))))
 
-(provide 'init-c-cpp)
-;;; init-c-cpp.el ends here
+(provide 'init-cpp)
+;;; init-cpp.el ends here

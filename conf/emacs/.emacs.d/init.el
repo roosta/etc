@@ -90,7 +90,7 @@
 (require 'init-misc)
 (require 'init-perspective)
 (require 'init-html)
-(require 'init-c-cpp)
+(require 'init-cpp)
 (require 'init-rust)
 
 ;;----------------------------------------------------------------------------
