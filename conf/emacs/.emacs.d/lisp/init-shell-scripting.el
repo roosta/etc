@@ -3,24 +3,17 @@
 ;;
 ;;; Code:
 
-;;----------------------------------------------------------------------------
-;; Insert shebang
-;;----------------------------------------------------------------------------
 (use-package insert-shebang
   :init
   (remove-hook 'find-file-hook 'insert-shebang)
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
-   "i!"  #'spacemacs/insert-shebang))
-
-(require 'insert-shebang)
-
-(defun spacemacs/insert-shebang ()
-  "Insert shebang line at the top of the file."
-  (interactive)
-  (insert-shebang-get-extension-and-insert
-   (file-name-nondirectory (buffer-file-name))))
-
+   "i!"  #'roosta/insert-shebang)
+  :config
+  (defun roosta/insert-shebang ()
+    (interactive)
+    (insert-shebang-get-extension-and-insert
+     (file-name-nondirectory (buffer-file-name)))))
 
 ;;----------------------------------------------------------------------------
 ;; keybindings
