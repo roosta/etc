@@ -14,7 +14,7 @@
   (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
   :general
   ('(normal visual insert emacs)
-   "C-:" #'yas-prev-field)
+   "<backtab>" #'yas-prev-field)
   :config
   (yas-global-mode 1))
 
