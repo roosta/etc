@@ -14,10 +14,27 @@
   (company-tooltip-limit 20)                        ; bigger popup window
   (company-global-modes '(not shell-mode eaf-mode)) ; Don't use company in the following modes
   :config
-  (add-hook 'after-init-hook 'global-company-mode)
+  (global-company-mode 1)
+  (defun smarter-yas-expand-next-field-complete ()
+    "Try to `yas-expand' and `yas-next-field' at current cursor position.
+If failed try to complete the common part with `company-select-common'
+Source: https://github.com/MatthewZMD/.emacs.d#company"
+    (interactive)
+    (if yas-minor-mode
+        (let ((old-point (point))
+              (old-tick (buffer-chars-modified-tick)))
+          (yas-expand)
+          (when (and (eq old-point (point))
+                     (eq old-tick (buffer-chars-modified-tick)))
+            (ignore-errors (yas-next-field))
+            (when (and (eq old-point (point))
+                       (eq old-tick (buffer-chars-modified-tick)))
+              (company-select-next))))
+      (company-select-next)))
   :general
   (company-active-map
    "M-q" 'company-other-backend                     ; Switch backend quickly
+   "TAB" 'smarter-yas-expand-next-field-complete
    "C-/" 'counsel-company
    "C-_" 'counsel-company
    "C-d" 'company-show-doc-buffer))
@@ -51,7 +68,6 @@
   "C-/" #'counsel-company
   "C-_" #'counsel-company
   )
-
 
 (provide 'init-company)
 ;;; init-company.el ends here
