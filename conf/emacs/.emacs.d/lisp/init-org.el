@@ -279,10 +279,10 @@ Change behaviour based on optional ARG."
 
 (general-def 'insert org-mode-map
   "M-l" #'outline-demote
-  "M-h" #'outline-promote)
+  "M-h" 'outline-promote)
 
 (general-def 'normal org-mode-map
-  "TAB" #'org-cycle)
+  "TAB" 'org-cycle)
 
 (provide 'init-org)
 ;;; init-org.el ends here
