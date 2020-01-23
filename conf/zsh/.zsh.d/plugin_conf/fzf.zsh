@@ -267,7 +267,7 @@ fif() {
             --color "always" \
             --line-number \
             --hidden \
-            --no-heading . | fzf -d ":" --ansi --with-nth "1,3.." --preview="fzf-preview {} {q}") &&
+            --no-heading . | fzf -d ":" --ansi --nth "2.." --with-nth "1,3.." --preview="fzf-preview {} {q}") &&
 
     linum=$(echo "$match" | cut -d':' -f2) &&
     file=$(echo "$match" | cut -d':' -f1) &&
