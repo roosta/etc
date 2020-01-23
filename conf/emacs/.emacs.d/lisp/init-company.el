@@ -52,5 +52,6 @@
   "C-_" #'counsel-company
   )
 
+
 (provide 'init-company)
 ;;; init-company.el ends here
