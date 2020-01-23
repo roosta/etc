@@ -6,9 +6,9 @@
   :load-path "~/src/srcery-emacs"
   :custom
   (srcery-transparent-background t)
+  (srcery-org-height nil)
   :config
-  (load-theme 'srcery t)
-  )
+  (load-theme 'srcery t))
 
 (use-package smart-mode-line
   :defines
