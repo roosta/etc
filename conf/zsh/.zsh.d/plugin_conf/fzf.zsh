@@ -262,16 +262,17 @@ fpac() {
 # using ripgrep combined with preview
 # find-in-files
 fif() {
-    match=$(\rg \
-              --smart-case \
-              --color "always" \
-              --line-number \
-              --no-heading . | fzf -d ":" --ansi --with-nth "1,3.." --preview="fzf-preview {} {q}") &&
+  match=$(\rg \
+            --smart-case \
+            --color "always" \
+            --line-number \
+            --hidden \
+            --no-heading . | fzf -d ":" --ansi --with-nth "1,3.." --preview="fzf-preview {} {q}") &&
 
-      linum=$(echo "$match" | cut -d':' -f2) &&
-      file=$(echo "$match" | cut -d':' -f1) &&
+    linum=$(echo "$match" | cut -d':' -f2) &&
+    file=$(echo "$match" | cut -d':' -f1) &&
 
-      emacsclient -nw +$linum $file && popd
+    emacsclient -nw +$linum $file && popd
 }
 
 # using ripgrep combined with preview
