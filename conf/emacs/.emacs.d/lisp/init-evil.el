@@ -6,7 +6,6 @@
 ;; Packages
 ;;----------------------------------------------------------------------------
 (use-package evil
-  :demand t
   :defines
   (evil-want-Y-yank-to-eol)
   :init
