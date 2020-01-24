@@ -5,7 +5,7 @@
 (require 'init-utils)
 
 ;;----------------------------------------------------------------------------
-;; smartparens
+;; Packages
 ;;----------------------------------------------------------------------------
 (use-package smartparens
   :diminish smartparens-mode
@@ -17,29 +17,30 @@
   (smartparens-global-strict-mode)
   (add-hook 'eshell-mode-hook #'smartparens-strict-mode))
 
-;;----------------------------------------------------------------------------
-;; Evil cleverparens
-;;----------------------------------------------------------------------------
 (use-package evil-cleverparens
   :after (evil)
   :diminish evil-cleverparens-mode
-  :init
-  (setq
-   evil-cleverparens-use-additional-movement-keys t
-   evil-cleverparens-use-s-and-S nil
-   evil-cleverparens-swap-move-by-word-and-symbol nil)
+  :custom
+  (evil-cleverparens-use-additional-movement-keys t)
+  (evil-cleverparens-use-s-and-S nil)
+  (evil-cleverparens-swap-move-by-word-and-symbol nil)
   :config
   (require 'evil-cleverparens-text-objects)
   (add-hook 'emacs-lisp-mode-hook #'evil-cleverparens-mode)
   (add-hook 'cider-repl-mode-hook #'evil-cleverparens-mode)
   (add-hook 'clojure-mode-hook #'evil-cleverparens-mode)
-  (add-hook 'eshell-mode-hook #'evil-cleverparens-mode)
-  )
+  (add-hook 'eshell-mode-hook #'evil-cleverparens-mode))
 
+(comment
+ (use-package evil-smartparens
+   :diminish evil-smartparens-mode
+   :hook ((prog-mode . evil-smartparens-mode)
+          (emacs-lisp-mode . evil-smartparens-mode)
+          (lisp-interaction-mode . evil-smartparens-mode)
+          (eshell-mode . evil-smartparens-mode)
+          (clojure-mode . evil-smartparens-mode)
+          (clojurescript-mode) .evil-smartparens-mode)))
 
-;;----------------------------------------------------------------------------
-;; Dim parenthesis by using paren-face and srcery theme
-;;----------------------------------------------------------------------------
 (comment
  (use-package paren-face
   :init
@@ -47,10 +48,6 @@
   :config
   (global-paren-face-mode 1)))
 
-
-;;----------------------------------------------------------------------------
-;; elisp-slime-nav
-;;----------------------------------------------------------------------------
 (use-package elisp-slime-nav
   :general
   ('(normal visual evilified) (emacs-lisp-mode-map lisp-interaction-mode-map)
@@ -59,22 +56,21 @@
   (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
     (add-hook hook 'turn-on-elisp-slime-nav-mode)))
 
-;;----------------------------------------------------------------------------
-;; Evil lisp state
-;;----------------------------------------------------------------------------
+(use-package bind-map)
+
 (use-package evil-lisp-state
+  :demand t
+  :init
+  (setq evil-lisp-state-global t)
   :general
+  (evil-lisp-state-leader ", k")
   ('(normal visual evilified) (emacs-lisp-mode-map lisp-interaction-mode-map) :prefix ","
    "el" #'lisp-state-eval-sexp-end-of-line
    ","  #'lisp-state-toggle-lisp-state
-   "e$" #'lisp-state-eval-sexp-end-of-line))
+   "e$" #'lisp-state-eval-sexp-end-of-line)
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
+   "." #'lisp-state-toggle-lisp-state))
 
-(use-package bind-map)
-
-
-;;----------------------------------------------------------------------------
-;; auto compile
-;;----------------------------------------------------------------------------
 (use-package auto-compile
   :commands
   (auto-compile-display-log)
@@ -86,9 +82,6 @@
    "cl" #'auto-compile-display-log))
 
 
-;;----------------------------------------------------------------------------
-;; semantic-refactor
-;;----------------------------------------------------------------------------
 (use-package srefactor
   :commands
   (srefactor-lisp-format-buffer
@@ -106,9 +99,8 @@
 
 
 ;;----------------------------------------------------------------------------
-;; Hooks
+;; Fix indent in lisp
 ;;----------------------------------------------------------------------------
-
 (require 'lisp-functions)
 
 ;; Fix indentation keyword align
@@ -124,43 +116,41 @@
 ;;----------------------------------------------------------------------------
 ;; General keybindings
 ;;----------------------------------------------------------------------------
-
-(require 'edebug)
-
 (general-def '(normal visual evilified) edebug-mode-map
-  "a" #'edebug-stop
-  "s" #'edebug-step-mode
-  "S" #'edebug-next-mode)
+  "a" 'edebug-stop
+  "s" 'edebug-step-mode
+  "S" 'edebug-next-mode)
 
 (general-define-key
  :states  '(normal visual evilified)
  :keymaps '(emacs-lisp-mode-map
             lisp-interaction-mode-map)
  :prefix  ","
- "cc" #'emacs-lisp-byte-compile
- "eb" #'eval-buffer
- "eC" #'spacemacs/eval-current-form
- "ee" #'eval-last-sexp
- "er" #'eval-region
- "ef" #'eval-defun
- "ep" #'eval-print-last-sexp
- "gG" #'spacemacs/nav-find-elisp-thing-at-point-other-window
- "tb" #'spacemacs/ert-run-tests-buffer
- "tq" #'ert
+ "cc" 'emacs-lisp-byte-compile
+ "eb" 'eval-buffer
+ "eC" 'spacemacs/eval-current-form
+ "ee" 'eval-last-sexp
+ "er" 'eval-region
+ "ef" 'eval-defun
+ "ep" 'eval-print-last-sexp
+ "gG" 'spacemacs/nav-find-elisp-thing-at-point-other-window
+ "tb" 'spacemacs/ert-run-tests-buffer
+ "tq" 'ert
 
- "hh" #'elisp-slime-nav-find-elisp-thing-at-point
+ "hh" 'elisp-slime-nav-find-elisp-thing-at-point
 
- "'"  #'ielm
- "si" #'ielm
+ "'"  'ielm
+ "si" 'ielm
 
- "dt" #'spacemacs/elisp-toggle-debug-expr-and-eval-func
+ "dt" 'spacemacs/elisp-toggle-debug-expr-and-eval-func
 
- "ec" #'spacemacs/eval-current-form-sp
- "es" #'spacemacs/eval-current-symbol-sp
+ "ec" 'spacemacs/eval-current-form-sp
+ "es" 'spacemacs/eval-current-symbol-sp
  )
 
-;; Add replacements
-;; ----------------
+;;----------------------------------------------------------------------------
+;; Whichkey replacements
+;; --------------------
 (dolist (m '(emacs-lisp-mode
              lisp-interaction-mode))
   (which-key-add-major-mode-key-based-replacements m
