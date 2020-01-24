@@ -64,7 +64,7 @@ font-5 = "FontAwesome5Free:style=Regular:size=10;4"
 font-6 = "FontAwesome5Brands:style=Regular:size=10;4"
 modules-left = i3 xwindow
 ; modules-center = mpd
-modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
+modules-right = keyboard-layout vpncheck updates-arch-combined volume memory cpu date time
 
 [bar/lintilla-secondary]
 ;; Secondary monitor @ lintilla, max resolution is 1920x1080 so font sizes and
@@ -98,13 +98,13 @@ tray-position = right
 font-0 = "Iosevka:pixelsize=9;4"
 modules-left = i3 xwindow-small
 ; modules-right = keyboard-layout vpncheck wifi battery pkg volume-small memory-small cpu-small date time
-modules-right = keyboard-layout vpncheck wifi battery pkg volume-small date time
+modules-right = keyboard-layout vpncheck wifi battery updates-arch-combined volume-small date time
 
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DP-1}
 modules-center = mpd
-modules-right = keyboard-layout vpncheck pkg volume memory cpu date time
+modules-right = keyboard-layout vpncheck updates-arch-combined volume memory cpu date time
 
 [bar/garkbit-secondary]
 dpi = 96
@@ -191,6 +191,16 @@ label-padding-right = 1
 label-padding-left = 1
 exec = ~/scripts/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/updates-arch-combined]
+type = custom/script
+format-foreground = ${colors.brightwhite}
+format = <label>
+label = "PKG: %output%"
+label-padding-right = 1
+label-padding-left = 1
+exec = ~/scripts/updates-arch-combined.sh
+interval = 600
 
 [module/keyboard-layout]
 ;; Calls a script that checks current keyboard layout, I frequently toggle
