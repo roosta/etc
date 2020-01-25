@@ -33,6 +33,7 @@
    "Sn" 'flyspell-goto-next-error)
   :config
   (defun roosta/flyspell-save-word ()
+    "Save a word to personal dictionary"
     (interactive)
     (let ((current-location (point))
           (word (flyspell-get-word)))
