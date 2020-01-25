@@ -114,3 +114,4 @@ diff-so-fancy
 bat
 flameshot
 thefuck
+pygmentize
