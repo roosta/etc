@@ -4,8 +4,6 @@
 
 (use-package flyspell
   :diminish flyspell-mode
-  :defines
-  (flyspell-correct-interface)
   :init
   ;; printing messages for every word (when checking the entire
   ;; buffer) causes an enormous slowdown
@@ -25,28 +23,26 @@
   ((text-mode org-mode markdown-mode) . turn-on-flyspell)
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
-   "Sb" #'flyspell-buffer
-   "Sp" #'spell-checking/change-dictionary
-   "Sn" #'flyspell-goto-next-error))
+   "Sc" 'flyspell-correct-at-point
+   "Sb" 'flyspell-buffer
+   "Sp" 'spell-checking/change-dictionary
+   "Sn" 'flyspell-goto-next-error))
 
-(use-package flyspell-correct
-  :commands
-  (flyspell-correct-word-generic
-   flyspell-correct-previous-word-generic)
-  :general
-  ('(normal visual insert emacs)  :prefix "SPC" :non-normal-prefix "C-SPC"
-   "Sc" #'flyspell-correct-word-generic))
+;; (use-package flyspell-correct
+;;   :commands
+;;   (flyspell-correct-word-generic
+;;    flyspell-correct-previous-word-generic)
+;;   :general
+;;   ('(normal visual insert emacs)  :prefix "SPC" :non-normal-prefix "C-SPC"
+;;    "Sc" #'flyspell-correct-wrapper)
+;;   (flyspell-mode-map
+;;    "C-;" #'flyspell-correct-wrapper))
 
-(use-package flyspell-correct-ivy
-  :commands (flyspell-correct-ivy
-             flyspell-correct-wrapper)
-  :general
-  ('(normal visual insert emacs)  :prefix "SPC" :non-normal-prefix "C-SPC"
-   "SC" #'flyspell-correct-word-generic)
-  (flyspell-mode-map
-   "C-;" #'flyspell-correct-wrapper)
-  :init
-  (setq flyspell-correct-interface #'flyspell-correct-ivy))
+;; (use-package flyspell-correct-ivy
+;;   :commands (flyspell-correct-ivy
+;;              flyspell-correct-wrapper)
+;;   :init
+;;   (setq flyspell-correct-interface #'flyspell-correct-ivy))
 
 (use-package define-word
   :commands
