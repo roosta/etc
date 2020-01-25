@@ -96,9 +96,10 @@
 (require 'init-html)
 (require 'init-cpp)
 (require 'init-rust)
+(require 'init-compilation)
 
 ;;----------------------------------------------------------------------------
-;; Allow access from emacsclient
+;; Allow access from Emacs client
 ;;----------------------------------------------------------------------------
 (add-hook 'after-init-hook
           (lambda ()
