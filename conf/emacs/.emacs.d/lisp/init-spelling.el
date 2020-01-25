@@ -27,25 +27,18 @@
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
    "Sc" 'flyspell-correct-at-point
+   "SC" 'roosta/flyspell-save-word
    "Sb" 'flyspell-buffer
    "Sp" 'spell-checking/change-dictionary
-   "Sn" 'flyspell-goto-next-error))
-
-;; (use-package flyspell-correct
-;;   :commands
-;;   (flyspell-correct-word-generic
-;;    flyspell-correct-previous-word-generic)
-;;   :general
-;;   ('(normal visual insert emacs)  :prefix "SPC" :non-normal-prefix "C-SPC"
-;;    "Sc" #'flyspell-correct-wrapper)
-;;   (flyspell-mode-map
-;;    "C-;" #'flyspell-correct-wrapper))
-
-;; (use-package flyspell-correct-ivy
-;;   :commands (flyspell-correct-ivy
-;;              flyspell-correct-wrapper)
-;;   :init
-;;   (setq flyspell-correct-interface #'flyspell-correct-ivy))
+   "Sn" 'flyspell-goto-next-error)
+  :config
+  (defun roosta/flyspell-save-word ()
+    (interactive)
+    (let ((current-location (point))
+          (word (flyspell-get-word)))
+      (when (consp word)
+        (flyspell-do-correct 'save nil (car word) current-location (cadr word) (caddr word) current-location))))
+  )
 
 (use-package define-word
   :commands
