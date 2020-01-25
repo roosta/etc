@@ -24,7 +24,8 @@
   "SPC q" "quit"
   "SPC r" "registers/rings/resume"
   "SPC s" "search"
-  "SPC w" "windows")
+  "SPC w" "windows"
+  "SPC n" "numbers")
 
 ;;----------------------------------------------------------------------------
 ;;  Misc packages

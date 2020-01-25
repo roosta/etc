@@ -77,5 +77,11 @@
   :config
   (evil-lion-mode))
 
+(use-package evil-numbers
+  :general
+  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
+   "n+" '(evil-numbers/inc-at-pt :which-key "Inc")
+   "n-" '(evil-numbers/dec-at-pt :which-key "Dec")))
+
 (provide 'init-evil)
 ;;; init-evil.el ends here
