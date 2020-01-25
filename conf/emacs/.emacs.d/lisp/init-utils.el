@@ -82,7 +82,8 @@ Repeated invocations toggle between the two most recently open buffers."
 ;; https://stackoverflow.com/questions/4200905/how-do-i-comment-out-sexps-in-elisp-code
 ;;----------------------------------------------------------------------------
 (defmacro comment (&rest body)
-  "Comment out one or more s-expressions."
+  "Comment out one or more s-expressions.
+BODY is the form you want to comment out"
   nil)
 
 (provide 'init-utils)
