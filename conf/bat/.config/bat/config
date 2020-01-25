@@ -1,1 +1,2 @@
---theme="ansi-dark"
+--theme="TwoDark"
+--pager="less -RF"

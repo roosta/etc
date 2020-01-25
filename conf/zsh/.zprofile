@@ -89,5 +89,3 @@ export NASHORN_HOME="$JAVA_HOME/bin"
 export SPIDERMONKEY_HOME="${HOME}/spidermonkey"
 # temp
 export PGSSLMODE=require
-
-export BAT_PAGER="less -RF"
