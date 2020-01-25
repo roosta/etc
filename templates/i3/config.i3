@@ -443,10 +443,11 @@ bindsym $mod+n mode "focused"
 # set primary font
 font pango:Iosevka 9
 
-# <class>               <border>      <background>  <foreground> <indicator>
-client.focused          $magenta      $magenta      $bright_white $cyan
-client.focused_inactive $bright_white $bright_white $black        $cyan
-client.unfocused        $black        $xgray2       $bright_white $cyan
-client.urgent           $orange       $orange       $black        $cyan
-client.placeholder      $magenta      $cyan         $black        $cyan
+# class                 border  backgr. text    indicator child_border
+# glip$
+client.focused          $black   $xgray3 $bright_magenta $cyan $magenta
+client.focused_inactive $black   $xgray2 $white          $cyan $white
+client.unfocused        $black   $xgray2 $bright_black   $cyan $black
+client.urgent           $orange  $orange $black          $cyan $black
+client.placeholder      $magenta $cyan   $black          $cyan $black
 #}}}
