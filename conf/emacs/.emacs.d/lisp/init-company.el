@@ -4,7 +4,7 @@
 ;;; Code:
 
 (use-package company
-  :demand t
+  :defer t
   :diminish company-mode
   :custom
   (company-idle-delay 0.1)                          ; Trigger completion immediately.
@@ -68,8 +68,7 @@ Source: https://github.com/MatthewZMD/.emacs.d#company"
         (setq candidates-lsp (nreverse candidates-lsp))
         (setq candidates-tabnine (nreverse candidates-tabnine))
         (nconc (seq-take candidates-tabnine 3)
-               (seq-take candidates-lsp 6)))))
-  )
+               (seq-take candidates-lsp 6))))))
 
 (use-package company-lsp
   :commands company-lsp
