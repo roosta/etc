@@ -11,15 +11,7 @@
   ;; buffer) causes an enormous slowdown
   (setq flyspell-issue-message-flag nil)
 
-  (add-hook 'prog-mode-hook #'flyspell-prog-mode)                ; Check comments and strings
   (add-hook 'git-commit-setup-hook 'git-commit-turn-on-flyspell) ; enable spell checking in git commit message
-
-  ;; Don't spell check strings, only comments
-  (setq flyspell-prog-text-faces
-        (delq 'font-lock-string-face
-              flyspell-prog-text-faces))
-
-
   :commands
   (spell-checking/change-dictionary)
   :hook
