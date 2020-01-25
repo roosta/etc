@@ -6,11 +6,15 @@
 ;;; Commentary:
 ;;; Code:
 
-(defvar exec-path-from-shell-check-startup-files)
+;;----------------------------------------------------------------------------
+;; Global settings
+;;----------------------------------------------------------------------------
 (setq
-  debug-on-error t ; Produce backtraces when errors occur
+  debug-on-error t                             ; Produce backtraces when errors occur
   exec-path-from-shell-check-startup-files nil ; disable warning about setting path outside profile/env
-  vc-follow-symlinks t ; always follow symlinks
+  vc-follow-symlinks t                         ; always follow symlinks
+  visual-bell nil                              ; disable visual bell, I find it very distracting when reaching top or bottom of buffer
+  initial-scratch-message nil                  ; Remove intro text in scratch buffer
   )
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
