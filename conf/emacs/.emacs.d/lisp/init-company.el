@@ -88,10 +88,5 @@ Source: https://github.com/MatthewZMD/.emacs.d#company"
   :config
   (require 'company-web-html))
 
-(general-def
-  "C-/" #'counsel-company
-  "C-_" #'counsel-company
-  )
-
 (provide 'init-company)
 ;;; init-company.el ends here
