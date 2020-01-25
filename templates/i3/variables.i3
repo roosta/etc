@@ -1,4 +1,4 @@
-# -*- mode: conf; -*-
+ # -*- mode: conf; compile-command: "ftl i3 make" -*-
 # -------------------
 # VARIABLES
 # -------------------
@@ -21,7 +21,7 @@ set $screenshot "$HOME/Pictures/screenshots/screenshot_$(date +%Y-%m-%d@%H-%M-%S
 
 # define palette
 set_from_resource $black          i3wm.color0   #1C1B19
-set_from_resource $bright_black   i3wm.color8   #2D2B28
+set_from_resource $bright_black   i3wm.color8   #918175
 set_from_resource $red            i3wm.color1   #FF3128
 set_from_resource $bright_red     i3wm.color9   #DA4939
 set_from_resource $green          i3wm.color2   #519F50
@@ -34,16 +34,16 @@ set_from_resource $magenta        i3wm.color5   #E02C6D
 set_from_resource $bright_magenta i3wm.color13  #E35682
 set_from_resource $cyan           i3wm.color6   #1693A5
 set_from_resource $bright_cyan    i3wm.color14  #34BEDA
-set_from_resource $white          i3wm.color7   #918175
+set_from_resource $white          i3wm.color7   #D0BFA1
 set_from_resource $bright_white   i3wm.color15  #FCE8C3
 set_from_resource $orange         i3wm.color166 #D75F00
 set_from_resource $bright_orange  i3wm.color208 #FF8700
 set_from_resource $hard_black     i3wm.color232 #080808
-set_from_resource $xgrey1         i3wm.color235 #262626
-set_from_resource $xgrey2         i3wm.color236 #303030
-set_from_resource $xgrey3         i3wm.color237 #3A3A3A
-set_from_resource $xgrey4         i3wm.color238 #444444
-set_from_resource $xgrey4         i3wm.color239 #4E4E4E
+set_from_resource $xgray1         i3wm.color235 #262626
+set_from_resource $xgray2         i3wm.color236 #303030
+set_from_resource $xgray3         i3wm.color237 #3A3A3A
+set_from_resource $xgray4         i3wm.color238 #444444
+set_from_resource $xgray5         i3wm.color239 #4E4E4E
 
 # primary monitor workspaces
 set $pws_q "1:[Q]"

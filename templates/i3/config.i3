@@ -1,4 +1,4 @@
- # -*- mode: config; compile-command: "ftl i3 make" -*-
+ # -*- mode: conf; compile-command: "ftl i3 make" -*-
 # ┌──────────────────────────────────────────────────────┐
 # │o┏━┓┓ ┳┏┏┓  ┏━┓┏━┓┏┓┓┳━┓o┏━┓  ┏┓┓┳━┓┏┏┓┳━┓┳  ┳━┓┏┓┓┳━┓│
 # │┃ ━┫┃┃┃┃┃┃  ┃  ┃ ┃┃┃┃┣━ ┃┃ ┳   ┃ ┣━ ┃┃┃┃━┛┃  ┃━┫ ┃ ┣━ │
@@ -446,7 +446,7 @@ font pango:Iosevka 9
 # <class>               <border>      <background>  <foreground> <indicator>
 client.focused          $magenta      $magenta      $bright_white $cyan
 client.focused_inactive $bright_white $bright_white $black        $cyan
-client.unfocused        $black        $bright_black $bright_white $cyan
+client.unfocused        $black        $xgray2       $bright_white $cyan
 client.urgent           $orange       $orange       $black        $cyan
 client.placeholder      $magenta      $cyan         $black        $cyan
 #}}}
