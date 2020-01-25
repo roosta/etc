@@ -50,33 +50,6 @@
    "Sd" #'define-word-at-point
    "SD" #'define-word))
 
-(comment
-
- (require 'company)
-
- (defun text-mode-hook-setup ()
-   "setup spelling completion using company for `text-mode'."
-
-   ;; make `company-backends' local is critcal
-   ;; or else, you will have completion in every major mode, that's very annoying!
-   (make-local-variable 'company-backends)
-
-   ;; company-ispell is the plugin to complete words
-   (add-to-list 'company-backends 'company-ispell))
-
- (add-hook 'text-mode-hook 'text-mode-hook-setup)
-
- (defun toggle-company-ispell ()
-   "Toggle company-ispell on and off."
-   (interactive)
-   (cond
-    ((memq 'company-ispell company-backends)
-     (setq company-backends (delete 'company-ispell company-backends))
-     (message "company-ispell disabled"))
-    (t
-     (add-to-list 'company-backends 'company-ispell)
-     (message "company-ispell enabled!")))))
-
 (provide 'init-spelling)
 
 ;;; init-spelling.el ends here
