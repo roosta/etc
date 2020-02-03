@@ -40,7 +40,7 @@ Source: https://github.com/MatthewZMD/.emacs.d#company"
    "C-d" 'company-show-doc-buffer))
 
 (use-package company-tabnine
-  :defer t
+  :demand t
   :hook
   (lsp-after-open . (lambda ()
                       (setq company-tabnine-max-num-results 3)
