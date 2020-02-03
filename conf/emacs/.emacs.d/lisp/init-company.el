@@ -4,8 +4,8 @@
 ;;; Code:
 
 (use-package company
-  :defer t
   :diminish company-mode
+  :demand t
   :custom
   (company-idle-delay 0.1)                          ; Trigger completion immediately.
   (company-show-numbers t)                          ; Number the candidates (use M-1, M-2 etc to select completions).
