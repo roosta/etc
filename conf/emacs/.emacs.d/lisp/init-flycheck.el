@@ -8,6 +8,7 @@
   :diminish flycheck-mode
   :init
   (setq flycheck-emacs-lisp-load-path 'inherit)
+  (setq flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
   :commands
   (flycheck-add-next-checker)
   :config

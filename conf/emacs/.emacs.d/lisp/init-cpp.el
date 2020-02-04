@@ -5,7 +5,11 @@
 ;; https://www.reddit.com/r/emacs/comments/dlf0w7/whats_your_setup_for_cc_in_emacs/
 ;;; Code:
 
-(use-package lsp-mode :commands lsp)
+(use-package lsp-mode :commands lsp
+  :custom
+  (lsp-prefer-flymake nil)
+  (lsp-keymap-prefix "SPC k"))
+
 (use-package lsp-ui :commands lsp-ui-mode)
 
 (use-package ccls
