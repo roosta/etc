@@ -236,7 +236,7 @@ fyay() {
   if [ "$#" -ne 1 ]; then
     echo "Please provide a query"
   else
-    local pkg=$(yay -Ssq "$1" | fzf --multi --query "$1" --preview="yay -Si {}")
+    local pkg=$(yay -Ssq "$1" | fzf-tmux --multi --query "$1" --preview="yay -Si {}")
 
     if [[ $pkg ]]; then
       yay -S - <<< $pkg
@@ -250,7 +250,7 @@ fpac() {
   if [ "$#" -ne 1 ]; then
     echo "Please provide a query"
   else
-    local pkg=$(pacman -Ssq "$1" | fzf --multi --query "$1" --preview="pacman -Si {}")
+    local pkg=$(pacman -Ssq "$1" | fzf-tmux --multi --query "$1" --preview="pacman -Si {}")
     if [[ $pkg ]]; then
       sudo pacman -S - <<< $pkg
     fi
