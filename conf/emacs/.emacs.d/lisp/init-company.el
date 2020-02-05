@@ -39,6 +39,11 @@ Source: https://github.com/MatthewZMD/.emacs.d#company"
    "C-_" 'counsel-company
    "C-d" 'company-show-doc-buffer))
 
+(use-package company-lsp
+  :defer t
+  :custom
+  (company-lsp-cache-candidates 'auto))
+
 (use-package company-tabnine
   :demand t
   :hook
@@ -69,11 +74,6 @@ Source: https://github.com/MatthewZMD/.emacs.d#company"
         (setq candidates-tabnine (nreverse candidates-tabnine))
         (nconc (seq-take candidates-tabnine 3)
                (seq-take candidates-lsp 6))))))
-
-(use-package company-lsp
-  :commands company-lsp
-  :custom
-  (company-tooltip-align-annotations t))
 
 ;; (use-package company-tern
 ;;   :after
