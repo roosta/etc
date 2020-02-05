@@ -6,9 +6,11 @@
 ;;; Code:
 
 (use-package lsp-mode :commands lsp
-  :custom
-  (lsp-prefer-flymake nil)
-  (lsp-keymap-prefix "SPC k"))
+  :init
+  (setq lsp-keymap-prefix "SPC k")
+  (setq lsp-prefer-flymake nil)
+  :hook
+  (lsp-mode . lsp-enable-which-key-integration))
 
 (use-package lsp-ui :commands lsp-ui-mode)
 
