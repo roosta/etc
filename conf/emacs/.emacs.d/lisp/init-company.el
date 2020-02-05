@@ -73,9 +73,7 @@ Source: https://github.com/MatthewZMD/.emacs.d#company"
 (use-package company-lsp
   :commands company-lsp
   :custom
-  (company-tooltip-align-annotations t)
-  :config
-  (add-to-list 'company-backends #'company-lsp))
+  (company-tooltip-align-annotations t))
 
 (use-package company-tern
   :after
