@@ -20,5 +20,9 @@
 
 (use-package cmake-mode)
 
+(use-package arduino-mode
+  :config
+  (setq auto-mode-alist (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist)))
+
 (provide 'init-cpp)
 ;;; init-cpp.el ends here

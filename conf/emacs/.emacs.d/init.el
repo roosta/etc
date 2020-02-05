@@ -80,7 +80,6 @@
 (require 'init-folding)
 (require 'init-sql)
 (require 'init-syntax)
-(require 'init-arduino)
 (require 'init-shell-scripting)
 (require 'init-dired)
 (require 'init-javascript)
