@@ -75,16 +75,16 @@ Source: https://github.com/MatthewZMD/.emacs.d#company"
   :custom
   (company-tooltip-align-annotations t))
 
-(use-package company-tern
-  :after
-  (company)
-  :config
-  (add-to-list 'company-backends 'company-tern))
+;; (use-package company-tern
+;;   :after
+;;   (company)
+;;   :config
+;;   (add-to-list 'company-backends 'company-tern))
 
-(use-package company-web
-  :after (company)
-  :config
-  (require 'company-web-html))
+;; (use-package company-web
+;;   :after (company)
+;;   :config
+;;   (require 'company-web-html))
 
 (provide 'init-company)
 ;;; init-company.el ends here
