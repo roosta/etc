@@ -4,8 +4,9 @@
 ;;; Code:
 
 (use-package company
+  :defer t
   :diminish company-mode
-  :demand t
+  :hook (prog-mode . company-mode)
   :custom
   (company-idle-delay 0.1)                          ; Trigger completion immediately.
   (company-show-numbers t)                          ; Number the candidates (use M-1, M-2 etc to select completions).
@@ -14,7 +15,6 @@
   (company-tooltip-limit 20)                        ; bigger popup window
   (company-global-modes '(not shell-mode eaf-mode)) ; Don't use company in the following modes
   :config
-  (global-company-mode 1)
   (defun smarter-yas-expand-next-field-complete ()
     "Try to `yas-expand' and `yas-next-field' at current cursor position.
 If failed try to complete the common part with `company-select-common'
@@ -45,7 +45,7 @@ Source: https://github.com/MatthewZMD/.emacs.d#company"
   (company-lsp-cache-candidates 'auto))
 
 (use-package company-tabnine
-  :demand t
+  :defer 1
   :hook
   (lsp-after-open . (lambda ()
                       (setq company-tabnine-max-num-results 3)
