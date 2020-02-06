@@ -66,6 +66,7 @@
 (require 'init-org)
 (require 'init-editing-utils)
 (require 'init-lisp)
+(require 'init-elisp)
 (require 'init-backup)
 (require 'init-flycheck)
 (require 'init-lsp)
