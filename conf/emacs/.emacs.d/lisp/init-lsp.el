@@ -7,7 +7,7 @@
   :commands
   lsp
   :custom
-  (lsp-keymap-prefix "SPC ,")
+  (lsp-keymap-prefix "C-c C-f")
   (lsp-prefer-flymake nil) ;; Prefer flycheck
   :hook
   ((js-mode
