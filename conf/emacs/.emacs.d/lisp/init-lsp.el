@@ -7,14 +7,8 @@
   :commands
   lsp
   :custom
-  (lsp-keymap-prefix "C-c C-f")
-  (lsp-prefer-flymake nil)
-  :config
-  (dolist (m '(clojure-mode
-               clojurec-mode
-               clojurescript-mode
-               clojurex-mode))
-    (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
+  (lsp-keymap-prefix "SPC ,")
+  (lsp-prefer-flymake nil) ;; Prefer flycheck
   :hook
   ((js-mode
     js2-mode
@@ -22,17 +16,10 @@
     web-mode
     c-mode
     c++-mode
-    objc-mode
-    clojure-mode
-    clojurescript-mode
-    clojurec-mode) . lsp)
+    objc-mode) . lsp)
   (lsp-mode . lsp-enable-which-key-integration))
 
-(use-package lsp-ui
-  :after
-  (lsp-mode)
-  :commands
-  (lsp-ui-mode))
+(use-package lsp-ui :after lsp-mode :commands lsp-ui-mode)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
