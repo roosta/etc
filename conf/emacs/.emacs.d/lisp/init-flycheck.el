@@ -8,7 +8,7 @@
   :defer t
   :hook
   (prog-mode . flycheck-mode)
-  ((markdown-mode clojure-mode ) . flycheck//disable-on-temp-buffers)
+  ((markdown-mode clojure-mode) . flycheck//disable-on-temp-buffers)
   :init
   (setq flycheck-emacs-lisp-load-path 'inherit)
   (setq flycheck-disabled-checkers '(c/c++-clang c/c++-cppcheck c/c++-gcc))
