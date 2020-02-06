@@ -121,7 +121,8 @@
  "qq"  #'save-buffers-kill-emacs
  "bs"  #'(roosta/switch-to-scratch-buffer :which-key "*scratch*")
  "bd"  #'kill-this-buffer
- "u"   #'universal-argument)
+ "u"   #'universal-argument
+ "cc"  #'compile)
 
 ;;----------------------------------------------------------------------------
 ;; visual-line-mode
