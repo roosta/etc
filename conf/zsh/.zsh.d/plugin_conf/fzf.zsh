@@ -89,6 +89,16 @@ e() {
   fi
 }
 
+_e() {
+  if [ "$#" -ne 0 ]; then
+    SUDO_EDITOR="emacsclient -t" sudoedit $@
+  else
+    local file
+    file=$(fzf-tmux --query="$1")
+    [ -n "$file" ] && SUDO_EDITOR="emacsclient -t" sudoedit "$file"
+  fi
+}
+
 # Fuzzy match file and open with vim
 # If passed an argument, open that file in vim, otherwise fzf seach from CWD
 v() {

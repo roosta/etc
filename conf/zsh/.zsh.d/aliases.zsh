@@ -506,4 +506,7 @@ alias ncdu='ncdu --color dark'
 alias mutt='neomutt'
 
 alias weather='curl http://wttr.in/oslo'
+
+alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
+
 # vim: fdm=marker:sw=2
