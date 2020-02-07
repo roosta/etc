@@ -59,6 +59,7 @@
 (require 'init-gui-frames)
 (require 'init-evil)
 (require 'init-theme)
+(require 'init-modeline)
 (require 'init-ivy)
 (require 'init-undo-tree)
 (require 'init-uniquify)
