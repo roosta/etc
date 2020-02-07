@@ -34,9 +34,5 @@
   (setq sml/no-confirm-load-theme t)
   (sml/setup))
 
-(use-package minions
-  :commands (minions-mode)
-  :config (minions-mode 1))
-
 (provide 'init-modeline)
 ;;; init-modeline.el ends here
