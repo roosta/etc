@@ -18,7 +18,7 @@
   ((text-mode org-mode markdown-mode) . turn-on-flyspell)
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
-   "Sc" 'flyspell-correct-at-point
+   ;; "Sc" 'flyspell-correct-at-point
    "SC" 'roosta/flyspell-save-word
    "Sb" 'flyspell-buffer
    "Sp" 'spell-checking/change-dictionary
@@ -32,6 +32,24 @@
           (word (flyspell-get-word)))
       (when (consp word)
         (flyspell-do-correct 'save nil (car word) current-location (cadr word) (caddr word) current-location)))))
+
+
+(use-package flyspell-correct
+  :commands
+  (flyspell-correct-next
+   flyspell-correct-previous
+   flyspell-correct-at-point)
+  :general
+  ('(normal visual insert emacs)  :prefix "SPC" :non-normal-prefix "C-SPC"
+   "Sc" #'flyspell-correct-wrapper)
+  (flyspell-mode-map
+   "C-;" #'flyspell-correct-wrapper))
+
+(use-package flyspell-correct-ivy
+  :commands (flyspell-correct-ivy
+             flyspell-correct-wrapper)
+  :custom
+  (flyspell-correct-interface #'flyspell-correct-ivy))
 
 (use-package define-word
   :commands
