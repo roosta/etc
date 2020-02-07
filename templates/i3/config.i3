@@ -285,10 +285,10 @@ bindsym $mod+comma scratchpad show
 bindsym XF86TouchpadToggle exec --no-startup-id ~/utils/touchpad-toggle.sh
 
 # move to last workspace
-bindsym $mod+z workspace back_and_forth
+bindsym $mod+BackSpace workspace back_and_forth
 
 # move windows back and forth
- bindsym $mod+Shift+z move container to workspace back_and_forth
+bindsym $mod+Shift+BackSpace move container to workspace back_and_forth
 
 # bindsym $mod+Control+Shift+left move container to output left
 # bindsym $mod+Control+Shift+right move container to output right
