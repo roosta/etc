@@ -54,8 +54,9 @@
   :demand t
   :init
   (setq evil-lisp-state-global t)
+  :config
+  (evil-lisp-state-leader ", l")
   :general
-  (evil-lisp-state-leader ", k")
   ('(normal visual evilified) (emacs-lisp-mode-map lisp-interaction-mode-map) :prefix ","
    "el" #'lisp-state-eval-sexp-end-of-line
    ","  #'lisp-state-toggle-lisp-state
