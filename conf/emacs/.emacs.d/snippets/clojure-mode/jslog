@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: console log for clojurecript
+# key: jslog
+# --
+(.log js/console "$1" $2)
