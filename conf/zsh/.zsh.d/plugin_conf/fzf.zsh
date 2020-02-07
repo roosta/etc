@@ -243,27 +243,18 @@ fapt() {
 # Search AUR and official repos using yay and install on
 # select. Supports multiple selections and preview using yay -Si
 fyay() {
-  if [ "$#" -ne 1 ]; then
-    echo "Please provide a query"
-  else
-    local pkg=$(yay -Ssq "$1" | fzf-tmux --multi --query "$1" --preview="yay -Si {}")
-
-    if [[ $pkg ]]; then
-      yay -S - <<< $pkg
-    fi
+  local pkg=$(yay -Ssq | fzf-tmux --multi --query "$1" --preview="yay -Si {}")
+  if [[ $pkg ]]; then
+    yay -S - <<< $pkg
   fi
 }
 
 # Search with pacman, and install on select. Supports multiple
 # selections, and preview using pacman -Si
 fpac() {
-  if [ "$#" -ne 1 ]; then
-    echo "Please provide a query"
-  else
-    local pkg=$(pacman -Ssq "$1" | fzf-tmux --multi --query "$1" --preview="pacman -Si {}")
-    if [[ $pkg ]]; then
-      sudo pacman -S - <<< $pkg
-    fi
+  local pkg=$(pacman -Ssq | fzf-tmux --multi --query "$1" --preview="pacman -Si {}")
+  if [[ $pkg ]]; then
+    sudo pacman -S - <<< $pkg
   fi
 }
 
