@@ -55,7 +55,7 @@
   :init
   (setq evil-lisp-state-global t)
   :config
-  (evil-lisp-state-leader ", l")
+  (evil-lisp-state-leader "SPC l")
   :general
   ('(normal visual evilified) (emacs-lisp-mode-map lisp-interaction-mode-map) :prefix ","
    "el" #'lisp-state-eval-sexp-end-of-line
