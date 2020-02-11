@@ -92,6 +92,7 @@
 (require 'init-cpp)
 (require 'init-rust)
 (require 'init-compilation)
+(require 'init-csharp)
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from Emacs client
