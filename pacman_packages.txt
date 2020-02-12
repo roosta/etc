@@ -43,9 +43,6 @@ network-manager-applet
 nitrogen
 nodejs
 npm
-nvidia
-nvidia-settings
-opencl-nvidia
 openssh
 openvpn
 pandoc
