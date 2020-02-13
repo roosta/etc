@@ -381,9 +381,9 @@ alias npmoutdated='npm outdated -g --depth=0'
 # VCS: {{{1
 # --------
 
-if hash hub 2>/dev/null; then
-  alias git='hub'
-fi
+# if hash hub 2>/dev/null; then
+#   alias git='hub'
+# fi
 
 alias diff='colordiff'
 
