@@ -102,7 +102,7 @@ modules-right = keyboard-layout vpncheck wifi battery updates-arch-combined volu
 
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
-monitor = ${env:MONITOR:DP-1}
+monitor = ${env:MONITOR:DP1}
 modules-center = mpd
 modules-right = keyboard-layout vpncheck updates-arch-combined volume memory cpu date time
 
@@ -113,7 +113,7 @@ inherit = bar/lintilla-primary
 tray-position = right
 tray-padding = 1
 tray-scale = 1
-monitor = ${env:MONITOR:HDMI-2}
+monitor = ${env:MONITOR:HDMI2}
 modules-right = eth-garkbit fs-home fs-root
 
 [module/i3]
