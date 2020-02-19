@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
 # name: breakpoint using <sub helper
-# key: bp
+# key: breakp
 # --
 $1-$2? (<sub [:tincture/breakpoint-$2 :$1])
