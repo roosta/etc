@@ -6,11 +6,6 @@
 (use-package yasnippet
   :diminish yas-minor-mode
   :init
-  ;; Use hippie expand to expand snippets
-  (setq hippie-expand-try-functions-list
-        (cons 'yas/hippie-try-expand hippie-expand-try-functions-list))
-
-  ;; Custom snippets
   (setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
   :general
   ('(normal visual insert emacs)
