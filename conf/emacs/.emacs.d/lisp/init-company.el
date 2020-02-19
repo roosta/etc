@@ -17,8 +17,7 @@
   :config
   (defun smarter-yas-expand-next-field-complete ()
     "Try to `yas-expand' and `yas-next-field' at current cursor position.
-If failed try to complete the common part with `company-select-common'
-Source: https://github.com/MatthewZMD/.emacs.d#company"
+If failed try to complete the common part with `company-complete-common'"
     (interactive)
     (if yas-minor-mode
         (let ((old-point (point))
@@ -29,8 +28,8 @@ Source: https://github.com/MatthewZMD/.emacs.d#company"
             (ignore-errors (yas-next-field))
             (when (and (eq old-point (point))
                        (eq old-tick (buffer-chars-modified-tick)))
-              (company-select-next))))
-      (company-select-next)))
+              (company-complete-common))))
+      (company-complete-common)))
   :general
   (company-active-map
    "M-q" 'company-other-backend                     ; Switch backend quickly
