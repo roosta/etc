@@ -8,6 +8,7 @@ Google-chrome= ""
 Spotify = ""
 libreoffice-calc = ""
 "Gimp-2.10" = ""
+Transmission-gtk = ""
 
 [aliases]
 firefoxdeveloperedition = "Firefox-dev"
@@ -16,3 +17,4 @@ firefox = "Firefox"
 Google-chrome-unstable = "Chrome-dev"
 Google-chrome = "Chrome"
 "Gimp-2.10" = "Gimp"
+Transmission-gtk = "Transmission"
