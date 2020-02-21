@@ -22,7 +22,10 @@
    "SC" 'roosta/flyspell-save-word
    "Sb" 'flyspell-buffer
    "Sp" 'spell-checking/change-dictionary
-   "Sn" 'flyspell-goto-next-error)
+   "Sn" 'flyspell-goto-next-error
+   "Sa" 'flyspell-auto-correct-previous-word)
+  ('(normal visual insert emacs)
+   "<f12>" 'flyspell-auto-correct-previous-word)
   :config
   (defun roosta/flyspell-save-word ()
     "Save a word to personal dictionary"
