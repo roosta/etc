@@ -96,9 +96,9 @@ monitor = ${env:MONITOR:eDP1}
 modules-center =
 tray-position = right
 font-0 = "Iosevka:pixelsize=9;4"
-modules-left = i3 xwindow-small
+modules-left = i3
 ; modules-right = keyboard-layout vpncheck wifi battery pkg volume-small memory-small cpu-small date time
-modules-right = keyboard-layout vpncheck wifi battery updates-arch-combined volume-small date time
+modules-right = keyboard-layout vpncheck wifi battery updates-arch-combined volume-small memory-small cpu-small date time
 
 [bar/garkbit-primary]
 inherit = bar/lintilla-primary
