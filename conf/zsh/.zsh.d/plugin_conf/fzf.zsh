@@ -1,8 +1,8 @@
 # ┬─┐┬ ┐┌─┐┌─┐┐ ┬  ┬─┐o┌┐┐┬─┐┬─┐┬─┐
 # ├─ │ │┌─┘┌─┘└┌┘──├─ │││││ │├─ │┬┘
 # ┆  ┆─┘└─┘└─┘ ┆   ┆  ┆┆└┘┆─┘┴─┘┆└┘
-# OPTIONS:{{{
-# ---------------
+# Options: {{{
+
 # plugin handled externally with vim-plug
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -20,16 +20,14 @@ export FZF_COMPLETION_TRIGGER='~~'
 # export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 #}}}
-# COMMAND HISTORY: {{{
-# -------------------
+# Command history: {{{
 
 # fh - repeat history
 fhist() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf-tmux +s --tac | sed 's/ *[0-9]* *//')
 }
 #}}}
-# CHANGING DIRECTORY {{{
-# ---------------------
+# Changing directory {{{
 
 # fd - including hidden directories
 fdir() {
@@ -64,8 +62,7 @@ cf() {
 }
 
 #}}}
-# KILL {{{
-# -----------
+# Kill {{{
 fkill() {
   pid=$(ps -ef | sed 1d | fzf-tmux -m | awk '{print $2}')
 
@@ -75,8 +72,7 @@ fkill() {
   fi
 }
 #}}}
-# OPENING FILES {{{
-# ---------------
+# Opening files {{{
 
 # Fuzzy match file and open with emacsclient
 e() {
@@ -134,8 +130,7 @@ ef() {
 }
 
 #}}}
-# GIT {{{
-# ---------
+# Git {{{
 
 # fco - checkout git branch/tag
 fco() {
@@ -170,8 +165,7 @@ fsha() {
 }
 
 #}}}
-# TAGS {{{
-# ------------------
+# Tags {{{
 # ftags - search ctags
 ftags() {
   local line
@@ -183,8 +177,7 @@ ftags() {
                                       -c "silent tag $(cut -f2 <<< "$line")"
 }
 #}}}
-# TMUX {{{
-# ---------------
+# Tmux {{{
 # fs [FUZZY PATTERN] - Select selected tmux session
 #   - Bypass fuzzy finder if there's only one match (--select-1)
 #   - Exit if there's no match (--exit-0)
@@ -195,6 +188,7 @@ fts() {
     tmux switch-client -t "$session"
 }
 
+#}}}
 # AG {{{
 # ------
 
@@ -227,10 +221,7 @@ falias() {
 }
 
 #}}}
-
-# =============================
-# Package managers
-# =============================
+# Package managers {{{
 # Search apt for query, and install selected package
 fapt() {
   local pkg=$(apt-cache search $1 | fzf --no-multi -q $1 --ansi --preview="apt-cache show {1}" | awk '{ print $1 }')
@@ -257,7 +248,8 @@ fpac() {
     sudo pacman -S - <<< $pkg
   fi
 }
-
+#}}}
+# Convenience {{{
 forg() {
   local match linum file;
   (
@@ -281,4 +273,5 @@ forg() {
   )
 }
 
+#}}}
 #  vim: set ts=2 sw=2 tw=0 fdm=marker et :
