@@ -12,36 +12,72 @@
 
 # Set up nohup so that it can deal with an argument that is itself an alias name:
 alias nohup="nohup "
-alias su="su -"
+# alias su="su -"
 
-# systemctl query
-alias sysstat='systemctl status'
-alias systype='systemctl -t'
-alias sysfailed='systemctl --state=failed'
-alias syslsu='systemctl list-units'
-alias syslsuf='systemctl list-unit-files'
-alias syslssoc='systemctl list-sockets'
-alias syslsser='systemctl list-services'
-alias sysise='systemctl is-enabled'
-alias sysisa='systemctl is-enabled'
-alias sysisf='systemctl is-failed'
-alias syscat='sudo systemctl cat'
+# Edit root files using emacs client
+alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 
-# systemctl modify
-alias sysresd='sudo systemctl daemon-reload'
-alias sysenable='sudo systemctl enable'
-alias sysstart='sudo systemctl start'
-alias sysstop='sudo systemctl stop'
-alias sysrest='sudo systemctl restart'
-alias syscan='sudo systemctl cancel'
-alias sysedit='sudo systemctl edit'
-alias sysdis='sudo systemctl disable'
+alias ~~="$HOME/.backup/home/$USER"
 
+#}}}
+# Shadow: {{{1
+# Aliases that shadow some command, like ls='ls -lAh'
+#
+alias jobs='jobs -l'
+alias ncdu='ncdu --color dark'
+alias mutt='neomutt'
+alias grep='grep -i'
+alias tree="tree -ah"
+alias tmux="tmux -2" # force 256 color mode in tmux
+alias free='free -h'
+alias stow="stow -v"
+alias locate='locate -i' # ignore case always
+
+# print du/df tallies in human readable
+alias du='du -h'
+alias df='df -h'
+alias dut='du -ht'
+
+alias updatedb='sudo updatedb'
+alias xfontsel='xfontsel -print|clipcopy'
+alias ssh='env TERM=xterm-256color ssh'
+alias ufw="sudo ufw"
+alias pgrep='pgrep -ia'
+alias diff='colordiff'
+
+# alias mv=' timeout 8 mv -iv'
+# alias rm=' timeout 3 rm -Iv --one-file-system'
+alias mv='mv -iv'
+alias rm='rm -Iv --one-file-system'
+alias cp='cp -i'
+alias cpr='cp -r'
+alias ln='ln -i'
+
+# Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# get top process eating cpu
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
+# get GPU ram on desktop / laptop
+alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+
+# create parents, be verbose
+alias mkdir='mkdir -pv'
+alias svn='colorsvn'
+# alias docker='sudo docker'
+
+
+#}}}
+# Logging: {{{1
+alias logssh='journalctl _COMM=sshd'
 #}}}
 # Quick edits: {{{1
 
 alias vi="vim"
-# alias vim="ect"
 alias vigit="${EDITOR:-vim} ~/.gitconfig"
 alias vissh="${EDITOR:-vim} ~/.ssh/config"
 alias vialias="${EDITOR:-vim} ~/.zsh.d/aliases.zsh"
@@ -62,7 +98,7 @@ alias vienv="${EDITOR:-vim} ~/.zprofile"
 alias vizopts="${EDITOR:-vim} ~/.zsh.d/options.zsh"
 alias vizsh="${EDITOR:-vim} ~/.zshrc"
 alias vixfont="${EDITOR:-vim} ~/.Xresources.d/fonts"
-alias viemacs="emacsclient -t ~/.emacs.d"
+alias viemacs="emacsclient -t ~/.emacs.d/lisp"
 alias vitodo="emacsclient -t ~/org/TODOs.org"
 alias vihours="emacsclient -t ~/src/hours/hours.org"
 alias vimutt="${EDITOR:-vim} ~/.muttrc"
@@ -110,30 +146,36 @@ alias awk='gawk'
 alias find-here='find . -name'
 #}}}
 # Web search: {{{1
+alias @aur='googler -w aur.archlinux.org'
+alias @aw='googler -w wiki.archlinux.org'
+alias @yt='googler -w youtube.com'
+alias @w='googler -w en.wikipedia.org'
+alias @xkcd='googler -w xkcd.com'
 
+# OLD {{{2
 # see ~/.zsh/web_search.zsh
-alias google='web_search google'
-alias ddg='web_search duckduckgo'
-alias duck='web_search duckduckgo'
-alias github='web_search github'
-alias devdocs='web_search devdocs'
-alias docs='devdocs'
+# alias google='web_search google'
+# alias ddg='web_search duckduckgo'
+# alias duck='web_search duckduckgo'
+# alias github='web_search github'
+# alias devdocs='web_search devdocs'
+# alias docs='devdocs'
 
 # leverage duckduckgo's bang functionaliy.
-alias wiki='web_search duckduckgo \!w'
-alias news='web_search duckduckgo \!n'
-alias youtube='web_search duckduckgo \!yt'
-alias yt='web_search duckduckgo \!yt'
-alias map='web_search duckduckgo \!m'
-alias img='web_search duckduckgo \!i'
-alias bang='web_search duckduckgo \!'
-alias arch='web_search duckduckgo \!aw'
-alias aw='web_search duckduckgo \!aw'
-alias aur='web_search duckduckgo \!aur'
-alias apkg='web_search duckduckgo \!apkg'
-alias clojars='web_search duckduckgo \!clojars'
-alias npm-search='web_search duckduckgo \!npm'
-
+# alias wiki='web_search duckduckgo \!w'
+# alias news='web_search duckduckgo \!n'
+# alias youtube='web_search duckduckgo \!yt'
+# alias yt='web_search duckduckgo \!yt'
+# alias map='web_search duckduckgo \!m'
+# alias img='web_search duckduckgo \!i'
+# alias bang='web_search duckduckgo \!'
+# alias arch='web_search duckduckgo \!aw'
+# alias aw='web_search duckduckgo \!aw'
+# alias aur='web_search duckduckgo \!aur'
+# alias apkg='web_search duckduckgo \!apkg'
+# alias clojars='web_search duckduckgo \!clojars'
+# alias npm-search='web_search duckduckgo \!npm'
+#}}}
 #}}}
 # Global: {{{1
 
@@ -209,35 +251,6 @@ alias -s net=firefox
 alias -s com=firefox
 
 #}}}
-# Defaults: {{{1
-# Aliases that shadow its original command. Like docker='sudo docker'
-
-# alias mv=' timeout 8 mv -iv'
-# alias rm=' timeout 3 rm -Iv --one-file-system'
-alias mv='mv -iv'
-alias rm='rm -Iv --one-file-system'
-alias cp='cp -i'
-alias cpr='cp -r'
-alias ln='ln -i'
-
-# Parenting changing perms on / #
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
-
-# get top process eating cpu
-alias pscpu='ps auxf | sort -nr -k 3'
-alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
-
-# get GPU ram on desktop / laptop
-alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
-
-# create parents, be verbose
-alias mkdir='mkdir -pv'
-# alias docker='sudo docker'
-
-
-#}}}
 # Movement: {{{1
 
 alias cd..='cd ..'
@@ -281,20 +294,12 @@ alias lsr='tree'
 alias lsp='lsp -p'
 #}}}
 # Security: {{{1
-
 alias checkrootkits="sudo rkhunter --update && sudo rkhunter --check --sk && sudo rkhunter --propupd"
 alias scanhome="sudo freshclam && clamscan --recursive=yes --infected -l $HOME/var/log/clamscan.log $HOME"
 alias scanroot="sudo freshclam && sudo clamscan --recursive=yes --infected -l $HOME/var/log/clamscan.log /"
 alias scanhere="sudo freshclam && sudo clamscan --recursive=yes --infected -l $HOME/var/log/clamscan.log ."
 #}}}
-# Utils: {{{1
-
-alias tree="tree -ah"
-alias watchfirefox="watch progress -wc firefox" # watch firefox download progress.
-alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
-alias ports="netstat -tulanp" # list open ports
-#alias pip="sudo -H pip" # set home variable when running pip
-alias tmux="tmux -2" # force 256 color mode in tmux
+# Tmux: {{{1
 alias tn="tmux new-session -s" # start new session by giving a name
 alias trw="tmux rename-window"
 alias ta="tmux attach -t"
@@ -303,52 +308,8 @@ alias tls="tmux ls"
 alias tc="tmux choose-session"
 alias tk="tmux kill-session -t"
 alias tw="tmux new-window -n"  # open new window with name
-alias ufw="sudo ufw"
-# alias make="colormake"
-alias pdf="zathura"
-
-alias free='free -h'
-
-if hash dfc 2>/dev/null; then
-  alias disks='dfc'
-else
-  # https://github.com/xero/dotfiles/blob/master/zsh/.zsh/aliases.zsh
-  alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
-fi
-
-# stow is always verbose
-alias stow="stow -v"
-
-# keep forgetting what these are called.
-alias getclass="xprop"
-alias getkey="xev -event keyboard"
-#alias getkeycode=xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
-alias logcolor="ccze"
-
-# utput from a command with xclip when this is piped in
-#alias copy='xsel -i -p -b'
-alias copy="clipcopy" # see functions
-alias paste="clippaste" # see functions
-
-# print date in various formats
-alias gettime='date +"%T"'
-alias now='date +"%Y-%m-%d@%T"'
-alias getdate='date +"%Y-%m-%d"'
-
-# ignore case always
-alias locate='locate -i'
-
-# print du/df tallies in human readable
-alias du='du -h'
-alias df='df -h'
-alias dut='du -ht'
-
-alias updatedb='sudo updatedb'
-alias xfontsel='xfontsel -print|clipcopy'
-
-alias ~~="$HOME/.backup/home/$USER"
-alias tasks="task"
-
+#}}}
+# ASCII: {{{1
 alias toiletlist='for i in ${TOILET_FONT_PATH:=/usr/share/figlet}/*.{t,f}lf; do j=${i##*/}; echo ""; echo "╓───── "$j; echo "╙────────────────────────────────────── ─ ─ "; echo ""; toilet -d "${i%/*}" -f "$j" "${j%.*}"; done'
 alias ascii="toilet -t -f 3d"
 alias future="toilet -t -f future"
@@ -357,10 +318,40 @@ alias rustofat="toilet -t -f rustofat"
 alias pagga="toilet -t -f pagga"
 alias paggaborder="toilet -t -f pagga -F border"
 
-alias pgrep='pgrep -ia'
-alias grep='grep -i'
-alias fehp='feh -g 640x480 -d -S filename'
+#}}}
+# Utils: {{{1
 
+alias watchfirefox="watch progress -wc firefox" # watch firefox download progress.
+alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
+alias ports="netstat -tulanp" # list open ports
+#alias pip="sudo -H pip" # set home variable when running pip
+# alias make="colormake"
+alias pdf="zathura"
+if hash dfc 2>/dev/null; then
+  alias disks='dfc'
+else
+  # https://github.com/xero/dotfiles/blob/master/zsh/.zsh/aliases.zsh
+  alias disks='echo "╓───── m o u n t . p o i n t s"; echo "╙────────────────────────────────────── ─ ─ "; lsblk -a; echo ""; echo "╓───── d i s k . u s a g e"; echo "╙────────────────────────────────────── ─ ─ "; df -h;'
+fi
+
+# keep forgetting what these are called.
+alias getclass="xprop"
+alias getkey="xev -event keyboard"
+# alias getkeycode=xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+alias logcolor="ccze"
+
+# Output from a command with xclip when this is piped in
+# alias copy='xsel -i -p -b'
+alias copy="clipcopy" # see functions
+alias paste="clippaste" # see functions
+
+# print date in various formats
+alias gettime='date +"%T"'
+alias now='date +"%Y-%m-%d@%T"'
+alias getdate='date +"%Y-%m-%d"'
+
+alias tasks="task"
+alias fehp='feh -g 640x480 -d -S filename'
 alias mounttmpfs='sudo mount -t tmpfs tmpfs /mnt -o size=1024m'
 alias killemacs='emacsclient -e "(save-buffers-kill-emacs)"'
 alias gpg-reload='gpg-connect-agent reloadagent /bye'
@@ -372,11 +363,13 @@ alias music='ncmpcpp'
 alias m='ncmpcpp'
 alias update-font-cache='fc-cache -fv'
 alias fm='vifm'
-alias ssh='env TERM=xterm-256color ssh'
 
 # NPM
 alias npmls='npm -g ls --depth=0'
 alias npmoutdated='npm outdated -g --depth=0'
+
+alias cheat='cht.sh'
+alias weather='curl http://wttr.in/oslo'
 #}}}
 # VCS: {{{1
 # --------
@@ -385,13 +378,7 @@ alias npmoutdated='npm outdated -g --depth=0'
 #   alias git='hub'
 # fi
 
-alias diff='colordiff'
-
-# --- git ---
-# use .gitconfig
-
 # --- svn ---
-alias svn='colorsvn'
 alias svns='svn status'
 
 # get last commit diff
@@ -482,11 +469,6 @@ alias uh="ls && sleep 0.2 && clear"
 # run setxkbmap again, sometimes toggling between layouts stops working
 alias rf='setxkbmap -model pc104 -layout us,no -option grp:caps_toggle -option terminate:ctrl_alt_bksp'
 #}}}
-# Default opts: {{{1
-
-alias jobs='jobs -l'
-
-#}}}
 # Pacman: {{{1
 
 # show which package owns a given file
@@ -499,14 +481,5 @@ alias pacorph='yay -Rns $(pacman -Qtdq)'
 alias pacc='yay -Scc'
 
 #}}}
-
-alias cheat='cht.sh'
-alias sshlog='journalctl _COMM=sshd'
-alias ncdu='ncdu --color dark'
-alias mutt='neomutt'
-
-alias weather='curl http://wttr.in/oslo'
-
-alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 
 # vim: fdm=marker:sw=2
