@@ -4,13 +4,12 @@
 ;;; Code:
 
 (use-package origami
-  :init
-  (setq origami-fold-style 'triple-braces)
-  :functions (global-origami-mode)
-  :defines origami-fold-style
-  :diminish origami-mode
   :config
-  (global-origami-mode))
+  (add-hook 'prog-mode-hook
+            (lambda ()
+              (setq-local origami-fold-style 'triple-braces)
+              (origami-mode)
+              (origami-close-all-nodes (current-buffer)))))
 
 
 (provide 'init-folding)
