@@ -21,7 +21,7 @@
    ;; "Sc" 'flyspell-correct-at-point
    "SC" 'roosta/flyspell-save-word
    "Sb" 'flyspell-buffer
-   "Sp" 'ispell-change-dictionary
+   "Sp" 'roosta/change-dictionary
    "Sn" 'flyspell-goto-next-error
    "Sa" 'flyspell-auto-correct-previous-word)
   ('(normal visual insert emacs)
@@ -34,7 +34,14 @@
     (let ((current-location (point))
           (word (flyspell-get-word)))
       (when (consp word)
-        (flyspell-do-correct 'save nil (car word) current-location (cadr word) (caddr word) current-location)))))
+        (flyspell-do-correct 'save nil (car word) current-location (cadr word) (caddr word) current-location))))
+  (defun roosta/change-dictionary ()
+    "Change the dictionary.
+Use the Ispell version if auto-dictionary is not used, use the adict version otherwise."
+    (interactive)
+    (if (fboundp 'adict-change-dictionary)
+        (adict-change-dictionary)
+      (call-interactively 'ispell-change-dictionary))))
 
 
 (use-package flyspell-correct
