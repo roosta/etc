@@ -273,5 +273,14 @@ forg() {
   )
 }
 
+viemacs() {
+  local file;
+  (
+    cd ~/.emacs.d/lisp &&
+      file=$(fzf-tmux --query="$1") &&
+      [ -n "$file" ] &&
+      emacsclient -nw "$file" &&
+  )
+}
 #}}}
 #  vim: set ts=2 sw=2 tw=0 fdm=marker et :
