@@ -2,9 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-;;----------------------------------------------------------------------------
-;; Packages
-;;----------------------------------------------------------------------------
 (use-package evil
   :defines
   (evil-want-Y-yank-to-eol)
@@ -24,18 +21,22 @@
   :config
   (evil-mode))
 
+;; Various evil bindings for emacs features
 (use-package evil-collection
   :after (evil)
   :custom (evil-collection-setup-minibuffer t)
   :config (evil-collection-init))
 
+;; Surround text objects
 (use-package evil-surround
   :config (global-evil-surround-mode))
 
+;; Comment text using motions (gc) or line (gcc)
 (use-package evil-commentary
   :diminish evil-commentary-mode
   :config (evil-commentary-mode))
 
+;; 2-char searching ala vim-sneak & vim-seek,
 (use-package evil-snipe
   :init
   (setq evil-snipe-scope 'whole-buffer)
@@ -48,6 +49,7 @@
   (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
   (add-hook 'git-rebase-mode-hook 'turn-off-evil-snipe-mode))
 
+;; Visual previews for certain evil-ex commands.
 (use-package evil-traces
   :demand t
   :diminish evil-traces-mode
@@ -58,11 +60,13 @@
   (evil-traces-use-diff-faces) ; if you want to use diff's faces
   (evil-traces-mode))
 
+;; Multiple cursors
 (use-package evil-mc
   :diminish evil-mc-mode
   :config
   (global-evil-mc-mode 1))
 
+;; Press “%” to jump between matched tags in Emacs. For example, in HTML “<div>” and “</div>” are a pair of tags.
 (use-package evil-matchit
   :demand t
   :commands
@@ -70,6 +74,7 @@
   :config
   (global-evil-matchit-mode 1))
 
+;; Easily align text
 (use-package evil-lion
   :demand t
   :commands
@@ -77,6 +82,7 @@
   :config
   (evil-lion-mode))
 
+;; Increment numbers, ala c-a c-x in vim
 (use-package evil-numbers
   :general
   ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
