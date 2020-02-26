@@ -20,7 +20,7 @@ alias E="SUDO_EDITOR=\"emacsclient -t -a emacs\" sudoedit"
 alias ~~="$HOME/.backup/home/$USER"
 
 #}}}
-# Shadow: {{{1
+# Shadow: {{{
 # Aliases that shadow some command, like ls='ls -lAh'
 #
 alias jobs='jobs -l'
@@ -72,10 +72,10 @@ alias svn='colorsvn'
 
 
 #}}}
-# Logging: {{{1
+# Logging: {{{
 alias logssh='journalctl _COMM=sshd'
 #}}}
-# Quick edits: {{{1
+# Quick edits: {{{
 
 alias vi="vim"
 alias vigit="${EDITOR:-vim} ~/.gitconfig"
