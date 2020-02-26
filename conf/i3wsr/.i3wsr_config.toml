@@ -9,6 +9,7 @@ Spotify = ""
 libreoffice-calc = ""
 "Gimp-2.10" = ""
 Transmission-gtk = ""
+com-eviware-soapui-SoapUI = ""
 
 [aliases]
 firefoxdeveloperedition = "Firefox-dev"
@@ -18,3 +19,4 @@ Google-chrome-unstable = "Chrome-dev"
 Google-chrome = "Chrome"
 "Gimp-2.10" = "Gimp"
 Transmission-gtk = "Transmission"
+com-eviware-soapui-SoapUI = "SoapUI"
