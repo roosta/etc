@@ -284,9 +284,9 @@ viemacs() {
   local file;
   (
     cd ~/.emacs.d/lisp &&
-      file=$(fzf-tmux --query="$1") &&
+      file=$(fzf-tmux --query="$1" --multi --preview "bat {}") &&
       [ -n "$file" ] &&
-      emacsclient -nw "$file" &&
+      emacsclient -nw "$file"
   )
 }
 #}}}
