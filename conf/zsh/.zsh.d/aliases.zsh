@@ -151,6 +151,8 @@ alias @aw='googler -w wiki.archlinux.org'
 alias @yt='googler -w youtube.com'
 alias @w='googler -w en.wikipedia.org'
 alias @xkcd='googler -w xkcd.com'
+alias @clj='googler -w clojuredocs.org'
+alias @gh='googler -w github.com'
 
 # OLD {{{2
 # see ~/.zsh/web_search.zsh
