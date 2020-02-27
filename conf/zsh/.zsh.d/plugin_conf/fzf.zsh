@@ -276,7 +276,7 @@ forg() {
       linum=$(echo "$match" | cut -d':' -f2) &&
       file=$(echo "$match" | cut -d':' -f1) &&
 
-      emacsclient -nw +$linum $file && popd
+      emacsclient -nw +$linum $file
   )
 }
 
