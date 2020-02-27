@@ -10,10 +10,17 @@
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='rg --hidden --smart-case --ignore-file ~/.globalignore --files'
 
-export FZF_DEFAULT_OPTS='
-  --color fg:15,bg:0,hl:2,fg+:15,bg+:235,hl+:10
-  --color info:11,prompt:5,spinner:11,pointer:10,marker:208,header:15
-'
+export FZF_DEFAULT_OPTS="
+  --ansi
+  --color='fg:15,bg:0,hl:2,fg+:15,bg+:235,hl+:10'
+  --color='info:11,prompt:5,spinner:11,pointer:10,marker:208,header:15'
+  --bind='alt-k:preview-up,alt-p:preview-up'
+  --bind='alt-j:preview-down,alt-n:preview-down'
+  --bind='ctrl-r:toggle-all'
+  --bind='ctrl-s:toggle-sort'
+  --bind='?:toggle-preview'
+  --bind='alt-w:toggle-preview-wrap'
+"
 export FZF_COMPLETION_TRIGGER='~~'
 
 # To apply the command to CTRL-T as well
