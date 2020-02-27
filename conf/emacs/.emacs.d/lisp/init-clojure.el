@@ -18,6 +18,7 @@
 ;;----------------------------------------------------------------------------
 (use-package clojure-mode
   :after flycheck
+  :commands (flycheck-add-next-checker)
   :config
   (require 'flycheck-clj-kondo)
   (require 'flycheck-joker)
