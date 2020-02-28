@@ -13,3 +13,4 @@ GPATH
 .rebel_readline_history
 .tern-port
 .cache
+node_modules
