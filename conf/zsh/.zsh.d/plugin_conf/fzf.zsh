@@ -21,11 +21,12 @@ export FZF_DEFAULT_OPTS="
   --bind='?:toggle-preview'
   --bind='alt-w:toggle-preview-wrap'
 "
-export FZF_COMPLETION_TRIGGER='~~'
+# export FZF_COMPLETION_TRIGGER='~~'
 
 # To apply the command to CTRL-T as well
-# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# export FZF_CTRL_T_OPTS="--preview '(bat -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+
 #}}}
 # Command history: {{{
 
