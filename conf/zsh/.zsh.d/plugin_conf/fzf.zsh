@@ -12,7 +12,7 @@ export FZF_DEFAULT_COMMAND='rg --hidden --smart-case --ignore-file ~/.globaligno
 
 export FZF_DEFAULT_OPTS="
   --ansi
-  --color='fg:15,bg:0,hl:2,fg+:15,bg+:235,hl+:10'
+  --color='fg:15,bg:0,hl:5,fg+:15,bg+:235,hl+:13'
   --color='info:11,prompt:5,spinner:11,pointer:10,marker:208,header:15'
   --bind='alt-k:preview-up,alt-p:preview-up'
   --bind='alt-j:preview-down,alt-n:preview-down'
