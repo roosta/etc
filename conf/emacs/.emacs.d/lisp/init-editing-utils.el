@@ -18,22 +18,14 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-
-;;
-
 ;;; Code:
-
-;;----------------------------------------------------------------------------
-;; Saveplace
+;; Saveplace {{{
 ;;----------------------------------------------------------------------------
 ;; The saveplace library saves the location of the point when you kill a buffer
 ;; and returns to it next time you visit the associated file.
 (save-place-mode 1)
-
-;;----------------------------------------------------------------------------
-;; Some basic preferences
-;;----------------------------------------------------------------------------
-
+;; }}}
+;; Some basic preferences {{{
 (setq save-interprogram-paste-before-kill t
       apropos-do-all t
       mouse-yank-at-point t
@@ -47,50 +39,40 @@
       backup-directory-alist `(("." . ,(concat user-emacs-directory
                                                "backups"))))
 
-;;----------------------------------------------------------------------------
-;; Smooth scrolling
+;;}}}
+;; Smooth scrolling {{{
 ;; https://www.emacswiki.org/emacs/SmoothScrolling
 ;; scroll one line at a time (less "jumpy" than defaults)
 ;;----------------------------------------------------------------------------
-
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1)) ;; one line at a time
       mouse-wheel-progressive-speed nil ;; don't accelerate scrolling
       mouse-wheel-follow-mouse 't ;; scroll window under mouse
       scroll-step 1  ;; keyboard scroll one line at a time
       scroll-conservatively 10000 ;; scroll one line at a time when you move the cursor past the top or bottom of the window,
       )
-
-;;----------------------------------------------------------------------------
-;; Modes and hooks
-;;----------------------------------------------------------------------------
+;;}}}
+;; Modes and hooks {{{
 (global-hl-line-mode 1)
 (global-subword-mode t)
 (diminish 'subword-mode)
 
 ;; Clear trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-;;----------------------------------------------------------------------------
-;; Relative line numbering
-;;----------------------------------------------------------------------------
+;;}}}
+;; Relative line numbering {{{
 (defvar display-line-numbers-type)
 (setq display-line-numbers-type 'relative)
 (global-display-line-numbers-mode 1)
 (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode 0)))
-
-;;----------------------------------------------------------------------------
-;; Quickly switch to scratch buffer
-;;----------------------------------------------------------------------------
+;;}}}
+;; Quickly switch to scratch buffer {{{
 (defun roosta/switch-to-scratch-buffer ()
   "Switch to the `*scratch*' buffer."
   (interactive)
   (switch-to-buffer (get-buffer-create "*scratch*"))
   (lisp-interaction-mode))
-
-;;----------------------------------------------------------------------------
-;; dumb-jump
-;;----------------------------------------------------------------------------
-
+;; }}}
+;; dumb-jump {{{
 (use-package dumb-jump
   :defines
   (dumb-jump-selector)
@@ -101,12 +83,8 @@
    "jq" #'dumb-jump-quick-look
    "jj" #'dumb-jump-go
    "jb" #'dumb-jump-back))
-
-
-;;----------------------------------------------------------------------------
-;; General keybindings
-;;----------------------------------------------------------------------------
-
+;;}}}
+;; General keybindings {{{
 (general-def
  "M-/"     #'hippie-expand
  "C-x C-b" #'ibuffer)
@@ -123,11 +101,8 @@
  "bd"  #'kill-this-buffer
  "u"   #'universal-argument
  "cc"  #'compile)
-
-;;----------------------------------------------------------------------------
-;; visual-line-mode
-;;----------------------------------------------------------------------------
-
+;;}}}
+;; visual-line-mode {{{
 (setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
 (setq fill-column 80)
 
@@ -141,11 +116,8 @@
   (advice-add 'text-scale-adjust :after #'visual-fill-column-adjust))
 
 (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
-
-;;----------------------------------------------------------------------------
-;; Indentation
-;;----------------------------------------------------------------------------
-
+;;}}}
+;; Indentation {{{
 (setq-default indent-tabs-mode nil)
 
 (defun roosta/setup-indent (n)
@@ -190,6 +162,6 @@ Takes N indentation width."
 (add-hook 'prog-mode-hook #'roosta/personal-code-style)
 (add-hook 'web-mode-hook #'roosta/personal-code-style)
 (add-hook 'makefile-mode-hook #'roosta/make-code-style)
-
+;;;}}}
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
