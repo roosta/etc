@@ -4,13 +4,14 @@
 
 (require 'package)
 
+;; Install directory {{{
 ;; Install into separate package dirs for each Emacs version, to prevent bytecode incompatibility
 (let ((versioned-package-dir
         (expand-file-name (format "elpa-%s.%s" emacs-major-version emacs-minor-version)
                           user-emacs-directory)))
   (setq package-user-dir versioned-package-dir))
-
-;;; Melpa quick start
+;; }}}
+;; Melpa quick start {{{
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
 		    (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
@@ -28,11 +29,13 @@ There are two things you can do about this warning:
     ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
 (package-initialize)
-
+;;}}}
+;; TLS bugfix {{{
 ;; Work-around for https://debbugs.gnu.org/cgi/bugreport.cgi?bug=34341
 (when (version= "26.2" emacs-version)
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
-
+;;}}}
+;; use-package {{{
 ;; Ensure use-package is installed
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -42,9 +45,11 @@ There are two things you can do about this warning:
   (require 'use-package)
   (require 'use-package-ensure)
   (setq use-package-always-ensure t))
-
-(use-package quelpa)
-(use-package quelpa-use-package)
+;;}}}
+;; Quelpa {{{
+;; (use-package quelpa)
+;; (use-package quelpa-use-package)
+;;}}}
 
 (provide 'init-elpa)
 ;;; init-elpa.el ends here
