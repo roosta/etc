@@ -50,6 +50,9 @@ There are two things you can do about this warning:
 ;; (use-package quelpa)
 ;; (use-package quelpa-use-package)
 ;;}}}
+;; el-get {{{
+(use-package el-get)
+;;}}}
 
 (provide 'init-elpa)
 ;;; init-elpa.el ends here
