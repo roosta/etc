@@ -28,7 +28,7 @@
 (defvar local-file (expand-file-name (concat "local/" (system-name) ".el") user-emacs-directory))
 (require 'init-utils)
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
-(require 'init-elpa)      ;; Machinery for installing required packages
+(require 'init-package)      ;; Machinery for installing required packages
 (require 'init-global-config)
 ;; (require 'init-exec-path) ;; Set up $PATH
 

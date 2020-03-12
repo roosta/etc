@@ -1,4 +1,4 @@
-;;; init-elpa.el --- Settings and helpers for package.el -*- lexical-binding: t -*-
+;;; init-package.el --- Setup various ways to get remote packages -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -54,5 +54,5 @@ There are two things you can do about this warning:
 (use-package el-get)
 ;;}}}
 
-(provide 'init-elpa)
-;;; init-elpa.el ends here
+(provide 'init-package)
+;;; init-package.el ends here
