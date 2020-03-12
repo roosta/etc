@@ -41,8 +41,10 @@ There are two things you can do about this warning:
 (eval-when-compile
   (require 'use-package)
   (require 'use-package-ensure)
-  (setq use-package-always-ensure t)
-  )
+  (setq use-package-always-ensure t))
+
+(use-package quelpa)
+(use-package quelpa-use-package)
 
 (provide 'init-elpa)
 ;;; init-elpa.el ends here
