@@ -5,7 +5,7 @@
 
 (require 'init-frame-hooks)
 (require 'init-utils)
-(require 'init-site-lisp)
+(require 'names)
 
 ;; Mouse support {{{
 (global-set-key [mouse-4] (lambda () (interactive) (scroll-down 1)))
@@ -13,23 +13,16 @@
 (autoload 'mwheel-install "mwheel")
 ;;}}}
 ;; Tmux navigation {{{
-(after-load 'evil
-  (ensure-lib-from-url
-   'tmux
-   "https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Btools/tmux/local/tmux/tmux.el")
-  (require 'tmux))
+(el-get-bundle tmux
+  :url "https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Btools/tmux/local/tmux/tmux.el"
+  (require 'tmux)
+  ;; Add some overrides here, certain buffers the tmux nav doesn't work
+  (general-def '(normal visual operator) (sql-mode-map sql-interactive-mode-map magit-diff-mode-map term-raw-map skewer-repl-mode-map)
+    "C-k" #'tmux-nav-up
+    "C-j" #'tmux-nav-down
+    "C-l" #'tmux-nav-right
+    "C-h" #'tmux-nav-left))
 
-(declare-function tmux-nav-up tmux)
-(declare-function tmux-nav-down tmux)
-(declare-function tmux-nav-left tmux)
-(declare-function tmux-nav-right tmux)
-
-;; Add some overrides here, certain buffers the tmux nav doesn't work
-(general-def '(normal visual operator) (sql-mode-map sql-interactive-mode-map magit-diff-mode-map term-raw-map skewer-repl-mode-map)
-  "C-k" #'tmux-nav-up
-  "C-j" #'tmux-nav-down
-  "C-l" #'tmux-nav-right
-  "C-h" #'tmux-nav-left)
 ;;}}}
 ;; Emacs terminal {{{
 (general-def '(normal visual operator) (term-raw-map)

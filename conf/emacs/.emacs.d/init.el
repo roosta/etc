@@ -53,9 +53,9 @@
 (use-package general)
 
 (require 'init-frame-hooks)
+(require 'init-evil)
 (require 'init-term)
 (require 'init-gui-frames)
-(require 'init-evil)
 (require 'init-theme)
 (require 'init-modeline)
 (require 'init-ivy)
