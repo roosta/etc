@@ -99,8 +99,8 @@ user-fs: ~/src ~/lib ~/mnt ~/tmp ~/bin ~/sbin ~/var/log ~/var/vim/undo ~/.cache/
 	-touch ~/.cache/zsh/dirs
 ~/.local/share:
 	-mkdir -p ~/.local/share
-~/.mozilla/firefox:
-	-mkdir -p ~/.mozilla/firefox
+~/.mozilla/firefox/roosta:
+	-mkdir -p ~/.mozilla/firefox/roosta
 
 update-zsh-plugins: ~/.zplug
 	@echo -e "\033[0;33mUpdating zsh plugins...\033[0m"
