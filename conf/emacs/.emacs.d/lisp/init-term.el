@@ -7,17 +7,12 @@
 (require 'init-utils)
 (require 'init-site-lisp)
 
-;;----------------------------------------------------------------------------
-;; Mouse support
-;;----------------------------------------------------------------------------
+;; Mouse support {{{
 (global-set-key [mouse-4] (lambda () (interactive) (scroll-down 1)))
 (global-set-key [mouse-5] (lambda () (interactive) (scroll-up 1)))
-
 (autoload 'mwheel-install "mwheel")
-
-;;----------------------------------------------------------------------------
-;; Tmux navigation
-;;----------------------------------------------------------------------------
+;;}}}
+;; Tmux navigation {{{
 (after-load 'evil
   (ensure-lib-from-url
    'tmux
@@ -35,10 +30,8 @@
   "C-j" #'tmux-nav-down
   "C-l" #'tmux-nav-right
   "C-h" #'tmux-nav-left)
-
-;;----------------------------------------------------------------------------
-;; Emacs terminal
-;;----------------------------------------------------------------------------
+;;}}}
+;; Emacs terminal {{{
 (general-def '(normal visual operator) (term-raw-map)
   "<C-up>" 'term-send-up
   "<C-down>" 'term-send-down
@@ -46,10 +39,8 @@
 
 (general-def '(normal visual evilified) :prefix "SPC" :non-normal-prefix "C-SPC"
   "'" #'eshell)
-
-;;----------------------------------------------------------------------------
-;; console frame hook
-;;----------------------------------------------------------------------------
+;;}}}
+;; console frame hook {{{
 (defun roosta/console-frame-setup ()
   "Console spesific config."
 
@@ -81,8 +72,10 @@
   (mwheel-install))
 
 (add-hook 'after-make-console-frame-hooks 'roosta/console-frame-setup)
-
+;;}}}
+;; vterm {{{
 (use-package vterm)
+;;}}}
 
 (provide 'init-term)
 ;;; init-term.el ends here
