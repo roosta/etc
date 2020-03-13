@@ -45,6 +45,7 @@
 (require 'init-utils)
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 (require 'init-package)      ;; Machinery for installing required packages
+(require 'init-const)
 (require 'init-global-config)
 ;; (require 'init-exec-path) ;; Set up $PATH
 ;;}}}
