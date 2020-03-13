@@ -327,7 +327,6 @@ alias paggaborder="toilet -t -f pagga -F border"
 alias watchfirefox="watch progress -wc firefox" # watch firefox download progress.
 alias tarx="tar --one-top-level -zxvf" # extract tar to directory same as filename
 alias ports="netstat -tulanp" # list open ports
-#alias pip="sudo -H pip" # set home variable when running pip
 # alias make="colormake"
 alias pdf="zathura"
 if hash dfc 2>/dev/null; then
