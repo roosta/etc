@@ -22,7 +22,6 @@
     "C-j" #'tmux-nav-down
     "C-l" #'tmux-nav-right
     "C-h" #'tmux-nav-left))
-
 ;;}}}
 ;; Emacs terminal {{{
 (general-def '(normal visual operator) (term-raw-map)
