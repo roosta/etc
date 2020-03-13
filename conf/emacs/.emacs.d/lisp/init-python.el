@@ -190,7 +190,9 @@
    "M-j" 'ein:worksheet-move-cell-down
    "M-k" 'ein:worksheet-move-cell-up)
   :config
-  )
+  (defun spacemacs/ein:worksheet-merge-cell-next ()
+    (interactive)
+    (ein:worksheet-merge-cell (ein:worksheet--get-ws-or-error) (ein:worksheet-get-current-cell) t t)))
 
 (provide 'init-python)
 ;;; init-python.el ends here
