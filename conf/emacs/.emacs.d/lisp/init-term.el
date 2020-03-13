@@ -6,6 +6,7 @@
 (require 'init-frame-hooks)
 (require 'init-utils)
 (require 'names)
+(require 'el-get)
 
 ;; Mouse support {{{
 (global-set-key [mouse-4] (lambda () (interactive) (scroll-down 1)))
