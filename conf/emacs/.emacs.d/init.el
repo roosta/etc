@@ -105,7 +105,7 @@
 (require 'init-python)
 
 ;; Run el-get sync to fetch all remote packages
-(el-get 'sync)
+;; (el-get 'sync)
 ;;}}}
 ;; Allow access from Emacs client {{{
 (add-hook 'after-init-hook
