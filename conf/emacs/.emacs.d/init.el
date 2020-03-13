@@ -7,10 +7,12 @@
 ;;; Code:
 
 ;; load path {{{
+;; -------------------------------------
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 ;;}}}
 
 ;; Adjust garbage collection thresholds during startup, and thereafter {{{
+;; -------------------------------------
 (let ((normal-gc-cons-threshold (* 20 1024 1024))
       (init-gc-cons-threshold (* 128 1024 1024)))
   (setq gc-cons-threshold init-gc-cons-threshold)
@@ -19,6 +21,7 @@
 ;;}}}
 
 ;; Bootstrap config {{{
+;; -------------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (defvar local-file (expand-file-name (concat "local/" (system-name) ".el") user-emacs-directory))
 (require 'init-utils)
