@@ -131,5 +131,66 @@
   (lsp-python-executable-cmd "python3"))
 
 
+(use-package ein
+  :general
+  ('(normal visual evilified) ein:notebook-multilang-mode-map :prefix ","
+   "y" 'ein:worksheet-copy-cell
+   "p" 'ein:worksheet-yank-cell
+   "d" 'ein:worksheet-kill-cell
+   "h" 'ein:notebook-worksheet-open-prev-or-last
+   "i" 'ein:worksheet-insert-cell-below
+   "I" 'ein:worksheet-insert-cell-above
+   "j" 'ein:worksheet-goto-next-input
+   "k" 'ein:worksheet-goto-prev-input
+   "l" 'ein:notebook-worksheet-open-next-or-first
+   "H" 'ein:notebook-worksheet-move-prev
+   "J" 'ein:worksheet-move-cell-down
+   "K" 'ein:worksheet-move-cell-up
+   "L" 'ein:notebook-worksheet-move-next
+   "t" 'ein:worksheet-toggle-output
+   "R" 'ein:worksheet-rename-sheet
+   "RET" 'ein:worksheet-execute-cell-and-goto-next
+   ;; Output
+   " C-l" 'ein:worksheet-clear-output
+   " C-S-l" 'ein:worksheet-clear-all-output
+   ;;Console
+   " C-o" 'ein:console-open
+   ;; Merge cells
+   " C-k" 'ein:worksheet-merge-cell
+   " C-j" 'spacemacs/ein:worksheet-merge-cell-next
+   ;; Notebook
+   " C-s" 'ein:notebook-save-notebook-command
+   " C-r" 'ein:notebook-rename-command
+   "1" 'ein:notebook-worksheet-open-1th
+   "2" 'ein:notebook-worksheet-open-2th
+   "3" 'ein:notebook-worksheet-open-3th
+   "4" 'ein:notebook-worksheet-open-4th
+   "5" 'ein:notebook-worksheet-open-5th
+   "6" 'ein:notebook-worksheet-open-6th
+   "7" 'ein:notebook-worksheet-open-7th
+   "8" 'ein:notebook-worksheet-open-8th
+   "9" 'ein:notebook-worksheet-open-last
+   "+" 'ein:notebook-worksheet-insert-next
+   "-" 'ein:notebook-worksheet-delete
+   "x" 'ein:notebook-close
+   "u" 'ein:worksheet-change-cell-type
+   "fs" 'ein:notebook-save-notebook-command)
+  ('(normal visual evilified) ein:traceback-mode-map :prefix ","
+   "RET" 'ein:tb-jump-to-source-at-point-command
+   "n" 'ein:tb-next-item
+   "p" 'ein:tb-prev-item
+   "q" 'bury-buffer)
+  ('(normal insert) ein:notebook-multilang-mode-map
+   "<C-return>" 'ein:worksheet-execute-cell
+   "<S-return"  'ein:worksheet-execute-cell-and-goto-next)
+  ('(normal) ein:notebook-multilang-mode-map
+   "gj" 'ein:worksheet-goto-next-input
+   "gk" 'ein:worksheet-goto-prev-input)
+  ('(normal insert visual) ein:notebook-multilang-mode-map
+   "M-j" 'ein:worksheet-move-cell-down
+   "M-k" 'ein:worksheet-move-cell-up)
+  :config
+  )
+
 (provide 'init-python)
 ;;; init-python.el ends here
