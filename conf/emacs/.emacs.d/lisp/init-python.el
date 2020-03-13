@@ -28,6 +28,16 @@
   :ensure nil
   :after flycheck
   :mode "\\.py\\'"
+  :init
+  (which-key-add-major-mode-key-based-replacements 'python-mode
+    ", c" "execute"
+    ", d" "debug"
+    ", h" "help"
+    ", g" "goto"
+    ", s" "send to REPL"
+    ", r" "refactor"
+    ", v" "pyenv"
+    ", mV" "pyvenv")
   :custom
   (python-indent-offset 4)
   (flycheck-python-pycompile-executable "python3")
@@ -45,20 +55,8 @@
    "sf" 'python-shell-send-defun
    "si" 'python-start-or-switch-repl
    "sR" 'python-shell-send-region-switch
-   "sr" 'python-shell-send-region
-   )
+   "sr" 'python-shell-send-region)
   :config
-
-  (which-key-add-major-mode-key-based-replacements 'python-mode
-    ", c" "execute"
-    ", d" "debug"
-    ", h" "help"
-    ", g" "goto"
-    ", s" "send to REPL"
-    ", r" "refactor"
-    ", v" "pyenv"
-    ", mV" "pyvenv")
-
   (defun spacemacs/python-execute-file (arg)
     "Execute a python script in a shell."
     (interactive "P")
