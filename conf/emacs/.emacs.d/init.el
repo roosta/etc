@@ -102,6 +102,7 @@
 (require 'init-rust)
 (require 'init-compilation)
 (require 'init-csharp)
+(require 'init-python)
 
 ;; Run el-get sync to fetch all remote packages
 (el-get 'sync)

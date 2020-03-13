@@ -13,6 +13,7 @@
   ((js-mode
     js2-mode
     typescript-mode
+    python-mode
     web-mode
     c-mode
     c++-mode
