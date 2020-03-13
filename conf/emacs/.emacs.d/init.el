@@ -1,16 +1,35 @@
 ;;; init.el --- Load the full configuration -*- lexical-binding: t -*-
 
-;; This file bootstraps the configuration, which is divided into
-;; a number of other files. Inspired by https://github.com/purcell/emacs.d
+;; Copyright (C) 2020  Daniel Berg
+
+;; Author: Daniel Berg <mail@roosta.sh>
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
+
+;; This file bootstraps the configuration, which is divided into a
+;; number of other files.  Inspired by:
+;; https://github.com/purcell/emacs.d
+;; https://github.com/MatthewZMD/.emacs.d
+
 ;;; Code:
 
 ;; load path {{{
 ;; -------------------------------------
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 ;;}}}
-
 ;; Adjust garbage collection thresholds during startup, and thereafter {{{
 ;; -------------------------------------
 (let ((normal-gc-cons-threshold (* 20 1024 1024))
@@ -19,7 +38,6 @@
   (add-hook 'emacs-startup-hook
             (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 ;;}}}
-
 ;; Bootstrap config {{{
 ;; -------------------------------------
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -30,13 +48,12 @@
 (require 'init-global-config)
 ;; (require 'init-exec-path) ;; Set up $PATH
 ;;}}}
-
 ;; Variables configured via the interactive 'customize' interface {{{
 (when (file-exists-p custom-file)
   (load custom-file))
 ;;}}}
-
 ;; Load configs for specific features and modes {{{
+;; -------------------------------------
 (use-package diminish)
 (use-package dash)
 (use-package s)
@@ -88,7 +105,6 @@
 ;; Run el-get sync to fetch all remote packages
 (el-get 'sync)
 ;;}}}
-
 ;; Allow access from Emacs client {{{
 (add-hook 'after-init-hook
           (lambda ()
@@ -97,7 +113,6 @@
                      (not (server-running-p)))
                 (server-start))))
 ;;}}}
-
 ;; Load host local variables {{{
 (when (file-exists-p local-file)
   (load local-file))
