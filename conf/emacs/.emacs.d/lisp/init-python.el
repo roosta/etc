@@ -43,8 +43,6 @@
     ", mV" "pyvenv")
   :custom
   (python-indent-offset 4)
-  (flycheck-python-pycompile-executable "python3")
-  (python-shell-interpreter "python3")
   :general
   ('(normal visual evilified) python-mode-map :prefix ","
    "'"  'python-start-or-switch-repl
@@ -122,14 +120,11 @@
       (unless shell-process
         (error "Failed to start python shell properly"))
       (pop-to-buffer (process-buffer shell-process))
-      (evil-insert-state)))
-  )
+      (evil-insert-state))))
 
 (use-package lsp-python-ms
   :after lsp-mode python
-  :if *python*
-  :custom
-  (lsp-python-executable-cmd "python3"))
+  :if *python*)
 
 
 (use-package ein
