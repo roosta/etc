@@ -129,7 +129,7 @@
 
 (use-package ein
   :general
-  ('(normal visual evilified) ein:notebook-multilang-mode-map :prefix ","
+  ('(normal visual evilified) ein:notebook :definer 'minor-mode :prefix ","
    "y" 'ein:worksheet-copy-cell
    "p" 'ein:worksheet-yank-cell
    "d" 'ein:worksheet-kill-cell
@@ -171,18 +171,18 @@
    "x" 'ein:notebook-close
    "u" 'ein:worksheet-change-cell-type
    "fs" 'ein:notebook-save-notebook-command)
-  ('(normal visual evilified) ein:traceback-mode-map :prefix ","
+  ('(normal visual evilified) ein:traceback-mode :prefix ","
    "RET" 'ein:tb-jump-to-source-at-point-command
    "n" 'ein:tb-next-item
    "p" 'ein:tb-prev-item
    "q" 'bury-buffer)
-  ('(normal insert) ein:notebook-multilang-mode-map
+  ('(normal insert) ein:notebook :definer 'minor-mode
    "<C-return>" 'ein:worksheet-execute-cell
    "<S-return"  'ein:worksheet-execute-cell-and-goto-next)
-  ('(normal) ein:notebook-multilang-mode-map
+  ('(normal) ein:notebook :definer 'minor-mode
    "gj" 'ein:worksheet-goto-next-input
    "gk" 'ein:worksheet-goto-prev-input)
-  ('(normal insert visual) ein:notebook-multilang-mode-map
+  ('(normal insert visual) ein:notebook :definer 'minor-mode
    "M-j" 'ein:worksheet-move-cell-down
    "M-k" 'ein:worksheet-move-cell-up)
   :config
