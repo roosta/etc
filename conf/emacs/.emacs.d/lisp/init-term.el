@@ -24,7 +24,8 @@
      magit-diff-mode-map
      term-raw-map
      skewer-repl-mode-map
-     inferior-python-mode-map)
+     inferior-python-mode-map
+     comint-mode-map)
     "C-k" #'tmux-nav-up
     "C-j" #'tmux-nav-down
     "C-l" #'tmux-nav-right
