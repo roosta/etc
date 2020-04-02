@@ -18,11 +18,18 @@
   :url "https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Btools/tmux/local/tmux/tmux.el"
   (require 'tmux)
   ;; Add some overrides here, certain buffers the tmux nav doesn't work
-  (general-def '(normal visual operator) (sql-mode-map sql-interactive-mode-map magit-diff-mode-map term-raw-map skewer-repl-mode-map)
+  (general-def '(normal visual operator)
+    (sql-mode-map
+     sql-interactive-mode-map
+     magit-diff-mode-map
+     term-raw-map
+     skewer-repl-mode-map
+     inferior-python-mode-map)
     "C-k" #'tmux-nav-up
     "C-j" #'tmux-nav-down
     "C-l" #'tmux-nav-right
     "C-h" #'tmux-nav-left))
+
 ;;}}}
 ;; Emacs terminal {{{
 (general-def '(normal visual operator) (term-raw-map)
@@ -71,4 +78,5 @@
 ;;}}}
 
 (provide 'init-term)
+
 ;;; init-term.el ends here
