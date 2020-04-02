@@ -28,6 +28,7 @@
   (require 'init-const))
 
 (use-package python-mode
+  :ensure nil
   :after flycheck
   :mode "\\.py\\'"
   :init
