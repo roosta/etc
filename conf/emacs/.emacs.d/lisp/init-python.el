@@ -35,8 +35,7 @@
   ", g" "goto"
   ", s" "send to REPL"
   ", r" "refactor"
-  ", v" "pyenv"
-  ", mV" "pyvenv")
+  ", v" "pyenv")
 
 (setq python-indent-offset 4)
 (setq python-shell--interpreter-args "-i")
@@ -49,18 +48,18 @@
 (load-file (site-lisp-library-el-path 'python-utils))
 
 (general-def '(normal visual evilified) python-mode-map :prefix ","
-  "'"  'python-start-or-switch-repl
-  "cc" 'spacemacs/python-execute-file
+  "'"  'spacemacs/python-start-or-switch-repl
+  "cc" '(spacemacs/python-execute-file :which-key "execute file")
   "cC" 'spacemacs/python-execute-file-focus
   ;; "db" 'spacemacs/python-toggle-breakpoint
   ;; "ri" 'spacemacs/python-remove-unused-imports
-  "sB" 'spacemacs/python-shell-send-buffer-switch
-  "sb" 'spacemacs/python-shell-send-buffer
-  "sF" 'spacemacs/python-shell-send-defun-switch
-  "sf" 'spacemacs/python-shell-send-defun
-  "si" 'spacemacs/python-start-or-switch-repl
-  "sR" 'spacemacs/python-shell-send-region-switch
-  "sr" 'spacemacs/python-shell-send-region)
+  "sB" '(spacemacs/python-shell-send-buffer-switch :which-key "send buffer switch")
+  "sb" '(spacemacs/python-shell-send-buffer :which-key "send buffer")
+  "sF" '(spacemacs/python-shell-send-defun-switch :which-key "send defun switch")
+  "sf" '(spacemacs/python-shell-send-defun :which-key "send defun")
+  "si" '(spacemacs/python-start-or-switch-repl :which-key "start or switch repl")
+  "sR" '(spacemacs/python-shell-send-region-switch :which-key "send region switch")
+  "sr" '(spacemacs/python-shell-send-region :which-key "send region"))
 
 (use-package lsp-python-ms
   :after lsp-mode python
