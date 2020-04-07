@@ -61,6 +61,9 @@
   "sR" '(spacemacs/python-shell-send-region-switch :which-key "send region switch")
   "sr" '(spacemacs/python-shell-send-region :which-key "send region"))
 
+(general-def '(normal visual operator insert) inferior-python-mode-map
+  "<C-return>" 'comint-send-input)
+
 (use-package lsp-python-ms
   :after lsp-mode python
   :if *python*)
