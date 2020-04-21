@@ -68,7 +68,11 @@ Pass FNAME as the function name and CHAR as the character."
     "* TODO %?"))
 
  ;; dont show hours in days in clocktable
- org-duration-format 'h:mm)
+ org-duration-format 'h:mm
+
+ ;; Refile to more headings, not just top level
+ org-refile-targets '((nil :maxlevel . 9))
+ )
 
   ;; persist clock on emacs restart
   (org-clock-persistence-insinuate)
