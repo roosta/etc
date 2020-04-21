@@ -61,8 +61,17 @@
   "sR" '(spacemacs/python-shell-send-region-switch :which-key "send region switch")
   "sr" '(spacemacs/python-shell-send-region :which-key "send region"))
 
+(defun roosta/ipython-clear ()
+  "Clear ipython buffer."
+  (interactive)
+  (let ((comint-buffer-maximum-size 0))
+    (comint-truncate-buffer)))
+
 (general-def '(normal visual operator insert) inferior-python-mode-map
   "<C-return>" 'comint-send-input)
+
+(general-def '(normal visual evilified) inferior-python-mode-map :prefix ","
+  "sc" '(roosta/ipython-clear :which-key "ipython-clear"))
 
 (use-package lsp-python-ms
   :after lsp-mode python
