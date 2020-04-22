@@ -1,34 +1,42 @@
 ;;; init-clojure.el --- Setup clojure and clojurescript language  -*- lexical-binding: t; -*-
+;; Copyright (C) 2020  Daniel Berg
+
+;; Author: Daniel Berg <mail@roosta.sh>
+
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 ;;; Commentary:
 ;;; Code:
-
 
 (require 'init-utils)
 (require 'advice)
 (require 'init-site-lisp)
 
-;;----------------------------------------------------------------------------
-;; Linters
-;;----------------------------------------------------------------------------
+;; Linters {{{
 (use-package flycheck-clj-kondo
   :after flycheck
   :config
   (require 'flycheck-clj-kondo))
-
-;;----------------------------------------------------------------------------
-;; Clojure-mode
-;;----------------------------------------------------------------------------
+;; }}}
+;; Clojure-mode {{{
 (use-package clojure-mode)
-
-;;----------------------------------------------------------------------------
-;; Snippets for yasnippet
-;;----------------------------------------------------------------------------
+;; }}}
+;; Snippets for yasnippet {{{
 (use-package clojure-snippets
   :after (yasnippet))
-
-;;----------------------------------------------------------------------------
-;; Cider
-;;----------------------------------------------------------------------------
+;;}}}
+;; Cider {{{
 (use-package cider
   :commands
   (cider-javadoc
@@ -66,28 +74,21 @@
   (setq cider-overlays-use-font-lock t) ; add syntax highlighting to eval overlay
   (setq cider-font-lock-reader-conditionals nil) ; Fix issue where working on cljc files would comment out env paths
   )
-
-
-;;----------------------------------------------------------------------------
-;; highlight evals
-;;----------------------------------------------------------------------------
+;;}}}
+;; Highlight evals {{{
 (use-package cider-eval-sexp-fu
   :after (cider))
-
+;; }}}
+;; Functions defined in spacemacs clojure layer {{{
 ;;----------------------------------------------------------------------------
-;; Functions defined in spacemacs clojure layer
 ;; https://raw.githubusercontent.com/syl20bnr/spacemacs/master/layers/%2Blang/clojure/funcs.el
-;;----------------------------------------------------------------------------
-
 (ensure-lib-from-url
  'clojure-utils
  "https://raw.githubusercontent.com/syl20bnr/spacemacs/develop/layers/%2Blang/clojure/funcs.el")
 
 (load-file (site-lisp-library-el-path 'clojure-utils))
-
-;;----------------------------------------------------------------------------
-;; Key definitions
-;;----------------------------------------------------------------------------
+;;}}}
+;; Key definitions {{{
 (general-def cider-repl-mode-map
   "RET" 'cider-repl-newline-and-indent)
 
@@ -179,10 +180,8 @@
 
 (general-def '(normal visual evilified) clojure-mode-map
   "K" #'cider-doc)
-
-;;----------------------------------------------------------------------------
-;; clj-refactor
-;;----------------------------------------------------------------------------
+;;}}}
+;; clj-refactor {{{
 (use-package clj-refactor
   :defines
   (cljr--all-helpers)
@@ -212,10 +211,8 @@
    :prefix ","
    "o" #'cljr-ivy)
   :load-path "~/src/cljr-ivy")
-
-;;----------------------------------------------------------------------------
-;; Add prefix descriptions to which-key
-;;----------------------------------------------------------------------------
+;;}}}
+;; Add prefix descriptions to which-key {{{
 (dolist (m '(clojure-mode
              clojurec-mode
              clojurescript-mode
@@ -257,7 +254,7 @@
     ", rt" "thread"
     ", ru" "unwind/update"
     ))
-
+;;}}}
 
 (provide 'init-clojure)
 ;;; init-clojure.el ends here
