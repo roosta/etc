@@ -76,15 +76,15 @@
   )
 ;;}}}
 ;; Completion {{{
-(el-get-bundle anakondo
-  :url "https://raw.githubusercontent.com/didibus/anakondo/master/anakondo.el"
-  (require 'anakondo)
-  ;; Enable anakondo-minor-mode in all Clojure buffers
-  (add-hook 'clojure-mode-hook #'anakondo-minor-mode)
-  ;; Enable anakondo-minor-mode in all ClojureScript buffers
-  (add-hook 'clojurescript-mode-hook #'anakondo-minor-mode)
-  ;; Enable anakondo-minor-mode in all cljc buffers
-  (add-hook 'clojurec-mode-hook #'anakondo-minor-mode))
+;; (el-get-bundle anakondo
+;;   :url "https://raw.githubusercontent.com/didibus/anakondo/master/anakondo.el"
+;;   (require 'anakondo)
+;;   ;; Enable anakondo-minor-mode in all Clojure buffers
+;;   (add-hook 'clojure-mode-hook #'anakondo-minor-mode)
+;;   ;; Enable anakondo-minor-mode in all ClojureScript buffers
+;;   (add-hook 'clojurescript-mode-hook #'anakondo-minor-mode)
+;;   ;; Enable anakondo-minor-mode in all cljc buffers
+;;   (add-hook 'clojurec-mode-hook #'anakondo-minor-mode))
 
 ;;}}}
 ;; Highlight evals {{{
