@@ -10,24 +10,15 @@
 ;;----------------------------------------------------------------------------
 ;; Linters
 ;;----------------------------------------------------------------------------
-(use-package flycheck-joker :after flycheck)
-(use-package flycheck-clj-kondo :after flycheck)
+(use-package flycheck-clj-kondo
+  :after flycheck
+  :config
+  (require 'flycheck-clj-kondo))
 
 ;;----------------------------------------------------------------------------
 ;; Clojure-mode
 ;;----------------------------------------------------------------------------
-(use-package clojure-mode
-  :after flycheck
-  :commands (flycheck-add-next-checker)
-  :config
-  (require 'flycheck-clj-kondo)
-  (require 'flycheck-joker)
-  (dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
-    (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
-  (dolist (checkers '((clj-kondo-clj . clojure-joker)
-                      (clj-kondo-cljs . clojurescript-joker)
-                      (clj-kondo-cljc . clojure-joker)))
-    (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers)))))
+(use-package clojure-mode)
 
 ;;----------------------------------------------------------------------------
 ;; Snippets for yasnippet
