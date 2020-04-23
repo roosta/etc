@@ -9,13 +9,12 @@
 ;;----------------------------------------------------------------------------
 (use-package smartparens
   :diminish smartparens-mode
+  :hook (ehshell-mode . smartparens-strict-mode)
   :commands
   (smartparens-global-strict-mode
    smartparens-strict-mode)
   :config
-  (require 'smartparens-config)
-  (smartparens-global-strict-mode)
-  (add-hook 'eshell-mode-hook #'smartparens-strict-mode))
+  (require 'smartparens-config))
 
 (use-package evil-cleverparens
   :after (evil)

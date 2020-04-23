@@ -30,7 +30,12 @@
   (require 'flycheck-clj-kondo))
 ;; }}}
 ;; Clojure-mode {{{
-(use-package clojure-mode)
+(use-package clojure-mode
+  :hook ((clojure-mode
+          clojurescript-mode
+          clojurec-mode
+          cider-repl-mode)
+         . smartparens-strict-mode))
 ;; }}}
 ;; Snippets for yasnippet {{{
 (use-package clojure-snippets
