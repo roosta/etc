@@ -75,7 +75,7 @@
 (add-hook 'after-make-console-frame-hooks 'roosta/console-frame-setup)
 ;;}}}
 ;; vterm {{{
-(use-package vterm)
+; (use-package vterm)
 ;;}}}
 
 (provide 'init-term)
