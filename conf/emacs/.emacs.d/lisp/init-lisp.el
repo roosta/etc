@@ -14,7 +14,8 @@
   (smartparens-global-strict-mode
    smartparens-strict-mode)
   :config
-  (require 'smartparens-config))
+  (require 'smartparens-config)
+  (smartparens-global-mode))
 
 (use-package evil-cleverparens
   :after (evil)
