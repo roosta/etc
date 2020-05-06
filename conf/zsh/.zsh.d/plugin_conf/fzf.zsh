@@ -18,7 +18,7 @@ export FZF_DEFAULT_OPTS="
   --bind='alt-j:preview-down,alt-n:preview-down'
   --bind='ctrl-r:toggle-all'
   --bind='ctrl-s:toggle-sort'
-  --bind='?:toggle-preview'
+  --bind='ctrl-p:toggle-preview'
   --bind='alt-w:toggle-preview-wrap'
 "
 # export FZF_COMPLETION_TRIGGER='~~'
