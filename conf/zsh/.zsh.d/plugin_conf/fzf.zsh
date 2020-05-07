@@ -89,7 +89,7 @@ e() {
   else
     local file
     file=$(fzf-tmux --query="$1")
-    [ -n "$file" ] && emacsclient -a vim -t "$file"
+    [ -n "$file" ] && eval "$EDITOR" "$file"
   fi
 }
 
