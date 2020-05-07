@@ -6,17 +6,17 @@
 # │  Author : Daniel Berg <mail@roosta.sh>               │
 # │  Github : https://github.com/roosta/etc              │
 # └──────────────────────────────────────────────────────┘
-# STARTUP {{{
+# Startup {{{
 # --------------------
 exec_always --no-startup-id $HOME/scripts/launch-polybar.sh
 exec_always --no-startup-id $HOME/.cargo/bin/i3wsr -c ~/.i3wsr_config.toml
 # }}}
-# OPTIONS {{{
+# Options {{{
 # --------------------
 # workspace_auto_back_and_forth yes
 show_marks yes
 # }}}
-# WORKSPACES #{{{
+# Workspaces #{{{
 # --------------------
 bindsym $mod+q workspace number $pws_q
 bindsym $mod+w workspace number $pws_w
@@ -109,7 +109,7 @@ mouse_warping none
 new_window pixel 1
 hide_edge_borders none
 #}}}
-## WINDOW WORKSPACE ASSIGNMENT {{{1
+# Window workspace assignment {{{1
 ## ---------------------------
 ## D:Debug
 #assign [class="(?i)google-chrome-beta"]     $sws_d
@@ -162,7 +162,7 @@ hide_edge_borders none
 #assign [class="(?i)conky"] $tws_f3
 #assign [class="(?i)transmission-gtk"] $tws_f2
 ##}}}
-# WINDOW BEHAVIOUR {{{1
+# Window behaviour {{{1
 # ----------------
 # create some rules to force floating on certain roles/classes
 for_window [window_role="pop-up"] floating enable
@@ -199,7 +199,7 @@ for_window [class="(?i)PrisonArchitect.x86_64"] border none
 for_window [class="(?i)conky"] border none
 for_window [class="(?i)terminator"] border none
 #}}}
-# KEYBINDINGS {{{1
+# Keybindings {{{1
 # use xev to get keycodes
 # ------------------------
 
@@ -311,8 +311,8 @@ bindsym $mod+Control+v exec ~/.vim-anywhere/bin/run
 bindsym $mod+Control+e exec ~/.emacs_anywhere/bin/run
 
 #}}}
-# BINDING MODES {{{1
-# RESIZE {{{2
+# Binding modes {{{1
+# Resize {{{2
 # resize windows with either vi keys or arrows.
 # shift+movement shrink or grow with larger increments
 set $mode_resize Resize: direction + (shift|control|shift&control)
@@ -365,7 +365,7 @@ mode "$mode_resize" {
 }
 bindsym $mod+r mode "$mode_resize"
 #}}}
-# SYSTEM {{{2
+# System {{{2
 # https://wiki.archlinux.org/index.php/I3#Shutdown.2C_reboot.2C_lock_screen
 set $mode_system System: (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -383,7 +383,7 @@ mode "$mode_system" {
 bindsym XF86Sleep mode "$mode_system"
 bindsym $mod+End mode "$mode_system"
 #}}}
-# OUTPUT {{{2
+# Output {{{2
 # Quickly switch output based on presets
 # Script is in the submodule "scripts". Alternativly http://github.com/roosta/scripts
 set $changeto ~/bin/chdisp
@@ -401,7 +401,7 @@ mode "$mode_chdisp" {
 bindsym XF86HomePage mode "$mode_chdisp"
 bindsym $mod+Home mode "$mode_chdisp"
 #}}}
-# MARKS {{{2
+# Marks {{{2
 # https://i3wm.org/docs/userguide.html#vim_like_marks
 mode "focused" {
 
@@ -438,7 +438,7 @@ mode "focused" {
 bindsym $mod+n mode "focused"
 #}}}
 #}}}
-# APPEARANCE #{{{1
+# Appearance #{{{1
 # ----------
 # generated from template
 # set primary font
