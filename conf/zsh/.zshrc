@@ -4,7 +4,7 @@
 # │█▀▀▀▀▀▀▀▀█░░░░▄▀░░▀▀█░█▀█░█▀▄░█░░░░░░█▀▀▀▀▀▀▀▀█│
 # │█▀▀▀▀▀▀▀▀▀░░░░▀▀▀░▀▀▀░▀░▀░▀░▀░▀▀▀░░░░▀▀▀▀▀▀▀▀▀█│
 # │█▀▀▀▀▀▀▀▀▀───────────────────────────▀▀▀▀▀▀▀▀▀█│
-# ├┤ Author : Roosta <mail@roosta.sh>            ├┤
+# ├┤ Author : Daniel Berg <mail@roosta.sh>       ├┤
 # ├┤ Github : https://github.com/roosta          ├┤
 # ┆└───────────────────────────────────────┬┬┬┬┬─┤┆
 # │                                        ├┤┆├┴─┤
@@ -43,11 +43,12 @@ zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "b4b4r07/enhancd", use:init.sh
 # zplug "roosta/fif"
 zplug "~/src/fif", from:local
+zplug "Aloxaf/fzf-tab"
 
 # zplug check returns true if all packages are installed
 # Therefore, when it returns false, run zplug install
 if ! zplug check; then
-    zplug install
+  zplug install
 fi
 
 # Then, source plugins and add commands to $PATH
