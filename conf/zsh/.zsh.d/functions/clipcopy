@@ -1,3 +1,5 @@
+# -*- mode: shell-script; -*-
+#  vim: set ft=zsh ts=2 sw=2 tw=0 fdm=marker et :
 # System clipboard integration
 #
 # This file has support for doing system clipboard copy and paste operations
@@ -40,7 +42,7 @@ function clipcopy() {
       fi
     elif which xsel &>/dev/null; then
       if [[ -z $file ]]; then
-        xsel --clipboard --input 
+        xsel --clipboard --input
       else
         cat "$file" | xsel --clipboard --input
       fi
@@ -52,5 +54,3 @@ function clipcopy() {
 }
 
 clipcopy "$@"
-
-#  vim: set ft=zsh ts=2 sw=2 tw=0 fdm=marker et :
