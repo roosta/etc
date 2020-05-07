@@ -3,20 +3,20 @@
 # │o┏━┓┓ ┳┏┏┓  ┏━┓┏━┓┏┓┓┳━┓o┏━┓  ┏┓┓┳━┓┏┏┓┳━┓┳  ┳━┓┏┓┓┳━┓│
 # │┃ ━┫┃┃┃┃┃┃  ┃  ┃ ┃┃┃┃┣━ ┃┃ ┳   ┃ ┣━ ┃┃┃┃━┛┃  ┃━┫ ┃ ┣━ │
 # │┇┗━┛┗┻┇┛ ┇  ┗━┛┛━┛┇┗┛┇  ┇┇━┛   ┇ ┻━┛┛ ┇┇  ┇━┛┛ ┇ ┇ ┻━┛│
-# │  Author : Roosta                                     │
+# │  Author : Daniel Berg <mail@roosta.sh>               │
 # │  Github : https://github.com/roosta/etc              │
 # └──────────────────────────────────────────────────────┘
-# STARTUP #{{{1
+# STARTUP {{{
 # --------------------
 exec_always --no-startup-id $HOME/scripts/launch-polybar.sh
 exec_always --no-startup-id $HOME/.cargo/bin/i3wsr -c ~/.i3wsr_config.toml
-#}}}
-# OPTIONS {{{1
+# }}}
+# OPTIONS {{{
 # --------------------
 # workspace_auto_back_and_forth yes
 show_marks yes
-#}}}
-# WORKSPACES #{{{1
+# }}}
+# WORKSPACES #{{{
 # --------------------
 bindsym $mod+q workspace number $pws_q
 bindsym $mod+w workspace number $pws_w
@@ -436,6 +436,7 @@ mode "focused" {
 }
 
 bindsym $mod+n mode "focused"
+#}}}
 #}}}
 # APPEARANCE #{{{1
 # ----------
