@@ -96,7 +96,7 @@
 (require 'init-javascript)
 (require 'init-windows)
 (require 'init-misc)
-(require 'init-perspective)
+; (require 'init-perspective)
 (require 'init-html)
 (require 'init-cpp)
 (require 'init-rust)

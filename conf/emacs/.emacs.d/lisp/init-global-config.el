@@ -29,6 +29,7 @@
   vc-follow-symlinks t                         ; always follow symlinks
   visual-bell nil                              ; disable visual bell, I find it very distracting when reaching top or bottom of buffer
   initial-scratch-message nil                  ; Remove intro text in scratch buffer
+  server-kill-new-buffers nil                  ; Prevent closing buffers when exiting frame in terminal (WIP)
   )
 
 
