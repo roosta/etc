@@ -29,7 +29,8 @@
   vc-follow-symlinks t                         ; always follow symlinks
   visual-bell nil                              ; disable visual bell, I find it very distracting when reaching top or bottom of buffer
   initial-scratch-message nil                  ; Remove intro text in scratch buffer
-  server-kill-new-buffers nil                  ; Prevent closing buffers when exiting frame in terminal (WIP)
+  server-kill-new-buffers nil                  ; Prevent closing buffers when exiting frame using emacsclient
+  server-temp-file-regexp "^/tmp/Re\\|/draft$\\|^/var/tmp\\|^/dev/shm" ; We do want to kill temp buffers
   )
 
 
