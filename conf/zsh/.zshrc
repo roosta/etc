@@ -11,7 +11,7 @@
 # │                                      ┌─┼┼─┤  ┆
 # └──────────────────────────────────────┴─┴┴─┤
 #                                             ┆
-# VIRTUAL CONSOLE
+# Virtual console {{{
 # Set colors by parsing xresources (or attempt to, not working. Will fix eventually)
 # Also start a tmux session
 if [ "$TERM" = "linux" ]; then
@@ -23,8 +23,8 @@ if [ "$TERM" = "linux" ]; then
   clear
   tmux new-session -s vconsole
 fi
-
-# PLUGINS
+#}}}
+# Plugins {{{
 source ~/.zplug/init.zsh
 
 if [[ -s '/usr/share/doc/pkgfile/command-not-found.zsh' ]]; then
@@ -54,21 +54,22 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-# Unused ATM
+# }}}
+# Unused {{{
 # [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
-
+# }}}
+# Functions {{{
 fpath+=("$HOME/.zsh.d/functions")
 for fn (~/.zsh.d/functions/*)  autoload -Uz $fn
-
-# ZSH CONF
+# }}}
+# Zsh configuration {{{
 for config (~/.zsh.d/*.zsh) source $config
 
 if [[ -s ~/.fzf.zsh ]]; then
   source ~/.fzf.zsh
 fi
-
-# PLUGIN CONF
+# }}}
+# Plugin conf {{{
 # for cfg (~/.zsh.d/plugin_conf/*.zsh) source $cfg
 hash fasd 2>/dev/null && source ~/.zsh.d/plugin_conf/fasd.zsh
 hash fzf 2>/dev/null && source ~/.zsh.d/plugin_conf/fzf.zsh
@@ -77,3 +78,4 @@ source ~/.zsh.d/plugin_conf/autosuggestions.zsh
 source ~/.zsh.d/plugin_conf/enhancd.zsh
 source ~/.zsh.d/plugin_conf/zsh-syntax-highlighting.zsh
 hash thefuck 2>/dev/null && eval $(thefuck --alias)
+# }}}
