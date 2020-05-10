@@ -77,19 +77,3 @@ source ~/.zsh.d/plugin_conf/autosuggestions.zsh
 source ~/.zsh.d/plugin_conf/enhancd.zsh
 source ~/.zsh.d/plugin_conf/zsh-syntax-highlighting.zsh
 hash thefuck 2>/dev/null && eval $(thefuck --alias)
-
-# for rust-racer
-# https://github.com/racer-rust/racer#installation
-hash rustc 2>/dev/null && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-
-# put ruby user dir in path
-if hash ruby 2>/dev/null; then
-  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
-
-# use vimpager, and replace less
-if hash vimpager 2>/dev/null; then
-  export PAGER=/usr/bin/vimpager
-else
-  PAGER=LESS
-fi

@@ -52,7 +52,12 @@ export ZSH_CACHE_DIR=$HOME/.cache/zsh
 # always use the -R option to show raw characters
 export LESS=-R
 
-# alias less to vim pager
+if hash vimpager 2>/dev/null; then
+  export PAGER=/usr/bin/vimpager
+else
+  export PAGER=less
+fi
+
 alias less=$PAGER
 alias zless=$PAGER
 
@@ -89,3 +94,10 @@ export NASHORN_HOME="$JAVA_HOME/bin"
 export SPIDERMONKEY_HOME="${HOME}/spidermonkey"
 # temp
 export PGSSLMODE=require
+
+# https://github.com/racer-rust/racer#installation
+hash rustc 2>/dev/null && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
+if hash ruby 2>/dev/null; then
+  PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
