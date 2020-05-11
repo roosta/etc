@@ -45,6 +45,7 @@ Use the Ispell version if auto-dictionary is not used, use the adict version oth
 
 
 (use-package flyspell-correct
+  :after flyspell
   :commands
   (flyspell-correct-next
    flyspell-correct-previous
@@ -56,6 +57,7 @@ Use the Ispell version if auto-dictionary is not used, use the adict version oth
    "C-;" #'flyspell-correct-wrapper))
 
 (use-package flyspell-correct-ivy
+  :after flyspell-correct
   :commands (flyspell-correct-ivy
              flyspell-correct-wrapper)
   :custom
