@@ -1,4 +1,4 @@
-;;; init-global-config.el --- Initialize global configuration  -*- lexical-binding: t; -*-
+;;; init-server.el --- Initialize emacs daemon/server  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2020  Daniel Berg
 
@@ -23,14 +23,21 @@
 
 ;;; Code:
 
-(setq
-  debug-on-error t                             ; Produce backtraces when errors occur
-  exec-path-from-shell-check-startup-files nil ; disable warning about setting path outside profile/env
-  vc-follow-symlinks t                         ; always follow symlinks
-  visual-bell nil                              ; disable visual bell, I find it very distracting when reaching top or bottom of buffer
-  initial-scratch-message nil                  ; Remove intro text in scratch buffer
-  )
+;; Prevent closing buffers when exiting frame using emacsclient
+(setq server-kill-new-buffers nil)
+
+;; We do want to kill temp buffers
+(setq server-temp-file-regexp
+      "^/tmp/Re\\|/draft$\\|^/var/tmp\\|^/dev/shm\\|\\.git/COMMIT_EDITMSG")
 
 
-(provide 'init-global-config)
-;;; init-global-config.el ends here
+;; Start server when opening an emacs instance
+(add-hook 'after-init-hook
+          (lambda ()
+            (require 'server)
+            (if (and (fboundp 'server-running-p)
+                     (not (server-running-p)))
+                (server-start))))
+
+(provide 'init-server)
+;;; init-server.el ends here

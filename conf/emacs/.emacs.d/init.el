@@ -47,6 +47,7 @@
 (require 'init-package)      ;; Machinery for installing required packages
 (require 'init-const)
 (require 'init-global-config)
+(require 'init-server)
 ;; (require 'init-exec-path) ;; Set up $PATH
 ;;}}}
 ;; Variables configured via the interactive 'customize' interface {{{
@@ -106,14 +107,6 @@
 
 ;; Run el-get sync to fetch all remote packages
 ;; (el-get 'sync)
-;;}}}
-;; Allow access from Emacs client {{{
-(add-hook 'after-init-hook
-          (lambda ()
-            (require 'server)
-            (if (and (fboundp 'server-running-p)
-                     (not (server-running-p)))
-                (server-start))))
 ;;}}}
 ;; Load host local variables {{{
 (when (file-exists-p local-file)
