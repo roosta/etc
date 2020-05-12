@@ -413,6 +413,7 @@ Plug 'vim-scripts/YankRing.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'laher/fuzzymenu.vim'
 " Plug 'rking/ag.vim'
 Plug 'mileszs/ack.vim'
 Plug 'haya14busa/incsearch.vim'
@@ -530,7 +531,7 @@ nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>m  :Marks<cr>
 nnoremap <leader>H  :Helptags<cr>
 nnoremap <leader>/  :Ag<cr>
-nnoremap <leader><leader> :Commands<cr>
+" nnoremap <leader><leader> :Commands<cr>
 nnoremap <leader>ss :BLines<cr>
 
 " Insert mode completion
