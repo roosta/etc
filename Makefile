@@ -169,7 +169,7 @@ link-misc: ~/scripts ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-t
 
 link-conf: user-fs
 	@echo -e "\033[0;33mSymlinking conf...\033[0m"
-	stow $(shell ls conf) -R -t ~ -d conf --ignore="md|org"
+	stow $(shell ls conf) -R -t ~ -d conf --ignore="md|org|firefox"
 
 link-local:
 	@echo -e "\033[0;33mSymlinking local...\033[0m"
