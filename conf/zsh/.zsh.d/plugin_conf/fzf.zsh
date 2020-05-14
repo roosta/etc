@@ -118,8 +118,8 @@ v() {
 # To to org folder and open match
 o() {
   local file
-  ( cd ~/org && file=$(fzf-tmux --query="$1")  &&
-      [ -n "$file" ] && eval "${EDITOR:-vim} $file" && popd)
+  file=$(\ls ~/org | fzf-tmux --query="$1")  &&
+    [ -n "$file" ] && eval "${EDITOR:-vim}" "~/org/${file}"
 }
 
 # vf - fuzzy open with vim from anywhere
