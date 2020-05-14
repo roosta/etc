@@ -55,7 +55,7 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load
 # }}}
-# Unused {{{
+# VirtualEnv {{{
 # [ -f ~/.pip/bin/virtualenvwrapper.sh ] && source ~/.pip/bin/virtualenvwrapper.sh
 # }}}
 # Functions {{{
