@@ -14,3 +14,4 @@ GPATH
 .tern-port
 .cache
 node_modules
+.ccls-cache
