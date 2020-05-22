@@ -172,12 +172,13 @@ label-padding = 1
 type = internal/xkeyboard
 blacklist-0 = num lock
 format = <label-layout> <label-indicator>
-format-padding = 1
+format-padding = 0
 label-layout = %layout%
 label-indicator = %name%
 label-indicator-background = ${colors.brightred}
 label-indicator-foreground = ${colors.brightwhite}
 label-indicator-padding = 1
+label-layout-foreground = ${colors.brightwhite}
 
 [module/pkg]
 ;; Calls a script that checks for pacman and aur package updates
