@@ -64,7 +64,7 @@ font-5 = "FontAwesome5Free:style=Regular:size=10;4"
 font-6 = "FontAwesome5Brands:style=Regular:size=10;4"
 modules-left = i3 xwindow
 ; modules-center = mpd
-modules-right = keyboard-layout vpncheck updates-arch-combined volume memory cpu date time
+modules-right = xkeyboard vpncheck updates-arch-combined volume memory cpu date time
 
 [bar/lintilla-secondary]
 ;; Secondary monitor @ lintilla, max resolution is 1920x1080 so font sizes and
