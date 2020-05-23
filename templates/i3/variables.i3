@@ -1,6 +1,4 @@
- # -*- mode: conf; compile-command: "ftl i3 make" -*-
-# -------------------
-# VARIABLES
+# Variables {{{
 # -------------------
 # fast way to reach power settings for system. Requires polkit.
 # set $locker ~/utils/locker.sh
@@ -80,3 +78,5 @@ set $aws_f9  "25:[F9]"
 set $aws_f10 "26:[F10]"
 set $aws_f11 "27:[F11]"
 set $aws_f12 "28:[F12]"
+
+# }}}
