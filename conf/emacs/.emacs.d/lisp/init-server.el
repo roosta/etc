@@ -28,7 +28,7 @@
 
 ;; We do want to kill temp buffers
 (setq server-temp-file-regexp
-      "^/tmp/Re\\|/draft$\\|^/var/tmp\\|^/dev/shm\\|\\.git/COMMIT_EDITMSG")
+      "^/tmp/Re\\|/draft$\\|^/var/tmp\\|^/dev/shm\\|\\.git/.+MSG$")
 
 
 ;; Start server when opening an emacs instance
