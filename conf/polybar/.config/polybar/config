@@ -47,6 +47,7 @@ width = 100%
 separator = │
 dpi = 192
 height = 34
+enable-ipc = true
 radius = 0
 fixed-center = true
 background = ${colors.xgray2}
@@ -64,12 +65,13 @@ font-5 = "FontAwesome5Free:style=Regular:size=10;4"
 font-6 = "FontAwesome5Brands:style=Regular:size=10;4"
 modules-left = i3 xwindow
 ; modules-center = mpd
-modules-right = xkeyboard vpncheck updates-arch-combined volume memory cpu date time
+modules-right = keyboard-layout vpncheck updates-arch-combined volume memory cpu date time
 
 [bar/lintilla-secondary]
 ;; Secondary monitor @ lintilla, max resolution is 1920x1080 so font sizes and
 ;; dpi needs to be adjusted accortingly
 inherit = bar/lintilla-primary
+enable-ipc = false
 monitor = ${env:MONITOR:DVI-I-1}
 dpi = 96
 height = 22
@@ -82,6 +84,7 @@ tray-background = ${colors.xgray2}
 
 [bar/lintilla-tertiary]
 inherit = bar/lintilla-primary
+enable-ipc = false
 dpi = 96
 height = 22
 modules-center =
@@ -208,12 +211,11 @@ interval = 600
 ;; between Norwegian and American layout, and I need a clear visual indicator
 ;; for which is active.
 ;; https://github.com/roosta/utils/blob/master/keyboard-layout.sh
-type = custom/script
-interval = 0
+type = custom/ipc
 format-foreground = ${colors.brightwhite}
-format = <label>
-label = "%output%"
-exec = ~/scripts/keyboard-layout.sh
+format = <output>
+hook-0 = ~/scripts/keyboard-layout.sh
+initial = 1
 
 [module/vpncheck]
 ;; Checks if a VPN connection is active and proved a colored indictator
