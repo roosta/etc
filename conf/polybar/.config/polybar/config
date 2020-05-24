@@ -107,12 +107,13 @@ modules-right = keyboard-layout vpncheck wifi battery updates-arch-combined volu
 inherit = bar/lintilla-primary
 monitor = ${env:MONITOR:DP1}
 modules-center = mpd
-modules-right = xkeyboard vpncheck updates-arch-combined volume memory cpu date time
+modules-right = keyboard-layout vpncheck updates-arch-combined volume memory cpu date time
 
 [bar/garkbit-secondary]
 dpi = 96
 height = 22
 inherit = bar/lintilla-primary
+enable-ipc = false
 tray-position = right
 tray-padding = 1
 tray-scale = 1
