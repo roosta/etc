@@ -153,7 +153,7 @@ label-unfocused-foreground = ${colors.brightblack}
 
 label-visible = %name%
 label-visible-padding = 1
-label-visible-foreground = ${colors.brightwhite}
+label-visible-foreground = ${colors.white}
 
 label-urgent = %name%
 label-urgent-padding = 1

@@ -448,7 +448,7 @@ font pango:Iosevka 9
 # class                 border  backgr. text    indicator child_border
 # glip                  $
 client.focused          $black   $xgray3 $bright_magenta $cyan $magenta
-client.focused_inactive $black   $xgray2 $bright_white   $cyan $bright_white
+client.focused_inactive $black   $xgray2 $white          $cyan $white
 client.unfocused        $black   $xgray2 $bright_black   $cyan $black
 client.urgent           $orange  $orange $black          $cyan $black
 client.placeholder      $magenta $cyan   $black          $cyan $black
