@@ -192,17 +192,6 @@ if v:version > 704 || v:version == 704 && has('patch687')
   endif
 endif
 
-" Always jump to the last known cursor position.
-" Don't do it when the position is invalid or when inside
-" an event handler (happens when dropping a file on gvim).
-augroup vimrc
-  autocmd!
-  autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal g`\"" |
-        \ endif
-augroup END
-
 "}}}
 " Gvim: {{{1
 
@@ -498,6 +487,8 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 " Utils
 Plug 'alx741/vinfo'
 Plug 'trapd00r/vim-syntax-vidir-ls'
+
+Plug 'farmergreg/vim-lastplace'
 
 call plug#end()
 
