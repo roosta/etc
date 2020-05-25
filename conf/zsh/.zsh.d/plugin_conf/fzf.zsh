@@ -85,7 +85,7 @@ fkill() {
 # Fuzzy match file and open with emacsclient
 e() {
   if [ "$#" -ne 0 ]; then
-    emacsclient -a vim -t $@
+    eval "$EDITOR" "$@"
   else
     local file
     file=$(fzf-tmux --query="$1")
