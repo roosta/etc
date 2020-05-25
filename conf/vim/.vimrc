@@ -106,6 +106,8 @@ set foldmethod=marker
 set encoding=utf-8
 scriptencoding utf-8
 
+" Reduce update time to 100 milliseconds
+set updatetime=100
 "}}}
 " Environments {{{1
 " Vim: {{{2
