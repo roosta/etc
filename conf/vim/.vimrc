@@ -395,20 +395,19 @@ augroup END
 call plug#begin('~/.vim/plugged')
 "}}}
 " Editing/utils/uncategorized {{{2
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-dispatch'
-Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-sensible'
-Plug 'wellle/targets.vim'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-abolish'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'farmergreg/vim-lastplace'
+Plug 'tpope/vim-surround'                                                    " Surround text easily
+Plug 'tpope/vim-repeat'                                                      " Add repeat support to various plugins
+Plug 'tpope/vim-eunuch'                                                      " Unix helper commands
+Plug 'tpope/vim-dispatch'                                                    " Asynchronous build and test dispatcher
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " Alignment
+Plug 'tpope/vim-unimpaired'                                                  " Handy bracket mappings
+Plug 'tpope/vim-sensible'                                                    " Sensible defaults
+Plug 'wellle/targets.vim'                                                    " More text objects
+Plug 'tpope/vim-speeddating'                                                 " Easier dates
+Plug 'tpope/vim-rsi'                                                         " Readline bindings
+Plug 'tpope/vim-commentary'                                                  " Comments
+Plug 'ntpeters/vim-better-whitespace'                                        " Highlight and handle trailing whitespace
+Plug 'farmergreg/vim-lastplace'                                              " Save cursor position
 "}}}
 " Quick fix {{{2
 Plug 'romainl/vim-qf'
