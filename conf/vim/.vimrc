@@ -421,7 +421,7 @@ Plug 'jceb/vim-orgmode'
 Plug 'tpope/vim-vinegar'
 Plug 'trapd00r/vim-syntax-vidir-ls'
 "}}}
-" Searching: {{{2
+" Search/replace: {{{2
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'laher/fuzzymenu.vim'
@@ -429,6 +429,7 @@ Plug 'laher/fuzzymenu.vim'
 " Plug 'mileszs/ack.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'markonm/traces.vim'
+Plug 'tpope/vim-abolish'
 "}}}
 " Visual: {{{2
 Plug 'terryma/vim-expand-region'
