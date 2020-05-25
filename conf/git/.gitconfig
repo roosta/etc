@@ -3,7 +3,7 @@
   user = roosta
   name = Daniel Berg
 [core]
-  editor = emacsclient -nw
+  editor = nvim
   excludesfile = ~/.globalignore
   pager = diff-so-fancy | vimpager
 [push]
@@ -39,7 +39,7 @@
 [merge]
   tool = emergeclient
 [commit]
-  # verbose = true
+  verbose = true
   gpgsign = true
 [include]
   path = ~/.gitconfig.local
