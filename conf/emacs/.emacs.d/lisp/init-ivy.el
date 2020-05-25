@@ -64,11 +64,6 @@
    "pR" #'projectile-replace
    "p%" #'projectile-replace-regexp))
 
-(use-package ivy-pass
-  :general
-  ('(normal visual insert emacs) :prefix "SPC" :non-normal-prefix "C-SPC"
-   "op" #'ivy-pass))
-
 (use-package counsel-projectile
   :defines
   (projectile-switch-project-action)

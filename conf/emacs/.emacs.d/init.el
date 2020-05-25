@@ -104,6 +104,7 @@
 (require 'init-compilation)
 (require 'init-csharp)
 (require 'init-python)
+(require 'init-password-store)
 
 ;; Run el-get sync to fetch all remote packages
 ;; (el-get 'sync)
