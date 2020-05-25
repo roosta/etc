@@ -119,7 +119,7 @@ v() {
 o() {
   local file
   file=$(\ls ~/org | fzf-tmux --query="$1")  &&
-    [ -n "$file" ] && eval "${EDITOR:-vim}" "~/org/${file}"
+    [ -n "$file" ] && emacsclient -a vim -c -t "~/org/${file}"
 }
 
 # vf - fuzzy open with vim from anywhere
