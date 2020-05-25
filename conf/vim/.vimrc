@@ -110,9 +110,6 @@ set fileformats=unix,dos,mac
 
 set foldmethod=marker
 
-" disable auto comment insert. see :help fo-table
-set formatoptions-=cro
-
 if !has('nvim')
   set cryptmethod=blowfish2
   set ttymouse=xterm2
