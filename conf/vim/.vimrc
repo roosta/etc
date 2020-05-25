@@ -711,5 +711,12 @@ nnoremap <leader>cc :Dispatch<cr>
 let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofile', 'git']
 
 " }}}
+" Fuzzymenu {{{
+nmap <Leader><Leader> <Plug>Fzm
+vmap <Leader><Leader> <Plug>FzmVisual
+"}}}
+" vim-iced {{{2
+let g:iced_enable_default_key_mappings = v:true
+"}}}
 " vim: fdm=marker:sw=2
 
