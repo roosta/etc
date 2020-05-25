@@ -396,7 +396,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
-Plug 'vim-scripts/YankRing.vim'
+
 Plug 'terryma/vim-expand-region'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -486,6 +486,9 @@ Plug 'alx741/vinfo'
 Plug 'trapd00r/vim-syntax-vidir-ls'
 
 Plug 'farmergreg/vim-lastplace'
+
+" Clipboard
+Plug 'bfredl/nvim-miniyank'
 
 call plug#end()
 
@@ -615,10 +618,12 @@ let g:clojure_align_multiline_strings = 1
 " Add some words which should be indented like defn etc: Compojure/compojure-api, midje and schema stuff mostly.
 let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY', '^HEAD', '^PATCH', '^OPTIONS', '^def']
 "}}}
-" Yankring: {{{2
+" nvim-miniyank: {{{2
 " ---------------
-noremap <silent> <leader>ry :YRShow<CR>
-let g:yankring_history_dir = '~/var'
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
+map <c-p> <Plug>(miniyank-cycle)
+map <c-n> <Plug>(miniyank-cycleback)
 "}}}
 " Tmux Navigator: {{{2
 " --------------------
