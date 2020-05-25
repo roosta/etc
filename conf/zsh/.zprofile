@@ -11,6 +11,7 @@ path=(~/bin
       ~/.npm/bin
       ~/.pip/bin
       ~/.cargo/bin
+      ~/.vim/plugged/vim-iced/bin
       $path[@])
 
 # set ruby gems install location to home
