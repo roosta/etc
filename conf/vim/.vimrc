@@ -62,7 +62,6 @@ set relativenumber
 set clipboard=unnamedplus
 set shell=zsh
 set spelllang=en_us,nb
-set cryptmethod=blowfish2
 set autoindent
 set smartindent
 
@@ -115,6 +114,7 @@ set foldmethod=marker
 set formatoptions-=cro
 
 if !has('nvim')
+  set cryptmethod=blowfish2
   set ttymouse=xterm2
 endif
 
