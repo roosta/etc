@@ -456,19 +456,19 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 Plug 'jmcantrell/vim-virtualenv'
 
 " Lisp
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'tpope/vim-salve', { 'for': 'clojure' }
-" Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
-Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
-Plug 'tpope/vim-projectionist'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'liquidz/vim-iced', {'for': 'clojure'}
+" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+" Plug 'tpope/vim-salve', { 'for': 'clojure' }
+" Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
+" Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+" Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+" Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'kien/rainbow_parentheses.vim'
 
-" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-projectionist'
 
 " syntax
 Plug 'sheerun/vim-polyglot'
