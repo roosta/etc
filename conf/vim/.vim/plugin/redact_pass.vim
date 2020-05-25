@@ -7,7 +7,7 @@
 "
 " Author: Tom Ryder <tom@sanctum.geek.nz>
 " License: Same as Vim itself
-"
+" SOURCE: https://git.zx2c4.com/password-store/plain/contrib/vim/redact_pass.vim
 if exists('g:loaded_redact_pass') || &compatible
   finish
 endif
