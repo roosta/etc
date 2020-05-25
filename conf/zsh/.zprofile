@@ -37,9 +37,11 @@ export GDK_DPI_SCALE=1
 # export GDK_SCALE=2
 
 # editor
-export EDITOR="emacsclient -a vim -c -t"
+export EDITOR="nvim"
+# export EDITOR="emacsclient -a vim -c -t"
 export ALTERNATE_EDITOR="vim"
-export VISUAL="emacsclient -a vim -c -t"
+# export VISUAL="emacsclient -a vim -c -t"
+export VISUAL="nvim"
 
 # export EDITOR=vim
 # export VISUAL=vim
