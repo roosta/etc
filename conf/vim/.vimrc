@@ -381,8 +381,8 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 "
 " }}}
-" Plugin Manager: {{{
-
+" Plugin Manager: {{{1
+" Setup: {{{2
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
 augroup vimrc
@@ -393,43 +393,59 @@ augroup vimrc
   endif
 augroup END
 call plug#begin('~/.vim/plugged')
-
-" TODO: http://sjl.bitbucket.org/gundo.vim/
+"}}}
+" Editing/utils/uncategorized {{{2
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-eunuch'
-
 Plug 'tpope/vim-dispatch'
 Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] }
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
-
-Plug 'terryma/vim-expand-region'
+Plug 'wellle/targets.vim'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-abolish'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'farmergreg/vim-lastplace'
+"}}}
+" Quick fix {{{2
+Plug 'romainl/vim-qf'
+Plug 'romainl/vim-qlist'
+"}}}
+" Note taking {{{2
+Plug 'jceb/vim-orgmode'
+"}}}
+" Files: {{{2
+" Plug 'justinmk/vim-dirvish'
+Plug 'tpope/vim-vinegar'
+Plug 'trapd00r/vim-syntax-vidir-ls'
+"}}}
+" Searching: {{{2
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'laher/fuzzymenu.vim'
 " Plug 'rking/ag.vim'
-Plug 'mileszs/ack.vim'
+" Plug 'mileszs/ack.vim'
 Plug 'haya14busa/incsearch.vim'
-Plug 'wellle/targets.vim'
-Plug 'jceb/vim-orgmode'
-Plug 'tpope/vim-speeddating'
-" Plug 'ludovicchabant/vim-gutentags'
-Plug 'ajh17/VimCompletesMe'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-vinegar'
-" Plug 'justinmk/vim-dirvish'
+Plug 'markonm/traces.vim'
+"}}}
+" Visual: {{{2
+Plug 'terryma/vim-expand-region'
+"}}}
+" Movement {{{2
 Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-abolish'
-Plug 'romainl/vim-qf'
-Plug 'romainl/vim-qlist'
-Plug 'markonm/traces.vim'
-Plug 'ntpeters/vim-better-whitespace'
-
-" theme
+"}}}
+" Tags: {{{2
+" Plug 'ludovicchabant/vim-gutentags'
+"}}}
+" Completion: {{{
+" Plug 'ajh17/VimCompletesMe'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+"}}}
+" Theme: {{{2
 Plug 'itchyny/lightline.vim'
 " Plug 'vim-airline/vim-airline'
 Plug '/home/roosta/src/srcery-vim'
@@ -437,25 +453,25 @@ Plug '/home/roosta/src/srcery-vim'
 " Plug 'sjl/badwolf'
 " Plug 'romainl/flattened'
 " Plug 'morhetz/gruvbox'
-
-" git
+"}}}
+" Git: {{{2
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-
-" multiplexer
+"}}}
+" Multiplexer: {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-tbone'
-
-" html/js/css
+"}}}
+" Web {{{2
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 " Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
-
-" Python
+"}}}
+" Python: {{{2
 Plug 'jmcantrell/vim-virtualenv'
-
-" Lisp
+"}}}
+" Lisp: {{{2
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
@@ -467,10 +483,11 @@ Plug 'liquidz/vim-iced', {'for': 'clojure'}
 " Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'kien/rainbow_parentheses.vim'
-
+"}}}
+" Projects {{{2
 Plug 'tpope/vim-projectionist'
-
-" syntax
+"}}}
+" Syntax {{{2
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'hdima/python-syntax'
@@ -481,24 +498,19 @@ Plug 'othree/yajs.vim'
 " Plug 'vim-syntastic/syntastic'
 Plug 'w0rp/ale'
 Plug 'gregjurman/vim-nc'
-"
 Plug 'vim-scripts/nginx.vim'
-
-" Rust
+"}}}
+" Rust {{{2
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-
-" Utils
+"}}}
+" Documentation {{{2
 Plug 'alx741/vinfo'
-Plug 'trapd00r/vim-syntax-vidir-ls'
-
-Plug 'farmergreg/vim-lastplace'
-
-" Clipboard
+"}}}
+" Clipboard: {{{2
 Plug 'bfredl/nvim-miniyank'
-
+"}}}
 call plug#end()
-
 syntax on
 filetype plugin indent on
 "}}}
