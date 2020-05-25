@@ -49,8 +49,6 @@ endif
 " https://github.com/vim/vim/issues/2424
 set t_Cs=
 
-set synmaxcol=256
-
 set lazyredraw
 set ttyfast
 set cursorline
