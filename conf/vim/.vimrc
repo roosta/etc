@@ -116,6 +116,16 @@ set formatoptions-=cro
 if !has('nvim')
   set cryptmethod=blowfish2
   set ttymouse=xterm2
+
+  " remove leaks for encrypted files
+  augroup vimrc
+    autocmd!
+    autocmd BufReadPost *
+          \ if &key != "" |
+          \   set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure |
+          \ endif
+  augroup END
+
 endif
 
 set encoding=utf-8
@@ -321,15 +331,6 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <leader><C-n> :call RelativeLinumToggle()<cr>
-
-" remove leaks for encrypted files
-augroup vimrc
-  autocmd!
-  autocmd BufReadPost *
-        \ if &key != "" |
-        \   set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure |
-        \ endif
-augroup END
 
 " Returns true if paste mode is enabled
 function! HasPaste()
