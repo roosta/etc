@@ -512,9 +512,11 @@ Plug 'alx741/vinfo'
 " Clipboard: {{{2
 Plug 'bfredl/nvim-miniyank'
 "}}}
+" Finish: {{{2
 call plug#end()
 syntax on
 filetype plugin indent on
+"}}}
 "}}}
 "Plugin Config: {{{1
 "  Colorscheme: {{{2
