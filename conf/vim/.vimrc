@@ -40,11 +40,6 @@ set shortmess+=I
 " keep 7 lines visible lines above/below when scrolling up/down
 set scrolloff=7
 
-" set number of colors to 256
-if !has('gui_running')
-  set t_Co=256
-endif
-
 " tmp workaround for undercurl fallback to work
 " https://github.com/vim/vim/issues/2424
 set t_Cs=
@@ -108,6 +103,12 @@ set fileformats=unix,dos,mac
 
 set foldmethod=marker
 
+set encoding=utf-8
+scriptencoding utf-8
+
+"}}}
+" Environments {{{1
+" Vim: {{{2
 if !has('nvim')
   set cryptmethod=blowfish2
   set ttymouse=xterm2
@@ -123,12 +124,33 @@ if !has('nvim')
 
 endif
 
-set encoding=utf-8
-scriptencoding utf-8
-
+"}}}
+" Neovim: {{{2
 if has('nvim')
   " tnoremap <Esc> <C-\><C-n>
 endif
+"}}}
+" Terminal: {{{2
+" set number of colors to 256
+if !has('gui_running')
+  set t_Co=256
+endif
+"}}}
+" Gvim: {{{2
+
+if has('gui_running')
+  "set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+  set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=L  "remove left-hand scroll bar
+  set lines=60 columns=108 linespace=0
+  " set guifont=Essential\ PragmataPro\ 14px
+  set guiheadroom=0
+  set background=dark
+  set guifont=Iosevka\ 9
+endif
+
+"}}}
 "}}}
 " Statusline:{{{
 
@@ -185,21 +207,6 @@ if v:version > 704 || v:version == 704 && has('patch687')
     let &t_SR = "\<Esc>[4 q"
     let &t_EI = "\<Esc>[2 q"
   endif
-endif
-
-"}}}
-" Gvim: {{{1
-
-if has('gui_running')
-  "set guioptions-=m  "remove menu bar
-  set guioptions-=T  "remove toolbar
-  set guioptions-=r  "remove right-hand scroll bar
-  set guioptions-=L  "remove left-hand scroll bar
-  set lines=60 columns=108 linespace=0
-  " set guifont=Essential\ PragmataPro\ 14px
-  set guiheadroom=0
-  set background=dark
-  set guifont=Iosevka\ 9
 endif
 
 "}}}
