@@ -441,9 +441,10 @@ Plug 'easymotion/vim-easymotion'
 " Tags: {{{2
 " Plug 'ludovicchabant/vim-gutentags'
 "}}}
-" Completion: {{{
+" Completion: {{{2
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'prabirshrestha/asyncomplete.vim'
 "}}}
 " Theme: {{{2
 Plug 'itchyny/lightline.vim'
@@ -475,6 +476,7 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
+Plug 'liquidz/vim-iced-asyncomplete', {'for': 'clojure'}
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plug 'tpope/vim-salve', { 'for': 'clojure' }
 " Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
