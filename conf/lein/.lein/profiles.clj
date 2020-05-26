@@ -9,7 +9,7 @@
                   [lein-auto "0.1.3"]
 
                   ;; clojure syntax checking
-                  [jonase/eastwood "0.3.4" :exclusions [org.clojure/clojure]]
+                  [jonase/eastwood "0.3.11" :exclusions [org.clojure/clojure]]
 
                   ;; try libraries in a repl
                   ;; Emacs: In your *scratch* buffer, set your inferior-lisp-program var...
@@ -18,7 +18,7 @@
                   [lein-try "0.4.3"]
 
                   ;; pretty print
-                  [lein-pprint "1.2.0"]
+                  [lein-pprint "1.3.2"]
 
                   ;; clojure/script syntax checking
-                  [lein-kibit "0.1.6" :exclusions [org.clojure/clojure]]]}}
+                  [lein-kibit "0.1.8" :exclusions [org.clojure/clojure]]]}}
