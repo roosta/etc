@@ -475,8 +475,8 @@ Plug 'jmcantrell/vim-virtualenv'
 " Lisp: {{{2
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'liquidz/vim-iced', {'for': 'clojure'}
-Plug 'liquidz/vim-iced-asyncomplete', {'for': 'clojure'}
+" Plug 'liquidz/vim-iced', {'for': 'clojure'}
+" Plug 'liquidz/vim-iced-asyncomplete', {'for': 'clojure'}
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plug 'tpope/vim-salve', { 'for': 'clojure' }
 " Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
@@ -730,7 +730,7 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofil
 
 " }}}
 " vim-iced {{{2
-let g:iced_enable_default_key_mappings = v:true
+" let g:iced_enable_default_key_mappings = v:true
 "}}}
 " asyncomplete {{{2
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
