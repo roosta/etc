@@ -442,9 +442,9 @@ Plug 'easymotion/vim-easymotion'
 " Plug 'ludovicchabant/vim-gutentags'
 "}}}
 " Completion: {{{2
-" Plug 'ajh17/VimCompletesMe'
+Plug 'ajh17/VimCompletesMe'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete.vim'
 "}}}
 " Theme: {{{2
 Plug 'itchyny/lightline.vim'
@@ -731,6 +731,11 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofil
 " }}}
 " vim-iced {{{2
 let g:iced_enable_default_key_mappings = v:true
+"}}}
+" asyncomplete {{{2
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 "}}}
 " vim: fdm=marker:sw=2
 
