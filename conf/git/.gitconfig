@@ -11,7 +11,7 @@
 [credential]
   helper = cache --timeout=3600
 [diff]
-  tool = ediffclient
+  tool = vimdiff
 [alias]
   s         = status
   b         = branch
