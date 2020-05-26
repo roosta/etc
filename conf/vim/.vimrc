@@ -627,12 +627,12 @@ let g:slime_python_ipython = 1
 " Disable some irritating mappings
 "let g:sexp_enable_insert_mode_mappings = 1
 
-let g:sexp_mappings = {
-      \ 'sexp_emit_head_element':    '<leader><Down>',
-      \ 'sexp_emit_tail_element':    '<leader><Up>',
-      \ 'sexp_capture_prev_element': '<',
-      \ 'sexp_capture_next_element': '>',
-      \}
+" let g:sexp_mappings = {
+"       \ 'sexp_emit_head_element':    '<leader><Down>',
+"       \ 'sexp_emit_tail_element':    '<leader><Up>',
+"       \ 'sexp_capture_prev_element': '<',
+"       \ 'sexp_capture_next_element': '>',
+"       \}
 "}}}
 " Clojure Highlight: {{{2
 " -----------------
