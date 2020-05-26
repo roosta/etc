@@ -1,10 +1,12 @@
 {:user {:aliases  {"rebl" ["trampoline" "run" "-m" "rebel-readline.main"]}
-        :signing {:gpg-key "mail@roosta.sh"} 
+        :signing {:gpg-key "mail@roosta.sh"}
         :dependencies [
                        ;; [com.bhauman/rebel-readline "0.1.4"]
                        ]
         :plugins [;; check deps for new versions
                   [lein-ancient "0.6.15"]
+
+                  [cider/cider-nrepl "0.24.0"]
 
                   [lein-auto "0.1.3"]
 
