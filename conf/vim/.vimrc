@@ -292,7 +292,7 @@ noremap k gk
 " Remove the Windows ^M - when the encodings gets messed up
 " noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Quickly open a buffer for scripbble
+" Quickly open a buffer for scribble
 map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
@@ -520,7 +520,7 @@ syntax on
 filetype plugin indent on
 "}}}
 "}}}
-"Plugin Config: {{{1
+" Plugin Config: {{{1
 "  Colorscheme: {{{2
 " --------------
 let g:srcery_dim_lisp_paren=1
