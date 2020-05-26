@@ -442,9 +442,16 @@ Plug 'easymotion/vim-easymotion'
 " Plug 'ludovicchabant/vim-gutentags'
 "}}}
 " Completion: {{{2
-Plug 'ajh17/VimCompletesMe'
+" Plug 'ajh17/VimCompletesMe'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Plug 'prabirshrestha/asyncomplete.vim'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 "}}}
 " Theme: {{{2
 Plug 'itchyny/lightline.vim'
@@ -733,6 +740,10 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofil
 let g:ale_linters = {
       \ 'clojure': ['clj-kondo', 'joker']
       \}
+" }}}
+" Deoplete: {{{
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('keyword_patterns', {'clojure': '[\w!$%&*+/:<=>?@\^_~\-\.#]*'})
 " }}}
 " vim: fdm=marker:sw=2
 
