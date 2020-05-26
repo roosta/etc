@@ -382,7 +382,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 "
 " }}}
 " Plugin Manager: {{{1
-" Setup: {{{2
+" Start: {{{2
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
 augroup vimrc
