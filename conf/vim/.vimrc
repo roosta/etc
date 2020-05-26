@@ -737,5 +737,10 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofil
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 "}}}
+" ale: {{{
+let g:ale_linters = {
+      \ 'clojure': ['clj-kondo', 'joker']
+      \}
+" }}}
 " vim: fdm=marker:sw=2
 
