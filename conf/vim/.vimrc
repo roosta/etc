@@ -729,14 +729,6 @@ nnoremap <leader>cc :Dispatch<cr>
 let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofile', 'git']
 
 " }}}
-" vim-iced {{{2
-" let g:iced_enable_default_key_mappings = v:true
-"}}}
-" asyncomplete {{{2
-" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
-"}}}
 " ale: {{{
 let g:ale_linters = {
       \ 'clojure': ['clj-kondo', 'joker']
