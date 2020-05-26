@@ -484,14 +484,15 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 " Plug 'liquidz/vim-iced', {'for': 'clojure'}
 " Plug 'liquidz/vim-iced-asyncomplete', {'for': 'clojure'}
-" Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-" Plug 'tpope/vim-salve', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'tpope/vim-salve', { 'for': 'clojure' }
 " Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-" Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-" Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 " Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'kien/rainbow_parentheses.vim'
+" Plug 'Olical/conjure', {'tag': 'v3.4.0'}
 "}}}
 " Projects {{{2
 Plug 'tpope/vim-projectionist'
