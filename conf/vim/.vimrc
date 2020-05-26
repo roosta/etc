@@ -499,9 +499,11 @@ Plug 'sudar/vim-arduino-syntax'
 " Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs.vim'
 " Plug 'vim-syntastic/syntastic'
-Plug 'w0rp/ale'
 Plug 'gregjurman/vim-nc'
 Plug 'vim-scripts/nginx.vim'
+"}}}
+" Linting {{{2
+Plug 'w0rp/ale'
 "}}}
 " Rust {{{2
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
