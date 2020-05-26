@@ -408,6 +408,7 @@ Plug 'tpope/vim-rsi'                                                         " R
 Plug 'tpope/vim-commentary'                                                  " Comments
 Plug 'ntpeters/vim-better-whitespace'                                        " Highlight and handle trailing whitespace
 Plug 'farmergreg/vim-lastplace'                                              " Save cursor position
+Plug 'jiangmiao/auto-pairs'                                                  " Insert or delete brackets, parens, quotes in pair
 "}}}
 " Quick fix {{{2
 Plug 'romainl/vim-qf'
