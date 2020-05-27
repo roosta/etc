@@ -242,15 +242,23 @@ alias -g P="2>&1| pygmentize -l pytb"
 
 # example: type 'test.clj' opens vim with test.clj as active buffer.
 
-alias -s yml=vim
-alias -s cljs=emacsclient
-alias -s clj=emacsclient
-alias -s txt=vim
-alias -s tex=vim
-alias -s html=vim
-alias -s js=vim
-alias -s md=emacsclient
-alias -s org=emacsclient
+# serialize
+alias -s {yml,json}=vim
+
+# Clojure
+alias -s {clj,cljs}=vim
+
+# Text
+alias -s {txt, tex}=vim
+
+# web
+alias -s {cs,ts,html,js}=vim
+
+# markup
+alias -s md=vim
+alias -s org=emacsclient -c -t
+
+# http
 alias -s net=firefox
 alias -s net=firefox
 alias -s com=firefox
