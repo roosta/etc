@@ -553,7 +553,6 @@ nnoremap <leader>T  :Tags<cr>
 nnoremap <leader>t  :BTags<cr>
 nnoremap <leader>gC :Commits<cr>
 nnoremap <leader>gc :BCommits<cr>
-nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>m  :Marks<cr>
 nnoremap <leader>H  :Helptags<cr>
 nnoremap <leader>/  :Ag<cr>
@@ -751,6 +750,9 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " }}}
 " fireplace: {{{
 let g:fireplace_cljs_repl = "(do (require 'figwheel-sidecar.repl-api) ((resolve 'figwheel-sidecar.repl-api/cljs-repl)))"
+" }}}
+" fugitive {{{
+nnoremap <leader>gs :Git<cr>
 " }}}
 " vim: fdm=marker:sw=2
 
