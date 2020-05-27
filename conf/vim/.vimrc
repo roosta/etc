@@ -305,7 +305,7 @@ command! Mode call AppendModeline()
 nnoremap <leader><tab> :b#<cr>
 
 " uses the Ilist function from qlist.
-nnoremap <leader>ji :Ilist<space>
+" nnoremap <leader>ji :Ilist<space>
 
 " imap <C-v> <Esc>"*pa
 
@@ -559,6 +559,7 @@ nnoremap <leader>H  :Helptags<cr>
 nnoremap <leader>/  :Ag<cr>
 nnoremap <leader><leader> :Commands<cr>
 nnoremap <leader>ss :BLines<cr>
+nnoremap <leader>ji :BTags<cr>
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
