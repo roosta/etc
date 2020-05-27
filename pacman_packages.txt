@@ -111,3 +111,5 @@ diff-so-fancy
 bat
 flameshot
 thefuck
+neovim
+python-pynvim
