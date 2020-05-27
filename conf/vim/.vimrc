@@ -749,5 +749,8 @@ call deoplete#custom#option('keyword_patterns', {'clojure': '[\w!$%&*+/:<=>?@\^_
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " }}}
+" fireplace: {{{
+let g:fireplace_cljs_repl = "(do (require 'figwheel-sidecar.repl-api) ((resolve 'figwheel-sidecar.repl-api/cljs-repl)))"
+" }}}
 " vim: fdm=marker:sw=2
 
