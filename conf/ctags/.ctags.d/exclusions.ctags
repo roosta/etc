@@ -1,0 +1,8 @@
+# Exclude directories that don't contain real code
+--exclude=.svn
+--exclude=.git
+--exclude=vendor
+--exclude=*.min.js
+--exclude=resources
+--exclude=node_modules
+--exclude=target
