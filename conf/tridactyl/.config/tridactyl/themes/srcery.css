@@ -1,6 +1,6 @@
 :root.TridactylThemeSrcery {
   --srcery-black: #1C1B19;
-  --srcery-bright-black: #2D2C29;
+  --srcery-bright-black: #918175;
   --srcery-red: #EF2F27;
   --srcery-bright-red: #F75341;
   --srcery-green: #519F50;
@@ -13,7 +13,7 @@
   --srcery-bright-magenta: #FF5C8F;
   --srcery-cyan: #0AAEB3;
   --srcery-bright-cyan: #53FDE9;
-  --srcery-white: #918175;
+  --srcery-white: #D0BFA1;
   --srcery-bright-white: #FCE8C3;
   --srcery-orange: #D75F00;
   --srcery-bright-orange: #FF8700;
@@ -54,11 +54,15 @@
 }
 
 :root.TridactylThemeSrcery #completions table tr {
-    background: var(--srcery-bright-black) !important;
+    background: var(--srcery-xgray2) !important;
 }
 
 :root.TridactylThemeSrcery #completions table tr:nth-child(odd) {
     background: var(--srcery-xgray1) !important;
+}
+
+:root.TridactylThemeSrcery #completions table tr td {
+    border-bottom: 1px solid var(--srcery-black) !important;
 }
 
 :root.TridactylThemeSrcery #completions table tr:nth-child(odd).focused {
