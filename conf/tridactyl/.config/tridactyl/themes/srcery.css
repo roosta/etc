@@ -41,52 +41,52 @@
 }
 
 :root.TridactylThemeSrcery #completions .sectionHeader {
-    display: none;
+  display: none;
 }
 
 /* prompt */
 :root.TridactylThemeSrcery #tridactyl-colon::before {
-    content: "=> ";
+  content: "=> ";
 }
 
 :root.TridactylThemeSrcery .optionContainer {
-    padding-top: 3px !important;
+  padding-top: 3px !important;
 }
 
 :root.TridactylThemeSrcery #completions table tr {
-    background: var(--srcery-xgray2) !important;
+  background: var(--srcery-xgray2) !important;
 }
 
 :root.TridactylThemeSrcery #completions table tr:nth-child(odd) {
-    background: var(--srcery-xgray1) !important;
+  background: var(--srcery-xgray1) !important;
 }
 
 :root.TridactylThemeSrcery #completions table tr td {
-    border-bottom: 1px solid var(--srcery-black) !important;
+  border-bottom: 1px solid var(--srcery-black) !important;
 }
 
 :root.TridactylThemeSrcery #completions table tr:nth-child(odd).focused {
-    background: var(--srcery-bright-white) !important;
+  background: var(--srcery-bright-white) !important;
 }
 
 :root.TridactylThemeSrcery #completions .focused,
 :root.TridactylThemeSrcery #completions .focused .url {
-    background: var(--srcery-bright-white) !important;
-    color: var(--srcery-black) !important;
+  background: var(--srcery-bright-white) !important;
+  color: var(--srcery-black) !important;
 }
 
 :root.TridactylThemeSrcery #completions .url {
-    background: inherit !important;
+  background: inherit !important;
 }
 
 :root.TridactylThemeSrcery #completions .url {
-    color: var(--srcery-green) !important;
+  color: var(--srcery-green) !important;
 }
 
 /* set position of cmdline */
 :root.TridactylThemeSrcery #cmdline_iframe {
-    position: fixed !important;
-    bottom: unset;
-    top: -3px !important;
-    left: 0% !important;
+  position: fixed !important;
+  bottom: unset;
+  top: -3px !important;
+  left: 0% !important;
 }
