@@ -452,6 +452,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+" Plug 'clojure-vim/async-clj-omni'
 "}}}
 " Theme: {{{2
 Plug 'itchyny/lightline.vim'
