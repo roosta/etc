@@ -143,7 +143,6 @@ label-mode-padding = 1
 label-mode-foreground = ${colors.yellow}
 
 label-focused = %name%
-label-focused-font = 2
 label-focused-padding = 1
 label-focused-foreground = ${colors.brightmagenta}
 
@@ -157,8 +156,8 @@ label-visible-foreground = ${colors.white}
 
 label-urgent = %name%
 label-urgent-padding = 1
-label-urgent-background = ${colors.orange}
-label-urgent-foreground = ${colors.brightwhite}
+; label-urgent-background = ${colors.orange}
+label-urgent-foreground = ${colors.yellow}
 
 [module/xwindow]
 type = internal/xwindow
