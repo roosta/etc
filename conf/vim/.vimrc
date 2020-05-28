@@ -523,6 +523,10 @@ Plug 'alx741/vinfo'
 " Clipboard: {{{2
 Plug 'bfredl/nvim-miniyank'
 "}}}
+" Snippets: {{{
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" }}}
 " Finish: {{{2
 call plug#end()
 syntax on
@@ -754,6 +758,11 @@ let g:fireplace_cljs_repl = "(do (require 'figwheel-sidecar.repl-api) ((resolve 
 " }}}
 " fugitive {{{
 nnoremap <leader>gs :Git<cr>
+" }}}
+" ultisnips {{{
+let g:UltiSnipsExpandTrigger="<c-;>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
 " vim: fdm=marker:sw=2
 
