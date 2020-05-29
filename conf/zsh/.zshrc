@@ -32,9 +32,6 @@ if [[ -s '/usr/share/doc/pkgfile/command-not-found.zsh' ]]; then
 fi
 
 # (If the defer tag is given 2 or above, run after compinit command)
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-autosuggestions"
 zplug "Tarrasch/zsh-bd"
 zplug 'wfxr/forgit'
 zplug "kutsan/zsh-system-clipboard"
@@ -44,7 +41,11 @@ zplug "b4b4r07/enhancd", use:init.sh
 # zplug "roosta/fif"
 zplug "~/src/fif", from:local
 zplug "Aloxaf/fzf-tab"
+zplug "softmoth/zsh-vim-mode"
+zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-autosuggestions"
 
 # zplug check returns true if all packages are installed
 # Therefore, when it returns false, run zplug install
