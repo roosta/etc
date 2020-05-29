@@ -108,6 +108,10 @@ scriptencoding utf-8
 
 " Reduce update time to 100 milliseconds
 set updatetime=100
+
+" Change default netrw liststyle
+let g:netrw_liststyle = 1
+
 "}}}
 " Environments {{{1
 " Vim: {{{2
