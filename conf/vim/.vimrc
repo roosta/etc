@@ -240,24 +240,6 @@ let g:maplocalleader = "\\"
 " Note that this may cause some plugins not to load properly if it has init logic
 noremap <leader>R :source $MYVIMRC<CR>
 
-" switch between splits
-" noremap <silent> <leader>wk       :wincmd k<CR>
-" noremap <silent> <leader>wj       :wincmd j<CR>
-" noremap <silent> <leader>wh       :wincmd h<CR>
-" noremap <silent> <leader>wl       :wincmd l<CR>
-" noremap <silent> <leader>w<Up>    :wincmd k<CR>
-" noremap <silent> <leader>w<Down>  :wincmd j<CR>
-" noremap <silent> <leader>w<Left>  :wincmd h<CR>
-" noremap <silent> <leader>w<Right> :wincmd l<CR>
-
-" noremap <silent> <leader>w/ :vsplit<CR>
-" noremap <silent> <leader>w- :split<CR>
-
-" nnoremap <silent> <M-S-h>  10<C-w><
-" nnoremap <silent> <M-S-l>  10<C-W>-
-" nnoremap <silent> <M-S-k>  10<C-W>+
-" nnoremap <silent> <M-S-l>  10<C-w>>
-
 " correct annoying typo
 cnoremap Q q
 
@@ -270,9 +252,6 @@ noremap <silent> <leader>sc :nohlsearch<CR>
 
 " switch to last buffer used.
 nnoremap <leader><tab> :b#<cr>
-
-" map spell checking
-" nnoremap <leader>Sc z=
 
 " yank to end of line when pressing Y
 nnoremap Y y$
