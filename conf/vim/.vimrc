@@ -241,79 +241,42 @@ let g:maplocalleader = "\\"
 noremap <leader>R :source $MYVIMRC<CR>
 
 " switch between splits
-noremap <silent> <leader>wk       :wincmd k<CR>
-noremap <silent> <leader>wj       :wincmd j<CR>
-noremap <silent> <leader>wh       :wincmd h<CR>
-noremap <silent> <leader>wl       :wincmd l<CR>
-noremap <silent> <leader>w<Up>    :wincmd k<CR>
-noremap <silent> <leader>w<Down>  :wincmd j<CR>
-noremap <silent> <leader>w<Left>  :wincmd h<CR>
-noremap <silent> <leader>w<Right> :wincmd l<CR>
+" noremap <silent> <leader>wk       :wincmd k<CR>
+" noremap <silent> <leader>wj       :wincmd j<CR>
+" noremap <silent> <leader>wh       :wincmd h<CR>
+" noremap <silent> <leader>wl       :wincmd l<CR>
+" noremap <silent> <leader>w<Up>    :wincmd k<CR>
+" noremap <silent> <leader>w<Down>  :wincmd j<CR>
+" noremap <silent> <leader>w<Left>  :wincmd h<CR>
+" noremap <silent> <leader>w<Right> :wincmd l<CR>
 
-noremap <silent> <leader>w/ :vsplit<CR>
-noremap <silent> <leader>w- :split<CR>
+" noremap <silent> <leader>w/ :vsplit<CR>
+" noremap <silent> <leader>w- :split<CR>
 
-noremap <silent> <leader>sc :nohlsearch<CR>
-
-" noremap <silent> <M-Up>    :wincmd k<CR>
-" noremap <silent> <M-Down>  :wincmd j<CR>
-" noremap <silent> <M-Left>  :wincmd h<CR>
-" noremap <silent> <M-Right> :wincmd l<CR>
-
-" Resize splits
-" nnoremap <silent> <M-S-Left>  10<C-w><
-" nnoremap <silent> <M-S-Down>  10<C-W>-
-" nnoremap <silent> <M-S-Up>    10<C-W>+
-" nnoremap <silent> <M-S-Right> 10<C-w>>
-
-nnoremap <silent> <M-S-h>  10<C-w><
-nnoremap <silent> <M-S-l>  10<C-W>-
-nnoremap <silent> <M-S-k>  10<C-W>+
-nnoremap <silent> <M-S-l>  10<C-w>>
-" nnoremap <silent> <M-S-h>     10<C-w><
-" nnoremap <silent> <M-S-j>     10<C-W>-
-" nnoremap <silent> <M-S-k>     10<C-W>+
-" nnoremap <silent> <M-S-l>     10<C-w>>
+" nnoremap <silent> <M-S-h>  10<C-w><
+" nnoremap <silent> <M-S-l>  10<C-W>-
+" nnoremap <silent> <M-S-k>  10<C-W>+
+" nnoremap <silent> <M-S-l>  10<C-w>>
 
 " correct annoying typo
 cnoremap Q q
-
-" Make Ctrl-e jump to the end of the current line in the insert mode.
-inoremap <C-e> <C-o>$
-
-" Remove ANSI color escape codes for the edited file. This is handy when
-" piping colored text into Vim.
-nnoremap <Leader>rac :%s/<C-v><Esc>\[\(\d\{1,2}\(;\d\{1,2}\)\{0,2\}\)\?[m\|K]//g<CR>
 
 " Treat long lines as break lines (useful when moving around in them)
 noremap j gj
 noremap k gk
 
-" Remove the Windows ^M - when the encodings gets messed up
-" noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-" Quickly open a buffer for scribble
-map <leader>q :e ~/buffer<cr>
-
-" Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
-" call userdefined functions..
-command! Mode call AppendModeline()
+" Remove search hl
+noremap <silent> <leader>sc :nohlsearch<CR>
 
 " switch to last buffer used.
 nnoremap <leader><tab> :b#<cr>
 
-" uses the Ilist function from qlist.
-" nnoremap <leader>ji :Ilist<space>
-
-" imap <C-v> <Esc>"*pa
-
 " map spell checking
-nnoremap <leader>Sc z=
+" nnoremap <leader>Sc z=
 
 " yank to end of line when pressing Y
 nnoremap Y y$
+
 " }}}
 " Cmd:{{{
 
@@ -359,6 +322,7 @@ function! AppendModeline()
   let l:modeline = substitute(&commentstring, '%s', l:modeline, '')
   call append(line('$'), l:modeline)
 endfunction
+command! Mode call AppendModeline()
 
 function! UpdateAndExit()
      :PlugUpdate
