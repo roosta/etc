@@ -463,7 +463,7 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 "}}}
 " Documentation {{{2
-Plug 'alx741/vinfo'
+" Plug 'alx741/vinfo'
 "}}}
 " Clipboard: {{{2
 Plug 'bfredl/nvim-miniyank'
