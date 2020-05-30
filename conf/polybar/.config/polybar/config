@@ -100,7 +100,6 @@ modules-center =
 tray-position = right
 font-0 = "Iosevka:pixelsize=9;4"
 modules-left = i3
-; modules-right = keyboard-layout vpncheck wifi battery pkg volume-small memory-small cpu-small date time
 modules-right = keyboard-layout vpncheck wifi battery updates-arch-combined volume-small memory-small cpu-small date time
 
 [bar/garkbit-primary]
@@ -182,19 +181,6 @@ label-indicator-background = ${colors.brightred}
 label-indicator-foreground = ${colors.brightwhite}
 label-indicator-padding = 1
 label-layout-foreground = ${colors.brightwhite}
-
-[module/pkg]
-;; Calls a script that checks for pacman and aur package updates
-;; https://github.com/roosta/utils/blob/master/pkg.sh
-type = custom/script
-format-foreground = ${colors.brightwhite}
-interval = 120
-format = <label>
-label = "PKG: %output%"
-label-padding-right = 1
-label-padding-left = 1
-exec = ~/scripts/pkg.sh
-exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 [module/updates-arch-combined]
 type = custom/script
