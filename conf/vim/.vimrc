@@ -112,6 +112,8 @@ set updatetime=100
 " Change default netrw liststyle
 let g:netrw_liststyle = 1
 
+" Enable markdown folding
+let g:markdown_folding = 1
 "}}}
 " Environments {{{1
 " Vim: {{{2
