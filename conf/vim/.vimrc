@@ -472,6 +472,9 @@ Plug 'bfredl/nvim-miniyank'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " }}}
+" Markdown: {{{
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+"}}}
 " Finish: {{{2
 call plug#end()
 syntax on
