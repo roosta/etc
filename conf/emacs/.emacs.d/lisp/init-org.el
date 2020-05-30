@@ -139,6 +139,11 @@ Change behaviour based on optional ARG."
    "aop" #'org-projectile/capture
    "po" #'org-projectile/goto-todos))
 
+(use-package ox-gfm
+  :config
+  (eval-after-load "org"
+    '(require 'ox-gfm nil t)))
+
 ;;----------------------------------------------------------------------------
 ;; Keybindings
 ;;----------------------------------------------------------------------------
