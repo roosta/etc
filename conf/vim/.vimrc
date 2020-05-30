@@ -713,5 +713,8 @@ let g:UltiSnipsExpandTrigger="<c-;>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
+" markdown-preview: {{{
+let g:mkdp_browser = 'google-chrome-unstable'
+" }}}
 " vim: fdm=marker:sw=2
 
