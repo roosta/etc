@@ -377,7 +377,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 "
 " }}}
 " Plugin Manager: {{{1
-" Start: {{{2
+" PLUG BEGIN: {{{2
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
 augroup vimrc
@@ -532,7 +532,7 @@ Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
 Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 "}}}
-" Finish: {{{2
+" PLUG END: {{{2
 call plug#end()
 syntax on
 filetype plugin indent on
