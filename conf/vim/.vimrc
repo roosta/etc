@@ -9,12 +9,36 @@
 "│█░░Github : https://github.com/roosta ░░█│
 "└─────────────────────────────────────────┘
 " Options: {{{1
+" General {{{
 
-" use undo file and define location
+" No startup message
+set shortmess+=I
+
+" keep 7 lines visible lines above/below when scrolling up/down
+set scrolloff=7
+
+" Do not redraw screen in the middle of a macro. Makes them complete faster.
+set lazyredraw
+
+" show cursor line
+set cursorline
+
+" limit highlighting to lines shorter than 2048 chars.  useful if opening, say
+" a minified js file, where the lines are extremely long
+set synmaxcol=2048
+
+" Increase how often swap file is written (milliseconds)
+set updatetime=100
+
+"}}}
+" Undo {{{2
+
 set undofile
 set undodir=~/var/vim/undo
 
-" wildmenu
+"}}}
+" Wildmenu: {{{2
+
 set wildmenu
 set wildmode=longest,list,full
 set wildignorecase
@@ -23,43 +47,41 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/build/*,*/node_modules/*,
                 \*/_site/*,\*/resources/public/js/*
 " set wildignore+=.git,.hg,.svn,build,node_modules,undo,out,.repl*,.cljs_rhino_repl,_site
 
-set backspace=indent,eol,start
+"}}}
+" Indenting: {{{
 
-" always show statusline
-set laststatus=2
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+
+set autoindent
+set smartindent
+
+"}}}
+" Tabs: {{{
 
 " show tabline when at least two tab pages
 set showtabline=1
 
-" show the command being typed on the statusline
-set showcmd
+" }}}
+" Search: {{{
 
-" No startup message
-set shortmess+=I
+set incsearch
+set ignorecase
+set smartcase
+set magic
 
-" keep 7 lines visible lines above/below when scrolling up/down
-set scrolloff=7
-
-set lazyredraw
-set ttyfast
-set cursorline
-set number
-set matchtime=2
-set showmatch
-set relativenumber
 "set hlsearch
-set clipboard=unnamedplus
-set shell=zsh
-set spelllang=en_us,nb
-set autoindent
-set smartindent
+"substitute global flag always on
+" set gdefault
 
-" limit highlighting to lines shorter than 2048 chars.  useful if opening, say
-" a minified js file, where the lines are extremely long
-set synmaxcol=2048
+"}}}
+" Linebreak: {{{
 
-" line break
+" wrap long lines
 set wrap
+
 " wrap long lines at a character in 'breakat'
 set linebreak
 
@@ -76,43 +98,67 @@ set cpoptions+=n
 " set custom character on linebreaks caused by wrap
 set showbreak=>\
 
-" tabs
-set expandtab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+"}}}
+" Line numbers {{{
 
-" search
-set incsearch
-set ignorecase
-set smartcase
-set magic
+" Relative line numbers start counting from the position of the cursor, making
+" commands like 10j easier to spot without having to do math
+set relativenumber
+" set number
 
-"substitute global flag always on
-" set gdefault
+" }}}
+" Matching surrounds {{{
 
-set tags=tags;/ " search recursively up for tags
-" set tags+=./.git/.tags,./tags
+set matchtime=2
+set showmatch
 
-" Use Unix as the standard file type
-set fileformats=unix,dos,mac
+"}}}
+" Clipboard {{{
 
-set foldmethod=marker
+" Use xorg clipboard, makes pasting less painfull by not having to refer to
+" register. I also use nvim-miniyank to traverse clipboard history
+set clipboard=unnamedplus
+
+" }}}
+" Encoding {{{
 
 set encoding=utf-8
 scriptencoding utf-8
 
-" Reduce update time to 100 milliseconds
-set updatetime=100
+" }}}
+" Spelling {{{
+
+set spelllang=en_us,nb
+
+"}}}
+" Markdown {{{
+
+" Enable folding markdown headlines
+let g:markdown_folding = 1
+
+"}}}
+" netrw {{{
 
 " Change default netrw liststyle
 let g:netrw_liststyle = 1
 
-" Enable markdown folding
-let g:markdown_folding = 1
+"}}}
+" Tags: {{{
+
+" search recursively up for tags
+set tags=tags;/
+
+"}}}
+" Folding {{{
+
+" Default to marker folding
+set foldmethod=marker
+
+"}}}
 "}}}
 " Environments {{{1
 " Vim: {{{2
+
 if !has('nvim')
   set cryptmethod=blowfish2
   set ttymouse=xterm2
@@ -176,8 +222,15 @@ endif
 "}}}
 " Statusline:{{{
 
-" set showmode
+" always show statusline
+set laststatus=2
+
+" Don't disple mode in command buffer, taken care of by lightline
 set noshowmode
+
+" show the command being typed on the statusline
+set showcmd
+
 " %< Where to truncate
 " %n buffer number
 " %F Full path
