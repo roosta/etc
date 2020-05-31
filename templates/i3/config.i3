@@ -449,7 +449,7 @@ font pango:Iosevka 9
 client.focused          $black  $xgray3     $bright_magenta $cyan         $magenta
 client.focused_inactive $black  $xgray3     $white          $bright_white $white
 client.unfocused        $black  $xgray1     $bright_black   $xgray1       $xgray1
-client.urgent           $yellow $xgray1     $yellow         $yellow       $yellow
+client.urgent           $black  $yellow     $black          $yellow       $yellow
 client.placeholder      $black  $hard_black $bright_black   $xgray3       $xgray3
 client.background       $black
 #}}}
