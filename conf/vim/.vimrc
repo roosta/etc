@@ -40,10 +40,6 @@ set shortmess+=I
 " keep 7 lines visible lines above/below when scrolling up/down
 set scrolloff=7
 
-" tmp workaround for undercurl fallback to work
-" https://github.com/vim/vim/issues/2424
-set t_Cs=
-
 set lazyredraw
 set ttyfast
 set cursorline
