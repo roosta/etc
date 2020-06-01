@@ -36,10 +36,10 @@ zplug "b4b4r07/enhancd", use:init.sh
 # zplug "roosta/fif"
 zplug "~/src/fif", from:local
 zplug "Aloxaf/fzf-tab"
-# zplug "softmoth/zsh-vim-mode"
+zplug "softmoth/zsh-vim-mode"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 
 # zplug check returns true if all packages are installed
