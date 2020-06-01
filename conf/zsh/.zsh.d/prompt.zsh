@@ -17,7 +17,7 @@
 # MODE_INDICATOR_VLINE='%F{15}%K{4} V-LINE %f%k'
 
 VIM_PROMPT="❯"
-PROMPT='%(?.%F{magenta}.%F{red})${VIM_PROMPT}%f '
+PROMPT='%(?.%F{magenta}.%F{red}${VIM_PROMPT})${VIM_PROMPT}%f%k '
 
 prompt_pure_update_vim_prompt() {
     zle || {
