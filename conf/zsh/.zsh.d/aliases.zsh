@@ -453,8 +453,8 @@ alias cli-classpath="clj -Spath |  sed -e 's/:/\'$'\n/g'"
 # delete and or refresh shell confs
 alias xrmerge="xrdb -merge ~/.Xresources"
 alias xrload="xrdb -load ~/.Xresources"
-alias zref="source $HOME/.zshrc"
-
+# alias zref="source $HOME/.zshrc"
+alias zref="exec zsh"
 alias _="sudo"
 
 #alias startwin="sudo systemctl restart libvirtd.service && sudo virsh start win8"
