@@ -131,18 +131,6 @@ scriptencoding utf-8
 set spelllang=en_us,nb
 
 "}}}
-" Markdown {{{
-
-" Enable folding markdown headlines
-let g:markdown_folding = 1
-
-"}}}
-" netrw {{{
-
-" Change default netrw liststyle
-let g:netrw_liststyle = 1
-
-"}}}
 " Tags: {{{
 
 " search recursively up for tags
@@ -769,8 +757,33 @@ let g:UltiSnipsExpandTrigger="<c-;>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
-" markdown-preview: {{{
+" Markdown: {{{
+
 let g:mkdp_browser = 'google-chrome-unstable'
-" }}}
+
+" Enable folding markdown headlines
+let g:markdown_folding = 1
+
+"}}}
+" netrw {{{
+
+" Change default netrw liststyle
+" let g:netrw_liststyle = 1
+
+map <C-i> <Plug>(NetrwHideEdit)
+
+" https://gist.github.com/mhanberg/dd9377163be770930e6eedb81b2fe61e
+" Remove C-l binding from netrw, conflicts with nav commands
+augroup vimrc
+  autocmd!
+  autocmd FileType netrw call s:RemoveNetrwMap()
+augroup END
+
+function s:RemoveNetrwMap()
+  if hasmapto('<Plug>NetrwRefresh')
+    unmap <buffer> <C-l>
+  endif
+endfunction
+"}}}
 " vim: fdm=marker:sw=2
 
