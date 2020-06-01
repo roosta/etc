@@ -3,8 +3,8 @@
 # │o┏━┓┓ ┳┏┏┓  ┏━┓┏━┓┏┓┓┳━┓o┏━┓  ┏┓┓┳━┓┏┏┓┳━┓┳  ┳━┓┏┓┓┳━┓│
 # │┃ ━┫┃┃┃┃┃┃  ┃  ┃ ┃┃┃┃┣━ ┃┃ ┳   ┃ ┣━ ┃┃┃┃━┛┃  ┃━┫ ┃ ┣━ │
 # │┇┗━┛┗┻┇┛ ┇  ┗━┛┛━┛┇┗┛┇  ┇┇━┛   ┇ ┻━┛┛ ┇┇  ┇━┛┛ ┇ ┇ ┻━┛│
-# │  Author : Daniel Berg <mail@roosta.sh>               │
-# │  Github : https://github.com/roosta/etc              │
+# │ Author : Daniel Berg <mail@roosta.sh>                │
+# │ Github : https://github.com/roosta/etc               │
 # └──────────────────────────────────────────────────────┘
 # Startup {{{
 # --------------------
