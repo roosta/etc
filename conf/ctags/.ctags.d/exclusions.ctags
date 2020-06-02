@@ -6,3 +6,6 @@
 --exclude=resources
 --exclude=node_modules
 --exclude=target
+--exclude=.password-store
+--exclude=plugins
+--exclude=plugged
