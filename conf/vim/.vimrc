@@ -454,7 +454,7 @@ Plug '/home/roosta/src/srcery-vim'
 "}}}
 " Git: {{{2
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 "}}}
 " Multiplexer: {{{2
 Plug 'tmux-plugins/vim-tmux-focus-events'
