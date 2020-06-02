@@ -786,5 +786,8 @@ function s:RemoveNetrwMap()
   endif
 endfunction
 "}}}
+" Rust: {{{
+let g:rustfmt_autosave = 1
+"}}}
 " vim: fdm=marker:sw=2
 
