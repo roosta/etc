@@ -1,3 +1,6 @@
+[general]
+default_icon = ""
+
 [icons]
 firefox = ""
 firefoxdeveloperedition = ""
