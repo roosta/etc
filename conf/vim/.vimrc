@@ -749,8 +749,9 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " fireplace: {{{
 " let g:fireplace_cljs_repl = "(do (require 'figwheel-sidecar.repl-api) ((resolve 'figwheel-sidecar.repl-api/cljs-repl)))"
 " }}}
-" fugitive {{{
+" git {{{
 nnoremap <leader>gs :Git<cr>
+autocmd FileType gitcommit setlocal nofoldenable
 " }}}
 " ultisnips {{{
 let g:UltiSnipsExpandTrigger="<c-;>"
