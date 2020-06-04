@@ -11,7 +11,6 @@ path=(~/bin
       ~/.npm/bin
       ~/.pip/bin
       ~/.cargo/bin
-      ~/.vim/plugged/vim-iced/bin
       $path[@])
 
 # set ruby gems install location to home
@@ -94,7 +93,7 @@ export SYSTEMD_EDITOR="/usr/bin/vim"
 export GRAALVM_HOME="${HOME}/java/graalvm-ce-19.1.1/bin"
 export JAVA_HOME="/usr/lib/jvm/default"
 export NASHORN_HOME="$JAVA_HOME/bin"
-export SPIDERMONKEY_HOME="${HOME}/spidermonkey"
+
 # temp
 export PGSSLMODE=require
 
