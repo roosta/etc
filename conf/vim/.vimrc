@@ -382,17 +382,18 @@ Plug 'tpope/vim-sensible'                                                    " S
 "}}}
 " Editing {{{2
 
-Plug 'tpope/vim-surround'                                                    " Surround text easily
-Plug 'tpope/vim-repeat'                                                      " Add repeat support to various plugins
-Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " Alignment
-Plug 'tpope/vim-unimpaired'                                                  " Handy bracket mappings
-Plug 'wellle/targets.vim'                                                    " More text objects
-Plug 'tpope/vim-speeddating'                                                 " Easier dates
-Plug 'tpope/vim-rsi'                                                         " Readline bindings
-Plug 'tpope/vim-commentary'                                                  " Comments
-Plug 'ntpeters/vim-better-whitespace'                                        " Highlight and handle trailing whitespace
+Plug 'christoomey/vim-sort-motion'                                           " Sort various things using motions
 Plug 'farmergreg/vim-lastplace'                                              " Save cursor position
 Plug 'jiangmiao/auto-pairs'                                                  " Insert or delete brackets, parens, quotes in pair
+Plug 'junegunn/vim-easy-align', { 'on': ['<Plug>(EasyAlign)', 'EasyAlign'] } " Alignment
+Plug 'ntpeters/vim-better-whitespace'                                        " Highlight and handle trailing whitespace
+Plug 'tpope/vim-commentary'                                                  " Comments
+Plug 'tpope/vim-repeat'                                                      " Add repeat support to various plugins
+Plug 'tpope/vim-rsi'                                                         " Readline bindings
+Plug 'tpope/vim-speeddating'                                                 " Easier dates
+Plug 'tpope/vim-surround'                                                    " Surround text easily
+Plug 'tpope/vim-unimpaired'                                                  " Handy bracket mappings
+Plug 'wellle/targets.vim'                                                    " More text objects
 
 "}}}
 " System: {{{
