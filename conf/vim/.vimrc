@@ -484,6 +484,7 @@ Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 " Plug 'junegunn/rainbow_parentheses.vim'
 " Plug 'kien/rainbow_parentheses.vim'
 " Plug 'Olical/conjure', {'tag': 'v3.4.0'}
+
 "}}}
 " Projects {{{2
 Plug 'tpope/vim-projectionist'
@@ -788,7 +789,7 @@ function s:RemoveNetrwMap()
 endfunction
 "}}}
 " Rust: {{{
-let g:rustfmt_autosave = 1
+" let g:rustfmt_autosave = 1
 "}}}
 " vim: fdm=marker:sw=2
 
