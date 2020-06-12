@@ -19,9 +19,12 @@ libreoffice-calc = ""
 Transmission-gtk = ""
 com-eviware-soapui-SoapUI = ""
 "Org.gnome.Nautilus" = ""
+"web.whatsapp.com" = ""
 
 [aliases]
 firefoxdeveloperedition = "Firefox-dev"
+google-chrome-unstable = "Chrome unstable"
+"web.whatsapp.com" = "Whatsapp"
 libreoffice-calc = "Calc"
 firefox = "Firefox"
 Google-chrome-unstable = "Chrome-dev"
