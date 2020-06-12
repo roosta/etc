@@ -1,6 +1,11 @@
 [general]
 default_icon = ""
 
+[options]
+no_names = false
+remove_duplicates = false
+use_instance = false
+
 [icons]
 firefox = ""
 firefoxdeveloperedition = ""
