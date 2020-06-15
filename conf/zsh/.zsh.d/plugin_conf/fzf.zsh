@@ -89,7 +89,7 @@ e() {
   else
     local file
     file=$(fzf-tmux --query="$1")
-    [ -n "$file" ] && eval "$EDITOR" "$file"
+    [ -n "$file" ] && sleep 0.2 && eval "$EDITOR" "$file"
   fi
 }
 
