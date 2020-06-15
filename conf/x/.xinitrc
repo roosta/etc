@@ -43,7 +43,7 @@ fi
 # set local config
 [ -x "$localrc" ] && . "$localrc"
 
-$HOME/.screenlayout/main.sh &
+# $HOME/.screenlayout/main.sh &
 
 xrdb -merge ~/.Xresources &
 
