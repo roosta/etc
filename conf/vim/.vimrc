@@ -397,8 +397,9 @@ Plug 'wellle/targets.vim'                                                    " M
 
 "}}}
 " System: {{{
-Plug 'tpope/vim-eunuch'                                                      " Unix helper commands
-Plug 'tpope/vim-dispatch'                                                    " Asynchronous build and test dispatcher
+Plug 'tpope/vim-eunuch'     " Unix helper commands
+Plug 'lambdalisue/suda.vim' " Assist in writing system files with sudo @ neovim
+Plug 'tpope/vim-dispatch'   " Asynchronous build and test dispatcher
 "}}}
 " Quick fix {{{2
 Plug 'romainl/vim-qf'
