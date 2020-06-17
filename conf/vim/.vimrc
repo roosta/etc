@@ -524,10 +524,6 @@ Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
 Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 "}}}
-" VimWiki: {{{
-let g:vimwiki_list = [{'path': '~/notes/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-" }}}
 " PLUG END: {{{2
 call plug#end()
 syntax on
@@ -797,5 +793,10 @@ endfunction
 " Rust: {{{
 " let g:rustfmt_autosave = 1
 "}}}
+" VimWiki: {{{
+let g:vimwiki_global_ext = 0 " Prevent vimwiki for all markdown files
+let g:vimwiki_list = [{'path': '~/notes/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+" }}}
 " vim: fdm=marker:sw=2
 
