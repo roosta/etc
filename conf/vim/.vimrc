@@ -798,5 +798,9 @@ let g:vimwiki_global_ext = 0 " Prevent vimwiki for all markdown files
 let g:vimwiki_list = [{'path': '~/notes/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 " }}}
+" auto-pairs: {{{
+" Fix for å button on Norwegian keyboards
+let g:AutoPairsShortcutFastWrap=''
+"}}}
 " vim: fdm=marker:sw=2
 
