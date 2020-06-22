@@ -595,14 +595,8 @@ map g# <Plug>(incsearch-nohl-g#)
 " -------------
 let g:EasyMotion_smartcase = 1
 
-map <Leader> <Plug>(easymotion-prefix)
-" map <leader><leader> <Plug>(easymotion-s2)
-map <leader>jj <Plug>(easymotion-s)
-" map <Leader>f <Plug>(easymotion-lineforward)
-" map <Leader>F <Plug>(easymotion-linebackward)
-"
-" map <Leader>j <Plug>(easymotion-j)
-" map <Leader>k <Plug>(easymotion-k)
+" map <Leader> <Plug>(easymotion-prefix)
+" map <leader>jj <Plug>(easymotion-s)
 
 let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
 "}}}
