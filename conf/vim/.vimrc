@@ -293,6 +293,8 @@ nnoremap <leader><tab> :b#<cr>
 " yank to end of line when pressing Y
 nnoremap Y y$
 
+nnoremap <leader>jl :Ilist<space>
+
 " }}}
 " Cmd:{{{
 
