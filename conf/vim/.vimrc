@@ -403,6 +403,7 @@ Plug 'romainl/vim-qlist'
 " Note taking {{{2
 Plug 'jceb/vim-orgmode'
 Plug 'vimwiki/vimwiki'
+Plug 'vuciv/vim-bujo'
 "}}}
 " Files: {{{2
 " Plug 'justinmk/vim-dirvish'
