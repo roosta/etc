@@ -93,6 +93,16 @@ e() {
   fi
 }
 
+et() {
+  if [ "$#" -ne 0 ]; then
+    emacsclient -c -t "$@"
+  else
+    local file
+    file=$(fzf-tmux --query="$1")
+    [ -n "$file" ] && sleep 0.2 && emacsclient -c -t "$file"
+  fi
+}
+
 _e() {
   if [ "$#" -ne 0 ]; then
     SUDO_EDITOR="emacsclient -t" sudoedit $@
