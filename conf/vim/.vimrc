@@ -941,5 +941,11 @@ let g:AutoPairsShortcutFastWrap=''
 " nnoremap <silent><nowait> <leader>cp  :<C-u>CocListResume<CR>
 
 " " }}}
+" Bujo: {{{
+nmap <C-return> <Plug>BujoAddnormal
+imap <C-return> <Plug>BujoAddinsert
+nmap <C-Q> <Plug>BujoChecknormal
+imap <C-Q> <Plug>BujoCheckinsert
+"}}}
 " vim: fdm=marker:sw=2
 
