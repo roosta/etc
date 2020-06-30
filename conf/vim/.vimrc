@@ -779,6 +779,8 @@ let g:mkdp_browser = 'google-chrome-unstable'
 " Enable folding markdown headlines
 let g:markdown_folding = 1
 
+let g:markdown_fenced_languages = ['bash=sh', 'css', 'javascript', 'js=javascript', 'sass', 'xml']
+
 "}}}
 " netrw {{{
 
