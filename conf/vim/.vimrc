@@ -805,6 +805,8 @@ endfunction
 let g:vimwiki_global_ext = 0 " Prevent vimwiki for all markdown files
 let g:vimwiki_list = [{'path': '~/notes/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+let g:vimwiki_folding = 'expr'
 " }}}
 " auto-pairs: {{{
 " Fix for 'å' button on Norwegian keyboards
