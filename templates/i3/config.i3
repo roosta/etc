@@ -308,8 +308,8 @@ bindsym --release Print exec teiler
 # bindsym --release Caps_Lock exec killall -USR1 ~/script/keyboard-layout.sh
 bindsym --release Caps_Lock exec polybar-msg hook keyboard-layout 1
 
-bindsym $mod+Control+v exec ~/.vim-anywhere/bin/run
-bindsym $mod+Control+e exec ~/.emacs_anywhere/bin/run
+bindsym $mod+Control+e exec ~/.vim-anywhere/bin/run
+# bindsym $mod+Control+e exec ~/.emacs_anywhere/bin/run
 
 #}}}
 # Binding modes {{{1
