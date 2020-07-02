@@ -809,13 +809,6 @@ let g:markdown_folding = 1
 let g:markdown_fenced_languages = ['bash=sh', 'css', 'javascript', 'js=javascript', 'sass', 'xml']
 
 "}}}
-" VimWiki: {{{
-let g:vimwiki_global_ext = 0 " Prevent vimwiki for all markdown files
-let g:vimwiki_list = [{'path': '~/notes/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
-
-let g:vimwiki_folding = 'expr'
-" }}}
 " auto-pairs: {{{
 " Fix for 'å' button on Norwegian keyboards
 let g:AutoPairsShortcutFastWrap=''
