@@ -402,7 +402,7 @@ Plug 'romainl/vim-qlist'
 "}}}
 " Note taking {{{2
 Plug 'jceb/vim-orgmode'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'vuciv/vim-bujo'
 "}}}
 " Files: {{{2
@@ -520,6 +520,8 @@ Plug 'honza/vim-snippets'
 " Markdown: {{{
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
 Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 "}}}
 " PLUG END: {{{2
 call plug#end()
