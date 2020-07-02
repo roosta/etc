@@ -803,10 +803,12 @@ endfunction
 let g:mkdp_browser = 'google-chrome-unstable'
 let g:mkdp_auto_close = 0
 
-" Enable folding markdown headlines
-let g:markdown_folding = 1
+" Conceal
+set conceallevel=2
+let g:vim_markdown_conceal_code_blocks = 0
 
-let g:markdown_fenced_languages = ['bash=sh', 'css', 'javascript', 'js=javascript', 'sass', 'xml']
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_fenced_languages = ['bash=sh', 'js=javascript']
 
 "}}}
 " auto-pairs: {{{
