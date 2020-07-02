@@ -947,5 +947,6 @@ imap <C-return> <Plug>BujoAddinsert
 nmap <C-Q> <Plug>BujoChecknormal
 imap <C-Q> <Plug>BujoCheckinsert
 "}}}
+"}}}
 " vim: fdm=marker:sw=2
 
