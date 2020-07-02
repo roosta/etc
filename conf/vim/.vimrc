@@ -519,7 +519,7 @@ Plug 'honza/vim-snippets'
 " }}}
 " Markdown: {{{
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
-Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
+" Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 "}}}
