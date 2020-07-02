@@ -776,6 +776,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Markdown: {{{
 
 let g:mkdp_browser = 'google-chrome-unstable'
+let g:mkdp_auto_close = 0
 
 " Enable folding markdown headlines
 let g:markdown_folding = 1
