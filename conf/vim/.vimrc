@@ -773,17 +773,6 @@ let g:UltiSnipsExpandTrigger="<c-;>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
-" Markdown: {{{
-
-let g:mkdp_browser = 'google-chrome-unstable'
-let g:mkdp_auto_close = 0
-
-" Enable folding markdown headlines
-let g:markdown_folding = 1
-
-let g:markdown_fenced_languages = ['bash=sh', 'css', 'javascript', 'js=javascript', 'sass', 'xml']
-
-"}}}
 " netrw {{{
 
 " Change default netrw liststyle
@@ -806,6 +795,17 @@ endfunction
 "}}}
 " Rust: {{{
 " let g:rustfmt_autosave = 1
+"}}}
+" Markdown: {{{
+
+let g:mkdp_browser = 'google-chrome-unstable'
+let g:mkdp_auto_close = 0
+
+" Enable folding markdown headlines
+let g:markdown_folding = 1
+
+let g:markdown_fenced_languages = ['bash=sh', 'css', 'javascript', 'js=javascript', 'sass', 'xml']
+
 "}}}
 " VimWiki: {{{
 let g:vimwiki_global_ext = 0 " Prevent vimwiki for all markdown files
