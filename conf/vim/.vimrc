@@ -524,6 +524,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'ma
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 "}}}
+" Color: {{{
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+" }}}
 " PLUG END: {{{2
 call plug#end()
 syntax on
@@ -822,6 +825,17 @@ imap <C-return> <Plug>BujoAddinsert
 nmap <C-Q> <Plug>BujoChecknormal
 imap <C-Q> <Plug>BujoCheckinsert
 "}}}
+" Hexokinase: {{{2
+let g:Hexokinase_optInPatterns = [
+\     'full_hex',
+\     'triple_hex',
+\     'rgb',
+\     'rgba',
+\     'hsl',
+\     'hsla',
+\     'colour_names'
+\ ]
+" }}}
 "}}}
 " vim: fdm=marker:sw=2
 
