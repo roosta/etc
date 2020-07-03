@@ -742,7 +742,7 @@ let g:lightline = {
       \   'cocstatus': 'coc#status'
       \ },
       \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
+      \   'readonly': '%{&readonly?"🔒":""}',
       \ }}
 "}}}
 " Dispatch: {{{
