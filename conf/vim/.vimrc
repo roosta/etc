@@ -451,6 +451,7 @@ Plug '/home/roosta/src/srcery-vim'
 " Plug 'sjl/badwolf'
 " Plug 'romainl/flattened'
 " Plug 'morhetz/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
 "}}}
 " Git: {{{2
 Plug 'tpope/vim-fugitive'
