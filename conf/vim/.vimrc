@@ -175,7 +175,8 @@ endif
 " Terminal: {{{2
 " set number of colors to 256
 if !has('gui_running')
-  set t_Co=256
+  set termguicolors
+  " set t_Co=256
 endif
 "}}}
 " Gvim: {{{2
@@ -208,6 +209,7 @@ let g:vimpager_passthrough = 0
 " disabling it via a variable
 if exists("vimpager")
   call <SNR>1_ToggleLess()
+  set notermguicolors
 endif
 
 "}}}
@@ -525,7 +527,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 "}}}
 " Color: {{{
-" Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " }}}
 " PLUG END: {{{2
 call plug#end()
@@ -825,15 +827,15 @@ imap <C-return> <Plug>BujoAddinsert
 nmap <C-Q> <Plug>BujoChecknormal
 imap <C-Q> <Plug>BujoCheckinsert
 "}}}
-" " Hexokinase: {{{2
-" let g:Hexokinase_optInPatterns = [
-" \     'full_hex',
-" \     'triple_hex',
-" \     'rgb',
-" \     'rgba',
-" \     'hsl',
-" \     'hsla',
-" \ ]
-" " }}}
+" Hexokinase: {{{2
+let g:Hexokinase_optInPatterns = [
+\     'full_hex',
+\     'triple_hex',
+\     'rgb',
+\     'rgba',
+\     'hsl',
+\     'hsla',
+\ ]
+" }}}
 "}}}
 " vim: fdm=marker:sw=2
