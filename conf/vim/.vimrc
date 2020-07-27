@@ -809,6 +809,7 @@ endfunction
 "}}}
 " Markdown: {{{
 
+" Markdown preview
 let g:mkdp_browser = 'google-chrome-unstable'
 let g:mkdp_auto_close = 0
 
