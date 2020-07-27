@@ -82,7 +82,7 @@ fkill() {
 #}}}
 # Opening files {{{
 
-# Fuzzy match file and open with emacsclient
+# Fuzzy match file and open with EDITOR
 e() {
   if [ "$#" -ne 0 ]; then
     "${EDITOR:-vim}" "$@"
