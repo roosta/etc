@@ -297,6 +297,9 @@ nnoremap Y y$
 
 nnoremap <leader>jl :Ilist<space>
 
+" Insert date
+map <leader>D :put =strftime('# %a %Y-%m-%d %H:%M:%S%z')<CR>
+
 " }}}
 " Cmd:{{{
 
