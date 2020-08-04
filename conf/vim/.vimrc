@@ -37,7 +37,7 @@ set directory=~/.cache/vim/swap//
 " Undo {{{2
 
 set undofile
-set undodir=~/var/vim/undo
+set undodir=~/.cache/vim/undo
 
 "}}}
 " Wildmenu: {{{2
