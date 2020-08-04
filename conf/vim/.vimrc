@@ -27,8 +27,11 @@ set cursorline
 " a minified js file, where the lines are extremely long
 set synmaxcol=2048
 
+"}}}
+" Swap: {{{
 " Increase how often swap file is written (milliseconds)
 set updatetime=100
+set directory=~/.cache/vim/swap//
 
 "}}}
 " Undo {{{2
