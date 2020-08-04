@@ -160,17 +160,17 @@ set backupdir=$HOME/.cache/vim/backup
 " Vim: {{{2
 
 if !has('nvim')
-  set cryptmethod=blowfish2
+  " set cryptmethod=blowfish2
   set ttymouse=xterm2
 
   " remove leaks for encrypted files
-  augroup vimrc
-    autocmd!
-    autocmd BufReadPost *
-          \ if &key != "" |
-          \   set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure |
-          \ endif
-  augroup END
+  " augroup vimrc
+  "   autocmd!
+  "   autocmd BufReadPost *
+  "         \ if &key != "" |
+  "         \   set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure |
+  "         \ endif
+  " augroup END
 
 endif
 
