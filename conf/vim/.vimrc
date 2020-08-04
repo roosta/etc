@@ -770,8 +770,9 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofil
 
 " }}}
 " ale: {{{
+" https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md#vim--neovim
 let g:ale_linters = {
-      \ 'clojure': ['clj-kondo', 'joker']
+      \ 'clojure': ['clj-kondo']
       \}
 " }}}
 " Deoplete: {{{
