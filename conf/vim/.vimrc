@@ -151,8 +151,8 @@ set foldmethod=marker
 " let &t_Ce = "\e[4:0m"
 "}}}
 " Backup {{{
-set backup
-set writebackup
+" set backup
+" set writebackup
 set backupdir=$HOME/.cache/vim/backup
 "}}}
 "}}}
@@ -160,6 +160,7 @@ set backupdir=$HOME/.cache/vim/backup
 " Vim: {{{2
 
 if !has('nvim')
+
   " set cryptmethod=blowfish2
   set ttymouse=xterm2
 
