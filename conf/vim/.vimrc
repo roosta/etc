@@ -27,14 +27,17 @@ set cursorline
 " a minified js file, where the lines are extremely long
 set synmaxcol=2048
 
+"}}}
+" Swap: {{{
 " Increase how often swap file is written (milliseconds)
 set updatetime=100
+set directory=~/.cache/vim/swap//
 
 "}}}
 " Undo {{{2
 
 set undofile
-set undodir=~/var/vim/undo
+set undodir=~/.cache/vim/undo
 
 "}}}
 " Wildmenu: {{{2
@@ -147,22 +150,28 @@ set foldmethod=marker
 " let &t_Cs = "\e[4:3m"
 " let &t_Ce = "\e[4:0m"
 "}}}
+" Backup {{{
+" set backup
+" set writebackup
+set backupdir=$HOME/.cache/vim/backup
+"}}}
 "}}}
 " Environments {{{1
 " Vim: {{{2
 
 if !has('nvim')
-  set cryptmethod=blowfish2
+
+  " set cryptmethod=blowfish2
   set ttymouse=xterm2
 
   " remove leaks for encrypted files
-  augroup vimrc
-    autocmd!
-    autocmd BufReadPost *
-          \ if &key != "" |
-          \   set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure |
-          \ endif
-  augroup END
+  " augroup vimrc
+  "   autocmd!
+  "   autocmd BufReadPost *
+  "         \ if &key != "" |
+  "         \   set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure |
+  "         \ endif
+  " augroup END
 
 endif
 
@@ -762,8 +771,9 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofil
 
 " }}}
 " ale: {{{
+" https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md#vim--neovim
 let g:ale_linters = {
-      \ 'clojure': ['clj-kondo', 'joker']
+      \ 'clojure': ['clj-kondo']
       \}
 " }}}
 " Deoplete: {{{
