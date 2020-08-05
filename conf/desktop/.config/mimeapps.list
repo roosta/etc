@@ -41,7 +41,7 @@ text/calendar=thunderbird.desktop;
 image/svg+xml=inkscape.desktop;gvim.desktop;
 application/pgp-signature=gvim.desktop;
 application/x-xpinstall=thunderbird.desktop;
-image/png=feh.desktop;
+image/png=gimp.desktop;feh.desktop;
 application/x-bittorrent=transmission-gtk.desktop;
 application/zip=firefox.desktop;
 
