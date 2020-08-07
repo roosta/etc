@@ -403,6 +403,7 @@ Plug 'tpope/vim-speeddating'                                                 " E
 Plug 'tpope/vim-surround'                                                    " Surround text easily
 Plug 'tpope/vim-unimpaired'                                                  " Handy bracket mappings
 Plug 'wellle/targets.vim'                                                    " More text objects
+Plug 'mbbill/undotree'                                                       " Tree of undo changes, use :UndotreeToggle
 
 "}}}
 " System: {{{
