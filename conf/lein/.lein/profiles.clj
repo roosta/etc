@@ -6,7 +6,7 @@
         :plugins [;; check deps for new versions
                   [lein-ancient "0.6.15"]
 
-                  [cider/cider-nrepl "0.24.0"]
+                  [cider/cider-nrepl "0.25.3"]
 
                   [lein-auto "0.1.3"]
 
