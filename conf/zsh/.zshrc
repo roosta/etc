@@ -36,8 +36,8 @@ zplug "b4b4r07/enhancd", use:init.sh
 # zplug "roosta/fif"
 zplug "~/src/fif", from:local
 zplug "Aloxaf/fzf-tab"
-zplug "zsh-users/zsh-history-substring-search"
 zplug "softmoth/zsh-vim-mode"
+zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
