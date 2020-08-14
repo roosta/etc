@@ -39,8 +39,8 @@ zplug "Aloxaf/fzf-tab"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "softmoth/zsh-vim-mode"
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting"
 
 # zplug check returns true if all packages are installed
 # Therefore, when it returns false, run zplug install
