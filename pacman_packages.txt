@@ -113,3 +113,4 @@ flameshot
 thefuck
 neovim
 python-pynvim
+yarn
