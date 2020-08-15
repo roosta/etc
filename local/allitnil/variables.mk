@@ -3,4 +3,4 @@ dpi = 140
 bar_height = 28
 lines = 38
 font = "Iosevka 18px"
-dunst_geometry = "400-0+22"
+dunst_geometry = "400-0+28"
