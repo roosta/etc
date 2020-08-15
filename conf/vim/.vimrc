@@ -304,6 +304,7 @@ nnoremap <leader><tab> :b#<cr>
 " yank to end of line when pressing Y
 nnoremap Y y$
 
+" Quick way of opening Ilist
 nnoremap <leader>jl :Ilist<space>
 
 " Insert date
