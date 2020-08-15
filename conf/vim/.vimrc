@@ -310,6 +310,11 @@ nnoremap <leader>jl :Ilist<space>
 " Insert date
 map <leader>D :put =strftime('# %a %Y-%m-%d %H:%M:%S%z')<CR>
 
+" Completion
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "<C-k>"
 " }}}
 " Cmd:{{{
 
@@ -781,8 +786,6 @@ let g:ale_linters = {
 " Deoplete: {{{
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('keyword_patterns', {'clojure': '[\w!$%&*+/:<=>?@\^_~\-\.#]*'})
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " }}}
 " fireplace: {{{
 " let g:fireplace_cljs_repl = "(do (require 'figwheel-sidecar.repl-api) ((resolve 'figwheel-sidecar.repl-api/cljs-repl)))"
