@@ -581,7 +581,7 @@ nnoremap <leader>gC :Commits<cr>
 nnoremap <leader>gc :BCommits<cr>
 nnoremap <leader>m  :Marks<cr>
 nnoremap <leader>H  :Helptags<cr>
-nnoremap <leader>/  :Ag<cr>
+nnoremap <leader>/  :Rg<cr>
 nnoremap <leader><leader> :Commands<cr>
 nnoremap <leader>ss :BLines<cr>
 nnoremap <leader>ji :BTags<cr>
