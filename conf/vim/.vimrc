@@ -832,7 +832,10 @@ let g:mkdp_auto_close = 0
 set conceallevel=2
 let g:vim_markdown_conceal_code_blocks = 0
 
+" Set indent level on new list items
 let g:vim_markdown_new_list_item_indent = 2
+
+" Set syntax filetype alternatives for codeblocks
 let g:vim_markdown_fenced_languages = ['bash=sh', 'js=javascript']
 
 " Fold at headline, not below
