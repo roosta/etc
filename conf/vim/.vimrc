@@ -835,6 +835,8 @@ let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_new_list_item_indent = 2
 let g:vim_markdown_fenced_languages = ['bash=sh', 'js=javascript']
 
+" Fold at headline, not below
+let g:vim_markdown_folding_style_pythonic = 1
 "}}}
 " auto-pairs: {{{
 " Fix for 'å' button on Norwegian keyboards
