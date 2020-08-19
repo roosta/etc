@@ -29,6 +29,7 @@ set synmaxcol=2048
 
 "}}}
 " Swap: {{{
+
 " Increase how often swap file is written (milliseconds)
 set updatetime=100
 set directory=~/.cache/vim/swap//
@@ -143,18 +144,24 @@ set foldmethod=marker
 
 "}}}
 " Undercurl: {{{
+
 " let &t_Cs = "\e[4:3m"
 " let &t_Ce = "\e[4:0m"
+
 "}}}
 " Backup {{{
+
 " set backup
 " set writebackup
 set backupdir=$HOME/.cache/vim/backup
+
 "}}}
 " Grep: {{{2
+
 if executable("rg")
   set grepprg=rg\ --vimgrep
 endif
+
 "}}}
 "}}}
 " Environments {{{1
@@ -166,15 +173,20 @@ endif
 
 "}}}
 " Neovim: {{{2
+
 if has('nvim')
 endif
+
+
 "}}}
 " Terminal: {{{2
+
 " set number of colors to 256
 if !has('gui_running')
   set termguicolors
   " set t_Co=256
 endif
+
 "}}}
 " Gvim: {{{2
 
@@ -192,6 +204,7 @@ endif
 
 "}}}
 " Vimpager: {{{2
+
 " Options for newer version of vimpager >= 2.06
 " let g:vimpager = {}
 " let g:less     = {}
@@ -304,6 +317,7 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "<C-k>"
+
 " }}}
 " Cmd:{{{
 
@@ -366,10 +380,10 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-"
 " }}}
 " Plugin Manager: {{{1
 " PLUG BEGIN: {{{2
+
 " Setup plugin manager vim-plug: https://github.com/junegunn/vim-plug
 " download vim-plug if not present in 'autoload'
 augroup vimrc
@@ -380,9 +394,12 @@ augroup vimrc
   endif
 augroup END
 call plug#begin('~/.vim/plugged')
+
 "}}}
 " General: {{{
+
 Plug 'tpope/vim-sensible'                                                    " Sensible defaults
+
 "}}}
 " Editing {{{2
 
@@ -402,25 +419,34 @@ Plug 'mbbill/undotree'                                                       " T
 
 "}}}
 " System: {{{
+
 Plug 'tpope/vim-eunuch'     " Unix helper commands
 Plug 'lambdalisue/suda.vim' " Assist in writing system files with sudo @ neovim
 Plug 'tpope/vim-dispatch'   " Asynchronous build and test dispatcher
+
 "}}}
 " Quick fix {{{2
+
 " Plug 'romainl/vim-qf'
 Plug 'romainl/vim-qlist'
+
 "}}}
 " Note taking {{{2
+
 Plug 'jceb/vim-orgmode'
 " Plug 'vimwiki/vimwiki'
 " Plug 'vuciv/vim-bujo'
+
 "}}}
 " Files: {{{2
+
 " Plug 'justinmk/vim-dirvish'
 Plug 'tpope/vim-vinegar'
 Plug 'trapd00r/vim-syntax-vidir-ls'
+
 "}}}
 " Search/replace: {{{2
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " Plug 'rking/ag.vim'
@@ -428,18 +454,26 @@ Plug 'junegunn/fzf.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'markonm/traces.vim'
 Plug 'tpope/vim-abolish'
+
 "}}}
 " Visual: {{{2
+
 Plug 'terryma/vim-expand-region'
+
 "}}}
 " Movement {{{2
+
 Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
+
 "}}}
 " Tags: {{{2
+
 Plug 'ludovicchabant/vim-gutentags'
+
 "}}}
 " Completion: {{{2
+
 " Plug 'ajh17/VimCompletesMe'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 " Plug 'prabirshrestha/asyncomplete.vim'
@@ -452,8 +486,10 @@ else
 endif
 " Plug 'clojure-vim/async-clj-omni'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 "}}}
 " Theme: {{{2
+
 Plug 'itchyny/lightline.vim'
 " Plug 'vim-airline/vim-airline'
 Plug '/home/roosta/src/srcery-vim'
@@ -462,25 +498,35 @@ Plug '/home/roosta/src/srcery-vim'
 " Plug 'romainl/flattened'
 " Plug 'morhetz/gruvbox'
 " Plug 'gruvbox-community/gruvbox'
+
 "}}}
 " Git: {{{2
+
 Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
+
 "}}}
 " Multiplexer: {{{2
+
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 Plug 'tpope/vim-tbone'
+
 "}}}
 " Web {{{2
+
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 " Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
+
 "}}}
 " Python: {{{2
+
 Plug 'jmcantrell/vim-virtualenv'
+
 "}}}
 " Lisp: {{{2
+
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 " Plug 'liquidz/vim-iced', {'for': 'clojure'}
@@ -497,9 +543,12 @@ Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 
 "}}}
 " Projects {{{2
+
 Plug 'tpope/vim-projectionist'
+
 "}}}
 " Syntax {{{2
+
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'hdima/python-syntax'
@@ -510,51 +559,69 @@ Plug 'othree/yajs.vim'
 " Plug 'vim-syntastic/syntastic'
 Plug 'gregjurman/vim-nc'
 Plug 'vim-scripts/nginx.vim'
+
 "}}}
 " Linting {{{2
+
 Plug 'w0rp/ale'
+
 "}}}
 " Rust {{{2
+
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+
 "}}}
 " Documentation {{{2
+
 " Plug 'alx741/vinfo'
+
 "}}}
 " Clipboard: {{{2
+
 Plug 'bfredl/nvim-miniyank'
+
 "}}}
 " Snippets: {{{
+
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+
 " }}}
 " Markdown: {{{
+
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
 " Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+
 "}}}
 " Color: {{{
+
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
 " }}}
 " PLUG END: {{{2
+
 call plug#end()
 syntax on
 filetype plugin indent on
+
 "}}}
 "}}}
 " Plugin Config: {{{1
 "  Colorscheme: {{{2
-" --------------
+
 let g:srcery_dim_lisp_paren=1
 let g:srcery_italic=1
 " let g:srcery_inverse_matches=1
 let g:srcery_transparent_background=1
 
 colorscheme srcery
+
 "}}}
 " Fzf: {{{2
-" -------
+
 " https://github.com/junegunn/fzf.vim
 
 " Mapping selecting mappings
@@ -600,7 +667,7 @@ nnoremap z= :call FzfSpell()<CR>
 
 "}}}
 " Incsearch: {{{2
-" ---------
+
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
@@ -614,65 +681,74 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
 "}}}
 "  Easymotion: {{{2
-" -------------
+
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
+
 "}}}
 " Undotree: {{{2
-" --------
+
 nnoremap <leader>ut :UndotreeToggle<cr>
+
 "}}}
 " Slime: {{{2
-" -------------
+
 let g:slime_target = 'tmux'
 let g:slime_default_config = {'socket_name': 'default', 'target_pane': '2'}
 let g:slime_paste_file = '$HOME/.slime_paste'
 let g:slime_python_ipython = 1
+
 "}}}
 " Clojure Highlight: {{{2
-" -----------------
+
 " This should enable Emacs like indentation
 let g:clojure_fuzzy_indent=1
 let g:clojure_align_multiline_strings = 1
 
 " Add some words which should be indented like defn etc: Compojure/compojure-api, midje and schema stuff mostly.
 let g:clojure_fuzzy_indent_patterns=['^GET', '^POST', '^PUT', '^DELETE', '^ANY', '^HEAD', '^PATCH', '^OPTIONS', '^def']
+
 "}}}
 " nvim-miniyank: {{{2
-" ---------------
+
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 map <c-p> <Plug>(miniyank-cycle)
 map <c-n> <Plug>(miniyank-cycleback)
+
 "}}}
 " Tmux Navigator: {{{2
-" --------------------
+
 let g:tmux_navigator_no_mappings = 1
 nnoremap <silent> <C-h>  : TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j>  : TmuxNavigateDown<cr>
 nnoremap <silent> <C-k>  : TmuxNavigateUp<cr>
 nnoremap <silent> <C-l>  : TmuxNavigateRight<cr>
+
 " Emmet: {{{2
-" ---------------
+
 let g:user_emmet_leader_key='<C-A>'
+
 "}}}
 " Easy-align: {{{2
-" ----------------
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
 "}}}
 " Python: {{{2
-" ---------------
+
 let g:python_highlight_all = 1
 
 "}}}
 " Gutentags: {{{2
-" --------------------
+
 let g:gutentags_ctags_exclude = ['.password-store', 'node_modules', '.git', 'plugins', 'plugged']
 
 " Move tag files to cache dir
@@ -685,7 +761,7 @@ command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir 
 
 "}}}
 " Lightline: {{{2
-" --------------
+
 let g:lightline = {
       \ 'colorscheme': 'srcery',
       \ 'active': {
@@ -698,6 +774,7 @@ let g:lightline = {
       \ 'component': {
       \   'readonly': '%{&readonly?"🔒":""}',
       \ }}
+
 "}}}
 " Better whitespace: {{{
 
@@ -705,23 +782,31 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofil
 
 " }}}
 " ale: {{{
+
 " https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md#vim--neovim
 let g:ale_linters = {
       \ 'clojure': ['clj-kondo']
       \}
+
 " }}}
 " Deoplete: {{{
+
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('keyword_patterns', {'clojure': '[\w!$%&*+/:<=>?@\^_~\-\.#]*'})
+
 " }}}
 " git {{{
+
 nnoremap <leader>gs :Git<cr>
 autocmd FileType gitcommit setlocal nofoldenable
+
 " }}}
 " ultisnips {{{
+
 let g:UltiSnipsExpandTrigger="<c-;>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 " }}}
 " netrw {{{
 
@@ -742,6 +827,7 @@ function s:RemoveNetrwMap()
     unmap <buffer> <C-l>
   endif
 endfunction
+
 "}}}
 " Markdown: {{{
 
@@ -761,12 +847,16 @@ let g:vim_markdown_fenced_languages = ['bash=sh', 'js=javascript']
 
 " Fold at headline, not below
 let g:vim_markdown_folding_style_pythonic = 1
+
 "}}}
 " auto-pairs: {{{
+
 " Fix for 'å' button on Norwegian keyboards
 let g:AutoPairsShortcutFastWrap=''
+
 "}}}
 " Hexokinase: {{{2
+
 let g:Hexokinase_optInPatterns = [
 \     'full_hex',
 \     'triple_hex',
@@ -775,6 +865,7 @@ let g:Hexokinase_optInPatterns = [
 \     'hsl',
 \     'hsla',
 \ ]
-" }}}
+
+"}}}
 "}}}
 " vim: fdm=marker:sw=2
