@@ -299,18 +299,6 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " }}}
 " Cmd:{{{
 
-" if working with splits, set cursorline only on active window,
-" to give an indication other than airline which split is active
-augroup BgHighlight
-  autocmd!
-  "autocmd WinEnter * set number
-  "autocmd WinLeave * set nonumber
-  autocmd WinEnter * set relativenumber
-  autocmd WinLeave * set number
-  autocmd WinEnter * set cursorline
-  autocmd WinLeave * set nocursorline
-augroup END
-
 function! NumberToggle()
   if(&relativenumber == 1)
     set number
