@@ -248,7 +248,7 @@ let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 
 "}}}
-" Keybinds: {{{1
+" Mappings: {{{1
 
 " Enable mouse in all modes
 set mouse=a
