@@ -266,8 +266,10 @@ let &t_EI = "\<Esc>[2 q"
 "}}}
 " Keybinds: {{{1
 
+" Enable mouse in all modes
 set mouse=a
 
+" Use space as leader, set local leader to backslash
 let g:mapleader = "\<SPACE>"
 let g:maplocalleader = "\\"
 
