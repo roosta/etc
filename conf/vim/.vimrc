@@ -311,12 +311,16 @@ function! AppendModeline()
 endfunction
 command! Mode call AppendModeline()
 
+" Use this to update plugins via script
+" vim -c "exec UpdateAndExit()"
 function! UpdateAndExit()
      :PlugUpdate
      :q
      :q
 endfunction
 
+" Use this to install plugins via script
+" vim -c "exec InstallAndExit()"
 function! InstallAndExit()
      :PlugInstall
      :q
