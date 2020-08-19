@@ -684,11 +684,6 @@ let g:gutentags_exclude_project_root = ['/etc', 'usr/local']
 command! -nargs=0 GutentagsClearCache call system('rm ' . g:gutentags_cache_dir . '/*')
 
 "}}}
-" Ack: {{{2
-" ----------
-" let g:ackprg = 'ag --nogroup --nocolor --column'
-let g:ackprg = 'ag --vimgrep'
-"}}}
 " Lightline: {{{2
 " --------------
 let g:lightline = {
