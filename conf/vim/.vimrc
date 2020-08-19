@@ -413,7 +413,7 @@ Plug 'romainl/vim-qlist'
 " Note taking {{{2
 Plug 'jceb/vim-orgmode'
 " Plug 'vimwiki/vimwiki'
-Plug 'vuciv/vim-bujo'
+" Plug 'vuciv/vim-bujo'
 "}}}
 " Files: {{{2
 " Plug 'justinmk/vim-dirvish'
@@ -784,12 +784,6 @@ let g:vim_markdown_folding_style_pythonic = 1
 " auto-pairs: {{{
 " Fix for 'å' button on Norwegian keyboards
 let g:AutoPairsShortcutFastWrap=''
-"}}}
-" Bujo: {{{
-nmap <C-return> <Plug>BujoAddnormal
-imap <C-return> <Plug>BujoAddinsert
-nmap <C-Q> <Plug>BujoChecknormal
-imap <C-Q> <Plug>BujoCheckinsert
 "}}}
 " Hexokinase: {{{2
 let g:Hexokinase_optInPatterns = [
