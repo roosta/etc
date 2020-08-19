@@ -75,10 +75,6 @@ set ignorecase
 set smartcase
 set magic
 
-"set hlsearch
-"substitute global flag always on
-" set gdefault
-
 "}}}
 " Linebreak: {{{
 
@@ -165,25 +161,12 @@ endif
 " Vim: {{{2
 
 if !has('nvim')
-
-  " set cryptmethod=blowfish2
   set ttymouse=xterm2
-
-  " remove leaks for encrypted files
-  " augroup vimrc
-  "   autocmd!
-  "   autocmd BufReadPost *
-  "         \ if &key != "" |
-  "         \   set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure |
-  "         \ endif
-  " augroup END
-
 endif
 
 "}}}
 " Neovim: {{{2
 if has('nvim')
-  " tnoremap <Esc> <C-\><C-n>
 endif
 "}}}
 " Terminal: {{{2
@@ -202,7 +185,6 @@ if has('gui_running')
   set guioptions-=r  " remove right-hand scroll bar
   set guioptions-=L  " remove left-hand scroll bar
   set lines=60 columns=108 linespace=0
-  " set guifont=Essential\ PragmataPro\ 14px
   set guiheadroom=0
   set background=dark
   set guifont=Iosevka\ 9
@@ -634,26 +616,7 @@ map g# <Plug>(incsearch-nohl-g#)
 "  Easymotion: {{{2
 " -------------
 let g:EasyMotion_smartcase = 1
-
-" map <Leader> <Plug>(easymotion-prefix)
-" map <leader>jj <Plug>(easymotion-s)
-
 let g:EasyMotion_startofline = 1 " keep cursor column when JK motion
-"}}}
-" Rainbow Parenthesis: {{{2
-" -------------------
-" au VimEnter * RainbowParenthesesToggle
-" au Syntax * RainbowParenthesesLoadRound
-" au Syntax * RainbowParenthesesLoadSquare
-" au Syntax * RainbowParenthesesLoadBraces
-
-" Junegunn
-" https://github.com/junegunn/rainbow_parentheses.vim
-" au VimEnter * RainbowParentheses
-" let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-
-" exclude bright black since its barly visible
-" let g:rainbow#blacklist = [8]
 "}}}
 " Undotree: {{{2
 " --------
@@ -665,18 +628,6 @@ let g:slime_target = 'tmux'
 let g:slime_default_config = {'socket_name': 'default', 'target_pane': '2'}
 let g:slime_paste_file = '$HOME/.slime_paste'
 let g:slime_python_ipython = 1
-"}}}
-" Sexp: {{{2
-" -----------------
-" Disable some irritating mappings
-"let g:sexp_enable_insert_mode_mappings = 1
-
-" let g:sexp_mappings = {
-"       \ 'sexp_emit_head_element':    '<leader><Down>',
-"       \ 'sexp_emit_tail_element':    '<leader><Up>',
-"       \ 'sexp_capture_prev_element': '<',
-"       \ 'sexp_capture_next_element': '>',
-"       \}
 "}}}
 " Clojure Highlight: {{{2
 " -----------------
@@ -697,13 +648,6 @@ map <c-n> <Plug>(miniyank-cycleback)
 " Tmux Navigator: {{{2
 " --------------------
 let g:tmux_navigator_no_mappings = 1
-
-" nnoremap <silent> <A-Left>  : TmuxNavigateLeft<cr>
-" nnoremap <silent> <A-Down>  : TmuxNavigateDown<cr>
-" nnoremap <silent> <A-Up>    : TmuxNavigateUp<cr>
-" nnoremap <silent> <A-Right> : TmuxNavigateRight<cr>
-" nnoremap <silent> <A-\>     : TmuxNavigatePrevious<cr>
-
 nnoremap <silent> <C-h>  : TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j>  : TmuxNavigateDown<cr>
 nnoremap <silent> <C-k>  : TmuxNavigateUp<cr>
@@ -772,11 +716,6 @@ let g:lightline = {
       \   'readonly': '%{&readonly?"🔒":""}',
       \ }}
 "}}}
-" Dispatch: {{{
-
-" nnoremap <leader>cc :Dispatch<cr>
-
-" }}}
 " Better whitespace: {{{
 
 let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'help', 'nofile', 'git']
@@ -791,9 +730,6 @@ let g:ale_linters = {
 " Deoplete: {{{
 let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('keyword_patterns', {'clojure': '[\w!$%&*+/:<=>?@\^_~\-\.#]*'})
-" }}}
-" fireplace: {{{
-" let g:fireplace_cljs_repl = "(do (require 'figwheel-sidecar.repl-api) ((resolve 'figwheel-sidecar.repl-api/cljs-repl)))"
 " }}}
 " git {{{
 nnoremap <leader>gs :Git<cr>
@@ -823,9 +759,6 @@ function s:RemoveNetrwMap()
     unmap <buffer> <C-l>
   endif
 endfunction
-"}}}
-" Rust: {{{
-" let g:rustfmt_autosave = 1
 "}}}
 " Markdown: {{{
 
