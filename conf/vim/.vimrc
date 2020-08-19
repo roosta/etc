@@ -163,6 +163,18 @@ if executable("rg")
 endif
 
 "}}}
+" Statusline: {{{2
+
+" always show statusline
+" set laststatus=2
+
+" Don't disple mode in command buffer, taken care of by lightline
+set noshowmode
+
+" show the command being typed on the statusline
+set showcmd
+
+"}}}
 "}}}
 " Environments {{{1
 " Vim: {{{2
@@ -222,47 +234,6 @@ if exists("vimpager")
 endif
 
 "}}}
-"}}}
-" Statusline:{{{
-
-" always show statusline
-set laststatus=2
-
-" Don't disple mode in command buffer, taken care of by lightline
-set noshowmode
-
-" show the command being typed on the statusline
-set showcmd
-
-" %< Where to truncate
-" %n buffer number
-" %F Full path
-" %m Modified flag: [+], [-]
-" %r Readonly flag: [RO]
-" %y Type:          [vim]
-" fugitive#statusline()
-" %= Separator
-" %-14.(...)
-" %l Line
-" %c Column
-" %V Virtual column
-" %P Percentage
-" %#HighlightGroup#
-set statusline=
-set statusline+=%<[%n]\
-set statusline+=[%F]\
-set statusline+=%m
-set statusline+=%r
-set statusline+=%y\
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\
-set statusline+=%{HasPaste()}\
-set statusline+=%=
-set statusline+=%-10.(%l,%c%V%)\
-set statusline+=%P
-" set statusline+=[%{strlen(&fenc)?&fenc:'none'}]\  "file encoding
-" set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
-" set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-
 "}}}
 " Cursor: {{{1
 
@@ -341,14 +312,6 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <leader><C-n> :call RelativeLinumToggle()<cr>
-
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
-endfunction
 
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
