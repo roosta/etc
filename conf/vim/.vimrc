@@ -155,6 +155,11 @@ set foldmethod=marker
 " set writebackup
 set backupdir=$HOME/.cache/vim/backup
 "}}}
+" Grep: {{{2
+if executable("rg")
+  set grepprg=rg\ --vimgrep
+endif
+"}}}
 "}}}
 " Environments {{{1
 " Vim: {{{2
