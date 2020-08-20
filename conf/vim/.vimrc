@@ -612,6 +612,16 @@ function! FzfSpell()
 endfunction
 nnoremap z= :call FzfSpell()<CR>
 
+" Customize rg command
+" Had an issue where calling :Rg without a query would make fzf search in
+" filenames columns. So if I was searching for a command called Clap and also
+" had a file called clap fzf would match on the filename as well.
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
+  \   <bang>0)
+
 "}}}
 " Incsearch: {{{2
 
