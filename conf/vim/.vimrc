@@ -327,6 +327,9 @@ function! InstallAndExit()
      :q
 endfunction
 
+" Execute content of a buffer and output result to a new split
+command! Exec set splitright | vnew | set filetype=sh | read !sh #
+
 " }}}
 " Plugin Manager: {{{1
 " PLUG BEGIN: {{{2
