@@ -405,6 +405,9 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'markonm/traces.vim'
 Plug 'tpope/vim-abolish'
 
+" The bang version will try to download the prebuilt binary if cargo does not exist.
+" Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+
 "}}}
 " Visual: {{{2
 
@@ -827,5 +830,8 @@ let g:Hexokinase_optInPatterns = [
 \ ]
 
 "}}}
+" Clap: {{{
+" let g:clap_search_box_border_style = 'curve'
+" }}}
 "}}}
 " vim: fdm=marker:sw=2
