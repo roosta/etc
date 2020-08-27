@@ -709,7 +709,7 @@ let g:python_highlight_all = 1
 "}}}
 " Gutentags: {{{2
 
-let g:gutentags_ctags_exclude = ['.password-store', 'node_modules', '.git', 'plugins', 'plugged']
+let g:gutentags_ctags_exclude = ['.password-store', 'node_modules', '.git', 'plugins', 'plugged', 'gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
 
 " Move tag files to cache dir
 let g:gutentags_cache_dir = expand('~/.cache/vim/ctags/')
