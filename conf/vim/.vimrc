@@ -554,6 +554,12 @@ Plug 'plasticboy/vim-markdown'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " }}}
+" Folding: {{{
+
+" Plug 'obreitwi/vim-sort-folds'
+Plug 'brianrodri/vim-sort-folds'
+
+" }}}
 " PLUG END: {{{2
 
 call plug#end()
@@ -845,6 +851,10 @@ call expand_region#custom_text_objects('clojure', {
       \ })
 
 " }}}
+" vim-sort-folds: {{{
 
+vmap <leader>sf :call sortfolds#SortFolds()<cr>
+
+" }}}
 "}}}
 " vim: fdm=marker:sw=2
