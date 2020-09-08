@@ -384,7 +384,7 @@ Plug 'romainl/vim-qlist'
 " Note taking {{{2
 
 Plug 'jceb/vim-orgmode'
-" Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 " Plug 'vuciv/vim-bujo'
 
 "}}}
@@ -545,8 +545,8 @@ Plug 'honza/vim-snippets'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install', 'for': 'markdown' }
 " Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+" Plug 'godlygeek/tabular'
+" Plug 'plasticboy/vim-markdown'
 
 "}}}
 " Color: {{{
@@ -804,18 +804,22 @@ endfunction
 let g:mkdp_browser = 'google-chrome-unstable'
 let g:mkdp_auto_close = 0
 
+" let g:markdown_folding = 1
+
+" vim-markdown:
+" https://github.com/plasticboy/vim-markdown
 " Conceal
-set conceallevel=2
-let g:vim_markdown_conceal_code_blocks = 0
+" set conceallevel=2
+" let g:vim_markdown_conceal_code_blocks = 0
 
 " Set indent level on new list items
-let g:vim_markdown_new_list_item_indent = 2
+" let g:vim_markdown_new_list_item_indent = 2
 
 " Set syntax filetype alternatives for codeblocks
-let g:vim_markdown_fenced_languages = ['bash=sh', 'js=javascript']
+" let g:vim_markdown_fenced_languages = ['bash=sh', 'js=javascript']
 
 " Fold at headline, not below
-let g:vim_markdown_folding_style_pythonic = 1
+" let g:vim_markdown_folding_style_pythonic = 1
 
 "}}}
 " auto-pairs: {{{
@@ -854,6 +858,15 @@ call expand_region#custom_text_objects('clojure', {
 " vim-sort-folds: {{{
 
 vmap <leader>sf :call sortfolds#SortFolds()<cr>
+
+" }}}
+" VimWiki {{{
+
+let g:vimwiki_global_ext = 0 " Prevent vimwiki for all markdown files
+let g:vimwiki_list = [{'path': '~/notes/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
+let g:vimwiki_folding = 'expr'
 
 " }}}
 "}}}
