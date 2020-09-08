@@ -9,6 +9,7 @@
 (require 'init-utils)
 (require 'org)
 (require 'org-capture)
+(require 'org-tempo)
 
 ; Manual
 ;; (use-package org
