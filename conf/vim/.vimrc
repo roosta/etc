@@ -831,7 +831,20 @@ let g:Hexokinase_optInPatterns = [
 
 "}}}
 " Clap: {{{
+
 " let g:clap_search_box_border_style = 'curve'
+
 " }}}
+" vim-expand-region: {{{
+
+" let expand region know about 'form' text objects added by vim-sexp
+" Use :1 to support nesting of around form.
+call expand_region#custom_text_objects('clojure', {
+      \ 'if' :0,
+      \ 'af' :1,
+      \ })
+
+" }}}
+
 "}}}
 " vim: fdm=marker:sw=2
