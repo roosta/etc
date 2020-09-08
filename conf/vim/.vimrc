@@ -804,7 +804,7 @@ endfunction
 let g:mkdp_browser = 'google-chrome-unstable'
 let g:mkdp_auto_close = 0
 
-" let g:markdown_folding = 1
+let g:markdown_folding = 1
 
 " vim-markdown:
 " https://github.com/plasticboy/vim-markdown
