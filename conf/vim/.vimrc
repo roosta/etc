@@ -442,7 +442,7 @@ endif
 
 Plug 'itchyny/lightline.vim'
 " Plug 'vim-airline/vim-airline'
-Plug '/home/roosta/src/srcery-vim'
+Plug '~/src/srcery-vim'
 " Plug 'srcery-colors/srcery-vim'
 " Plug 'sjl/badwolf'
 " Plug 'romainl/flattened'
