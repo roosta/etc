@@ -1,9 +1,10 @@
-setlocal makeprg=make\ bin/%<.o
 
 " https://jbernard.io/2011/09/30/vim-makeprg.html
-" if !filereadable(expand("%:p:h")."/Makefile")
-"     setlocal makeprg=gcc\ -Wall\ -Wextra\ -o\ %<\ %
-" endif
+if !filereadable(expand("%:p:h")."/Makefile")
+  setlocal makeprg=gcc\ -Wall\ -Wextra\ -o\ %<.o\ %
+else
+  setlocal makeprg=make\ bin/%<.o
+endif
 
 " Helper used when executing compiled c programs outputted to bin/*.o and
 " outputted to new vertical buffer.
