@@ -296,9 +296,9 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-" Helper mapping for running compiled c programs that are outputted to bin/*
+" Helper mapping for running compiled c programs that are outputted to bin/*.c
 " Just temporary until I get a better setup going, keeping it simple for now
-map <F5> :! bin/%<<cr>
+map <F5> :! bin/%<.o<cr>
 
 " }}}
 " Cmd:{{{
@@ -337,7 +337,7 @@ command! Exec set splitright | vnew | set filetype=sh | read !sh #
 " Helper used when executing compiled c programs outputted to bin/* and
 " outputted to new vertical buffer. Used with this makeprg: makeprg=gcc\ %\ -o\ bin/%<
 " Just temporary until I get a better setup going, keeping it simple for now
-command! Bin set splitright | vnew | read ! bin/#<
+command! Bin set splitright | vnew | read ! bin/#<.o
 
 " }}}
 " Plugin Manager: {{{1

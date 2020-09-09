@@ -1,1 +1,1 @@
-setlocal makeprg=gcc\ %\ -o\ bin/%<
+setlocal makeprg=make\ bin/%<.o
