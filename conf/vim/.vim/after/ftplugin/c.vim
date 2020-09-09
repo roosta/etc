@@ -4,3 +4,11 @@ setlocal makeprg=make\ bin/%<.o
 " if !filereadable(expand("%:p:h")."/Makefile")
 "     setlocal makeprg=gcc\ -Wall\ -Wextra\ -o\ %<\ %
 " endif
+
+" Helper used when executing compiled c programs outputted to bin/*.o and
+" outputted to new vertical buffer.
+command! Exec set splitright | vnew | read ! bin/#<.o
+
+" Helper mapping for running compiled c programs that are outputted to bin/*.o
+map <F5> :! bin/%<.o<cr>
+
