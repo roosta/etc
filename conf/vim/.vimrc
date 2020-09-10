@@ -882,5 +882,11 @@ let g:vimwiki_list = [{'path': '~/notes/',
 let g:vimwiki_folding = 'expr'
 
 " }}}
+" Sort Motion: {{{
+
+" Case insensitive
+let g:sort_motion_flags = "i"
+
+" }}}
 "}}}
 " vim: fdm=marker:sw=2
