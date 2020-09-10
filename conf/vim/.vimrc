@@ -823,7 +823,7 @@ nnoremap <leader>mp :MarkdownPreview<cr>
 let g:markdown_folding = 1
 
 " " Set syntax filetype alternatives for codeblocks
-let g:vim_markdown_fenced_languages = ['bash=sh', 'js=javascript']
+let g:vim_markdown_fenced_languages = ['bash=sh', 'shell=sh', 'js=javascript']
 
 " Conceal
 set conceallevel=2
