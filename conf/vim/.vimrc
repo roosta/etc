@@ -609,7 +609,7 @@ nnoremap <leader>T  :Tags<cr>
 nnoremap <leader>t  :BTags<cr>
 nnoremap <leader>gC :Commits<cr>
 nnoremap <leader>gc :BCommits<cr>
-nnoremap <leader>m  :Marks<cr>
+nnoremap <leader>mm  :Marks<cr>
 nnoremap <leader>H  :Helptags<cr>
 nnoremap <leader>/  :Rg<cr>
 nnoremap <leader><leader> :Commands<cr>
@@ -818,6 +818,7 @@ endfunction
 " Markdown preview
 let g:mkdp_browser = 'google-chrome-unstable'
 let g:mkdp_auto_close = 0
+nnoremap <leader>mp :MarkdownPreview<cr>
 
 let g:markdown_folding = 1
 
