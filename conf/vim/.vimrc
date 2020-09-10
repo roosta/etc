@@ -107,7 +107,7 @@ set showbreak=>\
 " Relative line numbers start counting from the position of the cursor, making
 " commands like 10j easier to spot without having to do math
 set relativenumber
-" set number
+set number
 
 " }}}
 " Matching surrounds {{{
@@ -308,6 +308,9 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "<C-k>"
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" Quickly toggling relative line number
+nnoremap <leader>rn :set rnu!<cr>
 
 " }}}
 " Cmd:{{{
