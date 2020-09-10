@@ -555,6 +555,7 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " Plug 'obreitwi/vim-sort-folds'
 Plug 'brianrodri/vim-sort-folds'
+Plug '~/src/foldlist'
 
 " }}}
 " PLUG END: {{{2
