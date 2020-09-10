@@ -175,6 +175,16 @@ set noshowmode
 set showcmd
 
 "}}}
+"Project: {{{
+
+" allows loading local executing local rc files.
+set exrc
+
+" secure disallows the use of :autocmd, shell and write commands in local
+" .vimrc files
+set secure
+
+"}}}
 "}}}
 " Environments {{{1
 " Vim: {{{2
