@@ -820,20 +820,17 @@ let g:mkdp_auto_close = 0
 
 let g:markdown_folding = 1
 
-" " vim-markdown:
-" " https://github.com/plasticboy/vim-markdown
-" " Conceal
-" set conceallevel=2
-" let g:vim_markdown_conceal_code_blocks = 0
+" " Set syntax filetype alternatives for codeblocks
+let g:vim_markdown_fenced_languages = ['bash=sh', 'js=javascript']
+
+" Conceal
+set conceallevel=2
+let g:vim_markdown_conceal_code_blocks = 0
+
+let g:vim_markdown_folding_level = 2
 
 " " Set indent level on new list items
-" let g:vim_markdown_new_list_item_indent = 2
-
-" " Set syntax filetype alternatives for codeblocks
-" let g:vim_markdown_fenced_languages = ['bash=sh', 'js=javascript']
-
-" " Fold at headline, not below
-" let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_new_list_item_indent = 2
 
 "}}}
 " auto-pairs: {{{
