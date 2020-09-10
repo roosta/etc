@@ -827,7 +827,7 @@ let g:vim_markdown_fenced_languages = ['bash=sh', 'shell=sh', 'js=javascript']
 
 " Conceal
 set conceallevel=2
-" let g:vim_markdown_conceal_code_blocks = 1
+let g:vim_markdown_conceal_code_blocks = 1
 
 let g:vim_markdown_folding_level = 2
 
