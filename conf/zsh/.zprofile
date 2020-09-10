@@ -103,3 +103,5 @@ hash rustc 2>/dev/null && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rus
 if hash ruby 2>/dev/null; then
   PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
+
+export CHEAT_USE_FZF=true
