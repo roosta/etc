@@ -27,6 +27,9 @@ set cursorline
 " a minified js file, where the lines are extremely long
 set synmaxcol=2048
 
+" Save file before :make is invoked
+set autowrite
+
 "}}}
 " Swap: {{{
 
