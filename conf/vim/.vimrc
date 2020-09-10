@@ -840,7 +840,7 @@ let g:markdown_folding = 1
 
 " Fix for 'å' button on Norwegian keyboards
 let g:AutoPairsShortcutFastWrap=''
-
+" let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '"""':'"""', "'''":"'''"}
 "}}}
 " Hexokinase: {{{2
 
