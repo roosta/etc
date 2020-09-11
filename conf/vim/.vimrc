@@ -817,10 +817,16 @@ endfunction
 " Markdown: {{{
 
 " Markdown preview
-let g:mkdp_browser = 'google-chrome-unstable'
-let g:mkdp_auto_close = 0
+" ----------------
+let g:mkdp_browser = 'chrome-scaled'
+let g:mkdp_auto_close = 1
 nnoremap <leader>mp :MarkdownPreview<cr>
 
+" open the preview window after entering the markdown buffer
+let g:mkdp_auto_start = 1
+
+" vim-markdown
+" ------------
 let g:markdown_folding = 1
 
 " " Set syntax filetype alternatives for codeblocks
@@ -832,7 +838,7 @@ let g:vim_markdown_conceal_code_blocks = 1
 
 let g:vim_markdown_folding_level = 2
 
-" " Set indent level on new list items
+" Set indent level on new list items
 let g:vim_markdown_new_list_item_indent = 2
 
 "}}}
