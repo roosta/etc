@@ -312,6 +312,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Quickly toggling relative line number
 nnoremap <leader>rn :set rnu!<cr>
 
+" Notes
 nnoremap <leader>ww :e ~/notes/index.md<cr>
 
 " }}}
