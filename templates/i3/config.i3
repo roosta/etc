@@ -111,28 +111,29 @@ hide_edge_borders none
 #}}}
 # Window workspace assignment {{{1
 ## ---------------------------
-## D:Debug
+
+# Secondary monitor
+assign [class="(?i)google-chrome-unstable"] output $secondary_monitor
+
+## [D]
 #assign [class="(?i)google-chrome-beta"]     $sws_d
-#assign [class="(?i)google-chrome-unstable"] $sws_d
 #assign [class="(?i)firefox-developer"]      $sws_d
 #assign [instance="^Devtools$$"]             $sws_d
 
-## W:Edit
-#assign [class="(?i)subl3"]                  $pws_w
-#assign [class="(?i)jetbrains-idea"]         $pws_w
-#assign [class="(?i)atom"]                   $pws_w
+## [W]
 #assign [class="(?i)emacs"]                  $pws_w
 
-## E:WWW
-#assign [class="(?i)firefox$$"] $pws_e
+## [E]
+assign [class="(?i)firefox$$"] $pws_e
 
-## 2:GAM
+## [2]
 #assign [class="(?i)^steam(.*)"]   $pws_2
 #assign [class="(?i)Wine"]        $pws_2
 #assign [class="(?i)PlayOnLinux"] $pws_2
-##assign [title="(?i)friends"] $TWS2
+##assign [title="(?i)friends"] $pws_2
+assign [class="(?i)thunderbird"] $pws_2
 
-## 1:Media
+## [1]
 ## workaround for spotify WS assignment
 ## see: https://github.com/i3/i3/issues/2060
 #for_window [class="Spotify"] move to workspace $pws_1
@@ -142,25 +143,19 @@ hide_edge_borders none
 #assign [class="(?i)smplayer"]   $pws_1
 #assign [class="(?i)clementine"] $pws_1
 
-## F1:Media
-#assign [class="(?i)google-chrome$"] $tws_f1
+## [F1]
+assign [class="(?i)google-chrome-stable"] $tws_f1
 
-## 3:ART
+## [3]
 #assign [class="(?i)inkscape"] $pws_3
 #assign [class="(?i)gimp"]     $pws_3
 #assign [class="(?i)krita"]    $pws_3
 #assign [class="(?i)freecad"]  $pws_3
 
-## S:COM
-#assign [class="(?i)pidgin"]      $pws_4
-#assign [class="(?i)linphone"]    $pws_4
-#assign [class="(?i)skype"]       $pws_4
-#assign [class="(?i)slack"]       $pws_4
-#assign [class="(?i)franz"]       $pws_4
-## assign [class="(?i)thunderbird"] $FWS2
-
+## [S]
 #assign [class="(?i)conky"] $tws_f3
 #assign [class="(?i)transmission-gtk"] $tws_f2
+
 ##}}}
 # Window behaviour {{{1
 # ----------------
