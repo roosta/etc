@@ -158,7 +158,7 @@ assign [class="(?i)google-chrome-stable"] $tws_f1
 
 ##}}}
 # Window behaviour {{{1
-# ----------------
+
 # create some rules to force floating on certain roles/classes
 for_window [window_role="pop-up"] floating enable
 for_window [title="teamviewer"] floating enable
@@ -168,7 +168,7 @@ for_window [title="Preferences$"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [title="Preferences$"] floating enable
 
-# application spesific
+# Application spesific
 for_window [class="(?i)Jitsi"] floating enable
 for_window [class="(?i)SessionManager"] floating enable
 for_window [class="(?i)Linphone"] floating enable
@@ -179,20 +179,19 @@ for_window [class="(?i)nitrogen"] floating enable
 for_window [class="(?i)pinentry-gtk-2"] floating enable
 for_window [class="(?i)yad"] floating enable
 
-## WINDOW SIZE
-## -----------
+## Window size
 for_window [class="(?i)Pidgin"] floating_maximum_size 50 x 75
 for_window [class="(?i)nitrogen"] floating_maximum_size 768 x 2160
 for_window [id="Open Document"] floating_maximum_size 670 x 470
 for_window [window_role="task_dialog"] floating_maximum_size 670 x 470
 
-# BORDER
-# ------
+# Border
 #for_window [class="(?i)firefox"]               border none
 #for_window [class="(?i)google-chrome$"]         border none
 for_window [class="(?i)PrisonArchitect.x86_64"] border none
 for_window [class="(?i)conky"] border none
 for_window [class="(?i)terminator"] border none
+
 #}}}
 # Keybindings {{{1
 # use xev to get keycodes
