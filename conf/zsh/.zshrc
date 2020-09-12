@@ -4,7 +4,7 @@
 # │█▀▀▀▀▀▀▀▀▀░░░░▀▀▀░▀▀▀░▀░▀░▀░▀░▀▀▀░░░░▀▀▀▀▀▀▀▀▀█│
 # │█▀▀▀▀▀▀▀▀▀───────────────────────────▀▀▀▀▀▀▀▀▀█│
 # ├┤ Author : Daniel Berg <mail@roosta.sh>       ├┤
-# ├┤ Github : https://github.com/roosta          ├┤
+# ├┤ Github : https://github.com/roosta/etc      ├┤
 # ┆└─────────────────────────────────────────────┘┆
 # Virtual console {{{
 # Set colors by parsing xresources (or attempt to, not working. Will fix eventually)
