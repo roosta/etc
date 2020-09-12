@@ -1,4 +1,4 @@
-.PHONY: default update links install min min-update min-install min-links install-yay install-aur-packages install-packages user-fs update-zsh-plugins update-libs init-vim update-vim clone-src link-misc link-conf link-local set-shell update-spacemacs i3 rofi update-tmux save-originals rustup exa update-rust
+.PHONY: default update links install min min-update min-install min-links install-yay install-aur-packages install-packages user-fs update-zsh-plugins update-libs init-vim update-vim update-src link-misc link-conf link-local set-shell update-spacemacs i3 rofi update-tmux save-originals rustup exa update-rust
 HOST ?= $(shell hostname)
 NOW = $(shell date +"%Y-%m-%dT%T")
 VARS = ~/etc/local/$(HOST)/variables.mk
@@ -14,7 +14,7 @@ update: update-zsh-plugins update-libs update-tmux update-vim update-rust
 
 links: link-conf link-misc link-local
 
-install: user-fs install-yay install-packages install-aur-packages save-originals ~/.emacs.d set-shell clone-src update-libs update-zsh-plugins ~/.tmux/plugins/tpm links ~/.zplug cleanup
+install: user-fs install-yay install-packages install-aur-packages save-originals ~/.emacs.d set-shell update-src update-libs update-zsh-plugins ~/.tmux/plugins/tpm links ~/.zplug cleanup
 
 min: min-install save-originals user-fs update-libs set-shell update-zsh-plugins min-links init-vim init-tmux cleanup
 
@@ -121,8 +121,8 @@ update-vim: ~/.vim/autoload/plug.vim
 	@echo -e "\033[0;33mGetting plugin manager for Vim...\033[0m"
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-clone-src:
-	@echo -e "\033[0;33mCloning src...\033[0m"
+update-src:
+	@echo -e "\033[0;33mUpdate src...\033[0m"
 	# ssh-add -l &>/dev/null || ssh-add ~/.ssh/id_rsa
 	./scripts/git_update.sh ~/src ~/etc/src_repositories.txt
 
@@ -134,37 +134,37 @@ clone-src:
 link-misc: ~/scripts ~/colors ~/bin/emacs-file-opener ~/bin/ftl ~/bin/touchpad-toggle ~/bin/tmain ~/bin/tupd
 	@echo -e "\033[0;33mSymlinking misc files...\033[0m"
 
-~/scripts: user-fs clone-src
+~/scripts: user-fs update-src
 	-ln -f -s $(HOME)/src/scripts $(HOME) &>/dev/null
 
-~/colors: user-fs clone-src
+~/colors: user-fs update-src
 	-ln -f -s $(HOME)/src/colors $(HOME) &>/dev/null
 
-~/bin/emacs-file-opener: user-fs clone-src
+~/bin/emacs-file-opener: user-fs update-src
 	-ln -f -s $(HOME)/src/scripts/emacs-file-opener.sh $(HOME)/bin/emacs-file-opener &>/dev/null
 
-~/bin/ftl: user-fs clone-src
+~/bin/ftl: user-fs update-src
 	-ln -f -s $(HOME)/etc/scripts/ftl.sh $(HOME)/bin/ftl &>/dev/null
 
-~/bin/touchpad-toggle: user-fs clone-src
+~/bin/touchpad-toggle: user-fs update-src
 	-ln -f -s $(HOME)/src/scripts/touchpad-toggle.sh $(HOME)/bin/touchpad-toggle &>/dev/null
 
-~/bin/tmain: user-fs clone-src
+~/bin/tmain: user-fs update-src
 	-ln -f -s $(HOME)/scripts/tmux-main.sh $(HOME)/bin/tmain &>/dev/null
 
-~/bin/tmusic: user-fs clone-src
+~/bin/tmusic: user-fs update-src
 	-ln -f -s $(HOME)/scripts/tmux-music.sh $(HOME)/bin/tmusic &>/dev/null
 
-~/bin/tupd: user-fs clone-src
+~/bin/tupd: user-fs update-src
 	-ln -f -s $(HOME)/scripts/tmux-update-window.sh $(HOME)/bin/tupd &>/dev/null
 
-~/bin/tssh: user-fs clone-src
+~/bin/tssh: user-fs update-src
 	-ln -f -s $(HOME)/scripts/tmux-ssh.sh $(HOME)/bin/tssh &>/dev/null
 
-~/bin/rxtx: user-fs clone-src
+~/bin/rxtx: user-fs update-src
 	-ln -f -s $(HOME)/scripts/rxtx.sh $(HOME)/bin/rxtx &>/dev/null
 
-~/bin/loadavg: user-fs clone-src
+~/bin/loadavg: user-fs update-src
 	-ln -f -s $(HOME)/scripts/loadavg.sh $(HOME)/bin/loadavg &>/dev/null
 
 link-conf: user-fs
@@ -278,7 +278,7 @@ update-rust:
 ~/.fasd/fasd.log:
 	 -mkdir ~/.fasd && touch ~/.fasd/fasd.log
 
-~/bin/bakc: clone-src
+~/bin/bakc: update-src
 	ln -s ~/src/bakc/bakc.sh ~/bin/bakc
 
 i3wsr:
