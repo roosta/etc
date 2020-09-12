@@ -115,25 +115,25 @@ hide_edge_borders none
 # Secondary monitor
 assign [class="(?i)google-chrome-unstable"] output $secondary_monitor
 
-## [D]
+## 10:[D]
 #assign [class="(?i)google-chrome-beta"]     $sws_d
 #assign [class="(?i)firefox-developer"]      $sws_d
 #assign [instance="^Devtools$$"]             $sws_d
 
-## [W]
+## 2:[W]
 #assign [class="(?i)emacs"]                  $pws_w
 
-## [E]
-assign [class="(?i)firefox$$"] $pws_e
+## 3:[E]
+assign [class="(?i)firefox$$"] number 3
 
-## [2]
+## 5:[2]
 #assign [class="(?i)^steam(.*)"]   $pws_2
 #assign [class="(?i)Wine"]        $pws_2
 #assign [class="(?i)PlayOnLinux"] $pws_2
 ##assign [title="(?i)friends"] $pws_2
-assign [class="(?i)thunderbird"] $pws_2
+assign [class="(?i)thunderbird"] number 5
 
-## [1]
+## 4:[1]
 ## workaround for spotify WS assignment
 ## see: https://github.com/i3/i3/issues/2060
 #for_window [class="Spotify"] move to workspace $pws_1
@@ -143,16 +143,16 @@ assign [class="(?i)thunderbird"] $pws_2
 #assign [class="(?i)smplayer"]   $pws_1
 #assign [class="(?i)clementine"] $pws_1
 
-## [F1]
-assign [class="(?i)google-chrome-stable"] $tws_f1
+## 11:[F1]
+assign [class="(?i)google-chrome-stable"] number 11
 
-## [3]
+## 6:[3]
 #assign [class="(?i)inkscape"] $pws_3
 #assign [class="(?i)gimp"]     $pws_3
 #assign [class="(?i)krita"]    $pws_3
 #assign [class="(?i)freecad"]  $pws_3
 
-## [S]
+## 9:[S]
 #assign [class="(?i)conky"] $tws_f3
 #assign [class="(?i)transmission-gtk"] $tws_f2
 
