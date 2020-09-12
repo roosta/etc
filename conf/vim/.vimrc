@@ -506,7 +506,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'tpope/vim-salve', { 'for': 'clojure' }
 " Plug 'venantius/vim-cljfmt', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+" Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
 " Plug 'kovisoft/paredit', { 'for': ['clojure', 'scheme'] }
 " Plug 'junegunn/rainbow_parentheses.vim'
