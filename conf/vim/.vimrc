@@ -296,7 +296,7 @@ nnoremap <leader>jl :Ilist<space>
 " Insert date
 map <leader>D :put =strftime('# %a %Y-%m-%d %H:%M:%S%z')<CR>
 
-" Completion
+" Use tab and c-j/c-k for completion navigation
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "<C-j>"
@@ -312,7 +312,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 " Quickly toggling relative line number
 nnoremap <leader>rn :set rnu!<cr>
 
-" Notes
+" Go to my note index file
 nnoremap <leader>ww :e ~/notes/index.md<cr>
 
 " }}}
