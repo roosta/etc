@@ -315,9 +315,12 @@ nnoremap <leader>rn :set rnu!<cr>
 " Go to my note index file
 nnoremap <leader>ww :e ~/notes/index.md<cr>
 
+" Underline the current line
+nnoremap <leader>t= yyp<c-v>$r=
+nnoremap <leader>t- yyp<c-v>$r-
+
 " }}}
 " Cmd:{{{
-
 
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
