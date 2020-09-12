@@ -549,9 +549,10 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 " Plug 'alx741/vinfo'
 
 "}}}
-" Clipboard: {{{2
+" Registers: {{{2
 
 Plug 'bfredl/nvim-miniyank'
+Plug 'junegunn/vim-peekaboo'
 
 "}}}
 " Snippets: {{{
