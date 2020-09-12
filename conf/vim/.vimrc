@@ -823,11 +823,11 @@ endfunction
 " Markdown preview
 " ----------------
 let g:mkdp_browser = 'chrome-scaled'
-let g:mkdp_auto_close = 1
+let g:mkdp_auto_close = 0
 nnoremap <leader>mp :MarkdownPreview<cr>
 
 " open the preview window after entering the markdown buffer
-let g:mkdp_auto_start = 1
+let g:mkdp_auto_start = 0
 
 " vim-markdown
 " ------------
