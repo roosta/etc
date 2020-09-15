@@ -1,1 +1,1 @@
-
+setlocal commentstring=//\ %s
