@@ -498,6 +498,7 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 " Python: {{{2
 
 Plug 'jmcantrell/vim-virtualenv'
+Plug 'hdima/python-syntax'
 
 "}}}
 " Lisp: {{{2
@@ -526,7 +527,6 @@ Plug 'tpope/vim-projectionist'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'hdima/python-syntax'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'sudar/vim-arduino-syntax'
 " Plug 'pangloss/vim-javascript'
