@@ -319,6 +319,9 @@ nnoremap <leader>ww :e ~/notes/index.md<cr>
 nnoremap <leader>t= yyp<c-v>$r=
 nnoremap <leader>t- yyp<c-v>$r-
 
+" Search project for current word
+" https://vimtricks.substack.com/p/vimtrick-search-project-for-current
+map <leader>* :Ggrep --untracked <cword><CR><CR>
 " }}}
 " Cmd:{{{
 
