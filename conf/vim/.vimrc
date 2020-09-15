@@ -4,9 +4,9 @@
 "│█▀▀▀▀▀▀▀▀▀▀▀▀░░ ▀ ░▀▀▀░▀░▀░░▀▀▀▀▀▀▀▀▀▀▀▀█│
 "│█            ░░░ ░░   ░ ░ ░░            █│
 "│█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░█│
-"│█░░Author : Roosta <mail@roosta.sh>   ░░█│
-"│█░░Site   : https://www.roosta.sh     ░░█│
-"│█░░Github : https://github.com/roosta ░░█│
+"│█░ Author : Roosta <mail@roosta.sh>    ░█│
+"│█░ Site   : https://www.roosta.sh      ░█│
+"│█░ Github : https://github.com/roosta  ░█│
 "└─────────────────────────────────────────┘
 " Options: {{{1
 " General {{{
