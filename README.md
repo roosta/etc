@@ -36,7 +36,9 @@ flux, for details on each see the [Makefile](Makefile).
 
 `prerequisites: links update i3 rofi post-install`
 
-Main rule run on a daily basis. Re-links, updates repos, generate configs. This is my goto and my daily routine is pulling any updates, then calling `make` with no arguments.
+Main rule run on a daily basis. Re-links, updates repos, generate configs. This
+is my goto and my daily routine is pulling any updates, then calling `make`
+with no arguments.
 
 ### update
 
@@ -50,9 +52,6 @@ which is just a flat file with the repository URL.
 I made a helper script for this process that either clones a repo or pulls if
 it is already present See the [git_update.sh](scripts/git_update.sh)
 script for details.
-
-
-<a id="org6fbef73"></a>
 
 ### links
 
@@ -76,7 +75,9 @@ home root.
 
 `prerequisites: user-fs install-pacaur install-packages install-aur-packages save-originals init-spacemacs set-shell clone-source i3 rofi init-tmux links post-install`
 
-This is the fragile install rule, that sets up a fresh system. It basically runs through the lot, and additionally installs packages, and clones various repos.
+This is the fragile install rule, that sets up a fresh system. It basically
+runs through the lot, and additionally installs packages, and clones various
+repos.
 
 ### min
 
