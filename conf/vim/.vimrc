@@ -885,7 +885,7 @@ call expand_region#custom_text_objects('clojure', {
 " }}}
 " vim-sort-folds: {{{
 
-let g:sort_folds_flags = "i"
+let g:sort_folds_ignore_case = 0
 
 " }}}
 " VimWiki {{{
