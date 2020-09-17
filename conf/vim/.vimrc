@@ -578,10 +578,10 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " }}}
 " Folding: {{{
 
-" Plug 'obreitwi/vim-sort-folds'
+Plug 'obreitwi/vim-sort-folds'
 " Plug 'brianrodri/vim-sort-folds'
 Plug '~/src/foldlist'
-Plug '~/src/vim-sort-folds'
+" Plug '~/src/vim-sort-folds'
 
 " }}}
 " PLUG END: {{{2
@@ -885,7 +885,7 @@ call expand_region#custom_text_objects('clojure', {
 " }}}
 " vim-sort-folds: {{{
 
-let g:sort_folds_ignore_case = 0
+let g:sort_folds_ignore_case = 1
 
 " }}}
 " VimWiki {{{
