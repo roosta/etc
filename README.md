@@ -113,7 +113,7 @@ detail, but here are some of my favorites:
 
 ### Busy tmux
 
-![busy](assets/busy.png)
+![busy](https://raw.githubusercontent.com/roosta/assets/master/etc/busy.png)
 
 ### Busy i3
 
